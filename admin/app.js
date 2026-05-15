@@ -1,4 +1,4 @@
-const CASES_URL = "/admin/data/cases.json";
+const CASES_URL = "./data/cases.json";
 const STORAGE_KEY = "raksa-admin-cases-v1";
 const ADMINS_TABLE = "admin_users";
 const CASES_TABLE = "cases";
