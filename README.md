@@ -15,6 +15,32 @@ Then open `http://localhost:4173`.
 
 The admin interface is available at `http://localhost:4173/admin/`.
 
+## Supabase admin setup
+
+The Supabase project is configured at `https://yzivkrotylwyglavtnho.supabase.co`.
+The admin UI reads this URL from `admin/supabase-config.js`.
+
+To enable browser access, add the project's public `anon`/publishable key to
+`admin/supabase-config.js`:
+
+```js
+window.RAKSA_SUPABASE = {
+  url: "https://yzivkrotylwyglavtnho.supabase.co",
+  anonKey: "YOUR_PUBLIC_ANON_OR_PUBLISHABLE_KEY",
+};
+```
+
+The database uses `public.cases` for portfolio persistence and
+`public.admin_users` to decide who can write. After creating a Supabase Auth user,
+grant admin access with:
+
+```sql
+insert into public.admin_users (user_id)
+select id from auth.users where email = 'admin@example.com';
+```
+
+The SQL applied to Supabase is tracked in `supabase/schema.sql`.
+
 ## Project layout
 
 - `index.html` is the exported page, rewritten to use local mirrored asset paths.
@@ -23,7 +49,7 @@ The admin interface is available at `http://localhost:4173/admin/`.
 - `scripts/check-assets.mjs` checks that local static references across the export exist.
 - `scripts/audit-framer-links.mjs` checks the reachable runtime graph for external Framer module/script dependencies.
 - `scripts/generate-admin-cases.mjs` regenerates the initial admin case data from the static case pages.
-- `admin/` contains the first admin interface for case management. It currently edits local browser state and is ready to be connected to production authentication and persistence.
+- `admin/` contains the admin interface for case management. It uses Supabase Auth and persists cases in `public.cases` when configured, with local JSON/browser storage as a fallback while the public key is missing.
 
 ## Notes
 

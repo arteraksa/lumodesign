@@ -1,11 +1,20 @@
 const CASES_URL = "/admin/data/cases.json";
 const STORAGE_KEY = "raksa-admin-cases-v1";
-const SESSION_KEY = "raksa-admin-session";
+const ADMINS_TABLE = "admin_users";
+const CASES_TABLE = "cases";
 const TAGS = ["UI/UX Design", "Desenvolvimento", "Branding", "Editorial"];
 
 const app = document.querySelector("#app");
+const supabaseConfig = window.RAKSA_SUPABASE || {};
+let supabase = null;
+if (supabaseConfig.url && supabaseConfig.anonKey) {
+  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+  supabase = createClient(supabaseConfig.url, supabaseConfig.anonKey);
+}
 const state = {
   cases: [],
+  initialCases: [],
+  session: null,
   search: "",
   tag: "Todos",
   notice: null,
@@ -56,7 +65,7 @@ function saveCases() {
 }
 
 function isLoggedIn() {
-  return sessionStorage.getItem(SESSION_KEY) === "active";
+  return Boolean(state.session);
 }
 
 function setNotice(type, text) {
@@ -70,11 +79,115 @@ function clearNotice() {
 async function loadCases() {
   const response = await fetch(CASES_URL);
   const initialCases = await response.json();
-  state.cases = getStoredCases() || initialCases;
+  state.initialCases = initialCases;
+
+  if (!supabase) {
+    state.cases = getStoredCases() || initialCases;
+    return;
+  }
+
+  const { data, error } = await supabase
+    .from(CASES_TABLE)
+    .select("id, slug, title, tags, description, cover, images, updated_at")
+    .order("title", { ascending: true });
+
+  if (error) {
+    state.cases = getStoredCases() || initialCases;
+    setNotice("error", `Supabase indisponível: ${error.message}`);
+    return;
+  }
+
+  state.cases = data.length ? data.map(fromSupabaseCase) : initialCases;
+}
+
+async function loadSession() {
+  if (!supabase) return;
+  const { data } = await supabase.auth.getSession();
+  state.session = data.session;
+  if (state.session && !(await isAdminUser())) {
+    await supabase.auth.signOut();
+    state.session = null;
+  }
+}
+
+async function isAdminUser() {
+  if (!supabase || !state.session?.user?.id) return false;
+
+  const { data, error } = await supabase
+    .from(ADMINS_TABLE)
+    .select("user_id")
+    .eq("user_id", state.session.user.id)
+    .limit(1);
+
+  return !error && data.length === 1;
+}
+
+function fromSupabaseCase(row) {
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    tags: row.tags || [],
+    description: row.description || "",
+    cover: row.cover || "",
+    images: row.images || [],
+    updatedAt: row.updated_at,
+  };
+}
+
+function toSupabaseCase(item) {
+  return {
+    id: item.id,
+    slug: item.slug,
+    title: item.title,
+    tags: item.tags,
+    description: item.description,
+    cover: item.cover,
+    images: item.images,
+    updated_at: item.updatedAt || new Date().toISOString(),
+  };
+}
+
+async function persistCase(item) {
+  if (!supabase || !isLoggedIn()) {
+    saveCases();
+    return { error: null };
+  }
+
+  return supabase
+    .from(CASES_TABLE)
+    .upsert(toSupabaseCase(item), { onConflict: "id" });
+}
+
+async function deleteRemoteCase(slug) {
+  if (!supabase || !isLoggedIn()) {
+    saveCases();
+    return { error: null };
+  }
+
+  return supabase.from(CASES_TABLE).delete().eq("slug", slug);
+}
+
+async function seedCasesIfEmpty() {
+  if (!supabase || !isLoggedIn() || state.cases.length !== state.initialCases.length) return;
+
+  const { count, error } = await supabase
+    .from(CASES_TABLE)
+    .select("id", { count: "exact", head: true });
+
+  if (error || count) return;
+
+  const { error: upsertError } = await supabase
+    .from(CASES_TABLE)
+    .upsert(state.initialCases.map(toSupabaseCase), { onConflict: "id" });
+
+  if (!upsertError) {
+    await loadCases();
+    setNotice("success", "Cases iniciais sincronizados com Supabase.");
+  }
 }
 
 function render() {
-  clearNotice();
   if (!isLoggedIn()) {
     renderLogin();
     return;
@@ -106,8 +219,10 @@ function renderLogin(error = "") {
             <span>Senha</span>
             <input class="input" name="password" type="password" autocomplete="current-password" required>
           </label>
-          <div class="notice notice-error ${error ? "is-visible" : ""}">${escapeHtml(error)}</div>
-          <button class="button button-primary" type="submit">Entrar</button>
+          <div class="notice notice-error ${error || !supabase ? "is-visible" : ""}">
+            ${escapeHtml(error || (!supabase ? "Configure a anon key do Supabase em /admin/supabase-config.js." : ""))}
+          </div>
+          <button class="button button-primary" type="submit" ${supabase ? "" : "disabled"}>Entrar</button>
         </div>
       </form>
     </section>`;
@@ -150,6 +265,10 @@ function renderDashboard() {
         </div>
         <button class="button button-primary" type="button" data-create-case>Criar post</button>
       </section>
+
+      <div class="notice ${state.notice?.type === "error" ? "notice-error" : "notice-success"} ${state.notice ? "is-visible" : ""}">
+        ${escapeHtml(state.notice?.text || "")}
+      </div>
 
       <section class="metrics" aria-label="Resumo por tag">
         ${TAGS.map((tag, index) => `
@@ -289,10 +408,10 @@ function getCase(slug) {
   return state.cases.find((item) => item.slug === slug);
 }
 
-function createCase() {
+async function createCase() {
   const title = "Novo case";
   const slug = `novo-case-${Date.now()}`;
-  state.cases.unshift({
+  const item = {
     id: slug,
     slug,
     title,
@@ -301,12 +420,18 @@ function createCase() {
     cover: "",
     images: [],
     updatedAt: new Date().toISOString(),
-  });
-  saveCases();
+  };
+  const { error } = await persistCase(item);
+  if (error) {
+    setNotice("error", error.message);
+    renderDashboard();
+    return;
+  }
+  state.cases.unshift(item);
   window.location.hash = `#/cases/${encodeURIComponent(slug)}`;
 }
 
-function saveCurrentCase(slug) {
+async function saveCurrentCase(slug) {
   const item = getCase(slug);
   const form = document.querySelector("[data-editor-form]");
   if (!item || !form) return;
@@ -327,6 +452,7 @@ function saveCurrentCase(slug) {
     return;
   }
 
+  const previousSlug = item.slug;
   item.title = newTitle;
   item.slug = newSlug;
   item.id = newSlug;
@@ -334,33 +460,41 @@ function saveCurrentCase(slug) {
   item.description = String(data.get("description") || "").trim();
   item.cover = String(data.get("cover") || "").trim();
   item.updatedAt = new Date().toISOString();
-  saveCases();
+  const { error } = await persistCase(item);
+  if (error) {
+    setNotice("error", error.message);
+    renderEditor(slug);
+    return;
+  }
+  if (previousSlug !== newSlug) await deleteRemoteCase(previousSlug);
   setNotice("success", "Case salvo.");
   window.location.hash = `#/cases/${encodeURIComponent(newSlug)}`;
   renderEditor(newSlug);
 }
 
-function moveImage(slug, index, direction) {
+async function moveImage(slug, index, direction) {
   const item = getCase(slug);
   if (!item) return;
   const target = index + direction;
   if (target < 0 || target >= item.images.length) return;
   const [image] = item.images.splice(index, 1);
   item.images.splice(target, 0, image);
-  saveCases();
+  item.updatedAt = new Date().toISOString();
+  await persistCase(item);
   renderEditor(slug);
 }
 
-function removeImage(slug, index) {
+async function removeImage(slug, index) {
   const item = getCase(slug);
   if (!item) return;
   item.images.splice(index, 1);
   if (item.cover && !item.images.includes(item.cover)) item.cover = item.images[0] || "";
-  saveCases();
+  item.updatedAt = new Date().toISOString();
+  await persistCase(item);
   renderEditor(slug);
 }
 
-function addImage(slug) {
+async function addImage(slug) {
   const item = getCase(slug);
   const input = document.querySelector("[data-new-image-input]");
   if (!item || !input) return;
@@ -368,16 +502,18 @@ function addImage(slug) {
   if (!value) return;
   item.images.push(value);
   if (!item.cover) item.cover = value;
-  saveCases();
+  item.updatedAt = new Date().toISOString();
+  await persistCase(item);
   renderEditor(slug);
 }
 
-function reorderByDrag(slug, from, to) {
+async function reorderByDrag(slug, from, to) {
   const item = getCase(slug);
   if (!item || from === to || from < 0 || to < 0) return;
   const [image] = item.images.splice(from, 1);
   item.images.splice(to, 0, image);
-  saveCases();
+  item.updatedAt = new Date().toISOString();
+  await persistCase(item);
   renderEditor(slug);
 }
 
@@ -400,14 +536,20 @@ function openDeleteModal(slug) {
   renderDashboard();
 }
 
-function deleteCase(slug) {
+async function deleteCase(slug) {
+  const { error } = await deleteRemoteCase(slug);
+  if (error) {
+    state.modal = null;
+    setNotice("error", error.message);
+    renderDashboard();
+    return;
+  }
   state.cases = state.cases.filter((item) => item.slug !== slug);
   state.modal = null;
-  saveCases();
   renderDashboard();
 }
 
-document.addEventListener("submit", (event) => {
+document.addEventListener("submit", async (event) => {
   const form = event.target.closest("[data-login-form]");
   if (!form) return;
   event.preventDefault();
@@ -418,7 +560,22 @@ document.addEventListener("submit", (event) => {
     renderLogin("Preencha e-mail e senha.");
     return;
   }
-  sessionStorage.setItem(SESSION_KEY, "active");
+
+  const { data: authData, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) {
+    renderLogin(error.message);
+    return;
+  }
+
+  state.session = authData.session;
+  if (!(await isAdminUser())) {
+    await supabase.auth.signOut();
+    state.session = null;
+    renderLogin("Usuário autenticado, mas sem permissão de admin.");
+    return;
+  }
+
+  await seedCasesIfEmpty();
   renderDashboard();
 });
 
@@ -429,34 +586,35 @@ document.addEventListener("input", (event) => {
   }
 });
 
-document.addEventListener("click", (event) => {
+document.addEventListener("click", async (event) => {
   const target = event.target.closest("button, a");
   if (!target) return;
 
   if (target.matches("[data-logout]")) {
-    sessionStorage.removeItem(SESSION_KEY);
+    if (supabase) await supabase.auth.signOut();
+    state.session = null;
     window.location.hash = "#/";
     render();
   }
 
-  if (target.matches("[data-create-case]")) createCase();
+  if (target.matches("[data-create-case]")) await createCase();
 
   if (target.matches("[data-filter]")) {
     state.tag = target.dataset.filter;
     renderDashboard();
   }
 
-  if (target.matches("[data-save-case]")) saveCurrentCase(target.dataset.saveCase);
-  if (target.matches("[data-add-image]")) addImage(target.dataset.addImage);
+  if (target.matches("[data-save-case]")) await saveCurrentCase(target.dataset.saveCase);
+  if (target.matches("[data-add-image]")) await addImage(target.dataset.addImage);
 
   if (target.matches("[data-move-image]")) {
     const slug = document.querySelector("[data-image-list]")?.dataset.imageList;
-    moveImage(slug, Number(target.dataset.moveImage), Number(target.dataset.direction));
+    await moveImage(slug, Number(target.dataset.moveImage), Number(target.dataset.direction));
   }
 
   if (target.matches("[data-remove-image]")) {
     const slug = document.querySelector("[data-image-list]")?.dataset.imageList;
-    removeImage(slug, Number(target.dataset.removeImage));
+    await removeImage(slug, Number(target.dataset.removeImage));
   }
 
   if (target.matches("[data-delete-case]")) openDeleteModal(target.dataset.deleteCase);
@@ -464,7 +622,7 @@ document.addEventListener("click", (event) => {
     state.modal = null;
     renderDashboard();
   }
-  if (target.matches("[data-confirm-delete]")) deleteCase(target.dataset.confirmDelete);
+  if (target.matches("[data-confirm-delete]")) await deleteCase(target.dataset.confirmDelete);
 });
 
 document.addEventListener("dragstart", (event) => {
@@ -494,4 +652,5 @@ document.addEventListener("dragend", () => {
 window.addEventListener("hashchange", render);
 
 await loadCases();
+await loadSession();
 render();
