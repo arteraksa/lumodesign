@@ -1,5 +1,6 @@
 const CASES_URL = "./data/cases.json";
-const STORAGE_KEY = "raksa-admin-cases-v1";
+const STORAGE_KEY = "raksa-admin-cases-v2";
+const LEGACY_STORAGE_KEYS = ["raksa-admin-cases-v1"];
 const ADMINS_TABLE = "admin_users";
 const CASES_TABLE = "cases";
 const IMAGE_BUCKET = "case-images";
@@ -101,6 +102,10 @@ function saveCases() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.cases));
 }
 
+function clearLegacyStoredCases() {
+  for (const key of LEGACY_STORAGE_KEYS) localStorage.removeItem(key);
+}
+
 function isLoggedIn() {
   return Boolean(state.session);
 }
@@ -135,6 +140,8 @@ async function loadCases() {
   }
 
   state.cases = data.length ? data.map(fromSupabaseCase) : initialCases;
+  clearLegacyStoredCases();
+  saveCases();
 }
 
 async function loadSession() {

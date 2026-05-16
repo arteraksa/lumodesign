@@ -8,6 +8,7 @@
     "start": "node scripts/serve.mjs",
     "check": "node scripts/check-assets.mjs",
     "audit:framer": "node scripts/audit-framer-links.mjs",
+    "sync:framer-covers": "node scripts/sync-framer-case-covers.mjs",
     "generate:admin-cases": "node scripts/generate-admin-cases.mjs",
     "verify": "npm run check && npm run audit:framer"
   }
