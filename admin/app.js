@@ -2,6 +2,9 @@ const CASES_URL = "./data/cases.json";
 const STORAGE_KEY = "raksa-admin-cases-v1";
 const ADMINS_TABLE = "admin_users";
 const CASES_TABLE = "cases";
+const IMAGE_BUCKET = "case-images";
+const PAGE_BASE = "/raksadesign";
+const ACCEPTED_IMAGE_TYPES = new Set(["image/png", "image/jpeg"]);
 const TAGS = ["UI/UX Design", "Desenvolvimento", "Branding", "Editorial"];
 
 const app = document.querySelector("#app");
@@ -20,6 +23,7 @@ const state = {
   notice: null,
   modal: null,
   draggingImageIndex: null,
+  dragOverImageIndex: null,
 };
 
 const logo = `
@@ -49,6 +53,39 @@ function slugify(value) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function normalizeAssetUrl(value = "") {
+  const url = String(value || "").trim();
+  if (url.startsWith("/framerusercontent.com/") || url.startsWith("/vendor/")) return `${PAGE_BASE}${url}`;
+  return url;
+}
+
+function fileExtension(file) {
+  if (file.type === "image/png") return "png";
+  if (file.type === "image/jpeg") return "jpg";
+  return "";
+}
+
+function storagePathFromPublicUrl(url = "") {
+  if (!supabaseConfig.url || !url.startsWith(supabaseConfig.url)) return "";
+  const marker = `/storage/v1/object/public/${IMAGE_BUCKET}/`;
+  const pathIndex = url.indexOf(marker);
+  if (pathIndex < 0) return "";
+  const path = url.slice(pathIndex + marker.length).split("?")[0];
+  return decodeURIComponent(path);
+}
+
+function isManagedUpload(url = "") {
+  return Boolean(storagePathFromPublicUrl(url));
+}
+
+async function deleteUploadedFileIfUnused(url, item) {
+  const path = storagePathFromPublicUrl(url);
+  if (!path || !supabase) return;
+  const stillUsed = item.cover === url || item.images.includes(url);
+  if (stillUsed) return;
+  await supabase.storage.from(IMAGE_BUCKET).remove([path]);
 }
 
 function getStoredCases() {
@@ -129,8 +166,8 @@ function fromSupabaseCase(row) {
     title: row.title,
     tags: row.tags || [],
     description: row.description || "",
-    cover: row.cover || "",
-    images: row.images || [],
+    cover: normalizeAssetUrl(row.cover),
+    images: (row.images || []).map(normalizeAssetUrl),
     updatedAt: row.updated_at,
   };
 }
@@ -328,7 +365,7 @@ function renderEditor(slug) {
         </div>
         <div class="editor-actions">
           <a class="button button-secondary" href="#/">Voltar</a>
-          <a class="button button-secondary" href="/cases/${encodeURIComponent(item.slug)}" target="_blank" rel="noopener">Ver case</a>
+          <a class="button button-secondary" href="${PAGE_BASE}/cases/${encodeURIComponent(item.slug)}" target="_blank" rel="noopener">Ver case</a>
           <button class="button button-primary" type="button" data-save-case="${escapeHtml(item.slug)}">Salvar alterações</button>
         </div>
       </section>
@@ -362,12 +399,18 @@ function renderEditor(slug) {
             <span>Descritivo</span>
             <textarea class="textarea" name="description">${escapeHtml(item.description)}</textarea>
           </label>
-          <label class="field">
-            <span>Capa</span>
-            <input class="input" name="cover" value="${escapeHtml(item.cover)}">
-          </label>
-          <div class="cover-preview">
-            ${item.cover ? `<img src="${escapeHtml(item.cover)}" alt="${escapeHtml(item.title)}">` : `<div class="case-placeholder">Sem capa</div>`}
+          <div class="field">
+            <span class="field-label">Capa</span>
+            <div class="cover-preview">
+              ${item.cover ? `<img src="${escapeHtml(item.cover)}" alt="${escapeHtml(item.title)}">` : `<div class="case-placeholder">Sem capa</div>`}
+            </div>
+            <div class="upload-actions">
+              <label class="button button-secondary file-button">
+                ${item.cover ? "Substituir capa" : "Enviar capa"}
+                <input type="file" accept="image/png,image/jpeg" data-cover-file="${escapeHtml(item.slug)}">
+              </label>
+              ${item.cover ? `<button class="button button-danger" type="button" data-remove-cover="${escapeHtml(item.slug)}">Excluir capa</button>` : ""}
+            </div>
           </div>
         </form>
 
@@ -379,12 +422,15 @@ function renderEditor(slug) {
           <div class="image-list" data-image-list="${escapeHtml(item.slug)}">
             ${item.images.map((url, index) => renderImageRow(item, url, index)).join("")}
           </div>
-          <div class="add-image">
-            <label class="field">
-              <span>Adicionar imagem</span>
-              <input class="input" data-new-image-input placeholder="Cole a URL da imagem">
+          <div class="upload-zone" data-upload-zone="${escapeHtml(item.slug)}">
+            <div>
+              <strong>Subir imagens</strong>
+              <span>PNG ou JPEG, um ou varios arquivos.</span>
+            </div>
+            <label class="button button-secondary file-button">
+              Selecionar arquivos
+              <input type="file" accept="image/png,image/jpeg" multiple data-case-images-file="${escapeHtml(item.slug)}">
             </label>
-            <button class="button button-secondary" type="button" data-add-image="${escapeHtml(item.slug)}">Adicionar</button>
           </div>
         </section>
       </section>
@@ -393,13 +439,17 @@ function renderEditor(slug) {
 
 function renderImageRow(item, url, index) {
   return `
-    <div class="image-row" draggable="true" data-image-index="${index}" data-image-slug="${escapeHtml(item.slug)}">
+    <div class="image-row ${state.dragOverImageIndex === index ? "is-drop-target" : ""}" draggable="true" data-image-index="${index}" data-image-slug="${escapeHtml(item.slug)}">
+      <button class="drag-handle" type="button" draggable="true" data-drag-handle aria-label="Arrastar para reordenar">
+        <span></span><span></span><span></span>
+      </button>
       <div class="image-thumb">${url ? `<img src="${escapeHtml(url)}" alt="">` : ""}</div>
-      <div class="image-url">${escapeHtml(url)}</div>
+      <div class="image-copy">
+        <strong>Imagem</strong>
+        <span>${isManagedUpload(url) ? "Arquivo enviado" : "Imagem existente"}</span>
+      </div>
       <div class="image-actions">
-        <button class="icon-button" type="button" data-move-image="${index}" data-direction="-1" aria-label="Mover para cima">Acima</button>
-        <button class="icon-button" type="button" data-move-image="${index}" data-direction="1" aria-label="Mover para baixo">Abaixo</button>
-        <button class="icon-button" type="button" data-remove-image="${index}" aria-label="Remover imagem">Remover</button>
+        <button class="icon-button" type="button" data-remove-image="${index}" aria-label="Remover imagem">Excluir</button>
       </div>
     </div>`;
 }
@@ -458,7 +508,6 @@ async function saveCurrentCase(slug) {
   item.id = newSlug;
   item.tags = data.getAll("tags").map(String);
   item.description = String(data.get("description") || "").trim();
-  item.cover = String(data.get("cover") || "").trim();
   item.updatedAt = new Date().toISOString();
   const { error } = await persistCase(item);
   if (error) {
@@ -472,44 +521,100 @@ async function saveCurrentCase(slug) {
   renderEditor(newSlug);
 }
 
-async function moveImage(slug, index, direction) {
+async function uploadImageFile(slug, file, scope) {
+  if (!supabase || !isLoggedIn()) throw new Error("Entre novamente para subir imagens.");
+  if (!ACCEPTED_IMAGE_TYPES.has(file.type)) throw new Error("Envie apenas arquivos PNG ou JPEG.");
+
+  const extension = fileExtension(file);
+  if (!extension) throw new Error("Formato de imagem invalido.");
+
+  const safeSlug = slugify(slug);
+  const fileName = `${scope}-${Date.now()}-${crypto.randomUUID()}.${extension}`;
+  const path = `cases/${safeSlug}/${fileName}`;
+  const { error } = await supabase.storage.from(IMAGE_BUCKET).upload(path, file, {
+    cacheControl: "3600",
+    contentType: file.type,
+    upsert: false,
+  });
+  if (error) throw error;
+
+  const { data } = supabase.storage.from(IMAGE_BUCKET).getPublicUrl(path);
+  return data.publicUrl;
+}
+
+async function replaceCover(slug, file) {
+  const item = getCase(slug);
+  if (!item || !file) return;
+  try {
+    const previousCover = item.cover;
+    const publicUrl = await uploadImageFile(slug, file, "cover");
+    item.cover = publicUrl;
+    item.updatedAt = new Date().toISOString();
+    const { error } = await persistCase(item);
+    if (error) throw error;
+    await deleteUploadedFileIfUnused(previousCover, item);
+    setNotice("success", previousCover ? "Capa substituida." : "Capa enviada.");
+  } catch (error) {
+    setNotice("error", error.message);
+  }
+  renderEditor(item.slug);
+}
+
+async function removeCover(slug) {
   const item = getCase(slug);
   if (!item) return;
-  const target = index + direction;
-  if (target < 0 || target >= item.images.length) return;
-  const [image] = item.images.splice(index, 1);
-  item.images.splice(target, 0, image);
+  const previousCover = item.cover;
+  item.cover = "";
   item.updatedAt = new Date().toISOString();
-  await persistCase(item);
+  const { error } = await persistCase(item);
+  if (error) {
+    setNotice("error", error.message);
+  } else {
+    await deleteUploadedFileIfUnused(previousCover, item);
+    setNotice("success", "Capa excluida.");
+  }
   renderEditor(slug);
+}
+
+async function uploadCaseImages(slug, files) {
+  const item = getCase(slug);
+  if (!item || !files.length) return;
+  try {
+    for (const file of files) {
+      if (!ACCEPTED_IMAGE_TYPES.has(file.type)) throw new Error("Envie apenas arquivos PNG ou JPEG.");
+    }
+    const uploadedUrls = [];
+    for (const file of files) uploadedUrls.push(await uploadImageFile(slug, file, "image"));
+    item.images.push(...uploadedUrls);
+    item.updatedAt = new Date().toISOString();
+    const { error } = await persistCase(item);
+    if (error) throw error;
+    setNotice("success", `${uploadedUrls.length} imagem${uploadedUrls.length === 1 ? "" : "s"} enviada${uploadedUrls.length === 1 ? "" : "s"}.`);
+  } catch (error) {
+    setNotice("error", error.message);
+  }
+  renderEditor(item.slug);
 }
 
 async function removeImage(slug, index) {
   const item = getCase(slug);
   if (!item) return;
-  item.images.splice(index, 1);
-  if (item.cover && !item.images.includes(item.cover)) item.cover = item.images[0] || "";
+  const [removed] = item.images.splice(index, 1);
   item.updatedAt = new Date().toISOString();
-  await persistCase(item);
-  renderEditor(slug);
-}
-
-async function addImage(slug) {
-  const item = getCase(slug);
-  const input = document.querySelector("[data-new-image-input]");
-  if (!item || !input) return;
-  const value = input.value.trim();
-  if (!value) return;
-  item.images.push(value);
-  if (!item.cover) item.cover = value;
-  item.updatedAt = new Date().toISOString();
-  await persistCase(item);
+  const { error } = await persistCase(item);
+  if (error) {
+    setNotice("error", error.message);
+  } else {
+    await deleteUploadedFileIfUnused(removed, item);
+    setNotice("success", "Imagem excluida.");
+  }
   renderEditor(slug);
 }
 
 async function reorderByDrag(slug, from, to) {
   const item = getCase(slug);
-  if (!item || from === to || from < 0 || to < 0) return;
+  if (!item || !Number.isInteger(from) || !Number.isInteger(to) || from === to || from < 0 || to < 0) return;
+  if (from >= item.images.length || to >= item.images.length) return;
   const [image] = item.images.splice(from, 1);
   item.images.splice(to, 0, image);
   item.updatedAt = new Date().toISOString();
@@ -605,12 +710,7 @@ document.addEventListener("click", async (event) => {
   }
 
   if (target.matches("[data-save-case]")) await saveCurrentCase(target.dataset.saveCase);
-  if (target.matches("[data-add-image]")) await addImage(target.dataset.addImage);
-
-  if (target.matches("[data-move-image]")) {
-    const slug = document.querySelector("[data-image-list]")?.dataset.imageList;
-    await moveImage(slug, Number(target.dataset.moveImage), Number(target.dataset.direction));
-  }
+  if (target.matches("[data-remove-cover]")) await removeCover(target.dataset.removeCover);
 
   if (target.matches("[data-remove-image]")) {
     const slug = document.querySelector("[data-image-list]")?.dataset.imageList;
@@ -625,6 +725,21 @@ document.addEventListener("click", async (event) => {
   if (target.matches("[data-confirm-delete]")) await deleteCase(target.dataset.confirmDelete);
 });
 
+document.addEventListener("change", async (event) => {
+  const coverInput = event.target.closest("[data-cover-file]");
+  if (coverInput) {
+    await replaceCover(coverInput.dataset.coverFile, coverInput.files?.[0]);
+    coverInput.value = "";
+    return;
+  }
+
+  const imagesInput = event.target.closest("[data-case-images-file]");
+  if (imagesInput) {
+    await uploadCaseImages(imagesInput.dataset.caseImagesFile, [...(imagesInput.files || [])]);
+    imagesInput.value = "";
+  }
+});
+
 document.addEventListener("dragstart", (event) => {
   const row = event.target.closest("[data-image-index]");
   if (!row) return;
@@ -633,20 +748,47 @@ document.addEventListener("dragstart", (event) => {
 });
 
 document.addEventListener("dragover", (event) => {
-  if (event.target.closest("[data-image-index]")) event.preventDefault();
+  const uploadZone = event.target.closest("[data-upload-zone]");
+  if (uploadZone && [...(event.dataTransfer?.types || [])].includes("Files")) {
+    event.preventDefault();
+    uploadZone.classList.add("is-drop-target");
+    return;
+  }
+
+  const row = event.target.closest("[data-image-index]");
+  if (!row) return;
+  event.preventDefault();
+  state.dragOverImageIndex = Number(row.dataset.imageIndex);
+  document.querySelectorAll(".image-row.is-drop-target").forEach((node) => node.classList.remove("is-drop-target"));
+  row.classList.add("is-drop-target");
 });
 
 document.addEventListener("drop", (event) => {
+  const uploadZone = event.target.closest("[data-upload-zone]");
+  if (uploadZone && event.dataTransfer?.files?.length) {
+    event.preventDefault();
+    uploadZone.classList.remove("is-drop-target");
+    uploadCaseImages(uploadZone.dataset.uploadZone, [...event.dataTransfer.files]);
+    return;
+  }
+
   const row = event.target.closest("[data-image-index]");
   if (!row) return;
   event.preventDefault();
   reorderByDrag(row.dataset.imageSlug, state.draggingImageIndex, Number(row.dataset.imageIndex));
   state.draggingImageIndex = null;
+  state.dragOverImageIndex = null;
 });
 
 document.addEventListener("dragend", () => {
   state.draggingImageIndex = null;
-  document.querySelectorAll(".is-dragging").forEach((node) => node.classList.remove("is-dragging"));
+  state.dragOverImageIndex = null;
+  document.querySelectorAll(".is-dragging, .is-drop-target").forEach((node) => node.classList.remove("is-dragging", "is-drop-target"));
+});
+
+document.addEventListener("dragleave", (event) => {
+  const uploadZone = event.target.closest("[data-upload-zone]");
+  if (uploadZone && !uploadZone.contains(event.relatedTarget)) uploadZone.classList.remove("is-drop-target");
 });
 
 window.addEventListener("hashchange", render);
