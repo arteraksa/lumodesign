@@ -6,7 +6,9 @@ const root = fileURLToPath(new URL("../", import.meta.url));
 const textExtensions = [".css", ".html", ".js", ".json", ".mjs", ".txt"];
 const skippedDirectories = new Set([".git", "node_modules"]);
 const ignoredPaths = [/\.map$/, /^framer\.com\/login$/];
-const assetPattern = /["'`(=]\/((?:framerusercontent\.com|app\.framerstatic\.com|framer\.com|events\.framer\.com|res\.cloudinary\.com|ga\.jspm\.io)\/[^"'`()\s?#]+)/g;
+const pagesBase = "raksadesign";
+const assetPattern = /["'`(=,]\s*\/((?:(?:raksadesign\/)?framerusercontent\.com|(?:raksadesign\/)?vendor|app\.framerstatic\.com|framer\.com|events\.framer\.com|res\.cloudinary\.com|ga\.jspm\.io)\/[^"'`()\s?#,]+)/g;
+const unprefixedPagesAssets = new Set();
 const missing = new Set();
 
 function walk(directory, files = []) {
@@ -18,7 +20,7 @@ function walk(directory, files = []) {
 
     if (stats.isDirectory()) {
       walk(path, files);
-    } else if (textExtensions.some((extension) => path.endsWith(extension))) {
+    } else if (textExtensions.some((extension) => path.endsWith(extension)) || /\.m?js@/.test(path)) {
       files.push(path);
     }
   }
@@ -33,8 +35,23 @@ for (const file of walk(root)) {
     const assetPath = match[1].replace(/&amp;/g, "&");
 
     if (ignoredPaths.some((pattern) => pattern.test(assetPath))) continue;
-    if (!existsSync(join(root, assetPath))) missing.add(`/${assetPath}`);
+
+    if (assetPath.startsWith("framerusercontent.com/") || assetPath.startsWith("vendor/")) {
+      unprefixedPagesAssets.add(`/${assetPath}`);
+    }
+
+    const localAssetPath = assetPath.startsWith(`${pagesBase}/`)
+      ? assetPath.slice(pagesBase.length + 1)
+      : assetPath;
+
+    if (!existsSync(join(root, localAssetPath))) missing.add(`/${assetPath}`);
   }
+}
+
+if (unprefixedPagesAssets.size > 0) {
+  console.error(`Unprefixed GitHub Pages assets (${unprefixedPagesAssets.size}):`);
+  for (const path of unprefixedPagesAssets) console.error(`- ${path}`);
+  process.exit(1);
 }
 
 if (missing.size > 0) {

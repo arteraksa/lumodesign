@@ -3,6 +3,7 @@ import { dirname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
+const pagesBase = "raksadesign";
 const forbiddenHosts = [
   "framer.com",
   "www.framer.com",
@@ -46,9 +47,13 @@ function isForbiddenUrl(value) {
 }
 
 function localPathFromUrl(value, fromFile = "index.html") {
-  if (value.startsWith("/")) return normalize(value.slice(1));
+  if (value.startsWith("/")) {
+    const path = value.slice(1);
+    return normalize(path.startsWith(`${pagesBase}/`) ? path.slice(pagesBase.length + 1) : path);
+  }
   if (value.startsWith("./") || value.startsWith("../")) {
-    return normalize(join(dirname(fromFile), value));
+    const path = normalize(join(dirname(fromFile), value));
+    return path.startsWith(`${pagesBase}/`) ? path.slice(pagesBase.length + 1) : path;
   }
   return null;
 }

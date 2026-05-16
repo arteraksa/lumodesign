@@ -234,7 +234,7 @@ function renderShell(content) {
       <header class="topbar">
         <a href="#/" aria-label="RAKSA Admin">${logo}</a>
         <div class="topbar-actions">
-          <a class="button button-secondary" href="/" target="_blank" rel="noopener">Ver site</a>
+          <a class="button button-secondary" href="/raksadesign/" target="_blank" rel="noopener">Ver site</a>
           <button class="button button-ghost" type="button" data-logout>Sair</button>
         </div>
       </header>

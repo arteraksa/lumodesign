@@ -1,23 +1,52 @@
-import fs from 'fs';
-import path from 'path';
+import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-// Fix index.html
-const indexHtmlPath = 'index.html';
-let indexHtml = fs.readFileSync(indexHtmlPath, 'utf8');
-indexHtml = indexHtml.replace(/"\/framerusercontent\.com/g, '"./framerusercontent.com');
-indexHtml = indexHtml.replace(/"\/admin\//g, '"./admin/');
-fs.writeFileSync(indexHtmlPath, indexHtml);
+const root = fileURLToPath(new URL("../", import.meta.url));
+const pagesBase = "raksadesign";
+const textExtensions = new Set([".css", ".html", ".js", ".json", ".mjs"]);
+const skippedDirectories = new Set([".git", "node_modules"]);
 
-// Fix admin/index.html
-const adminIndexPath = path.join('admin', 'index.html');
-let adminIndex = fs.readFileSync(adminIndexPath, 'utf8');
-adminIndex = adminIndex.replace(/"\/admin\//g, '"./');
-fs.writeFileSync(adminIndexPath, adminIndex);
+function isTextFile(path) {
+  return textExtensions.has(path.slice(path.lastIndexOf("."))) || /\.m?js@/.test(path);
+}
 
-// Fix admin/app.js
-const adminAppPath = path.join('admin', 'app.js');
-let adminApp = fs.readFileSync(adminAppPath, 'utf8');
-adminApp = adminApp.replace(/"\/admin\/data\/cases\.json"/g, '"./data/cases.json"');
-fs.writeFileSync(adminAppPath, adminApp);
+function walk(directory, files = []) {
+  for (const name of readdirSync(directory)) {
+    if (skippedDirectories.has(name)) continue;
 
-console.log('Caminhos corrigidos com sucesso!');
+    const path = join(directory, name);
+    const stats = statSync(path);
+
+    if (stats.isDirectory()) walk(path, files);
+    else if (isTextFile(path)) files.push(path);
+  }
+
+  return files;
+}
+
+let changed = 0;
+
+for (const file of walk(root)) {
+  if (file.endsWith("scripts/fix-paths.mjs")) continue;
+
+  const source = readFileSync(file, "utf8");
+  const assetBase = `/${pagesBase}`;
+  let next = source
+    .replaceAll(`./${pagesBase}/framerusercontent.com/`, `${assetBase}/framerusercontent.com/`)
+    .replaceAll(`./${pagesBase}/vendor/`, `${assetBase}/vendor/`)
+    .replaceAll(`${assetBase}/framerusercontent.com/`, "/framerusercontent.com/")
+    .replaceAll(`${assetBase}/vendor/`, "/vendor/")
+    .replaceAll("/framerusercontent.com/", `${assetBase}/framerusercontent.com/`)
+    .replaceAll("/vendor/", `${assetBase}/vendor/`)
+    .replaceAll('href="/admin/', 'href="./admin/')
+    .replaceAll('src="/admin/', 'src="./admin/')
+    .replaceAll('"/admin/data/cases.json"', '"./data/cases.json"');
+
+  if (next !== source) {
+    writeFileSync(file, next);
+    changed += 1;
+  }
+}
+
+console.log(`Caminhos corrigidos em ${changed} arquivos.`);

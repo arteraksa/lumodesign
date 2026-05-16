@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 //@ts-ignore
-import { isMotionValue } from "/framerusercontent.com/modules/3mKFSGQqKHV82uOV1eBc/5fbRLvOpxZC0JOXugvwm/isMotionValue.js";
+import { isMotionValue } from "/raksadesign/framerusercontent.com/modules/3mKFSGQqKHV82uOV1eBc/5fbRLvOpxZC0JOXugvwm/isMotionValue.js";
 export function useOnChange(value, callback) {
     useEffect(()=>// @ts-ignore this should be detected as a MV :shrug:
         isMotionValue(value) ? value.onChange(callback) : undefined

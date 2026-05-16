@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const port = Number(process.env.PORT || 4173);
+const pagesBase = "/raksadesign";
 
 const mimeTypes = {
   ".avif": "image/avif",
@@ -26,7 +27,10 @@ const mimeTypes = {
 };
 
 function resolvePath(urlPath) {
-  const decoded = decodeURIComponent(urlPath.split("?")[0]);
+  let decoded = decodeURIComponent(urlPath.split("?")[0]);
+  if (decoded === pagesBase) decoded = "/";
+  else if (decoded.startsWith(`${pagesBase}/`)) decoded = decoded.slice(pagesBase.length);
+
   const cleanPath = normalize(decoded).replace(/^(\.\.[/\\])+/, "");
   const candidate = join(root, cleanPath);
 

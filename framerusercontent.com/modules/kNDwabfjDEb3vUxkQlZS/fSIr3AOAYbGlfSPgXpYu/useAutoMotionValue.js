@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef } from "react";
 import { motionValue, animate, RenderTarget } from "framer";
 // @ts-ignore
-import { isMotionValue } from "/framerusercontent.com/modules/3mKFSGQqKHV82uOV1eBc/5fbRLvOpxZC0JOXugvwm/isMotionValue.js";
+import { isMotionValue } from "/raksadesign/framerusercontent.com/modules/3mKFSGQqKHV82uOV1eBc/5fbRLvOpxZC0JOXugvwm/isMotionValue.js";
 // @ts-ignore
-import { useConstant } from "/framerusercontent.com/modules/ExNgrA7EJTKUPpH6vIlN/eiOrSJ2Ab5M9jPCvVwUz/useConstant.js";
+import { useConstant } from "/raksadesign/framerusercontent.com/modules/ExNgrA7EJTKUPpH6vIlN/eiOrSJ2Ab5M9jPCvVwUz/useConstant.js";
 export function useAutoMotionValue(inputValue, options) {
     var ref;
     // Put options on a local ref
