@@ -300,6 +300,8 @@
   }
 
   function isInsideSiteChrome(element) {
+    if (element.closest?.("[data-raksa-case-filters='true']")) return false;
+
     for (let node = element; node && node !== document.body; node = node.parentElement) {
       const name = String(node.getAttribute?.("data-framer-name") || "").toLowerCase();
       if (node.matches?.("header, footer, nav")) return true;
@@ -341,6 +343,8 @@
   function annotateCaseCard(anchor, item, slug = item?.slug || caseSlugFromAnchor(anchor)) {
     if (!slug) return;
     anchor.dataset.raksaCaseCard = "true";
+    anchor.dataset.raksaCaseFilterable = "true";
+    delete anchor.dataset.raksaCaseHomeExcluded;
     anchor.dataset.raksaCaseSlug = slug;
     anchor.dataset.raksaCaseTags = tagsFor(item).join("|");
     anchor.href = caseUrl(slug);
@@ -619,24 +623,32 @@
       .sort((a, b) => Number(a.home_order ?? 999) - Number(b.home_order ?? 999));
     const selected = (featured.length ? featured : cases).slice(0, 9);
     const cards = caseCardAnchors();
+    const activeCards = [];
 
     groupedCards(cards).forEach((group) => {
       group.forEach((anchor, index) => {
         const item = selected[index];
         if (!item) {
           anchor.hidden = true;
+          anchor.dataset.raksaCaseFilterable = "false";
+          anchor.dataset.raksaCaseHomeExcluded = "true";
           return;
         }
 
         anchor.hidden = false;
         anchor.dataset.raksaCaseCard = "true";
+        anchor.dataset.raksaCaseFilterable = "true";
+        delete anchor.dataset.raksaCaseHomeExcluded;
         anchor.dataset.raksaCaseSlug = item.slug;
         anchor.dataset.raksaCaseTags = tagsFor(item).join("|");
         anchor.href = caseUrl(item.slug);
         anchor.setAttribute("aria-label", item.title);
         updateCardCover(anchor, item);
+        activeCards.push(anchor);
       });
     });
+
+    return activeCards;
   }
 
   function syncExistingCaseCards(cases) {
@@ -769,6 +781,11 @@
     });
 
     caseCardAnchors().forEach((anchor) => {
+      if (anchor.dataset.raksaCaseFilterable === "false") {
+        anchor.hidden = true;
+        return;
+      }
+
       const tags = (anchor.dataset.raksaCaseTags || "").split("|").filter(Boolean);
       anchor.hidden = activeCaseFilter !== "Todos" && !tags.includes(activeCaseFilter);
     });
@@ -804,8 +821,7 @@
     }, true);
   }
 
-  function enhanceCasesIndex(cases) {
-    const cards = annotateCaseCards(cases);
+  function enhanceCaseFilters(cards) {
     if (!cards.length) return;
 
     injectEnhancementStyle();
@@ -820,6 +836,16 @@
     });
 
     applyCaseFilter(activeCaseFilter);
+  }
+
+  function enhanceHomeCases(cases) {
+    const cards = applyHomeCases(cases);
+    enhanceCaseFilters(cards);
+  }
+
+  function enhanceCasesIndex(cases) {
+    const cards = annotateCaseCards(cases);
+    enhanceCaseFilters(cards);
   }
 
   function startContentGuard(sync) {
@@ -921,7 +947,7 @@
           .then((localCases) => {
             const cases = localCases.map(normalizedCase);
             if (!cases.length || window.RAKSA_PUBLIC_CONTENT_STATUS.mode === "home") return;
-            const sync = () => syncExistingCaseCards(cases);
+            const sync = () => enhanceHomeCases(cases);
             window.RAKSA_PUBLIC_CONTENT_STATUS.localCases = cases.length;
             window.RAKSA_PUBLIC_CONTENT_STATUS.mode = "home_local_covers";
             sync();
@@ -934,7 +960,7 @@
       window.RAKSA_PUBLIC_CONTENT_STATUS.cases = cases.length;
       if (!cases.length) return;
       if (homeRoute) {
-        const sync = () => applyHomeCases(cases);
+        const sync = () => enhanceHomeCases(cases);
         window.RAKSA_PUBLIC_CONTENT_STATUS.mode = "home";
         sync();
         startContentGuard(sync);
