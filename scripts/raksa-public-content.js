@@ -623,7 +623,6 @@
       .sort((a, b) => Number(a.home_order ?? 999) - Number(b.home_order ?? 999));
     const selected = (featured.length ? featured : cases).slice(0, 9);
     const cards = caseCardAnchors();
-    const activeCards = [];
 
     groupedCards(cards).forEach((group) => {
       group.forEach((anchor, index) => {
@@ -644,11 +643,8 @@
         anchor.href = caseUrl(item.slug);
         anchor.setAttribute("aria-label", item.title);
         updateCardCover(anchor, item);
-        activeCards.push(anchor);
       });
     });
-
-    return activeCards;
   }
 
   function syncExistingCaseCards(cases) {
@@ -838,11 +834,6 @@
     applyCaseFilter(activeCaseFilter);
   }
 
-  function enhanceHomeCases(cases) {
-    const cards = applyHomeCases(cases);
-    enhanceCaseFilters(cards);
-  }
-
   function enhanceCasesIndex(cases) {
     const cards = annotateCaseCards(cases);
     enhanceCaseFilters(cards);
@@ -947,7 +938,7 @@
           .then((localCases) => {
             const cases = localCases.map(normalizedCase);
             if (!cases.length || window.RAKSA_PUBLIC_CONTENT_STATUS.mode === "home") return;
-            const sync = () => enhanceHomeCases(cases);
+            const sync = () => syncExistingCaseCards(cases);
             window.RAKSA_PUBLIC_CONTENT_STATUS.localCases = cases.length;
             window.RAKSA_PUBLIC_CONTENT_STATUS.mode = "home_local_covers";
             sync();
@@ -960,7 +951,7 @@
       window.RAKSA_PUBLIC_CONTENT_STATUS.cases = cases.length;
       if (!cases.length) return;
       if (homeRoute) {
-        const sync = () => enhanceHomeCases(cases);
+        const sync = () => applyHomeCases(cases);
         window.RAKSA_PUBLIC_CONTENT_STATUS.mode = "home";
         sync();
         startContentGuard(sync);
