@@ -41,15 +41,23 @@ select id from auth.users where email = 'admin@example.com';
 
 The SQL applied to Supabase is tracked in `supabase/schema.sql`.
 
+The admin is moving toward Supabase as the source of truth for CMS and CRM data.
+Apply `supabase/schema.sql` to the remote project before relying on the newer
+fields such as `published`, `featured_on_home`, `home_order`, clients, projects,
+budgets, service orders, time entries, site settings, and metrics. The current
+admin keeps a compatibility fallback for the older `cases` schema while the
+database migration is pending.
+
 ## Project layout
 
 - `index.html` is the exported page, rewritten to use local mirrored asset paths.
 - `framerusercontent.com/`, `res.cloudinary.com/`, `_DataURI/`, and `vendor/` contain the mirrored assets and runtime files used by the public site.
-- `scripts/serve.mjs` serves the static site and falls back to `index.html` for Framer routes such as `/cases`.
+- `scripts/serve.mjs` serves the static site and falls back to `cases/index.html` for dynamic case detail routes such as `/cases/new-slug/`.
 - `scripts/check-assets.mjs` checks that local static references across the export exist.
 - `scripts/audit-framer-links.mjs` checks the reachable runtime graph for external Framer module/script dependencies.
-- `scripts/generate-admin-cases.mjs` regenerates the initial admin case data from the static case pages.
-- `admin/` contains the admin interface for case management. It uses Supabase Auth and persists cases in `public.cases` when configured, with local JSON/browser storage as a fallback while the public key is missing.
+- `scripts/generate-admin-cases.mjs` regenerates the initial admin case data from the real Framer case galleries, avoiding previous/next recommendation images.
+- `scripts/raksa-public-content.js` lets the home and `/cases/` read published portfolio data directly from Supabase. Existing case detail pages keep the Framer-exported layout.
+- `admin/` contains the admin interface for case management and the first CRM modules: clients, projects, budgets, service orders, time entries, and metrics. It uses Supabase Auth and persists cases in `public.cases` when configured, with local JSON/browser storage as a fallback while the public key is missing.
 
 ## Notes
 

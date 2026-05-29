@@ -3,12 +3,45 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-const cases = JSON.parse(readFileSync(join(root, "admin/data/cases.json"), "utf8"));
-const bySlug = new Map(cases.map((item) => [normalizeSlug(item.slug), item]));
+const localCases = JSON.parse(readFileSync(join(root, "admin/data/cases.json"), "utf8"));
+const supabaseConfig = parseSupabaseConfig(readFileSync(join(root, "admin/supabase-config.js"), "utf8"));
+const bySlug = new Map(localCases.map((item) => [normalizeSlug(item.slug), item]));
 const skippedDirectories = new Set([".git", "node_modules"]);
+
+if (supabaseConfig) {
+  const remoteCases = await loadSupabaseCases(supabaseConfig);
+  for (const item of remoteCases) bySlug.set(normalizeSlug(item.slug), item);
+}
 
 function normalizeSlug(value = "") {
   return String(value).normalize("NFC");
+}
+
+function parseSupabaseConfig(source) {
+  const url = source.match(/url:\s*["']([^"']+)["']/)?.[1];
+  const anonKey = source.match(/anonKey:\s*["']([^"']+)["']/)?.[1];
+  return url && anonKey ? { url, anonKey } : null;
+}
+
+async function loadSupabaseCases(config) {
+  const url = new URL("/rest/v1/cases", config.url);
+  url.searchParams.set("select", "slug,cover");
+  url.searchParams.set("published", "eq.true");
+  url.searchParams.set("order", "title.asc");
+
+  const response = await fetch(url, {
+    headers: {
+      apikey: config.anonKey,
+      Authorization: `Bearer ${config.anonKey}`,
+    },
+  });
+
+  if (!response.ok) {
+    const message = await response.text();
+    throw new Error(`Nao foi possivel carregar cases do Supabase: ${message || response.statusText}`);
+  }
+
+  return response.json();
 }
 
 function walk(directory, files = []) {

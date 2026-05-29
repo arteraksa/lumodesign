@@ -26,13 +26,45 @@ const mimeTypes = {
   ".woff2": "font/woff2"
 };
 
-function resolvePath(urlPath) {
+function getSitePath(urlPath) {
   let decoded = decodeURIComponent(urlPath.split("?")[0]);
   if (decoded === pagesBase) decoded = "/";
   else if (decoded.startsWith(`${pagesBase}/`)) decoded = decoded.slice(pagesBase.length);
 
-  const cleanPath = normalize(decoded).replace(/^(\.\.[/\\])+/, "");
-  const candidate = join(root, cleanPath);
+  return decoded;
+}
+
+function getCandidatePath(decodedPath) {
+  const cleanPath = normalize(decodedPath).replace(/^(\.\.[/\\])+/, "");
+  return join(root, cleanPath);
+}
+
+function getDirectoryRedirect(urlPath) {
+  const requestPath = urlPath.split("?")[0] || "/";
+  if (requestPath.endsWith("/")) return "";
+
+  const decoded = getSitePath(urlPath);
+  const candidate = getCandidatePath(decoded);
+  const directoryIndex = join(candidate, "index.html");
+
+  if (
+    candidate.startsWith(root) &&
+    existsSync(candidate) &&
+    statSync(candidate).isDirectory() &&
+    directoryIndex.startsWith(root) &&
+    existsSync(directoryIndex) &&
+    statSync(directoryIndex).isFile()
+  ) {
+    const query = urlPath.includes("?") ? `?${urlPath.split("?").slice(1).join("?")}` : "";
+    return `${requestPath}/${query}`;
+  }
+
+  return "";
+}
+
+function resolvePath(urlPath) {
+  const decoded = getSitePath(urlPath);
+  const candidate = getCandidatePath(decoded);
 
   if (candidate.startsWith(root) && existsSync(candidate) && statSync(candidate).isFile()) {
     return candidate;
@@ -43,12 +75,27 @@ function resolvePath(urlPath) {
     return directoryIndex;
   }
 
+  if (/^\/cases\/[^/]+\/?$/.test(decoded)) {
+    return join(root, "cases", "index.html");
+  }
+
   return join(root, "index.html");
 }
 
+function contentExtension(filePath) {
+  return extname(filePath.replace(/\.js@[\d.]+$/, ".js"));
+}
+
 createServer((request, response) => {
+  const redirect = getDirectoryRedirect(request.url || "/");
+  if (redirect) {
+    response.writeHead(308, { Location: redirect });
+    response.end();
+    return;
+  }
+
   const filePath = resolvePath(request.url || "/");
-  const extension = extname(filePath);
+  const extension = contentExtension(filePath);
   const stats = statSync(filePath);
 
   response.setHeader("Content-Type", mimeTypes[extension] || "application/octet-stream");
