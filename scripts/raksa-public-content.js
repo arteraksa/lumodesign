@@ -1,6 +1,7 @@
 (() => {
   const PAGE_BASE = "/raksadesign";
   const CASES_PATH = `${PAGE_BASE}/cases/`;
+  const CASE_TEMPLATE_PATH = `${PAGE_BASE}/cases/atitus-educação/`;
   const BASIC_COLUMNS = "id,slug,title,tags,description,cover,images,updated_at";
   const EXTENDED_COLUMNS = `${BASIC_COLUMNS},excerpt,published,featured_on_home,home_order,content_blocks,created_at`;
   const FULL_COLUMNS = `${EXTENDED_COLUMNS},external_url`;
@@ -14,6 +15,8 @@
   let contentGuardObserver = null;
   let contentGuardTimer = 0;
   let partialFilterControls = [];
+  let caseTemplatePromise = null;
+  let dynamicCaseRenderingSlug = "";
 
   function sitePath(pathname = window.location.pathname) {
     if (pathname === PAGE_BASE) return "/";
@@ -62,6 +65,11 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  function setTextContent(element, value = "") {
+    if (!element) return;
+    element.textContent = value;
   }
 
   function cleanMetadata(metadata = {}) {
@@ -351,8 +359,9 @@
     if (item?.title) anchor.setAttribute("aria-label", item.title);
     if (item) {
       updateCardCover(anchor, item);
+      updateDynamicCardTitle(anchor, item);
+      updateCardBadges(anchor, item);
       if (anchor.dataset.raksaDynamicCard === "true") {
-        updateDynamicCardTitle(anchor, item);
         ensureDynamicCardOverlay(anchor, item);
       }
     }
@@ -370,17 +379,63 @@
     if (textNodes[0]) textNodes[0].textContent = item.title;
   }
 
-  function ensureDynamicCardOverlay(anchor, item) {
-    const existing = anchor.querySelector(":scope > .raksa-dynamic-card-overlay");
-    if (existing) existing.remove();
+  function updateCardBadges(anchor, item) {
+    const tags = tagsFor(item);
+    anchor.querySelectorAll("[data-framer-name='badge']").forEach((badge, index) => {
+      const tag = tags[index];
+      const textNode = Array.from(badge.querySelectorAll("p, h1, h2, h3, h4, h5, h6"))
+        .find((node) => shortText(node.textContent, 90));
+      if (tag) {
+        if (textNode) textNode.textContent = tag;
+        badge.hidden = false;
+        badge.style.display = "";
+      } else {
+        badge.hidden = true;
+        badge.style.display = "none";
+      }
+    });
+  }
 
-    const overlay = document.createElement("span");
-    overlay.className = "raksa-dynamic-card-overlay";
+  function ensureDynamicCardOverlay(anchor, item) {
+    anchor.querySelectorAll(".raksa-dynamic-card-overlay, .raksa-dynamic-framer-hover, .raksa-dynamic-framer-blur")
+      .forEach((node) => node.remove());
+    const cardShell = anchor.querySelector("[data-framer-name='Variant 1']") || anchor;
+
+    const overlay = document.createElement("div");
+    overlay.className = "framer-1hjnzcb raksa-dynamic-framer-hover";
+    overlay.dataset.framerName = "Location";
     overlay.innerHTML = `
-      <strong>${escapeHtml(item.title || item.slug)}</strong>
-      <span>${escapeHtml(tagsFor(item).join(" / ") || "Case")}</span>
+      <div class="framer-12pffjj" data-framer-name="Top">
+        <div class="framer-154ku1h" data-framer-component-type="RichTextContainer" style="--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;text-shadow:rgb(0, 0, 0) 1px 1px 15px;will-change:transform;opacity:1;transform:none">
+          <p class="framer-text framer-styles-preset-1wztk85" data-styles-preset="FC000Yg_M" style="--framer-text-alignment:center;">${escapeHtml(item.title || item.slug)}</p>
+        </div>
+      </div>
+      <div class="framer-163e9mi" style="will-change:transform;opacity:1;transform:none">
+        <div class="framer-196ls8" data-border="true" data-framer-name="badge" style="--border-bottom-width:1px;--border-color:rgba(255, 255, 255, 0.2);--border-left-width:1px;--border-right-width:1px;--border-style:solid;--border-top-width:1px;background-color:rgba(54, 54, 54, 0.2);border-radius:1000px;opacity:1;">
+          <div class="framer-1ly6p7u" data-framer-name="Heading" data-framer-component-type="RichTextContainer" style="justify-content:center;--extracted-r6o4lv:var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none;opacity:1;">
+            <p class="framer-text framer-styles-preset-1bpsbw4" data-styles-preset="WK2SQ_2kV" style="--framer-text-alignment:left;--framer-text-color:var(--extracted-r6o4lv, var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255)));">${escapeHtml(tagsFor(item)[0] || "Case")}</p>
+          </div>
+        </div>
+      </div>
     `;
-    anchor.appendChild(overlay);
+
+    const blur = document.createElement("div");
+    blur.className = "framer-k46fe6-container raksa-dynamic-framer-blur";
+    blur.innerHTML = `
+      <div style="position:relative;width:100%;height:100%;border-radius:30px;">
+        ${[0.1875, 0.375, 0.75, 1.5, 3, 6, 12, 24].map((blurValue, index) => {
+          const start = index * 12.5;
+          const mid = (index + 1) * 12.5;
+          const end = Math.min(100, (index + 3) * 12.5);
+          const mask = index === 7
+            ? `linear-gradient(rgba(0, 0, 0, 0) 87.5%, rgb(0, 0, 0) 100%)`
+            : `linear-gradient(rgba(0, 0, 0, 0) ${start}%, rgb(0, 0, 0) ${mid}%, rgb(0, 0, 0) ${Math.min(100, mid + 12.5)}%, rgba(0, 0, 0, 0) ${end}%)`;
+          return `<div style="position:absolute;inset:0;z-index:${index + 1};backdrop-filter:blur(${blurValue}px);-webkit-backdrop-filter:blur(${blurValue}px);mask-image:${mask};-webkit-mask-image:${mask};border-radius:30px;pointer-events:none;"></div>`;
+        }).join("")}
+      </div>
+    `;
+    cardShell.appendChild(overlay);
+    cardShell.appendChild(blur);
   }
 
   function ensureCaseIndexCards(cases) {
@@ -460,9 +515,7 @@
         opacity: 1 !important;
         transform: none !important;
       }
-      #main a[data-raksa-dynamic-card] > :not(.raksa-dynamic-card-overlay),
-      #main a[data-raksa-dynamic-card] > :not(.raksa-dynamic-card-overlay) * {
-        filter: none !important;
+      #main a[data-raksa-dynamic-card] > :not(.raksa-dynamic-framer-hover):not(.raksa-dynamic-framer-blur) {
         opacity: 1 !important;
         transform: none !important;
       }
@@ -471,53 +524,24 @@
         overflow: hidden;
         position: relative;
       }
-      #main a[data-raksa-dynamic-card]::after {
-        background: linear-gradient(180deg, rgba(11, 3, 18, 0), rgba(11, 3, 18, 0.9));
-        content: "";
-        inset: 0;
-        opacity: 0;
-        pointer-events: none;
-        position: absolute;
-        transition: opacity 180ms ease;
-        z-index: 6;
-      }
-      #main a[data-raksa-dynamic-card]:hover::after,
-      #main a[data-raksa-dynamic-card]:focus-visible::after {
-        opacity: 1;
-      }
-      .raksa-dynamic-card-overlay {
-        bottom: 18px;
-        color: #fff;
-        display: grid;
-        gap: 6px;
-        left: 18px;
+      #main a[data-raksa-dynamic-card] .raksa-dynamic-framer-hover {
+        background: linear-gradient(180deg, rgba(22, 6, 41, 0) 0%, var(--token-62aa78d2-963e-44c5-9eb4-156169cb3e7f, rgb(22, 6, 41)) 100%);
         opacity: 0 !important;
         pointer-events: none;
-        position: absolute;
-        right: 18px;
-        transform: translateY(8px) !important;
-        transition: opacity 180ms ease, transform 180ms ease;
-        z-index: 7;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 6;
       }
-      #main a[data-raksa-dynamic-card]:hover .raksa-dynamic-card-overlay,
-      #main a[data-raksa-dynamic-card]:focus-visible .raksa-dynamic-card-overlay {
+      #main a[data-raksa-dynamic-card] .raksa-dynamic-framer-blur {
+        opacity: 0 !important;
+        pointer-events: none;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 5;
+      }
+      #main a[data-raksa-dynamic-card]:hover .raksa-dynamic-framer-hover,
+      #main a[data-raksa-dynamic-card]:focus-visible .raksa-dynamic-framer-hover,
+      #main a[data-raksa-dynamic-card]:hover .raksa-dynamic-framer-blur,
+      #main a[data-raksa-dynamic-card]:focus-visible .raksa-dynamic-framer-blur {
         opacity: 1 !important;
-        transform: none !important;
-      }
-      #main a[data-raksa-dynamic-card]:hover img,
-      #main a[data-raksa-dynamic-card]:focus-visible img {
-        transform: scale(1.035) !important;
-      }
-      .raksa-dynamic-card-overlay strong {
-        color: #fff;
-        font-size: clamp(18px, 2.3vw, 30px);
-        line-height: 1.05;
-      }
-      .raksa-dynamic-card-overlay span {
-        color: rgba(255, 255, 255, 0.72);
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
       }
       .raksa-dynamic-case {
         background: #0b0312;
@@ -643,6 +667,8 @@
         anchor.href = caseUrl(item.slug);
         anchor.setAttribute("aria-label", item.title);
         updateCardCover(anchor, item);
+        updateDynamicCardTitle(anchor, item);
+        updateCardBadges(anchor, item);
       });
     });
   }
@@ -866,17 +892,377 @@
     [250, 800, 1800, 3200, 5000].forEach((delay) => window.setTimeout(sync, delay));
   }
 
-  function renderDynamicCaseDetail(cases) {
-    const slug = normalizeSlug(caseSlugFromPath());
-    const item = caseBySlug(cases).get(slug);
-    const root = document.querySelector("#main");
-    if (!root || !item || item.published === false) return;
-    if (root.querySelector(`.raksa-dynamic-case[data-raksa-case-slug="${CSS.escape(slug)}"]`)) return;
+  async function loadCaseTemplateDocument() {
+    if (!caseTemplatePromise) {
+      caseTemplatePromise = fetch(CASE_TEMPLATE_PATH, { cache: "force-cache" })
+        .then((response) => {
+          if (!response.ok) throw new Error(`Template ${response.status}`);
+          return response.text();
+        })
+        .then((html) => new DOMParser().parseFromString(html, "text/html"));
+    }
 
+    return caseTemplatePromise;
+  }
+
+  function injectCaseTemplateAssets(templateDocument) {
+    if (!document.querySelector("[data-raksa-case-template-assets]")) {
+      templateDocument
+        .querySelectorAll("style[data-framer-breakpoint-css], style[data-framer-css-ssr-minified]")
+        .forEach((style) => {
+          const clone = style.cloneNode(true);
+          clone.dataset.raksaCaseTemplateAssets = "true";
+          document.head.appendChild(clone);
+        });
+    }
+
+    const templateSvg = templateDocument.querySelector("#svg-templates");
+    const currentSvg = document.querySelector("#svg-templates");
+    if (templateSvg && currentSvg) {
+      templateSvg.querySelectorAll("[id]").forEach((node) => {
+        if (!document.getElementById(node.id)) currentSvg.appendChild(node.cloneNode(true));
+      });
+    } else if (templateSvg && !currentSvg) {
+      document.body.appendChild(templateSvg.cloneNode(true));
+    }
+  }
+
+  function replaceMainWithTemplate(root, templateDocument) {
+    const templateMain = templateDocument.querySelector("#main");
+    if (!templateMain) throw new Error("Case template missing #main");
+
+    [...root.attributes].forEach((attribute) => {
+      if (attribute.name !== "id") root.removeAttribute(attribute.name);
+    });
+
+    [...templateMain.attributes].forEach((attribute) => {
+      if (attribute.name !== "id") root.setAttribute(attribute.name, attribute.value);
+    });
+
+    root.innerHTML = templateMain.innerHTML;
+  }
+
+  function setImageSource(image, url, alt = "") {
+    if (!image || !url) return;
+    const srcset = coverSrcSet(url);
+    image.setAttribute("src", url);
+    image.setAttribute("srcset", srcset);
+    image.setAttribute("sizes", image.getAttribute("sizes") || "100vw");
+    image.setAttribute("alt", alt);
+    image.removeAttribute("data-framer-original-sizes");
+  }
+
+  function mediaForCase(item) {
+    const seen = new Set();
+    return [item.cover, ...(item.images || [])].filter((url) => {
+      if (!url || seen.has(url)) return false;
+      seen.add(url);
+      return true;
+    });
+  }
+
+  function imageKey(image) {
+    const value = image.getAttribute("src") || "";
+    return value.split("?")[0];
+  }
+
+  function groupSequentialImages(images) {
+    const groups = [];
+    images.forEach((image) => {
+      const key = imageKey(image);
+      const previous = groups[groups.length - 1];
+      if (previous && previous.key === key) previous.images.push(image);
+      else groups.push({ key, images: [image] });
+    });
+    return groups;
+  }
+
+  function templateImageGroups(root) {
+    return groupSequentialImages(Array.from(root.querySelectorAll("img")));
+  }
+
+  function imageDisplayUnit(image) {
+    return image.closest(".ssr-variant") || image.closest("[data-framer-name='Image']") || image.parentElement;
+  }
+
+  function updateImageAspectRatio(image) {
+    const frame = image.closest("[data-framer-name='Image']");
+    if (!frame) return;
+
+    const sync = () => {
+      if (image.naturalWidth && image.naturalHeight) {
+        frame.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+      }
+    };
+
+    if (image.complete) sync();
+    else image.addEventListener("load", sync, { once: true });
+  }
+
+  function setImageGroup(group, url, alt, options = {}) {
+    group.images.forEach((image) => {
+      setImageSource(image, url, alt);
+      if (options.syncAspectRatio) updateImageAspectRatio(image);
+      const unit = imageDisplayUnit(image);
+      if (unit) {
+        unit.hidden = false;
+        unit.style.display = "";
+      }
+    });
+  }
+
+  function hideImageGroup(group) {
+    group.images.forEach((image) => {
+      const unit = imageDisplayUnit(image);
+      if (unit) {
+        unit.hidden = true;
+        unit.style.display = "none";
+      }
+    });
+  }
+
+  function nodePathToBoundary(node, boundary) {
+    const path = [];
+    let current = node;
+    while (current && current !== boundary.parentElement) {
+      path.unshift(current);
+      if (current === boundary) break;
+      current = current.parentElement;
+    }
+    return path;
+  }
+
+  function commonAncestor(nodes, boundary) {
+    const validNodes = nodes.filter(Boolean);
+    if (!validNodes.length) return null;
+
+    const paths = validNodes.map((node) => nodePathToBoundary(node, boundary));
+    const shortest = Math.min(...paths.map((path) => path.length));
+    let common = null;
+
+    for (let index = 0; index < shortest; index += 1) {
+      const candidate = paths[0][index];
+      if (paths.every((path) => path[index] === candidate)) common = candidate;
+      else break;
+    }
+
+    return common && common !== boundary ? common : null;
+  }
+
+  function setTemplateBlockVisible(element, visible) {
+    if (!element) return;
+    element.hidden = !visible;
+    element.style.display = visible ? "" : "none";
+    if (visible) delete element.dataset.raksaHiddenDynamicUnit;
+    else element.dataset.raksaHiddenDynamicUnit = "true";
+  }
+
+  function caseBodyHtml(item) {
+    const paragraphClass = "framer-text framer-styles-preset-1wztk85";
+    const blocks = Array.isArray(item.content_blocks) ? item.content_blocks : [];
+    const blockText = blocks
+      .map((block) => block?.text || block?.content || block?.body || "")
+      .filter(Boolean)
+      .join("\n\n");
+    const rawText = blockText || item.description || item.excerpt || "";
+    const paragraphs = String(rawText)
+      .split(/\n{2,}/)
+      .map((text) => String(text || "").replace(/\s+/g, " ").trim())
+      .filter(Boolean);
+
+    const intro = `<p class="${paragraphClass}"><strong class="framer-text">${escapeHtml(item.title || item.slug)}</strong></p>`;
+    const body = paragraphs.length
+      ? paragraphs.map((text) => `<p class="${paragraphClass}">${escapeHtml(text)}</p>`).join("")
+      : `<p class="${paragraphClass}">${escapeHtml(item.excerpt || "Case em edicao.")}</p>`;
+
+    return `${intro}${body}`;
+  }
+
+  function orderedCases(cases) {
+    return [...cases]
+      .filter((item) => item.slug && item.published !== false)
+      .sort((a, b) => {
+        const order = Number(a.home_order ?? 999) - Number(b.home_order ?? 999);
+        if (order) return order;
+        return String(a.title || a.slug).localeCompare(String(b.title || b.slug), "pt-BR");
+      });
+  }
+
+  function neighborsForCase(cases, slug) {
+    const ordered = orderedCases(cases);
+    const index = ordered.findIndex((item) => normalizeSlug(item.slug) === slug);
+    return {
+      previous: index > 0 ? ordered[index - 1] : null,
+      next: index >= 0 && index < ordered.length - 1 ? ordered[index + 1] : null,
+    };
+  }
+
+  function textEquals(element, label) {
+    return shortText(element.textContent, 80) === label;
+  }
+
+  function hideTemplateUnit(element) {
+    const unit = element.closest(".ssr-variant") || element.parentElement;
+    if (!unit) return;
+    unit.hidden = true;
+    unit.style.display = "none";
+    unit.dataset.raksaHiddenDynamicUnit = "true";
+  }
+
+  function showTemplateUnit(element) {
+    const unit = element.closest(".ssr-variant") || element.parentElement;
+    if (!unit) return;
+    unit.hidden = false;
+    unit.style.display = "";
+    delete unit.dataset.raksaHiddenDynamicUnit;
+  }
+
+  function patchTemplateNavigation(root, cases, slug) {
+    const { previous, next } = neighborsForCase(cases, slug);
+    const recommendationRoot = root.querySelector("[data-framer-name='Recomendação']");
+    const recommendationTexts = Array.from(
+      (recommendationRoot || root).querySelectorAll("[data-framer-name='Parceria de verdade'][data-framer-component-type='RichTextContainer']"),
+    );
+    const recommendationImageGroups = templateImageGroups(recommendationRoot || root).slice(0, 2);
+
+    [
+      { item: previous, label: "Anterior", oldSlug: "leylaw", textNode: recommendationTexts[0], imageGroup: recommendationImageGroups[0] },
+      { item: next, label: "Próximo", oldSlug: "valor-capital-group", textNode: recommendationTexts[1], imageGroup: recommendationImageGroups[1] },
+    ].forEach(({ item, label, oldSlug, textNode, imageGroup }) => {
+      const recommendationAnchors = Array.from((recommendationRoot || root).querySelectorAll("a"))
+        .filter((anchor) => {
+          const href = anchor.getAttribute("href") || "";
+          return href.includes(oldSlug) || textEquals(anchor, label);
+        });
+      const recommendationBlock = commonAncestor(
+        [textNode, ...(imageGroup?.images || []), ...recommendationAnchors],
+        recommendationRoot || root,
+      );
+
+      setTemplateBlockVisible(recommendationBlock, Boolean(item));
+
+      if (textNode) {
+        if (item) {
+          setTextContent(textNode, item.title || item.slug);
+          showTemplateUnit(textNode);
+        } else {
+          hideTemplateUnit(textNode);
+        }
+      }
+
+      if (imageGroup) {
+        if (item?.cover) setImageGroup(imageGroup, item.cover, item.title || "");
+        else hideImageGroup(imageGroup);
+      }
+
+      root.querySelectorAll("a").forEach((anchor) => {
+        const href = anchor.getAttribute("href") || "";
+        const matchesTemplateSlug = href.includes(oldSlug);
+        const matchesLabel = textEquals(anchor, label);
+        if (!matchesTemplateSlug && !matchesLabel) return;
+
+        if (item) {
+          anchor.href = caseUrl(item.slug);
+          anchor.removeAttribute("target");
+          anchor.removeAttribute("rel");
+          showTemplateUnit(anchor);
+        } else {
+          anchor.removeAttribute("href");
+          hideTemplateUnit(anchor);
+        }
+      });
+    });
+  }
+
+  function patchTemplateBadges(root, tags) {
+    const badges = Array.from(root.querySelectorAll("[data-framer-name='badge']"));
+    badges.forEach((badge, index) => {
+      const tag = tags[index];
+      const text = badge.querySelector("[data-framer-component-type='RichTextContainer']");
+      if (tag) {
+        setTextContent(text, tag);
+        badge.hidden = false;
+        badge.style.display = "";
+      } else {
+        badge.hidden = true;
+        badge.style.display = "none";
+      }
+    });
+  }
+
+  function patchTemplateExternalLinks(root, item) {
+    const externalAnchors = Array.from(root.querySelectorAll("a"))
+      .filter((anchor) => shortText(anchor.textContent, 80) === "Acessar website");
+
+    externalAnchors.forEach((anchor) => {
+      if (item.external_url) {
+        anchor.href = item.external_url;
+        anchor.target = "_blank";
+        anchor.rel = "noopener";
+        showTemplateUnit(anchor);
+      } else {
+        anchor.removeAttribute("href");
+        hideTemplateUnit(anchor);
+      }
+    });
+  }
+
+  function patchTemplateGallery(root, item) {
+    const gallery = root.querySelector("[data-framer-name='imagens-scroll']");
+    const groups = gallery
+      ? groupSequentialImages(Array.from(gallery.querySelectorAll("img")))
+      : templateImageGroups(root).slice(2);
+    const media = mediaForCase(item);
+    groups.forEach((group, index) => {
+      const url = media[index];
+      if (url) setImageGroup(group, url, item.title || "", { syncAspectRatio: true });
+      else hideImageGroup(group);
+    });
+  }
+
+  function revealFramerTemplate(root) {
+    root.querySelectorAll("[style*='opacity:0'][style*='translate']").forEach((element) => {
+      element.style.opacity = "1";
+      element.style.transform = "none";
+    });
+
+    root.querySelectorAll("[data-framer-appear-id]").forEach((element) => {
+      if (element.getAttribute("data-framer-name") === "Fill") return;
+      element.style.opacity = "1";
+      if ((element.getAttribute("style") || "").includes("translate")) element.style.transform = "none";
+    });
+
+    root.querySelectorAll("[style*='filter:blur'], [style*='filter: blur']").forEach((element) => {
+      element.style.filter = "none";
+      element.style.opacity = "1";
+      if ((element.getAttribute("style") || "").includes("translate")) element.style.transform = "none";
+    });
+  }
+
+  function patchFramerCaseTemplate(root, item, cases, slug) {
+    root.dataset.raksaDynamicCaseSlug = slug;
+    document.title = `${item.title || "Case"} - Raksa`;
+
+    root
+      .querySelectorAll("[data-framer-name='Título'][data-framer-component-type='RichTextContainer']")
+      .forEach((node) => setTextContent(node, item.title || item.slug));
+
+    patchTemplateBadges(root, tagsFor(item));
+
+    const body = root.querySelector("[data-framer-name='texto-scroll'] [data-framer-component-type='RichTextContainer']");
+    if (body) body.innerHTML = caseBodyHtml(item);
+
+    patchTemplateExternalLinks(root, item);
+    patchTemplateGallery(root, item);
+    patchTemplateNavigation(root, cases, slug);
+    revealFramerTemplate(root);
+  }
+
+  function renderFallbackDynamicCaseDetail(root, item, slug) {
     injectEnhancementStyle();
     const tags = tagsFor(item);
     const description = item.description || item.excerpt || "";
-    const images = [item.cover, ...(item.images || [])].filter(Boolean);
+    const images = mediaForCase(item);
     document.title = `${item.title || "Case"} - Raksa`;
     root.innerHTML = `
       <main class="raksa-dynamic-case" data-raksa-case-slug="${escapeHtml(slug)}">
@@ -895,6 +1281,28 @@
           </section>
         </div>
       </main>`;
+  }
+
+  async function renderDynamicCaseDetail(cases) {
+    const slug = normalizeSlug(caseSlugFromPath());
+    const item = caseBySlug(cases).get(slug);
+    const root = document.querySelector("#main");
+    if (!root || !item || item.published === false) return;
+    if (root.dataset.raksaDynamicCaseSlug === slug || dynamicCaseRenderingSlug === slug) return;
+
+    dynamicCaseRenderingSlug = slug;
+    try {
+      const templateDocument = await loadCaseTemplateDocument();
+      if (normalizeSlug(caseSlugFromPath()) !== slug) return;
+      injectCaseTemplateAssets(templateDocument);
+      replaceMainWithTemplate(root, templateDocument);
+      patchFramerCaseTemplate(root, item, cases, slug);
+    } catch (error) {
+      console.warn("[RAKSA] Case template unavailable, using fallback.", error);
+      renderFallbackDynamicCaseDetail(root, item, slug);
+    } finally {
+      dynamicCaseRenderingSlug = "";
+    }
   }
 
   function renderDynamicCaseLoading(slug) {
