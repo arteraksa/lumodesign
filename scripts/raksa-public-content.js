@@ -554,8 +554,12 @@
       #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] [data-framer-name="Fill"] {
         --border-color: var(--token-245d0ec3-831e-4505-88ff-21ba98a952c3, rgba(255, 255, 255, 0.15)) !important;
         background-color: rgba(139, 81, 255, 0) !important;
+        box-shadow: none;
         opacity: 1 !important;
-        transition: background-color 240ms cubic-bezier(0.2, 0, 0, 1), border-color 240ms cubic-bezier(0.2, 0, 0, 1);
+        transition: background-color 800ms cubic-bezier(0, 0, 1, 1), border-color 800ms cubic-bezier(0, 0, 1, 1), box-shadow 800ms cubic-bezier(0, 0, 1, 1);
+      }
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] [data-framer-name="Fill"]::after {
+        transition: border-color 800ms cubic-bezier(0, 0, 1, 1);
       }
       #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] svg {
         --4i27ky: var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255)) !important;
@@ -572,6 +576,7 @@
       #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component]:focus-visible [data-framer-name="Fill"] {
         --border-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
         background-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
+        box-shadow: 0 0 28px rgba(139, 81, 255, 0.72), 0 0 72px rgba(139, 81, 255, 0.34);
         opacity: 1 !important;
       }
       .raksa-dynamic-case {
