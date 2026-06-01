@@ -75,6 +75,7 @@ export const ORDER_STATUSES = [
 
 export const CRM_STATE_KEYS = {
   clients: "clients",
+  contacts: "contacts",
   projects: "projects",
   products: "products",
   substrates: "substrates",

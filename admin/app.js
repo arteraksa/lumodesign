@@ -1,4 +1,4 @@
-import { createCrmModule } from "./modules/crm.js?v=4";
+import { createCrmModule } from "./modules/crm.js?v=5";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
 import { createApiModule } from "./modules/api.js?v=5";
 import { createShellModule } from "./modules/shell.js?v=3";
@@ -180,6 +180,7 @@ const {
   cancelCrmEdit,
   createBudget,
   createClient,
+  createContact,
   createProduct,
   createProject,
   createServiceOrder,
@@ -192,6 +193,8 @@ const {
   exportServiceOrderPdf,
   openCrmEdit,
   openBudgetModal,
+  openBudgetReports,
+  openContactModal,
   openProductModal,
   openServiceOrderModal,
   openSubstrateModal,
@@ -205,6 +208,7 @@ const {
   selectBudget,
   selectAllVisibleBudgets,
   syncBudgetContactOptions,
+  updateBudgetEstimate,
   updateBudgetFilters,
   updateBudgetTotalPreview,
 } = createCrmModule({
@@ -224,16 +228,18 @@ const { renderMetricsPage } = createMetricsModule({ state, renderShell, renderCr
 document.addEventListener("submit", async (event) => {
   const form = event.target.closest("[data-login-form]");
   const clientForm = event.target.closest("[data-client-form]");
+  const contactForm = event.target.closest("[data-contact-form]");
   const projectForm = event.target.closest("[data-project-form]");
   const productForm = event.target.closest("[data-product-form]");
   const substrateForm = event.target.closest("[data-substrate-form]");
   const budgetForm = event.target.closest("[data-budget-form]");
   const orderForm = event.target.closest("[data-order-form]");
   const timeForm = event.target.closest("[data-time-form]");
-  if (!form && !clientForm && !projectForm && !productForm && !substrateForm && !budgetForm && !orderForm && !timeForm) return;
+  if (!form && !clientForm && !contactForm && !projectForm && !productForm && !substrateForm && !budgetForm && !orderForm && !timeForm) return;
   event.preventDefault();
 
   if (clientForm) return createClient(clientForm);
+  if (contactForm) return createContact(contactForm);
   if (projectForm) return createProject(projectForm);
   if (productForm) return createProduct(productForm);
   if (substrateForm) return createSubstrate(substrateForm);
@@ -300,6 +306,10 @@ document.addEventListener("input", (event) => {
     updateBudgetTotalPreview(event.target.form);
   }
 
+  if (event.target.matches("[data-budget-calc]")) {
+    updateBudgetEstimate(event.target.form);
+  }
+
   if (event.target.matches("[data-budget-search]")) {
     updateBudgetFilters({ search: event.target.value });
   }
@@ -343,10 +353,12 @@ document.addEventListener("click", async (event) => {
 
   if (target.matches("[data-delete-case]")) openDeleteModal(target.dataset.deleteCase);
   if (target.matches("[data-open-budget-modal]")) openBudgetModal();
+  if (target.matches("[data-open-contact-modal]")) openContactModal(target.dataset.openContactModal || "", target.dataset.contactId || "");
   if (target.matches("[data-edit-budget-modal]")) openBudgetModal(target.dataset.editBudgetModal);
   if (target.matches("[data-duplicate-budget]")) await duplicateSelectedBudget();
   if (target.matches("[data-create-order-from-budget]")) await createServiceOrderFromBudget(target.dataset.createOrderFromBudget || "");
   if (target.matches("[data-export-budget-pdf]")) exportSelectedBudgetPdf(target.dataset.exportBudgetPdf || "");
+  if (target.matches("[data-open-budget-reports]")) openBudgetReports();
   if (target.matches("[data-export-order-pdf]")) exportServiceOrderPdf(target.dataset.exportOrderPdf || "");
   if (target.matches("[data-print-budget-pdf]")) window.print();
   if (target.matches("[data-open-order-modal]")) openServiceOrderModal(target.dataset.openOrderModal || "");
@@ -375,6 +387,12 @@ document.addEventListener("change", async (event) => {
   const budgetClientSelect = event.target.closest("[data-budget-client-select]");
   if (budgetClientSelect) {
     syncBudgetContactOptions(budgetClientSelect);
+    return;
+  }
+
+  const budgetCalc = event.target.closest("[data-budget-calc]");
+  if (budgetCalc) {
+    updateBudgetEstimate(budgetCalc.form, true);
     return;
   }
 
