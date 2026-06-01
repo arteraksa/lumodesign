@@ -25,46 +25,15 @@
     }
 
     .raksa-404-fallback {
-      align-items: center;
-      display: flex;
+      background: #0b0312;
       min-height: 100vh;
-      padding: 32px;
-    }
-
-    .raksa-404-fallback__content {
-      max-width: 560px;
-    }
-
-    .raksa-404-fallback h1 {
-      font-size: clamp(40px, 8vw, 86px);
-      letter-spacing: 0;
-      line-height: 0.95;
-      margin: 0 0 20px;
-    }
-
-    .raksa-404-fallback p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 18px;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .raksa-404-fallback a {
-      color: #fff;
     }
   </style>
 </head>
 <body>
-  <div id="main">
-    <main class="raksa-404-fallback">
-      <div class="raksa-404-fallback__content">
-        <h1>Carregando</h1>
-        <p>Se esta pagina nao carregar, volte para <a href="/raksadesign/cases/">todos os cases</a>.</p>
-      </div>
-    </main>
-  </div>
+  <div id="main" class="raksa-404-fallback" aria-busy="true"></div>
   <script defer src="/raksadesign/scripts/raksa-routing.js?v=14"></script>
   <script src="/raksadesign/admin/supabase-config.js?v=4"></script>
-  <script defer src="/raksadesign/scripts/raksa-public-content.js?v=26"></script>
+  <script defer src="/raksadesign/scripts/raksa-public-content.js?v=27"></script>
 </body>
 </html>

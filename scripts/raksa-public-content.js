@@ -543,6 +543,37 @@
       #main a[data-raksa-dynamic-card]:focus-visible .raksa-dynamic-framer-blur {
         opacity: 1 !important;
       }
+      .raksa-dynamic-case-loading {
+        background: #0b0312;
+        min-height: 100vh;
+      }
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"] {
+        cursor: pointer;
+        transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"] [data-framer-name="Fill"] {
+        transition: background-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"] svg,
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"] [data-framer-name="Text"] {
+        transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:hover,
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:focus-visible {
+        transform: translateY(-1px);
+      }
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:active {
+        transform: scale(0.97);
+      }
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:hover [data-framer-name="Fill"],
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:focus-visible [data-framer-name="Fill"] {
+        background-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
+        opacity: 1 !important;
+      }
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:hover svg,
+      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:focus-visible svg {
+        transform: translateX(1px);
+      }
       .raksa-dynamic-case {
         background: #0b0312;
         color: #fff;
@@ -1207,6 +1238,19 @@
     });
   }
 
+  function patchTemplateBackLinks(root) {
+    root.querySelectorAll("a").forEach((anchor) => {
+      const href = anchor.getAttribute("href") || "";
+      if (!href.includes("../cases") && !href.endsWith("/cases") && !href.endsWith("/cases/")) return;
+
+      anchor.href = CASES_PATH;
+      anchor.removeAttribute("target");
+      anchor.removeAttribute("rel");
+      anchor.setAttribute("aria-label", "Voltar para todos os cases");
+      showTemplateUnit(anchor);
+    });
+  }
+
   function patchTemplateGallery(root, item) {
     const gallery = root.querySelector("[data-framer-name='imagens-scroll']");
     const groups = gallery
@@ -1220,22 +1264,98 @@
     });
   }
 
-  function revealFramerTemplate(root) {
-    root.querySelectorAll("[style*='opacity:0'][style*='translate']").forEach((element) => {
+  function inlineStyleValue(element, property, fallback = "") {
+    const style = element.getAttribute("style") || "";
+    const match = style.match(new RegExp(`${property}\\s*:\\s*([^;]+)`, "i"));
+    return match ? match[1].trim() : fallback;
+  }
+
+  function animateTemplateAppear(element, index) {
+    if (element.dataset.raksaAnimatedAppear === "true" || element.hidden) return;
+    element.dataset.raksaAnimatedAppear = "true";
+
+    const initialTransform = inlineStyleValue(element, "transform", "translateY(150px)");
+    const delay = Math.min(index * 55, 260);
+    element.style.opacity = "0";
+    element.style.transform = initialTransform === "none" ? "translateY(40px)" : initialTransform;
+    element.style.willChange = "transform, opacity";
+
+    const finish = () => {
       element.style.opacity = "1";
       element.style.transform = "none";
-    });
+      element.style.willChange = "";
+    };
+
+    if (!element.animate) {
+      window.setTimeout(finish, delay);
+      return;
+    }
+
+    const animation = element.animate(
+      [
+        { opacity: 0, transform: element.style.transform },
+        { opacity: 1, transform: "translateY(0px)" },
+      ],
+      {
+        duration: 820,
+        delay,
+        easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+        fill: "forwards",
+      },
+    );
+    animation.finished.then(finish).catch(finish);
+  }
+
+  function animateTemplateBlur(element, index) {
+    if (element.dataset.raksaAnimatedBlur === "true" || element.hidden) return;
+    element.dataset.raksaAnimatedBlur = "true";
+
+    const delay = Math.min(index * 50, 220);
+    element.style.opacity = "0";
+    element.style.filter = inlineStyleValue(element, "filter", "blur(12px)");
+
+    const finish = () => {
+      element.style.opacity = "1";
+      element.style.filter = "none";
+    };
+
+    if (!element.animate) {
+      window.setTimeout(finish, delay);
+      return;
+    }
+
+    const animation = element.animate(
+      [
+        { opacity: 0, filter: element.style.filter },
+        { opacity: 1, filter: "blur(0px)" },
+      ],
+      {
+        duration: 680,
+        delay,
+        easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+        fill: "forwards",
+      },
+    );
+    animation.finished.then(finish).catch(finish);
+  }
+
+  function revealFramerTemplate(root) {
+    const appearElements = new Set();
+    root
+      .querySelectorAll("[style*='opacity:0'][style*='translate'], [style*='opacity:0.001'][style*='translate']")
+      .forEach((element) => appearElements.add(element));
 
     root.querySelectorAll("[data-framer-appear-id]").forEach((element) => {
       if (element.getAttribute("data-framer-name") === "Fill") return;
-      element.style.opacity = "1";
-      if ((element.getAttribute("style") || "").includes("translate")) element.style.transform = "none";
+      const style = element.getAttribute("style") || "";
+      if (style.includes("translate") || style.includes("opacity:0")) appearElements.add(element);
+      else element.style.opacity = "1";
     });
 
-    root.querySelectorAll("[style*='filter:blur'], [style*='filter: blur']").forEach((element) => {
-      element.style.filter = "none";
-      element.style.opacity = "1";
-      if ((element.getAttribute("style") || "").includes("translate")) element.style.transform = "none";
+    [...appearElements].forEach((element, index) => animateTemplateAppear(element, index));
+
+    root.querySelectorAll("[style*='filter:blur'], [style*='filter: blur']").forEach((element, index) => {
+      animateTemplateBlur(element, index);
     });
   }
 
@@ -1253,6 +1373,7 @@
     if (body) body.innerHTML = caseBodyHtml(item);
 
     patchTemplateExternalLinks(root, item);
+    patchTemplateBackLinks(root);
     patchTemplateGallery(root, item);
     patchTemplateNavigation(root, cases, slug);
     revealFramerTemplate(root);
@@ -1311,19 +1432,7 @@
 
     injectEnhancementStyle();
     root.innerHTML = `
-      <main class="raksa-dynamic-case" data-raksa-case-slug="${escapeHtml(slug)}">
-        <nav class="raksa-dynamic-case__nav" aria-label="Navegacao do case">
-          <a href="${CASES_PATH}">Todos os cases</a>
-        </nav>
-        <div class="raksa-dynamic-case__body">
-          <section class="raksa-dynamic-case__hero">
-            <div class="raksa-dynamic-case__tags">Case</div>
-            <h1>Carregando</h1>
-            <p class="raksa-dynamic-case__copy">Buscando conteudo do case.</p>
-          </section>
-          <section class="raksa-dynamic-case__media" aria-label="Imagens do case"></section>
-        </div>
-      </main>`;
+      <main class="raksa-dynamic-case-loading" data-raksa-case-slug="${escapeHtml(slug)}" aria-busy="true"></main>`;
   }
 
   async function boot() {
