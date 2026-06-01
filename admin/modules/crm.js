@@ -6,7 +6,7 @@ import {
   CRM_STATE_KEYS,
   ORDER_STATUSES,
   PROJECT_STATUSES,
-} from "./constants.js?v=5";
+} from "./constants.js?v=6";
 import {
   dateInputValue,
   entityName,
@@ -214,6 +214,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <input class="input" name="email" type="email" value="${valueAttr(editingClient?.email)}">
               </label>
               <label class="field">
+                <span>E-mail de cobrança</span>
+                <input class="input" name="billing_email" type="email" value="${valueAttr(editingClient?.billing_email)}">
+              </label>
+              <label class="field">
                 <span>Telefone</span>
                 <input class="input" name="phone" value="${valueAttr(editingClient?.phone)}">
               </label>
@@ -224,6 +228,18 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <label class="field">
                 <span>Website</span>
                 <input class="input" name="website" type="url" value="${valueAttr(editingClient?.website)}">
+              </label>
+              <label class="field">
+                <span>Origem / indicação</span>
+                <input class="input" name="referral_source" value="${valueAttr(editingClient?.referral_source)}" placeholder="Agência, parceiro ou indicação">
+              </label>
+              <label class="field">
+                <span>Comissão (%)</span>
+                <input class="input" name="commission_rate" type="number" min="0" max="100" step="0.01" value="${valueAttr(editingClient?.commission_rate ?? "")}">
+              </label>
+              <label class="field field-span-4">
+                <span>Endereço</span>
+                <input class="input" name="address" value="${valueAttr(editingClient?.address)}" placeholder="Endereço comercial ou fiscal">
               </label>
               <label class="field field-span-4">
                 <span>Notas</span>
@@ -257,6 +273,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             <tr>
               <th>Cliente</th>
               <th>Contato</th>
+              <th>Origem</th>
               <th>Pessoas</th>
               <th>Status</th>
               <th>Atualizado</th>
@@ -276,6 +293,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                   <td>
                     <strong>${escapeHtml(primaryContact?.name || client.email || client.phone || "-")}</strong>
                     <span>${escapeHtml(primaryContact?.email || primaryContact?.phone || client.website || client.document || "")}</span>
+                  </td>
+                  <td>
+                    <strong>${escapeHtml(client.referral_source || "-")}</strong>
+                    <span>${Number(client.commission_rate || 0) ? `${formatPercent(client.commission_rate)} comissão` : ""}</span>
                   </td>
                   <td>
                     <strong>${contacts.length}</strong>
@@ -479,6 +500,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderProducts() {
+    const products = filteredProducts();
     renderCrmWorkspace("products", {
       eyebrow: "Produtos",
       title: "Cadastro de produtos",
@@ -493,14 +515,15 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               </div>
               <button class="button button-primary" type="button" data-open-product-modal>Incluir</button>
             </div>
-            ${renderProductTable()}
+            ${renderCatalogToolbar("product", products.length)}
+            ${renderProductTable(products)}
           </section>
         </section>`,
     });
   }
 
-  function renderProductTable() {
-    if (!state.products.length) return `<div class="empty-state">Nenhum produto cadastrado.</div>`;
+  function renderProductTable(products = state.products) {
+    if (!products.length) return `<div class="empty-state">Nenhum produto encontrado.</div>`;
 
     return `
       <div class="table-wrap">
@@ -516,7 +539,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </tr>
           </thead>
           <tbody>
-            ${state.products.map((product) => `
+            ${products.map((product) => `
               <tr>
                 <td>
                   <strong>${escapeHtml(product.name)}</strong>
@@ -540,6 +563,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderSubstrates() {
+    const substrates = filteredSubstrates();
     renderCrmWorkspace("substrates", {
       eyebrow: "Substratos",
       title: "Custos e insumos",
@@ -554,14 +578,15 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               </div>
               <button class="button button-primary" type="button" data-open-substrate-modal>Incluir</button>
             </div>
-            ${renderSubstrateTable()}
+            ${renderCatalogToolbar("substrate", substrates.length)}
+            ${renderSubstrateTable(substrates)}
           </section>
         </section>`,
     });
   }
 
-  function renderSubstrateTable() {
-    if (!state.substrates.length) return `<div class="empty-state">Nenhum substrato cadastrado.</div>`;
+  function renderSubstrateTable(substrates = state.substrates) {
+    if (!substrates.length) return `<div class="empty-state">Nenhum substrato encontrado.</div>`;
 
     return `
       <div class="table-wrap">
@@ -577,7 +602,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </tr>
           </thead>
           <tbody>
-            ${state.substrates.map((substrate) => `
+            ${substrates.map((substrate) => `
               <tr>
                 <td>
                   <strong>${escapeHtml(substrate.name)}</strong>
@@ -597,6 +622,31 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             `).join("")}
           </tbody>
         </table>
+      </div>`;
+  }
+
+  function renderCatalogToolbar(kind, visibleCount) {
+    const isProduct = kind === "product";
+    const search = isProduct ? state.crmProductSearch : state.crmSubstrateSearch;
+    const status = isProduct ? state.crmProductStatus : state.crmSubstrateStatus;
+    const searchAttr = isProduct ? "data-product-search" : "data-substrate-search";
+    const statusAttr = isProduct ? "data-product-status-filter" : "data-substrate-status-filter";
+    const label = isProduct ? "produtos" : "substratos";
+
+    return `
+      <div class="crm-toolbar catalog-toolbar">
+        <label class="field compact-field">
+          <span>Busca</span>
+          <input class="input" type="search" placeholder="Buscar por nome, categoria ou descrição" value="${valueAttr(search || "")}" ${searchAttr}>
+        </label>
+        <label class="field compact-field">
+          <span>Status</span>
+          <select class="select" ${statusAttr}>${selectOptions([["all", "Todos"], ["active", "Ativos"], ["inactive", "Inativos"]], status || "all")}</select>
+        </label>
+        <div class="toolbar-meta">
+          <strong>${visibleCount}</strong>
+          <span>${label} visíveis</span>
+        </div>
       </div>`;
   }
 
@@ -746,17 +796,21 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderBudgetReportsModal() {
-    const total = state.budgets.length;
-    const approved = state.budgets.filter((budget) => budget.status === "approved").length;
-    const sent = state.budgets.filter((budget) => budget.status === "sent").length;
-    const resolved = state.budgets.filter((budget) => budget.resolved).length;
-    const totalValue = state.budgets.reduce((sum, budget) => sum + Number(budget.total || 0), 0);
-    const approvedValue = state.budgets
+    const reportBudgets = filteredReportBudgets();
+    const filters = state.crmReportFilters || {};
+    const total = reportBudgets.length;
+    const approved = reportBudgets.filter((budget) => budget.status === "approved").length;
+    const sent = reportBudgets.filter((budget) => budget.status === "sent").length;
+    const resolved = reportBudgets.filter((budget) => budget.resolved).length;
+    const totalValue = reportBudgets.reduce((sum, budget) => sum + Number(budget.total || 0), 0);
+    const approvedValue = reportBudgets
       .filter((budget) => budget.status === "approved")
       .reduce((sum, budget) => sum + Number(budget.total || 0), 0);
     const conversion = total ? Math.round((approved / total) * 100) : 0;
-    const topClients = groupedBudgetTotals("client").slice(0, 6);
-    const topProducts = groupedBudgetTotals("product").slice(0, 6);
+    const topClients = groupedBudgetTotals("client", reportBudgets).slice(0, 6);
+    const topProducts = groupedBudgetTotals("product", reportBudgets).slice(0, 6);
+    const clientOptions = state.clients.map((client) => [client.id, client.name]);
+    const productOptions = state.products.map((product) => [product.id, product.name]);
 
     return `
       <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Relatórios de orçamento">
@@ -766,8 +820,33 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <span class="eyebrow">Relatórios</span>
               <h2>Resumo de orçamentos</h2>
             </div>
-            <button class="icon-button" type="button" data-close-modal>Fechar</button>
+            <div class="modal-actions">
+              <button class="button button-secondary" type="button" data-export-budget-report-csv>Exportar CSV</button>
+              <button class="icon-button" type="button" data-close-modal>Fechar</button>
+            </div>
           </div>
+          <section class="crm-toolbar report-toolbar">
+            <label class="field compact-field">
+              <span>De</span>
+              <input class="input" type="date" value="${valueAttr(filters.from || "")}" data-budget-report-filter="from">
+            </label>
+            <label class="field compact-field">
+              <span>Até</span>
+              <input class="input" type="date" value="${valueAttr(filters.to || "")}" data-budget-report-filter="to">
+            </label>
+            <label class="field compact-field">
+              <span>Status</span>
+              <select class="select" data-budget-report-filter="status">${selectOptions([["all", "Todos"], ...BUDGET_STATUSES, ["resolved", "Resolvidos"]], filters.status || "all")}</select>
+            </label>
+            <label class="field compact-field">
+              <span>Cliente</span>
+              <select class="select" data-budget-report-filter="clientId">${selectOptions(clientOptions, filters.clientId || "", "Todos")}</select>
+            </label>
+            <label class="field compact-field">
+              <span>Produto</span>
+              <select class="select" data-budget-report-filter="productId">${selectOptions(productOptions, filters.productId || "", "Todos")}</select>
+            </label>
+          </section>
           <section class="metrics crm-metrics">
             <div class="metric"><strong>${total}</strong><span>Orçamentos</span></div>
             <div class="metric"><strong>${sent}</strong><span>Enviados</span></div>
@@ -797,9 +876,75 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       </div>`;
   }
 
-  function groupedBudgetTotals(kind) {
+  function filteredReportBudgets() {
+    const filters = state.crmReportFilters || {};
+    return state.budgets.filter((budget) => {
+      if (filters.status === "resolved" && !budget.resolved) return false;
+      if (filters.status && filters.status !== "all" && filters.status !== "resolved" && budget.status !== filters.status) return false;
+      if (filters.clientId && budget.client_id !== filters.clientId) return false;
+      if (filters.productId && budgetPayload(budget).productId !== filters.productId) return false;
+      const created = String(budget.created_at || "").slice(0, 10);
+      if (filters.from && created && created < filters.from) return false;
+      if (filters.to && created && created > filters.to) return false;
+      return true;
+    });
+  }
+
+  function updateBudgetReportFilter(key, value) {
+    state.crmReportFilters = {
+      ...(state.crmReportFilters || {}),
+      [key]: value,
+    };
+    state.modal = renderBudgetReportsModal();
+    render();
+  }
+
+  function exportBudgetReportCsv() {
+    const rows = filteredReportBudgets();
+    const headers = ["numero", "titulo", "cliente", "contato", "status", "resolvido", "produto", "subtotal", "desconto", "impostos", "total", "criado_em"];
+    const csvRows = [
+      headers.join(","),
+      ...rows.map((budget) => {
+        const payload = budgetPayload(budget);
+        return [
+          budgetNumberLabel(budget),
+          budget.title,
+          entityName(state.clients, budget.client_id, ""),
+          budgetContactName(budget),
+          labelFromOptions(BUDGET_STATUSES, budget.status),
+          budget.resolved ? "sim" : "nao",
+          payload.productName || payload.serviceType || "",
+          Number(budget.subtotal || 0),
+          Number(budget.discount || 0),
+          Number(budget.tax || 0),
+          Number(budget.total || 0),
+          String(budget.created_at || "").slice(0, 10),
+        ].map(csvCell).join(",");
+      }),
+    ];
+    downloadTextFile(`raksa-orcamentos-${new Date().toISOString().slice(0, 10)}.csv`, csvRows.join("\n"), "text/csv;charset=utf-8");
+  }
+
+  function csvCell(value) {
+    return `"${String(value ?? "").replaceAll('"', '""')}"`;
+  }
+
+  function downloadTextFile(filename, content, type) {
+    if (typeof document === "undefined") return;
+    const blob = new Blob([content], { type });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function groupedBudgetTotals(kind, budgets = state.budgets) {
     const map = new Map();
-    state.budgets.forEach((budget) => {
+    budgets.forEach((budget) => {
       const payload = budgetPayload(budget);
       const key = kind === "client"
         ? entityName(state.clients, budget.client_id, "Sem cliente")
@@ -1128,6 +1273,58 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       : [];
   }
 
+  function filteredProducts() {
+    const query = String(state.crmProductSearch || "").trim().toLowerCase();
+    const status = state.crmProductStatus || "all";
+    return state.products.filter((product) => {
+      if (status !== "all" && product.status !== status) return false;
+      if (!query) return true;
+      return [product.name, product.category, product.description]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
+        .includes(query);
+    });
+  }
+
+  function filteredSubstrates() {
+    const query = String(state.crmSubstrateSearch || "").trim().toLowerCase();
+    const status = state.crmSubstrateStatus || "all";
+    return state.substrates.filter((substrate) => {
+      if (status !== "all" && substrate.status !== status) return false;
+      if (!query) return true;
+      return [substrate.name, substrate.kind, substrate.unit, substrate.notes]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
+        .includes(query);
+    });
+  }
+
+  function updateProductFilters(nextFilters = {}) {
+    state.crmProductSearch = nextFilters.search ?? state.crmProductSearch ?? "";
+    state.crmProductStatus = nextFilters.status ?? state.crmProductStatus ?? "all";
+    renderProducts();
+    restoreFieldFocus("[data-product-search]", Object.prototype.hasOwnProperty.call(nextFilters, "search"));
+  }
+
+  function updateSubstrateFilters(nextFilters = {}) {
+    state.crmSubstrateSearch = nextFilters.search ?? state.crmSubstrateSearch ?? "";
+    state.crmSubstrateStatus = nextFilters.status ?? state.crmSubstrateStatus ?? "all";
+    renderSubstrates();
+    restoreFieldFocus("[data-substrate-search]", Object.prototype.hasOwnProperty.call(nextFilters, "search"));
+  }
+
+  function restoreFieldFocus(selector, shouldFocus) {
+    if (!shouldFocus || typeof document === "undefined") return;
+    requestAnimationFrame(() => {
+      const input = document.querySelector(selector);
+      if (!input) return;
+      input.focus();
+      input.setSelectionRange(input.value.length, input.value.length);
+    });
+  }
+
   function selectBudget(id, checked) {
     if (!id) return;
     const current = selectedBudgetIds();
@@ -1148,14 +1345,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     state.crmBudgetStatus = nextFilters.status ?? state.crmBudgetStatus ?? "all";
     setSelectedBudgetIds(selectedBudgetIds());
     renderBudgets();
-    if (restoreSearchFocus) {
-      requestAnimationFrame(() => {
-        const input = document.querySelector("[data-budget-search]");
-        if (!input) return;
-        input.focus();
-        input.setSelectionRange(input.value.length, input.value.length);
-      });
-    }
+    restoreFieldFocus("[data-budget-search]", restoreSearchFocus);
   }
 
   function filteredBudgets() {
@@ -1429,6 +1619,13 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     }).format(hours)} h`;
   }
 
+  function formatPercent(value = 0) {
+    return `${new Intl.NumberFormat("pt-BR", {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 0,
+    }).format(Number(value || 0))}%`;
+  }
+
   function billableAmount(entry) {
     return hoursFromEntry(entry) * Number(entry?.hourly_rate || 0);
   }
@@ -1449,6 +1646,15 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       return 0;
     }
     return hours;
+  }
+
+  function boundedPercentFromForm(data, key, label, errors) {
+    const value = nonNegativeNumberFromForm(data, key, label, errors);
+    if (value > 100) {
+      errors.push(`${label} deve ser no máximo 100%.`);
+      return 0;
+    }
+    return value;
   }
 
   function openBudgetModal(id = "") {
@@ -1885,6 +2091,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       renderBudgets();
       return;
     }
+    state.crmPdfExport = { type: "budgets", ids: budgets.map((budget) => budget.id) };
     state.modal = renderBudgetPdfModal(budgets);
     render();
   }
@@ -1900,7 +2107,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <h2>${budgets.length === 1 ? `Orçamento ${escapeHtml(budgetNumberLabel(firstBudget))}` : `${budgets.length} orçamentos selecionados`}</h2>
             </div>
             <div class="modal-actions">
-              <button class="button button-secondary" type="button" data-print-budget-pdf>Gerar PDF</button>
+              <button class="button button-secondary" type="button" data-download-proposal-pdf>Baixar PDF</button>
+              <button class="button button-secondary" type="button" data-print-budget-pdf>Imprimir</button>
               <button class="icon-button" type="button" data-close-modal>Fechar</button>
             </div>
           </div>
@@ -1996,6 +2204,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       renderServiceOrders();
       return;
     }
+    state.crmPdfExport = { type: "orders", ids: [order.id] };
     state.modal = renderServiceOrderPdfModal(order);
     render();
   }
@@ -2014,7 +2223,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <h2>${escapeHtml(order.title)}</h2>
             </div>
             <div class="modal-actions">
-              <button class="button button-secondary" type="button" data-print-budget-pdf>Gerar PDF</button>
+              <button class="button button-secondary" type="button" data-download-proposal-pdf>Baixar PDF</button>
+              <button class="button button-secondary" type="button" data-print-budget-pdf>Imprimir</button>
               <button class="icon-button" type="button" data-close-modal>Fechar</button>
             </div>
           </div>
@@ -2056,6 +2266,197 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           </article>
         </div>
       </div>`;
+  }
+
+  async function downloadActivePdf() {
+    if (!state.crmPdfExport) {
+      setNotice("error", "Abra um preview antes de baixar o PDF.");
+      render();
+      return;
+    }
+
+    try {
+      const { jsPDF } = await import("https://esm.sh/jspdf@2.5.1");
+      const doc = new jsPDF({ unit: "pt", format: "a4" });
+      if (state.crmPdfExport.type === "budgets") {
+        const budgets = state.crmPdfExport.ids
+          .map((id) => state.budgets.find((budget) => budget.id === id))
+          .filter(Boolean);
+        budgets.forEach((budget, index) => {
+          if (index) doc.addPage();
+          drawBudgetPdfPage(doc, budget);
+        });
+        doc.save(budgets.length === 1 ? `orcamento-${budgetNumberLabel(budgets[0])}.pdf` : `orcamentos-raksa-${new Date().toISOString().slice(0, 10)}.pdf`);
+      } else {
+        const order = state.serviceOrders.find((item) => item.id === state.crmPdfExport.ids[0]);
+        if (!order) throw new Error("OS não encontrada.");
+        drawOrderPdfPage(doc, order);
+        doc.save(`os-${slugSafe(order.title || "raksa")}.pdf`);
+      }
+    } catch (error) {
+      setNotice("error", error.message || "Não foi possível gerar o PDF agora.");
+      render();
+    }
+  }
+
+  function drawBudgetPdfPage(doc, budget) {
+    const payload = budgetPayload(budget);
+    const contact = budgetContactRecord(budget);
+    const client = state.clients.find((item) => item.id === budget.client_id);
+    let y = drawPdfHeader(doc, "Orçamento", [
+      ["Criado em", formatDate(budget.created_at)],
+      ["Orçamento nº", budgetNumberLabel(budget)],
+      ["Válido até", budget.valid_until ? formatDate(budget.valid_until) : "-"],
+    ]);
+    y = drawPdfKeyValues(doc, y, [
+      ["Cliente", client?.name || "-"],
+      ["Contato", contact?.name || payload.contact || "-"],
+      ["E-mail", contact?.email || payload.contactEmail || client?.billing_email || client?.email || "-"],
+      ["Criado por", payload.salesOwner || "-"],
+    ]);
+    y = drawPdfTable(doc, y + 16, ["Código", "Descrição", "Qtd", "Preço unit.", "Total"], budgetPreviewItems(budget).map((item) => [
+      item.code,
+      item.description,
+      item.quantity,
+      formatCurrency(item.unitPrice),
+      formatCurrency(item.total),
+    ]));
+    y = drawPdfTotals(doc, y + 14, [
+      ["Subtotal", formatCurrency(budget.subtotal)],
+      ["Desconto", formatCurrency(budget.discount)],
+      ["Impostos", formatCurrency(budget.tax)],
+      ["Total final", formatCurrency(budget.total)],
+    ]);
+    drawPdfNotes(doc, y + 18, "Observações", [
+      payload.summary || payload.productionNotes || "Proposta válida conforme escopo descrito.",
+      payload.paymentTerms ? `Pagamento: ${payload.paymentTerms}` : "",
+      payload.deliveryTerms ? `Entrega: ${payload.deliveryTerms}` : "",
+    ].filter(Boolean));
+  }
+
+  function drawOrderPdfPage(doc, order) {
+    const budget = state.budgets.find((item) => item.id === order.budget_id);
+    const client = state.clients.find((item) => item.id === order.client_id);
+    let y = drawPdfHeader(doc, "Ordem de serviço", [
+      ["Criado em", formatDate(order.created_at)],
+      ["Status", labelFromOptions(ORDER_STATUSES, order.status)],
+      ["Prazo", formatDate(order.due_at)],
+    ]);
+    y = drawPdfKeyValues(doc, y, [
+      ["Cliente", client?.name || "-"],
+      ["Projeto", entityName(state.projects, order.project_id)],
+      ["Orçamento", budget ? budgetNumberLabel(budget) : "-"],
+      ["Título", order.title],
+    ]);
+    drawPdfNotes(doc, y + 18, "Escopo", (scopeText(order.scope) || "Escopo não informado.").split(/\r?\n/).filter(Boolean));
+  }
+
+  function drawPdfHeader(doc, title, meta) {
+    doc.setTextColor(17, 17, 17);
+    doc.setDrawColor(17, 17, 17);
+    doc.setLineWidth(1);
+    doc.rect(32, 32, 530, 92);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.text("RAKSA", 48, 72);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text("Design, estratégia e tecnologia", 48, 90);
+    meta.forEach(([label, value], index) => {
+      const y = 48 + index * 24;
+      doc.line(430, 32 + index * 31, 430, 124);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(8);
+      doc.text(label, 442, y);
+      doc.setFontSize(10);
+      doc.text(String(value || "-"), 442, y + 13);
+    });
+    doc.setFontSize(24);
+    doc.text(title, 297, 158, { align: "center" });
+    return 180;
+  }
+
+  function drawPdfKeyValues(doc, y, pairs) {
+    doc.setFontSize(9);
+    doc.setDrawColor(17, 17, 17);
+    pairs.forEach(([label, value], index) => {
+      const x = index % 2 === 0 ? 32 : 297;
+      const rowY = y + Math.floor(index / 2) * 42;
+      doc.rect(x, rowY, 265, 42);
+      doc.setFont("helvetica", "bold");
+      doc.text(label, x + 8, rowY + 14);
+      doc.setFont("helvetica", "normal");
+      drawWrappedPdfText(doc, String(value || "-"), x + 8, rowY + 29, 248, 10);
+    });
+    return y + Math.ceil(pairs.length / 2) * 42;
+  }
+
+  function drawPdfTable(doc, y, headers, rows) {
+    const widths = [58, 242, 42, 86, 86];
+    let x = 32;
+    doc.setFillColor(17, 17, 17);
+    doc.rect(32, y, 530, 24, "F");
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(8);
+    doc.setTextColor(255, 255, 255);
+    headers.forEach((header, index) => {
+      doc.text(header, x + 6, y + 15);
+      x += widths[index];
+    });
+    doc.setTextColor(17, 17, 17);
+    doc.setFont("helvetica", "normal");
+    let rowY = y + 24;
+    rows.forEach((row) => {
+      const rowHeight = 34;
+      x = 32;
+      row.forEach((value, index) => {
+        doc.rect(x, rowY, widths[index], rowHeight);
+        drawWrappedPdfText(doc, String(value || "-"), x + 6, rowY + 14, widths[index] - 12, 9);
+        x += widths[index];
+      });
+      rowY += rowHeight;
+    });
+    return rowY;
+  }
+
+  function drawPdfTotals(doc, y, rows) {
+    const x = 342;
+    rows.forEach(([label, value], index) => {
+      const rowY = y + index * 24;
+      doc.rect(x, rowY, 110, 24);
+      doc.rect(x + 110, rowY, 110, 24);
+      doc.setFont("helvetica", "normal");
+      doc.text(label, x + 8, rowY + 15);
+      doc.setFont("helvetica", "bold");
+      doc.text(value, x + 212, rowY + 15, { align: "right" });
+    });
+    return y + rows.length * 24;
+  }
+
+  function drawPdfNotes(doc, y, title, lines) {
+    doc.rect(32, y, 530, 120);
+    doc.setFillColor(17, 17, 17);
+    doc.rect(32, y, 530, 20, "F");
+    doc.setTextColor(255, 255, 255);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(9);
+    doc.text(title, 40, y + 14);
+    doc.setTextColor(17, 17, 17);
+    doc.setFont("helvetica", "normal");
+    let cursor = y + 38;
+    lines.forEach((line) => {
+      cursor = drawWrappedPdfText(doc, line, 40, cursor, 514, 11) + 8;
+    });
+  }
+
+  function drawWrappedPdfText(doc, text, x, y, width, lineHeight) {
+    const lines = doc.splitTextToSize(String(text || "-"), width);
+    doc.text(lines, x, y);
+    return y + Math.max(0, lines.length - 1) * lineHeight;
+  }
+
+  function slugSafe(value) {
+    return String(value || "raksa").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "raksa";
   }
 
   function renderLegacyServiceOrders() {
@@ -2298,8 +2699,12 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       status: String(data.get("status") || "active"),
       document: optionalFormValue(data, "document"),
       email: optionalEmailFromForm(data, "email", "E-mail", errors),
+      billing_email: optionalEmailFromForm(data, "billing_email", "E-mail de cobrança", errors),
       phone: optionalFormValue(data, "phone"),
       website: optionalUrlFromForm(data, "website", "Website", errors),
+      referral_source: textFromForm(data, "referral_source"),
+      commission_rate: boundedPercentFromForm(data, "commission_rate", "Comissão", errors),
+      address: textFromForm(data, "address"),
       notes: String(data.get("notes") || "").trim(),
     };
     if (!validateCrmPayload("clients", errors)) return;
@@ -2667,6 +3072,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     createTimeEntry,
     deleteCrmRecord,
     duplicateSelectedBudget,
+    downloadActivePdf,
+    exportBudgetReportCsv,
     exportSelectedBudgetPdf,
     exportServiceOrderPdf,
     openCrmEdit,
@@ -2688,6 +3095,9 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     syncBudgetContactOptions,
     updateBudgetEstimate,
     updateBudgetFilters,
+    updateBudgetReportFilter,
+    updateProductFilters,
+    updateSubstrateFilters,
     updateBudgetTotalPreview,
   };
 }

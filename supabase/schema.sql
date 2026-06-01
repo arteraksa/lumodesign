@@ -26,6 +26,10 @@ create table if not exists public.clients (
   phone text,
   website text,
   status text not null default 'active',
+  billing_email text,
+  address text not null default '',
+  referral_source text not null default '',
+  commission_rate numeric(5, 2) not null default 0,
   notes text not null default '',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
@@ -155,6 +159,10 @@ alter table public.cases add column if not exists home_order integer not null de
 alter table public.cases add column if not exists content_blocks jsonb not null default '[]'::jsonb;
 alter table public.cases add column if not exists client_id uuid references public.clients(id) on delete set null;
 alter table public.cases add column if not exists external_url text not null default '';
+alter table public.clients add column if not exists billing_email text;
+alter table public.clients add column if not exists address text not null default '';
+alter table public.clients add column if not exists referral_source text not null default '';
+alter table public.clients add column if not exists commission_rate numeric(5, 2) not null default 0;
 alter table public.time_entries add column if not exists hourly_rate numeric(12, 2) not null default 0;
 alter table public.budgets add column if not exists budget_number bigint;
 alter table public.budgets add column if not exists contact_id uuid references public.contacts(id) on delete set null;
@@ -183,6 +191,15 @@ begin
     alter table public.clients
       add constraint clients_status_check
       check (status in ('active', 'lead', 'inactive'));
+  end if;
+
+  if not exists (
+    select 1 from pg_constraint
+    where conrelid = 'public.clients'::regclass and conname = 'clients_commission_rate_check'
+  ) then
+    alter table public.clients
+      add constraint clients_commission_rate_check
+      check (commission_rate >= 0 and commission_rate <= 100);
   end if;
 
   if not exists (

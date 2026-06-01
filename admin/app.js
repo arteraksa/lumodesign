@@ -1,6 +1,6 @@
-import { createCrmModule } from "./modules/crm.js?v=5";
+import { createCrmModule } from "./modules/crm.js?v=6";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
-import { createApiModule } from "./modules/api.js?v=5";
+import { createApiModule } from "./modules/api.js?v=6";
 import { createShellModule } from "./modules/shell.js?v=3";
 import { createCasesModule } from "./modules/cases.js?v=4";
 
@@ -31,6 +31,12 @@ const state = {
   crmBudgetSearch: "",
   crmBudgetStatus: "all",
   crmSelectedBudgets: [],
+  crmProductSearch: "",
+  crmProductStatus: "all",
+  crmSubstrateSearch: "",
+  crmSubstrateStatus: "all",
+  crmReportFilters: {},
+  crmPdfExport: null,
   clients: [],
   contacts: [],
   projects: [],
@@ -189,6 +195,8 @@ const {
   createTimeEntry,
   deleteCrmRecord,
   duplicateSelectedBudget,
+  downloadActivePdf,
+  exportBudgetReportCsv,
   exportSelectedBudgetPdf,
   exportServiceOrderPdf,
   openCrmEdit,
@@ -210,6 +218,9 @@ const {
   syncBudgetContactOptions,
   updateBudgetEstimate,
   updateBudgetFilters,
+  updateBudgetReportFilter,
+  updateProductFilters,
+  updateSubstrateFilters,
   updateBudgetTotalPreview,
 } = createCrmModule({
   state,
@@ -313,6 +324,14 @@ document.addEventListener("input", (event) => {
   if (event.target.matches("[data-budget-search]")) {
     updateBudgetFilters({ search: event.target.value });
   }
+
+  if (event.target.matches("[data-product-search]")) {
+    updateProductFilters({ search: event.target.value });
+  }
+
+  if (event.target.matches("[data-substrate-search]")) {
+    updateSubstrateFilters({ search: event.target.value });
+  }
 });
 
 document.addEventListener("keydown", (event) => {
@@ -359,7 +378,9 @@ document.addEventListener("click", async (event) => {
   if (target.matches("[data-create-order-from-budget]")) await createServiceOrderFromBudget(target.dataset.createOrderFromBudget || "");
   if (target.matches("[data-export-budget-pdf]")) exportSelectedBudgetPdf(target.dataset.exportBudgetPdf || "");
   if (target.matches("[data-open-budget-reports]")) openBudgetReports();
+  if (target.matches("[data-export-budget-report-csv]")) exportBudgetReportCsv();
   if (target.matches("[data-export-order-pdf]")) exportServiceOrderPdf(target.dataset.exportOrderPdf || "");
+  if (target.matches("[data-download-proposal-pdf]")) await downloadActivePdf();
   if (target.matches("[data-print-budget-pdf]")) window.print();
   if (target.matches("[data-open-order-modal]")) openServiceOrderModal(target.dataset.openOrderModal || "");
   if (target.matches("[data-open-product-modal]")) openProductModal(target.dataset.openProductModal || "");
@@ -378,6 +399,7 @@ document.addEventListener("click", async (event) => {
   if (target.matches("[data-close-modal]")) {
     state.modal = null;
     state.crmEdit = null;
+    state.crmPdfExport = null;
     render();
   }
   if (target.matches("[data-confirm-delete]")) await deleteCase(target.dataset.confirmDelete);
@@ -399,6 +421,24 @@ document.addEventListener("change", async (event) => {
   const budgetStatus = event.target.closest("[data-budget-status-filter]");
   if (budgetStatus) {
     updateBudgetFilters({ status: budgetStatus.value });
+    return;
+  }
+
+  const productStatus = event.target.closest("[data-product-status-filter]");
+  if (productStatus) {
+    updateProductFilters({ status: productStatus.value });
+    return;
+  }
+
+  const substrateStatus = event.target.closest("[data-substrate-status-filter]");
+  if (substrateStatus) {
+    updateSubstrateFilters({ status: substrateStatus.value });
+    return;
+  }
+
+  const reportFilter = event.target.closest("[data-budget-report-filter]");
+  if (reportFilter) {
+    updateBudgetReportFilter(reportFilter.dataset.budgetReportFilter, reportFilter.value);
     return;
   }
 

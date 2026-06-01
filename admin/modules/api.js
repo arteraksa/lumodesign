@@ -18,7 +18,7 @@ import {
   SUBSTRATE_COLUMNS,
   TAGS,
   TIME_ENTRY_COLUMNS,
-} from "./constants.js?v=5";
+} from "./constants.js?v=6";
 import { normalizeAssetUrl } from "./utils.js?v=3";
 
 export function createApiModule({ state, supabaseConfig, getSupabase, isLoggedIn }) {
