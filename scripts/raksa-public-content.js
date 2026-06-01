@@ -547,29 +547,29 @@
         background: #0b0312;
         min-height: 100vh;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] {
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] {
         cursor: pointer;
         text-decoration: none;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] [data-framer-name="Fill"] {
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] [data-framer-name="Fill"] {
         --border-color: var(--token-245d0ec3-831e-4505-88ff-21ba98a952c3, rgba(255, 255, 255, 0.15)) !important;
         background-color: rgba(139, 81, 255, 0) !important;
         opacity: 1 !important;
-        transition: background-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        transition: background-color 240ms cubic-bezier(0.2, 0, 0, 1), border-color 240ms cubic-bezier(0.2, 0, 0, 1);
       }
-      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] svg {
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] svg {
         --4i27ky: var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255)) !important;
         color: var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255)) !important;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] [data-framer-name="Text"],
-      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] [data-framer-name="Text"] p {
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] [data-framer-name="Text"],
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] [data-framer-name="Text"] p {
         color: var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255)) !important;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"]:focus-visible {
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component]:focus-visible {
         outline: none;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"]:hover [data-framer-name="Fill"],
-      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"]:focus-visible [data-framer-name="Fill"] {
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component]:hover [data-framer-name="Fill"],
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component]:focus-visible [data-framer-name="Fill"] {
         --border-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
         background-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
         opacity: 1 !important;
@@ -1148,38 +1148,89 @@
     delete unit.dataset.raksaHiddenDynamicUnit;
   }
 
-  function normalizeFramerCaseButtons(root) {
-    root.querySelectorAll("a[data-reset='button']").forEach((button) => {
-      button.dataset.raksaFramerButton = "true";
-      button.style.borderBottomLeftRadius = "118px";
-      button.style.borderBottomRightRadius = "118px";
-      button.style.borderTopLeftRadius = "118px";
-      button.style.borderTopRightRadius = "118px";
+  const ORIGINAL_FRAMER_BUTTON_ICON_IDS = {
+    back: "MERlRzhFk",
+    next: "FnOnDEHYH",
+    previous: "dzahky1SR",
+  };
 
-      const fill = button.querySelector("[data-framer-name='Fill']");
-      if (fill) {
-        fill.style.setProperty("--border-bottom-width", "1px");
-        fill.style.setProperty("--border-color", "var(--token-245d0ec3-831e-4505-88ff-21ba98a952c3, rgba(255, 255, 255, 0.15))");
-        fill.style.setProperty("--border-left-width", "1px");
-        fill.style.setProperty("--border-right-width", "1px");
-        fill.style.setProperty("--border-style", "solid");
-        fill.style.setProperty("--border-top-width", "1px");
-        fill.style.backgroundColor = "rgba(139, 81, 255, 0)";
-        fill.style.opacity = "1";
-        fill.style.borderBottomLeftRadius = "114px";
-        fill.style.borderBottomRightRadius = "114px";
-        fill.style.borderTopLeftRadius = "114px";
-        fill.style.borderTopRightRadius = "114px";
-      }
-
-      button.querySelectorAll("svg").forEach((svg) => {
-        svg.style.setProperty("--4i27ky", "var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255))");
-        svg.style.color = "var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255))";
-      });
-    });
+  function originalFramerCaseButton(templateDocument, kind) {
+    const buttons = Array.from(templateDocument.querySelectorAll("#main a[data-reset='button']"));
+    if (kind === "back") return buttons.find((button) => (button.getAttribute("href") || "").includes("../cases"));
+    if (kind === "nextIcon") {
+      return buttons.find((button) => (button.getAttribute("href") || "").includes("valor-capital-group") && !shortText(button.textContent, 80));
+    }
+    if (kind === "previousIcon") {
+      return buttons.find((button) => (button.getAttribute("href") || "").includes("leylaw") && !shortText(button.textContent, 80));
+    }
+    if (kind === "nextText") return buttons.find((button) => shortText(button.textContent, 80) === "Pr\u00f3ximo");
+    if (kind === "previousText") return buttons.find((button) => shortText(button.textContent, 80) === "Anterior");
+    return null;
   }
 
-  function patchTemplateNavigation(root, cases, slug) {
+  function setOriginalFramerButtonIcon(button, kind) {
+    const iconId = ORIGINAL_FRAMER_BUTTON_ICON_IDS[kind];
+    const use = iconId ? button.querySelector("use") : null;
+    if (!use) return;
+    use.setAttribute("href", `#${iconId}`);
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", `#${iconId}`);
+  }
+
+  function normalizeOriginalFramerCaseButton(button, component) {
+    if (!button) return null;
+    button.dataset.raksaFramerButtonComponent = component;
+    button.style.borderBottomLeftRadius = "118px";
+    button.style.borderBottomRightRadius = "118px";
+    button.style.borderTopLeftRadius = "118px";
+    button.style.borderTopRightRadius = "118px";
+
+    const fill = button.querySelector("[data-framer-name='Fill']");
+    if (fill) {
+      fill.style.setProperty("--border-bottom-width", "1px");
+      fill.style.setProperty("--border-color", "var(--token-245d0ec3-831e-4505-88ff-21ba98a952c3, rgba(255, 255, 255, 0.15))");
+      fill.style.setProperty("--border-left-width", "1px");
+      fill.style.setProperty("--border-right-width", "1px");
+      fill.style.setProperty("--border-style", "solid");
+      fill.style.setProperty("--border-top-width", "1px");
+      fill.style.backgroundColor = "rgba(139, 81, 255, 0)";
+      fill.style.opacity = "1";
+      fill.style.borderBottomLeftRadius = "114px";
+      fill.style.borderBottomRightRadius = "114px";
+      fill.style.borderTopLeftRadius = "114px";
+      fill.style.borderTopRightRadius = "114px";
+    }
+
+    button.querySelectorAll("svg").forEach((svg) => {
+      svg.style.setProperty("--4i27ky", "var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255))");
+      svg.style.color = "var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255))";
+    });
+
+    return button;
+  }
+
+  function framerCaseButtonComponent(templateDocument, kind, options = {}) {
+    const source = originalFramerCaseButton(templateDocument, kind);
+    if (!source) return null;
+
+    const button = source.cloneNode(true);
+    if (options.href) button.href = options.href;
+    if (options.ariaLabel) button.setAttribute("aria-label", options.ariaLabel);
+    button.removeAttribute("target");
+    button.removeAttribute("rel");
+
+    const iconKind = kind === "nextIcon" ? "next" : kind === "previousIcon" ? "previous" : kind;
+    setOriginalFramerButtonIcon(button, iconKind);
+    return normalizeOriginalFramerCaseButton(button, kind);
+  }
+
+  function replaceWithFramerCaseButton(target, component) {
+    if (!target || !component) return target;
+    target.replaceWith(component);
+    showTemplateUnit(component);
+    return component;
+  }
+
+  function patchTemplateNavigation(root, cases, slug, templateDocument) {
     const { previous, next } = neighborsForCase(cases, slug);
     const recommendationRoot = root.querySelector("[data-framer-name='Recomendação']");
     const recommendationTexts = Array.from(
@@ -1224,10 +1275,18 @@
         if (!matchesTemplateSlug && !matchesLabel) return;
 
         if (item) {
-          anchor.href = caseUrl(item.slug);
-          anchor.removeAttribute("target");
-          anchor.removeAttribute("rel");
-          showTemplateUnit(anchor);
+          const direction = oldSlug === "valor-capital-group" ? "next" : "previous";
+          const variant = matchesLabel ? "Text" : "Icon";
+          const kind = `${direction}${variant}`;
+          const component = framerCaseButtonComponent(templateDocument, kind, { href: caseUrl(item.slug) });
+          if (component) {
+            replaceWithFramerCaseButton(anchor, component);
+          } else {
+            anchor.href = caseUrl(item.slug);
+            anchor.removeAttribute("target");
+            anchor.removeAttribute("rel");
+            showTemplateUnit(anchor);
+          }
         } else {
           anchor.removeAttribute("href");
           hideTemplateUnit(anchor);
@@ -1269,16 +1328,24 @@
     });
   }
 
-  function patchTemplateBackLinks(root) {
+  function patchTemplateBackLinks(root, templateDocument) {
     root.querySelectorAll("a").forEach((anchor) => {
       const href = anchor.getAttribute("href") || "";
       if (!href.includes("../cases") && !href.endsWith("/cases") && !href.endsWith("/cases/")) return;
 
-      anchor.href = CASES_PATH;
-      anchor.removeAttribute("target");
-      anchor.removeAttribute("rel");
-      anchor.setAttribute("aria-label", "Voltar para todos os cases");
-      showTemplateUnit(anchor);
+      const component = framerCaseButtonComponent(templateDocument, "back", {
+        href: CASES_PATH,
+        ariaLabel: "Voltar para todos os cases",
+      });
+      if (component) {
+        replaceWithFramerCaseButton(anchor, component);
+      } else {
+        anchor.href = CASES_PATH;
+        anchor.removeAttribute("target");
+        anchor.removeAttribute("rel");
+        anchor.setAttribute("aria-label", "Voltar para todos os cases");
+        showTemplateUnit(anchor);
+      }
     });
   }
 
@@ -1390,7 +1457,7 @@
     });
   }
 
-  function patchFramerCaseTemplate(root, item, cases, slug) {
+  function patchFramerCaseTemplate(root, item, cases, slug, templateDocument) {
     root.dataset.raksaDynamicCaseSlug = slug;
     document.title = `${item.title || "Case"} - Raksa`;
 
@@ -1404,10 +1471,9 @@
     if (body) body.innerHTML = caseBodyHtml(item);
 
     patchTemplateExternalLinks(root, item);
-    patchTemplateBackLinks(root);
+    patchTemplateBackLinks(root, templateDocument);
     patchTemplateGallery(root, item);
-    patchTemplateNavigation(root, cases, slug);
-    normalizeFramerCaseButtons(root);
+    patchTemplateNavigation(root, cases, slug, templateDocument);
     revealFramerTemplate(root);
   }
 
@@ -1449,7 +1515,7 @@
       if (normalizeSlug(caseSlugFromPath()) !== slug) return;
       injectCaseTemplateAssets(templateDocument);
       replaceMainWithTemplate(root, templateDocument);
-      patchFramerCaseTemplate(root, item, cases, slug);
+      patchFramerCaseTemplate(root, item, cases, slug, templateDocument);
     } catch (error) {
       console.warn("[RAKSA] Case template unavailable, using fallback.", error);
       renderFallbackDynamicCaseDetail(root, item, slug);
