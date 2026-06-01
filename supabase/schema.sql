@@ -55,6 +55,9 @@ create table if not exists public.products (
   base_price numeric(12, 2) not null default 0,
   estimated_hours numeric(10, 2) not null default 0,
   default_markup numeric(7, 4) not null default 0,
+  pricing_model text not null default 'fixed',
+  hourly_rate numeric(12, 2) not null default 0,
+  default_substrate_ids jsonb not null default '[]'::jsonb,
   status text not null default 'active',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
@@ -120,6 +123,10 @@ create table if not exists public.service_orders (
   scope jsonb not null default '{}'::jsonb,
   starts_at date,
   due_at date,
+  recurrence text not null default 'one_time',
+  billing_cycle text not null default '',
+  estimated_hours numeric(10, 2) not null default 0,
+  hourly_rate numeric(12, 2) not null default 0,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -163,6 +170,13 @@ alter table public.clients add column if not exists billing_email text;
 alter table public.clients add column if not exists address text not null default '';
 alter table public.clients add column if not exists referral_source text not null default '';
 alter table public.clients add column if not exists commission_rate numeric(5, 2) not null default 0;
+alter table public.products add column if not exists pricing_model text not null default 'fixed';
+alter table public.products add column if not exists hourly_rate numeric(12, 2) not null default 0;
+alter table public.products add column if not exists default_substrate_ids jsonb not null default '[]'::jsonb;
+alter table public.service_orders add column if not exists recurrence text not null default 'one_time';
+alter table public.service_orders add column if not exists billing_cycle text not null default '';
+alter table public.service_orders add column if not exists estimated_hours numeric(10, 2) not null default 0;
+alter table public.service_orders add column if not exists hourly_rate numeric(12, 2) not null default 0;
 alter table public.time_entries add column if not exists hourly_rate numeric(12, 2) not null default 0;
 alter table public.budgets add column if not exists budget_number bigint;
 alter table public.budgets add column if not exists contact_id uuid references public.contacts(id) on delete set null;
@@ -240,6 +254,33 @@ begin
 
   if not exists (
     select 1 from pg_constraint
+    where conrelid = 'public.products'::regclass and conname = 'products_pricing_model_check'
+  ) then
+    alter table public.products
+      add constraint products_pricing_model_check
+      check (pricing_model in ('fixed', 'hourly', 'hybrid'));
+  end if;
+
+  if not exists (
+    select 1 from pg_constraint
+    where conrelid = 'public.products'::regclass and conname = 'products_hourly_rate_nonnegative_check'
+  ) then
+    alter table public.products
+      add constraint products_hourly_rate_nonnegative_check
+      check (hourly_rate >= 0);
+  end if;
+
+  if not exists (
+    select 1 from pg_constraint
+    where conrelid = 'public.products'::regclass and conname = 'products_default_substrate_ids_array_check'
+  ) then
+    alter table public.products
+      add constraint products_default_substrate_ids_array_check
+      check (jsonb_typeof(default_substrate_ids) = 'array');
+  end if;
+
+  if not exists (
+    select 1 from pg_constraint
     where conrelid = 'public.substrates'::regclass and conname = 'substrates_status_check'
   ) then
     alter table public.substrates
@@ -290,6 +331,24 @@ begin
     alter table public.service_orders
       add constraint service_orders_status_check
       check (status in ('open', 'in_progress', 'done', 'canceled'));
+  end if;
+
+  if not exists (
+    select 1 from pg_constraint
+    where conrelid = 'public.service_orders'::regclass and conname = 'service_orders_recurrence_check'
+  ) then
+    alter table public.service_orders
+      add constraint service_orders_recurrence_check
+      check (recurrence in ('one_time', 'biweekly', 'monthly', 'custom'));
+  end if;
+
+  if not exists (
+    select 1 from pg_constraint
+    where conrelid = 'public.service_orders'::regclass and conname = 'service_orders_estimates_nonnegative_check'
+  ) then
+    alter table public.service_orders
+      add constraint service_orders_estimates_nonnegative_check
+      check (estimated_hours >= 0 and hourly_rate >= 0);
   end if;
 
   if not exists (

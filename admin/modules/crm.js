@@ -5,8 +5,10 @@ import {
   CRM_TABS,
   CRM_STATE_KEYS,
   ORDER_STATUSES,
+  ORDER_RECURRENCES,
+  PRODUCT_PRICING_MODELS,
   PROJECT_STATUSES,
-} from "./constants.js?v=6";
+} from "./constants.js?v=7";
 import {
   dateInputValue,
   entityName,
@@ -532,8 +534,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             <tr>
               <th>Produto</th>
               <th>Categoria</th>
-              <th>Preço base</th>
+              <th>Modelo</th>
+              <th>Base / hora</th>
               <th>Horas</th>
+              <th>Custos padrão</th>
               <th>Status</th>
               <th></th>
             </tr>
@@ -546,8 +550,13 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                   <span>${escapeHtml(product.description || "")}</span>
                 </td>
                 <td>${escapeHtml(product.category || "-")}</td>
-                <td>${formatCurrency(product.base_price || 0)}</td>
+                <td>${escapeHtml(productPricingLabel(product))}</td>
+                <td>
+                  <strong>${formatCurrency(product.base_price || 0)}</strong>
+                  <span>${product.hourly_rate ? `${formatCurrency(product.hourly_rate)}/h` : "Sem valor/hora"}</span>
+                </td>
                 <td>${formatDecimalHours(product.estimated_hours || 0)}</td>
+                <td>${escapeHtml(productIncludedSubstrates(product).map((item) => item.name).join(", ") || "-")}</td>
                 <td><span class="status-pill">${product.status === "inactive" ? "Inativo" : "Ativo"}</span></td>
                 <td>
                   <div class="row-actions">
@@ -809,6 +818,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const conversion = total ? Math.round((approved / total) * 100) : 0;
     const topClients = groupedBudgetTotals("client", reportBudgets).slice(0, 6);
     const topProducts = groupedBudgetTotals("product", reportBudgets).slice(0, 6);
+    const statusRows = groupedBudgetStatusTotals(reportBudgets);
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
     const productOptions = state.products.map((product) => [product.id, product.name]);
 
@@ -857,6 +867,13 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             <div class="metric"><strong>${formatCurrency(approvedValue)}</strong><span>Total aprovado</span></div>
           </section>
           <section class="report-grid">
+            <div class="budget-section report-wide">
+              <div class="budget-section-heading">
+                <strong>Funil por status</strong>
+                <span>Volume e valor por etapa do orçamento.</span>
+              </div>
+              ${renderReportBars(statusRows, totalValue)}
+            </div>
             <div class="budget-section">
               <div class="budget-section-heading">
                 <strong>Clientes com mais valor orçado</strong>
@@ -957,6 +974,17 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return [...map.values()].sort((a, b) => b.total - a.total);
   }
 
+  function groupedBudgetStatusTotals(budgets = state.budgets) {
+    return BUDGET_STATUSES.map(([status, label]) => {
+      const rows = budgets.filter((budget) => budget.status === status);
+      return {
+        label,
+        count: rows.length,
+        total: rows.reduce((sum, budget) => sum + Number(budget.total || 0), 0),
+      };
+    });
+  }
+
   function renderReportRows(rows) {
     if (!rows.length) return `<div class="empty-state">Sem dados suficientes.</div>`;
     return `
@@ -967,6 +995,29 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             <strong>${formatCurrency(row.total)}</strong>
           </div>
         `).join("")}
+      </div>`;
+  }
+
+  function renderReportBars(rows, totalValue = 0) {
+    if (!rows.some((row) => row.count || row.total)) return `<div class="empty-state">Sem dados suficientes.</div>`;
+    const maxTotal = Math.max(...rows.map((row) => row.total), 1);
+    return `
+      <div class="report-bars">
+        ${rows.map((row) => {
+          const width = Math.max(row.total ? (row.total / maxTotal) * 100 : 0, row.count ? 8 : 0);
+          const share = totalValue ? Math.round((row.total / totalValue) * 100) : 0;
+          return `
+            <div class="report-bar-row">
+              <div class="report-bar-meta">
+                <span>${escapeHtml(row.label)}</span>
+                <strong>${formatCurrency(row.total)}</strong>
+              </div>
+              <div class="report-bar-track" aria-label="${escapeHtml(row.label)}: ${escapeHtml(formatCurrency(row.total))}">
+                <span style="width: ${width.toFixed(2)}%"></span>
+              </div>
+              <small>${row.count} ${row.count === 1 ? "orçamento" : "orçamentos"} · ${share}%</small>
+            </div>`;
+        }).join("")}
       </div>`;
   }
 
@@ -1279,7 +1330,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return state.products.filter((product) => {
       if (status !== "all" && product.status !== status) return false;
       if (!query) return true;
-      return [product.name, product.category, product.description]
+      return [product.name, product.category, product.description, productPricingLabel(product), productIncludedSubstrates(product).map((item) => item.name).join(" ")]
         .filter(Boolean)
         .join(" ")
         .toLowerCase()
@@ -1425,6 +1476,20 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return budget ? `${budgetNumberLabel(budget)} · ${budget.title}` : "-";
   }
 
+  function orderRecurrenceLabel(order) {
+    return labelFromOptions(ORDER_RECURRENCES, order?.recurrence || "one_time");
+  }
+
+  function orderBillingLine(order) {
+    const parts = [
+      orderRecurrenceLabel(order),
+      order?.billing_cycle,
+      Number(order?.estimated_hours || 0) ? `${formatDecimalHours(order.estimated_hours)} previstas` : "",
+      Number(order?.hourly_rate || 0) ? `${formatCurrency(order.hourly_rate)}/h` : "",
+    ].filter(Boolean);
+    return parts.join(" · ") || "-";
+  }
+
   function clientContacts(clientId = "") {
     return state.contacts
       .filter((contact) => contact.client_id === clientId)
@@ -1437,6 +1502,79 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function substrateRecord(id) {
     return state.substrates.find((substrate) => substrate.id === id) || null;
+  }
+
+  function productPricingLabel(product) {
+    return labelFromOptions(PRODUCT_PRICING_MODELS, product?.pricing_model || "fixed");
+  }
+
+  function productIncludedSubstrateIds(product) {
+    const value = product?.default_substrate_ids;
+    if (Array.isArray(value)) return value.map(String).filter(Boolean);
+    if (typeof value !== "string" || !value.trim()) return [];
+    try {
+      const parsed = JSON.parse(value);
+      return Array.isArray(parsed) ? parsed.map(String).filter(Boolean) : [];
+    } catch {
+      return value.split(",").map((item) => item.trim()).filter(Boolean);
+    }
+  }
+
+  function productIncludedSubstrates(product) {
+    const ids = new Set(productIncludedSubstrateIds(product));
+    if (!ids.size) return [];
+    return state.substrates.filter((substrate) => ids.has(substrate.id));
+  }
+
+  function productBaseAmount(product) {
+    if (!product) return 0;
+    const model = product.pricing_model || "fixed";
+    const fixed = Number(product.base_price || 0);
+    const hourly = Number(product.estimated_hours || 0) * Number(product.hourly_rate || 0);
+    if (model === "hourly") return hourly;
+    if (model === "hybrid") return fixed + hourly;
+    return fixed;
+  }
+
+  function calculateBudgetEstimate(product, substrate, quantityValue = 1) {
+    const quantity = Math.max(1, Number(quantityValue || 1));
+    const includedSubstrates = productIncludedSubstrates(product);
+    const includedIds = new Set(includedSubstrates.map((item) => item.id));
+    const additionalSubstrates = substrate && !includedIds.has(substrate.id) ? [substrate] : [];
+    const substrateCost = [...includedSubstrates, ...additionalSubstrates]
+      .reduce((sum, item) => sum + Number(item.unit_cost || 0), 0);
+    const baseAmount = productBaseAmount(product);
+    const markupRate = Math.max(0, Number(product?.default_markup || 0));
+    const unitCostBeforeMarkup = baseAmount + substrateCost;
+    const markupAmount = product ? unitCostBeforeMarkup * (markupRate / 100) : 0;
+    const unitSubtotal = unitCostBeforeMarkup + markupAmount;
+
+    return {
+      additionalSubstrates,
+      baseAmount,
+      includedSubstrates,
+      markupAmount,
+      markupRate,
+      quantity,
+      substrateCost,
+      subtotal: unitSubtotal * quantity,
+      unitSubtotal,
+    };
+  }
+
+  function renderProductSubstrateChoices(product) {
+    if (!state.substrates.length) return `<div class="empty-state compact-empty">Cadastre substratos para vinculá-los ao produto.</div>`;
+    const selected = new Set(productIncludedSubstrateIds(product));
+    return `
+      <div class="choice-grid">
+        ${state.substrates.map((substrate) => `
+          <label class="choice-pill">
+            <input type="checkbox" name="default_substrate_ids" value="${escapeHtml(substrate.id)}" ${selected.has(substrate.id) ? "checked" : ""}>
+            <span>${escapeHtml(substrate.name)}</span>
+            <small>${formatCurrency(substrate.unit_cost || 0)}</small>
+          </label>
+        `).join("")}
+      </div>`;
   }
 
   function contactOptions(selectedValue = "", clientId = "") {
@@ -1468,13 +1606,18 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function budgetPreviewItems(budget) {
     const payload = budgetPayload(budget);
     if (Array.isArray(payload.items) && payload.items.length) {
-      return payload.items.map((item, index) => ({
-        code: String(index + 1).padStart(4, "0"),
-        description: typeof item === "string" ? item : item.text || item.title || "-",
-        quantity: item.quantity || payload.quantity || 1,
-        unitPrice: Number(item.unitPrice ?? item.unit_price ?? 0),
-        total: Number(item.total ?? item.amount ?? 0),
-      }));
+      const fallbackTotal = Number(budget.subtotal || budget.total || 0) / payload.items.length;
+      return payload.items.map((item, index) => {
+        const quantity = typeof item === "string" ? payload.quantity || 1 : item.quantity || payload.quantity || 1;
+        const unitPrice = typeof item === "string" ? fallbackTotal : Number(item.unitPrice ?? item.unit_price ?? fallbackTotal);
+        return {
+          code: String(index + 1).padStart(4, "0"),
+          description: typeof item === "string" ? item : item.text || item.title || "-",
+          quantity,
+          unitPrice,
+          total: typeof item === "string" ? fallbackTotal : Number(item.total ?? item.amount ?? unitPrice * quantity),
+        };
+      });
     }
 
     const textItems = budgetItemsText(budget).split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
@@ -1517,12 +1660,20 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return budgetItemsText(record).split(/\r?\n/).map((line) => line.trim()).find(Boolean) || "";
   }
 
-  function budgetItemsFromText(value) {
-    return String(value || "")
+  function budgetItemsFromText(value, total = 0) {
+    const lines = String(value || "")
       .split(/\r?\n/)
       .map((line) => line.trim())
-      .filter(Boolean)
-      .map((text, index) => ({ position: index + 1, text }));
+      .filter(Boolean);
+    const unitTotal = lines.length ? Number(total || 0) / lines.length : 0;
+    return lines.map((text, index) => ({
+      position: index + 1,
+      text,
+      title: text,
+      quantity: 1,
+      unitPrice: unitTotal,
+      total: unitTotal,
+    }));
   }
 
   function budgetValidityText(budget) {
@@ -1573,9 +1724,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const product = productRecord(form.elements.product_id?.value);
     const substrate = substrateRecord(form.elements.substrate_id?.value);
     const quantity = Math.max(1, Number(form.elements.quantity?.value || 1));
-    const base = Number(product?.base_price || 0);
-    const substrateCost = Number(substrate?.unit_cost || 0);
-    const subtotal = (base + substrateCost) * quantity;
+    const estimate = calculateBudgetEstimate(product, substrate, quantity);
+    const subtotal = estimate.subtotal;
     const subtotalInput = form.elements.subtotal;
     const shouldWriteSubtotal = subtotalInput
       && subtotal > 0
@@ -1587,8 +1737,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const detail = form.querySelector("[data-budget-estimate-detail]");
     if (detail) {
       const parts = [
-        product ? `${product.name}: ${formatCurrency(base)}` : "",
-        substrate ? `${substrate.name}: ${formatCurrency(substrateCost)}` : "",
+        product ? `${product.name}: ${productPricingLabel(product)} (${formatCurrency(estimate.baseAmount)})` : "",
+        estimate.includedSubstrates.length ? `Custos padrão: ${estimate.includedSubstrates.map((item) => item.name).join(", ")} (${formatCurrency(estimate.includedSubstrates.reduce((sum, item) => sum + Number(item.unit_cost || 0), 0))})` : "",
+        estimate.additionalSubstrates.length ? `Custo extra: ${estimate.additionalSubstrates.map((item) => item.name).join(", ")} (${formatCurrency(estimate.additionalSubstrates.reduce((sum, item) => sum + Number(item.unit_cost || 0), 0))})` : "",
+        estimate.markupRate ? `Markup: ${formatPercent(estimate.markupRate)} (${formatCurrency(estimate.markupAmount)})` : "",
         quantity ? `${quantity} un.` : "",
       ].filter(Boolean);
       detail.textContent = parts.length ? parts.join(" · ") : "Selecione produto e custos para estimar automaticamente.";
@@ -1907,14 +2059,26 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </div>
             <button class="icon-button" type="button" data-close-modal>Fechar</button>
           </div>
-          <label class="field">
-            <span>Nome</span>
-            <input class="input" name="name" value="${valueAttr(product?.name)}" required>
-          </label>
-          <label class="field">
-            <span>Categoria</span>
-            <input class="input" name="category" value="${valueAttr(product?.category)}" placeholder="Landing page, apresentação, social...">
-          </label>
+          <div class="form-grid">
+            <label class="field">
+              <span>Nome</span>
+              <input class="input" name="name" value="${valueAttr(product?.name)}" required>
+            </label>
+            <label class="field">
+              <span>Categoria</span>
+              <input class="input" name="category" value="${valueAttr(product?.category)}" placeholder="Landing page, apresentação, social...">
+            </label>
+          </div>
+          <div class="form-grid">
+            <label class="field">
+              <span>Modelo de preço</span>
+              <select class="select" name="pricing_model">${selectOptions(PRODUCT_PRICING_MODELS, product?.pricing_model || "fixed")}</select>
+            </label>
+            <label class="field">
+              <span>Status</span>
+              <select class="select" name="status">${selectOptions([["active", "Ativo"], ["inactive", "Inativo"]], product?.status || "active")}</select>
+            </label>
+          </div>
           <div class="form-grid">
             <label class="field">
               <span>Preço base</span>
@@ -1927,13 +2091,17 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           </div>
           <div class="form-grid">
             <label class="field">
-              <span>Markup padrão</span>
-              <input class="input" name="default_markup" type="number" min="0" step="0.01" value="${valueAttr(product?.default_markup ?? "")}" placeholder="0.00">
+              <span>Valor/hora</span>
+              <input class="input" name="hourly_rate" type="number" min="0" step="0.01" value="${valueAttr(product?.hourly_rate ?? "")}" placeholder="0.00">
             </label>
             <label class="field">
-              <span>Status</span>
-              <select class="select" name="status">${selectOptions([["active", "Ativo"], ["inactive", "Inativo"]], product?.status || "active")}</select>
+              <span>Markup padrão (%)</span>
+              <input class="input" name="default_markup" type="number" min="0" step="0.01" value="${valueAttr(product?.default_markup ?? "")}" placeholder="0.00">
             </label>
+          </div>
+          <div class="field">
+            <span>Custos padrão</span>
+            ${renderProductSubstrateChoices(product)}
           </div>
           <label class="field">
             <span>Descrição</span>
@@ -2067,12 +2235,28 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <select class="select" name="status">${selectOptions(ORDER_STATUSES, order?.status || "open")}</select>
             </label>
             <label class="field">
+              <span>Recorrência</span>
+              <select class="select" name="recurrence">${selectOptions(ORDER_RECURRENCES, order?.recurrence || "one_time")}</select>
+            </label>
+            <label class="field">
+              <span>Ciclo de cobrança</span>
+              <input class="input" name="billing_cycle" value="${valueAttr(order?.billing_cycle)}" placeholder="Ex: mensal, quinzenal, sob demanda">
+            </label>
+            <label class="field">
               <span>Início</span>
               <input class="input" name="starts_at" type="date" value="${valueAttr(dateInputValue(order?.starts_at))}">
             </label>
             <label class="field">
               <span>Prazo</span>
               <input class="input" name="due_at" type="date" value="${valueAttr(dateInputValue(order?.due_at))}">
+            </label>
+            <label class="field">
+              <span>Horas previstas</span>
+              <input class="input" name="estimated_hours" type="number" min="0" step="0.25" value="${valueAttr(order?.estimated_hours ?? "")}">
+            </label>
+            <label class="field">
+              <span>Valor/hora</span>
+              <input class="input" name="hourly_rate" type="number" min="0" step="0.01" value="${valueAttr(order?.hourly_rate ?? "")}" placeholder="0.00">
             </label>
             <label class="field field-span-4">
               <span>Escopo</span>
@@ -2156,6 +2340,14 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <div>
                 <strong>Criado por</strong>
                 <span>${escapeHtml(payload.salesOwner || "-")}</span>
+              </div>
+              <div>
+                <strong>Produto</strong>
+                <span>${escapeHtml(payload.productName || payload.serviceType || budget.title || "-")}</span>
+              </div>
+              <div>
+                <strong>Custos padrão</strong>
+                <span>${escapeHtml(Array.isArray(payload.includedSubstrates) && payload.includedSubstrates.length ? payload.includedSubstrates.map((item) => item.name).join(", ") : "-")}</span>
               </div>
             </section>
             <table class="proposal-table">
@@ -2258,6 +2450,14 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <strong>Título</strong>
                 <span>${escapeHtml(order.title)}</span>
               </div>
+              <div>
+                <strong>Ciclo</strong>
+                <span>${escapeHtml(orderBillingLine(order))}</span>
+              </div>
+              <div>
+                <strong>Valor previsto</strong>
+                <span>${escapeHtml(Number(order.estimated_hours || 0) && Number(order.hourly_rate || 0) ? formatCurrency(Number(order.estimated_hours || 0) * Number(order.hourly_rate || 0)) : "-")}</span>
+              </div>
             </section>
             <section class="proposal-notes proposal-scope">
               <strong>Escopo</strong>
@@ -2313,6 +2513,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       ["Contato", contact?.name || payload.contact || "-"],
       ["E-mail", contact?.email || payload.contactEmail || client?.billing_email || client?.email || "-"],
       ["Criado por", payload.salesOwner || "-"],
+      ["Produto", payload.productName || payload.serviceType || budget.title || "-"],
+      ["Custos padrão", Array.isArray(payload.includedSubstrates) && payload.includedSubstrates.length ? payload.includedSubstrates.map((item) => item.name).join(", ") : "-"],
     ]);
     y = drawPdfTable(doc, y + 16, ["Código", "Descrição", "Qtd", "Preço unit.", "Total"], budgetPreviewItems(budget).map((item) => [
       item.code,
@@ -2347,6 +2549,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       ["Projeto", entityName(state.projects, order.project_id)],
       ["Orçamento", budget ? budgetNumberLabel(budget) : "-"],
       ["Título", order.title],
+      ["Ciclo", orderBillingLine(order)],
+      ["Valor previsto", Number(order.estimated_hours || 0) && Number(order.hourly_rate || 0) ? formatCurrency(Number(order.estimated_hours || 0) * Number(order.hourly_rate || 0)) : "-"],
     ]);
     drawPdfNotes(doc, y + 18, "Escopo", (scopeText(order.scope) || "Escopo não informado.").split(/\r?\n/).filter(Boolean));
   }
@@ -2537,6 +2741,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <th>Cliente</th>
               <th>Projeto</th>
               <th>Status</th>
+              <th>Ciclo</th>
               <th>Prazo</th>
               <th></th>
             </tr>
@@ -2552,6 +2757,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <td>${escapeHtml(entityName(state.clients, order.client_id))}</td>
                 <td>${escapeHtml(entityName(state.projects, order.project_id))}</td>
                 <td><span class="status-pill">${escapeHtml(labelFromOptions(ORDER_STATUSES, order.status))}</span></td>
+                <td>${escapeHtml(orderBillingLine(order))}</td>
                 <td>${formatDate(order.due_at)}</td>
                 <td>
                   <div class="row-actions">
@@ -2744,8 +2950,12 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       base_price: nonNegativeNumberFromForm(data, "base_price", "Preço base", errors),
       estimated_hours: nonNegativeNumberFromForm(data, "estimated_hours", "Horas estimadas", errors),
       default_markup: nonNegativeNumberFromForm(data, "default_markup", "Markup padrão", errors),
+      pricing_model: optionalFormValue(data, "pricing_model") || "fixed",
+      hourly_rate: nonNegativeNumberFromForm(data, "hourly_rate", "Valor/hora", errors),
+      default_substrate_ids: data.getAll("default_substrate_ids").map(String).filter(Boolean),
       status: String(data.get("status") || "active"),
     };
+    if (!PRODUCT_PRICING_MODELS.some(([value]) => value === payload.pricing_model)) errors.push("Modelo de preço inválido.");
     if (!validateCrmPayload("products", errors)) return;
 
     await submitCrmRecord("products", payload, editing, editing ? "Produto atualizado." : "Produto cadastrado.");
@@ -2803,9 +3013,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const manualSubtotal = nonNegativeNumberFromForm(data, "subtotal", "Subtotal", errors);
     const discount = nonNegativeNumberFromForm(data, "discount", "Desconto", errors);
     const tax = nonNegativeNumberFromForm(data, "tax", "Impostos", errors);
-    const automaticSubtotal = selectedProduct || selectedSubstrate
-      ? (Number(selectedProduct?.base_price || 0) + Number(selectedSubstrate?.unit_cost || 0)) * quantity
-      : 0;
+    const estimate = calculateBudgetEstimate(selectedProduct, selectedSubstrate, quantity);
+    const automaticSubtotal = selectedProduct || selectedSubstrate ? estimate.subtotal : 0;
     const subtotal = manualSubtotal || automaticSubtotal;
     const total = subtotal - discount + tax;
     const itemsText = textFromForm(data, "items_text");
@@ -2834,11 +3043,22 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
         serviceType: optionalFormValue(data, "service_type"),
         productId: selectedProduct?.id || optionalFormValue(data, "product_id"),
         productName: selectedProduct?.name || null,
+        productPricingModel: selectedProduct?.pricing_model || null,
+        productBaseAmount: estimate.baseAmount,
+        productEstimatedHours: Number(selectedProduct?.estimated_hours || 0),
+        productHourlyRate: Number(selectedProduct?.hourly_rate || 0),
+        productMarkup: estimate.markupRate,
         substrateId: selectedSubstrate?.id || optionalFormValue(data, "substrate_id"),
         substrateName: selectedSubstrate?.name || null,
+        includedSubstrates: estimate.includedSubstrates.map((substrate) => ({
+          id: substrate.id,
+          name: substrate.name,
+          cost: Number(substrate.unit_cost || 0),
+        })),
+        additionalSubstrateCost: estimate.additionalSubstrates.reduce((sum, substrate) => sum + Number(substrate.unit_cost || 0), 0),
         quantity,
         itemsText,
-        items: itemsText ? budgetItemsFromText(itemsText) : [{
+        items: itemsText ? budgetItemsFromText(itemsText, subtotal) : [{
           position: 1,
           text: itemTitle,
           title: itemTitle,
@@ -2868,6 +3088,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const startsAt = optionalDateFromForm(data, "starts_at", "Início", errors);
     const dueAt = optionalDateFromForm(data, "due_at", "Prazo", errors);
     validateDateOrder(startsAt, dueAt, "Início", "Prazo", errors);
+    const recurrence = optionalFormValue(data, "recurrence") || "one_time";
     const payload = {
       title: requiredTextFromForm(data, "title", "o título da OS", errors),
       client_id: optionalFormValue(data, "client_id"),
@@ -2876,8 +3097,13 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       status: String(data.get("status") || "open"),
       starts_at: startsAt,
       due_at: dueAt,
+      recurrence,
+      billing_cycle: textFromForm(data, "billing_cycle"),
+      estimated_hours: nonNegativeNumberFromForm(data, "estimated_hours", "Horas previstas", errors),
+      hourly_rate: nonNegativeNumberFromForm(data, "hourly_rate", "Valor/hora", errors),
       scope: scopeValue ? (editing?.scope && scopeValue === previousScopeText ? editing.scope : { text: scopeValue }) : {},
     };
+    if (!ORDER_RECURRENCES.some(([value]) => value === recurrence)) errors.push("Recorrência inválida.");
     if (!validateCrmPayload("service_orders", errors)) return;
 
     await submitCrmRecord("service_orders", payload, editing, editing ? "OS atualizada." : "OS criada.");
@@ -2958,6 +3184,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
         title: budget.title,
         status: "open",
         due_at: budget.valid_until,
+        recurrence: "one_time",
+        billing_cycle: payload.deliveryTerms || "",
+        estimated_hours: Number(payload.productEstimatedHours || 0),
+        hourly_rate: Number(payload.productHourlyRate || 0),
         scope: {
           text: scope || budget.title,
           fromBudget: budget.id,

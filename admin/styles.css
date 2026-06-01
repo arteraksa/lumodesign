@@ -1189,9 +1189,97 @@ h1 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.report-wide {
+  grid-column: 1 / -1;
+}
+
 .report-list {
   display: grid;
   gap: 10px;
+}
+
+.report-bars {
+  display: grid;
+  gap: 14px;
+}
+
+.report-bar-row {
+  display: grid;
+  gap: 7px;
+}
+
+.report-bar-meta {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.report-bar-meta span,
+.report-bar-row small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.report-bar-meta strong {
+  color: #fff;
+  font-size: 14px;
+}
+
+.report-bar-track {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.report-bar-track span {
+  background: linear-gradient(90deg, rgba(126, 67, 255, 0.92), rgba(143, 240, 189, 0.78));
+  display: block;
+  height: 100%;
+}
+
+.choice-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.choice-pill {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: grid;
+  gap: 6px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-height: 44px;
+  padding: 9px 10px;
+}
+
+.choice-pill:hover {
+  border-color: rgba(139, 81, 255, 0.48);
+}
+
+.choice-pill input {
+  accent-color: var(--accent);
+}
+
+.choice-pill span {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.choice-pill small {
+  color: var(--subtle);
+  font-size: 12px;
 }
 
 .budget-estimate-detail {
@@ -1202,6 +1290,11 @@ h1 {
   font-size: 13px;
   line-height: 1.35;
   padding: 10px 12px;
+}
+
+.compact-empty {
+  min-height: 0;
+  padding: 12px;
 }
 
 .select-column {
