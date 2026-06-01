@@ -1324,6 +1324,23 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       : [];
   }
 
+  function selectedOrderIds() {
+    return Array.isArray(state.crmSelectedOrders) ? state.crmSelectedOrders : [];
+  }
+
+  function setSelectedOrderIds(ids) {
+    const available = new Set(state.serviceOrders.map((order) => order.id));
+    state.crmSelectedOrders = [...new Set(ids)].filter((id) => available.has(id));
+  }
+
+  function selectedServiceOrdersForAction(fallbackId = "") {
+    if (fallbackId) return state.serviceOrders.filter((order) => order.id === fallbackId);
+    const ids = selectedOrderIds();
+    return ids.length
+      ? ids.map((id) => state.serviceOrders.find((order) => order.id === id)).filter(Boolean)
+      : [];
+  }
+
   function filteredProducts() {
     const query = String(state.crmProductSearch || "").trim().toLowerCase();
     const status = state.crmProductStatus || "all";
@@ -1399,6 +1416,29 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     restoreFieldFocus("[data-budget-search]", restoreSearchFocus);
   }
 
+  function selectOrder(id, checked) {
+    if (!id) return;
+    const current = selectedOrderIds();
+    setSelectedOrderIds(checked ? [...current, id] : current.filter((item) => item !== id));
+    renderServiceOrders();
+  }
+
+  function selectAllVisibleOrders(checked) {
+    const visibleIds = filteredServiceOrders().map((order) => order.id);
+    const current = selectedOrderIds().filter((id) => !visibleIds.includes(id));
+    setSelectedOrderIds(checked ? [...current, ...visibleIds] : current);
+    renderServiceOrders();
+  }
+
+  function updateOrderFilters(nextFilters = {}) {
+    const restoreSearchFocus = Object.prototype.hasOwnProperty.call(nextFilters, "search");
+    state.crmOrderSearch = nextFilters.search ?? state.crmOrderSearch ?? "";
+    state.crmOrderStatus = nextFilters.status ?? state.crmOrderStatus ?? "all";
+    setSelectedOrderIds(selectedOrderIds());
+    renderServiceOrders();
+    restoreFieldFocus("[data-order-search]", restoreSearchFocus);
+  }
+
   function filteredBudgets() {
     const query = String(state.crmBudgetSearch || "").trim().toLowerCase();
     const status = state.crmBudgetStatus || "all";
@@ -1408,6 +1448,29 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       if (!query) return true;
       return budgetSearchText(budget).includes(query);
     });
+  }
+
+  function filteredServiceOrders() {
+    const query = String(state.crmOrderSearch || "").trim().toLowerCase();
+    const status = state.crmOrderStatus || "all";
+    return state.serviceOrders.filter((order) => {
+      if (status !== "all" && order.status !== status) return false;
+      if (!query) return true;
+      return orderSearchText(order).includes(query);
+    });
+  }
+
+  function orderSearchText(order) {
+    return [
+      order.title,
+      scopeText(order.scope),
+      orderBudgetLabel(order),
+      entityName(state.clients, order.client_id, ""),
+      entityName(state.projects, order.project_id, ""),
+      labelFromOptions(ORDER_STATUSES, order.status),
+      orderBillingLine(order),
+      formatDate(order.due_at),
+    ].filter(Boolean).join(" ").toLowerCase();
   }
 
   function budgetSearchText(budget) {
@@ -2465,6 +2528,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderServiceOrders() {
+    const orders = filteredServiceOrders();
+
     renderCrmWorkspace("orders", {
       eyebrow: "Ordens de serviço",
       title: "Escopo aprovado",
@@ -2479,15 +2544,52 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               </div>
               <button class="button button-primary" type="button" data-open-order-modal>Incluir</button>
             </div>
-            ${renderOrderTable()}
-            <div class="crm-action-bar" aria-label="Ações de OS">
-              <button class="button button-primary" type="button" data-open-order-modal>Incluir</button>
-              <button class="button button-secondary" type="button" data-open-order-modal="${escapeHtml(state.serviceOrders[0]?.id || "")}" ${state.serviceOrders.length ? "" : "disabled"}>Alterar última</button>
-              <button class="button button-secondary" type="button" data-export-order-pdf="${escapeHtml(state.serviceOrders[0]?.id || "")}" ${state.serviceOrders.length ? "" : "disabled"}>Exportar PDF</button>
-            </div>
+            ${renderOrderToolbar(orders)}
+            ${renderOrderTable(orders)}
+            ${renderOrderActionBar(orders)}
           </section>
         </section>`,
     });
+  }
+
+  function renderOrderToolbar(orders) {
+    const selectedCount = selectedOrderIds().filter((id) => orders.some((order) => order.id === id)).length;
+    return `
+      <div class="crm-toolbar order-toolbar">
+        <label class="field compact-field">
+          <span>Busca</span>
+          <input class="input" type="search" placeholder="OS, cliente, projeto, orçamento ou escopo" value="${valueAttr(state.crmOrderSearch || "")}" data-order-search>
+        </label>
+        <label class="field compact-field">
+          <span>Filtro</span>
+          <select class="select" data-order-status-filter>${selectOptions([["all", "Todos"], ...ORDER_STATUSES], state.crmOrderStatus || "all")}</select>
+        </label>
+        <div class="toolbar-meta">
+          <strong>${orders.length}</strong>
+          <span>${orders.length === 1 ? "OS visível" : "OS visíveis"}</span>
+        </div>
+        <div class="toolbar-meta">
+          <strong>${selectedCount}</strong>
+          <span>${selectedCount === 1 ? "selecionada" : "selecionadas"}</span>
+        </div>
+      </div>`;
+  }
+
+  function renderOrderActionBar(orders) {
+    const visibleSelected = selectedOrderIds().filter((id) => orders.some((order) => order.id === id));
+    const selectedOrders = visibleSelected.map((id) => state.serviceOrders.find((order) => order.id === id)).filter(Boolean);
+    const selectedCount = selectedOrders.length;
+    const singleSelected = selectedCount === 1;
+    const recurringSelected = singleSelected && selectedOrders[0].recurrence && selectedOrders[0].recurrence !== "one_time";
+
+    return `
+      <div class="crm-action-bar" aria-label="Ações de OS">
+        <button class="button button-primary" type="button" data-open-order-modal>Incluir</button>
+        <button class="button button-secondary" type="button" data-duplicate-order ${selectedCount ? "" : "disabled"}>Duplicar</button>
+        <button class="button button-secondary" type="button" data-open-order-modal="${escapeHtml(selectedOrders[0]?.id || "")}" ${singleSelected ? "" : "disabled"}>Alterar</button>
+        <button class="button button-secondary" type="button" data-export-order-pdf ${selectedCount ? "" : "disabled"}>Exportar PDF</button>
+        <button class="button button-secondary" type="button" data-generate-recurring-orders="${escapeHtml(selectedOrders[0]?.id || "")}" ${recurringSelected ? "" : "disabled"}>Gerar ciclo</button>
+      </div>`;
   }
 
   function openServiceOrderModal(id = "") {
@@ -2690,29 +2792,26 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function exportServiceOrderPdf(id = "") {
-    const order = state.serviceOrders.find((item) => item.id === id) || state.serviceOrders[0] || null;
-    if (!order) {
+    const orders = selectedServiceOrdersForAction(id);
+    if (!orders.length) {
       setNotice("error", "Selecione uma OS para exportar.");
       renderServiceOrders();
       return;
     }
-    state.crmPdfExport = { type: "orders", ids: [order.id] };
-    state.modal = renderServiceOrderPdfModal(order);
+    state.crmPdfExport = { type: "orders", ids: orders.map((order) => order.id) };
+    state.modal = renderServiceOrderPdfModal(orders);
     render();
   }
 
-  function renderServiceOrderPdfModal(order) {
-    const budget = state.budgets.find((item) => item.id === order.budget_id);
-    const client = state.clients.find((item) => item.id === order.client_id);
-    const scope = scopeText(order.scope) || "Escopo não informado.";
-
+  function renderServiceOrderPdfModal(orders) {
+    const firstOrder = orders[0];
     return `
       <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Preview da OS">
         <div class="modal modal-preview">
           <div class="modal-header no-print">
             <div>
               <span class="eyebrow">Preview PDF</span>
-              <h2>${escapeHtml(order.title)}</h2>
+              <h2>${orders.length === 1 ? escapeHtml(firstOrder.title) : `${orders.length} OS selecionadas`}</h2>
             </div>
             <div class="modal-actions">
               <button class="button button-secondary" type="button" data-download-proposal-pdf>Baixar PDF</button>
@@ -2720,6 +2819,19 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <button class="icon-button" type="button" data-close-modal>Fechar</button>
             </div>
           </div>
+          <div class="proposal-stack">
+            ${orders.map(renderServiceOrderProposalSheet).join("")}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function renderServiceOrderProposalSheet(order) {
+    const budget = state.budgets.find((item) => item.id === order.budget_id);
+    const client = state.clients.find((item) => item.id === order.client_id);
+    const scope = scopeText(order.scope) || "Escopo não informado.";
+
+    return `
           <article class="proposal-sheet" aria-label="Documento da OS">
             <header class="proposal-header">
               <div class="proposal-brand">
@@ -2763,9 +2875,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <strong>Escopo</strong>
               ${scope.split(/\r?\n/).filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join("")}
             </section>
-          </article>
-        </div>
-      </div>`;
+          </article>`;
   }
 
   async function downloadActivePdf() {
@@ -2788,10 +2898,15 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
         });
         doc.save(budgets.length === 1 ? `orcamento-${budgetNumberLabel(budgets[0])}.pdf` : `orcamentos-raksa-${new Date().toISOString().slice(0, 10)}.pdf`);
       } else {
-        const order = state.serviceOrders.find((item) => item.id === state.crmPdfExport.ids[0]);
-        if (!order) throw new Error("OS não encontrada.");
-        drawOrderPdfPage(doc, order);
-        doc.save(`os-${slugSafe(order.title || "raksa")}.pdf`);
+        const orders = state.crmPdfExport.ids
+          .map((id) => state.serviceOrders.find((order) => order.id === id))
+          .filter(Boolean);
+        if (!orders.length) throw new Error("OS não encontrada.");
+        orders.forEach((order, index) => {
+          if (index) doc.addPage();
+          drawOrderPdfPage(doc, order);
+        });
+        doc.save(orders.length === 1 ? `os-${slugSafe(orders[0].title || "raksa")}.pdf` : `ordens-servico-raksa-${new Date().toISOString().slice(0, 10)}.pdf`);
       }
     } catch (error) {
       setNotice("error", error.message || "Não foi possível gerar o PDF agora.");
@@ -3044,14 +3159,20 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     });
   }
 
-  function renderOrderTable() {
-    if (!state.serviceOrders.length) return `<div class="empty-state">Nenhuma OS cadastrada.</div>`;
+  function renderOrderTable(orders = filteredServiceOrders()) {
+    if (!orders.length) return `<div class="empty-state">Nenhuma OS cadastrada.</div>`;
+    const visibleIds = orders.map((order) => order.id);
+    const selectedIds = selectedOrderIds();
+    const allVisibleSelected = visibleIds.length > 0 && visibleIds.every((id) => selectedIds.includes(id));
 
     return `
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
+              <th class="select-column">
+                <input type="checkbox" aria-label="Selecionar OS visíveis" data-select-all-orders ${allVisibleSelected ? "checked" : ""}>
+              </th>
               <th>OS</th>
               <th>Orçamento</th>
               <th>Cliente</th>
@@ -3059,32 +3180,42 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <th>Status</th>
               <th>Ciclo</th>
               <th>Prazo</th>
+              <th>Valor previsto</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            ${state.serviceOrders.map((order) => `
-              <tr>
-                <td>
-                  <strong>${escapeHtml(order.title)}</strong>
-                  <span>${escapeHtml(scopeText(order.scope).slice(0, 96))}</span>
-                </td>
-                <td>${escapeHtml(orderBudgetLabel(order))}</td>
-                <td>${escapeHtml(entityName(state.clients, order.client_id))}</td>
-                <td>${escapeHtml(entityName(state.projects, order.project_id))}</td>
-                <td><span class="status-pill">${escapeHtml(labelFromOptions(ORDER_STATUSES, order.status))}</span></td>
-                <td>${escapeHtml(orderBillingLine(order))}</td>
-                <td>${formatDate(order.due_at)}</td>
-                <td>
-                  <div class="row-actions">
-                    <button class="icon-button" type="button" data-open-order-modal="${escapeHtml(order.id)}">Alterar</button>
-                    <button class="icon-button" type="button" data-export-order-pdf="${escapeHtml(order.id)}">PDF</button>
-                    ${order.recurrence && order.recurrence !== "one_time" ? `<button class="icon-button" type="button" data-generate-recurring-orders="${escapeHtml(order.id)}">Gerar ciclo</button>` : ""}
-                    <button class="icon-button" type="button" data-delete-crm="service_orders:${escapeHtml(order.id)}">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-            `).join("")}
+            ${orders.map((order) => {
+              const selected = selectedIds.includes(order.id);
+              const orderTotal = Number(order.estimated_hours || 0) && Number(order.hourly_rate || 0)
+                ? formatCurrency(Number(order.estimated_hours || 0) * Number(order.hourly_rate || 0))
+                : "-";
+              return `
+                <tr class="${selected ? "is-selected" : ""}">
+                  <td class="select-column">
+                    <input type="checkbox" value="${escapeHtml(order.id)}" aria-label="Selecionar OS ${escapeHtml(order.title)}" data-select-order ${selected ? "checked" : ""}>
+                  </td>
+                  <td>
+                    <strong>${escapeHtml(order.title)}</strong>
+                    <span>${escapeHtml(scopeText(order.scope).slice(0, 96))}</span>
+                  </td>
+                  <td>${escapeHtml(orderBudgetLabel(order))}</td>
+                  <td>${escapeHtml(entityName(state.clients, order.client_id))}</td>
+                  <td>${escapeHtml(entityName(state.projects, order.project_id))}</td>
+                  <td><span class="status-pill">${escapeHtml(labelFromOptions(ORDER_STATUSES, order.status))}</span></td>
+                  <td>${escapeHtml(orderBillingLine(order))}</td>
+                  <td>${formatDate(order.due_at)}</td>
+                  <td><strong>${escapeHtml(orderTotal)}</strong></td>
+                  <td>
+                    <div class="row-actions">
+                      <button class="icon-button" type="button" data-open-order-modal="${escapeHtml(order.id)}">Alterar</button>
+                      <button class="icon-button" type="button" data-export-order-pdf="${escapeHtml(order.id)}">PDF</button>
+                      ${order.recurrence && order.recurrence !== "one_time" ? `<button class="icon-button" type="button" data-generate-recurring-orders="${escapeHtml(order.id)}">Gerar ciclo</button>` : ""}
+                      <button class="icon-button" type="button" data-delete-crm="service_orders:${escapeHtml(order.id)}">Excluir</button>
+                    </div>
+                  </td>
+                </tr>`;
+            }).join("")}
           </tbody>
         </table>
       </div>`;
@@ -3481,6 +3612,47 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     await afterCrmMutation(error, budgets.length === 1 ? "Orçamento duplicado." : "Orçamentos duplicados.", routeKey());
   }
 
+  async function duplicateSelectedServiceOrders() {
+    if (!supabase() || !isLoggedIn() || isSubmitting("service_orders")) return;
+    const orders = selectedServiceOrdersForAction();
+    if (!orders.length) {
+      setNotice("error", "Selecione uma OS para duplicar.");
+      renderServiceOrders();
+      return;
+    }
+
+    state.crmSubmitting = "service_orders";
+    renderServiceOrders();
+    const rows = orders.map((order) => ({
+      client_id: order.client_id,
+      project_id: order.project_id,
+      budget_id: order.budget_id,
+      title: `Cópia de ${order.title}`,
+      status: "open",
+      starts_at: order.starts_at,
+      due_at: order.due_at,
+      recurrence: order.recurrence || "one_time",
+      billing_cycle: order.billing_cycle || "",
+      estimated_hours: Number(order.estimated_hours || 0),
+      hourly_rate: Number(order.hourly_rate || 0),
+      scope: {
+        ...orderScopeObject(order),
+        text: scopeText(order.scope) || order.title,
+        duplicatedFrom: order.id,
+        duplicatedAt: new Date().toISOString(),
+      },
+    }));
+
+    let error = null;
+    try {
+      const result = await supabase().from("service_orders").insert(rows);
+      error = result.error;
+    } catch (caught) {
+      error = caught;
+    }
+    await afterCrmMutation(error, orders.length === 1 ? "OS duplicada." : "OS duplicadas.", routeKey());
+  }
+
   async function createServiceOrderFromBudget(id = "") {
     if (!supabase() || !isLoggedIn() || isSubmitting("service_orders")) return;
     const budgets = selectedBudgetsForAction(id);
@@ -3712,6 +3884,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     createTimeEntry,
     deleteCrmRecord,
     duplicateSelectedBudget,
+    duplicateSelectedServiceOrders,
     downloadActivePdf,
     exportBudgetReportCsv,
     exportSelectedBudgetPdf,
@@ -3733,12 +3906,15 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     renderTimeEntries,
     selectBudget,
     selectAllVisibleBudgets,
+    selectOrder,
+    selectAllVisibleOrders,
     syncBudgetContactOptions,
     removeBudgetItem,
     updateBudgetEstimate,
     updateBudgetItemsEstimate,
     updateBudgetFilters,
     updateBudgetReportFilter,
+    updateOrderFilters,
     updateProductFilters,
     updateSubstrateFilters,
     updateBudgetTotalPreview,

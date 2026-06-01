@@ -1,4 +1,4 @@
-import { createCrmModule } from "./modules/crm.js?v=8";
+import { createCrmModule } from "./modules/crm.js?v=9";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
 import { createApiModule } from "./modules/api.js?v=7";
 import { createShellModule } from "./modules/shell.js?v=3";
@@ -31,6 +31,9 @@ const state = {
   crmBudgetSearch: "",
   crmBudgetStatus: "all",
   crmSelectedBudgets: [],
+  crmOrderSearch: "",
+  crmOrderStatus: "all",
+  crmSelectedOrders: [],
   crmProductSearch: "",
   crmProductStatus: "all",
   crmSubstrateSearch: "",
@@ -196,6 +199,7 @@ const {
   createTimeEntry,
   deleteCrmRecord,
   duplicateSelectedBudget,
+  duplicateSelectedServiceOrders,
   downloadActivePdf,
   exportBudgetReportCsv,
   exportSelectedBudgetPdf,
@@ -217,12 +221,15 @@ const {
   renderTimeEntries,
   selectBudget,
   selectAllVisibleBudgets,
+  selectOrder,
+  selectAllVisibleOrders,
   syncBudgetContactOptions,
   removeBudgetItem,
   updateBudgetEstimate,
   updateBudgetItemsEstimate,
   updateBudgetFilters,
   updateBudgetReportFilter,
+  updateOrderFilters,
   updateProductFilters,
   updateSubstrateFilters,
   updateBudgetTotalPreview,
@@ -333,6 +340,10 @@ document.addEventListener("input", (event) => {
     updateBudgetFilters({ search: event.target.value });
   }
 
+  if (event.target.matches("[data-order-search]")) {
+    updateOrderFilters({ search: event.target.value });
+  }
+
   if (event.target.matches("[data-product-search]")) {
     updateProductFilters({ search: event.target.value });
   }
@@ -386,6 +397,7 @@ document.addEventListener("click", async (event) => {
   if (target.matches("[data-remove-budget-item]")) removeBudgetItem(target);
   if (target.matches("[data-recalc-budget-items]")) updateBudgetItemsEstimate(target.closest("[data-budget-form]"), true, true);
   if (target.matches("[data-duplicate-budget]")) await duplicateSelectedBudget();
+  if (target.matches("[data-duplicate-order]")) await duplicateSelectedServiceOrders();
   if (target.matches("[data-create-order-from-budget]")) await createServiceOrderFromBudget(target.dataset.createOrderFromBudget || "");
   if (target.matches("[data-generate-recurring-orders]")) await generateRecurringOrders(target.dataset.generateRecurringOrders || "");
   if (target.matches("[data-export-budget-pdf]")) exportSelectedBudgetPdf(target.dataset.exportBudgetPdf || "");
@@ -442,6 +454,12 @@ document.addEventListener("change", async (event) => {
     return;
   }
 
+  const orderStatus = event.target.closest("[data-order-status-filter]");
+  if (orderStatus) {
+    updateOrderFilters({ status: orderStatus.value });
+    return;
+  }
+
   const productStatus = event.target.closest("[data-product-status-filter]");
   if (productStatus) {
     updateProductFilters({ status: productStatus.value });
@@ -469,6 +487,18 @@ document.addEventListener("change", async (event) => {
   const budgetSelectAll = event.target.closest("[data-select-all-budgets]");
   if (budgetSelectAll) {
     selectAllVisibleBudgets(budgetSelectAll.checked);
+    return;
+  }
+
+  const orderSelect = event.target.closest("[data-select-order]");
+  if (orderSelect) {
+    selectOrder(orderSelect.value, orderSelect.checked);
+    return;
+  }
+
+  const orderSelectAll = event.target.closest("[data-select-all-orders]");
+  if (orderSelectAll) {
+    selectAllVisibleOrders(orderSelectAll.checked);
     return;
   }
 
