@@ -2,6 +2,7 @@
   const PAGE_BASE = "/raksadesign";
   const CASES_PATH = `${PAGE_BASE}/cases/`;
   const CASE_TEMPLATE_PATH = `${PAGE_BASE}/cases/atitus-educação/`;
+  const CASE_WEBSITE_BUTTON_TEMPLATE_PATH = `${PAGE_BASE}/cases/paula-and-domenick/`;
   const BASIC_COLUMNS = "id,slug,title,tags,description,cover,images,updated_at";
   const EXTENDED_COLUMNS = `${BASIC_COLUMNS},excerpt,published,featured_on_home,home_order,content_blocks,created_at`;
   const FULL_COLUMNS = `${EXTENDED_COLUMNS},external_url`;
@@ -16,6 +17,7 @@
   let contentGuardTimer = 0;
   let partialFilterControls = [];
   let caseTemplatePromise = null;
+  let caseWebsiteButtonTemplatePromise = null;
   let dynamicCaseRenderingSlug = "";
 
   function sitePath(pathname = window.location.pathname) {
@@ -99,6 +101,10 @@
   function normalizeAssetUrl(value = "") {
     if (value.startsWith("/framerusercontent.com/") || value.startsWith("/vendor/")) return `${PAGE_BASE}${value}`;
     return value;
+  }
+
+  function caseExternalUrl(item = {}) {
+    return String(item.external_url || item.externalUrl || item.website || item.link || "").trim();
   }
 
   function caseUrl(slug) {
@@ -247,7 +253,7 @@
     const rows = await response.json();
     return rows.map((item) => ({
       ...item,
-      external_url: item.external_url ?? item.externalUrl ?? "",
+      external_url: caseExternalUrl(item),
       featured_on_home: item.featured_on_home ?? item.featuredOnHome ?? false,
       home_order: item.home_order ?? item.homeOrder ?? 999,
       published: item.published ?? true,
@@ -266,7 +272,7 @@
       excerpt: item.excerpt || item.description || "",
       featured_on_home: item.featured_on_home ?? false,
       home_order: item.home_order ?? 999,
-      external_url: item.external_url || "",
+      external_url: caseExternalUrl(item),
     };
   }
 
@@ -941,13 +947,26 @@
     return caseTemplatePromise;
   }
 
-  function injectCaseTemplateAssets(templateDocument) {
-    if (!document.querySelector("[data-raksa-case-template-assets]")) {
+  async function loadCaseWebsiteButtonTemplateDocument() {
+    if (!caseWebsiteButtonTemplatePromise) {
+      caseWebsiteButtonTemplatePromise = fetch(CASE_WEBSITE_BUTTON_TEMPLATE_PATH, { cache: "force-cache" })
+        .then((response) => {
+          if (!response.ok) throw new Error(`Website button template ${response.status}`);
+          return response.text();
+        })
+        .then((html) => new DOMParser().parseFromString(html, "text/html"));
+    }
+
+    return caseWebsiteButtonTemplatePromise;
+  }
+
+  function injectCaseTemplateAssets(templateDocument, assetKey = "base") {
+    if (!document.querySelector(`[data-raksa-case-template-assets="${assetKey}"]`)) {
       templateDocument
         .querySelectorAll("style[data-framer-font-css], style[data-framer-breakpoint-css], style[data-framer-css-ssr-minified]")
         .forEach((style) => {
           const clone = style.cloneNode(true);
-          clone.dataset.raksaCaseTemplateAssets = "true";
+          clone.dataset.raksaCaseTemplateAssets = assetKey;
           document.head.appendChild(clone);
         });
     }
@@ -1170,6 +1189,7 @@
     }
     if (kind === "nextText") return buttons.find((button) => shortText(button.textContent, 80) === "Pr\u00f3ximo");
     if (kind === "previousText") return buttons.find((button) => shortText(button.textContent, 80) === "Anterior");
+    if (kind === "externalText") return buttons.find((button) => shortText(button.textContent, 80) === "Acessar website");
     return null;
   }
 
@@ -1316,13 +1336,40 @@
     });
   }
 
-  function patchTemplateExternalLinks(root, item) {
-    const externalAnchors = Array.from(root.querySelectorAll("a"))
+  function insertTemplateExternalLink(root, templateDocument) {
+    const component = framerCaseButtonComponent(templateDocument, "externalText");
+    if (!component) return null;
+
+    const wrapper = document.createElement("div");
+    wrapper.dataset.raksaDynamicExternalLink = "true";
+    wrapper.style.width = "100%";
+    wrapper.style.willChange = "transform";
+    wrapper.style.opacity = "1";
+    wrapper.style.transform = "none";
+    wrapper.appendChild(component);
+
+    const badges = root.querySelector("[data-framer-name='badge']")?.parentElement;
+    const textScroll = root.querySelector("[data-framer-name='texto-scroll']");
+    if (badges?.parentElement) badges.insertAdjacentElement("afterend", wrapper);
+    else if (textScroll?.parentElement) textScroll.insertAdjacentElement("beforebegin", wrapper);
+    else root.prepend(wrapper);
+
+    return component;
+  }
+
+  function patchTemplateExternalLinks(root, item, websiteButtonTemplateDocument = null) {
+    const externalUrl = caseExternalUrl(item);
+    let externalAnchors = Array.from(root.querySelectorAll("a"))
       .filter((anchor) => shortText(anchor.textContent, 80) === "Acessar website");
 
+    if (!externalAnchors.length && externalUrl && websiteButtonTemplateDocument) {
+      const inserted = insertTemplateExternalLink(root, websiteButtonTemplateDocument);
+      if (inserted) externalAnchors = [inserted];
+    }
+
     externalAnchors.forEach((anchor) => {
-      if (item.external_url) {
-        anchor.href = item.external_url;
+      if (externalUrl) {
+        anchor.href = externalUrl;
         anchor.target = "_blank";
         anchor.rel = "noopener";
         showTemplateUnit(anchor);
@@ -1462,7 +1509,7 @@
     });
   }
 
-  function patchFramerCaseTemplate(root, item, cases, slug, templateDocument) {
+  function patchFramerCaseTemplate(root, item, cases, slug, templateDocument, websiteButtonTemplateDocument = null) {
     root.dataset.raksaDynamicCaseSlug = slug;
     document.title = `${item.title || "Case"} - Raksa`;
 
@@ -1475,7 +1522,7 @@
     const body = root.querySelector("[data-framer-name='texto-scroll'] [data-framer-component-type='RichTextContainer']");
     if (body) body.innerHTML = caseBodyHtml(item);
 
-    patchTemplateExternalLinks(root, item);
+    patchTemplateExternalLinks(root, item, websiteButtonTemplateDocument);
     patchTemplateBackLinks(root, templateDocument);
     patchTemplateGallery(root, item);
     patchTemplateNavigation(root, cases, slug, templateDocument);
@@ -1487,12 +1534,13 @@
     const tags = tagsFor(item);
     const description = item.description || item.excerpt || "";
     const images = mediaForCase(item);
+    const externalUrl = caseExternalUrl(item);
     document.title = `${item.title || "Case"} - Raksa`;
     root.innerHTML = `
       <main class="raksa-dynamic-case" data-raksa-case-slug="${escapeHtml(slug)}">
         <nav class="raksa-dynamic-case__nav" aria-label="Navegacao do case">
           <a href="${CASES_PATH}">Todos os cases</a>
-          ${item.external_url ? `<a href="${escapeHtml(item.external_url)}" target="_blank" rel="noopener">Acessar website</a>` : ""}
+          ${externalUrl ? `<a href="${escapeHtml(externalUrl)}" target="_blank" rel="noopener">Acessar website</a>` : ""}
         </nav>
         <div class="raksa-dynamic-case__body">
           <section class="raksa-dynamic-case__hero">
@@ -1517,10 +1565,18 @@
     dynamicCaseRenderingSlug = slug;
     try {
       const templateDocument = await loadCaseTemplateDocument();
+      let websiteButtonTemplateDocument = null;
+      if (caseExternalUrl(item)) {
+        try {
+          websiteButtonTemplateDocument = await loadCaseWebsiteButtonTemplateDocument();
+        } catch (buttonError) {
+          console.warn("[RAKSA] Case website button template unavailable.", buttonError);
+        }
+      }
       if (normalizeSlug(caseSlugFromPath()) !== slug) return;
-      injectCaseTemplateAssets(templateDocument);
+      injectCaseTemplateAssets(templateDocument, "case");
       replaceMainWithTemplate(root, templateDocument);
-      patchFramerCaseTemplate(root, item, cases, slug, templateDocument);
+      patchFramerCaseTemplate(root, item, cases, slug, templateDocument, websiteButtonTemplateDocument);
     } catch (error) {
       console.warn("[RAKSA] Case template unavailable, using fallback.", error);
       renderFallbackDynamicCaseDetail(root, item, slug);

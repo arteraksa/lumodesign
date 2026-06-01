@@ -128,7 +128,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/023.jpg",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/024.jpg"
     ],
-    "updatedAt": "2026-05-28T15:48:10.951Z"
+    "updatedAt": "2026-05-28T15:48:10.951Z",
+    "externalUrl": "https://www.blenduca.com.br"
   },
   {
     "id": "bu1ld",
@@ -298,7 +299,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/dark-star/gallery/037.jpg",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/dark-star/gallery/038.jpg"
     ],
-    "updatedAt": "2026-05-28T15:48:10.968Z"
+    "updatedAt": "2026-05-28T15:48:10.968Z",
+    "externalUrl": "https://quiet-access-957752.framer.app/"
   },
   {
     "id": "definna",
@@ -448,7 +450,8 @@
       "/raksadesign/framerusercontent.com/images/gltTA8PWKkfnMmBIYp43ywQ4THw.jpg?width=1920&height=1080",
       "/raksadesign/framerusercontent.com/images/e4kmXnR10jGPYVHY5PGuJGGKic.jpg?width=1920&height=1080"
     ],
-    "updatedAt": "2026-05-28T15:48:10.979Z"
+    "updatedAt": "2026-05-28T15:48:10.979Z",
+    "externalUrl": "http://ericclaptonbrasiltour.com.br"
   },
   {
     "id": "impresul",
@@ -511,7 +514,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/026.jpg",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/027.jpg"
     ],
-    "updatedAt": "2026-05-28T15:48:10.984Z"
+    "updatedAt": "2026-05-28T15:48:10.984Z",
+    "externalUrl": "http://jaqh2.com.br"
   },
   {
     "id": "leylaw",
@@ -573,7 +577,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/leylaw/gallery/048.jpg",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/leylaw/gallery/049.jpg"
     ],
-    "updatedAt": "2026-05-28T15:48:10.986Z"
+    "updatedAt": "2026-05-28T15:48:10.986Z",
+    "externalUrl": "https://leylaw.ai"
   },
   {
     "id": "lisa-dossi",
@@ -741,7 +746,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/004.png",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/005.png"
     ],
-    "updatedAt": "2026-05-28T15:48:11.001Z"
+    "updatedAt": "2026-05-28T15:48:11.001Z",
+    "externalUrl": "https://paulaanddom.com/pt/home#hero"
   },
   {
     "id": "plataforma-ead",
@@ -783,7 +789,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/007.jpg",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/008.jpg"
     ],
-    "updatedAt": "2026-05-28T15:48:11.007Z"
+    "updatedAt": "2026-05-28T15:48:11.007Z",
+    "externalUrl": "http://polvilhododado.com.br"
   },
   {
     "id": "portal-do-aluno-ufrgs",
@@ -901,7 +908,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/gallery/002.jpg",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/gallery/003.jpg"
     ],
-    "updatedAt": "2026-05-28T15:48:11.016Z"
+    "updatedAt": "2026-05-28T15:48:11.016Z",
+    "externalUrl": "http://tri.rs"
   },
   {
     "id": "vacinas-infográfico",
@@ -937,7 +945,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/005.jpg",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/006.jpg"
     ],
-    "updatedAt": "2026-05-28T15:48:11.020Z"
+    "updatedAt": "2026-05-28T15:48:11.020Z",
+    "externalUrl": "https://vallor.ai"
   },
   {
     "id": "valor-capital-group",
@@ -1019,7 +1028,8 @@
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/046.jpg",
       "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/047.jpg"
     ],
-    "updatedAt": "2026-05-28T15:48:11.026Z"
+    "updatedAt": "2026-05-28T15:48:11.026Z",
+    "externalUrl": "https://vexocred.com"
   },
   {
     "id": "voce-marca",
@@ -1033,7 +1043,8 @@
     "images": [
       "/raksadesign/framerusercontent.com/images/7STa5qV59W7LXHCAfzhU31ZjDow.jpg?width=2039&height=12097"
     ],
-    "updatedAt": "2026-05-28T15:48:11.029Z"
+    "updatedAt": "2026-05-28T15:48:11.029Z",
+    "externalUrl": "https://www.vcmarcadigital.com.br"
   },
   {
     "id": "workshop-de-mentor-ia",

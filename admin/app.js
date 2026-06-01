@@ -1,6 +1,6 @@
 import { createCrmModule } from "./modules/crm.js?v=2";
 import { createMetricsModule } from "./modules/metrics.js?v=2";
-import { createApiModule } from "./modules/api.js?v=2";
+import { createApiModule } from "./modules/api.js?v=3";
 import { createShellModule } from "./modules/shell.js?v=2";
 import { createCasesModule } from "./modules/cases.js?v=3";
 

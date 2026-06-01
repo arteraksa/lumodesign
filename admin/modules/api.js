@@ -84,6 +84,10 @@ export function createApiModule({ state, supabaseConfig, getSupabase, isLoggedIn
     return Number.isFinite(order) ? order : 999;
   }
 
+  function caseExternalUrl(item = {}) {
+    return String(item.externalUrl || item.external_url || item.website || item.link || "").trim();
+  }
+
   function withCaseDefaults(item) {
     const normalized = {
       tags: [],
@@ -100,8 +104,8 @@ export function createApiModule({ state, supabaseConfig, getSupabase, isLoggedIn
       featuredOnHome: false,
       homeOrder: 999,
       contentBlocks: [],
-      externalUrl: "",
       ...normalized,
+      externalUrl: caseExternalUrl(normalized),
       tags: normalizeTags(normalized.tags),
       images: Array.isArray(normalized.images) ? normalized.images : [],
       published: normalized.published !== false,
@@ -228,7 +232,7 @@ export function createApiModule({ state, supabaseConfig, getSupabase, isLoggedIn
       featuredOnHome: row.featured_on_home ?? false,
       homeOrder: row.home_order ?? 999,
       contentBlocks: row.content_blocks || [],
-      externalUrl: row.external_url || "",
+      externalUrl: caseExternalUrl(row),
       createdAt: row.created_at,
       updatedAt: row.updated_at,
     };
@@ -258,7 +262,7 @@ export function createApiModule({ state, supabaseConfig, getSupabase, isLoggedIn
       created_at: item.createdAt || item.updatedAt || new Date().toISOString(),
     };
 
-    if (external) payload.external_url = item.externalUrl || "";
+    if (external) payload.external_url = caseExternalUrl(item);
     return payload;
   }
 
