@@ -1,6 +1,6 @@
-import { createCrmModule } from "./modules/crm.js?v=3";
+import { createCrmModule } from "./modules/crm.js?v=4";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
-import { createApiModule } from "./modules/api.js?v=4";
+import { createApiModule } from "./modules/api.js?v=5";
 import { createShellModule } from "./modules/shell.js?v=3";
 import { createCasesModule } from "./modules/cases.js?v=4";
 
@@ -28,8 +28,14 @@ const state = {
   crmLoaded: false,
   crmLoading: false,
   crmEdit: null,
+  crmBudgetSearch: "",
+  crmBudgetStatus: "all",
+  crmSelectedBudgets: [],
   clients: [],
+  contacts: [],
   projects: [],
+  products: [],
+  substrates: [],
   budgets: [],
   serviceOrders: [],
   timeEntries: [],
@@ -127,7 +133,7 @@ function render() {
   else if (section === "projects") window.location.replace("#/crm/projects");
   else if (section === "budgets") window.location.replace("#/crm/budgets");
   else if (section === "orders") window.location.replace("#/crm/orders");
-  else if (section === "time") window.location.replace("#/crm/time");
+  else if (section === "time") window.location.replace("#/crm/orders");
   else if (section === "metrics") renderMetricsPage();
   else renderDashboard();
 }
@@ -174,11 +180,21 @@ const {
   cancelCrmEdit,
   createBudget,
   createClient,
+  createProduct,
   createProject,
   createServiceOrder,
+  createSubstrate,
+  createServiceOrderFromBudget,
   createTimeEntry,
   deleteCrmRecord,
+  duplicateSelectedBudget,
+  exportSelectedBudgetPdf,
+  exportServiceOrderPdf,
   openCrmEdit,
+  openBudgetModal,
+  openProductModal,
+  openServiceOrderModal,
+  openSubstrateModal,
   renderBudgets,
   renderClients,
   renderCrmPage,
@@ -186,6 +202,10 @@ const {
   renderProjects,
   renderServiceOrders,
   renderTimeEntries,
+  selectBudget,
+  selectAllVisibleBudgets,
+  syncBudgetContactOptions,
+  updateBudgetFilters,
   updateBudgetTotalPreview,
 } = createCrmModule({
   state,
@@ -205,14 +225,18 @@ document.addEventListener("submit", async (event) => {
   const form = event.target.closest("[data-login-form]");
   const clientForm = event.target.closest("[data-client-form]");
   const projectForm = event.target.closest("[data-project-form]");
+  const productForm = event.target.closest("[data-product-form]");
+  const substrateForm = event.target.closest("[data-substrate-form]");
   const budgetForm = event.target.closest("[data-budget-form]");
   const orderForm = event.target.closest("[data-order-form]");
   const timeForm = event.target.closest("[data-time-form]");
-  if (!form && !clientForm && !projectForm && !budgetForm && !orderForm && !timeForm) return;
+  if (!form && !clientForm && !projectForm && !productForm && !substrateForm && !budgetForm && !orderForm && !timeForm) return;
   event.preventDefault();
 
   if (clientForm) return createClient(clientForm);
   if (projectForm) return createProject(projectForm);
+  if (productForm) return createProduct(productForm);
+  if (substrateForm) return createSubstrate(substrateForm);
   if (budgetForm) return createBudget(budgetForm);
   if (orderForm) return createServiceOrder(orderForm);
   if (timeForm) return createTimeEntry(timeForm);
@@ -275,6 +299,10 @@ document.addEventListener("input", (event) => {
   if (event.target.matches("[data-budget-money]")) {
     updateBudgetTotalPreview(event.target.form);
   }
+
+  if (event.target.matches("[data-budget-search]")) {
+    updateBudgetFilters({ search: event.target.value });
+  }
 });
 
 document.addEventListener("keydown", (event) => {
@@ -314,6 +342,16 @@ document.addEventListener("click", async (event) => {
   }
 
   if (target.matches("[data-delete-case]")) openDeleteModal(target.dataset.deleteCase);
+  if (target.matches("[data-open-budget-modal]")) openBudgetModal();
+  if (target.matches("[data-edit-budget-modal]")) openBudgetModal(target.dataset.editBudgetModal);
+  if (target.matches("[data-duplicate-budget]")) await duplicateSelectedBudget();
+  if (target.matches("[data-create-order-from-budget]")) await createServiceOrderFromBudget(target.dataset.createOrderFromBudget || "");
+  if (target.matches("[data-export-budget-pdf]")) exportSelectedBudgetPdf(target.dataset.exportBudgetPdf || "");
+  if (target.matches("[data-export-order-pdf]")) exportServiceOrderPdf(target.dataset.exportOrderPdf || "");
+  if (target.matches("[data-print-budget-pdf]")) window.print();
+  if (target.matches("[data-open-order-modal]")) openServiceOrderModal(target.dataset.openOrderModal || "");
+  if (target.matches("[data-open-product-modal]")) openProductModal(target.dataset.openProductModal || "");
+  if (target.matches("[data-open-substrate-modal]")) openSubstrateModal(target.dataset.openSubstrateModal || "");
   if (target.matches("[data-edit-crm]")) {
     const [table, id] = target.dataset.editCrm.split(":");
     openCrmEdit(table, id);
@@ -327,12 +365,37 @@ document.addEventListener("click", async (event) => {
   }
   if (target.matches("[data-close-modal]")) {
     state.modal = null;
-    renderDashboard();
+    state.crmEdit = null;
+    render();
   }
   if (target.matches("[data-confirm-delete]")) await deleteCase(target.dataset.confirmDelete);
 });
 
 document.addEventListener("change", async (event) => {
+  const budgetClientSelect = event.target.closest("[data-budget-client-select]");
+  if (budgetClientSelect) {
+    syncBudgetContactOptions(budgetClientSelect);
+    return;
+  }
+
+  const budgetStatus = event.target.closest("[data-budget-status-filter]");
+  if (budgetStatus) {
+    updateBudgetFilters({ status: budgetStatus.value });
+    return;
+  }
+
+  const budgetSelect = event.target.closest("[data-select-budget]");
+  if (budgetSelect) {
+    selectBudget(budgetSelect.value, budgetSelect.checked);
+    return;
+  }
+
+  const budgetSelectAll = event.target.closest("[data-select-all-budgets]");
+  if (budgetSelectAll) {
+    selectAllVisibleBudgets(budgetSelectAll.checked);
+    return;
+  }
+
   const cmsField = event.target.closest("[data-cms-field]");
   if (cmsField) {
     await updateCmsCaseField(cmsField.dataset.cmsSlug, cmsField.dataset.cmsField, cmsField.value);

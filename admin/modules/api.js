@@ -5,17 +5,20 @@ import {
   CASES_TABLE,
   CASES_URL,
   CLIENT_COLUMNS,
+  CONTACT_COLUMNS,
   EXTENDED_CASE_COLUMNS,
   FULL_CASE_COLUMNS,
   IMAGE_BUCKET,
   LEGACY_STORAGE_KEYS,
   METRIC_COLUMNS,
+  PRODUCT_COLUMNS,
   PROJECT_COLUMNS,
   SERVICE_ORDER_COLUMNS,
   STORAGE_KEY,
+  SUBSTRATE_COLUMNS,
   TAGS,
   TIME_ENTRY_COLUMNS,
-} from "./constants.js?v=3";
+} from "./constants.js?v=4";
 import { normalizeAssetUrl } from "./utils.js?v=3";
 
 export function createApiModule({ state, supabaseConfig, getSupabase, isLoggedIn }) {
@@ -180,24 +183,30 @@ export function createApiModule({ state, supabaseConfig, getSupabase, isLoggedIn
     if (!client || !isLoggedIn() || (state.crmLoaded && !force) || state.crmLoading) return;
     state.crmLoading = true;
 
-    const [clients, projects, budgets, serviceOrders, timeEntries, metricsEvents] = await Promise.all([
+    const [clients, contacts, projects, products, substrates, budgets, serviceOrders, timeEntries, metricsEvents] = await Promise.all([
       client.from("clients").select(CLIENT_COLUMNS).order("name", { ascending: true }),
+      client.from("contacts").select(CONTACT_COLUMNS).order("name", { ascending: true }),
       client.from("projects").select(PROJECT_COLUMNS).order("created_at", { ascending: false }),
-      client.from("budgets").select(BUDGET_COLUMNS).order("created_at", { ascending: false }),
+      client.from("products").select(PRODUCT_COLUMNS).order("name", { ascending: true }),
+      client.from("substrates").select(SUBSTRATE_COLUMNS).order("name", { ascending: true }),
+      client.from("budgets").select(BUDGET_COLUMNS).order("budget_number", { ascending: false }).order("created_at", { ascending: false }),
       client.from("service_orders").select(SERVICE_ORDER_COLUMNS).order("created_at", { ascending: false }),
       client.from("time_entries").select(TIME_ENTRY_COLUMNS).order("work_date", { ascending: false }).limit(300),
       client.from("metrics_events").select(METRIC_COLUMNS).order("created_at", { ascending: false }).limit(500),
     ]);
 
     state.crmLoading = false;
-    const error = [clients, projects, budgets, serviceOrders, timeEntries, metricsEvents].find((result) => result.error)?.error;
+    const error = [clients, contacts, projects, products, substrates, budgets, serviceOrders, timeEntries, metricsEvents].find((result) => result.error)?.error;
     if (error) {
       console.warn("[RAKSA Admin] CRM indisponivel.", error);
       return;
     }
 
     state.clients = clients.data || [];
+    state.contacts = contacts.data || [];
     state.projects = projects.data || [];
+    state.products = products.data || [];
+    state.substrates = substrates.data || [];
     state.budgets = budgets.data || [];
     state.serviceOrders = serviceOrders.data || [];
     state.timeEntries = timeEntries.data || [];

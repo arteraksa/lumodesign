@@ -6,7 +6,7 @@ import {
   CRM_STATE_KEYS,
   ORDER_STATUSES,
   PROJECT_STATUSES,
-} from "./constants.js?v=3";
+} from "./constants.js?v=4";
 import {
   dateInputValue,
   entityName,
@@ -82,6 +82,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function renderTablePage(table) {
     if (table === "clients") return renderClients();
     if (table === "projects") return renderProjects();
+    if (table === "products") return renderProducts();
+    if (table === "substrates") return renderSubstrates();
     if (table === "budgets") return renderBudgets();
     if (table === "service_orders") return renderServiceOrders();
     if (table === "time_entries") return renderTimeEntries();
@@ -90,9 +92,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function renderCrmPage(tab = "clients") {
     if (tab === "projects") return renderProjects();
+    if (tab === "products") return renderProducts();
+    if (tab === "substrates") return renderSubstrates();
     if (tab === "budgets") return renderBudgets();
     if (tab === "orders") return renderServiceOrders();
-    if (tab === "time") return renderTimeEntries();
     return renderClients();
   }
 
@@ -118,6 +121,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
     const noticeRoute = routeKey();
     state.crmSubmitting = table;
+    refreshSubmittingModal(table, editing);
     renderTablePage(table);
 
     let error = null;
@@ -128,7 +132,15 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       error = caught;
     }
 
-    await afterCrmMutation(error, successMessage, noticeRoute);
+    await afterCrmMutation(error, successMessage, noticeRoute, table, editing);
+  }
+
+  function refreshSubmittingModal(table, record) {
+    if (!state.modal) return;
+    if (table === "budgets") state.modal = renderBudgetModal(record);
+    if (table === "service_orders") state.modal = renderServiceOrderModal(record);
+    if (table === "products") state.modal = renderProductModal(record);
+    if (table === "substrates") state.modal = renderSubstrateModal(record);
   }
 
   function renderCrmNotice() {
@@ -391,7 +403,269 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       </div>`;
   }
 
+  function renderProducts() {
+    renderCrmWorkspace("products", {
+      eyebrow: "Produtos",
+      title: "Cadastro de produtos",
+      subtitle: `${state.products.length} produtos cadastrados`,
+      body: `
+        <section class="crm-panel-stack">
+          <section class="panel data-panel">
+            <div class="crm-list-heading">
+              <div class="page-title">
+                <h2>Produtos</h2>
+                <p class="section-subtitle">Serviços que entram nos orçamentos com preço e horas base.</p>
+              </div>
+              <button class="button button-primary" type="button" data-open-product-modal>Incluir</button>
+            </div>
+            ${renderProductTable()}
+          </section>
+        </section>`,
+    });
+  }
+
+  function renderProductTable() {
+    if (!state.products.length) return `<div class="empty-state">Nenhum produto cadastrado.</div>`;
+
+    return `
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Categoria</th>
+              <th>Preço base</th>
+              <th>Horas</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            ${state.products.map((product) => `
+              <tr>
+                <td>
+                  <strong>${escapeHtml(product.name)}</strong>
+                  <span>${escapeHtml(product.description || "")}</span>
+                </td>
+                <td>${escapeHtml(product.category || "-")}</td>
+                <td>${formatCurrency(product.base_price || 0)}</td>
+                <td>${formatDecimalHours(product.estimated_hours || 0)}</td>
+                <td><span class="status-pill">${product.status === "inactive" ? "Inativo" : "Ativo"}</span></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="icon-button" type="button" data-open-product-modal="${escapeHtml(product.id)}">Alterar</button>
+                    <button class="icon-button" type="button" data-delete-crm="products:${escapeHtml(product.id)}">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>`;
+  }
+
+  function renderSubstrates() {
+    renderCrmWorkspace("substrates", {
+      eyebrow: "Substratos",
+      title: "Custos e insumos",
+      subtitle: `${state.substrates.length} substratos cadastrados`,
+      body: `
+        <section class="crm-panel-stack">
+          <section class="panel data-panel">
+            <div class="crm-list-heading">
+              <div class="page-title">
+                <h2>Substratos</h2>
+                <p class="section-subtitle">Insumos, ferramentas, licenças e custos recorrentes usados nos produtos.</p>
+              </div>
+              <button class="button button-primary" type="button" data-open-substrate-modal>Incluir</button>
+            </div>
+            ${renderSubstrateTable()}
+          </section>
+        </section>`,
+    });
+  }
+
+  function renderSubstrateTable() {
+    if (!state.substrates.length) return `<div class="empty-state">Nenhum substrato cadastrado.</div>`;
+
+    return `
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Substrato</th>
+              <th>Tipo</th>
+              <th>Unidade</th>
+              <th>Custo unitário</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            ${state.substrates.map((substrate) => `
+              <tr>
+                <td>
+                  <strong>${escapeHtml(substrate.name)}</strong>
+                  <span>${escapeHtml(substrate.notes || "")}</span>
+                </td>
+                <td>${escapeHtml(substrate.kind || "-")}</td>
+                <td>${escapeHtml(substrate.unit || "-")}</td>
+                <td>${formatCurrency(substrate.unit_cost || 0)}</td>
+                <td><span class="status-pill">${substrate.status === "inactive" ? "Inativo" : "Ativo"}</span></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="icon-button" type="button" data-open-substrate-modal="${escapeHtml(substrate.id)}">Alterar</button>
+                    <button class="icon-button" type="button" data-delete-crm="substrates:${escapeHtml(substrate.id)}">Excluir</button>
+                  </div>
+                </td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>`;
+  }
+
   function renderBudgets() {
+    const budgets = filteredBudgets();
+
+    renderCrmWorkspace("budgets", {
+      eyebrow: "Orçamentos",
+      title: "Propostas comerciais",
+      subtitle: `${state.budgets.length} orçamentos cadastrados`,
+      metrics: renderBudgetMetrics(),
+      body: `
+        <section class="crm-panel-stack">
+          <section class="panel data-panel budget-list-panel">
+            <div class="crm-list-heading">
+              <div class="page-title">
+                <h2>Orçamentos</h2>
+                <p class="section-subtitle">Lista principal para buscar, selecionar, duplicar, exportar e gerar OS.</p>
+              </div>
+              <button class="button button-primary" type="button" data-open-budget-modal>Incluir</button>
+            </div>
+            ${renderBudgetToolbar(budgets)}
+            ${renderBudgetTable(budgets)}
+            ${renderBudgetActionBar(budgets)}
+          </section>
+        </section>`,
+    });
+  }
+
+  function renderBudgetToolbar(budgets) {
+    const selectedCount = selectedBudgetIds().filter((id) => budgets.some((budget) => budget.id === id)).length;
+    const statusOptions = [
+      ["all", "Todos"],
+      ...BUDGET_STATUSES,
+      ["resolved", "Resolvidos"],
+    ];
+
+    return `
+      <div class="crm-toolbar budget-toolbar">
+        <label class="field compact-field">
+          <span>Busca</span>
+          <input class="input" type="search" placeholder="Número, cliente, contato, vendedor ou título" value="${valueAttr(state.crmBudgetSearch || "")}" data-budget-search>
+        </label>
+        <label class="field compact-field">
+          <span>Filtro</span>
+          <select class="select" data-budget-status-filter>${selectOptions(statusOptions, state.crmBudgetStatus || "all")}</select>
+        </label>
+        <div class="toolbar-meta">
+          <strong>${budgets.length}</strong>
+          <span>${budgets.length === 1 ? "orçamento visível" : "orçamentos visíveis"}</span>
+        </div>
+        <div class="toolbar-meta">
+          <strong>${selectedCount}</strong>
+          <span>${selectedCount === 1 ? "selecionado" : "selecionados"}</span>
+        </div>
+      </div>`;
+  }
+
+  function renderBudgetTable(budgets) {
+    if (!budgets.length) return `<div class="empty-state">Nenhum orçamento cadastrado.</div>`;
+    const visibleIds = budgets.map((budget) => budget.id);
+    const selectedIds = selectedBudgetIds();
+    const allVisibleSelected = visibleIds.length > 0 && visibleIds.every((id) => selectedIds.includes(id));
+
+    return `
+      <div class="table-wrap budget-table-wrap">
+        <table class="data-table budget-table">
+          <thead>
+            <tr>
+              <th class="select-column">
+                <input type="checkbox" aria-label="Selecionar orçamentos visíveis" data-select-all-budgets ${allVisibleSelected ? "checked" : ""}>
+              </th>
+              <th>Orçamento</th>
+              <th>Itens</th>
+              <th>Cliente</th>
+              <th>Contato</th>
+              <th>Vendedor</th>
+              <th>Agência / indicação</th>
+              <th>Últ. movimento</th>
+              <th>OS</th>
+              <th>Resolvido</th>
+              <th>Orçamento para</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            ${budgets.map((budget) => {
+              const hasOrder = budgetHasOrder(budget);
+              const selected = selectedIds.includes(budget.id);
+              return `
+                <tr class="${selected ? "is-selected" : ""}">
+                  <td class="select-column">
+                    <input type="checkbox" value="${escapeHtml(budget.id)}" aria-label="Selecionar orçamento ${escapeHtml(budgetNumberLabel(budget))}" data-select-budget ${selected ? "checked" : ""}>
+                  </td>
+                  <td>
+                    <strong>${escapeHtml(budgetNumberLabel(budget))}</strong>
+                    <span>${escapeHtml(budget.title || "Sem título")}</span>
+                  </td>
+                  <td>${budgetItemCount(budget)}</td>
+                  <td>${escapeHtml(entityName(state.clients, budget.client_id))}</td>
+                  <td>
+                    <strong>${escapeHtml(budgetContactName(budget))}</strong>
+                    <span>${escapeHtml(budgetContactLine(budget))}</span>
+                  </td>
+                  <td>${escapeHtml(budgetSeller(budget))}</td>
+                  <td>${escapeHtml(budgetAgency(budget))}</td>
+                  <td>${formatDate(budget.updated_at || budget.created_at)}</td>
+                  <td><span class="crm-check ${hasOrder ? "is-on" : ""}" aria-label="${hasOrder ? "OS emitida" : "Sem OS"}">${hasOrder ? "✓" : "-"}</span></td>
+                  <td><span class="crm-check ${budget.resolved ? "is-on" : ""}" aria-label="${budget.resolved ? "Resolvido" : "Pendente"}">${budget.resolved ? "✓" : "-"}</span></td>
+                  <td>${escapeHtml(budgetForLabel(budget))}</td>
+                  <td><strong>${formatCurrency(budget.total, budget.currency || "BRL")}</strong><span>${escapeHtml(labelFromOptions(BUDGET_STATUSES, budget.status))}</span></td>
+                  <td>
+                    <div class="row-actions">
+                      <button class="icon-button" type="button" data-edit-budget-modal="${escapeHtml(budget.id)}">Alterar</button>
+                      <button class="icon-button" type="button" data-export-budget-pdf="${escapeHtml(budget.id)}">PDF</button>
+                      <button class="icon-button" type="button" data-create-order-from-budget="${escapeHtml(budget.id)}">${hasOrder ? "Ver OS" : "Gerar OS"}</button>
+                      <button class="icon-button" type="button" data-delete-crm="budgets:${escapeHtml(budget.id)}">Excluir</button>
+                    </div>
+                  </td>
+                </tr>`;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>`;
+  }
+
+  function renderBudgetActionBar(budgets) {
+    const selectedCount = selectedBudgetIds().filter((id) => budgets.some((budget) => budget.id === id)).length;
+    const singleSelected = selectedCount === 1;
+    const hasSelection = selectedCount > 0;
+
+    return `
+      <div class="crm-action-bar" aria-label="Ações de orçamento">
+        <button class="button button-primary" type="button" data-open-budget-modal>Incluir</button>
+        <button class="button button-secondary" type="button" data-duplicate-budget ${singleSelected ? "" : "disabled"}>Duplicar</button>
+        <button class="button button-secondary" type="button" data-edit-budget-modal ${singleSelected ? "" : "disabled"}>Alterar</button>
+        <button class="button button-secondary" type="button" disabled>Relatórios</button>
+        <button class="button button-secondary" type="button" data-export-budget-pdf ${singleSelected ? "" : "disabled"}>Exportar PDF</button>
+        <button class="button button-secondary" type="button" data-create-order-from-budget ${hasSelection ? "" : "disabled"}>Gerar OS</button>
+      </div>`;
+  }
+
+  function renderLegacyBudgetBoard() {
     const editingBudget = crmEditRecord("budgets");
     const editingPayload = budgetPayload(editingBudget);
     const editingItemsText = budgetItemsText(editingBudget);
@@ -672,6 +946,194 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       </article>`;
   }
 
+  function selectedBudgetIds() {
+    return Array.isArray(state.crmSelectedBudgets) ? state.crmSelectedBudgets : [];
+  }
+
+  function setSelectedBudgetIds(ids) {
+    const available = new Set(state.budgets.map((budget) => budget.id));
+    state.crmSelectedBudgets = [...new Set(ids)].filter((id) => available.has(id));
+  }
+
+  function selectedBudgetFromState(fallbackId = "") {
+    const id = fallbackId || selectedBudgetIds()[0] || "";
+    return state.budgets.find((budget) => budget.id === id) || null;
+  }
+
+  function selectBudget(id, checked) {
+    if (!id) return;
+    const current = selectedBudgetIds();
+    setSelectedBudgetIds(checked ? [...current, id] : current.filter((item) => item !== id));
+    renderBudgets();
+  }
+
+  function selectAllVisibleBudgets(checked) {
+    const visibleIds = filteredBudgets().map((budget) => budget.id);
+    const current = selectedBudgetIds().filter((id) => !visibleIds.includes(id));
+    setSelectedBudgetIds(checked ? [...current, ...visibleIds] : current);
+    renderBudgets();
+  }
+
+  function updateBudgetFilters(nextFilters = {}) {
+    const restoreSearchFocus = Object.prototype.hasOwnProperty.call(nextFilters, "search");
+    state.crmBudgetSearch = nextFilters.search ?? state.crmBudgetSearch ?? "";
+    state.crmBudgetStatus = nextFilters.status ?? state.crmBudgetStatus ?? "all";
+    setSelectedBudgetIds(selectedBudgetIds());
+    renderBudgets();
+    if (restoreSearchFocus) {
+      requestAnimationFrame(() => {
+        const input = document.querySelector("[data-budget-search]");
+        if (!input) return;
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+      });
+    }
+  }
+
+  function filteredBudgets() {
+    const query = String(state.crmBudgetSearch || "").trim().toLowerCase();
+    const status = state.crmBudgetStatus || "all";
+    return state.budgets.filter((budget) => {
+      if (status === "resolved" && !budget.resolved) return false;
+      if (status !== "all" && status !== "resolved" && budget.status !== status) return false;
+      if (!query) return true;
+      return budgetSearchText(budget).includes(query);
+    });
+  }
+
+  function budgetSearchText(budget) {
+    const payload = budgetPayload(budget);
+    return [
+      budgetNumberLabel(budget),
+      budget.title,
+      entityName(state.clients, budget.client_id, ""),
+      budgetContactName(budget),
+      budgetContactLine(budget),
+      payload.salesOwner,
+      payload.agency,
+      payload.budgetFor,
+      payload.productName,
+      payload.substrateName,
+      budgetItemsText(budget),
+    ].filter(Boolean).join(" ").toLowerCase();
+  }
+
+  function budgetNumberLabel(budget) {
+    if (budget?.budget_number) return String(budget.budget_number).padStart(5, "0");
+    return budget?.id ? `TMP-${String(budget.id).slice(0, 8)}` : "Automático";
+  }
+
+  function budgetItemCount(budget) {
+    const payload = budgetPayload(budget);
+    if (Array.isArray(payload.items) && payload.items.length) return payload.items.length;
+    if (budgetItemsText(budget)) return budgetItemsText(budget).split(/\r?\n/).filter((line) => line.trim()).length;
+    return payload.productId || payload.serviceType ? 1 : 0;
+  }
+
+  function budgetHasOrder(budget) {
+    return state.serviceOrders.some((order) => order.budget_id === budget.id);
+  }
+
+  function budgetContactRecord(budget) {
+    return state.contacts.find((contact) => contact.id === budget?.contact_id) || null;
+  }
+
+  function budgetContactName(budget) {
+    const contact = budgetContactRecord(budget);
+    const payload = budgetPayload(budget);
+    return contact?.name || payload.contact || "-";
+  }
+
+  function budgetContactLine(budget) {
+    const contact = budgetContactRecord(budget);
+    const payload = budgetPayload(budget);
+    return contact?.email || contact?.phone || payload.contactEmail || payload.contactPhone || "";
+  }
+
+  function budgetSeller(budget) {
+    return budgetPayload(budget).salesOwner || "-";
+  }
+
+  function budgetAgency(budget) {
+    return budgetPayload(budget).agency || "-";
+  }
+
+  function budgetForLabel(budget) {
+    return budgetPayload(budget).budgetFor || "Cliente";
+  }
+
+  function orderBudgetLabel(order) {
+    const budget = state.budgets.find((item) => item.id === order?.budget_id);
+    return budget ? `${budgetNumberLabel(budget)} · ${budget.title}` : "-";
+  }
+
+  function productRecord(id) {
+    return state.products.find((product) => product.id === id) || null;
+  }
+
+  function substrateRecord(id) {
+    return state.substrates.find((substrate) => substrate.id === id) || null;
+  }
+
+  function contactOptions(selectedValue = "", clientId = "") {
+    if (clientId) {
+      const contacts = state.contacts.filter((contact) => contact.client_id === clientId);
+      return [
+        `<option value="">${contacts.length ? "Selecione" : "Sem contato cadastrado"}</option>`,
+        ...contacts.map((contact) => `<option value="${escapeHtml(contact.id)}" ${String(selectedValue) === String(contact.id) ? "selected" : ""}>${escapeHtml(contact.name)}${contact.email ? ` · ${escapeHtml(contact.email)}` : ""}</option>`),
+      ].join("");
+    }
+
+    const contactsByClient = state.clients.map((client) => {
+      const contacts = state.contacts.filter((contact) => contact.client_id === client.id);
+      if (!contacts.length) return "";
+      return `
+        <optgroup label="${escapeHtml(client.name)}">
+          ${contacts.map((contact) => `<option value="${escapeHtml(contact.id)}" ${String(selectedValue) === String(contact.id) ? "selected" : ""}>${escapeHtml(contact.name)}${contact.email ? ` · ${escapeHtml(contact.email)}` : ""}</option>`).join("")}
+        </optgroup>`;
+    }).join("");
+    return `<option value="">Sem contato vinculado</option>${contactsByClient}`;
+  }
+
+  function syncBudgetContactOptions(clientSelect) {
+    const contactSelect = clientSelect?.closest("[data-budget-form]")?.querySelector("[data-budget-contact-select]");
+    if (!contactSelect) return;
+    contactSelect.innerHTML = contactOptions("", clientSelect.value);
+  }
+
+  function budgetPreviewItems(budget) {
+    const payload = budgetPayload(budget);
+    if (Array.isArray(payload.items) && payload.items.length) {
+      return payload.items.map((item, index) => ({
+        code: String(index + 1).padStart(4, "0"),
+        description: typeof item === "string" ? item : item.text || item.title || "-",
+        quantity: item.quantity || payload.quantity || 1,
+        unitPrice: Number(item.unitPrice ?? item.unit_price ?? 0),
+        total: Number(item.total ?? item.amount ?? 0),
+      }));
+    }
+
+    const textItems = budgetItemsText(budget).split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+    if (textItems.length) {
+      const unitPrice = textItems.length ? Number(budget.total || 0) / textItems.length : 0;
+      return textItems.map((description, index) => ({
+        code: String(index + 1).padStart(4, "0"),
+        description,
+        quantity: 1,
+        unitPrice,
+        total: unitPrice,
+      }));
+    }
+
+    return [{
+      code: "0001",
+      description: budget.title || budgetPayload(budget).serviceType || "Serviço",
+      quantity: payload.quantity || 1,
+      unitPrice: Number(budget.total || 0),
+      total: Number(budget.total || 0),
+    }];
+  }
+
   function budgetPayload(record) {
     if (!record?.payload || typeof record.payload !== "object" || Array.isArray(record.payload)) return {};
     return record.payload;
@@ -784,7 +1246,551 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return hours;
   }
 
+  function openBudgetModal(id = "") {
+    const budget = selectedBudgetFromState(id);
+    state.crmEdit = budget ? { table: "budgets", id: budget.id } : null;
+    state.modal = renderBudgetModal(budget);
+    clearNotice();
+    render();
+  }
+
+  function renderBudgetModal(budget) {
+    const editingPayload = budgetPayload(budget);
+    const editingItemsText = budgetItemsText(budget);
+    const subtotal = Number(budget?.subtotal || 0);
+    const discount = Number(budget?.discount || 0);
+    const tax = Number(budget?.tax || 0);
+    const clientOptions = state.clients.map((client) => [client.id, client.name]);
+    const projectOptions = state.projects.map((project) => [project.id, project.name]);
+    const productOptions = state.products.map((product) => [product.id, product.name]);
+    const substrateOptions = state.substrates.map((substrate) => [substrate.id, `${substrate.name}${substrate.unit_cost ? ` · ${formatCurrency(substrate.unit_cost)}` : ""}`]);
+
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${budget ? "Editar orçamento" : "Novo orçamento"}">
+        <form class="modal modal-wide form-stack budget-form" data-budget-form ${crmFormAttrs("budgets")}>
+          <div class="modal-header">
+            <div>
+              <span class="eyebrow">Orçamento ${escapeHtml(budgetNumberLabel(budget))}</span>
+              <h2>${budget ? "Alterar proposta" : "Incluir proposta"}</h2>
+            </div>
+            <button class="icon-button" type="button" data-close-modal>Fechar</button>
+          </div>
+
+          <section class="budget-section">
+            <div class="budget-section-heading">
+              <strong>Ficha comercial</strong>
+              <span>Cliente, contato, vendedor e status da proposta.</span>
+            </div>
+            <label class="field field-span-2">
+              <span>Título do serviço</span>
+              <input class="input" name="title" value="${valueAttr(budget?.title)}" required>
+            </label>
+            <div class="form-grid">
+              <label class="field">
+                <span>Cliente</span>
+                <select class="select" name="client_id" data-budget-client-select>${selectOptions(clientOptions, budget?.client_id || "", "Sem cliente")}</select>
+              </label>
+              <label class="field">
+                <span>Contato</span>
+                <select class="select" name="contact_id" data-budget-contact-select>${contactOptions(budget?.contact_id || "", budget?.client_id || "")}</select>
+              </label>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Projeto</span>
+                <select class="select" name="project_id">${selectOptions(projectOptions, budget?.project_id || "", "Sem projeto")}</select>
+              </label>
+              <label class="field">
+                <span>Orçamento para</span>
+                <select class="select" name="budget_for">${selectOptions([["Cliente", "Cliente"], ["Interno", "Interno"], ["Agência", "Agência"]], editingPayload.budgetFor || "Cliente")}</select>
+              </label>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Status</span>
+                <select class="select" name="status">${selectOptions(BUDGET_STATUSES, budget?.status || "draft")}</select>
+              </label>
+              <label class="field">
+                <span>Validade</span>
+                <input class="input" name="valid_until" type="date" value="${valueAttr(dateInputValue(budget?.valid_until))}">
+              </label>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Contato manual</span>
+                <input class="input" name="contact" value="${valueAttr(editingPayload.contact)}" placeholder="Nome, e-mail ou WhatsApp">
+              </label>
+              <label class="field">
+                <span>Vendedor</span>
+                <input class="input" name="sales_owner" value="${valueAttr(editingPayload.salesOwner)}" placeholder="Responsável comercial">
+              </label>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Agência / indicação</span>
+                <input class="input" name="agency" value="${valueAttr(editingPayload.agency)}" placeholder="Opcional">
+              </label>
+              <label class="toggle-row">
+                <input type="checkbox" name="resolved" ${budget?.resolved ? "checked" : ""}>
+                <span>Resolvido / faturado</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="budget-section">
+            <div class="budget-section-heading">
+              <strong>Produto e escopo</strong>
+              <span>Produtos e substratos entram como base para automatizar custos.</span>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Produto</span>
+                <select class="select" name="product_id">${selectOptions(productOptions, editingPayload.productId || "", "Selecione")}</select>
+              </label>
+              <label class="field">
+                <span>Substrato</span>
+                <select class="select" name="substrate_id">${selectOptions(substrateOptions, editingPayload.substrateId || "", "Opcional")}</select>
+              </label>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Tipo de serviço</span>
+                <input class="input" name="service_type" value="${valueAttr(editingPayload.serviceType)}" placeholder="Website, branding, editorial...">
+              </label>
+              <label class="field">
+                <span>Quantidade</span>
+                <input class="input" name="quantity" type="number" min="1" step="1" value="${valueAttr(editingPayload.quantity ?? 1)}">
+              </label>
+            </div>
+            <label class="field">
+              <span>Resumo da proposta</span>
+              <textarea class="textarea textarea-small" name="summary" placeholder="Resumo comercial que aparece no PDF.">${escapeHtml(editingPayload.summary || "")}</textarea>
+            </label>
+            <label class="field">
+              <span>Itens da proposta</span>
+              <textarea class="textarea textarea-small" name="items_text" placeholder="Um item por linha">${escapeHtml(editingItemsText)}</textarea>
+            </label>
+          </section>
+
+          <section class="budget-section">
+            <div class="budget-section-heading">
+              <strong>Valores e condições</strong>
+              <span>Subtotal, desconto, impostos e observações que alimentam o PDF.</span>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Subtotal</span>
+                <input class="input" name="subtotal" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(budget?.subtotal ?? "")}" data-budget-money>
+              </label>
+              <label class="field">
+                <span>Desconto</span>
+                <input class="input" name="discount" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(budget?.discount ?? "")}" data-budget-money>
+              </label>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Impostos</span>
+                <input class="input" name="tax" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(budget?.tax ?? "")}" data-budget-money>
+              </label>
+              <div class="budget-total-preview" aria-live="polite">
+                <span>Total estimado</span>
+                <strong data-budget-total-preview-value>${formatCurrency(subtotal - discount + tax)}</strong>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Pagamento</span>
+                <input class="input" name="payment_terms" value="${valueAttr(editingPayload.paymentTerms)}" placeholder="Ex: 50% início / 50% entrega">
+              </label>
+              <label class="field">
+                <span>Entrega</span>
+                <input class="input" name="delivery_terms" value="${valueAttr(editingPayload.deliveryTerms)}" placeholder="Ex: 20 dias úteis">
+              </label>
+            </div>
+            <label class="field">
+              <span>Observações</span>
+              <textarea class="textarea textarea-small" name="production_notes" placeholder="Dependências, arquivos do cliente, restrições e critérios de aceite.">${escapeHtml(editingPayload.productionNotes || "")}</textarea>
+            </label>
+            <label class="field">
+              <span>Notas internas</span>
+              <textarea class="textarea textarea-small" name="internal_notes" placeholder="Não aparece na proposta.">${escapeHtml(editingPayload.internalNotes || "")}</textarea>
+            </label>
+          </section>
+
+          ${renderCrmFormActions("budgets", budget, "Criar orçamento", "Salvar orçamento")}
+        </form>
+      </div>`;
+  }
+
+  function openProductModal(id = "") {
+    const product = state.products.find((item) => item.id === id) || null;
+    state.crmEdit = product ? { table: "products", id: product.id } : null;
+    state.modal = renderProductModal(product);
+    clearNotice();
+    render();
+  }
+
+  function renderProductModal(product) {
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${product ? "Editar produto" : "Novo produto"}">
+        <form class="modal form-stack" data-product-form ${crmFormAttrs("products")}>
+          <div class="modal-header">
+            <div>
+              <span class="eyebrow">Produto</span>
+              <h2>${product ? "Alterar produto" : "Incluir produto"}</h2>
+            </div>
+            <button class="icon-button" type="button" data-close-modal>Fechar</button>
+          </div>
+          <label class="field">
+            <span>Nome</span>
+            <input class="input" name="name" value="${valueAttr(product?.name)}" required>
+          </label>
+          <label class="field">
+            <span>Categoria</span>
+            <input class="input" name="category" value="${valueAttr(product?.category)}" placeholder="Landing page, apresentação, social...">
+          </label>
+          <div class="form-grid">
+            <label class="field">
+              <span>Preço base</span>
+              <input class="input" name="base_price" type="number" min="0" step="0.01" value="${valueAttr(product?.base_price ?? "")}">
+            </label>
+            <label class="field">
+              <span>Horas estimadas</span>
+              <input class="input" name="estimated_hours" type="number" min="0" step="0.25" value="${valueAttr(product?.estimated_hours ?? "")}">
+            </label>
+          </div>
+          <div class="form-grid">
+            <label class="field">
+              <span>Markup padrão</span>
+              <input class="input" name="default_markup" type="number" min="0" step="0.01" value="${valueAttr(product?.default_markup ?? "")}" placeholder="0.00">
+            </label>
+            <label class="field">
+              <span>Status</span>
+              <select class="select" name="status">${selectOptions([["active", "Ativo"], ["inactive", "Inativo"]], product?.status || "active")}</select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Descrição</span>
+            <textarea class="textarea textarea-small" name="description">${escapeHtml(product?.description || "")}</textarea>
+          </label>
+          ${renderCrmFormActions("products", product, "Criar produto", "Salvar produto")}
+        </form>
+      </div>`;
+  }
+
+  function openSubstrateModal(id = "") {
+    const substrate = state.substrates.find((item) => item.id === id) || null;
+    state.crmEdit = substrate ? { table: "substrates", id: substrate.id } : null;
+    state.modal = renderSubstrateModal(substrate);
+    clearNotice();
+    render();
+  }
+
+  function renderSubstrateModal(substrate) {
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${substrate ? "Editar substrato" : "Novo substrato"}">
+        <form class="modal form-stack" data-substrate-form ${crmFormAttrs("substrates")}>
+          <div class="modal-header">
+            <div>
+              <span class="eyebrow">Substrato</span>
+              <h2>${substrate ? "Alterar substrato" : "Incluir substrato"}</h2>
+            </div>
+            <button class="icon-button" type="button" data-close-modal>Fechar</button>
+          </div>
+          <label class="field">
+            <span>Nome</span>
+            <input class="input" name="name" value="${valueAttr(substrate?.name)}" required>
+          </label>
+          <div class="form-grid">
+            <label class="field">
+              <span>Tipo</span>
+              <input class="input" name="kind" value="${valueAttr(substrate?.kind)}" placeholder="Licença, ferramenta, mídia...">
+            </label>
+            <label class="field">
+              <span>Unidade</span>
+              <input class="input" name="unit" value="${valueAttr(substrate?.unit || "un")}">
+            </label>
+          </div>
+          <div class="form-grid">
+            <label class="field">
+              <span>Custo unitário</span>
+              <input class="input" name="unit_cost" type="number" min="0" step="0.01" value="${valueAttr(substrate?.unit_cost ?? "")}">
+            </label>
+            <label class="field">
+              <span>Status</span>
+              <select class="select" name="status">${selectOptions([["active", "Ativo"], ["inactive", "Inativo"]], substrate?.status || "active")}</select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Notas</span>
+            <textarea class="textarea textarea-small" name="notes">${escapeHtml(substrate?.notes || "")}</textarea>
+          </label>
+          ${renderCrmFormActions("substrates", substrate, "Criar substrato", "Salvar substrato")}
+        </form>
+      </div>`;
+  }
+
   function renderServiceOrders() {
+    renderCrmWorkspace("orders", {
+      eyebrow: "Ordens de serviço",
+      title: "Escopo aprovado",
+      subtitle: `${state.serviceOrders.length} OS cadastradas`,
+      body: `
+        <section class="crm-panel-stack">
+          <section class="panel data-panel">
+            <div class="crm-list-heading">
+              <div class="page-title">
+                <h2>Ordens de serviço</h2>
+                <p class="section-subtitle">Lista operacional de OS, com vínculo para orçamento e projeto.</p>
+              </div>
+              <button class="button button-primary" type="button" data-open-order-modal>Incluir</button>
+            </div>
+            ${renderOrderTable()}
+            <div class="crm-action-bar" aria-label="Ações de OS">
+              <button class="button button-primary" type="button" data-open-order-modal>Incluir</button>
+              <button class="button button-secondary" type="button" data-open-order-modal="${escapeHtml(state.serviceOrders[0]?.id || "")}" ${state.serviceOrders.length ? "" : "disabled"}>Alterar última</button>
+              <button class="button button-secondary" type="button" data-export-order-pdf="${escapeHtml(state.serviceOrders[0]?.id || "")}" ${state.serviceOrders.length ? "" : "disabled"}>Exportar PDF</button>
+            </div>
+          </section>
+        </section>`,
+    });
+  }
+
+  function openServiceOrderModal(id = "") {
+    const order = state.serviceOrders.find((item) => item.id === id) || null;
+    state.crmEdit = order ? { table: "service_orders", id: order.id } : null;
+    state.modal = renderServiceOrderModal(order);
+    clearNotice();
+    render();
+  }
+
+  function renderServiceOrderModal(order) {
+    const clientOptions = state.clients.map((client) => [client.id, client.name]);
+    const projectOptions = state.projects.map((project) => [project.id, project.name]);
+    const budgetOptions = state.budgets.map((budget) => [budget.id, `${budgetNumberLabel(budget)} · ${budget.title}`]);
+
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${order ? "Editar OS" : "Nova OS"}">
+        <form class="modal modal-wide form-stack crm-editor-form" data-order-form ${crmFormAttrs("service_orders")}>
+          <div class="modal-header">
+            <div>
+              <span class="eyebrow">Ordem de serviço</span>
+              <h2>${order ? "Alterar OS" : "Incluir OS"}</h2>
+            </div>
+            <button class="icon-button" type="button" data-close-modal>Fechar</button>
+          </div>
+          <div class="crm-form-grid">
+            <label class="field field-span-2">
+              <span>Título</span>
+              <input class="input" name="title" value="${valueAttr(order?.title)}" required>
+            </label>
+            <label class="field">
+              <span>Cliente</span>
+              <select class="select" name="client_id">${selectOptions(clientOptions, order?.client_id || "", "Sem cliente")}</select>
+            </label>
+            <label class="field">
+              <span>Projeto</span>
+              <select class="select" name="project_id">${selectOptions(projectOptions, order?.project_id || "", "Sem projeto")}</select>
+            </label>
+            <label class="field">
+              <span>Orçamento</span>
+              <select class="select" name="budget_id">${selectOptions(budgetOptions, order?.budget_id || "", "Sem orçamento")}</select>
+            </label>
+            <label class="field">
+              <span>Status</span>
+              <select class="select" name="status">${selectOptions(ORDER_STATUSES, order?.status || "open")}</select>
+            </label>
+            <label class="field">
+              <span>Início</span>
+              <input class="input" name="starts_at" type="date" value="${valueAttr(dateInputValue(order?.starts_at))}">
+            </label>
+            <label class="field">
+              <span>Prazo</span>
+              <input class="input" name="due_at" type="date" value="${valueAttr(dateInputValue(order?.due_at))}">
+            </label>
+            <label class="field field-span-4">
+              <span>Escopo</span>
+              <textarea class="textarea textarea-small" name="scope">${escapeHtml(scopeText(order?.scope))}</textarea>
+            </label>
+          </div>
+          ${renderCrmFormActions("service_orders", order, "Criar OS", "Salvar OS")}
+        </form>
+      </div>`;
+  }
+
+  function exportSelectedBudgetPdf(id = "") {
+    const budget = selectedBudgetFromState(id);
+    if (!budget) {
+      setNotice("error", "Selecione um orçamento para exportar.");
+      renderBudgets();
+      return;
+    }
+    state.modal = renderBudgetPdfModal(budget);
+    render();
+  }
+
+  function renderBudgetPdfModal(budget) {
+    const payload = budgetPayload(budget);
+    const contact = budgetContactRecord(budget);
+    const client = state.clients.find((item) => item.id === budget.client_id);
+    const items = budgetPreviewItems(budget);
+    const validUntil = budget.valid_until ? formatDate(budget.valid_until) : "-";
+
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Preview do orçamento">
+        <div class="modal modal-preview">
+          <div class="modal-header no-print">
+            <div>
+              <span class="eyebrow">Preview PDF</span>
+              <h2>Orçamento ${escapeHtml(budgetNumberLabel(budget))}</h2>
+            </div>
+            <div class="modal-actions">
+              <button class="button button-secondary" type="button" data-print-budget-pdf>Gerar PDF</button>
+              <button class="icon-button" type="button" data-close-modal>Fechar</button>
+            </div>
+          </div>
+          <article class="proposal-sheet" aria-label="Documento do orçamento">
+            <header class="proposal-header">
+              <div class="proposal-brand">
+                <strong>RAKSA</strong>
+                <span>Design, estratégia e tecnologia</span>
+              </div>
+              <dl>
+                <div><dt>Criado em</dt><dd>${formatDate(budget.created_at)}</dd></div>
+                <div><dt>Orçamento nº</dt><dd>${escapeHtml(budgetNumberLabel(budget))}</dd></div>
+                <div><dt>Válido até</dt><dd>${escapeHtml(validUntil)}</dd></div>
+              </dl>
+            </header>
+            <h1>Orçamento</h1>
+            <section class="proposal-grid">
+              <div>
+                <strong>Cliente</strong>
+                <span>${escapeHtml(client?.name || "-")}</span>
+              </div>
+              <div>
+                <strong>Contato</strong>
+                <span>${escapeHtml(contact?.name || payload.contact || "-")}</span>
+              </div>
+              <div>
+                <strong>E-mail</strong>
+                <span>${escapeHtml(contact?.email || payload.contactEmail || client?.email || "-")}</span>
+              </div>
+              <div>
+                <strong>Criado por</strong>
+                <span>${escapeHtml(payload.salesOwner || "-")}</span>
+              </div>
+            </section>
+            <table class="proposal-table">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Descrição</th>
+                  <th>Qtd</th>
+                  <th>Preço unit.</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${items.map((item) => `
+                  <tr>
+                    <td>${escapeHtml(item.code)}</td>
+                    <td>${escapeHtml(item.description)}</td>
+                    <td>${escapeHtml(item.quantity)}</td>
+                    <td>${formatCurrency(item.unitPrice)}</td>
+                    <td>${formatCurrency(item.total)}</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+            <section class="proposal-summary">
+              <dl>
+                <div><dt>Subtotal</dt><dd>${formatCurrency(budget.subtotal)}</dd></div>
+                <div><dt>Desconto</dt><dd>${formatCurrency(budget.discount)}</dd></div>
+                <div><dt>Impostos</dt><dd>${formatCurrency(budget.tax)}</dd></div>
+                <div><dt>Total final</dt><dd>${formatCurrency(budget.total)}</dd></div>
+              </dl>
+            </section>
+            <section class="proposal-notes">
+              <strong>Observações</strong>
+              <p>${escapeHtml(payload.summary || payload.productionNotes || "Proposta válida conforme escopo descrito.")}</p>
+              ${payload.paymentTerms ? `<p><strong>Pagamento:</strong> ${escapeHtml(payload.paymentTerms)}</p>` : ""}
+              ${payload.deliveryTerms ? `<p><strong>Entrega:</strong> ${escapeHtml(payload.deliveryTerms)}</p>` : ""}
+            </section>
+          </article>
+        </div>
+      </div>`;
+  }
+
+  function exportServiceOrderPdf(id = "") {
+    const order = state.serviceOrders.find((item) => item.id === id) || state.serviceOrders[0] || null;
+    if (!order) {
+      setNotice("error", "Selecione uma OS para exportar.");
+      renderServiceOrders();
+      return;
+    }
+    state.modal = renderServiceOrderPdfModal(order);
+    render();
+  }
+
+  function renderServiceOrderPdfModal(order) {
+    const budget = state.budgets.find((item) => item.id === order.budget_id);
+    const client = state.clients.find((item) => item.id === order.client_id);
+    const scope = scopeText(order.scope) || "Escopo não informado.";
+
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Preview da OS">
+        <div class="modal modal-preview">
+          <div class="modal-header no-print">
+            <div>
+              <span class="eyebrow">Preview PDF</span>
+              <h2>${escapeHtml(order.title)}</h2>
+            </div>
+            <div class="modal-actions">
+              <button class="button button-secondary" type="button" data-print-budget-pdf>Gerar PDF</button>
+              <button class="icon-button" type="button" data-close-modal>Fechar</button>
+            </div>
+          </div>
+          <article class="proposal-sheet" aria-label="Documento da OS">
+            <header class="proposal-header">
+              <div class="proposal-brand">
+                <strong>RAKSA</strong>
+                <span>Ordem de serviço</span>
+              </div>
+              <dl>
+                <div><dt>Criado em</dt><dd>${formatDate(order.created_at)}</dd></div>
+                <div><dt>Status</dt><dd>${escapeHtml(labelFromOptions(ORDER_STATUSES, order.status))}</dd></div>
+                <div><dt>Prazo</dt><dd>${formatDate(order.due_at)}</dd></div>
+              </dl>
+            </header>
+            <h1>Ordem de serviço</h1>
+            <section class="proposal-grid">
+              <div>
+                <strong>Cliente</strong>
+                <span>${escapeHtml(client?.name || "-")}</span>
+              </div>
+              <div>
+                <strong>Projeto</strong>
+                <span>${escapeHtml(entityName(state.projects, order.project_id))}</span>
+              </div>
+              <div>
+                <strong>Orçamento</strong>
+                <span>${escapeHtml(budget ? budgetNumberLabel(budget) : "-")}</span>
+              </div>
+              <div>
+                <strong>Título</strong>
+                <span>${escapeHtml(order.title)}</span>
+              </div>
+            </section>
+            <section class="proposal-notes proposal-scope">
+              <strong>Escopo</strong>
+              ${scope.split(/\r?\n/).filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join("")}
+            </section>
+          </article>
+        </div>
+      </div>`;
+  }
+
+  function renderLegacyServiceOrders() {
     const editingOrder = crmEditRecord("service_orders");
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
     const projectOptions = state.projects.map((project) => [project.id, project.name]);
@@ -858,6 +1864,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <thead>
             <tr>
               <th>OS</th>
+              <th>Orçamento</th>
+              <th>Cliente</th>
               <th>Projeto</th>
               <th>Status</th>
               <th>Prazo</th>
@@ -869,14 +1877,17 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <tr>
                 <td>
                   <strong>${escapeHtml(order.title)}</strong>
-                  <span>${escapeHtml(entityName(state.clients, order.client_id))}</span>
+                  <span>${escapeHtml(scopeText(order.scope).slice(0, 96))}</span>
                 </td>
+                <td>${escapeHtml(orderBudgetLabel(order))}</td>
+                <td>${escapeHtml(entityName(state.clients, order.client_id))}</td>
                 <td>${escapeHtml(entityName(state.projects, order.project_id))}</td>
                 <td><span class="status-pill">${escapeHtml(labelFromOptions(ORDER_STATUSES, order.status))}</span></td>
                 <td>${formatDate(order.due_at)}</td>
                 <td>
                   <div class="row-actions">
-                    <button class="icon-button" type="button" data-edit-crm="service_orders:${escapeHtml(order.id)}">Editar</button>
+                    <button class="icon-button" type="button" data-open-order-modal="${escapeHtml(order.id)}">Alterar</button>
+                    <button class="icon-button" type="button" data-export-order-pdf="${escapeHtml(order.id)}">PDF</button>
                     <button class="icon-button" type="button" data-delete-crm="service_orders:${escapeHtml(order.id)}">Excluir</button>
                   </div>
                 </td>
@@ -1028,6 +2039,43 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     await submitCrmRecord("clients", payload, editing, editing ? "Cliente atualizado." : "Cliente cadastrado.");
   }
 
+  async function createProduct(form) {
+    if (isSubmitting("products")) return;
+    const editing = crmEditRecord("products");
+    const data = new FormData(form);
+    const errors = [];
+    const payload = {
+      name: requiredTextFromForm(data, "name", "o nome do produto", errors),
+      category: textFromForm(data, "category"),
+      description: textFromForm(data, "description"),
+      base_price: nonNegativeNumberFromForm(data, "base_price", "Preço base", errors),
+      estimated_hours: nonNegativeNumberFromForm(data, "estimated_hours", "Horas estimadas", errors),
+      default_markup: nonNegativeNumberFromForm(data, "default_markup", "Markup padrão", errors),
+      status: String(data.get("status") || "active"),
+    };
+    if (!validateCrmPayload("products", errors)) return;
+
+    await submitCrmRecord("products", payload, editing, editing ? "Produto atualizado." : "Produto cadastrado.");
+  }
+
+  async function createSubstrate(form) {
+    if (isSubmitting("substrates")) return;
+    const editing = crmEditRecord("substrates");
+    const data = new FormData(form);
+    const errors = [];
+    const payload = {
+      name: requiredTextFromForm(data, "name", "o nome do substrato", errors),
+      kind: textFromForm(data, "kind"),
+      unit: textFromForm(data, "unit") || "un",
+      unit_cost: nonNegativeNumberFromForm(data, "unit_cost", "Custo unitário", errors),
+      notes: textFromForm(data, "notes"),
+      status: String(data.get("status") || "active"),
+    };
+    if (!validateCrmPayload("substrates", errors)) return;
+
+    await submitCrmRecord("substrates", payload, editing, editing ? "Substrato atualizado." : "Substrato cadastrado.");
+  }
+
   async function createProject(form) {
     if (isSubmitting("projects")) return;
     const editing = crmEditRecord("projects");
@@ -1056,15 +2104,24 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const editing = crmEditRecord("budgets");
     const data = new FormData(form);
     const errors = [];
-    const subtotal = nonNegativeNumberFromForm(data, "subtotal", "Subtotal", errors);
+    const selectedProduct = productRecord(optionalFormValue(data, "product_id"));
+    const selectedSubstrate = substrateRecord(optionalFormValue(data, "substrate_id"));
+    const quantity = optionalQuantityFromForm(data, errors) || 1;
+    const manualSubtotal = nonNegativeNumberFromForm(data, "subtotal", "Subtotal", errors);
     const discount = nonNegativeNumberFromForm(data, "discount", "Desconto", errors);
     const tax = nonNegativeNumberFromForm(data, "tax", "Impostos", errors);
+    const automaticSubtotal = selectedProduct || selectedSubstrate
+      ? (Number(selectedProduct?.base_price || 0) + Number(selectedSubstrate?.unit_cost || 0)) * quantity
+      : 0;
+    const subtotal = manualSubtotal || automaticSubtotal;
     const total = subtotal - discount + tax;
     const itemsText = textFromForm(data, "items_text");
     if (total < 0) errors.push("Total do orçamento não pode ficar negativo.");
+    const itemTitle = selectedProduct?.name || optionalFormValue(data, "service_type") || textFromForm(data, "title") || "Serviço";
     const payload = {
       title: requiredTextFromForm(data, "title", "o título do orçamento", errors),
       client_id: optionalFormValue(data, "client_id"),
+      contact_id: optionalFormValue(data, "contact_id"),
       project_id: optionalFormValue(data, "project_id"),
       status: String(data.get("status") || "draft"),
       currency: "BRL",
@@ -1073,20 +2130,29 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       tax,
       total,
       valid_until: optionalDateFromForm(data, "valid_until", "Validade", errors),
+      resolved: data.get("resolved") === "on",
       payload: {
         ...budgetPayload(editing),
         contact: optionalFormValue(data, "contact"),
         salesOwner: optionalFormValue(data, "sales_owner"),
         agency: optionalFormValue(data, "agency"),
+        budgetFor: optionalFormValue(data, "budget_for") || "Cliente",
         summary: textFromForm(data, "summary"),
         serviceType: optionalFormValue(data, "service_type"),
-        quantity: optionalQuantityFromForm(data, errors),
-        format: optionalFormValue(data, "format"),
-        material: optionalFormValue(data, "material"),
-        colorProfile: optionalFormValue(data, "color_profile"),
-        finishing: optionalFormValue(data, "finishing"),
+        productId: selectedProduct?.id || optionalFormValue(data, "product_id"),
+        productName: selectedProduct?.name || null,
+        substrateId: selectedSubstrate?.id || optionalFormValue(data, "substrate_id"),
+        substrateName: selectedSubstrate?.name || null,
+        quantity,
         itemsText,
-        items: budgetItemsFromText(itemsText),
+        items: itemsText ? budgetItemsFromText(itemsText) : [{
+          position: 1,
+          text: itemTitle,
+          title: itemTitle,
+          quantity,
+          unitPrice: quantity ? subtotal / quantity : subtotal,
+          total: subtotal,
+        }],
         paymentTerms: optionalFormValue(data, "payment_terms"),
         deliveryTerms: optionalFormValue(data, "delivery_terms"),
         productionNotes: textFromForm(data, "production_notes"),
@@ -1124,6 +2190,106 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     await submitCrmRecord("service_orders", payload, editing, editing ? "OS atualizada." : "OS criada.");
   }
 
+  async function duplicateSelectedBudget() {
+    if (!supabase() || !isLoggedIn() || isSubmitting("budgets")) return;
+    const budget = selectedBudgetFromState();
+    if (!budget) {
+      setNotice("error", "Selecione um orçamento para duplicar.");
+      renderBudgets();
+      return;
+    }
+
+    state.crmSubmitting = "budgets";
+    renderBudgets();
+    const payload = {
+      client_id: budget.client_id,
+      contact_id: budget.contact_id,
+      project_id: budget.project_id,
+      title: `Cópia de ${budget.title}`,
+      status: "draft",
+      currency: budget.currency || "BRL",
+      subtotal: Number(budget.subtotal || 0),
+      discount: Number(budget.discount || 0),
+      tax: Number(budget.tax || 0),
+      total: Number(budget.total || 0),
+      valid_until: budget.valid_until,
+      resolved: false,
+      payload: {
+        ...budgetPayload(budget),
+        duplicatedFrom: budget.id,
+        updatedFromAdminAt: new Date().toISOString(),
+      },
+    };
+
+    let error = null;
+    try {
+      const result = await supabase().from("budgets").insert(payload);
+      error = result.error;
+    } catch (caught) {
+      error = caught;
+    }
+    await afterCrmMutation(error, "Orçamento duplicado.", routeKey());
+  }
+
+  async function createServiceOrderFromBudget(id = "") {
+    if (!supabase() || !isLoggedIn() || isSubmitting("service_orders")) return;
+    const budget = selectedBudgetFromState(id);
+    if (!budget) {
+      setNotice("error", "Selecione um orçamento para gerar OS.");
+      renderBudgets();
+      return;
+    }
+
+    const existingOrder = state.serviceOrders.find((order) => order.budget_id === budget.id);
+    if (existingOrder) {
+      state.crmSelectedBudgets = [budget.id];
+      setNotice("success", "OS já existente para este orçamento.", { route: "crm/orders" });
+      if (window.location.hash !== "#/crm/orders") window.location.hash = "#/crm/orders";
+      else renderServiceOrders();
+      return;
+    }
+
+    state.crmSubmitting = "service_orders";
+    renderBudgets();
+    const payload = budgetPayload(budget);
+    const scope = [
+      payload.summary,
+      budgetItemsText(budget),
+      payload.productionNotes,
+    ].filter(Boolean).join("\n\n");
+    let error = null;
+    try {
+      const result = await supabase().from("service_orders").insert({
+        client_id: budget.client_id,
+        project_id: budget.project_id,
+        budget_id: budget.id,
+        title: budget.title,
+        status: "open",
+        due_at: budget.valid_until,
+        scope: {
+          text: scope || budget.title,
+          fromBudget: budget.id,
+          budgetNumber: budgetNumberLabel(budget),
+        },
+      });
+      error = result.error;
+    } catch (caught) {
+      error = caught;
+    }
+
+    state.crmSubmitting = null;
+    if (error) {
+      setNotice("error", error.message || "Não foi possível gerar a OS.", { route: routeKey() });
+      renderBudgets();
+      return;
+    }
+    state.crmLoaded = false;
+    await loadAdminData({ force: true });
+    setNotice("success", "OS gerada a partir do orçamento.", { route: "crm/orders" });
+    if (window.location.hash !== "#/crm/orders") window.location.hash = "#/crm/orders";
+    else renderServiceOrders();
+  }
+
   async function createTimeEntry(form) {
     if (isSubmitting("time_entries")) return;
     const editing = crmEditRecord("time_entries");
@@ -1151,7 +2317,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   async function deleteCrmRecord(table, id) {
     if (!supabase() || !isLoggedIn() || !table || !id) return;
-    const allowedTables = new Set(["clients", "projects", "budgets", "service_orders", "time_entries"]);
+    const allowedTables = new Set(["clients", "projects", "products", "substrates", "budgets", "service_orders", "time_entries"]);
     if (!allowedTables.has(table)) return;
     if (state.crmEdit?.table === table && state.crmEdit?.id === id) state.crmEdit = null;
 
@@ -1178,13 +2344,15 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     render();
   }
 
-  async function afterCrmMutation(error, successMessage, noticeRoute = routeKey()) {
+  async function afterCrmMutation(error, successMessage, noticeRoute = routeKey(), table = "", editing = null) {
     state.crmSubmitting = null;
     if (error) {
       setNotice("error", error.message || "Não foi possível concluir a operação.", { route: noticeRoute });
+      refreshSubmittingModal(table, editing);
     } else {
       setNotice("success", successMessage, { route: noticeRoute });
       state.crmEdit = null;
+      state.modal = null;
       state.crmLoaded = false;
       try {
         await loadAdminData({ force: true });
@@ -1199,11 +2367,21 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     cancelCrmEdit,
     createBudget,
     createClient,
+    createProduct,
     createProject,
     createServiceOrder,
+    createServiceOrderFromBudget,
+    createSubstrate,
     createTimeEntry,
     deleteCrmRecord,
+    duplicateSelectedBudget,
+    exportSelectedBudgetPdf,
+    exportServiceOrderPdf,
     openCrmEdit,
+    openBudgetModal,
+    openProductModal,
+    openServiceOrderModal,
+    openSubstrateModal,
     renderBudgets,
     renderClients,
     renderCrmPage,
@@ -1211,6 +2389,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     renderProjects,
     renderServiceOrders,
     renderTimeEntries,
+    selectBudget,
+    selectAllVisibleBudgets,
+    syncBudgetContactOptions,
+    updateBudgetFilters,
     updateBudgetTotalPreview,
   };
 }

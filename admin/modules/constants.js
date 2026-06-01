@@ -14,8 +14,11 @@ export const BASIC_CASE_COLUMNS = "id, slug, title, tags, description, cover, im
 export const EXTENDED_CASE_COLUMNS = `${BASIC_CASE_COLUMNS}, published, featured_on_home, home_order, excerpt, content_blocks, created_at`;
 export const FULL_CASE_COLUMNS = `${EXTENDED_CASE_COLUMNS}, external_url`;
 export const CLIENT_COLUMNS = "id, name, type, document, email, phone, website, status, notes, created_at, updated_at";
+export const CONTACT_COLUMNS = "id, client_id, name, role, email, phone, notes, created_at, updated_at";
 export const PROJECT_COLUMNS = "id, client_id, case_id, name, status, description, starts_at, due_at, budget_total, created_at, updated_at";
-export const BUDGET_COLUMNS = "id, client_id, project_id, title, status, currency, subtotal, discount, tax, total, valid_until, payload, created_at, updated_at";
+export const PRODUCT_COLUMNS = "id, name, category, description, base_price, estimated_hours, default_markup, status, created_at, updated_at";
+export const SUBSTRATE_COLUMNS = "id, name, kind, unit, unit_cost, notes, status, created_at, updated_at";
+export const BUDGET_COLUMNS = "id, budget_number, client_id, contact_id, project_id, title, status, currency, subtotal, discount, tax, total, valid_until, resolved, payload, created_at, updated_at";
 export const SERVICE_ORDER_COLUMNS = "id, client_id, project_id, budget_id, title, status, scope, starts_at, due_at, created_at, updated_at";
 export const TIME_ENTRY_COLUMNS = "id, project_id, service_order_id, user_id, work_date, minutes, hourly_rate, description, billable, created_at, updated_at";
 export const METRIC_COLUMNS = "id, event_name, path, metadata, created_at";
@@ -29,10 +32,11 @@ export const ADMIN_SECTIONS = [
 
 export const CRM_TABS = [
   ["clients", "Clientes"],
-  ["projects", "Projetos"],
+  ["products", "Produtos"],
+  ["substrates", "Substratos"],
   ["budgets", "Orçamentos"],
   ["orders", "OS"],
-  ["time", "Horas"],
+  ["projects", "Projetos"],
 ];
 
 export const CLIENT_TYPES = [
@@ -72,6 +76,8 @@ export const ORDER_STATUSES = [
 export const CRM_STATE_KEYS = {
   clients: "clients",
   projects: "projects",
+  products: "products",
+  substrates: "substrates",
   budgets: "budgets",
   service_orders: "serviceOrders",
   time_entries: "timeEntries",

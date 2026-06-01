@@ -1119,6 +1119,93 @@ h1 {
   min-width: 0;
 }
 
+.crm-list-heading {
+  align-items: start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.crm-toolbar {
+  align-items: end;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(260px, 1.4fr) minmax(180px, 0.65fr) auto auto;
+  margin-top: 18px;
+  min-width: 0;
+}
+
+.crm-toolbar .field {
+  margin: 0;
+}
+
+.toolbar-meta {
+  align-content: center;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 3px;
+  min-height: 46px;
+  min-width: 112px;
+  padding: 8px 12px;
+}
+
+.toolbar-meta strong {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.toolbar-meta span {
+  color: var(--subtle);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.crm-action-bar {
+  background: rgba(17, 8, 28, 0.88);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 12px;
+}
+
+.select-column {
+  width: 42px;
+}
+
+.select-column input {
+  accent-color: var(--accent);
+}
+
+.data-table tr.is-selected td {
+  background: rgba(139, 81, 255, 0.08);
+}
+
+.crm-check {
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--subtle);
+  display: inline-flex !important;
+  font-size: 13px;
+  height: 26px;
+  justify-content: center;
+  margin-top: 0 !important;
+  min-width: 26px;
+}
+
+.crm-check.is-on {
+  background: rgba(143, 240, 189, 0.12);
+  border-color: rgba(143, 240, 189, 0.38);
+  color: var(--success) !important;
+}
+
 .crm-editor-form {
   gap: 18px;
 }
@@ -1440,6 +1527,10 @@ h1 {
   border-collapse: collapse;
   min-width: 760px;
   width: 100%;
+}
+
+.budget-table {
+  min-width: 1540px;
 }
 
 .data-table th,
@@ -2014,6 +2105,34 @@ h1 {
   width: 100%;
 }
 
+.modal-wide {
+  max-width: min(980px, calc(100vw - 48px));
+}
+
+.modal-wide.budget-form {
+  grid-template-columns: 1fr;
+}
+
+.modal-preview {
+  background: rgba(12, 5, 20, 0.96);
+  max-width: min(1040px, calc(100vw - 48px));
+}
+
+.modal-header {
+  align-items: start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.modal-header h2 {
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.1;
+  margin-top: 6px;
+}
+
 .modal-actions {
   display: flex;
   flex-wrap: wrap;
@@ -2021,8 +2140,220 @@ h1 {
   justify-content: flex-end;
 }
 
+.proposal-sheet {
+  background: #fff;
+  color: #111;
+  display: grid;
+  gap: 18px;
+  margin: 0 auto;
+  min-height: 842px;
+  padding: 28px;
+  width: min(100%, 595px);
+}
+
+.proposal-sheet h1 {
+  color: #111;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+}
+
+.proposal-header {
+  border: 1px solid #111;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 140px;
+}
+
+.proposal-brand {
+  align-content: center;
+  display: grid;
+  gap: 6px;
+  min-height: 96px;
+  padding: 14px;
+  text-align: center;
+}
+
+.proposal-brand strong {
+  color: #111;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.proposal-brand span,
+.proposal-grid span,
+.proposal-notes p {
+  color: #222;
+  font-size: 12px;
+}
+
+.proposal-header dl,
+.proposal-summary dl {
+  margin: 0;
+}
+
+.proposal-header dl {
+  border-left: 1px solid #111;
+  display: grid;
+}
+
+.proposal-header dt,
+.proposal-header dd,
+.proposal-summary dt,
+.proposal-summary dd {
+  margin: 0;
+}
+
+.proposal-header div {
+  border-bottom: 1px solid #111;
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+}
+
+.proposal-header div:last-child {
+  border-bottom: 0;
+}
+
+.proposal-header dt,
+.proposal-grid strong,
+.proposal-notes strong {
+  color: #111;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.proposal-header dd {
+  color: #111;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.proposal-grid {
+  border: 1px solid #111;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.proposal-grid div {
+  border-bottom: 1px solid #111;
+  display: grid;
+  gap: 3px;
+  padding: 7px;
+}
+
+.proposal-grid div:nth-child(odd) {
+  border-right: 1px solid #111;
+}
+
+.proposal-grid div:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.proposal-table {
+  border-collapse: collapse;
+  font-size: 12px;
+  width: 100%;
+}
+
+.proposal-table th,
+.proposal-table td {
+  border: 1px solid #111;
+  color: #111;
+  padding: 7px;
+  text-align: left;
+}
+
+.proposal-table th {
+  background: #111;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.proposal-table th:nth-child(3),
+.proposal-table td:nth-child(3),
+.proposal-table th:nth-child(4),
+.proposal-table td:nth-child(4),
+.proposal-table th:nth-child(5),
+.proposal-table td:nth-child(5) {
+  text-align: right;
+}
+
+.proposal-summary {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.proposal-summary dl {
+  border: 1px solid #111;
+  min-width: 260px;
+}
+
+.proposal-summary div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.proposal-summary div + div {
+  border-top: 1px solid #111;
+}
+
+.proposal-summary dt,
+.proposal-summary dd {
+  color: #111;
+  padding: 7px;
+}
+
+.proposal-summary dd {
+  border-left: 1px solid #111;
+  font-weight: 800;
+  text-align: right;
+}
+
+.proposal-notes {
+  border: 1px solid #111;
+  display: grid;
+  gap: 8px;
+  min-height: 72px;
+  padding: 8px;
+}
+
+.proposal-notes p {
+  line-height: 1.35;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .proposal-sheet,
+  .proposal-sheet * {
+    visibility: visible !important;
+  }
+
+  .proposal-sheet {
+    box-shadow: none;
+    left: 0;
+    margin: 0;
+    min-height: auto;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
 @media (max-width: 920px) {
   .page-header,
+  .crm-list-heading,
   .topbar {
     align-items: start;
     flex-direction: column;
@@ -2030,6 +2361,7 @@ h1 {
 
   .toolbar,
   .cms-toolbar,
+  .crm-toolbar,
   .cms-metrics,
   .budget-layout,
   .budget-form,
@@ -2056,6 +2388,7 @@ h1 {
   }
 
   .editor-actions,
+  .crm-list-heading,
   .topbar-actions {
     justify-content: flex-start;
     width: 100%;
@@ -2131,6 +2464,21 @@ h1 {
 
   .budget-column {
     min-width: 0;
+  }
+
+  .proposal-header,
+  .proposal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proposal-header dl,
+  .proposal-grid div:nth-child(odd) {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .proposal-grid div:nth-last-child(-n + 2) {
+    border-bottom: 1px solid #111;
   }
 
   .image-row {
