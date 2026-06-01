@@ -908,7 +908,7 @@
   function injectCaseTemplateAssets(templateDocument) {
     if (!document.querySelector("[data-raksa-case-template-assets]")) {
       templateDocument
-        .querySelectorAll("style[data-framer-breakpoint-css], style[data-framer-css-ssr-minified]")
+        .querySelectorAll("style[data-framer-font-css], style[data-framer-breakpoint-css], style[data-framer-css-ssr-minified]")
         .forEach((style) => {
           const clone = style.cloneNode(true);
           clone.dataset.raksaCaseTemplateAssets = "true";
