@@ -1,4 +1,4 @@
-import { createCrmModule } from "./modules/crm.js?v=7";
+import { createCrmModule } from "./modules/crm.js?v=8";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
 import { createApiModule } from "./modules/api.js?v=7";
 import { createShellModule } from "./modules/shell.js?v=3";
@@ -183,6 +183,7 @@ const {
 });
 
 const {
+  addBudgetItem,
   cancelCrmEdit,
   createBudget,
   createClient,
@@ -199,6 +200,7 @@ const {
   exportBudgetReportCsv,
   exportSelectedBudgetPdf,
   exportServiceOrderPdf,
+  generateRecurringOrders,
   openCrmEdit,
   openBudgetModal,
   openBudgetReports,
@@ -216,7 +218,9 @@ const {
   selectBudget,
   selectAllVisibleBudgets,
   syncBudgetContactOptions,
+  removeBudgetItem,
   updateBudgetEstimate,
+  updateBudgetItemsEstimate,
   updateBudgetFilters,
   updateBudgetReportFilter,
   updateProductFilters,
@@ -317,6 +321,10 @@ document.addEventListener("input", (event) => {
     updateBudgetTotalPreview(event.target.form);
   }
 
+  if (event.target.matches("[data-budget-item-calc]")) {
+    updateBudgetItemsEstimate(event.target.form);
+  }
+
   if (event.target.matches("[data-budget-calc]")) {
     updateBudgetEstimate(event.target.form);
   }
@@ -374,8 +382,12 @@ document.addEventListener("click", async (event) => {
   if (target.matches("[data-open-budget-modal]")) openBudgetModal();
   if (target.matches("[data-open-contact-modal]")) openContactModal(target.dataset.openContactModal || "", target.dataset.contactId || "");
   if (target.matches("[data-edit-budget-modal]")) openBudgetModal(target.dataset.editBudgetModal);
+  if (target.matches("[data-add-budget-item]")) addBudgetItem(target.closest("[data-budget-form]"));
+  if (target.matches("[data-remove-budget-item]")) removeBudgetItem(target);
+  if (target.matches("[data-recalc-budget-items]")) updateBudgetItemsEstimate(target.closest("[data-budget-form]"), true, true);
   if (target.matches("[data-duplicate-budget]")) await duplicateSelectedBudget();
   if (target.matches("[data-create-order-from-budget]")) await createServiceOrderFromBudget(target.dataset.createOrderFromBudget || "");
+  if (target.matches("[data-generate-recurring-orders]")) await generateRecurringOrders(target.dataset.generateRecurringOrders || "");
   if (target.matches("[data-export-budget-pdf]")) exportSelectedBudgetPdf(target.dataset.exportBudgetPdf || "");
   if (target.matches("[data-open-budget-reports]")) openBudgetReports();
   if (target.matches("[data-export-budget-report-csv]")) exportBudgetReportCsv();
@@ -415,6 +427,12 @@ document.addEventListener("change", async (event) => {
   const budgetCalc = event.target.closest("[data-budget-calc]");
   if (budgetCalc) {
     updateBudgetEstimate(budgetCalc.form, true);
+    return;
+  }
+
+  const budgetItemCalc = event.target.closest("[data-budget-item-calc]");
+  if (budgetItemCalc) {
+    updateBudgetItemsEstimate(budgetItemCalc.form, true);
     return;
   }
 

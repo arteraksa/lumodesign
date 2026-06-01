@@ -1292,6 +1292,71 @@ h1 {
   padding: 10px 12px;
 }
 
+.budget-item-list {
+  display: grid;
+  gap: 10px;
+}
+
+.budget-item-row {
+  align-items: end;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 34px minmax(180px, 1.35fr) minmax(160px, 1fr) minmax(150px, 0.9fr) minmax(72px, 0.42fr) minmax(110px, 0.55fr) minmax(108px, 0.55fr) auto;
+  padding: 10px;
+}
+
+.budget-item-row .field {
+  margin: 0;
+}
+
+.budget-item-index {
+  align-items: center;
+  align-self: stretch;
+  background: rgba(139, 81, 255, 0.14);
+  border: 1px solid rgba(139, 81, 255, 0.28);
+  border-radius: var(--radius);
+  color: #fff;
+  display: flex;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 44px;
+}
+
+.budget-item-total {
+  align-content: center;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 4px;
+  min-height: 58px;
+  padding: 8px 10px;
+}
+
+.budget-item-total span {
+  color: var(--subtle);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.budget-item-total strong {
+  color: #fff;
+  font-size: 14px;
+}
+
+.budget-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.budget-item-remove {
+  min-height: 42px;
+}
+
 .compact-empty {
   min-height: 0;
   padding: 12px;
@@ -2508,6 +2573,7 @@ h1 {
   .cms-metrics,
   .budget-layout,
   .budget-form,
+  .budget-item-row,
   .budget-metrics,
   .crm-form-grid,
   .data-layout,

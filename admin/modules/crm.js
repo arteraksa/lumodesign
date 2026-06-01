@@ -1490,6 +1490,24 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return parts.join(" · ") || "-";
   }
 
+  function orderScopeObject(order) {
+    return order?.scope && typeof order.scope === "object" && !Array.isArray(order.scope) ? order.scope : {};
+  }
+
+  function isoDate(value) {
+    const date = value ? new Date(`${String(value).slice(0, 10)}T00:00:00`) : new Date();
+    if (Number.isNaN(date.getTime())) return new Date().toISOString().slice(0, 10);
+    return date.toISOString().slice(0, 10);
+  }
+
+  function advanceRecurringDate(value, recurrence, step = 1) {
+    const date = new Date(`${isoDate(value)}T00:00:00`);
+    if (recurrence === "biweekly") date.setDate(date.getDate() + 14 * step);
+    else if (recurrence === "monthly") date.setMonth(date.getMonth() + step);
+    else return "";
+    return date.toISOString().slice(0, 10);
+  }
+
   function clientContacts(clientId = "") {
     return state.contacts
       .filter((contact) => contact.client_id === clientId)
@@ -1577,6 +1595,126 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       </div>`;
   }
 
+  function budgetEditorItems(budget) {
+    const payload = budgetPayload(budget);
+    const source = Array.isArray(payload.lineItems) && payload.lineItems.length
+      ? payload.lineItems
+      : Array.isArray(payload.items) && payload.items.length
+        ? payload.items
+        : [];
+    if (source.length) return source.map(normalizeBudgetLineItem).filter(Boolean);
+
+    const textItems = budgetItemsText(budget).split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+    if (textItems.length) {
+      const unitPrice = textItems.length ? Number(budget?.subtotal || budget?.total || 0) / textItems.length : 0;
+      return textItems.map((description) => normalizeBudgetLineItem({
+        description,
+        quantity: 1,
+        unitPrice,
+        total: unitPrice,
+      }));
+    }
+
+    return [normalizeBudgetLineItem({
+      description: payload.productName || payload.serviceType || budget?.title || "",
+      productId: payload.productId || "",
+      substrateId: payload.substrateId || "",
+      quantity: payload.quantity || 1,
+      unitPrice: Number(budget?.subtotal || 0) / Math.max(1, Number(payload.quantity || 1)),
+      total: Number(budget?.subtotal || 0),
+    })];
+  }
+
+  function normalizeBudgetLineItem(item = {}) {
+    if (typeof item === "string") return { description: item, quantity: 1, unitPrice: 0, total: 0 };
+    const quantity = Math.max(1, Number(item.quantity || 1));
+    const total = Number(item.total ?? item.amount ?? 0);
+    const unitPrice = Number(item.unitPrice ?? item.unit_price ?? (quantity ? total / quantity : total) ?? 0);
+    return {
+      description: item.description || item.text || item.title || "",
+      productId: item.productId || item.product_id || "",
+      substrateId: item.substrateId || item.substrate_id || "",
+      quantity,
+      unitPrice: Number.isFinite(unitPrice) ? unitPrice : 0,
+      total: Number.isFinite(total) && total > 0 ? total : unitPrice * quantity,
+    };
+  }
+
+  function renderBudgetItemRows(items = []) {
+    const rows = items.length ? items : [normalizeBudgetLineItem()];
+    return rows.map((item, index) => renderBudgetItemRow(item, index)).join("");
+  }
+
+  function renderBudgetItemRow(item = {}, index = 0) {
+    const productOptions = state.products.map((product) => [product.id, product.name]);
+    const substrateOptions = state.substrates.map((substrate) => [substrate.id, `${substrate.name}${substrate.unit_cost ? ` · ${formatCurrency(substrate.unit_cost)}` : ""}`]);
+    const quantity = Math.max(1, Number(item.quantity || 1));
+    const unitPrice = Number(item.unitPrice || 0);
+    const total = Number(item.total || unitPrice * quantity || 0);
+
+    return `
+      <div class="budget-item-row" data-budget-item-row>
+        <div class="budget-item-index">${index + 1}</div>
+        <label class="field">
+          <span>Descrição</span>
+          <input class="input" name="item_description" value="${valueAttr(item.description)}" placeholder="Serviço ou entrega">
+        </label>
+        <label class="field">
+          <span>Produto</span>
+          <select class="select" name="item_product_id" data-budget-item-calc>${selectOptions(productOptions, item.productId || "", "Sem produto")}</select>
+        </label>
+        <label class="field">
+          <span>Custo extra</span>
+          <select class="select" name="item_substrate_id" data-budget-item-calc>${selectOptions(substrateOptions, item.substrateId || "", "Opcional")}</select>
+        </label>
+        <label class="field compact-field">
+          <span>Qtd</span>
+          <input class="input" name="item_quantity" type="number" min="1" step="1" value="${valueAttr(quantity)}" data-budget-item-calc>
+        </label>
+        <label class="field compact-field">
+          <span>Preço unit.</span>
+          <input class="input" name="item_unit_price" type="number" min="0" step="0.01" value="${valueAttr(unitPrice ? unitPrice.toFixed(2) : "")}" data-budget-item-calc data-auto-unit="${unitPrice ? "false" : "true"}">
+        </label>
+        <div class="budget-item-total">
+          <span>Total</span>
+          <strong data-budget-item-total>${formatCurrency(total)}</strong>
+        </div>
+        <button class="icon-button budget-item-remove" type="button" data-remove-budget-item aria-label="Remover item">Remover</button>
+      </div>`;
+  }
+
+  function addBudgetItem(form) {
+    const list = form?.querySelector("[data-budget-item-list]");
+    if (!form || !list) return;
+    list.insertAdjacentHTML("beforeend", renderBudgetItemRow({}, list.querySelectorAll("[data-budget-item-row]").length));
+    updateBudgetItemsEstimate(form, true);
+  }
+
+  function removeBudgetItem(button) {
+    const form = button?.closest("[data-budget-form]");
+    const list = form?.querySelector("[data-budget-item-list]");
+    const row = button?.closest("[data-budget-item-row]");
+    if (!form || !list || !row) return;
+    const rows = [...list.querySelectorAll("[data-budget-item-row]")];
+    if (rows.length <= 1) {
+      row.querySelectorAll("input, select").forEach((field) => {
+        if (field.name === "item_quantity") field.value = "1";
+        else field.value = "";
+      });
+    } else {
+      row.remove();
+    }
+    renumberBudgetItemRows(list);
+    updateBudgetItemsEstimate(form, true);
+  }
+
+  function renumberBudgetItemRows(list) {
+    [...(list?.querySelectorAll("[data-budget-item-row]") || [])].forEach((row, index) => {
+      const label = row.querySelector(".budget-item-index");
+      if (label) label.textContent = String(index + 1);
+    });
+  }
+
   function contactOptions(selectedValue = "", clientId = "") {
     if (clientId) {
       const contacts = state.contacts.filter((contact) => contact.client_id === clientId);
@@ -1605,6 +1743,16 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function budgetPreviewItems(budget) {
     const payload = budgetPayload(budget);
+    if (Array.isArray(payload.lineItems) && payload.lineItems.length) {
+      return payload.lineItems.map((item, index) => ({
+        code: String(index + 1).padStart(4, "0"),
+        description: item.description || item.text || item.title || "-",
+        quantity: item.quantity || 1,
+        unitPrice: Number(item.unitPrice || 0),
+        total: Number(item.total || 0),
+      }));
+    }
+
     if (Array.isArray(payload.items) && payload.items.length) {
       const fallbackTotal = Number(budget.subtotal || budget.total || 0) / payload.items.length;
       return payload.items.map((item, index) => {
@@ -1648,6 +1796,12 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function budgetItemsText(record) {
     const payload = budgetPayload(record);
+    if (Array.isArray(payload.lineItems) && payload.lineItems.length) {
+      return payload.lineItems
+        .map((item) => item.description || item.text || item.title)
+        .filter(Boolean)
+        .join("\n");
+    }
     if (typeof payload.itemsText === "string") return payload.itemsText;
     if (!Array.isArray(payload.items)) return "";
     return payload.items
@@ -1721,6 +1875,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function updateBudgetEstimate(form, forceSubtotal = false) {
     if (!form) return;
+    if (form.querySelector("[data-budget-item-list]")) {
+      updateBudgetItemsEstimate(form, forceSubtotal);
+      return;
+    }
     const product = productRecord(form.elements.product_id?.value);
     const substrate = substrateRecord(form.elements.substrate_id?.value);
     const quantity = Math.max(1, Number(form.elements.quantity?.value || 1));
@@ -1748,9 +1906,160 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     updateBudgetTotalPreview(form);
   }
 
+  function updateBudgetItemsEstimate(form, forceSubtotal = false, resetManualUnits = false) {
+    if (!form) return;
+    const rows = [...form.querySelectorAll("[data-budget-item-row]")];
+    if (!rows.length) {
+      updateBudgetTotalPreview(form);
+      return;
+    }
+
+    let subtotal = 0;
+    const detailParts = [];
+    rows.forEach((row) => {
+      const product = productRecord(row.querySelector('[name="item_product_id"]')?.value);
+      const substrate = substrateRecord(row.querySelector('[name="item_substrate_id"]')?.value);
+      const quantityInput = row.querySelector('[name="item_quantity"]');
+      const unitInput = row.querySelector('[name="item_unit_price"]');
+      const quantity = Math.max(1, Number(quantityInput?.value || 1));
+      const estimate = calculateBudgetEstimate(product, substrate, 1);
+      if (resetManualUnits && unitInput) {
+        unitInput.dataset.autoUnit = "true";
+      }
+      if (unitInput && typeof document !== "undefined" && document.activeElement === unitInput) {
+        unitInput.dataset.autoUnit = "false";
+      }
+      const shouldWriteUnit = unitInput
+        && estimate.unitSubtotal > 0
+        && (!unitInput.value || unitInput.dataset.autoUnit === "true" || (forceSubtotal && unitInput.dataset.autoUnit !== "false"));
+      if (shouldWriteUnit) {
+        unitInput.value = estimate.unitSubtotal.toFixed(2);
+        unitInput.dataset.autoUnit = "true";
+      }
+      const unitPrice = decimalInputValue(unitInput?.value);
+      const total = unitPrice * quantity;
+      subtotal += total;
+      const totalNode = row.querySelector("[data-budget-item-total]");
+      if (totalNode) totalNode.textContent = formatCurrency(total);
+      if (product || substrate) {
+        detailParts.push([
+          product ? product.name : "Item manual",
+          substrate ? substrate.name : "",
+          `${quantity} un.`,
+          formatCurrency(total),
+        ].filter(Boolean).join(" · "));
+      }
+    });
+
+    const subtotalInput = form.elements.subtotal;
+    if (subtotalInput && subtotal > 0 && (forceSubtotal || !subtotalInput.value || subtotalInput.dataset.autoSubtotal === "true")) {
+      subtotalInput.value = subtotal.toFixed(2);
+      subtotalInput.dataset.autoSubtotal = "true";
+    }
+    const detail = form.querySelector("[data-budget-estimate-detail]");
+    if (detail) {
+      detail.textContent = detailParts.length
+        ? detailParts.join(" | ")
+        : "Adicione produtos, custos e quantidades para estimar automaticamente.";
+    }
+    updateBudgetTotalPreview(form);
+  }
+
   function decimalInputValue(value) {
     const number = Number(String(value || "").replace(",", "."));
     return Number.isFinite(number) ? number : 0;
+  }
+
+  function nonNegativeNumberFromRaw(rawValue, label, errors, defaultValue = 0) {
+    const value = String(rawValue ?? "").trim().replace(",", ".");
+    if (!value) return defaultValue;
+    if (!/^\d+(\.\d{1,2})?$/.test(value)) {
+      errors.push(`${label} deve ser um número positivo.`);
+      return defaultValue;
+    }
+    const number = Number(value);
+    if (!Number.isFinite(number) || number < 0) {
+      errors.push(`${label} não pode ser negativo.`);
+      return defaultValue;
+    }
+    return number;
+  }
+
+  function positiveQuantityFromRaw(rawValue, label, errors, defaultValue = 1) {
+    const value = String(rawValue ?? "").trim().replace(",", ".");
+    if (!value) return defaultValue;
+    if (!/^\d+(\.\d{1,2})?$/.test(value)) {
+      errors.push(`${label} deve ser um número positivo.`);
+      return defaultValue;
+    }
+    const number = Number(value);
+    if (!Number.isFinite(number) || number <= 0) {
+      errors.push(`${label} deve ser maior que zero.`);
+      return defaultValue;
+    }
+    return number;
+  }
+
+  function collectBudgetLineItems(data, errors) {
+    const descriptions = data.getAll("item_description");
+    const productIds = data.getAll("item_product_id");
+    const substrateIds = data.getAll("item_substrate_id");
+    const quantities = data.getAll("item_quantity");
+    const unitPrices = data.getAll("item_unit_price");
+    const maxLength = Math.max(descriptions.length, productIds.length, substrateIds.length, quantities.length, unitPrices.length);
+    const lineItems = [];
+
+    for (let index = 0; index < maxLength; index += 1) {
+      const product = productRecord(String(productIds[index] || ""));
+      const substrate = substrateRecord(String(substrateIds[index] || ""));
+      const description = String(descriptions[index] || "").trim();
+      const hasAnyValue = description || product || substrate || String(unitPrices[index] || "").trim();
+      if (!hasAnyValue) continue;
+
+      const quantity = positiveQuantityFromRaw(quantities[index], `Quantidade do item ${index + 1}`, errors, 1);
+      const estimate = calculateBudgetEstimate(product, substrate, 1);
+      const unitPrice = nonNegativeNumberFromRaw(unitPrices[index], `Preço unitário do item ${index + 1}`, errors, estimate.unitSubtotal || 0);
+      const total = unitPrice * quantity;
+      const title = description || product?.name || substrate?.name || `Item ${index + 1}`;
+      lineItems.push({
+        position: lineItems.length + 1,
+        text: title,
+        title,
+        description: title,
+        productId: product?.id || "",
+        productName: product?.name || "",
+        productPricingModel: product?.pricing_model || "",
+        substrateId: substrate?.id || "",
+        substrateName: substrate?.name || "",
+        quantity,
+        unitPrice,
+        total,
+        baseAmount: estimate.baseAmount,
+        includedSubstrates: estimate.includedSubstrates.map((item) => ({
+          id: item.id,
+          name: item.name,
+          cost: Number(item.unit_cost || 0),
+        })),
+        additionalSubstrateCost: estimate.additionalSubstrates.reduce((sum, item) => sum + Number(item.unit_cost || 0), 0),
+        estimatedHours: Number(product?.estimated_hours || 0) * quantity,
+        hourlyRate: Number(product?.hourly_rate || 0),
+        markup: estimate.markupRate,
+      });
+    }
+
+    return lineItems;
+  }
+
+  function uniqueIncludedSubstrates(lineItems = []) {
+    const map = new Map();
+    lineItems.forEach((item) => {
+      (item.includedSubstrates || []).forEach((substrate) => {
+        const key = substrate.id || substrate.name;
+        if (!key || map.has(key)) return;
+        map.set(key, substrate);
+      });
+    });
+    return [...map.values()];
   }
 
   function hoursFromEntry(entry) {
@@ -1871,14 +2180,12 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function renderBudgetModal(budget) {
     const editingPayload = budgetPayload(budget);
-    const editingItemsText = budgetItemsText(budget);
+    const editingItems = budgetEditorItems(budget);
     const subtotal = Number(budget?.subtotal || 0);
     const discount = Number(budget?.discount || 0);
     const tax = Number(budget?.tax || 0);
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
     const projectOptions = state.projects.map((project) => [project.id, project.name]);
-    const productOptions = state.products.map((product) => [product.id, product.name]);
-    const substrateOptions = state.substrates.map((substrate) => [substrate.id, `${substrate.name}${substrate.unit_cost ? ` · ${formatCurrency(substrate.unit_cost)}` : ""}`]);
 
     return `
       <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${budget ? "Editar orçamento" : "Novo orçamento"}">
@@ -1954,39 +2261,32 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
           <section class="budget-section">
             <div class="budget-section-heading">
-              <strong>Produto e escopo</strong>
-              <span>Produtos e substratos entram como base para automatizar custos.</span>
+              <strong>Itens e cálculo</strong>
+              <span>Cada linha soma produto, custo extra, quantidade e preço unitário.</span>
             </div>
-            <div class="form-grid">
-              <label class="field">
-                <span>Produto</span>
-                <select class="select" name="product_id" data-budget-calc>${selectOptions(productOptions, editingPayload.productId || "", "Selecione")}</select>
-              </label>
-              <label class="field">
-                <span>Substrato</span>
-                <select class="select" name="substrate_id" data-budget-calc>${selectOptions(substrateOptions, editingPayload.substrateId || "", "Opcional")}</select>
-              </label>
+            <div class="budget-item-list" data-budget-item-list>
+              ${renderBudgetItemRows(editingItems)}
+            </div>
+            <div class="budget-item-actions">
+              <button class="button button-secondary" type="button" data-add-budget-item>Adicionar item</button>
+              <button class="button button-secondary" type="button" data-recalc-budget-items>Recalcular valores</button>
             </div>
             <div class="budget-estimate-detail" data-budget-estimate-detail>
-              Selecione produto e custos para estimar automaticamente.
+              Adicione produtos, custos e quantidades para estimar automaticamente.
             </div>
             <div class="form-grid">
               <label class="field">
-                <span>Tipo de serviço</span>
+                <span>Tipo geral</span>
                 <input class="input" name="service_type" value="${valueAttr(editingPayload.serviceType)}" placeholder="Website, branding, editorial...">
               </label>
               <label class="field">
-                <span>Quantidade</span>
-                <input class="input" name="quantity" type="number" min="1" step="1" value="${valueAttr(editingPayload.quantity ?? 1)}" data-budget-calc>
+                <span>Resumo curto</span>
+                <input class="input" name="items_text" value="${valueAttr(budgetItemsText(budget))}" placeholder="Opcional, sobrescrito pelos itens calculados">
               </label>
             </div>
             <label class="field">
               <span>Resumo da proposta</span>
               <textarea class="textarea textarea-small" name="summary" placeholder="Resumo comercial que aparece no PDF.">${escapeHtml(editingPayload.summary || "")}</textarea>
-            </label>
-            <label class="field">
-              <span>Itens da proposta</span>
-              <textarea class="textarea textarea-small" name="items_text" placeholder="Um item por linha">${escapeHtml(editingItemsText)}</textarea>
             </label>
           </section>
 
@@ -2598,20 +2898,28 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function drawPdfTable(doc, y, headers, rows) {
     const widths = [58, 242, 42, 86, 86];
     let x = 32;
-    doc.setFillColor(17, 17, 17);
-    doc.rect(32, y, 530, 24, "F");
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(8);
-    doc.setTextColor(255, 255, 255);
-    headers.forEach((header, index) => {
-      doc.text(header, x + 6, y + 15);
-      x += widths[index];
-    });
-    doc.setTextColor(17, 17, 17);
-    doc.setFont("helvetica", "normal");
-    let rowY = y + 24;
+    const drawHeader = (headerY) => {
+      x = 32;
+      doc.setFillColor(17, 17, 17);
+      doc.rect(32, headerY, 530, 24, "F");
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(8);
+      doc.setTextColor(255, 255, 255);
+      headers.forEach((header, index) => {
+        doc.text(header, x + 6, headerY + 15);
+        x += widths[index];
+      });
+      doc.setTextColor(17, 17, 17);
+      doc.setFont("helvetica", "normal");
+      return headerY + 24;
+    };
+    let rowY = drawHeader(y);
     rows.forEach((row) => {
       const rowHeight = 34;
+      if (rowY + rowHeight > 760) {
+        doc.addPage();
+        rowY = drawHeader(40);
+      }
       x = 32;
       row.forEach((value, index) => {
         doc.rect(x, rowY, widths[index], rowHeight);
@@ -2624,6 +2932,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function drawPdfTotals(doc, y, rows) {
+    if (y + rows.length * 24 > 760) {
+      doc.addPage();
+      y = 40;
+    }
     const x = 342;
     rows.forEach(([label, value], index) => {
       const rowY = y + index * 24;
@@ -2638,6 +2950,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function drawPdfNotes(doc, y, title, lines) {
+    if (y + 120 > 780) {
+      doc.addPage();
+      y = 40;
+    }
     doc.rect(32, y, 530, 120);
     doc.setFillColor(17, 17, 17);
     doc.rect(32, y, 530, 20, "F");
@@ -2763,6 +3079,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                   <div class="row-actions">
                     <button class="icon-button" type="button" data-open-order-modal="${escapeHtml(order.id)}">Alterar</button>
                     <button class="icon-button" type="button" data-export-order-pdf="${escapeHtml(order.id)}">PDF</button>
+                    ${order.recurrence && order.recurrence !== "one_time" ? `<button class="icon-button" type="button" data-generate-recurring-orders="${escapeHtml(order.id)}">Gerar ciclo</button>` : ""}
                     <button class="icon-button" type="button" data-delete-crm="service_orders:${escapeHtml(order.id)}">Excluir</button>
                   </div>
                 </td>
@@ -3007,19 +3324,34 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const editing = crmEditRecord("budgets");
     const data = new FormData(form);
     const errors = [];
-    const selectedProduct = productRecord(optionalFormValue(data, "product_id"));
-    const selectedSubstrate = substrateRecord(optionalFormValue(data, "substrate_id"));
-    const quantity = optionalQuantityFromForm(data, errors) || 1;
+    const lineItems = collectBudgetLineItems(data, errors);
+    const firstLine = lineItems[0] || null;
+    const selectedProduct = productRecord(firstLine?.productId || optionalFormValue(data, "product_id"));
+    const selectedSubstrate = substrateRecord(firstLine?.substrateId || optionalFormValue(data, "substrate_id"));
+    const quantity = firstLine?.quantity || optionalQuantityFromForm(data, errors) || 1;
     const manualSubtotal = nonNegativeNumberFromForm(data, "subtotal", "Subtotal", errors);
     const discount = nonNegativeNumberFromForm(data, "discount", "Desconto", errors);
     const tax = nonNegativeNumberFromForm(data, "tax", "Impostos", errors);
     const estimate = calculateBudgetEstimate(selectedProduct, selectedSubstrate, quantity);
-    const automaticSubtotal = selectedProduct || selectedSubstrate ? estimate.subtotal : 0;
+    const automaticSubtotal = lineItems.length
+      ? lineItems.reduce((sum, item) => sum + Number(item.total || 0), 0)
+      : selectedProduct || selectedSubstrate ? estimate.subtotal : 0;
     const subtotal = manualSubtotal || automaticSubtotal;
     const total = subtotal - discount + tax;
-    const itemsText = textFromForm(data, "items_text");
+    const itemsText = lineItems.length ? lineItems.map((item) => item.description || item.title).join("\n") : textFromForm(data, "items_text");
+    const productNames = [...new Set(lineItems.map((item) => item.productName).filter(Boolean))];
+    const includedSubstrates = lineItems.length
+      ? uniqueIncludedSubstrates(lineItems)
+      : estimate.includedSubstrates.map((substrate) => ({
+        id: substrate.id,
+        name: substrate.name,
+        cost: Number(substrate.unit_cost || 0),
+      }));
+    const totalEstimatedHours = lineItems.length
+      ? lineItems.reduce((sum, item) => sum + Number(item.estimatedHours || 0), 0)
+      : Number(selectedProduct?.estimated_hours || 0) * quantity;
     if (total < 0) errors.push("Total do orçamento não pode ficar negativo.");
-    const itemTitle = selectedProduct?.name || optionalFormValue(data, "service_type") || textFromForm(data, "title") || "Serviço";
+    const itemTitle = firstLine?.description || selectedProduct?.name || optionalFormValue(data, "service_type") || textFromForm(data, "title") || "Serviço";
     const payload = {
       title: requiredTextFromForm(data, "title", "o título do orçamento", errors),
       client_id: optionalFormValue(data, "client_id"),
@@ -3042,23 +3374,22 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
         summary: textFromForm(data, "summary"),
         serviceType: optionalFormValue(data, "service_type"),
         productId: selectedProduct?.id || optionalFormValue(data, "product_id"),
-        productName: selectedProduct?.name || null,
+        productName: productNames.length > 1 ? `${productNames.length} produtos` : selectedProduct?.name || productNames[0] || null,
         productPricingModel: selectedProduct?.pricing_model || null,
-        productBaseAmount: estimate.baseAmount,
-        productEstimatedHours: Number(selectedProduct?.estimated_hours || 0),
-        productHourlyRate: Number(selectedProduct?.hourly_rate || 0),
+        productBaseAmount: lineItems.length ? lineItems.reduce((sum, item) => sum + Number(item.baseAmount || 0), 0) : estimate.baseAmount,
+        productEstimatedHours: totalEstimatedHours,
+        productHourlyRate: Number(firstLine?.hourlyRate || selectedProduct?.hourly_rate || 0),
         productMarkup: estimate.markupRate,
         substrateId: selectedSubstrate?.id || optionalFormValue(data, "substrate_id"),
-        substrateName: selectedSubstrate?.name || null,
-        includedSubstrates: estimate.includedSubstrates.map((substrate) => ({
-          id: substrate.id,
-          name: substrate.name,
-          cost: Number(substrate.unit_cost || 0),
-        })),
-        additionalSubstrateCost: estimate.additionalSubstrates.reduce((sum, substrate) => sum + Number(substrate.unit_cost || 0), 0),
+        substrateName: selectedSubstrate?.name || firstLine?.substrateName || null,
+        includedSubstrates,
+        additionalSubstrateCost: lineItems.length
+          ? lineItems.reduce((sum, item) => sum + Number(item.additionalSubstrateCost || 0), 0)
+          : estimate.additionalSubstrates.reduce((sum, substrate) => sum + Number(substrate.unit_cost || 0), 0),
         quantity,
         itemsText,
-        items: itemsText ? budgetItemsFromText(itemsText, subtotal) : [{
+        lineItems,
+        items: lineItems.length ? lineItems : itemsText ? budgetItemsFromText(itemsText, subtotal) : [{
           position: 1,
           text: itemTitle,
           title: itemTitle,
@@ -3216,6 +3547,84 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     else renderServiceOrders();
   }
 
+  async function generateRecurringOrders(id = "") {
+    if (!supabase() || !isLoggedIn() || isSubmitting("service_orders")) return;
+    const order = state.serviceOrders.find((item) => item.id === id);
+    if (!order) {
+      setNotice("error", "OS não encontrada.", { route: "crm/orders" });
+      renderServiceOrders();
+      return;
+    }
+    if (!["biweekly", "monthly"].includes(order.recurrence)) {
+      setNotice("error", "Geração automática disponível para OS quinzenal ou mensal.", { route: "crm/orders" });
+      renderServiceOrders();
+      return;
+    }
+
+    const existingIndexes = new Set(
+      state.serviceOrders
+        .map((item) => orderScopeObject(item))
+        .filter((scope) => scope.recurringFrom === order.id)
+        .map((scope) => Number(scope.recurringIndex || 0))
+        .filter(Boolean),
+    );
+    const sourceScope = orderScopeObject(order);
+    const baseStart = order.starts_at || order.due_at || order.created_at || new Date().toISOString();
+    const baseDue = order.due_at || order.starts_at || order.created_at || new Date().toISOString();
+    const rows = [1, 2, 3]
+      .filter((index) => !existingIndexes.has(index))
+      .map((index) => {
+        const startsAt = advanceRecurringDate(baseStart, order.recurrence, index);
+        const dueAt = advanceRecurringDate(baseDue, order.recurrence, index);
+        return {
+          client_id: order.client_id,
+          project_id: order.project_id,
+          budget_id: order.budget_id,
+          title: `${order.title} · ${orderRecurrenceLabel(order)} ${formatDate(startsAt)}`,
+          status: "open",
+          starts_at: startsAt,
+          due_at: dueAt,
+          recurrence: order.recurrence,
+          billing_cycle: order.billing_cycle,
+          estimated_hours: Number(order.estimated_hours || 0),
+          hourly_rate: Number(order.hourly_rate || 0),
+          scope: {
+            ...sourceScope,
+            text: scopeText(order.scope) || order.title,
+            recurringFrom: order.id,
+            recurringIndex: index,
+            recurringGeneratedAt: new Date().toISOString(),
+          },
+        };
+      });
+
+    if (!rows.length) {
+      setNotice("success", "Os próximos ciclos desta OS já foram gerados.", { route: "crm/orders" });
+      renderServiceOrders();
+      return;
+    }
+
+    state.crmSubmitting = "service_orders";
+    renderServiceOrders();
+    let error = null;
+    try {
+      const result = await supabase().from("service_orders").insert(rows);
+      error = result.error;
+    } catch (caught) {
+      error = caught;
+    }
+    state.crmSubmitting = null;
+    if (error) {
+      setNotice("error", error.message || "Não foi possível gerar os ciclos da OS.", { route: "crm/orders" });
+      renderServiceOrders();
+      return;
+    }
+    state.crmLoaded = false;
+    await loadAdminData({ force: true });
+    setNotice("success", rows.length === 1 ? "Ciclo recorrente gerado." : `${rows.length} ciclos recorrentes gerados.`, { route: "crm/orders" });
+    renderServiceOrders();
+  }
+
   async function createTimeEntry(form) {
     if (isSubmitting("time_entries")) return;
     const editing = crmEditRecord("time_entries");
@@ -3290,6 +3699,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   return {
+    addBudgetItem,
     cancelCrmEdit,
     createBudget,
     createClient,
@@ -3306,6 +3716,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     exportBudgetReportCsv,
     exportSelectedBudgetPdf,
     exportServiceOrderPdf,
+    generateRecurringOrders,
     openCrmEdit,
     openBudgetModal,
     openBudgetReports,
@@ -3323,7 +3734,9 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     selectBudget,
     selectAllVisibleBudgets,
     syncBudgetContactOptions,
+    removeBudgetItem,
     updateBudgetEstimate,
+    updateBudgetItemsEstimate,
     updateBudgetFilters,
     updateBudgetReportFilter,
     updateProductFilters,
