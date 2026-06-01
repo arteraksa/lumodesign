@@ -547,32 +547,32 @@
         background: #0b0312;
         min-height: 100vh;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"] {
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] {
         cursor: pointer;
-        transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        text-decoration: none;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"] [data-framer-name="Fill"] {
-        transition: background-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] [data-framer-name="Fill"] {
+        --border-color: var(--token-245d0ec3-831e-4505-88ff-21ba98a952c3, rgba(255, 255, 255, 0.15)) !important;
+        background-color: rgba(139, 81, 255, 0) !important;
+        opacity: 1 !important;
+        transition: background-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
       }
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"] svg,
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"] [data-framer-name="Text"] {
-        transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] svg {
+        --4i27ky: var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255)) !important;
+        color: var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255)) !important;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:hover,
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:focus-visible {
-        transform: translateY(-1px);
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] [data-framer-name="Text"],
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"] [data-framer-name="Text"] p {
+        color: var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255)) !important;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:active {
-        transform: scale(0.97);
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"]:focus-visible {
+        outline: none;
       }
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:hover [data-framer-name="Fill"],
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:focus-visible [data-framer-name="Fill"] {
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"]:hover [data-framer-name="Fill"],
+      #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button="true"]:focus-visible [data-framer-name="Fill"] {
+        --border-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
         background-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
         opacity: 1 !important;
-      }
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:hover svg,
-      #main[data-raksa-dynamic-case-slug] a[data-reset="button"]:focus-visible svg {
-        transform: translateX(1px);
       }
       .raksa-dynamic-case {
         background: #0b0312;
@@ -1148,6 +1148,37 @@
     delete unit.dataset.raksaHiddenDynamicUnit;
   }
 
+  function normalizeFramerCaseButtons(root) {
+    root.querySelectorAll("a[data-reset='button']").forEach((button) => {
+      button.dataset.raksaFramerButton = "true";
+      button.style.borderBottomLeftRadius = "118px";
+      button.style.borderBottomRightRadius = "118px";
+      button.style.borderTopLeftRadius = "118px";
+      button.style.borderTopRightRadius = "118px";
+
+      const fill = button.querySelector("[data-framer-name='Fill']");
+      if (fill) {
+        fill.style.setProperty("--border-bottom-width", "1px");
+        fill.style.setProperty("--border-color", "var(--token-245d0ec3-831e-4505-88ff-21ba98a952c3, rgba(255, 255, 255, 0.15))");
+        fill.style.setProperty("--border-left-width", "1px");
+        fill.style.setProperty("--border-right-width", "1px");
+        fill.style.setProperty("--border-style", "solid");
+        fill.style.setProperty("--border-top-width", "1px");
+        fill.style.backgroundColor = "rgba(139, 81, 255, 0)";
+        fill.style.opacity = "1";
+        fill.style.borderBottomLeftRadius = "114px";
+        fill.style.borderBottomRightRadius = "114px";
+        fill.style.borderTopLeftRadius = "114px";
+        fill.style.borderTopRightRadius = "114px";
+      }
+
+      button.querySelectorAll("svg").forEach((svg) => {
+        svg.style.setProperty("--4i27ky", "var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255))");
+        svg.style.color = "var(--token-eb7a4d4b-ecab-4fea-8d34-73063eb2b1f1, rgb(255, 255, 255))";
+      });
+    });
+  }
+
   function patchTemplateNavigation(root, cases, slug) {
     const { previous, next } = neighborsForCase(cases, slug);
     const recommendationRoot = root.querySelector("[data-framer-name='Recomendação']");
@@ -1376,6 +1407,7 @@
     patchTemplateBackLinks(root);
     patchTemplateGallery(root, item);
     patchTemplateNavigation(root, cases, slug);
+    normalizeFramerCaseButtons(root);
     revealFramerTemplate(root);
   }
 
