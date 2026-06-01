@@ -374,9 +374,11 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function renderBudgets() {
     const editingBudget = crmEditRecord("budgets");
-    const totalApproved = state.budgets
-      .filter((budget) => budget.status === "approved")
-      .reduce((sum, budget) => sum + Number(budget.total || 0), 0);
+    const editingPayload = budgetPayload(editingBudget);
+    const editingItemsText = budgetItemsText(editingBudget);
+    const subtotal = Number(editingBudget?.subtotal || 0);
+    const discount = Number(editingBudget?.discount || 0);
+    const tax = Number(editingBudget?.tax || 0);
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
     const projectOptions = state.projects.map((project) => [project.id, project.name]);
 
@@ -392,115 +394,343 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
         ${renderCrmNotice()}
 
-        <section class="metrics" aria-label="Resumo de orcamentos">
-          <div class="metric">
-            <strong>${formatCurrency(totalApproved)}</strong>
-            <span>Aprovado</span>
-          </div>
-          ${BUDGET_STATUSES.map(([id, label]) => `
-            <div class="metric">
-              <strong>${state.budgets.filter((budget) => budget.status === id).length}</strong>
-              <span>${escapeHtml(label)}</span>
-            </div>
-          `).join("")}
-        </section>
+        ${renderBudgetMetrics()}
 
-        <section class="data-layout">
-          <form class="panel form-stack" data-budget-form ${crmFormAttrs("budgets")}>
+        <section class="budget-layout">
+          <form class="panel form-stack budget-form" data-budget-form ${crmFormAttrs("budgets")}>
             <div class="page-title">
-              <h2>${editingBudget ? "Editar orcamento" : "Novo orcamento"}</h2>
-              <p class="section-subtitle">${editingBudget ? "Atualize valores, status e validade." : "Valores simples agora; payload detalhado fica reservado para a proxima etapa."}</p>
+              <h2>${editingBudget ? "Editar proposta" : "Nova proposta"}</h2>
+              <p class="section-subtitle">${editingBudget ? "Atualize briefing, valores e condicoes." : "Monte a ficha comercial e tecnica antes de virar OS."}</p>
             </div>
-            <label class="field">
-              <span>Titulo</span>
-              <input class="input" name="title" value="${valueAttr(editingBudget?.title)}" required>
-            </label>
-            <div class="form-grid">
+
+            <section class="budget-section">
+              <div class="budget-section-heading">
+                <strong>Ficha comercial</strong>
+                <span>Cliente, responsaveis e etapa da proposta.</span>
+              </div>
               <label class="field">
-                <span>Cliente</span>
-                <select class="select" name="client_id">${selectOptions(clientOptions, editingBudget?.client_id || "", "Sem cliente")}</select>
+                <span>Titulo</span>
+                <input class="input" name="title" value="${valueAttr(editingBudget?.title)}" required>
+              </label>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Cliente</span>
+                  <select class="select" name="client_id">${selectOptions(clientOptions, editingBudget?.client_id || "", "Sem cliente")}</select>
+                </label>
+                <label class="field">
+                  <span>Projeto</span>
+                  <select class="select" name="project_id">${selectOptions(projectOptions, editingBudget?.project_id || "", "Sem projeto")}</select>
+                </label>
+              </div>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Status</span>
+                  <select class="select" name="status">${selectOptions(BUDGET_STATUSES, editingBudget?.status || "draft")}</select>
+                </label>
+                <label class="field">
+                  <span>Validade</span>
+                  <input class="input" name="valid_until" type="date" value="${valueAttr(dateInputValue(editingBudget?.valid_until))}">
+                </label>
+              </div>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Contato</span>
+                  <input class="input" name="contact" value="${valueAttr(editingPayload.contact)}" placeholder="Nome, e-mail ou WhatsApp">
+                </label>
+                <label class="field">
+                  <span>Vendedor</span>
+                  <input class="input" name="sales_owner" value="${valueAttr(editingPayload.salesOwner)}" placeholder="Responsavel comercial">
+                </label>
+              </div>
+              <label class="field">
+                <span>Agencia / origem</span>
+                <input class="input" name="agency" value="${valueAttr(editingPayload.agency)}" placeholder="Opcional">
+              </label>
+            </section>
+
+            <section class="budget-section">
+              <div class="budget-section-heading">
+                <strong>Servico e escopo</strong>
+                <span>Resumo para proposta, producao e carta comercial.</span>
+              </div>
+              <label class="field">
+                <span>Resumo da proposta</span>
+                <textarea class="textarea textarea-small" name="summary" placeholder="Ex: Landing page institucional com CMS e integracao de metricas.">${escapeHtml(editingPayload.summary || "")}</textarea>
+              </label>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Tipo de servico</span>
+                  <input class="input" name="service_type" value="${valueAttr(editingPayload.serviceType)}" placeholder="Website, branding, editorial...">
+                </label>
+                <label class="field">
+                  <span>Quantidade</span>
+                  <input class="input" name="quantity" type="number" min="1" step="1" value="${valueAttr(editingPayload.quantity ?? "")}" placeholder="1">
+                </label>
+              </div>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Formato / dimensoes</span>
+                  <input class="input" name="format" value="${valueAttr(editingPayload.format)}" placeholder="Ex: 1440px, A4, 20x30cm">
+                </label>
+                <label class="field">
+                  <span>Material / tecnologia</span>
+                  <input class="input" name="material" value="${valueAttr(editingPayload.material)}" placeholder="Ex: Webflow, React, couche...">
+                </label>
+              </div>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Cores / paginas</span>
+                  <input class="input" name="color_profile" value="${valueAttr(editingPayload.colorProfile)}" placeholder="Ex: 4x4, digital, 12 paginas">
+                </label>
+                <label class="field">
+                  <span>Acabamentos</span>
+                  <input class="input" name="finishing" value="${valueAttr(editingPayload.finishing)}" placeholder="Corte, dobra, animacoes, SEO...">
+                </label>
+              </div>
+              <label class="field">
+                <span>Itens da proposta</span>
+                <textarea class="textarea textarea-small" name="items_text" placeholder="Um item por linha">${escapeHtml(editingItemsText)}</textarea>
+              </label>
+            </section>
+
+            <section class="budget-section">
+              <div class="budget-section-heading">
+                <strong>Valores</strong>
+                <span>Calculo simples, mantendo detalhamento tecnico no escopo.</span>
+              </div>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Subtotal</span>
+                  <input class="input" name="subtotal" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingBudget?.subtotal ?? "")}" data-budget-money>
+                </label>
+                <label class="field">
+                  <span>Desconto</span>
+                  <input class="input" name="discount" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingBudget?.discount ?? "")}" data-budget-money>
+                </label>
+              </div>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Impostos</span>
+                  <input class="input" name="tax" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingBudget?.tax ?? "")}" data-budget-money>
+                </label>
+                <div class="budget-total-preview" aria-live="polite">
+                  <span>Total estimado</span>
+                  <strong data-budget-total-preview-value>${formatCurrency(subtotal - discount + tax)}</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="budget-section">
+              <div class="budget-section-heading">
+                <strong>Condicoes e producao</strong>
+                <span>Informacoes que alimentam OS e acompanhamento.</span>
+              </div>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Pagamento</span>
+                  <input class="input" name="payment_terms" value="${valueAttr(editingPayload.paymentTerms)}" placeholder="Ex: 50% inicio / 50% entrega">
+                </label>
+                <label class="field">
+                  <span>Entrega</span>
+                  <input class="input" name="delivery_terms" value="${valueAttr(editingPayload.deliveryTerms)}" placeholder="Ex: 20 dias uteis">
+                </label>
+              </div>
+              <label class="field">
+                <span>Observacoes tecnicas</span>
+                <textarea class="textarea textarea-small" name="production_notes" placeholder="Dependencias, arquivos do cliente, restricoes e criterios de aceite.">${escapeHtml(editingPayload.productionNotes || "")}</textarea>
               </label>
               <label class="field">
-                <span>Projeto</span>
-                <select class="select" name="project_id">${selectOptions(projectOptions, editingBudget?.project_id || "", "Sem projeto")}</select>
+                <span>Notas internas</span>
+                <textarea class="textarea textarea-small" name="internal_notes" placeholder="Nao aparece na proposta.">${escapeHtml(editingPayload.internalNotes || "")}</textarea>
               </label>
-            </div>
-            <div class="form-grid">
-              <label class="field">
-                <span>Status</span>
-                <select class="select" name="status">${selectOptions(BUDGET_STATUSES, editingBudget?.status || "draft")}</select>
-              </label>
-              <label class="field">
-                <span>Validade</span>
-                <input class="input" name="valid_until" type="date" value="${valueAttr(dateInputValue(editingBudget?.valid_until))}">
-              </label>
-            </div>
-            <div class="form-grid">
-              <label class="field">
-                <span>Subtotal</span>
-                <input class="input" name="subtotal" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingBudget?.subtotal ?? "")}">
-              </label>
-              <label class="field">
-                <span>Desconto</span>
-                <input class="input" name="discount" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingBudget?.discount ?? "")}">
-              </label>
-            </div>
-            <label class="field">
-              <span>Impostos</span>
-              <input class="input" name="tax" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingBudget?.tax ?? "")}">
-            </label>
+            </section>
+
             ${renderCrmFormActions("budgets", editingBudget, "Criar orcamento", "Salvar orcamento")}
           </form>
 
-          <section class="panel data-panel">
+          <section class="panel data-panel budget-board">
             <div class="page-title">
-              <h2>Orcamentos</h2>
-              <p class="section-subtitle">Controle inicial de propostas e status.</p>
+              <h2>Pipeline comercial</h2>
+              <p class="section-subtitle">Propostas agrupadas por status, com validade e escopo visiveis.</p>
             </div>
-            ${renderBudgetTable()}
+            ${renderBudgetPipeline()}
           </section>
         </section>
       </main>`);
   }
 
-  function renderBudgetTable() {
+  function renderBudgetMetrics() {
+    const activeBudgetTotal = state.budgets
+      .filter((budget) => !["approved", "rejected"].includes(budget.status))
+      .reduce((sum, budget) => sum + Number(budget.total || 0), 0);
+    const totalApproved = state.budgets
+      .filter((budget) => budget.status === "approved")
+      .reduce((sum, budget) => sum + Number(budget.total || 0), 0);
+    const overdueCount = state.budgets.filter((budget) => isBudgetOverdue(budget)).length;
+    const averageTicket = state.budgets.length
+      ? state.budgets.reduce((sum, budget) => sum + Number(budget.total || 0), 0) / state.budgets.length
+      : 0;
+
+    return `
+      <section class="metrics budget-metrics" aria-label="Resumo de orcamentos">
+        <div class="metric">
+          <strong>${formatCurrency(activeBudgetTotal)}</strong>
+          <span>Em negociacao</span>
+        </div>
+        <div class="metric">
+          <strong>${formatCurrency(totalApproved)}</strong>
+          <span>Aprovado</span>
+        </div>
+        <div class="metric">
+          <strong>${overdueCount}</strong>
+          <span>Validade vencida</span>
+        </div>
+        <div class="metric">
+          <strong>${formatCurrency(averageTicket)}</strong>
+          <span>Ticket medio</span>
+        </div>
+      </section>`;
+  }
+
+  function renderBudgetPipeline() {
     if (!state.budgets.length) return `<div class="empty-state">Nenhum orcamento cadastrado.</div>`;
 
     return `
-      <div class="table-wrap">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Orcamento</th>
-              <th>Cliente</th>
-              <th>Projeto</th>
-              <th>Status</th>
-              <th>Total</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            ${state.budgets.map((budget) => `
-              <tr>
-                <td>
-                  <strong>${escapeHtml(budget.title)}</strong>
-                  <span>Valido ate ${formatDate(budget.valid_until)}</span>
-                </td>
-                <td>${escapeHtml(entityName(state.clients, budget.client_id))}</td>
-                <td>${escapeHtml(entityName(state.projects, budget.project_id))}</td>
-                <td><span class="status-pill">${escapeHtml(labelFromOptions(BUDGET_STATUSES, budget.status))}</span></td>
-                <td>${formatCurrency(budget.total, budget.currency || "BRL")}</td>
-                <td>
-                  <div class="row-actions">
-                    <button class="icon-button" type="button" data-edit-crm="budgets:${escapeHtml(budget.id)}">Editar</button>
-                    <button class="icon-button" type="button" data-delete-crm="budgets:${escapeHtml(budget.id)}">Excluir</button>
-                  </div>
-                </td>
-              </tr>
-            `).join("")}
-          </tbody>
-        </table>
+      <div class="budget-pipeline">
+        ${BUDGET_STATUSES.map(([status, label]) => {
+          const items = state.budgets.filter((budget) => budget.status === status);
+          return `
+            <section class="budget-column">
+              <div class="budget-column-heading">
+                <span>${escapeHtml(label)}</span>
+                <strong>${items.length}</strong>
+              </div>
+              <div class="budget-card-list">
+                ${items.length ? items.map(renderBudgetCard).join("") : `<div class="budget-empty-column">Sem propostas</div>`}
+              </div>
+            </section>`;
+        }).join("")}
       </div>`;
+  }
+
+  function renderBudgetCard(budget) {
+    const payload = budgetPayload(budget);
+    const summary = payload.summary || firstBudgetItemLine(budget) || "Sem resumo cadastrado.";
+    const specs = [
+      payload.serviceType,
+      payload.quantity ? `${payload.quantity} un.` : "",
+      payload.format,
+      payload.material,
+      payload.colorProfile,
+    ].filter(Boolean);
+
+    return `
+      <article class="budget-card ${isBudgetOverdue(budget) ? "is-overdue" : ""}">
+        <div class="budget-card-top">
+          <span class="status-pill budget-status-${escapeHtml(budget.status || "draft")}">${escapeHtml(labelFromOptions(BUDGET_STATUSES, budget.status))}</span>
+          <strong>${formatCurrency(budget.total, budget.currency || "BRL")}</strong>
+        </div>
+        <div class="budget-card-copy">
+          <h3>${escapeHtml(budget.title)}</h3>
+          <p>${escapeHtml(summary)}</p>
+        </div>
+        ${specs.length ? `<div class="budget-specs">${specs.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div>` : ""}
+        <dl class="budget-meta">
+          <div>
+            <dt>Cliente</dt>
+            <dd>${escapeHtml(entityName(state.clients, budget.client_id))}</dd>
+          </div>
+          <div>
+            <dt>Projeto</dt>
+            <dd>${escapeHtml(entityName(state.projects, budget.project_id))}</dd>
+          </div>
+          <div>
+            <dt>Validade</dt>
+            <dd>${escapeHtml(budgetValidityText(budget))}</dd>
+          </div>
+          ${payload.contact ? `
+            <div>
+              <dt>Contato</dt>
+              <dd>${escapeHtml(payload.contact)}</dd>
+            </div>` : ""}
+        </dl>
+        <div class="row-actions">
+          <button class="icon-button" type="button" data-edit-crm="budgets:${escapeHtml(budget.id)}">Editar</button>
+          <button class="icon-button" type="button" data-delete-crm="budgets:${escapeHtml(budget.id)}">Excluir</button>
+        </div>
+      </article>`;
+  }
+
+  function budgetPayload(record) {
+    if (!record?.payload || typeof record.payload !== "object" || Array.isArray(record.payload)) return {};
+    return record.payload;
+  }
+
+  function budgetItemsText(record) {
+    const payload = budgetPayload(record);
+    if (typeof payload.itemsText === "string") return payload.itemsText;
+    if (!Array.isArray(payload.items)) return "";
+    return payload.items
+      .map((item) => typeof item === "string" ? item : item?.text)
+      .filter(Boolean)
+      .join("\n");
+  }
+
+  function firstBudgetItemLine(record) {
+    return budgetItemsText(record).split(/\r?\n/).map((line) => line.trim()).find(Boolean) || "";
+  }
+
+  function budgetItemsFromText(value) {
+    return String(value || "")
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .map((text, index) => ({ position: index + 1, text }));
+  }
+
+  function budgetValidityText(budget) {
+    if (!budget.valid_until) return "Sem validade";
+    return `${isBudgetOverdue(budget) ? "Venceu em" : "Ate"} ${formatDate(budget.valid_until)}`;
+  }
+
+  function isBudgetOverdue(budget) {
+    if (!budget?.valid_until || ["approved", "rejected"].includes(budget.status)) return false;
+    const endOfDay = Date.parse(`${String(budget.valid_until).slice(0, 10)}T23:59:59Z`);
+    return Number.isFinite(endOfDay) && endOfDay < Date.now();
+  }
+
+  function textFromForm(data, key) {
+    return String(data.get(key) || "").trim();
+  }
+
+  function optionalQuantityFromForm(data, errors) {
+    const rawValue = String(data.get("quantity") || "").trim();
+    if (!rawValue) return null;
+    if (!/^\d+$/.test(rawValue)) {
+      errors.push("Quantidade deve ser um numero inteiro.");
+      return null;
+    }
+    const value = Number(rawValue);
+    if (!Number.isSafeInteger(value) || value <= 0) {
+      errors.push("Quantidade deve ser maior que zero.");
+      return null;
+    }
+    return value;
+  }
+
+  function updateBudgetTotalPreview(form) {
+    if (!form) return;
+    const target = form.querySelector("[data-budget-total-preview-value]");
+    if (!target) return;
+    const subtotal = decimalInputValue(form.elements.subtotal?.value);
+    const discount = decimalInputValue(form.elements.discount?.value);
+    const tax = decimalInputValue(form.elements.tax?.value);
+    target.textContent = formatCurrency(subtotal - discount + tax);
+  }
+
+  function decimalInputValue(value) {
+    const number = Number(String(value || "").replace(",", "."));
+    return Number.isFinite(number) ? number : 0;
   }
 
   function renderServiceOrders() {
@@ -783,6 +1013,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const discount = nonNegativeNumberFromForm(data, "discount", "Desconto", errors);
     const tax = nonNegativeNumberFromForm(data, "tax", "Impostos", errors);
     const total = subtotal - discount + tax;
+    const itemsText = textFromForm(data, "items_text");
     if (total < 0) errors.push("Total do orcamento nao pode ficar negativo.");
     const payload = {
       title: requiredTextFromForm(data, "title", "o titulo do orcamento", errors),
@@ -795,7 +1026,26 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       tax,
       total,
       valid_until: optionalDateFromForm(data, "valid_until", "Validade", errors),
-      payload: editing?.payload || {},
+      payload: {
+        ...budgetPayload(editing),
+        contact: optionalFormValue(data, "contact"),
+        salesOwner: optionalFormValue(data, "sales_owner"),
+        agency: optionalFormValue(data, "agency"),
+        summary: textFromForm(data, "summary"),
+        serviceType: optionalFormValue(data, "service_type"),
+        quantity: optionalQuantityFromForm(data, errors),
+        format: optionalFormValue(data, "format"),
+        material: optionalFormValue(data, "material"),
+        colorProfile: optionalFormValue(data, "color_profile"),
+        finishing: optionalFormValue(data, "finishing"),
+        itemsText,
+        items: budgetItemsFromText(itemsText),
+        paymentTerms: optionalFormValue(data, "payment_terms"),
+        deliveryTerms: optionalFormValue(data, "delivery_terms"),
+        productionNotes: textFromForm(data, "production_notes"),
+        internalNotes: textFromForm(data, "internal_notes"),
+        updatedFromAdminAt: new Date().toISOString(),
+      },
     };
     if (!validateCrmPayload("budgets", errors)) return;
 
@@ -911,5 +1161,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     renderProjects,
     renderServiceOrders,
     renderTimeEntries,
+    updateBudgetTotalPreview,
   };
 }

@@ -181,6 +181,7 @@ const {
   renderProjects,
   renderServiceOrders,
   renderTimeEntries,
+  updateBudgetTotalPreview,
 } = createCrmModule({
   state,
   getSupabase: () => supabase,
@@ -264,6 +265,10 @@ document.addEventListener("input", (event) => {
 
   if (event.target.matches("[data-home-search]")) {
     updateHomeSearch(event.target.value);
+  }
+
+  if (event.target.matches("[data-budget-money]")) {
+    updateBudgetTotalPreview(event.target.form);
   }
 });
 
