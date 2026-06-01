@@ -1,8 +1,8 @@
-import { createCrmModule } from "./modules/crm.js?v=2";
-import { createMetricsModule } from "./modules/metrics.js?v=2";
-import { createApiModule } from "./modules/api.js?v=3";
-import { createShellModule } from "./modules/shell.js?v=2";
-import { createCasesModule } from "./modules/cases.js?v=3";
+import { createCrmModule } from "./modules/crm.js?v=3";
+import { createMetricsModule } from "./modules/metrics.js?v=3";
+import { createApiModule } from "./modules/api.js?v=4";
+import { createShellModule } from "./modules/shell.js?v=3";
+import { createCasesModule } from "./modules/cases.js?v=4";
 
 const app = document.querySelector("#app");
 const supabaseConfig = window.RAKSA_SUPABASE || {};
@@ -44,7 +44,9 @@ let noticeTimer = null;
 let noticeSequence = 0;
 
 function currentRouteSection() {
-  return window.location.hash.replace(/^#\/?/, "").split("/")[0] || "home";
+  const [section, slug] = window.location.hash.replace(/^#\/?/, "").split("/");
+  if (section === "crm" && slug) return `crm/${slug}`;
+  return section || "home";
 }
 
 function clearNoticeTimer() {
@@ -119,11 +121,13 @@ function render() {
 
   if (section === "cases" && slug) renderEditor(decodeURIComponent(slug).normalize("NFC"));
   else if (section === "home") renderHomeSettings();
-  else if (section === "clients") renderClients();
-  else if (section === "projects") renderProjects();
-  else if (section === "budgets") renderBudgets();
-  else if (section === "orders") renderServiceOrders();
-  else if (section === "time") renderTimeEntries();
+  else if (section === "crm" && !slug) window.location.replace("#/crm/clients");
+  else if (section === "crm") renderCrmPage(slug);
+  else if (section === "clients") window.location.replace("#/crm/clients");
+  else if (section === "projects") window.location.replace("#/crm/projects");
+  else if (section === "budgets") window.location.replace("#/crm/budgets");
+  else if (section === "orders") window.location.replace("#/crm/orders");
+  else if (section === "time") window.location.replace("#/crm/time");
   else if (section === "metrics") renderMetricsPage();
   else renderDashboard();
 }
@@ -177,6 +181,7 @@ const {
   openCrmEdit,
   renderBudgets,
   renderClients,
+  renderCrmPage,
   renderCrmNotice,
   renderProjects,
   renderServiceOrders,
@@ -249,7 +254,7 @@ document.addEventListener("submit", async (event) => {
     await loadAdminData({ force: true });
   } catch (error) {
     state.authLoading = false;
-    renderLogin(error.message || "Nao foi possivel entrar agora.");
+    renderLogin(error.message || "Não foi possível entrar agora.");
     return;
   }
 

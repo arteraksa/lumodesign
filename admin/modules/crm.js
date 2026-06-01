@@ -2,31 +2,30 @@ import {
   BUDGET_STATUSES,
   CLIENT_STATUSES,
   CLIENT_TYPES,
+  CRM_TABS,
   CRM_STATE_KEYS,
   ORDER_STATUSES,
   PROJECT_STATUSES,
-} from "./constants.js?v=2";
+} from "./constants.js?v=3";
 import {
   dateInputValue,
   entityName,
   escapeHtml,
   formatCurrency,
   formatDate,
-  formatHours,
   labelFromOptions,
   nonNegativeNumberFromForm,
   optionalDateFromForm,
   optionalEmailFromForm,
   optionalFormValue,
   optionalUrlFromForm,
-  positiveIntegerFromForm,
   requiredDateFromForm,
   requiredTextFromForm,
   scopeText,
   selectOptions,
   validateDateOrder,
   valueAttr,
-} from "./utils.js?v=2";
+} from "./utils.js?v=3";
 
 export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, clearNotice, render, renderShell, loadAdminData }) {
   function supabase() {
@@ -58,7 +57,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
         <button class="button button-primary ${submitting ? "is-loading" : ""}" type="submit" ${submitting ? "disabled" : ""}>
           ${submitting ? `<span class="spinner" aria-hidden="true"></span><span>Salvando...</span>` : escapeHtml(label)}
         </button>
-        ${record ? `<button class="button button-secondary" type="button" data-cancel-crm-edit ${submitting ? "disabled" : ""}>Cancelar edicao</button>` : ""}
+        ${record ? `<button class="button button-secondary" type="button" data-cancel-crm-edit ${submitting ? "disabled" : ""}>Cancelar edição</button>` : ""}
       </div>`;
   }
 
@@ -75,7 +74,9 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function routeKey() {
-    return window.location.hash.replace(/^#\/?/, "").split("/")[0] || "home";
+    const [section, slug] = window.location.hash.replace(/^#\/?/, "").split("/");
+    if (section === "crm" && slug) return `crm/${slug}`;
+    return section || "home";
   }
 
   function renderTablePage(table) {
@@ -85,6 +86,14 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     if (table === "service_orders") return renderServiceOrders();
     if (table === "time_entries") return renderTimeEntries();
     render();
+  }
+
+  function renderCrmPage(tab = "clients") {
+    if (tab === "projects") return renderProjects();
+    if (tab === "budgets") return renderBudgets();
+    if (tab === "orders") return renderServiceOrders();
+    if (tab === "time") return renderTimeEntries();
+    return renderClients();
   }
 
   function blockSubmitWithNotice(table, message) {
@@ -103,7 +112,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   async function submitCrmRecord(table, payload, editing, successMessage) {
     if (isSubmitting(table)) return;
     if (!supabase() || !isLoggedIn()) {
-      blockSubmitWithNotice(table, "Supabase indisponivel. Tente novamente em instantes.");
+      blockSubmitWithNotice(table, "Supabase indisponível. Tente novamente em instantes.");
       return;
     }
 
@@ -130,32 +139,54 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       ${!supabase() ? `<div class="notice notice-error is-visible">Configure o Supabase para usar o CRM.</div>` : ""}`;
   }
 
-  function renderClients() {
-    const editingClient = crmEditRecord("clients");
+  function renderCrmTabNav(activeTab) {
+    return `
+      <nav class="crm-tabs" aria-label="Áreas do CRM">
+        ${CRM_TABS.map(([id, label]) => `
+          <a class="crm-tab ${activeTab === id ? "is-active" : ""}" href="#/crm/${id}">
+            ${escapeHtml(label)}
+          </a>
+        `).join("")}
+      </nav>`;
+  }
 
+  function renderCrmWorkspace(activeTab, { eyebrow, title, subtitle, metrics = "", body }) {
     renderShell(`
-      <main class="page">
+      <main class="page crm-page">
         <section class="page-header">
           <div class="page-title">
-            <span class="eyebrow">Clientes</span>
-            <h1>Cadastro de clientes</h1>
-            <p class="section-subtitle">${state.clients.length} registros no CRM</p>
+            <span class="eyebrow">${escapeHtml(eyebrow)}</span>
+            <h1>${escapeHtml(title)}</h1>
+            <p class="section-subtitle">${escapeHtml(subtitle)}</p>
           </div>
         </section>
 
+        ${renderCrmTabNav(activeTab)}
         ${renderCrmNotice()}
+        ${metrics}
+        ${body}
+      </main>`);
+  }
 
-        <section class="data-layout">
-          <form class="panel form-stack" data-client-form ${crmFormAttrs("clients")}>
+  function renderClients() {
+    const editingClient = crmEditRecord("clients");
+
+    renderCrmWorkspace("clients", {
+      eyebrow: "Clientes",
+      title: "Cadastro de clientes",
+      subtitle: `${state.clients.length} registros no CRM`,
+      body: `
+        <section class="crm-panel-stack">
+          <form class="panel form-stack crm-editor-form" data-client-form ${crmFormAttrs("clients")}>
             <div class="page-title">
               <h2>${editingClient ? "Editar cliente" : "Novo cliente"}</h2>
-              <p class="section-subtitle">${editingClient ? "Atualize os dados comerciais e de contato." : "Base para projetos, orcamentos e horas."}</p>
+              <p class="section-subtitle">${editingClient ? "Atualize os dados comerciais e de contato." : "Base para projetos, orçamentos e horas."}</p>
             </div>
-            <label class="field">
-              <span>Nome</span>
-              <input class="input" name="name" value="${valueAttr(editingClient?.name)}" required>
-            </label>
-            <div class="form-grid">
+            <div class="crm-form-grid">
+              <label class="field field-span-2">
+                <span>Nome</span>
+                <input class="input" name="name" value="${valueAttr(editingClient?.name)}" required>
+              </label>
               <label class="field">
                 <span>Tipo</span>
                 <select class="select" name="type">${selectOptions(CLIENT_TYPES, editingClient?.type || "company")}</select>
@@ -164,8 +195,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <span>Status</span>
                 <select class="select" name="status">${selectOptions(CLIENT_STATUSES, editingClient?.status || "active")}</select>
               </label>
-            </div>
-            <div class="form-grid">
               <label class="field">
                 <span>E-mail</span>
                 <input class="input" name="email" type="email" value="${valueAttr(editingClient?.email)}">
@@ -174,8 +203,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <span>Telefone</span>
                 <input class="input" name="phone" value="${valueAttr(editingClient?.phone)}">
               </label>
-            </div>
-            <div class="form-grid">
               <label class="field">
                 <span>Documento</span>
                 <input class="input" name="document" value="${valueAttr(editingClient?.document)}">
@@ -184,11 +211,11 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <span>Website</span>
                 <input class="input" name="website" type="url" value="${valueAttr(editingClient?.website)}">
               </label>
+              <label class="field field-span-4">
+                <span>Notas</span>
+                <textarea class="textarea textarea-small" name="notes">${escapeHtml(editingClient?.notes || "")}</textarea>
+              </label>
             </div>
-            <label class="field">
-              <span>Notas</span>
-              <textarea class="textarea textarea-small" name="notes">${escapeHtml(editingClient?.notes || "")}</textarea>
-            </label>
             ${renderCrmFormActions("clients", editingClient, "Cadastrar cliente", "Salvar cliente")}
           </form>
 
@@ -199,8 +226,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </div>
             ${renderClientTable()}
           </section>
-        </section>
-      </main>`);
+        </section>`,
+    });
   }
 
   function renderClientTable() {
@@ -251,19 +278,12 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
     const caseOptions = state.cases.map((item) => [item.id, item.title]);
 
-    renderShell(`
-      <main class="page">
-        <section class="page-header">
-          <div class="page-title">
-            <span class="eyebrow">Projetos</span>
-            <h1>Gestao de projetos</h1>
-            <p class="section-subtitle">${state.projects.length} projetos cadastrados</p>
-          </div>
-        </section>
-
-        ${renderCrmNotice()}
-
-        <section class="metrics" aria-label="Resumo de projetos">
+    renderCrmWorkspace("projects", {
+      eyebrow: "Projetos",
+      title: "Gestão de projetos",
+      subtitle: `${state.projects.length} projetos cadastrados`,
+      metrics: `
+        <section class="metrics crm-metrics" aria-label="Resumo de projetos">
           <div class="metric">
             <strong>${formatCurrency(totalBudget)}</strong>
             <span>Valor previsto</span>
@@ -274,19 +294,20 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <span>${escapeHtml(label)}</span>
             </div>
           `).join("")}
-        </section>
-
-        <section class="data-layout">
-          <form class="panel form-stack" data-project-form ${crmFormAttrs("projects")}>
+        </section>`,
+      body: `
+        <section class="crm-panel-stack">
+          <form class="panel form-stack crm-editor-form" data-project-form ${crmFormAttrs("projects")}>
             <div class="page-title">
               <h2>${editingProject ? "Editar projeto" : "Novo projeto"}</h2>
-              <p class="section-subtitle">${editingProject ? "Atualize status, prazo e previsao financeira." : "Vincule cliente, case e previsao financeira."}</p>
+              <p class="section-subtitle">${editingProject ? "Atualize status, prazo e previsão financeira." : "Vincule cliente, case e previsão financeira."}</p>
             </div>
-            <label class="field">
-              <span>Nome</span>
-              <input class="input" name="name" value="${valueAttr(editingProject?.name)}" required>
-            </label>
-            <div class="form-grid">
+
+            <div class="crm-form-grid">
+              <label class="field field-span-2">
+                <span>Nome</span>
+                <input class="input" name="name" value="${valueAttr(editingProject?.name)}" required>
+              </label>
               <label class="field">
                 <span>Cliente</span>
                 <select class="select" name="client_id">${selectOptions(clientOptions, editingProject?.client_id || "", "Sem cliente")}</select>
@@ -295,29 +316,27 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <span>Status</span>
                 <select class="select" name="status">${selectOptions(PROJECT_STATUSES, editingProject?.status || "lead")}</select>
               </label>
-            </div>
-            <label class="field">
-              <span>Case relacionado</span>
-              <select class="select" name="case_id">${selectOptions(caseOptions, editingProject?.case_id || "", "Sem case")}</select>
-            </label>
-            <div class="form-grid">
               <label class="field">
-                <span>Inicio</span>
+                <span>Case relacionado</span>
+                <select class="select" name="case_id">${selectOptions(caseOptions, editingProject?.case_id || "", "Sem case")}</select>
+              </label>
+              <label class="field">
+                <span>Início</span>
                 <input class="input" name="starts_at" type="date" value="${valueAttr(dateInputValue(editingProject?.starts_at))}">
               </label>
               <label class="field">
                 <span>Prazo</span>
                 <input class="input" name="due_at" type="date" value="${valueAttr(dateInputValue(editingProject?.due_at))}">
               </label>
+              <label class="field">
+                <span>Valor previsto</span>
+                <input class="input" name="budget_total" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingProject?.budget_total ?? "")}">
+              </label>
+              <label class="field field-span-4">
+                <span>Descrição</span>
+                <textarea class="textarea textarea-small" name="description">${escapeHtml(editingProject?.description || "")}</textarea>
+              </label>
             </div>
-            <label class="field">
-              <span>Valor previsto</span>
-              <input class="input" name="budget_total" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingProject?.budget_total ?? "")}">
-            </label>
-            <label class="field">
-              <span>Descricao</span>
-              <textarea class="textarea textarea-small" name="description">${escapeHtml(editingProject?.description || "")}</textarea>
-            </label>
             ${renderCrmFormActions("projects", editingProject, "Criar projeto", "Salvar projeto")}
           </form>
 
@@ -328,8 +347,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </div>
             ${renderProjectTable()}
           </section>
-        </section>
-      </main>`);
+        </section>`,
+    });
   }
 
   function renderProjectTable() {
@@ -382,31 +401,23 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
     const projectOptions = state.projects.map((project) => [project.id, project.name]);
 
-    renderShell(`
-      <main class="page">
-        <section class="page-header">
-          <div class="page-title">
-            <span class="eyebrow">Orcamentos</span>
-            <h1>Propostas comerciais</h1>
-            <p class="section-subtitle">${state.budgets.length} orcamentos cadastrados</p>
-          </div>
-        </section>
-
-        ${renderCrmNotice()}
-
-        ${renderBudgetMetrics()}
-
-        <section class="budget-layout">
+    renderCrmWorkspace("budgets", {
+      eyebrow: "Orçamentos",
+      title: "Propostas comerciais",
+      subtitle: `${state.budgets.length} orçamentos cadastrados`,
+      metrics: renderBudgetMetrics(),
+      body: `
+        <section class="crm-panel-stack">
           <form class="panel form-stack budget-form" data-budget-form ${crmFormAttrs("budgets")}>
             <div class="page-title">
               <h2>${editingBudget ? "Editar proposta" : "Nova proposta"}</h2>
-              <p class="section-subtitle">${editingBudget ? "Atualize briefing, valores e condicoes." : "Monte a ficha comercial e tecnica antes de virar OS."}</p>
+              <p class="section-subtitle">${editingBudget ? "Atualize briefing, valores e condições." : "Monte a ficha comercial e técnica antes de virar OS."}</p>
             </div>
 
             <section class="budget-section">
               <div class="budget-section-heading">
                 <strong>Ficha comercial</strong>
-                <span>Cliente, responsaveis e etapa da proposta.</span>
+                <span>Cliente, responsáveis e etapa da proposta.</span>
               </div>
               <label class="field">
                 <span>Titulo</span>
@@ -450,8 +461,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
             <section class="budget-section">
               <div class="budget-section-heading">
-                <strong>Servico e escopo</strong>
-                <span>Resumo para proposta, producao e carta comercial.</span>
+                <strong>Serviço e escopo</strong>
+                <span>Resumo para proposta, produção e carta comercial.</span>
               </div>
               <label class="field">
                 <span>Resumo da proposta</span>
@@ -459,7 +470,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               </label>
               <div class="form-grid">
                 <label class="field">
-                  <span>Tipo de servico</span>
+                  <span>Tipo de serviço</span>
                   <input class="input" name="service_type" value="${valueAttr(editingPayload.serviceType)}" placeholder="Website, branding, editorial...">
                 </label>
                 <label class="field">
@@ -469,7 +480,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               </div>
               <div class="form-grid">
                 <label class="field">
-                  <span>Formato / dimensoes</span>
+                  <span>Formato / dimensões</span>
                   <input class="input" name="format" value="${valueAttr(editingPayload.format)}" placeholder="Ex: 1440px, A4, 20x30cm">
                 </label>
                 <label class="field">
@@ -479,8 +490,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               </div>
               <div class="form-grid">
                 <label class="field">
-                  <span>Cores / paginas</span>
-                  <input class="input" name="color_profile" value="${valueAttr(editingPayload.colorProfile)}" placeholder="Ex: 4x4, digital, 12 paginas">
+                  <span>Cores / páginas</span>
+                  <input class="input" name="color_profile" value="${valueAttr(editingPayload.colorProfile)}" placeholder="Ex: 4x4, digital, 12 páginas">
                 </label>
                 <label class="field">
                   <span>Acabamentos</span>
@@ -522,7 +533,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
             <section class="budget-section">
               <div class="budget-section-heading">
-                <strong>Condicoes e producao</strong>
+                <strong>Condições e produção</strong>
                 <span>Informacoes que alimentam OS e acompanhamento.</span>
               </div>
               <div class="form-grid">
@@ -541,22 +552,22 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               </label>
               <label class="field">
                 <span>Notas internas</span>
-                <textarea class="textarea textarea-small" name="internal_notes" placeholder="Nao aparece na proposta.">${escapeHtml(editingPayload.internalNotes || "")}</textarea>
+                <textarea class="textarea textarea-small" name="internal_notes" placeholder="Não aparece na proposta.">${escapeHtml(editingPayload.internalNotes || "")}</textarea>
               </label>
             </section>
 
-            ${renderCrmFormActions("budgets", editingBudget, "Criar orcamento", "Salvar orcamento")}
+            ${renderCrmFormActions("budgets", editingBudget, "Criar orçamento", "Salvar orçamento")}
           </form>
 
           <section class="panel data-panel budget-board">
             <div class="page-title">
               <h2>Pipeline comercial</h2>
-              <p class="section-subtitle">Propostas agrupadas por status, com validade e escopo visiveis.</p>
+              <p class="section-subtitle">Propostas agrupadas por status, com validade e escopo visíveis.</p>
             </div>
             ${renderBudgetPipeline()}
           </section>
-        </section>
-      </main>`);
+        </section>`,
+    });
   }
 
   function renderBudgetMetrics() {
@@ -572,7 +583,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       : 0;
 
     return `
-      <section class="metrics budget-metrics" aria-label="Resumo de orcamentos">
+      <section class="metrics budget-metrics" aria-label="Resumo de orçamentos">
         <div class="metric">
           <strong>${formatCurrency(activeBudgetTotal)}</strong>
           <span>Em negociacao</span>
@@ -593,7 +604,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderBudgetPipeline() {
-    if (!state.budgets.length) return `<div class="empty-state">Nenhum orcamento cadastrado.</div>`;
+    if (!state.budgets.length) return `<div class="empty-state">Nenhum orçamento cadastrado.</div>`;
 
     return `
       <div class="budget-pipeline">
@@ -690,7 +701,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function budgetValidityText(budget) {
     if (!budget.valid_until) return "Sem validade";
-    return `${isBudgetOverdue(budget) ? "Venceu em" : "Ate"} ${formatDate(budget.valid_until)}`;
+    return `${isBudgetOverdue(budget) ? "Venceu em" : "Até"} ${formatDate(budget.valid_until)}`;
   }
 
   function isBudgetOverdue(budget) {
@@ -707,7 +718,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const rawValue = String(data.get("quantity") || "").trim();
     if (!rawValue) return null;
     if (!/^\d+$/.test(rawValue)) {
-      errors.push("Quantidade deve ser um numero inteiro.");
+      errors.push("Quantidade deve ser um número inteiro.");
       return null;
     }
     const value = Number(rawValue);
@@ -733,35 +744,68 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return Number.isFinite(number) ? number : 0;
   }
 
+  function hoursFromEntry(entry) {
+    return Number(entry?.minutes || 0) / 60;
+  }
+
+  function hoursInputValue(entry) {
+    const hours = hoursFromEntry(entry);
+    if (!hours) return "1";
+    return Number.isInteger(hours) ? String(hours) : String(Number(hours.toFixed(2)));
+  }
+
+  function formatDecimalHours(value = 0) {
+    const hours = Number(value || 0);
+    return `${new Intl.NumberFormat("pt-BR", {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: Number.isInteger(hours) ? 0 : 1,
+    }).format(hours)} h`;
+  }
+
+  function billableAmount(entry) {
+    return hoursFromEntry(entry) * Number(entry?.hourly_rate || 0);
+  }
+
+  function positiveHoursFromForm(data, errors) {
+    const rawValue = String(data.get("hours") || "").trim().replace(",", ".");
+    if (!rawValue) {
+      errors.push("Preencha horas.");
+      return 0;
+    }
+    if (!/^\d+(\.\d{1,2})?$/.test(rawValue)) {
+      errors.push("Horas deve ser um número positivo.");
+      return 0;
+    }
+    const hours = Number(rawValue);
+    if (!Number.isFinite(hours) || hours <= 0) {
+      errors.push("Horas deve ser maior que zero.");
+      return 0;
+    }
+    return hours;
+  }
+
   function renderServiceOrders() {
     const editingOrder = crmEditRecord("service_orders");
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
     const projectOptions = state.projects.map((project) => [project.id, project.name]);
     const budgetOptions = state.budgets.map((budget) => [budget.id, budget.title]);
 
-    renderShell(`
-      <main class="page">
-        <section class="page-header">
-          <div class="page-title">
-            <span class="eyebrow">Ordens de servico</span>
-            <h1>Escopo aprovado</h1>
-            <p class="section-subtitle">${state.serviceOrders.length} OS cadastradas</p>
-          </div>
-        </section>
-
-        ${renderCrmNotice()}
-
-        <section class="data-layout">
-          <form class="panel form-stack" data-order-form ${crmFormAttrs("service_orders")}>
+    renderCrmWorkspace("orders", {
+      eyebrow: "Ordens de serviço",
+      title: "Escopo aprovado",
+      subtitle: `${state.serviceOrders.length} OS cadastradas`,
+      body: `
+        <section class="crm-panel-stack">
+          <form class="panel form-stack crm-editor-form" data-order-form ${crmFormAttrs("service_orders")}>
             <div class="page-title">
               <h2>${editingOrder ? "Editar OS" : "Nova OS"}</h2>
-              <p class="section-subtitle">${editingOrder ? "Atualize vinculos, status, prazo e escopo." : "Transforme proposta em trabalho executavel."}</p>
+              <p class="section-subtitle">${editingOrder ? "Atualize vínculos, status, prazo e escopo." : "Transforme proposta em trabalho executável."}</p>
             </div>
-            <label class="field">
-              <span>Titulo</span>
-              <input class="input" name="title" value="${valueAttr(editingOrder?.title)}" required>
-            </label>
-            <div class="form-grid">
+            <div class="crm-form-grid">
+              <label class="field field-span-2">
+                <span>Título</span>
+                <input class="input" name="title" value="${valueAttr(editingOrder?.title)}" required>
+              </label>
               <label class="field">
                 <span>Cliente</span>
                 <select class="select" name="client_id">${selectOptions(clientOptions, editingOrder?.client_id || "", "Sem cliente")}</select>
@@ -770,43 +814,39 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <span>Projeto</span>
                 <select class="select" name="project_id">${selectOptions(projectOptions, editingOrder?.project_id || "", "Sem projeto")}</select>
               </label>
-            </div>
-            <div class="form-grid">
               <label class="field">
-                <span>Orcamento</span>
-                <select class="select" name="budget_id">${selectOptions(budgetOptions, editingOrder?.budget_id || "", "Sem orcamento")}</select>
+                <span>Orçamento</span>
+                <select class="select" name="budget_id">${selectOptions(budgetOptions, editingOrder?.budget_id || "", "Sem orçamento")}</select>
               </label>
               <label class="field">
                 <span>Status</span>
                 <select class="select" name="status">${selectOptions(ORDER_STATUSES, editingOrder?.status || "open")}</select>
               </label>
-            </div>
-            <div class="form-grid">
               <label class="field">
-                <span>Inicio</span>
+                <span>Início</span>
                 <input class="input" name="starts_at" type="date" value="${valueAttr(dateInputValue(editingOrder?.starts_at))}">
               </label>
               <label class="field">
                 <span>Prazo</span>
                 <input class="input" name="due_at" type="date" value="${valueAttr(dateInputValue(editingOrder?.due_at))}">
               </label>
+              <label class="field field-span-4">
+                <span>Escopo</span>
+                <textarea class="textarea textarea-small" name="scope">${escapeHtml(scopeText(editingOrder?.scope))}</textarea>
+              </label>
             </div>
-            <label class="field">
-              <span>Escopo</span>
-              <textarea class="textarea textarea-small" name="scope">${escapeHtml(scopeText(editingOrder?.scope))}</textarea>
-            </label>
             ${renderCrmFormActions("service_orders", editingOrder, "Criar OS", "Salvar OS")}
           </form>
 
           <section class="panel data-panel">
             <div class="page-title">
-              <h2>Ordens de servico</h2>
+              <h2>Ordens de serviço</h2>
               <p class="section-subtitle">Base para controle de horas e entregas.</p>
             </div>
             ${renderOrderTable()}
           </section>
-        </section>
-      </main>`);
+        </section>`,
+    });
   }
 
   function renderOrderTable() {
@@ -851,76 +891,79 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const editingEntry = crmEditRecord("time_entries");
     const projectOptions = state.projects.map((project) => [project.id, project.name]);
     const orderOptions = state.serviceOrders.map((order) => [order.id, order.title]);
-    const totalMinutes = state.timeEntries.reduce((sum, entry) => sum + Number(entry.minutes || 0), 0);
-    const billableMinutes = state.timeEntries.filter((entry) => entry.billable).reduce((sum, entry) => sum + Number(entry.minutes || 0), 0);
+    const totalHours = state.timeEntries.reduce((sum, entry) => sum + hoursFromEntry(entry), 0);
+    const billableHours = state.timeEntries.filter((entry) => entry.billable).reduce((sum, entry) => sum + hoursFromEntry(entry), 0);
+    const billableTotal = state.timeEntries.filter((entry) => entry.billable).reduce((sum, entry) => sum + billableAmount(entry), 0);
 
-    renderShell(`
-      <main class="page">
-        <section class="page-header">
-          <div class="page-title">
-            <span class="eyebrow">Horas</span>
-            <h1>Controle de horas</h1>
-            <p class="section-subtitle">${state.timeEntries.length} lancamentos recentes</p>
-          </div>
-        </section>
-
-        ${renderCrmNotice()}
-
-        <section class="metrics" aria-label="Resumo de horas">
+    renderCrmWorkspace("time", {
+      eyebrow: "Horas",
+      title: "Controle de horas",
+      subtitle: `${state.timeEntries.length} lançamentos recentes`,
+      metrics: `
+        <section class="metrics crm-metrics" aria-label="Resumo de horas">
           <div class="metric">
-            <strong>${formatHours(totalMinutes)}</strong>
-            <span>Total lancado</span>
+            <strong>${formatDecimalHours(totalHours)}</strong>
+            <span>Total lançado</span>
           </div>
           <div class="metric">
-            <strong>${formatHours(billableMinutes)}</strong>
-            <span>Faturavel</span>
+            <strong>${formatDecimalHours(billableHours)}</strong>
+            <span>Faturável</span>
           </div>
-        </section>
-
-        <section class="data-layout">
-          <form class="panel form-stack" data-time-form ${crmFormAttrs("time_entries")}>
+          <div class="metric">
+            <strong>${formatCurrency(billableTotal)}</strong>
+            <span>Valor faturável</span>
+          </div>
+        </section>`,
+      body: `
+        <section class="crm-panel-stack">
+          <form class="panel form-stack crm-editor-form" data-time-form ${crmFormAttrs("time_entries")}>
             <div class="page-title">
-              <h2>${editingEntry ? "Editar lancamento" : "Novo lancamento"}</h2>
-              <p class="section-subtitle">${editingEntry ? "Atualize projeto, data, tempo e descricao." : "Registre tempo por projeto e OS."}</p>
+              <h2>${editingEntry ? "Editar lançamento" : "Novo lançamento"}</h2>
+              <p class="section-subtitle">${editingEntry ? "Atualize projeto, data, horas e valor/hora." : "Registre horas por projeto e OS."}</p>
             </div>
-            <label class="field">
-              <span>Projeto</span>
-              <select class="select" name="project_id" required>${selectOptions(projectOptions, editingEntry?.project_id || "", "Selecione")}</select>
-            </label>
-            <label class="field">
-              <span>OS</span>
-              <select class="select" name="service_order_id">${selectOptions(orderOptions, editingEntry?.service_order_id || "", "Sem OS")}</select>
-            </label>
-            <div class="form-grid">
+
+            <div class="crm-form-grid">
+              <label class="field field-span-2">
+                <span>Projeto</span>
+                <select class="select" name="project_id" required>${selectOptions(projectOptions, editingEntry?.project_id || "", "Selecione")}</select>
+              </label>
+              <label class="field">
+                <span>OS</span>
+                <select class="select" name="service_order_id">${selectOptions(orderOptions, editingEntry?.service_order_id || "", "Sem OS")}</select>
+              </label>
               <label class="field">
                 <span>Data</span>
                 <input class="input" name="work_date" type="date" value="${valueAttr(dateInputValue(editingEntry?.work_date) || new Date().toISOString().slice(0, 10))}" required>
               </label>
               <label class="field">
-                <span>Minutos</span>
-                <input class="input" name="minutes" type="number" min="1" step="15" value="${valueAttr(editingEntry?.minutes ?? 60)}" required>
+                <span>Horas</span>
+                <input class="input" name="hours" type="number" min="0.25" step="0.25" value="${valueAttr(hoursInputValue(editingEntry))}" required>
+              </label>
+              <label class="field">
+                <span>Valor/hora</span>
+                <input class="input" name="hourly_rate" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingEntry?.hourly_rate ?? "")}">
+              </label>
+              <label class="toggle-row field-span-2">
+                <input type="checkbox" name="billable" ${editingEntry?.billable === false ? "" : "checked"}>
+                <span>Faturável</span>
+              </label>
+              <label class="field field-span-4">
+                <span>Descrição</span>
+                <textarea class="textarea textarea-small" name="description">${escapeHtml(editingEntry?.description || "")}</textarea>
               </label>
             </div>
-            <label class="toggle-row">
-              <input type="checkbox" name="billable" ${editingEntry?.billable === false ? "" : "checked"}>
-              <span>Faturavel</span>
-            </label>
-            <label class="field">
-              <span>Descricao</span>
-              <textarea class="textarea textarea-small" name="description">${escapeHtml(editingEntry?.description || "")}</textarea>
-            </label>
-            ${renderCrmFormActions("time_entries", editingEntry, "Registrar horas", "Salvar lancamento")}
+            ${renderCrmFormActions("time_entries", editingEntry, "Registrar horas", "Salvar lançamento")}
           </form>
 
           <section class="panel data-panel">
             <div class="page-title">
-              <h2>Lancamentos</h2>
-              <p class="section-subtitle">Ultimos 300 registros.</p>
+              <h2>Lançamentos</h2>
+              <p class="section-subtitle">Últimos 300 registros.</p>
             </div>
             ${renderTimeTable()}
           </section>
-        </section>
-      </main>`);
+        </section>`,
+    });
   }
 
   function renderTimeTable() {
@@ -933,8 +976,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             <tr>
               <th>Data</th>
               <th>Projeto</th>
-              <th>Tempo</th>
-              <th>Descricao</th>
+              <th>Horas</th>
+              <th>Valor/hora</th>
+              <th>Total</th>
+              <th>Descrição</th>
               <th></th>
             </tr>
           </thead>
@@ -944,9 +989,11 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <td>${formatDate(entry.work_date)}</td>
                 <td>${escapeHtml(entityName(state.projects, entry.project_id))}</td>
                 <td>
-                  <strong>${formatHours(entry.minutes)}</strong>
-                  <span>${entry.billable ? "Faturavel" : "Interno"}</span>
+                  <strong>${formatDecimalHours(hoursFromEntry(entry))}</strong>
+                  <span>${entry.billable ? "Faturável" : "Interno"}</span>
                 </td>
+                <td>${formatCurrency(entry.hourly_rate || 0)}</td>
+                <td>${formatCurrency(billableAmount(entry))}</td>
                 <td>${escapeHtml(entry.description || "-")}</td>
                 <td>
                   <div class="row-actions">
@@ -986,9 +1033,9 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const editing = crmEditRecord("projects");
     const data = new FormData(form);
     const errors = [];
-    const startsAt = optionalDateFromForm(data, "starts_at", "Inicio", errors);
+    const startsAt = optionalDateFromForm(data, "starts_at", "Início", errors);
     const dueAt = optionalDateFromForm(data, "due_at", "Prazo", errors);
-    validateDateOrder(startsAt, dueAt, "Inicio", "Prazo", errors);
+    validateDateOrder(startsAt, dueAt, "Início", "Prazo", errors);
     const payload = {
       name: requiredTextFromForm(data, "name", "o nome do projeto", errors),
       client_id: optionalFormValue(data, "client_id"),
@@ -1014,9 +1061,9 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const tax = nonNegativeNumberFromForm(data, "tax", "Impostos", errors);
     const total = subtotal - discount + tax;
     const itemsText = textFromForm(data, "items_text");
-    if (total < 0) errors.push("Total do orcamento nao pode ficar negativo.");
+    if (total < 0) errors.push("Total do orçamento não pode ficar negativo.");
     const payload = {
-      title: requiredTextFromForm(data, "title", "o titulo do orcamento", errors),
+      title: requiredTextFromForm(data, "title", "o título do orçamento", errors),
       client_id: optionalFormValue(data, "client_id"),
       project_id: optionalFormValue(data, "project_id"),
       status: String(data.get("status") || "draft"),
@@ -1049,7 +1096,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     };
     if (!validateCrmPayload("budgets", errors)) return;
 
-    await submitCrmRecord("budgets", payload, editing, editing ? "Orcamento atualizado." : "Orcamento criado.");
+    await submitCrmRecord("budgets", payload, editing, editing ? "Orçamento atualizado." : "Orçamento criado.");
   }
 
   async function createServiceOrder(form) {
@@ -1059,11 +1106,11 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const errors = [];
     const scopeValue = String(data.get("scope") || "").trim();
     const previousScopeText = scopeText(editing?.scope);
-    const startsAt = optionalDateFromForm(data, "starts_at", "Inicio", errors);
+    const startsAt = optionalDateFromForm(data, "starts_at", "Início", errors);
     const dueAt = optionalDateFromForm(data, "due_at", "Prazo", errors);
-    validateDateOrder(startsAt, dueAt, "Inicio", "Prazo", errors);
+    validateDateOrder(startsAt, dueAt, "Início", "Prazo", errors);
     const payload = {
-      title: requiredTextFromForm(data, "title", "o titulo da OS", errors),
+      title: requiredTextFromForm(data, "title", "o título da OS", errors),
       client_id: optionalFormValue(data, "client_id"),
       project_id: optionalFormValue(data, "project_id"),
       budget_id: optionalFormValue(data, "budget_id"),
@@ -1082,22 +1129,24 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const editing = crmEditRecord("time_entries");
     const data = new FormData(form);
     const errors = [];
+    const hours = positiveHoursFromForm(data, errors);
     const payload = {
       project_id: optionalFormValue(data, "project_id"),
       service_order_id: optionalFormValue(data, "service_order_id"),
       work_date: requiredDateFromForm(data, "work_date", "a data", errors),
-      minutes: positiveIntegerFromForm(data, "minutes", "Minutos", errors),
+      minutes: Math.max(1, Math.round(hours * 60)),
+      hourly_rate: nonNegativeNumberFromForm(data, "hourly_rate", "Valor/hora", errors),
       description: String(data.get("description") || "").trim(),
       billable: data.get("billable") === "on",
     };
     if (!editing) payload.user_id = state.session?.user?.id || null;
     if (!payload.project_id) errors.push("Selecione um projeto para registrar horas.");
     if (payload.project_id && !state.projects.some((project) => project.id === payload.project_id)) {
-      errors.push("Projeto selecionado nao foi encontrado.");
+      errors.push("Projeto selecionado não foi encontrado.");
     }
     if (!validateCrmPayload("time_entries", errors)) return;
 
-    await submitCrmRecord("time_entries", payload, editing, editing ? "Lancamento atualizado." : "Horas registradas.");
+    await submitCrmRecord("time_entries", payload, editing, editing ? "Lançamento atualizado." : "Horas registradas.");
   }
 
   async function deleteCrmRecord(table, id) {
@@ -1132,7 +1181,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   async function afterCrmMutation(error, successMessage, noticeRoute = routeKey()) {
     state.crmSubmitting = null;
     if (error) {
-      setNotice("error", error.message || "Nao foi possivel concluir a operacao.", { route: noticeRoute });
+      setNotice("error", error.message || "Não foi possível concluir a operação.", { route: noticeRoute });
     } else {
       setNotice("success", successMessage, { route: noticeRoute });
       state.crmEdit = null;
@@ -1140,7 +1189,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       try {
         await loadAdminData({ force: true });
       } catch (caught) {
-        setNotice("error", caught.message || "Registro salvo, mas nao foi possivel recarregar o CRM.", { route: noticeRoute });
+        setNotice("error", caught.message || "Registro salvo, mas não foi possível recarregar o CRM.", { route: noticeRoute });
       }
     }
     render();
@@ -1157,6 +1206,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     openCrmEdit,
     renderBudgets,
     renderClients,
+    renderCrmPage,
     renderCrmNotice,
     renderProjects,
     renderServiceOrders,

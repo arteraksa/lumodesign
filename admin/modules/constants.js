@@ -17,18 +17,22 @@ export const CLIENT_COLUMNS = "id, name, type, document, email, phone, website, 
 export const PROJECT_COLUMNS = "id, client_id, case_id, name, status, description, starts_at, due_at, budget_total, created_at, updated_at";
 export const BUDGET_COLUMNS = "id, client_id, project_id, title, status, currency, subtotal, discount, tax, total, valid_until, payload, created_at, updated_at";
 export const SERVICE_ORDER_COLUMNS = "id, client_id, project_id, budget_id, title, status, scope, starts_at, due_at, created_at, updated_at";
-export const TIME_ENTRY_COLUMNS = "id, project_id, service_order_id, user_id, work_date, minutes, description, billable, created_at, updated_at";
+export const TIME_ENTRY_COLUMNS = "id, project_id, service_order_id, user_id, work_date, minutes, hourly_rate, description, billable, created_at, updated_at";
 export const METRIC_COLUMNS = "id, event_name, path, metadata, created_at";
 
 export const ADMIN_SECTIONS = [
   ["cases", "CMS"],
   ["home", "Home"],
+  ["crm", "CRM"],
+  ["metrics", "Métricas"],
+];
+
+export const CRM_TABS = [
   ["clients", "Clientes"],
   ["projects", "Projetos"],
-  ["budgets", "Orcamentos"],
+  ["budgets", "Orçamentos"],
   ["orders", "OS"],
   ["time", "Horas"],
-  ["metrics", "Metricas"],
 ];
 
 export const CLIENT_TYPES = [
@@ -47,7 +51,7 @@ export const PROJECT_STATUSES = [
   ["proposal", "Proposta"],
   ["active", "Ativo"],
   ["paused", "Pausado"],
-  ["done", "Concluido"],
+  ["done", "Concluído"],
   ["canceled", "Cancelado"],
 ];
 
@@ -61,7 +65,7 @@ export const BUDGET_STATUSES = [
 export const ORDER_STATUSES = [
   ["open", "Aberta"],
   ["in_progress", "Em andamento"],
-  ["done", "Concluida"],
+  ["done", "Concluída"],
   ["canceled", "Cancelada"],
 ];
 

@@ -1,4 +1,4 @@
-import { PAGE_BASE } from "./constants.js?v=2";
+import { PAGE_BASE } from "./constants.js?v=3";
 
 export function escapeHtml(value = "") {
   return String(value)
@@ -92,7 +92,7 @@ export function optionalEmailFromForm(data, key, label, errors) {
   const value = String(data.get(key) || "").trim();
   if (!value) return null;
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-    errors.push(`${label} deve ser um e-mail valido.`);
+    errors.push(`${label} deve ser um e-mail válido.`);
     return null;
   }
   return value;
@@ -106,12 +106,12 @@ export function optionalUrlFromForm(data, key, label, errors) {
   try {
     const url = new URL(candidate);
     if (!["http:", "https:"].includes(url.protocol) || !url.hostname.includes(".")) {
-      errors.push(`${label} deve ser uma URL valida.`);
+      errors.push(`${label} deve ser uma URL válida.`);
       return null;
     }
     return url.toString();
   } catch {
-    errors.push(`${label} deve ser uma URL valida.`);
+    errors.push(`${label} deve ser uma URL válida.`);
     return null;
   }
 }
@@ -120,7 +120,7 @@ export function optionalDateFromForm(data, key, label, errors) {
   const value = String(data.get(key) || "").trim();
   if (!value) return null;
   if (!isValidDateInput(value)) {
-    errors.push(`${label} deve ser uma data valida.`);
+    errors.push(`${label} deve ser uma data válida.`);
     return null;
   }
   return value;
@@ -154,7 +154,7 @@ export function positiveIntegerFromForm(data, key, label, errors) {
     return 0;
   }
   if (!/^\d+$/.test(value)) {
-    errors.push(`${label} deve ser um numero inteiro.`);
+    errors.push(`${label} deve ser um número inteiro.`);
     return 0;
   }
   const number = Number(value);
@@ -200,12 +200,12 @@ function parseDecimalInput(rawValue, label, errors) {
   const value = String(rawValue ?? "").trim().replace(",", ".");
   if (!value) return null;
   if (!/^\d+(\.\d+)?$/.test(value)) {
-    errors.push(`${label} deve ser um numero positivo.`);
+    errors.push(`${label} deve ser um número positivo.`);
     return null;
   }
   const number = Number(value);
   if (!Number.isFinite(number) || number < 0) {
-    errors.push(`${label} deve ser um numero positivo.`);
+    errors.push(`${label} deve ser um número positivo.`);
     return null;
   }
   return number;

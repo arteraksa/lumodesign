@@ -95,6 +95,7 @@ create table if not exists public.time_entries (
   user_id uuid references auth.users(id) on delete set null,
   work_date date not null default current_date,
   minutes integer not null check (minutes > 0),
+  hourly_rate numeric(12, 2) not null default 0,
   description text not null default '',
   billable boolean not null default true,
   created_at timestamptz not null default now(),
@@ -122,6 +123,7 @@ alter table public.cases add column if not exists home_order integer not null de
 alter table public.cases add column if not exists content_blocks jsonb not null default '[]'::jsonb;
 alter table public.cases add column if not exists client_id uuid references public.clients(id) on delete set null;
 alter table public.cases add column if not exists external_url text not null default '';
+alter table public.time_entries add column if not exists hourly_rate numeric(12, 2) not null default 0;
 
 do $$
 begin
@@ -205,6 +207,16 @@ begin
     alter table public.time_entries
       add constraint time_entries_minutes_positive_check
       check (minutes > 0);
+  end if;
+
+  if not exists (
+    select 1 from pg_constraint
+    where conrelid = 'public.time_entries'::regclass
+      and conname = 'time_entries_hourly_rate_nonnegative_check'
+  ) then
+    alter table public.time_entries
+      add constraint time_entries_hourly_rate_nonnegative_check
+      check (hourly_rate >= 0);
   end if;
 
   if not exists (

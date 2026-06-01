@@ -15,8 +15,8 @@ import {
   STORAGE_KEY,
   TAGS,
   TIME_ENTRY_COLUMNS,
-} from "./constants.js?v=2";
-import { normalizeAssetUrl } from "./utils.js?v=2";
+} from "./constants.js?v=3";
+import { normalizeAssetUrl } from "./utils.js?v=3";
 
 export function createApiModule({ state, supabaseConfig, getSupabase, isLoggedIn }) {
   function supabase() {

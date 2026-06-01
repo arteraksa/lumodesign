@@ -5,8 +5,8 @@ import {
   IMAGE_BUCKET,
   PAGE_BASE,
   TAGS,
-} from "./constants.js?v=2";
-import { escapeHtml, formatDateTime, normalizeExternalUrl, slugify } from "./utils.js?v=2";
+} from "./constants.js?v=3";
+import { escapeHtml, formatDateTime, normalizeExternalUrl, slugify } from "./utils.js?v=3";
 
 const CASE_SAVE_DEBOUNCE_MS = 850;
 
@@ -488,7 +488,7 @@ export function createCasesModule({
               </div>
               <span class="panel-count">${selected.length}</span>
             </div>
-            <div class="home-selected-grid" aria-label="Cases visiveis na home">
+            <div class="home-selected-grid" aria-label="Cases visíveis na home">
               ${selected.length ? selected.map((item, index) => renderHomeSelectedCard(item, index)).join("") : `<div class="empty-state">Nenhum case selecionado.</div>`}
             </div>
           </section>
@@ -747,7 +747,7 @@ export function createCasesModule({
     } else if (field === "slug") {
       const newSlug = slugify(value);
       if (!newSlug) {
-        updateVisibleNotice("error", "Preencha um slug valido.");
+        updateVisibleNotice("error", "Preencha um slug válido.");
         return;
       }
       const duplicate = state.cases.find((entry) => entry.slug === newSlug && entry.slug !== item.slug);
@@ -805,7 +805,7 @@ export function createCasesModule({
     if (!ACCEPTED_IMAGE_TYPES.has(file.type)) throw new Error(`Envie apenas arquivos ${ACCEPTED_IMAGE_LABEL}.`);
 
     const extension = fileExtension(file);
-    if (!extension) throw new Error("Formato de imagem invalido.");
+    if (!extension) throw new Error("Formato de imagem inválido.");
 
     const safeSlug = slugify(slug);
     const fileName = `${scope}-${Date.now()}-${crypto.randomUUID()}.${extension}`;

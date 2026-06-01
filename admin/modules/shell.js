@@ -1,5 +1,5 @@
-import { ADMIN_SECTIONS, PAGE_BASE, logo } from "./constants.js?v=2";
-import { escapeHtml } from "./utils.js?v=2";
+import { ADMIN_SECTIONS, PAGE_BASE, logo } from "./constants.js?v=3";
+import { escapeHtml } from "./utils.js?v=3";
 
 export function createShellModule({ app, state, getSupabase }) {
   function renderLogin(error = "") {
@@ -72,13 +72,13 @@ export function createShellModule({ app, state, getSupabase }) {
         <section class="page-header">
           <div class="page-title">
             <span class="eyebrow">${escapeHtml(labels[section] || "Admin")}</span>
-            <h1>Modulo em preparacao</h1>
-            <p class="section-subtitle">A navegacao e o banco ja estao reservados para esta area.</p>
+            <h1>Módulo em preparação</h1>
+            <p class="section-subtitle">A navegação e o banco já estão reservados para esta área.</p>
           </div>
         </section>
         <section class="panel roadmap-panel">
           <h2>Proximo passo</h2>
-          <p class="section-subtitle">Aqui entram tabelas, formularios, permissoes e relatorios do CRM sem misturar com o CMS de cases.</p>
+          <p class="section-subtitle">Aqui entram tabelas, formulários, permissões e relatórios do CRM sem misturar com o CMS de cases.</p>
         </section>
       </main>`);
   }

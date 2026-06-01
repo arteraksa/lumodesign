@@ -1,4 +1,4 @@
-import { escapeHtml, formatDate } from "./utils.js?v=2";
+import { escapeHtml, formatDate } from "./utils.js?v=3";
 
 export function createMetricsModule({ state, renderShell, renderCrmNotice }) {
   function renderMetricsPage() {
@@ -15,7 +15,7 @@ export function createMetricsModule({ state, renderShell, renderCrmNotice }) {
       <main class="page">
         <section class="page-header">
           <div class="page-title">
-            <span class="eyebrow">Metricas</span>
+            <span class="eyebrow">Métricas</span>
             <h1>Eventos do site</h1>
             <p class="section-subtitle">${state.metricsEvents.length} eventos recentes carregados</p>
           </div>
@@ -39,7 +39,7 @@ export function createMetricsModule({ state, renderShell, renderCrmNotice }) {
         <section class="data-layout data-layout-even">
           <section class="panel data-panel">
             <div class="page-title">
-              <h2>Paginas</h2>
+              <h2>Páginas</h2>
               <p class="section-subtitle">Caminhos mais registrados.</p>
             </div>
             ${topPaths.length ? `
@@ -57,7 +57,7 @@ export function createMetricsModule({ state, renderShell, renderCrmNotice }) {
           <section class="panel data-panel">
             <div class="page-title">
               <h2>Eventos recentes</h2>
-              <p class="section-subtitle">Ultimos registros recebidos.</p>
+              <p class="section-subtitle">Últimos registros recebidos.</p>
             </div>
             ${renderMetricTable()}
           </section>
