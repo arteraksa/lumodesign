@@ -1,7 +1,7 @@
-import { createCrmModule } from "./modules/crm.js?v=9";
+import { createCrmModule } from "./modules/crm.js?v=10";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
 import { createApiModule } from "./modules/api.js?v=7";
-import { createShellModule } from "./modules/shell.js?v=3";
+import { createShellModule } from "./modules/shell.js?v=4";
 import { createCasesModule } from "./modules/cases.js?v=5";
 
 const app = document.querySelector("#app");
@@ -173,7 +173,8 @@ function render() {
   clearStaleNotice();
 
   if (section === "cases" && slug) renderEditor(decodeURIComponent(slug).normalize("NFC"));
-  else if (section === "home") renderHomeSettings();
+  else if (section === "home") renderAdminDashboard();
+  else if (section === "site-home") renderHomeSettings();
   else if (section === "crm" && !slug) window.location.replace("#/crm/clients");
   else if (section === "crm") renderCrmPage(slug);
   else if (section === "clients") window.location.replace("#/crm/clients");
@@ -253,6 +254,7 @@ const {
   openServiceOrderModal,
   openSubstrateModal,
   renderBudgets,
+  renderAdminDashboard,
   renderClients,
   renderCrmPage,
   renderCrmNotice,

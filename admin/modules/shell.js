@@ -1,4 +1,4 @@
-import { ADMIN_SECTIONS, PAGE_BASE, logo } from "./constants.js?v=3";
+import { ADMIN_SECTIONS, PAGE_BASE, logo } from "./constants.js?v=4";
 import { escapeHtml } from "./utils.js?v=3";
 
 export function createShellModule({ app, state, getSupabase }) {

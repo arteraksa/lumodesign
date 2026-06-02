@@ -25,7 +25,7 @@ export const METRIC_COLUMNS = "id, event_name, path, metadata, created_at";
 
 export const ADMIN_SECTIONS = [
   ["cases", "CMS"],
-  ["home", "Home"],
+  ["home", "Dashboard"],
   ["crm", "CRM"],
   ["metrics", "Métricas"],
 ];

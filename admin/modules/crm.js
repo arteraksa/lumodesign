@@ -102,6 +102,120 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return renderClients();
   }
 
+  function renderAdminDashboard() {
+    const budgets = state.budgets || [];
+    const serviceOrders = state.serviceOrders || [];
+    const pendingBudgets = budgets.filter((budget) => !budget.resolved && !["approved", "rejected"].includes(budget.status));
+    const approvedBudgets = budgets.filter((budget) => budget.status === "approved");
+    const openOrders = serviceOrders.filter((order) => order.status === "open");
+    const potentialRevenue = pendingBudgets.reduce((sum, budget) => sum + Number(budget.total || 0), 0);
+    const approvedRevenue = approvedBudgets.reduce((sum, budget) => sum + Number(budget.total || 0), 0);
+    const recentBudgets = [...budgets]
+      .sort((a, b) => Date.parse(b.created_at || b.updated_at || 0) - Date.parse(a.created_at || a.updated_at || 0))
+      .slice(0, 6);
+    const recentOpenOrders = [...openOrders]
+      .sort((a, b) => Date.parse(b.created_at || b.updated_at || 0) - Date.parse(a.created_at || a.updated_at || 0))
+      .slice(0, 6);
+
+    renderShell(`
+      <main class="page admin-dashboard">
+        <section class="page-header dashboard-header">
+          <div class="page-title">
+            <span class="eyebrow">Dashboard</span>
+            <h1>Visão geral</h1>
+            <p class="section-subtitle">Resumo comercial e operacional da RAKSA.</p>
+          </div>
+          <div class="dashboard-actions">
+            <a class="button button-secondary" href="#/site-home">Editar Home do site</a>
+            <a class="button button-primary" href="#/crm/budgets">Novo orçamento</a>
+          </div>
+        </section>
+
+        ${renderCrmNotice()}
+
+        <section class="dashboard-kpis" aria-label="Resumo do admin">
+          ${renderDashboardKpi("Clientes", state.clients.length, "Total de clientes cadastrados")}
+          ${renderDashboardKpi("Orçamentos", budgets.length, "Total de propostas")}
+          ${renderDashboardKpi("Pendentes", pendingBudgets.length, "Orçamentos em aberto")}
+          ${renderDashboardKpi("Aprovados", approvedBudgets.length, "Orçamentos aprovados")}
+          ${renderDashboardKpi("OS abertas", openOrders.length, "Ordens de serviço abertas")}
+          ${renderDashboardKpi("Potencial", formatCurrency(potentialRevenue), "Receita potencial")}
+          ${renderDashboardKpi("Aprovada", formatCurrency(approvedRevenue), "Receita aprovada")}
+        </section>
+
+        <section class="dashboard-lists">
+          <section class="panel dashboard-list-panel">
+            <div class="dashboard-list-heading">
+              <div>
+                <span class="eyebrow">Comercial</span>
+                <h2>Últimos orçamentos criados</h2>
+              </div>
+              <a class="button button-secondary" href="#/crm/budgets">Ver todos</a>
+            </div>
+            ${renderRecentBudgetList(recentBudgets)}
+          </section>
+
+          <section class="panel dashboard-list-panel">
+            <div class="dashboard-list-heading">
+              <div>
+                <span class="eyebrow">Produção</span>
+                <h2>Últimas OS abertas</h2>
+              </div>
+              <a class="button button-secondary" href="#/crm/orders">Ver todas</a>
+            </div>
+            ${renderRecentOrderList(recentOpenOrders)}
+          </section>
+        </section>
+      </main>`);
+  }
+
+  function renderDashboardKpi(label, value, caption) {
+    return `
+      <article class="dashboard-kpi">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(value)}</strong>
+        <small>${escapeHtml(caption)}</small>
+      </article>`;
+  }
+
+  function renderRecentBudgetList(items = []) {
+    if (!items.length) return `<div class="empty-state compact-empty">Nenhum orçamento cadastrado.</div>`;
+    return `
+      <div class="dashboard-list">
+        ${items.map((budget) => `
+          <a class="dashboard-list-row" href="#/crm/budgets" aria-label="Abrir orçamento ${escapeHtml(budget.title || budgetNumberLabel(budget))}">
+            <div>
+              <strong>${escapeHtml(budget.title || "Sem título")}</strong>
+              <span>${escapeHtml(budgetNumberLabel(budget))} · ${escapeHtml(entityName(state.clients, budget.client_id))}</span>
+            </div>
+            <div>
+              <strong>${formatCurrency(budget.total, budget.currency || "BRL")}</strong>
+              <span>${escapeHtml(labelFromOptions(BUDGET_STATUSES, budget.status))} · ${formatDate(budget.created_at)}</span>
+            </div>
+          </a>
+        `).join("")}
+      </div>`;
+  }
+
+  function renderRecentOrderList(items = []) {
+    if (!items.length) return `<div class="empty-state compact-empty">Nenhuma OS aberta.</div>`;
+    return `
+      <div class="dashboard-list">
+        ${items.map((order) => `
+          <a class="dashboard-list-row" href="#/crm/orders" aria-label="Abrir OS ${escapeHtml(order.title)}">
+            <div>
+              <strong>${escapeHtml(order.title || "Sem título")}</strong>
+              <span>${escapeHtml(entityName(state.clients, order.client_id))} · ${escapeHtml(entityName(state.projects, order.project_id))}</span>
+            </div>
+            <div>
+              <strong>${escapeHtml(formatDate(order.due_at))}</strong>
+              <span>${escapeHtml(orderBudgetLabel(order))}</span>
+            </div>
+          </a>
+        `).join("")}
+      </div>`;
+  }
+
   function blockSubmitWithNotice(table, message) {
     setNotice("error", message);
     renderTablePage(table);
@@ -3988,6 +4102,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     openServiceOrderModal,
     openSubstrateModal,
     renderBudgets,
+    renderAdminDashboard,
     renderClients,
     renderCrmPage,
     renderCrmNotice,
