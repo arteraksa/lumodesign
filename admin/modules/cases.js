@@ -70,20 +70,11 @@ export function createCasesModule({
   }
 
   function renderNotice() {
-    return `
-      <div class="notice ${state.notice?.type === "error" ? "notice-error" : "notice-success"} ${state.notice ? "is-visible" : ""}" data-notice>
-        ${escapeHtml(state.notice?.text || "")}
-      </div>`;
+    return "";
   }
 
   function updateVisibleNotice(type, text) {
     setNotice(type, text);
-    const notice = document.querySelector("[data-notice]");
-    if (!notice) return;
-    notice.classList.toggle("notice-error", type === "error");
-    notice.classList.toggle("notice-success", type !== "error");
-    notice.classList.add("is-visible");
-    notice.textContent = text;
   }
 
   function renderImage(url, alt = "") {

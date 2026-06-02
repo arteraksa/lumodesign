@@ -2,7 +2,7 @@ import { createCrmModule } from "./modules/crm.js?v=9";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
 import { createApiModule } from "./modules/api.js?v=7";
 import { createShellModule } from "./modules/shell.js?v=3";
-import { createCasesModule } from "./modules/cases.js?v=4";
+import { createCasesModule } from "./modules/cases.js?v=5";
 
 const app = document.querySelector("#app");
 const supabaseConfig = window.RAKSA_SUPABASE || {};
@@ -70,17 +70,54 @@ function clearNoticeTimer() {
   noticeTimer = null;
 }
 
+function syncNoticeToast() {
+  let region = document.querySelector("[data-toast-region]");
+  if (!state.notice) {
+    region?.remove();
+    return;
+  }
+
+  if (!region) {
+    region = document.createElement("div");
+    region.className = "toast-region";
+    region.setAttribute("data-toast-region", "");
+    region.setAttribute("aria-live", "polite");
+    region.setAttribute("aria-atomic", "true");
+    document.body.append(region);
+  }
+
+  region.textContent = "";
+  const toast = document.createElement("div");
+  toast.className = `toast-card toast-${state.notice.type === "error" ? "error" : "success"}`;
+  toast.style.setProperty("--toast-duration", `${state.notice.timeout || 4200}ms`);
+  toast.style.setProperty("--toast-exit-delay", `${Math.max(0, (state.notice.timeout || 4200) - 360)}ms`);
+
+  const marker = document.createElement("span");
+  marker.className = "toast-marker";
+  marker.setAttribute("aria-hidden", "true");
+
+  const copy = document.createElement("div");
+  const title = document.createElement("strong");
+  title.textContent = state.notice.type === "error" ? "Atenção" : "Tudo certo";
+  const message = document.createElement("span");
+  message.textContent = state.notice.text || "";
+
+  copy.append(title, message);
+  toast.append(marker, copy);
+  region.append(toast);
+}
+
 function setNotice(type, text, { route = currentRouteSection(), timeout } = {}) {
   clearNoticeTimer();
   const id = ++noticeSequence;
-  state.notice = { id, route, type, text };
-
   const dismissAfter = timeout ?? (type === "error" ? 7000 : 4200);
+  state.notice = { id, route, type, text, timeout: dismissAfter };
+  syncNoticeToast();
+
   if (dismissAfter > 0) {
     noticeTimer = window.setTimeout(() => {
       if (state.notice?.id !== id) return;
       clearNotice();
-      render();
     }, dismissAfter);
   }
 }
@@ -88,6 +125,7 @@ function setNotice(type, text, { route = currentRouteSection(), timeout } = {}) 
 function clearNotice() {
   clearNoticeTimer();
   state.notice = null;
+  syncNoticeToast();
 }
 
 function clearStaleNotice() {
@@ -207,6 +245,8 @@ const {
   generateRecurringOrders,
   openCrmEdit,
   openBudgetModal,
+  openClientDetailsModal,
+  openClientModal,
   openBudgetReports,
   openContactModal,
   openProductModal,
@@ -390,6 +430,8 @@ document.addEventListener("click", async (event) => {
   }
 
   if (target.matches("[data-delete-case]")) openDeleteModal(target.dataset.deleteCase);
+  if (target.matches("[data-open-client-modal]")) openClientModal(target.dataset.openClientModal || "");
+  if (target.matches("[data-view-client]")) openClientDetailsModal(target.dataset.viewClient || "");
   if (target.matches("[data-open-budget-modal]")) openBudgetModal();
   if (target.matches("[data-open-contact-modal]")) openContactModal(target.dataset.openContactModal || "", target.dataset.contactId || "");
   if (target.matches("[data-edit-budget-modal]")) openBudgetModal(target.dataset.editBudgetModal);

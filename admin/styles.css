@@ -2266,8 +2266,94 @@ h1 {
   color: #ffd6de;
 }
 
+.toast-region {
+  display: grid;
+  gap: 10px;
+  pointer-events: none;
+  position: fixed;
+  right: 22px;
+  top: 88px;
+  width: min(380px, calc(100vw - 32px));
+  z-index: 90;
+}
+
+.toast-card {
+  align-items: start;
+  animation:
+    toast-enter 420ms cubic-bezier(0.16, 1, 0.3, 1),
+    toast-exit 360ms ease var(--toast-exit-delay, 3840ms) forwards;
+  backdrop-filter: blur(18px);
+  background: rgba(20, 12, 31, 0.92);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.36);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 10px minmax(0, 1fr);
+  overflow: hidden;
+  padding: 14px 16px;
+  pointer-events: auto;
+  position: relative;
+}
+
+.toast-card::after {
+  animation: toast-progress var(--toast-duration, 4200ms) linear forwards;
+  background: currentColor;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  opacity: 0.42;
+  position: absolute;
+  transform-origin: left center;
+  width: 100%;
+}
+
+.toast-card strong {
+  color: #fff;
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.toast-card span:not(.toast-marker) {
+  color: var(--muted);
+  display: block;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.toast-marker {
+  border-radius: 999px;
+  display: block;
+  height: 10px;
+  margin-top: 4px;
+  width: 10px;
+}
+
+.toast-success {
+  color: var(--success);
+}
+
+.toast-success .toast-marker {
+  background: var(--success);
+  box-shadow: 0 0 22px rgba(143, 240, 189, 0.5);
+}
+
+.toast-error {
+  color: #ff7b98;
+}
+
+.toast-error .toast-marker {
+  background: #ff7b98;
+  box-shadow: 0 0 22px rgba(255, 92, 122, 0.5);
+}
+
 .modal-backdrop {
   align-items: center;
+  animation: modal-backdrop-in 260ms ease both;
   background: rgba(0, 0, 0, 0.72);
   display: flex;
   inset: 0;
@@ -2290,6 +2376,7 @@ h1 {
   overflow: auto;
   padding: 24px;
   width: 100%;
+  animation: modal-panel-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .modal-wide {
@@ -2325,6 +2412,83 @@ h1 {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-end;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 12px;
+}
+
+.detail-item span {
+  color: var(--subtle);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.detail-item strong {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(18px, -8px, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes toast-exit {
+  to {
+    opacity: 0;
+    transform: translate3d(12px, -6px, 0) scale(0.98);
+  }
+}
+
+@keyframes toast-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes modal-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
 
 .proposal-sheet {
@@ -2569,6 +2733,7 @@ h1 {
   .toolbar,
   .cms-toolbar,
   .crm-toolbar,
+  .detail-grid,
   .report-grid,
   .cms-metrics,
   .budget-layout,
@@ -2706,5 +2871,12 @@ h1 {
   .upload-zone {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .toast-region {
+    left: 16px;
+    right: 16px;
+    top: 76px;
+    width: auto;
   }
 }

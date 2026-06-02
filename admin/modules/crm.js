@@ -140,6 +140,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function refreshSubmittingModal(table, record) {
     if (!state.modal) return;
+    if (table === "clients") state.modal = renderClientModal(record);
     if (table === "budgets") state.modal = renderBudgetModal(record);
     if (table === "service_orders") state.modal = renderServiceOrderModal(record);
     if (table === "contacts") state.modal = renderContactModal(record, record?.client_id || "");
@@ -148,11 +149,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderCrmNotice() {
-    return `
-      <div class="notice ${state.notice?.type === "error" ? "notice-error" : "notice-success"} ${state.notice ? "is-visible" : ""}">
-        ${escapeHtml(state.notice?.text || "")}
-      </div>
-      ${!supabase() ? `<div class="notice notice-error is-visible">Configure o Supabase para usar o CRM.</div>` : ""}`;
+    return !supabase() ? `<div class="notice notice-error is-visible">Configure o Supabase para usar o CRM.</div>` : "";
   }
 
   function renderCrmTabNav(activeTab) {
@@ -185,78 +182,19 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderClients() {
-    const editingClient = crmEditRecord("clients");
-
     renderCrmWorkspace("clients", {
       eyebrow: "Clientes",
       title: "Cadastro de clientes",
       subtitle: `${state.clients.length} registros no CRM`,
       body: `
         <section class="crm-panel-stack">
-          <form class="panel form-stack crm-editor-form" data-client-form ${crmFormAttrs("clients")}>
-            <div class="page-title">
-              <h2>${editingClient ? "Editar cliente" : "Novo cliente"}</h2>
-              <p class="section-subtitle">${editingClient ? "Atualize os dados comerciais e de contato." : "Base para projetos, orçamentos e horas."}</p>
-            </div>
-            <div class="crm-form-grid">
-              <label class="field field-span-2">
-                <span>Nome</span>
-                <input class="input" name="name" value="${valueAttr(editingClient?.name)}" required>
-              </label>
-              <label class="field">
-                <span>Tipo</span>
-                <select class="select" name="type">${selectOptions(CLIENT_TYPES, editingClient?.type || "company")}</select>
-              </label>
-              <label class="field">
-                <span>Status</span>
-                <select class="select" name="status">${selectOptions(CLIENT_STATUSES, editingClient?.status || "active")}</select>
-              </label>
-              <label class="field">
-                <span>E-mail</span>
-                <input class="input" name="email" type="email" value="${valueAttr(editingClient?.email)}">
-              </label>
-              <label class="field">
-                <span>E-mail de cobrança</span>
-                <input class="input" name="billing_email" type="email" value="${valueAttr(editingClient?.billing_email)}">
-              </label>
-              <label class="field">
-                <span>Telefone</span>
-                <input class="input" name="phone" value="${valueAttr(editingClient?.phone)}">
-              </label>
-              <label class="field">
-                <span>Documento</span>
-                <input class="input" name="document" value="${valueAttr(editingClient?.document)}">
-              </label>
-              <label class="field">
-                <span>Website</span>
-                <input class="input" name="website" type="url" value="${valueAttr(editingClient?.website)}">
-              </label>
-              <label class="field">
-                <span>Origem / indicação</span>
-                <input class="input" name="referral_source" value="${valueAttr(editingClient?.referral_source)}" placeholder="Agência, parceiro ou indicação">
-              </label>
-              <label class="field">
-                <span>Comissão (%)</span>
-                <input class="input" name="commission_rate" type="number" min="0" max="100" step="0.01" value="${valueAttr(editingClient?.commission_rate ?? "")}">
-              </label>
-              <label class="field field-span-4">
-                <span>Endereço</span>
-                <input class="input" name="address" value="${valueAttr(editingClient?.address)}" placeholder="Endereço comercial ou fiscal">
-              </label>
-              <label class="field field-span-4">
-                <span>Notas</span>
-                <textarea class="textarea textarea-small" name="notes">${escapeHtml(editingClient?.notes || "")}</textarea>
-              </label>
-            </div>
-            ${renderCrmFormActions("clients", editingClient, "Cadastrar cliente", "Salvar cliente")}
-          </form>
-
           <section class="panel data-panel">
             <div class="crm-list-heading">
               <div class="page-title">
                 <h2>Clientes</h2>
                 <p class="section-subtitle">Lista operacional para relacionamento e vendas.</p>
               </div>
+              <button class="button button-primary" type="button" data-open-client-modal>Cadastrar cliente</button>
             </div>
             ${renderClientTable()}
             ${renderContactTable()}
@@ -308,8 +246,9 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                   <td>${formatDate(client.updated_at || client.created_at)}</td>
                   <td>
                     <div class="row-actions">
+                      <button class="icon-button" type="button" data-view-client="${escapeHtml(client.id)}">Detalhes</button>
                       <button class="icon-button" type="button" data-open-contact-modal="${escapeHtml(client.id)}">Contato</button>
-                      <button class="icon-button" type="button" data-edit-crm="clients:${escapeHtml(client.id)}">Editar</button>
+                      <button class="icon-button" type="button" data-open-client-modal="${escapeHtml(client.id)}">Editar</button>
                       <button class="icon-button" type="button" data-delete-crm="clients:${escapeHtml(client.id)}">Excluir</button>
                     </div>
                   </td>
@@ -317,6 +256,148 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             }).join("")}
           </tbody>
         </table>
+      </div>`;
+  }
+
+  function openClientModal(id = "") {
+    const client = state.clients.find((item) => item.id === id) || null;
+    state.crmEdit = client ? { table: "clients", id: client.id } : null;
+    state.modal = renderClientModal(client);
+    clearNotice();
+    render();
+  }
+
+  function renderClientModal(client) {
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${client ? "Editar cliente" : "Cadastrar cliente"}">
+        <form class="modal modal-wide form-stack crm-editor-form" data-client-form ${crmFormAttrs("clients")}>
+          <div class="modal-header">
+            <div>
+              <span class="eyebrow">Cliente</span>
+              <h2>${client ? "Editar cliente" : "Cadastrar cliente"}</h2>
+            </div>
+            <button class="icon-button" type="button" data-close-modal>Fechar</button>
+          </div>
+          <div class="crm-form-grid">
+            <label class="field field-span-2">
+              <span>Nome</span>
+              <input class="input" name="name" value="${valueAttr(client?.name)}" required>
+            </label>
+            <label class="field">
+              <span>Tipo</span>
+              <select class="select" name="type">${selectOptions(CLIENT_TYPES, client?.type || "company")}</select>
+            </label>
+            <label class="field">
+              <span>Status</span>
+              <select class="select" name="status">${selectOptions(CLIENT_STATUSES, client?.status || "active")}</select>
+            </label>
+            <label class="field">
+              <span>E-mail</span>
+              <input class="input" name="email" type="email" value="${valueAttr(client?.email)}">
+            </label>
+            <label class="field">
+              <span>E-mail de cobrança</span>
+              <input class="input" name="billing_email" type="email" value="${valueAttr(client?.billing_email)}">
+            </label>
+            <label class="field">
+              <span>Telefone</span>
+              <input class="input" name="phone" value="${valueAttr(client?.phone)}">
+            </label>
+            <label class="field">
+              <span>Documento</span>
+              <input class="input" name="document" value="${valueAttr(client?.document)}">
+            </label>
+            <label class="field">
+              <span>Website</span>
+              <input class="input" name="website" type="text" inputmode="url" value="${valueAttr(client?.website)}" placeholder="raksa.com.br">
+            </label>
+            <label class="field">
+              <span>Origem / indicação</span>
+              <input class="input" name="referral_source" value="${valueAttr(client?.referral_source)}" placeholder="Agência, parceiro ou indicação">
+            </label>
+            <label class="field">
+              <span>Comissão (%)</span>
+              <input class="input" name="commission_rate" type="number" min="0" max="100" step="0.01" value="${valueAttr(client?.commission_rate ?? "")}">
+            </label>
+            <label class="field field-span-4">
+              <span>Endereço</span>
+              <input class="input" name="address" value="${valueAttr(client?.address)}" placeholder="Endereço comercial ou fiscal">
+            </label>
+            <label class="field field-span-4">
+              <span>Notas</span>
+              <textarea class="textarea textarea-small" name="notes">${escapeHtml(client?.notes || "")}</textarea>
+            </label>
+          </div>
+          ${renderCrmFormActions("clients", client, "Cadastrar cliente", "Salvar cliente")}
+        </form>
+      </div>`;
+  }
+
+  function openClientDetailsModal(id = "") {
+    const client = state.clients.find((item) => item.id === id) || null;
+    if (!client) return;
+    state.crmEdit = null;
+    state.modal = renderClientDetailsModal(client);
+    clearNotice();
+    render();
+  }
+
+  function renderClientDetailsModal(client) {
+    const contacts = clientContacts(client.id);
+    const detailRows = [
+      ["Tipo", labelFromOptions(CLIENT_TYPES, client.type)],
+      ["Status", labelFromOptions(CLIENT_STATUSES, client.status)],
+      ["E-mail", client.email || "-"],
+      ["E-mail de cobrança", client.billing_email || "-"],
+      ["Telefone", client.phone || "-"],
+      ["Documento", client.document || "-"],
+      ["Website", client.website || "-"],
+      ["Origem / indicação", client.referral_source || "-"],
+      ["Comissão", Number(client.commission_rate || 0) ? `${formatPercent(client.commission_rate)} comissão` : "-"],
+      ["Endereço", client.address || "-"],
+      ["Atualizado", formatDate(client.updated_at || client.created_at)],
+      ["Notas", client.notes || "-"],
+    ];
+
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Detalhes do cliente">
+        <div class="modal modal-wide form-stack">
+          <div class="modal-header">
+            <div>
+              <span class="eyebrow">Cliente</span>
+              <h2>${escapeHtml(client.name)}</h2>
+            </div>
+            <div class="modal-actions">
+              <button class="button button-secondary" type="button" data-open-contact-modal="${escapeHtml(client.id)}">Novo contato</button>
+              <button class="button button-primary" type="button" data-open-client-modal="${escapeHtml(client.id)}">Editar</button>
+              <button class="icon-button" type="button" data-close-modal>Fechar</button>
+            </div>
+          </div>
+          <section class="detail-grid">
+            ${detailRows.map(([label, value]) => `
+              <div class="detail-item">
+                <span>${escapeHtml(label)}</span>
+                <strong>${escapeHtml(value)}</strong>
+              </div>
+            `).join("")}
+          </section>
+          <section class="budget-section">
+            <div class="budget-section-heading">
+              <strong>Contatos</strong>
+              <span>${contacts.length ? `${contacts.length} pessoa${contacts.length === 1 ? "" : "s"} vinculada${contacts.length === 1 ? "" : "s"}` : "Nenhum contato cadastrado"}</span>
+            </div>
+            ${contacts.length ? `
+              <div class="compact-list">
+                ${contacts.map((contact) => `
+                  <div class="compact-row">
+                    <span>${escapeHtml(contact.name)}${contact.role ? ` · ${escapeHtml(contact.role)}` : ""}</span>
+                    <strong>${escapeHtml(contact.email || contact.phone || "-")}</strong>
+                    <button class="icon-button" type="button" data-open-contact-modal="${escapeHtml(client.id)}" data-contact-id="${escapeHtml(contact.id)}">Editar</button>
+                  </div>
+                `).join("")}
+              </div>` : `<div class="empty-state compact-empty">Nenhum contato cadastrado.</div>`}
+          </section>
+        </div>
       </div>`;
   }
 
@@ -675,7 +756,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <h2>Orçamentos</h2>
                 <p class="section-subtitle">Lista principal para buscar, selecionar, duplicar, exportar e gerar OS.</p>
               </div>
-              <button class="button button-primary" type="button" data-open-budget-modal>Incluir</button>
             </div>
             ${renderBudgetToolbar(budgets)}
             ${renderBudgetTable(budgets)}
@@ -2542,7 +2622,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <h2>Ordens de serviço</h2>
                 <p class="section-subtitle">Lista operacional de OS, com vínculo para orçamento e projeto.</p>
               </div>
-              <button class="button button-primary" type="button" data-open-order-modal>Incluir</button>
             </div>
             ${renderOrderToolbar(orders)}
             ${renderOrderTable(orders)}
@@ -3840,6 +3919,15 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function openCrmEdit(table, id) {
     if (!CRM_STATE_KEYS[table] || !id) return;
+    if (table === "clients") {
+      openClientModal(id);
+      return;
+    }
+    if (table === "contacts") {
+      const contact = state.contacts.find((item) => item.id === id);
+      openContactModal(contact?.client_id || "", id);
+      return;
+    }
     state.crmEdit = { table, id };
     clearNotice();
     render();
@@ -3892,6 +3980,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     generateRecurringOrders,
     openCrmEdit,
     openBudgetModal,
+    openClientDetailsModal,
+    openClientModal,
     openBudgetReports,
     openContactModal,
     openProductModal,
