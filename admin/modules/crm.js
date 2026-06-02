@@ -126,7 +126,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             <p class="section-subtitle">Resumo comercial e operacional da RAKSA.</p>
           </div>
           <div class="dashboard-actions">
-            <a class="button button-secondary" href="#/site-home">Editar Home do site</a>
+            <a class="button button-secondary" href="#/site-home">Editar página inicial</a>
             <a class="button button-primary" href="#/crm/budgets">Novo orçamento</a>
           </div>
         </section>

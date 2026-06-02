@@ -24,8 +24,9 @@ export const TIME_ENTRY_COLUMNS = "id, project_id, service_order_id, user_id, wo
 export const METRIC_COLUMNS = "id, event_name, path, metadata, created_at";
 
 export const ADMIN_SECTIONS = [
-  ["cases", "CMS"],
   ["home", "Dashboard"],
+  ["cases", "CMS"],
+  ["site-home", "Página inicial"],
   ["crm", "CRM"],
   ["metrics", "Métricas"],
 ];

@@ -1,8 +1,8 @@
-import { createCrmModule } from "./modules/crm.js?v=10";
+import { createCrmModule } from "./modules/crm.js?v=11";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
 import { createApiModule } from "./modules/api.js?v=7";
-import { createShellModule } from "./modules/shell.js?v=4";
-import { createCasesModule } from "./modules/cases.js?v=5";
+import { createShellModule } from "./modules/shell.js?v=5";
+import { createCasesModule } from "./modules/cases.js?v=6";
 
 const app = document.querySelector("#app");
 const supabaseConfig = window.RAKSA_SUPABASE || {};

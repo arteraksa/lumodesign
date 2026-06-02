@@ -446,13 +446,13 @@ export function createCasesModule({
       <main class="page home-settings-page">
         <section class="page-header">
           <div class="page-title">
-            <span class="eyebrow">Home</span>
+            <span class="eyebrow">Página inicial</span>
             <h1>Cases em destaque</h1>
             <p class="section-subtitle">${selected.length} cases selecionados para a landing page</p>
           </div>
           <div class="editor-actions">
             <button class="button button-secondary" type="button" data-reset-home-settings ${hasChanges ? "" : "disabled"}>Descartar</button>
-            <button class="button button-primary" type="button" data-save-home-settings ${hasChanges ? "" : "disabled"}>Salvar home</button>
+            <button class="button button-primary" type="button" data-save-home-settings ${hasChanges ? "" : "disabled"}>Salvar página inicial</button>
           </div>
         </section>
 
@@ -475,7 +475,7 @@ export function createCasesModule({
             <div class="panel-heading">
               <div>
                 <span class="eyebrow">Destaques</span>
-                <h2>Home</h2>
+                <h2>Página inicial do site</h2>
               </div>
               <span class="panel-count">${selected.length}</span>
             </div>

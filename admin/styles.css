@@ -99,6 +99,11 @@ svg {
   width: 100px;
 }
 
+.topbar .logo {
+  height: 34px;
+  width: 70px;
+}
+
 .logo svg {
   height: 100%;
   width: 100%;
@@ -397,6 +402,11 @@ h1 {
   z-index: 20;
 }
 
+.topbar > a {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
 .topbar-actions {
   align-items: center;
   display: flex;
@@ -410,9 +420,11 @@ h1 {
   display: flex;
   flex: 1;
   gap: 6px;
+  margin: -6px 0;
   max-width: 100%;
   min-width: 0;
   overflow-x: auto;
+  padding: 6px 2px;
   scrollbar-color: rgba(139, 81, 255, 0.72) transparent;
   scrollbar-width: thin;
 }
