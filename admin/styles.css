@@ -1204,7 +1204,7 @@ h1 {
 }
 
 .crm-tabs {
-  align-items: center;
+  align-items: stretch;
   background: rgba(255, 255, 255, 0.045);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1232,9 +1232,8 @@ h1 {
 }
 
 .crm-tab-group {
-  align-items: center;
-  display: flex;
-  gap: 7px;
+  display: grid;
+  gap: 6px;
   min-width: max-content;
 }
 
@@ -1245,17 +1244,13 @@ h1 {
 }
 
 .crm-tab-group-label {
-  align-items: center;
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  color: var(--subtle);
-  display: inline-flex;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.03em;
-  min-height: 26px;
-  padding: 0 8px;
+  line-height: 1;
+  padding: 2px 8px 0;
   text-transform: uppercase;
 }
 
@@ -2967,11 +2962,6 @@ h1 {
   .crm-tab-group,
   .crm-tab-group-links {
     min-width: 0;
-  }
-
-  .crm-tab-group {
-    align-items: flex-start;
-    flex-direction: column;
   }
 
   .crm-tab-group-links,
