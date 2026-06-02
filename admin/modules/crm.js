@@ -2,13 +2,13 @@ import {
   BUDGET_STATUSES,
   CLIENT_STATUSES,
   CLIENT_TYPES,
-  CRM_TABS,
+  CRM_TAB_GROUPS,
   CRM_STATE_KEYS,
   ORDER_STATUSES,
   ORDER_RECURRENCES,
   PRODUCT_PRICING_MODELS,
   PROJECT_STATUSES,
-} from "./constants.js?v=7";
+} from "./constants.js?v=8";
 import {
   dateInputValue,
   entityName,
@@ -255,6 +255,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function refreshSubmittingModal(table, record) {
     if (!state.modal) return;
     if (table === "clients") state.modal = renderClientModal(record);
+    if (table === "projects") state.modal = renderProjectModal(record);
     if (table === "budgets") state.modal = renderBudgetModal(record);
     if (table === "service_orders") state.modal = renderServiceOrderModal(record);
     if (table === "contacts") state.modal = renderContactModal(record, record?.client_id || "");
@@ -269,15 +270,22 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function renderCrmTabNav(activeTab) {
     return `
       <nav class="crm-tabs" aria-label="Áreas do CRM">
-        ${CRM_TABS.map(([id, label]) => `
-          <a class="crm-tab ${activeTab === id ? "is-active" : ""}" href="#/crm/${id}">
-            ${escapeHtml(label)}
-          </a>
+        ${CRM_TAB_GROUPS.map(([groupLabel, tabs]) => `
+          <div class="crm-tab-group">
+            <span class="crm-tab-group-label">${escapeHtml(groupLabel)}</span>
+            <div class="crm-tab-group-links">
+              ${tabs.map(([id, label]) => `
+                <a class="crm-tab ${activeTab === id ? "is-active" : ""}" href="#/crm/${id}">
+                  ${escapeHtml(label)}
+                </a>
+              `).join("")}
+            </div>
+          </div>
         `).join("")}
       </nav>`;
   }
 
-  function renderCrmWorkspace(activeTab, { eyebrow, title, subtitle, metrics = "", body }) {
+  function renderCrmWorkspace(activeTab, { eyebrow, title, subtitle, actions = "", metrics = "", body }) {
     renderShell(`
       <main class="page crm-page">
         <section class="page-header">
@@ -286,6 +294,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             <h1>${escapeHtml(title)}</h1>
             <p class="section-subtitle">${escapeHtml(subtitle)}</p>
           </div>
+          ${actions ? `<div class="editor-actions">${actions}</div>` : ""}
         </section>
 
         ${renderCrmTabNav(activeTab)}
@@ -298,8 +307,9 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function renderClients() {
     renderCrmWorkspace("clients", {
       eyebrow: "Clientes",
-      title: "Cadastro de clientes",
+      title: "Clientes",
       subtitle: `${state.clients.length} registros no CRM`,
+      actions: `<button class="button button-primary" type="button" data-open-client-modal>+ Novo cliente</button>`,
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel">
@@ -308,7 +318,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <h2>Clientes</h2>
                 <p class="section-subtitle">Lista operacional para relacionamento e vendas.</p>
               </div>
-              <button class="button button-primary" type="button" data-open-client-modal>Cadastrar cliente</button>
             </div>
             ${renderClientTable()}
             ${renderContactTable()}
@@ -383,12 +392,12 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
   function renderClientModal(client) {
     return `
-      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${client ? "Editar cliente" : "Cadastrar cliente"}">
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${client ? "Editar cliente" : "Novo cliente"}">
         <form class="modal modal-wide form-stack crm-editor-form" data-client-form ${crmFormAttrs("clients")}>
           <div class="modal-header">
             <div>
               <span class="eyebrow">Cliente</span>
-              <h2>${client ? "Editar cliente" : "Cadastrar cliente"}</h2>
+              <h2>${client ? "Editar cliente" : "Novo cliente"}</h2>
             </div>
             <button class="icon-button" type="button" data-close-modal>Fechar</button>
           </div>
@@ -442,7 +451,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <textarea class="textarea textarea-small" name="notes">${escapeHtml(client?.notes || "")}</textarea>
             </label>
           </div>
-          ${renderCrmFormActions("clients", client, "Cadastrar cliente", "Salvar cliente")}
+          ${renderCrmFormActions("clients", client, "Criar cliente", "Salvar cliente")}
         </form>
       </div>`;
   }
@@ -524,7 +533,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               <h2>Contatos</h2>
               <p class="section-subtitle">Cadastre as pessoas que pedem e recebem propostas por cliente.</p>
             </div>
-            <button class="button button-secondary" type="button" data-open-contact-modal>Incluir contato</button>
+            <button class="button button-secondary" type="button" data-open-contact-modal>+ Novo contato</button>
           </div>
           <div class="empty-state">Nenhum contato cadastrado.</div>
         </section>`;
@@ -537,7 +546,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             <h2>Contatos</h2>
             <p class="section-subtitle">Pessoas vinculadas aos clientes para orçamentos e envio de propostas.</p>
           </div>
-          <button class="button button-secondary" type="button" data-open-contact-modal>Incluir contato</button>
+          <button class="button button-secondary" type="button" data-open-contact-modal>+ Novo contato</button>
         </div>
         <div class="table-wrap">
           <table class="data-table">
@@ -564,7 +573,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                   <td>${escapeHtml(contact.phone || "-")}</td>
                   <td>
                     <div class="row-actions">
-                      <button class="icon-button" type="button" data-open-contact-modal="${escapeHtml(contact.client_id || "")}" data-contact-id="${escapeHtml(contact.id)}">Alterar</button>
+                      <button class="icon-button" type="button" data-open-contact-modal="${escapeHtml(contact.client_id || "")}" data-contact-id="${escapeHtml(contact.id)}">Editar</button>
                       <button class="icon-button" type="button" data-delete-crm="contacts:${escapeHtml(contact.id)}">Excluir</button>
                     </div>
                   </td>
@@ -577,16 +586,14 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderProjects() {
-    const editingProject = crmEditRecord("projects");
     const totalBudget = state.projects.reduce((sum, project) => sum + Number(project.budget_total || 0), 0);
     const statusCards = PROJECT_STATUSES.map(([id, label]) => [label, state.projects.filter((project) => project.status === id).length]);
-    const clientOptions = state.clients.map((client) => [client.id, client.name]);
-    const caseOptions = state.cases.map((item) => [item.id, item.title]);
 
     renderCrmWorkspace("projects", {
       eyebrow: "Projetos",
-      title: "Gestão de projetos",
+      title: "Projetos",
       subtitle: `${state.projects.length} projetos cadastrados`,
+      actions: `<button class="button button-primary" type="button" data-open-project-modal>+ Novo projeto</button>`,
       metrics: `
         <section class="metrics crm-metrics" aria-label="Resumo de projetos">
           <div class="metric">
@@ -602,58 +609,79 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
         </section>`,
       body: `
         <section class="crm-panel-stack">
-          <form class="panel form-stack crm-editor-form" data-project-form ${crmFormAttrs("projects")}>
-            <div class="page-title">
-              <h2>${editingProject ? "Editar projeto" : "Novo projeto"}</h2>
-              <p class="section-subtitle">${editingProject ? "Atualize status, prazo e previsão financeira." : "Vincule cliente, case e previsão financeira."}</p>
-            </div>
-
-            <div class="crm-form-grid">
-              <label class="field field-span-2">
-                <span>Nome</span>
-                <input class="input" name="name" value="${valueAttr(editingProject?.name)}" required>
-              </label>
-              <label class="field">
-                <span>Cliente</span>
-                <select class="select" name="client_id">${selectOptions(clientOptions, editingProject?.client_id || "", "Sem cliente")}</select>
-              </label>
-              <label class="field">
-                <span>Status</span>
-                <select class="select" name="status">${selectOptions(PROJECT_STATUSES, editingProject?.status || "lead")}</select>
-              </label>
-              <label class="field">
-                <span>Case relacionado</span>
-                <select class="select" name="case_id">${selectOptions(caseOptions, editingProject?.case_id || "", "Sem case")}</select>
-              </label>
-              <label class="field">
-                <span>Início</span>
-                <input class="input" name="starts_at" type="date" value="${valueAttr(dateInputValue(editingProject?.starts_at))}">
-              </label>
-              <label class="field">
-                <span>Prazo</span>
-                <input class="input" name="due_at" type="date" value="${valueAttr(dateInputValue(editingProject?.due_at))}">
-              </label>
-              <label class="field">
-                <span>Valor previsto</span>
-                <input class="input" name="budget_total" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(editingProject?.budget_total ?? "")}">
-              </label>
-              <label class="field field-span-4">
-                <span>Descrição</span>
-                <textarea class="textarea textarea-small" name="description">${escapeHtml(editingProject?.description || "")}</textarea>
-              </label>
-            </div>
-            ${renderCrmFormActions("projects", editingProject, "Criar projeto", "Salvar projeto")}
-          </form>
-
           <section class="panel data-panel">
-            <div class="page-title">
-              <h2>Projetos</h2>
-              <p class="section-subtitle">Funil operacional de trabalho.</p>
+            <div class="crm-list-heading">
+              <div class="page-title">
+                <h2>Projetos ativos e históricos</h2>
+                <p class="section-subtitle">Funil operacional de trabalho.</p>
+              </div>
             </div>
             ${renderProjectTable()}
           </section>
         </section>`,
     });
+  }
+
+  function openProjectModal(id = "") {
+    const project = state.projects.find((item) => item.id === id) || null;
+    state.crmEdit = project ? { table: "projects", id: project.id } : null;
+    state.modal = renderProjectModal(project);
+    clearNotice();
+    render();
+  }
+
+  function renderProjectModal(project) {
+    const clientOptions = state.clients.map((client) => [client.id, client.name]);
+    const caseOptions = state.cases.map((item) => [item.id, item.title]);
+
+    return `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${project ? "Editar projeto" : "Novo projeto"}">
+        <form class="modal modal-wide form-stack crm-editor-form" data-project-form ${crmFormAttrs("projects")}>
+          <div class="modal-header">
+            <div>
+              <span class="eyebrow">Projeto</span>
+              <h2>${project ? "Editar projeto" : "Novo projeto"}</h2>
+            </div>
+            <button class="icon-button" type="button" data-close-modal>Fechar</button>
+          </div>
+          <p class="section-subtitle">${project ? "Atualize status, prazo e previsão financeira." : "Vincule cliente, case e previsão financeira."}</p>
+          <div class="crm-form-grid">
+            <label class="field field-span-2">
+              <span>Nome</span>
+              <input class="input" name="name" value="${valueAttr(project?.name)}" required>
+            </label>
+            <label class="field">
+              <span>Cliente</span>
+              <select class="select" name="client_id">${selectOptions(clientOptions, project?.client_id || "", "Sem cliente")}</select>
+            </label>
+            <label class="field">
+              <span>Status</span>
+              <select class="select" name="status">${selectOptions(PROJECT_STATUSES, project?.status || "lead")}</select>
+            </label>
+            <label class="field">
+              <span>Case relacionado</span>
+              <select class="select" name="case_id">${selectOptions(caseOptions, project?.case_id || "", "Sem case")}</select>
+            </label>
+            <label class="field">
+              <span>Início</span>
+              <input class="input" name="starts_at" type="date" value="${valueAttr(dateInputValue(project?.starts_at))}">
+            </label>
+            <label class="field">
+              <span>Prazo</span>
+              <input class="input" name="due_at" type="date" value="${valueAttr(dateInputValue(project?.due_at))}">
+            </label>
+            <label class="field">
+              <span>Valor previsto</span>
+              <input class="input" name="budget_total" type="number" min="0" step="0.01" placeholder="0.00" value="${valueAttr(project?.budget_total ?? "")}">
+            </label>
+            <label class="field field-span-4">
+              <span>Descrição</span>
+              <textarea class="textarea textarea-small" name="description">${escapeHtml(project?.description || "")}</textarea>
+            </label>
+          </div>
+          ${renderCrmFormActions("projects", project, "Criar projeto", "Salvar projeto")}
+        </form>
+      </div>`;
   }
 
   function renderProjectTable() {
@@ -685,7 +713,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <td>${formatDate(project.due_at)}</td>
                 <td>
                   <div class="row-actions">
-                    <button class="icon-button" type="button" data-edit-crm="projects:${escapeHtml(project.id)}">Editar</button>
+                    <button class="icon-button" type="button" data-open-project-modal="${escapeHtml(project.id)}">Editar</button>
                     <button class="icon-button" type="button" data-delete-crm="projects:${escapeHtml(project.id)}">Excluir</button>
                   </div>
                 </td>
@@ -699,9 +727,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function renderProducts() {
     const products = filteredProducts();
     renderCrmWorkspace("products", {
-      eyebrow: "Produtos",
-      title: "Cadastro de produtos",
+      eyebrow: "Configurações",
+      title: "Produtos",
       subtitle: `${state.products.length} produtos cadastrados`,
+      actions: `<button class="button button-primary" type="button" data-open-product-modal>+ Novo produto</button>`,
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel">
@@ -710,7 +739,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <h2>Produtos</h2>
                 <p class="section-subtitle">Serviços que entram nos orçamentos com preço e horas base.</p>
               </div>
-              <button class="button button-primary" type="button" data-open-product-modal>Incluir</button>
             </div>
             ${renderCatalogToolbar("product", products.length)}
             ${renderProductTable(products)}
@@ -755,7 +783,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <td><span class="status-pill">${product.status === "inactive" ? "Inativo" : "Ativo"}</span></td>
                 <td>
                   <div class="row-actions">
-                    <button class="icon-button" type="button" data-open-product-modal="${escapeHtml(product.id)}">Alterar</button>
+                    <button class="icon-button" type="button" data-open-product-modal="${escapeHtml(product.id)}">Editar</button>
                     <button class="icon-button" type="button" data-delete-crm="products:${escapeHtml(product.id)}">Excluir</button>
                   </div>
                 </td>
@@ -769,9 +797,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function renderSubstrates() {
     const substrates = filteredSubstrates();
     renderCrmWorkspace("substrates", {
-      eyebrow: "Substratos",
-      title: "Custos e insumos",
+      eyebrow: "Configurações",
+      title: "Substratos",
       subtitle: `${state.substrates.length} substratos cadastrados`,
+      actions: `<button class="button button-primary" type="button" data-open-substrate-modal>+ Novo substrato</button>`,
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel">
@@ -780,7 +809,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <h2>Substratos</h2>
                 <p class="section-subtitle">Insumos, ferramentas, licenças e custos recorrentes usados nos produtos.</p>
               </div>
-              <button class="button button-primary" type="button" data-open-substrate-modal>Incluir</button>
             </div>
             ${renderCatalogToolbar("substrate", substrates.length)}
             ${renderSubstrateTable(substrates)}
@@ -818,7 +846,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                 <td><span class="status-pill">${substrate.status === "inactive" ? "Inativo" : "Ativo"}</span></td>
                 <td>
                   <div class="row-actions">
-                    <button class="icon-button" type="button" data-open-substrate-modal="${escapeHtml(substrate.id)}">Alterar</button>
+                    <button class="icon-button" type="button" data-open-substrate-modal="${escapeHtml(substrate.id)}">Editar</button>
                     <button class="icon-button" type="button" data-delete-crm="substrates:${escapeHtml(substrate.id)}">Excluir</button>
                   </div>
                 </td>
@@ -858,9 +886,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const budgets = filteredBudgets();
 
     renderCrmWorkspace("budgets", {
-      eyebrow: "Orçamentos",
-      title: "Propostas comerciais",
+      eyebrow: "Comercial",
+      title: "Orçamentos",
       subtitle: `${state.budgets.length} orçamentos cadastrados`,
+      actions: `<button class="button button-primary" type="button" data-open-budget-modal>+ Novo orçamento</button>`,
       metrics: renderBudgetMetrics(),
       body: `
         <section class="crm-panel-stack">
@@ -873,7 +902,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </div>
             ${renderBudgetToolbar(budgets)}
             ${renderBudgetTable(budgets)}
-            ${renderBudgetActionBar(budgets)}
           </section>
         </section>`,
     });
@@ -905,6 +933,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <strong>${selectedCount}</strong>
           <span>${selectedCount === 1 ? "selecionado" : "selecionados"}</span>
         </div>
+        ${renderBudgetToolbarActions(budgets)}
       </div>`;
   }
 
@@ -924,15 +953,13 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
               </th>
               <th>Orçamento</th>
               <th>Itens</th>
-              <th>Cliente</th>
-              <th>Contato</th>
-              <th>Vendedor</th>
-              <th>Agência / indicação</th>
+              <th>Cliente / contato</th>
+              <th>Vendedor / indicação</th>
               <th>Últ. movimento</th>
               <th>OS</th>
               <th>Resolvido</th>
-              <th>Orçamento para</th>
-              <th>Total</th>
+              <th>Para</th>
+              <th>Total / status</th>
               <th></th>
             </tr>
           </thead>
@@ -950,13 +977,14 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                     <span>${escapeHtml(budget.title || "Sem título")}</span>
                   </td>
                   <td>${budgetItemCount(budget)}</td>
-                  <td>${escapeHtml(entityName(state.clients, budget.client_id))}</td>
                   <td>
-                    <strong>${escapeHtml(budgetContactName(budget))}</strong>
-                    <span>${escapeHtml(budgetContactLine(budget))}</span>
+                    <strong>${escapeHtml(entityName(state.clients, budget.client_id))}</strong>
+                    <span>${escapeHtml([budgetContactName(budget), budgetContactLine(budget)].filter(Boolean).join(" · "))}</span>
                   </td>
-                  <td>${escapeHtml(budgetSeller(budget))}</td>
-                  <td>${escapeHtml(budgetAgency(budget))}</td>
+                  <td>
+                    <strong>${escapeHtml(budgetSeller(budget))}</strong>
+                    <span>${escapeHtml(budgetAgency(budget))}</span>
+                  </td>
                   <td>${formatDate(budget.updated_at || budget.created_at)}</td>
                   <td><span class="crm-check ${hasOrder ? "is-on" : ""}" aria-label="${hasOrder ? "OS emitida" : "Sem OS"}">${hasOrder ? "✓" : "-"}</span></td>
                   <td><span class="crm-check ${budget.resolved ? "is-on" : ""}" aria-label="${budget.resolved ? "Resolvido" : "Pendente"}">${budget.resolved ? "✓" : "-"}</span></td>
@@ -964,7 +992,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                   <td><strong>${formatCurrency(budget.total, budget.currency || "BRL")}</strong><span>${escapeHtml(labelFromOptions(BUDGET_STATUSES, budget.status))}</span></td>
                   <td>
                     <div class="row-actions">
-                      <button class="icon-button" type="button" data-edit-budget-modal="${escapeHtml(budget.id)}">Alterar</button>
+                      <button class="icon-button" type="button" data-edit-budget-modal="${escapeHtml(budget.id)}">Editar</button>
                       <button class="icon-button" type="button" data-export-budget-pdf="${escapeHtml(budget.id)}">PDF</button>
                       <button class="icon-button" type="button" data-create-order-from-budget="${escapeHtml(budget.id)}">${hasOrder ? "Ver OS" : "Gerar OS"}</button>
                       <button class="icon-button" type="button" data-delete-crm="budgets:${escapeHtml(budget.id)}">Excluir</button>
@@ -977,16 +1005,14 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       </div>`;
   }
 
-  function renderBudgetActionBar(budgets) {
+  function renderBudgetToolbarActions(budgets) {
     const selectedCount = selectedBudgetIds().filter((id) => budgets.some((budget) => budget.id === id)).length;
     const singleSelected = selectedCount === 1;
     const hasSelection = selectedCount > 0;
 
     return `
-      <div class="crm-action-bar" aria-label="Ações de orçamento">
-        <button class="button button-primary" type="button" data-open-budget-modal>Incluir</button>
+      <div class="crm-toolbar-actions" aria-label="Ações de orçamento">
         <button class="button button-secondary" type="button" data-duplicate-budget ${singleSelected ? "" : "disabled"}>Duplicar</button>
-        <button class="button button-secondary" type="button" data-edit-budget-modal ${singleSelected ? "" : "disabled"}>Alterar</button>
         <button class="button button-secondary" type="button" data-open-budget-reports>Relatórios</button>
         <button class="button button-secondary" type="button" data-export-budget-pdf ${hasSelection ? "" : "disabled"}>Exportar PDF</button>
         <button class="button button-secondary" type="button" data-create-order-from-budget ${hasSelection ? "" : "disabled"}>Gerar OS</button>
@@ -1227,14 +1253,14 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
     renderCrmWorkspace("budgets", {
       eyebrow: "Orçamentos",
-      title: "Propostas comerciais",
+      title: "Orçamentos",
       subtitle: `${state.budgets.length} orçamentos cadastrados`,
       metrics: renderBudgetMetrics(),
       body: `
         <section class="crm-panel-stack">
           <form class="panel form-stack budget-form" data-budget-form ${crmFormAttrs("budgets")}>
             <div class="page-title">
-              <h2>${editingBudget ? "Editar proposta" : "Nova proposta"}</h2>
+              <h2>${editingBudget ? "Editar orçamento" : "Novo orçamento"}</h2>
               <p class="section-subtitle">${editingBudget ? "Atualize briefing, valores e condições." : "Monte a ficha comercial e técnica antes de virar OS."}</p>
             </div>
 
@@ -2400,7 +2426,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <div class="modal-header">
             <div>
               <span class="eyebrow">Contato</span>
-              <h2>${contact ? "Alterar contato" : "Incluir contato"}</h2>
+              <h2>${contact ? "Editar contato" : "Novo contato"}</h2>
             </div>
             <button class="icon-button" type="button" data-close-modal>Fechar</button>
           </div>
@@ -2450,7 +2476,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <div class="modal-header">
             <div>
               <span class="eyebrow">Orçamento ${escapeHtml(budgetNumberLabel(budget))}</span>
-              <h2>${budget ? "Alterar proposta" : "Incluir proposta"}</h2>
+              <h2>${budget ? "Editar orçamento" : "Novo orçamento"}</h2>
             </div>
             <button class="icon-button" type="button" data-close-modal>Fechar</button>
           </div>
@@ -2612,7 +2638,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <div class="modal-header">
             <div>
               <span class="eyebrow">Produto</span>
-              <h2>${product ? "Alterar produto" : "Incluir produto"}</h2>
+              <h2>${product ? "Editar produto" : "Novo produto"}</h2>
             </div>
             <button class="icon-button" type="button" data-close-modal>Fechar</button>
           </div>
@@ -2684,7 +2710,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <div class="modal-header">
             <div>
               <span class="eyebrow">Substrato</span>
-              <h2>${substrate ? "Alterar substrato" : "Incluir substrato"}</h2>
+              <h2>${substrate ? "Editar substrato" : "Novo substrato"}</h2>
             </div>
             <button class="icon-button" type="button" data-close-modal>Fechar</button>
           </div>
@@ -2725,9 +2751,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const orders = filteredServiceOrders();
 
     renderCrmWorkspace("orders", {
-      eyebrow: "Ordens de serviço",
-      title: "Escopo aprovado",
+      eyebrow: "Operação",
+      title: "OS",
       subtitle: `${state.serviceOrders.length} OS cadastradas`,
+      actions: `<button class="button button-primary" type="button" data-open-order-modal>+ Nova OS</button>`,
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel">
@@ -2739,7 +2766,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </div>
             ${renderOrderToolbar(orders)}
             ${renderOrderTable(orders)}
-            ${renderOrderActionBar(orders)}
           </section>
         </section>`,
     });
@@ -2765,10 +2791,11 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <strong>${selectedCount}</strong>
           <span>${selectedCount === 1 ? "selecionada" : "selecionadas"}</span>
         </div>
+        ${renderOrderToolbarActions(orders)}
       </div>`;
   }
 
-  function renderOrderActionBar(orders) {
+  function renderOrderToolbarActions(orders) {
     const visibleSelected = selectedOrderIds().filter((id) => orders.some((order) => order.id === id));
     const selectedOrders = visibleSelected.map((id) => state.serviceOrders.find((order) => order.id === id)).filter(Boolean);
     const selectedCount = selectedOrders.length;
@@ -2776,10 +2803,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const recurringSelected = singleSelected && selectedOrders[0].recurrence && selectedOrders[0].recurrence !== "one_time";
 
     return `
-      <div class="crm-action-bar" aria-label="Ações de OS">
-        <button class="button button-primary" type="button" data-open-order-modal>Incluir</button>
+      <div class="crm-toolbar-actions" aria-label="Ações de OS">
         <button class="button button-secondary" type="button" data-duplicate-order ${selectedCount ? "" : "disabled"}>Duplicar</button>
-        <button class="button button-secondary" type="button" data-open-order-modal="${escapeHtml(selectedOrders[0]?.id || "")}" ${singleSelected ? "" : "disabled"}>Alterar</button>
         <button class="button button-secondary" type="button" data-export-order-pdf ${selectedCount ? "" : "disabled"}>Exportar PDF</button>
         <button class="button button-secondary" type="button" data-generate-recurring-orders="${escapeHtml(selectedOrders[0]?.id || "")}" ${recurringSelected ? "" : "disabled"}>Gerar ciclo</button>
       </div>`;
@@ -2804,7 +2829,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <div class="modal-header">
             <div>
               <span class="eyebrow">Ordem de serviço</span>
-              <h2>${order ? "Alterar OS" : "Incluir OS"}</h2>
+              <h2>${order ? "Editar OS" : "Nova OS"}</h2>
             </div>
             <button class="icon-button" type="button" data-close-modal>Fechar</button>
           </div>
@@ -3295,7 +3320,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
 
     renderCrmWorkspace("orders", {
       eyebrow: "Ordens de serviço",
-      title: "Escopo aprovado",
+      title: "OS",
       subtitle: `${state.serviceOrders.length} OS cadastradas`,
       body: `
         <section class="crm-panel-stack">
@@ -3401,7 +3426,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
                   <td><strong>${escapeHtml(orderTotal)}</strong></td>
                   <td>
                     <div class="row-actions">
-                      <button class="icon-button" type="button" data-open-order-modal="${escapeHtml(order.id)}">Alterar</button>
+                      <button class="icon-button" type="button" data-open-order-modal="${escapeHtml(order.id)}">Editar</button>
                       <button class="icon-button" type="button" data-export-order-pdf="${escapeHtml(order.id)}">PDF</button>
                       ${order.recurrence && order.recurrence !== "one_time" ? `<button class="icon-button" type="button" data-generate-recurring-orders="${escapeHtml(order.id)}">Gerar ciclo</button>` : ""}
                       <button class="icon-button" type="button" data-delete-crm="service_orders:${escapeHtml(order.id)}">Excluir</button>
@@ -4042,6 +4067,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       openContactModal(contact?.client_id || "", id);
       return;
     }
+    if (table === "projects") {
+      openProjectModal(id);
+      return;
+    }
     state.crmEdit = { table, id };
     clearNotice();
     render();
@@ -4099,6 +4128,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     openBudgetReports,
     openContactModal,
     openProductModal,
+    openProjectModal,
     openServiceOrderModal,
     openSubstrateModal,
     renderBudgets,

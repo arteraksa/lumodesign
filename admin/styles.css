@@ -1204,16 +1204,17 @@ h1 {
 }
 
 .crm-tabs {
-  align-items: center;
+  align-items: stretch;
   background: rgba(255, 255, 255, 0.045);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  display: flex;
-  gap: 6px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(max-content, 1fr));
   max-width: 100%;
   min-width: 0;
   overflow-x: auto;
-  padding: 6px;
+  padding: 8px;
   scrollbar-color: rgba(139, 81, 255, 0.72) transparent;
   scrollbar-width: thin;
 }
@@ -1229,6 +1230,27 @@ h1 {
 .crm-tabs::-webkit-scrollbar-thumb {
   background: rgba(139, 81, 255, 0.62);
   border-radius: 999px;
+}
+
+.crm-tab-group {
+  display: grid;
+  gap: 6px;
+  min-width: max-content;
+}
+
+.crm-tab-group-label {
+  color: var(--subtle);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  padding: 0 8px;
+  text-transform: uppercase;
+}
+
+.crm-tab-group-links {
+  display: flex;
+  gap: 6px;
 }
 
 .crm-tab {
@@ -1284,6 +1306,26 @@ h1 {
 
 .crm-toolbar .field {
   margin: 0;
+}
+
+.budget-toolbar,
+.order-toolbar {
+  grid-template-columns: minmax(240px, 1fr) minmax(170px, 0.5fr) auto auto minmax(280px, max-content);
+}
+
+.crm-toolbar-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.crm-toolbar-actions .button {
+  min-height: 38px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .toolbar-meta {
@@ -1863,7 +1905,7 @@ h1 {
 }
 
 .budget-table {
-  min-width: 1540px;
+  min-width: 1180px;
 }
 
 .data-table th,
@@ -2910,6 +2952,21 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .crm-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .crm-tab-group,
+  .crm-tab-group-links {
+    min-width: 0;
+  }
+
+  .crm-tab-group-links,
+  .crm-toolbar-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
   .editor-side-column {
     position: static;
   }
@@ -2952,6 +3009,16 @@ h1 {
 @media (min-width: 921px) and (max-width: 1180px) {
   .cms-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .budget-toolbar,
+  .order-toolbar {
+    grid-template-columns: minmax(240px, 1fr) minmax(170px, 0.55fr);
+  }
+
+  .crm-toolbar-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
   }
 }
 

@@ -1,7 +1,7 @@
-import { createCrmModule } from "./modules/crm.js?v=11";
+import { createCrmModule } from "./modules/crm.js?v=12";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
 import { createApiModule } from "./modules/api.js?v=7";
-import { createShellModule } from "./modules/shell.js?v=5";
+import { createShellModule } from "./modules/shell.js?v=6";
 import { createCasesModule } from "./modules/cases.js?v=6";
 
 const app = document.querySelector("#app");
@@ -251,6 +251,7 @@ const {
   openBudgetReports,
   openContactModal,
   openProductModal,
+  openProjectModal,
   openServiceOrderModal,
   openSubstrateModal,
   renderBudgets,
@@ -354,7 +355,7 @@ document.addEventListener("submit", async (event) => {
 
   state.authLoading = false;
   if (window.location.hash !== "#/home") window.location.hash = "#/home";
-  else renderHomeSettings();
+  else render();
 });
 
 document.addEventListener("input", (event) => {
@@ -436,6 +437,7 @@ document.addEventListener("click", async (event) => {
   if (target.matches("[data-view-client]")) openClientDetailsModal(target.dataset.viewClient || "");
   if (target.matches("[data-open-budget-modal]")) openBudgetModal();
   if (target.matches("[data-open-contact-modal]")) openContactModal(target.dataset.openContactModal || "", target.dataset.contactId || "");
+  if (target.matches("[data-open-project-modal]")) openProjectModal(target.dataset.openProjectModal || "");
   if (target.matches("[data-edit-budget-modal]")) openBudgetModal(target.dataset.editBudgetModal);
   if (target.matches("[data-add-budget-item]")) addBudgetItem(target.closest("[data-budget-form]"));
   if (target.matches("[data-remove-budget-item]")) removeBudgetItem(target);
