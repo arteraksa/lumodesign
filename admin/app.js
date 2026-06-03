@@ -1,7 +1,7 @@
-import { createCrmModule } from "./modules/crm.js?v=12";
+import { createCrmModule } from "./modules/crm.js?v=13";
 import { createMetricsModule } from "./modules/metrics.js?v=3";
 import { createApiModule } from "./modules/api.js?v=7";
-import { createShellModule } from "./modules/shell.js?v=6";
+import { createShellModule } from "./modules/shell.js?v=7";
 import { createCasesModule } from "./modules/cases.js?v=6";
 
 const app = document.querySelector("#app");
@@ -178,7 +178,7 @@ function render() {
   else if (section === "crm" && !slug) window.location.replace("#/crm/clients");
   else if (section === "crm") renderCrmPage(slug);
   else if (section === "clients") window.location.replace("#/crm/clients");
-  else if (section === "projects") window.location.replace("#/crm/projects");
+  else if (section === "projects") window.location.replace("#/crm/clients");
   else if (section === "budgets") window.location.replace("#/crm/budgets");
   else if (section === "orders") window.location.replace("#/crm/orders");
   else if (section === "time") window.location.replace("#/crm/orders");
@@ -250,6 +250,7 @@ const {
   openClientModal,
   openBudgetReports,
   openContactModal,
+  openDeleteCrmModal,
   openProductModal,
   openProjectModal,
   openServiceOrderModal,
@@ -464,6 +465,10 @@ document.addEventListener("click", async (event) => {
   }
   if (target.matches("[data-delete-crm]")) {
     const [table, id] = target.dataset.deleteCrm.split(":");
+    openDeleteCrmModal(table, id);
+  }
+  if (target.matches("[data-confirm-delete-crm]")) {
+    const [table, id] = target.dataset.confirmDeleteCrm.split(":");
     await deleteCrmRecord(table, id);
   }
   if (target.matches("[data-close-modal]")) {

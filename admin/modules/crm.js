@@ -2,13 +2,13 @@ import {
   BUDGET_STATUSES,
   CLIENT_STATUSES,
   CLIENT_TYPES,
-  CRM_TAB_GROUPS,
+  CRM_TABS,
   CRM_STATE_KEYS,
   ORDER_STATUSES,
   ORDER_RECURRENCES,
   PRODUCT_PRICING_MODELS,
   PROJECT_STATUSES,
-} from "./constants.js?v=8";
+} from "./constants.js?v=9";
 import {
   dateInputValue,
   entityName,
@@ -94,7 +94,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   }
 
   function renderCrmPage(tab = "clients") {
-    if (tab === "projects") return renderProjects();
     if (tab === "products") return renderProducts();
     if (tab === "substrates") return renderSubstrates();
     if (tab === "budgets") return renderBudgets();
@@ -270,17 +269,10 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
   function renderCrmTabNav(activeTab) {
     return `
       <nav class="crm-tabs" aria-label="Áreas do CRM">
-        ${CRM_TAB_GROUPS.map(([groupLabel, tabs]) => `
-          <div class="crm-tab-group">
-            <span class="crm-tab-group-label">${escapeHtml(groupLabel)}</span>
-            <div class="crm-tab-group-links">
-              ${tabs.map(([id, label]) => `
-                <a class="crm-tab ${activeTab === id ? "is-active" : ""}" href="#/crm/${id}">
-                  ${escapeHtml(label)}
-                </a>
-              `).join("")}
-            </div>
-          </div>
+        ${CRM_TABS.map(([id, label]) => `
+          <a class="crm-tab ${activeTab === id ? "is-active" : ""}" href="#/crm/${id}">
+            ${escapeHtml(label)}
+          </a>
         `).join("")}
       </nav>`;
   }
@@ -313,14 +305,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel">
-            <div class="crm-list-heading">
-              <div class="page-title">
-                <h2>Clientes</h2>
-                <p class="section-subtitle">Lista operacional para relacionamento e vendas.</p>
-              </div>
-            </div>
             ${renderClientTable()}
-            ${renderContactTable()}
           </section>
         </section>`,
     });
@@ -734,12 +719,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel">
-            <div class="crm-list-heading">
-              <div class="page-title">
-                <h2>Produtos</h2>
-                <p class="section-subtitle">Serviços que entram nos orçamentos com preço e horas base.</p>
-              </div>
-            </div>
             ${renderCatalogToolbar("product", products.length)}
             ${renderProductTable(products)}
           </section>
@@ -804,12 +783,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel">
-            <div class="crm-list-heading">
-              <div class="page-title">
-                <h2>Substratos</h2>
-                <p class="section-subtitle">Insumos, ferramentas, licenças e custos recorrentes usados nos produtos.</p>
-              </div>
-            </div>
             ${renderCatalogToolbar("substrate", substrates.length)}
             ${renderSubstrateTable(substrates)}
           </section>
@@ -890,16 +863,9 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       title: "Orçamentos",
       subtitle: `${state.budgets.length} orçamentos cadastrados`,
       actions: `<button class="button button-primary" type="button" data-open-budget-modal>+ Novo orçamento</button>`,
-      metrics: renderBudgetMetrics(),
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel budget-list-panel">
-            <div class="crm-list-heading">
-              <div class="page-title">
-                <h2>Orçamentos</h2>
-                <p class="section-subtitle">Lista principal para buscar, selecionar, duplicar, exportar e gerar OS.</p>
-              </div>
-            </div>
             ${renderBudgetToolbar(budgets)}
             ${renderBudgetTable(budgets)}
           </section>
@@ -2468,14 +2434,13 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const discount = Number(budget?.discount || 0);
     const tax = Number(budget?.tax || 0);
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
-    const projectOptions = state.projects.map((project) => [project.id, project.name]);
 
     return `
       <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="${budget ? "Editar orçamento" : "Novo orçamento"}">
         <form class="modal modal-wide form-stack budget-form" data-budget-form ${crmFormAttrs("budgets")}>
           <div class="modal-header">
             <div>
-              <span class="eyebrow">Orçamento ${escapeHtml(budgetNumberLabel(budget))}</span>
+              <span class="eyebrow">Orçamento</span>
               <h2>${budget ? "Editar orçamento" : "Novo orçamento"}</h2>
             </div>
             <button class="icon-button" type="button" data-close-modal>Fechar</button>
@@ -2484,7 +2449,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
           <section class="budget-section">
             <div class="budget-section-heading">
               <strong>Ficha comercial</strong>
-              <span>Cliente, contato, vendedor e status da proposta.</span>
+              <span>Cliente, contato, vendedor e dados comerciais da proposta.</span>
             </div>
             <label class="field field-span-2">
               <span>Título do serviço</span>
@@ -2502,18 +2467,8 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </div>
             <div class="form-grid">
               <label class="field">
-                <span>Projeto</span>
-                <select class="select" name="project_id">${selectOptions(projectOptions, budget?.project_id || "", "Sem projeto")}</select>
-              </label>
-              <label class="field">
                 <span>Orçamento para</span>
                 <select class="select" name="budget_for">${selectOptions([["Cliente", "Cliente"], ["Interno", "Interno"], ["Agência", "Agência"]], editingPayload.budgetFor || "Cliente")}</select>
-              </label>
-            </div>
-            <div class="form-grid">
-              <label class="field">
-                <span>Status</span>
-                <select class="select" name="status">${selectOptions(BUDGET_STATUSES, budget?.status || "draft")}</select>
               </label>
               <label class="field">
                 <span>Validade</span>
@@ -2522,22 +2477,12 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
             </div>
             <div class="form-grid">
               <label class="field">
-                <span>Contato manual</span>
-                <input class="input" name="contact" value="${valueAttr(editingPayload.contact)}" placeholder="Nome, e-mail ou WhatsApp">
-              </label>
-              <label class="field">
                 <span>Vendedor</span>
                 <input class="input" name="sales_owner" value="${valueAttr(editingPayload.salesOwner)}" placeholder="Responsável comercial">
               </label>
-            </div>
-            <div class="form-grid">
               <label class="field">
                 <span>Agência / indicação</span>
                 <input class="input" name="agency" value="${valueAttr(editingPayload.agency)}" placeholder="Opcional">
-              </label>
-              <label class="toggle-row">
-                <input type="checkbox" name="resolved" ${budget?.resolved ? "checked" : ""}>
-                <span>Resolvido / faturado</span>
               </label>
             </div>
           </section>
@@ -2758,12 +2703,6 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       body: `
         <section class="crm-panel-stack">
           <section class="panel data-panel">
-            <div class="crm-list-heading">
-              <div class="page-title">
-                <h2>Ordens de serviço</h2>
-                <p class="section-subtitle">Lista operacional de OS, com vínculo para orçamento e projeto.</p>
-              </div>
-            </div>
             ${renderOrderToolbar(orders)}
             ${renderOrderTable(orders)}
           </section>
@@ -3312,6 +3251,53 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     return String(value || "raksa").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "raksa";
   }
 
+  function crmDeleteRecordName(table, id) {
+    const records = crmItems(table);
+    const record = records.find((item) => item.id === id);
+    if (!record) return "este registro";
+    if (table === "budgets") return `orçamento ${budgetNumberLabel(record)}`;
+    if (table === "service_orders") return `OS ${record.title || record.id}`;
+    return record.name || record.title || record.email || "este registro";
+  }
+
+  function crmDeleteTableLabel(table) {
+    const labels = {
+      budgets: "Orçamento",
+      clients: "Cliente",
+      contacts: "Contato",
+      products: "Produto",
+      projects: "Projeto",
+      service_orders: "OS",
+      substrates: "Substrato",
+      time_entries: "Horas",
+    };
+    return labels[table] || "Registro";
+  }
+
+  function openDeleteCrmModal(table, id) {
+    if (!CRM_STATE_KEYS[table] || !id) return;
+    const title = crmDeleteTableLabel(table);
+    const name = crmDeleteRecordName(table, id);
+    state.modal = `
+      <div class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Confirmar exclusão">
+        <div class="modal form-stack">
+          <div class="modal-header">
+            <div>
+              <span class="eyebrow">Excluir</span>
+              <h2>Excluir ${escapeHtml(title)}</h2>
+            </div>
+            <button class="icon-button" type="button" data-close-modal>Fechar</button>
+          </div>
+          <p class="section-subtitle">Tem certeza que deseja excluir ${escapeHtml(name)}? Essa ação não pode ser desfeita.</p>
+          <div class="form-actions">
+            <button class="button button-danger" type="button" data-confirm-delete-crm="${escapeHtml(table)}:${escapeHtml(id)}">Excluir</button>
+            <button class="button button-secondary" type="button" data-close-modal>Cancelar</button>
+          </div>
+        </div>
+      </div>`;
+    render();
+  }
+
   function renderLegacyServiceOrders() {
     const editingOrder = crmEditRecord("service_orders");
     const clientOptions = state.clients.map((client) => [client.id, client.name]);
@@ -3689,6 +3675,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     const total = subtotal - discount + tax;
     const itemsText = lineItems.length ? lineItems.map((item) => item.description || item.title).join("\n") : textFromForm(data, "items_text");
     const productNames = [...new Set(lineItems.map((item) => item.productName).filter(Boolean))];
+    const previousPayload = budgetPayload(editing);
     const includedSubstrates = lineItems.length
       ? uniqueIncludedSubstrates(lineItems)
       : estimate.includedSubstrates.map((substrate) => ({
@@ -3705,18 +3692,18 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
       title: requiredTextFromForm(data, "title", "o título do orçamento", errors),
       client_id: optionalFormValue(data, "client_id"),
       contact_id: optionalFormValue(data, "contact_id"),
-      project_id: optionalFormValue(data, "project_id"),
-      status: String(data.get("status") || "draft"),
+      project_id: data.has("project_id") ? optionalFormValue(data, "project_id") : editing?.project_id || "",
+      status: data.has("status") ? String(data.get("status") || "draft") : editing?.status || "draft",
       currency: "BRL",
       subtotal,
       discount,
       tax,
       total,
       valid_until: optionalDateFromForm(data, "valid_until", "Validade", errors),
-      resolved: data.get("resolved") === "on",
+      resolved: data.has("resolved") ? data.get("resolved") === "on" : Boolean(editing?.resolved),
       payload: {
-        ...budgetPayload(editing),
-        contact: optionalFormValue(data, "contact"),
+        ...previousPayload,
+        contact: data.has("contact") ? optionalFormValue(data, "contact") : previousPayload.contact || "",
         salesOwner: optionalFormValue(data, "sales_owner"),
         agency: optionalFormValue(data, "agency"),
         budgetFor: optionalFormValue(data, "budget_for") || "Cliente",
@@ -4127,6 +4114,7 @@ export function createCrmModule({ state, getSupabase, isLoggedIn, setNotice, cle
     openClientModal,
     openBudgetReports,
     openContactModal,
+    openDeleteCrmModal,
     openProductModal,
     openProjectModal,
     openServiceOrderModal,

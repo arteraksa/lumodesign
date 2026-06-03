@@ -35,15 +35,8 @@ export const CRM_TABS = [
   ["clients", "Clientes"],
   ["budgets", "Orçamentos"],
   ["orders", "OS"],
-  ["projects", "Projetos"],
   ["products", "Produtos"],
   ["substrates", "Substratos"],
-];
-
-export const CRM_TAB_GROUPS = [
-  ["Comercial", [["clients", "Clientes"], ["budgets", "Orçamentos"]]],
-  ["Operação", [["orders", "OS"], ["projects", "Projetos"]]],
-  ["Configurações", [["products", "Produtos"], ["substrates", "Substratos"]]],
 ];
 
 export const CLIENT_TYPES = [
