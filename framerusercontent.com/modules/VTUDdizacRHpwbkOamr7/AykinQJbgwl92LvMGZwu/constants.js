@@ -11,9 +11,9 @@ export const containerStyles = {
 export const emptyStateStyle = {
     ...containerStyles,
     borderRadius: 6,
-    background: "rgba(136, 85, 255, 0.3)",
-    color: "#85F",
-    border: "1px dashed #85F",
+    background: "rgba(110, 110, 255, 0.3)",
+    color: "#594CFF",
+    border: "1px dashed #594CFF",
     flexDirection: "column"
 };
 export const defaultEvents = {

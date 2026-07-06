@@ -511,8 +511,8 @@
         transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
       }
       .raksa-case-filter.is-active {
-        background: rgba(139, 81, 255, 0.18);
-        border-color: rgba(139, 81, 255, 0.62);
+        background: rgba(var(--color-primary-rgb, 90, 60, 255), 0.18);
+        border-color: rgba(var(--color-primary-rgb, 90, 60, 255), 0.62);
         color: #fff;
       }
       #main a[data-raksa-case-card][hidden] { display: none !important; }
@@ -531,7 +531,7 @@
         position: relative;
       }
       #main a[data-raksa-dynamic-card] .raksa-dynamic-framer-hover {
-        background: linear-gradient(180deg, rgba(22, 6, 41, 0) 0%, var(--token-62aa78d2-963e-44c5-9eb4-156169cb3e7f, rgb(22, 6, 41)) 100%);
+        background: linear-gradient(180deg, rgba(5, 2, 13, 0) 0%, rgba(5, 2, 13, 0.88) 72%, rgba(29, 19, 83, 0.45) 100%);
         opacity: 0 !important;
         pointer-events: none;
         transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -550,7 +550,7 @@
         opacity: 1 !important;
       }
       .raksa-dynamic-case-loading {
-        background: #0b0312;
+        background: #05020D;
         min-height: 100vh;
       }
       #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] {
@@ -559,7 +559,7 @@
       }
       #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component] [data-framer-name="Fill"] {
         --border-color: var(--token-245d0ec3-831e-4505-88ff-21ba98a952c3, rgba(255, 255, 255, 0.15)) !important;
-        background-color: rgba(139, 81, 255, 0) !important;
+        background-color: rgba(var(--color-primary-rgb, 90, 60, 255), 0) !important;
         box-shadow: none;
         opacity: 1 !important;
         transition: background-color 800ms cubic-bezier(0, 0, 1, 1), border-color 800ms cubic-bezier(0, 0, 1, 1), box-shadow 800ms cubic-bezier(0, 0, 1, 1);
@@ -580,13 +580,13 @@
       }
       #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component]:hover [data-framer-name="Fill"],
       #main[data-raksa-dynamic-case-slug] a[data-raksa-framer-button-component]:focus-visible [data-framer-name="Fill"] {
-        --border-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
-        background-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, rgb(139, 81, 255)) !important;
-        box-shadow: 0 0 28px rgba(139, 81, 255, 0.72), 0 0 72px rgba(139, 81, 255, 0.34);
+        --border-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, var(--color-primary-600, #5A3CFF)) !important;
+        background-color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, var(--color-primary-600, #5A3CFF)) !important;
+        box-shadow: 0 0 28px rgba(var(--color-primary-rgb, 90, 60, 255), 0.72), 0 0 72px rgba(var(--color-primary-rgb, 90, 60, 255), 0.34);
         opacity: 1 !important;
       }
       .raksa-dynamic-case {
-        background: #0b0312;
+        background: #05020D;
         color: #fff;
         display: block;
         min-height: 100vh;
@@ -619,7 +619,7 @@
         margin-top: 56px;
       }
       .raksa-dynamic-case__tags {
-        color: #8b51ff;
+        color: var(--token-d5a3f924-bdad-4911-a441-46283d5f3ba6, var(--color-primary-600, #5A3CFF));
         font-size: 14px;
         font-weight: 700;
         text-transform: uppercase;
@@ -1217,7 +1217,7 @@
       fill.style.setProperty("--border-right-width", "1px");
       fill.style.setProperty("--border-style", "solid");
       fill.style.setProperty("--border-top-width", "1px");
-      fill.style.backgroundColor = "rgba(139, 81, 255, 0)";
+      fill.style.backgroundColor = "rgba(var(--color-primary-rgb, 90, 60, 255), 0)";
       fill.style.opacity = "1";
       fill.style.borderBottomLeftRadius = "114px";
       fill.style.borderBottomRightRadius = "114px";

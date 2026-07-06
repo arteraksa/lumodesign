@@ -1,6 +1,19 @@
 node_modules/
 .DS_Store
 dist/
+.cache/
+.parcel-cache/
+.next/
+.turbo/
+.vercel/
+.supabase/
+coverage/
 .env
 .env.*
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local/reference documents that should be moved to docs/ before versioning.
+RAKSA_Homepage_Copy_Documentation.docx

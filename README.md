@@ -17,8 +17,9 @@ The admin interface is available at `http://localhost:4173/admin/`.
 
 ## Supabase admin setup
 
-The Supabase project is configured at `https://yzivkrotylwyglavtnho.supabase.co`.
-The admin UI reads this URL from `admin/supabase-config.js`.
+The admin UI reads Supabase browser configuration from
+`admin/supabase-config.js`. Use `admin/supabase-config.example.js` as the
+template when setting up another environment.
 
 To enable browser access, add the project's public `anon`/publishable key to
 `admin/supabase-config.js`:
@@ -29,6 +30,13 @@ window.RAKSA_SUPABASE = {
   anonKey: "YOUR_PUBLIC_ANON_OR_PUBLISHABLE_KEY",
 };
 ```
+
+This is a static site with no build-time environment injection, so any value in
+`admin/supabase-config.js` is public to browsers. Only use public anon or
+publishable keys there. Never put a `service_role` key, database password, API
+secret, or private token in frontend files. Admin write access must be enforced
+by Supabase Auth, RLS policies, and Edge Functions that read private keys from
+their server-side environment.
 
 The database uses `public.cases` for portfolio persistence and
 `public.admin_users` to decide who can write. After creating a Supabase Auth user,
