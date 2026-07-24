@@ -29,10 +29,9 @@ async function fetchCases(query: string): Promise<PortfolioCase[]> {
         apikey: config.key,
         Authorization: `Bearer ${config.key}`,
       },
-      // The isolated Vite CMS writes directly to Supabase and cannot safely
-      // hold the server-only revalidation secret. Keep public reads fresh so
-      // publish, update, slug and archive changes are immediately observable.
-      cache: "no-store",
+      // GitHub Pages needs a static export, so public case data is resolved
+      // at build time instead of on every request.
+      cache: "force-cache",
     },
   );
 
@@ -80,7 +79,7 @@ export const getPublishedCaseResolution = cache(async (slug: string) => {
     `${config.url}/rest/v1/portfolio_case_slug_history?select=case_id,old_slug&old_slug=eq.${encodeURIComponent(slug)}&limit=1`,
     {
       headers: { apikey: config.key, Authorization: `Bearer ${config.key}` },
-      cache: "no-store",
+      cache: "force-cache",
     },
   );
   if (!historyResponse.ok) throw new Error("Não foi possível resolver o histórico do case.");
