@@ -8,6 +8,14 @@ import { siteConfig } from "@/lib/content/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export async function generateStaticParams() {
+  return [
+    { slug: "impresul" },
+    { slug: "magnus" },
+    { slug: "tri-rs" }
+  ];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { item } = await getPublishedCaseResolution(slug);
