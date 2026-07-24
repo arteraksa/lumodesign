@@ -1,0 +1,366 @@
+{
+  "slug": "click-impresso",
+  "case_id": "3664e7d6-c9e4-5d09-8b6c-0da96faa136d",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/click-impresso/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "3664e7d6-c9e4-5d09-8b6c-0da96faa136d",
+    "legacy_id": "click-impresso",
+    "legacy_slug": "click-impresso",
+    "slug": "click-impresso",
+    "title": "Click Impresso",
+    "status": "published",
+    "categories": [
+      "Branding",
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Click Impresso é uma gráfica expressa com 16 lojas no Rio Grande do Sul, fazendo parte do Grupo Impresul, uma referência no setor gráfico há mais de 56 anos. Reconhecida como a gráfica mais premiada do Sul do Brasil, a empresa se baseia em um compromisso com a qualidade de impressão, prazos rápidos e atendimento personalizado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio foi duplo:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "No Digital: Traduzir o vasto e tátil portfólio de produtos da gráfica para o ambiente dinâmico das redes sociais, de uma forma que fosse visualmente atrativa e gerasse desejo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "No Corporativo: Unificar e profissionalizar a identidade visual dos materiais internos e de contato da equipe."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi dividido em duas frentes estratégicas de comunicação para atender a esses desafios:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Design para Redes Sociais Foi desenvolvida uma linha editorial visual para as redes sociais com o objetivo de promover a diversidade de produtos e serviços da gráfica. Para tangibilizar as possibilidades de impressão, foram criados posts estáticos e carrosséis que utilizavam mockups de alta qualidade como exemplos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Esses mockups demonstravam a aplicação em uma ampla gama de produtos — como camisetas, copos, adesivos, quadros, almofadas, buttons e cadernos — sempre acompanhados por chamadas de ação (CTAs) para atrair o público."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Kit de Marketing Corporativo Para garantir a consistência e o profissionalismo da marca nos pontos de contato da equipe, foi criado um kit de marketing essencial. Este conjunto de materiais incluiu o design de cartões de visita para os funcionários, crachás de identificação, camisetas de uniforme e um flyer informativo com os serviços da empresa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Click Impresso é uma gráfica expressa com 16 lojas no Rio Grande do Sul, fazendo parte do Grupo Impresul, uma referência no setor gráfico há mais de 56 anos. Reconhecida como a gráfica mais premiada do Sul do Brasil, a empresa se baseia em um compromisso com a qualidade de impressão, prazos rápidos e atendimento personalizado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio foi duplo:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "No Digital: Traduzir o vasto e tátil portfólio de produtos da gráfica para o ambiente dinâmico das redes sociais, de uma forma que fosse visualmente atrativa e gerasse desejo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "No Corporativo: Unificar e profissionalizar a identidade visual dos materiais internos e de contato da equipe."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi dividido em duas frentes estratégicas de comunicação para atender a esses desafios:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Design para Redes Sociais Foi desenvolvida uma linha editorial visual para as redes sociais com o objetivo de promover a diversidade de produtos e serviços da gráfica. Para tangibilizar as possibilidades de impressão, foram criados posts estáticos e carrosséis que utilizavam mockups de alta qualidade como exemplos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Esses mockups demonstravam a aplicação em uma ampla gama de produtos — como camisetas, copos, adesivos, quadros, almofadas, buttons e cadernos — sempre acompanhados por chamadas de ação (CTAs) para atrair o público."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Kit de Marketing Corporativo Para garantir a consistência e o profissionalismo da marca nos pontos de contato da equipe, foi criado um kit de marketing essencial. Este conjunto de materiais incluiu o design de cartões de visita para os funcionários, crachás de identificação, camisetas de uniforme e um flyer informativo com os serviços da empresa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>A Click Impresso é uma gráfica expressa com 16 lojas no Rio Grande do Sul, fazendo parte do Grupo Impresul, uma referência no setor gráfico há mais de 56 anos. Reconhecida como a gráfica mais premiada do Sul do Brasil, a empresa se baseia em um compromisso com a qualidade de impressão, prazos rápidos e atendimento personalizado.</p><p><strong>O Desafio</strong></p><p>O desafio foi duplo:</p><ol><li><p><strong>No Digital:</strong>Traduzir o vasto e tátil portfólio de produtos da gráfica para o ambiente dinâmico das redes sociais, de uma forma que fosse visualmente atrativa e gerasse desejo.</p></li><li><p><strong>No Corporativo:</strong>Unificar e profissionalizar a identidade visual dos materiais internos e de contato da equipe.</p></li></ol><p><strong>A Solução de Design</strong></p><p>O projeto foi dividido em duas frentes estratégicas de comunicação para atender a esses desafios:</p><p><strong>1. Design para Redes Sociais</strong><br>Foi desenvolvida uma linha editorial visual para as redes sociais com o objetivo de promover a diversidade de produtos e serviços da gráfica. Para tangibilizar as possibilidades de impressão, foram criados posts estáticos e carrosséis que utilizavam<em>mockups</em>de alta qualidade como exemplos.</p><p>Esses<em>mockups</em>demonstravam a aplicação em uma ampla gama de produtos — como camisetas, copos, adesivos, quadros, almofadas, buttons e cadernos — sempre acompanhados por chamadas de ação (CTAs) para atrair o público.</p><p><strong>2. Kit de Marketing Corporativo</strong><br>Para garantir a consistência e o profissionalismo da marca nos pontos de contato da equipe, foi criado um kit de marketing essencial. Este conjunto de materiais incluiu o design de cartões de visita para os funcionários, crachás de identificação, camisetas de uniforme e um flyer informativo com os serviços da empresa.</p>Click Impresso Click Impresso<p>Branding</p><p>Editorial</p><p>A Click Impresso é uma gráfica expressa com 16 lojas no Rio Grande do Sul, fazendo parte do Grupo Impresul, uma referência no setor gráfico há mais de 56 anos. Reconhecida como a gráfica mais premiada do Sul do Brasil, a empresa se baseia em um compromisso com a qualidade de impressão, prazos rápidos e atendimento personalizado.</p><p><strong>O Desafio</strong></p><p>O desafio foi duplo:</p><ol><li><p><strong>No Digital:</strong>Traduzir o vasto e tátil portfólio de produtos da gráfica para o ambiente dinâmico das redes sociais, de uma forma que fosse visualmente atrativa e gerasse desejo.</p></li><li><p><strong>No Corporativo:</strong>Unificar e profissionalizar a identidade visual dos materiais internos e de contato da equipe.</p></li></ol><p><strong>A Solução de Design</strong></p><p>O projeto foi dividido em duas frentes estratégicas de comunicação para atender a esses desafios:</p><p><strong>1. Design para Redes Sociais</strong><br>Foi desenvolvida uma linha editorial visual para as redes sociais com o objetivo de promover a diversidade de produtos e serviços da gráfica. Para tangibilizar as possibilidades de impressão, foram criados posts estáticos e carrosséis que utilizavam<em>mockups</em>de alta qualidade como exemplos.</p><p>Esses<em>mockups</em>demonstravam a aplicação em uma ampla gama de produtos — como camisetas, copos, adesivos, quadros, almofadas, buttons e cadernos — sempre acompanhados por chamadas de ação (CTAs) para atrair o público.</p><p><strong>2. Kit de Marketing Corporativo</strong><br>Para garantir a consistência e o profissionalismo da marca nos pontos de contato da equipe, foi criado um kit de marketing essencial. Este conjunto de materiais incluiu o design de cartões de visita para os funcionários, crachás de identificação, camisetas de uniforme e um flyer informativo com os serviços da empresa.</p>Calendário Impresul 2023<p>Anterior</p><p>Anterior</p>Calendário Impresul 2024<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/click-impresso/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/click-impresso/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 14,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "A é uma gráfica expressa com 16 lojas no Rio Grande do Sul, fazendo parte do Grupo Impresul, uma referência no setor gráfico há mais de 56 anos. Reconhecida como a gráfica mais premiada do Sul do Brasil, a empresa se baseia em um compromisso com a qualidade de impressão, prazos rápidos e atendimento personalizado. O Desafio O desafio foi duplo: No Digital: Traduzir o vasto e tátil portfólio de produtos da gráfica para o ambiente dinâmico das redes sociais, de uma forma que fosse visualmente atrativa e gerasse desejo. No Corporativo: Unificar e profissionalizar a identidade visual dos materiais internos e de contato da equipe. A Solução de Design O projeto foi dividido em duas frentes estratégicas de comunicação",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/click-impresso/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/click-impresso/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/click-impresso/gallery/002.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "efdc8b51-dfa5-5988-ae45-df0b4f915507",
+      "case_id": "3664e7d6-c9e4-5d09-8b6c-0da96faa136d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/click-impresso/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/click-impresso/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "48e94f6e-a742-5967-8d37-adf5456a462d",
+      "case_id": "3664e7d6-c9e4-5d09-8b6c-0da96faa136d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/click-impresso/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/click-impresso/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 2,
+    "local_image_count": 2
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

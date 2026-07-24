@@ -1,0 +1,42 @@
+{
+  "snapshot_type": "remote_public_cases_manifest",
+  "captured_at": "2026-07-11T16:44:00Z",
+  "project_ref": "yzivkrotylwyglavtnho",
+  "table": "public.cases",
+  "row_count": 40,
+  "status": "partial_transport_limited_manifest",
+  "important_limitation": "A full raw JSON export of all public.cases fields could not be materialized through the available MCP channel because the 108KB JSON payload was truncated by tool transport, and the public anon REST path is blocked by the legacy public.cases policy calling public.is_admin()/profiles. No remote data was changed. Use the command in public-cases-summary.md with an authenticated Postgres DSN to generate the byte-complete JSON before running an apply migrator.",
+  "schema_columns_confirmed": [
+    "id",
+    "slug",
+    "title",
+    "tags",
+    "description",
+    "cover",
+    "images",
+    "updated_at",
+    "created_at",
+    "excerpt",
+    "published",
+    "featured_on_home",
+    "home_order",
+    "content_blocks",
+    "client_id",
+    "external_url"
+  ],
+  "counts": {
+    "total": 40,
+    "remote_extra_novo_case": 4,
+    "portfolio_cases": 0,
+    "portfolio_case_media": 0,
+    "portfolio_case_slug_history": 0
+  },
+  "remote_extra_slugs": [
+    "novo-case-1779977160261",
+    "novo-case-1780068948570",
+    "novo-case-1780074762889",
+    "novo-case-1780960017640"
+  ],
+  "complete_summary_source": "docs/portfolio-cms-v2/legacy-data-diff.md and backups/portfolio-cms-v2/public-cases-summary.md",
+  "full_export_required_before_apply": true
+}

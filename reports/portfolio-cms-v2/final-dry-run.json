@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-07-11T00:00:00.000Z",
+  "generated_at": "2026-07-11T00:00:00.000Z",
+  "dry_run_complete": true,
+  "source_counts": {
+    "remote": 40,
+    "remote_complete": true,
+    "remote_source": "backups/portfolio-cms-v2/public-cases-before-migration-full.json",
+    "remote_manifest_count": 40,
+    "remote_manifest_status": "partial_transport_limited_manifest",
+    "local": 36,
+    "html": 36
+  },
+  "proposed_counts": {
+    "cases": 36,
+    "excluded_cases": 4,
+    "media": 561,
+    "published": 36,
+    "drafts": 0,
+    "blocked": 0,
+    "warnings": 0,
+    "errors": 0
+  },
+  "total_media": 561,
+  "cases_sem_html": [],
+  "cases_sem_capa": [],
+  "cases_sem_galeria": [],
+  "casos_com_slug_unicode": [
+    "atitus-educação",
+    "calendário-impresul-2023",
+    "calendário-impresul-2024",
+    "vacinas-infográfico"
+  ],
+  "conflitos": [],
+  "determinism_hash": "406927e1db2987e147368e8bfe2cd45acada14de4ee28caaf6026a8d55ff4121",
+  "apply_allowed": false,
+  "human_decisions": {
+    "source": "scripts/portfolio-migration/config/migration-decisions.json",
+    "excluded_cases": [
+      {
+        "id": "novo-case-1779977160261",
+        "slug": "novo-case-1779977160261",
+        "title": "Novo case",
+        "status": "draft",
+        "reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+        "action": "kept_in_public_cases_not_migrated"
+      },
+      {
+        "id": "novo-case-1780068948570",
+        "slug": "novo-case-1780068948570",
+        "title": "Novo case",
+        "status": "published",
+        "reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+        "action": "kept_in_public_cases_not_migrated"
+      },
+      {
+        "id": "novo-case-1780074762889",
+        "slug": "novo-case-1780074762889",
+        "title": "Novo case",
+        "status": "published",
+        "reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+        "action": "kept_in_public_cases_not_migrated"
+      },
+      {
+        "id": "novo-case-1780960017640",
+        "slug": "novo-case-1780960017640",
+        "title": "Novo case",
+        "status": "published",
+        "reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+        "action": "kept_in_public_cases_not_migrated"
+      }
+    ],
+    "excluded_reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+    "approved_large_galleries": [
+      "dark-star",
+      "demip",
+      "leylaw",
+      "morangos-mofados",
+      "portal-do-aluno-ufrgs",
+      "vexo"
+    ],
+    "large_gallery_decision": "Human-reviewed and approved. Do not remove images by quantity for these galleries.",
+    "migrate_remaining_valid_cases": true,
+    "remaining_valid_cases_decision": "Migrate every non-excluded public.cases record that has valid static Framer HTML into Portfolio CMS v2."
+  },
+  "remote_query_log": [
+    {
+      "source": "local_backup_manifest",
+      "operation": "read_file",
+      "path": "backups/portfolio-cms-v2/public-cases-before-migration.json",
+      "writes_remote": false
+    },
+    {
+      "source": "remote_full_backup",
+      "operation": "read_file",
+      "path": "backups/portfolio-cms-v2/public-cases-before-migration-full.json",
+      "writes_remote": false
+    }
+  ],
+  "remote_backup": {
+    "source": "backups/portfolio-cms-v2/public-cases-before-migration-full.json",
+    "manifest_status": "partial_transport_limited_manifest",
+    "manifest_count": 40,
+    "manifest_full_difference": "manifest_count_matches_full_backup"
+  }
+}

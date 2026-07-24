@@ -1,0 +1,29 @@
+{
+  "captured_at": "2026-07-11T00:14:00Z",
+  "project_ref": "yzivkrotylwyglavtnho",
+  "project_name": "raksadesign",
+  "preflight": {
+    "portfolio_cases_exists": false,
+    "portfolio_case_media_exists": false,
+    "portfolio_case_slug_history_exists": false,
+    "can_manage_portfolio_exists": false,
+    "portfolio_drafts_bucket_exists": false,
+    "portfolio_media_bucket_exists": false,
+    "case_images_bucket_exists": true,
+    "is_admin_exists": true,
+    "profiles_exists": true,
+    "admin_users_exists": true
+  },
+  "legacy_counts": {
+    "public_cases_count": 40,
+    "novo_case_count": 4,
+    "public_cases_aggregate_md5": "df5e661ec75fc031582def13cba7382a",
+    "case_images_bucket_public": true
+  },
+  "admin_authorization_precheck": {
+    "profile_rule_admins": 2,
+    "fallback_only_admin_users": 0,
+    "admin_users_total": 2,
+    "emails_exported": false
+  }
+}

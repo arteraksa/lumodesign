@@ -1,0 +1,13 @@
+{
+  "files": [
+    "index.html",
+    "cases/**/*.html"
+  ],
+  "exclude": [
+    "reports/**",
+    "backups/**"
+  ],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}

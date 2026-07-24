@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio CMS v2 Dry-Run Preview</title>
+  <style>
+    body{font-family:Inter,system-ui,sans-serif;margin:0;background:#f7f7f4;color:#151515}
+    header{padding:24px 32px;border-bottom:1px solid #ddd;background:#fff}
+    main{display:grid;grid-template-columns:320px 1fr;min-height:calc(100vh - 81px)}
+    aside{border-right:1px solid #ddd;background:#fff;overflow:auto}
+    button{display:block;width:100%;text-align:left;padding:10px 16px;border:0;border-bottom:1px solid #eee;background:#fff;cursor:pointer}
+    button:hover,button.active{background:#ecebe6}
+    .filters{display:flex;gap:8px;padding:12px;position:sticky;top:0;background:#fff;border-bottom:1px solid #ddd;flex-wrap:wrap}
+    .filters button{border:1px solid #ccc;border-radius:6px;padding:8px;width:auto}
+    section{padding:28px;max-width:1100px}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 20px}
+    .pill{font-size:12px;border:1px solid #bbb;border-radius:999px;padding:4px 8px;background:#fff}
+    .error{color:#9f1d1d}.warning{color:#8a5a00}.notice{background:#fff3cd;border:1px solid #e5c45d;padding:10px 12px;border-radius:6px;margin-top:12px}
+    img{max-width:180px;max-height:120px;object-fit:cover;margin:4px;border:1px solid #ddd}
+    pre{white-space:pre-wrap;background:#fff;border:1px solid #ddd;padding:12px;border-radius:6px;overflow:auto}
+  </style>
+</head>
+<body>
+  <header><h1>Portfolio CMS v2 Dry-Run Preview</h1><div id="summary"></div><div class="notice">Apply está desativado. Esta página usa apenas arquivos gerados pelo dry-run.</div></header>
+  <main><aside><div class="filters"><button data-filter="all">All</button><button data-filter="published">Published</button><button data-filter="draft">Draft</button><button data-filter="blocked">Blocked</button><button data-filter="decision">Requer decisão humana</button><button data-filter="novo">novo-case-*</button></div><div id="list"></div></aside><section id="detail"></section></main>
+  <script type="module">
+    const [cases, media, blocked, summary, caseReports, decisions, newCases] = await Promise.all([
+      fetch('../proposed-portfolio-cases.json').then(r=>r.json()),
+      fetch('../proposed-portfolio-case-media.json').then(r=>r.json()),
+      fetch('../blocked-cases.json').then(r=>r.json()),
+      fetch('../dry-run.json').then(r=>r.json()),
+      fetch('../case-sources.json').then(r=>r.json()).catch(()=>[]),
+      fetch('../human-decisions-required.json').then(r=>r.json()).catch(()=>[]),
+      fetch('../new-cases-review.json').then(r=>r.json()).catch(()=>[])
+    ]);
+    const blockedSet = new Set(blocked.map(b=>b.slug));
+    const decisionSet = new Set(decisions.map(d=>d.case));
+    const newCaseSet = new Set(newCases.map(d=>d.slug));
+    const mediaByCase = new Map();
+    for (const item of media) {
+      if (!mediaByCase.has(item.case_id)) mediaByCase.set(item.case_id, []);
+      mediaByCase.get(item.case_id).push(item);
+    }
+    document.querySelector('#summary').textContent = 'Backup completo: '+summary.dry_run_complete+' | Cases: '+cases.length+' | Media: '+media.length+' | Blocked: '+blocked.length+' | Apply allowed: '+summary.apply_allowed;
+    let filter='all';
+    function renderList(){
+      const list=document.querySelector('#list'); list.innerHTML='';
+      for(const c of cases.filter(c=>filter==='all'||c.status===filter||(filter==='blocked'&&blockedSet.has(c.slug))||(filter==='decision'&&decisionSet.has(c.slug))||(filter==='novo'&&newCaseSet.has(c.slug)))){
+        const b=document.createElement('button'); b.textContent=(blockedSet.has(c.slug)?'! ':'')+c.title+' · '+c.slug; b.onclick=()=>renderDetail(c); list.appendChild(b);
+      }
+    }
+    function renderDetail(c){
+      const gallery=mediaByCase.get(c.id)||[];
+      const block=blocked.find(b=>b.slug===c.slug);
+      const caseDecisions=decisions.filter(d=>d.case===c.slug);
+      const novo=newCases.find(d=>d.slug===c.slug);
+      const source=caseReports.find(s=>s.slug===c.slug)||{};
+      document.querySelector('#detail').innerHTML='<h2>'+c.title+'</h2><div class="meta">'+c.categories.map(x=>'<span class="pill">'+x+'</span>').join('')+'<span class="pill">'+c.status+'</span><span class="pill">order '+c.portfolio_order+'</span></div>'+(block?'<h3 class="error">Blocked</h3><pre>'+JSON.stringify(block,null,2)+'</pre>':'')+(caseDecisions.length?'<h3 class="warning">Decisões humanas</h3><pre>'+JSON.stringify(caseDecisions,null,2)+'</pre>':'')+(novo?'<h3>novo-case-* review</h3><pre>'+JSON.stringify(novo,null,2)+'</pre>':'')+'<h3>Comparação de fontes</h3><pre>'+JSON.stringify(source,null,2)+'</pre><h3>Content</h3><div>'+c.content_html+'</div><h3>Cover</h3><pre>'+JSON.stringify({cover_url:c.cover_url,cover_storage_bucket:c.cover_storage_bucket,cover_storage_path:c.cover_storage_path},null,2)+'</pre><h3>Gallery ('+gallery.length+')</h3><div>'+gallery.map(m=>m.source_url&&!m.source_url.startsWith('__REMOTE')?'<img src="'+m.source_url+'">':'<pre>'+JSON.stringify(m,null,2)+'</pre>').join('')+'</div><h3>Proposed Case</h3><pre>'+JSON.stringify(c,null,2)+'</pre>';
+    }
+    document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;renderList();});
+    renderList(); if(cases[0]) renderDetail(cases[0]);
+  </script>
+</body>
+</html>

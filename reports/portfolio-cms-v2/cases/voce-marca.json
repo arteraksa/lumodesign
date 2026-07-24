@@ -1,0 +1,373 @@
+{
+  "slug": "voce-marca",
+  "case_id": "42c254f6-834f-5cad-96fe-f2ec73473247",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/voce-marca/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "42c254f6-834f-5cad-96fe-f2ec73473247",
+    "legacy_id": "voce-marca",
+    "legacy_slug": "voce-marca",
+    "slug": "voce-marca",
+    "title": "Você Marca",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este projeto envolveu a criação de uma landing page de lançamento para a \"Você Marca\", uma nova mentoria digital. O trabalho foi realizado em estreita colaboração com o cliente para traduzir sua visão em uma ferramenta de vendas digital eficaz e visualmente atrativa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar uma página de vendas para um produto digital (mentoria) que fosse além do básico. A página precisava não apenas detalhar o conteúdo do programa, mas também construir autoridade para o mentor e convencer o visitante a realizar a compra. O design deveria ser simples o suficiente para uma navegação clara, mas sofisticado o suficiente para se destacar e transmitir uma sensação de inovação e alta qualidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Estética \"High Tech\" Focada em Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução foi desenvolver uma landing page com uma forte direção de arte, estruturada para guiar o usuário em uma jornada de conversão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Direção de Arte e Layout&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para posicionar a mentoria como uma solução moderna e de ponta, foi adotada uma direção de arte \"high tech\".&nbsp;A paleta de cores, dominada por tons de azul, foi escolhida para evocar sentimentos de tecnologia, confiança e profissionalismo.&nbsp;O layout foi estruturado como uma narrativa visual, dissecando cada módulo, benefício e diferencial da mentoria de forma clara e sequencial, guiando o visitante do interesse à decisão de compra."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Processo Colaborativo&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi caracterizado por um processo de design altamente colaborativo.&nbsp;A página foi construída em alinhamento constante com o cliente, garantindo que cada seção e cada elemento de design fossem um reflexo fiel de sua visão e dos objetivos do negócio."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Foco na Conversão&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Cada componente da página foi projetado com o objetivo de maximizar a conversão.&nbsp;A arquitetura da informação foi pensada para construir valor progressivamente, respondendo às dúvidas do potencial cliente e quebrando objeções, culminando em uma chamada para ação (CTA) clara e direta para o botão de compra ao final da página."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma landing page visualmente impactante e estrategicamente estruturada, projetada para funcionar como uma poderosa ferramenta de vendas para o lançamento da mentoria \"Você Marca\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este projeto envolveu a criação de uma landing page de lançamento para a \"Você Marca\", uma nova mentoria digital. O trabalho foi realizado em estreita colaboração com o cliente para traduzir sua visão em uma ferramenta de vendas digital eficaz e visualmente atrativa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar uma página de vendas para um produto digital (mentoria) que fosse além do básico. A página precisava não apenas detalhar o conteúdo do programa, mas também construir autoridade para o mentor e convencer o visitante a realizar a compra. O design deveria ser simples o suficiente para uma navegação clara, mas sofisticado o suficiente para se destacar e transmitir uma sensação de inovação e alta qualidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Estética \"High Tech\" Focada em Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução foi desenvolver uma landing page com uma forte direção de arte, estruturada para guiar o usuário em uma jornada de conversão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Direção de Arte e Layout&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para posicionar a mentoria como uma solução moderna e de ponta, foi adotada uma direção de arte \"high tech\".&nbsp;A paleta de cores, dominada por tons de azul, foi escolhida para evocar sentimentos de tecnologia, confiança e profissionalismo.&nbsp;O layout foi estruturado como uma narrativa visual, dissecando cada módulo, benefício e diferencial da mentoria de forma clara e sequencial, guiando o visitante do interesse à decisão de compra."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Processo Colaborativo&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi caracterizado por um processo de design altamente colaborativo.&nbsp;A página foi construída em alinhamento constante com o cliente, garantindo que cada seção e cada elemento de design fossem um reflexo fiel de sua visão e dos objetivos do negócio."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Foco na Conversão&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Cada componente da página foi projetado com o objetivo de maximizar a conversão.&nbsp;A arquitetura da informação foi pensada para construir valor progressivamente, respondendo às dúvidas do potencial cliente e quebrando objeções, culminando em uma chamada para ação (CTA) clara e direta para o botão de compra ao final da página."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma landing page visualmente impactante e estrategicamente estruturada, projetada para funcionar como uma poderosa ferramenta de vendas para o lançamento da mentoria \"Você Marca\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Este projeto envolveu a criação de uma landing page de lançamento para a \"Você Marca\", uma nova mentoria digital. O trabalho foi realizado em estreita colaboração com o cliente para traduzir sua visão em uma ferramenta de vendas digital eficaz e visualmente atrativa.</p><p><strong>O Desafio</strong></p><p>O desafio era criar uma página de vendas para um produto digital (mentoria) que fosse além do básico. A página precisava não apenas detalhar o conteúdo do programa, mas também construir autoridade para o mentor e convencer o visitante a realizar a compra. O design deveria ser simples o suficiente para uma navegação clara, mas sofisticado o suficiente para se destacar e transmitir uma sensação de inovação e alta qualidade.</p><p><strong>A Solução de Design: Uma Estética \"High Tech\" Focada em Conversão</strong></p><p>A solução foi desenvolver uma landing page com uma forte direção de arte, estruturada para guiar o usuário em uma jornada de conversão.</p><p><strong>1. Direção de Arte e Layout&nbsp;</strong></p><p>Para posicionar a mentoria como uma solução moderna e de ponta, foi adotada uma direção de arte \"high tech\".&nbsp;A paleta de cores, dominada por tons de azul, foi escolhida para evocar sentimentos de tecnologia, confiança e profissionalismo.&nbsp;O layout foi estruturado como uma narrativa visual, dissecando cada módulo, benefício e diferencial da mentoria de forma clara e sequencial, guiando o visitante do interesse à decisão de compra.</p><p><strong>2. Processo Colaborativo&nbsp;</strong></p><p>O projeto foi caracterizado por um processo de design altamente colaborativo.&nbsp;A página foi construída em alinhamento constante com o cliente, garantindo que cada seção e cada elemento de design fossem um reflexo fiel de sua visão e dos objetivos do negócio.</p><p><strong>3. Foco na Conversão&nbsp;</strong></p><p>Cada componente da página foi projetado com o objetivo de maximizar a conversão.&nbsp;A arquitetura da informação foi pensada para construir valor progressivamente, respondendo às dúvidas do potencial cliente e quebrando objeções, culminando em uma chamada para ação (CTA) clara e direta para o botão de compra ao final da página.</p><p>O resultado é uma landing page visualmente impactante e estrategicamente estruturada, projetada para funcionar como uma poderosa ferramenta de vendas para o lançamento da mentoria \"Você Marca\".<br><br></p>Você Marca Você Marca<p>UI/UX Design</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>Este projeto envolveu a criação de uma landing page de lançamento para a \"Você Marca\", uma nova mentoria digital. O trabalho foi realizado em estreita colaboração com o cliente para traduzir sua visão em uma ferramenta de vendas digital eficaz e visualmente atrativa.</p><p><strong>O Desafio</strong></p><p>O desafio era criar uma página de vendas para um produto digital (mentoria) que fosse além do básico. A página precisava não apenas detalhar o conteúdo do programa, mas também construir autoridade para o mentor e convencer o visitante a realizar a compra. O design deveria ser simples o suficiente para uma navegação clara, mas sofisticado o suficiente para se destacar e transmitir uma sensação de inovação e alta qualidade.</p><p><strong>A Solução de Design: Uma Estética \"High Tech\" Focada em Conversão</strong></p><p>A solução foi desenvolver uma landing page com uma forte direção de arte, estruturada para guiar o usuário em uma jornada de conversão.</p><p><strong>1. Direção de Arte e Layout&nbsp;</strong></p><p>Para posicionar a mentoria como uma solução moderna e de ponta, foi adotada uma direção de arte \"high tech\".&nbsp;A paleta de cores, dominada por tons de azul, foi escolhida para evocar sentimentos de tecnologia, confiança e profissionalismo.&nbsp;O layout foi estruturado como uma narrativa visual, dissecando cada módulo, benefício e diferencial da mentoria de forma clara e sequencial, guiando o visitante do interesse à decisão de compra.</p><p><strong>2. Processo Colaborativo&nbsp;</strong></p><p>O projeto foi caracterizado por um processo de design altamente colaborativo.&nbsp;A página foi construída em alinhamento constante com o cliente, garantindo que cada seção e cada elemento de design fossem um reflexo fiel de sua visão e dos objetivos do negócio.</p><p><strong>3. Foco na Conversão&nbsp;</strong></p><p>Cada componente da página foi projetado com o objetivo de maximizar a conversão.&nbsp;A arquitetura da informação foi pensada para construir valor progressivamente, respondendo às dúvidas do potencial cliente e quebrando objeções, culminando em uma chamada para ação (CTA) clara e direta para o botão de compra ao final da página.</p><p>O resultado é uma landing page visualmente impactante e estrategicamente estruturada, projetada para funcionar como uma poderosa ferramenta de vendas para o lançamento da mentoria \"Você Marca\".<br><br></p>Nina<p>Anterior</p><p>Anterior</p>Blenduca<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/voce-marca/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/voce-marca/cover.jpg",
+    "external_url": "https://www.vcmarcadigital.com.br",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 35,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Este projeto envolveu a criação de uma landing page de lançamento para a \" \", uma nova mentoria digital. O trabalho foi realizado em estreita colaboração com o cliente para traduzir sua visão em uma ferramenta de vendas digital eficaz e visualmente atrativa. O Desafio O desafio era criar uma página de vendas para um produto digital (mentoria) que fosse além do básico. A página precisava não apenas detalhar o conteúdo do programa, mas também construir autoridade para o mentor e convencer o visitante a realizar a compra. O design deveria ser simples o suficiente para uma navegação clara, mas sofisticado o suficiente para se destacar e transmitir uma sensação de inovação e alta qualidade. A Solução de Design: Uma ",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/voce-marca/cover.jpg",
+    "images": [
+      "/raksadesign/framerusercontent.com/images/7STa5qV59W7LXHCAfzhU31ZjDow.jpg?width=2039&height=12097"
+    ],
+    "external_url": "https://www.vcmarcadigital.com.br"
+  },
+  "media": [
+    {
+      "id": "0e9f1644-b3fb-5044-a7f2-47b148914a8d",
+      "case_id": "42c254f6-834f-5cad-96fe-f2ec73473247",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/7STa5qV59W7LXHCAfzhU31ZjDow.jpg?width=2039&height=12097",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 2039,
+      "height": 12097,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 1,
+    "local_image_count": 1
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

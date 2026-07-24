@@ -1,0 +1,837 @@
+{
+  "slug": "jaq-h2",
+  "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/jaq-h2/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+    "legacy_id": "jaq-h2",
+    "legacy_slug": "jaq-h2",
+    "slug": "jaq-h2",
+    "title": "JAQ H2",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Desenvolvimento",
+      "Branding",
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Fundada em 2021, a JAQ Hidrogênio Verde é uma startup de tecnologia com a missão de desenvolver soluções inovadoras para descarbonizar a navegação. Além da inovação tecnológica, a JAQ tem o compromisso de aplicar seus produtos em iniciativas de educação ambiental e preservação dos biomas marinhos e fluviais do Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Como uma empresa nova em um setor tradicional, a JAQ precisava de uma identidade visual e uma presença digital que comunicassem sua proposta de valor de forma clara, profissional e impactante. O desafio era criar, do zero, uma marca que transmitisse simultaneamente dois pilares centrais: tecnologia de ponta e um profundo compromisso com a sustentabilidade. A identidade precisava ser versátil o suficiente para funcionar em um website, em materiais impressos e em apresentações corporativas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Marca Integrada"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto envolveu o desenvolvimento de uma identidade visual completa e sua aplicação em todos os pontos de contato iniciais da empresa, garantindo uma base sólida e coesa para o crescimento da marca."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Branding e Identidade Visual&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O ponto de partida foi a criação da marca JAQ. Foi desenvolvido um logo e um sistema visual que refletem a fusão entre tecnologia e natureza. O design buscou transmitir inovação, sustentabilidade e confiança, estabelecendo um tom profissional para a comunicação da empresa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Website Institucional&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O website foi projetado para ser o principal canal de comunicação da JAQ, apresentando sua missão, tecnologia e projetos de forma clara e objetiva. A arquitetura de informação foi estruturada para guiar diferentes públicos (investidores, parceiros, comunidade) através da história e das soluções da empresa, com uma experiência de usuário fluida e intuitiva."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Materiais de Comunicação&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para garantir a consistência da marca em todos os pontos de contato, foi desenvolvida uma suíte completa de materiais de comunicação.&nbsp;Isso incluiu o design de panfletos informativos, cartões de visita, banners para eventos e&nbsp;pitch decks&nbsp;(apresentações para investidores), assegurando que a identidade da JAQ fosse aplicada de forma profissional e coerente em contextos online e offline."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Impacto"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma identidade de marca forte e coesa que posiciona a JAQ como uma empresa inovadora e confiável, pronta para liderar a transformação sustentável no setor de navegação. A criação desses ativos fundamentais de branding e comunicação equipou a empresa com as ferramentas necessárias para se apresentar de forma profissional ao mercado, dialogar com stakeholders e construir sua reputação desde o primeiro dia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Desenvolvimento"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Fundada em 2021, a JAQ Hidrogênio Verde é uma startup de tecnologia com a missão de desenvolver soluções inovadoras para descarbonizar a navegação. Além da inovação tecnológica, a JAQ tem o compromisso de aplicar seus produtos em iniciativas de educação ambiental e preservação dos biomas marinhos e fluviais do Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Como uma empresa nova em um setor tradicional, a JAQ precisava de uma identidade visual e uma presença digital que comunicassem sua proposta de valor de forma clara, profissional e impactante. O desafio era criar, do zero, uma marca que transmitisse simultaneamente dois pilares centrais: tecnologia de ponta e um profundo compromisso com a sustentabilidade. A identidade precisava ser versátil o suficiente para funcionar em um website, em materiais impressos e em apresentações corporativas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Marca Integrada"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto envolveu o desenvolvimento de uma identidade visual completa e sua aplicação em todos os pontos de contato iniciais da empresa, garantindo uma base sólida e coesa para o crescimento da marca."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Branding e Identidade Visual&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O ponto de partida foi a criação da marca JAQ. Foi desenvolvido um logo e um sistema visual que refletem a fusão entre tecnologia e natureza. O design buscou transmitir inovação, sustentabilidade e confiança, estabelecendo um tom profissional para a comunicação da empresa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Website Institucional&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O website foi projetado para ser o principal canal de comunicação da JAQ, apresentando sua missão, tecnologia e projetos de forma clara e objetiva. A arquitetura de informação foi estruturada para guiar diferentes públicos (investidores, parceiros, comunidade) através da história e das soluções da empresa, com uma experiência de usuário fluida e intuitiva."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Materiais de Comunicação&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para garantir a consistência da marca em todos os pontos de contato, foi desenvolvida uma suíte completa de materiais de comunicação.&nbsp;Isso incluiu o design de panfletos informativos, cartões de visita, banners para eventos e&nbsp;pitch decks&nbsp;(apresentações para investidores), assegurando que a identidade da JAQ fosse aplicada de forma profissional e coerente em contextos online e offline."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Impacto"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma identidade de marca forte e coesa que posiciona a JAQ como uma empresa inovadora e confiável, pronta para liderar a transformação sustentável no setor de navegação. A criação desses ativos fundamentais de branding e comunicação equipou a empresa com as ferramentas necessárias para se apresentar de forma profissional ao mercado, dialogar com stakeholders e construir sua reputação desde o primeiro dia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Fundada em 2021, a JAQ Hidrogênio Verde é uma startup de tecnologia com a missão de desenvolver soluções inovadoras para descarbonizar a navegação. Além da inovação tecnológica, a JAQ tem o compromisso de aplicar seus produtos em iniciativas de educação ambiental e preservação dos biomas marinhos e fluviais do Brasil.</p><p><strong>O Desafio</strong></p><p>Como uma empresa nova em um setor tradicional, a JAQ precisava de uma identidade visual e uma presença digital que comunicassem sua proposta de valor de forma clara, profissional e impactante. O desafio era criar, do zero, uma marca que transmitisse simultaneamente dois pilares centrais: tecnologia de ponta e um profundo compromisso com a sustentabilidade. A identidade precisava ser versátil o suficiente para funcionar em um website, em materiais impressos e em apresentações corporativas.</p><p><strong>A Solução de Design: Uma Marca Integrada</strong></p><p>O projeto envolveu o desenvolvimento de uma identidade visual completa e sua aplicação em todos os pontos de contato iniciais da empresa, garantindo uma base sólida e coesa para o crescimento da marca.</p><p><strong>1. Branding e Identidade Visual&nbsp;</strong></p><p>O ponto de partida foi a criação da marca JAQ. Foi desenvolvido um logo e um sistema visual que refletem a fusão entre tecnologia e natureza. O design buscou transmitir inovação, sustentabilidade e confiança, estabelecendo um tom profissional para a comunicação da empresa.</p><p><strong>2. Website Institucional&nbsp;</strong></p><p>O website foi projetado para ser o principal canal de comunicação da JAQ, apresentando sua missão, tecnologia e projetos de forma clara e objetiva. A arquitetura de informação foi estruturada para guiar diferentes públicos (investidores, parceiros, comunidade) através da história e das soluções da empresa, com uma experiência de usuário fluida e intuitiva.</p><p><strong>3. Materiais de Comunicação&nbsp;</strong></p><p>Para garantir a consistência da marca em todos os pontos de contato, foi desenvolvida uma suíte completa de materiais de comunicação.&nbsp;Isso incluiu o design de panfletos informativos, cartões de visita, banners para eventos e&nbsp;pitch decks&nbsp;(apresentações para investidores), assegurando que a identidade da JAQ fosse aplicada de forma profissional e coerente em contextos online e offline.</p><p><strong>O Impacto</strong></p><p>O resultado é uma identidade de marca forte e coesa que posiciona a JAQ como uma empresa inovadora e confiável, pronta para liderar a transformação sustentável no setor de navegação. A criação desses ativos fundamentais de branding e comunicação equipou a empresa com as ferramentas necessárias para se apresentar de forma profissional ao mercado, dialogar com stakeholders e construir sua reputação desde o primeiro dia.</p>JAQ H2 JAQ H2<p>UI/UX Design</p><p>Desenvolvimento</p><p>Branding</p><p>Editorial</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>Fundada em 2021, a JAQ Hidrogênio Verde é uma startup de tecnologia com a missão de desenvolver soluções inovadoras para descarbonizar a navegação. Além da inovação tecnológica, a JAQ tem o compromisso de aplicar seus produtos em iniciativas de educação ambiental e preservação dos biomas marinhos e fluviais do Brasil.</p><p><strong>O Desafio</strong></p><p>Como uma empresa nova em um setor tradicional, a JAQ precisava de uma identidade visual e uma presença digital que comunicassem sua proposta de valor de forma clara, profissional e impactante. O desafio era criar, do zero, uma marca que transmitisse simultaneamente dois pilares centrais: tecnologia de ponta e um profundo compromisso com a sustentabilidade. A identidade precisava ser versátil o suficiente para funcionar em um website, em materiais impressos e em apresentações corporativas.</p><p><strong>A Solução de Design: Uma Marca Integrada</strong></p><p>O projeto envolveu o desenvolvimento de uma identidade visual completa e sua aplicação em todos os pontos de contato iniciais da empresa, garantindo uma base sólida e coesa para o crescimento da marca.</p><p><strong>1. Branding e Identidade Visual&nbsp;</strong></p><p>O ponto de partida foi a criação da marca JAQ. Foi desenvolvido um logo e um sistema visual que refletem a fusão entre tecnologia e natureza. O design buscou transmitir inovação, sustentabilidade e confiança, estabelecendo um tom profissional para a comunicação da empresa.</p><p><strong>2. Website Institucional&nbsp;</strong></p><p>O website foi projetado para ser o principal canal de comunicação da JAQ, apresentando sua missão, tecnologia e projetos de forma clara e objetiva. A arquitetura de informação foi estruturada para guiar diferentes públicos (investidores, parceiros, comunidade) através da história e das soluções da empresa, com uma experiência de usuário fluida e intuitiva.</p><p><strong>3. Materiais de Comunicação&nbsp;</strong></p><p>Para garantir a consistência da marca em todos os pontos de contato, foi desenvolvida uma suíte completa de materiais de comunicação.&nbsp;Isso incluiu o design de panfletos informativos, cartões de visita, banners para eventos e&nbsp;pitch decks&nbsp;(apresentações para investidores), assegurando que a identidade da JAQ fosse aplicada de forma profissional e coerente em contextos online e offline.</p><p><strong>O Impacto</strong></p><p>O resultado é uma identidade de marca forte e coesa que posiciona a JAQ como uma empresa inovadora e confiável, pronta para liderar a transformação sustentável no setor de navegação. A criação desses ativos fundamentais de branding e comunicação equipou a empresa com as ferramentas necessárias para se apresentar de forma profissional ao mercado, dialogar com stakeholders e construir sua reputação desde o primeiro dia.</p>Impresul<p>Anterior</p><p>Anterior</p>Calendário Impresul 2023<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/jaq-h2/cover.jpg",
+    "external_url": "http://jaqh2.com.br",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 32,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Fundada em 2021, a JAQ Hidrogênio Verde é uma startup de tecnologia com a missão de desenvolver soluções inovadoras para descarbonizar a navegação. Além da inovação tecnológica, a JAQ tem o compromisso de aplicar seus produtos em iniciativas de educação ambiental e preservação dos biomas marinhos e fluviais do Brasil. O Desafio Como uma empresa nova em um setor tradicional, a JAQ precisava de uma identidade visual e uma presença digital que comunicassem sua proposta de valor de forma clara, profissional e impactante. O desafio era criar, do zero, uma marca que transmitisse simultaneamente dois pilares centrais: tecnologia de ponta e um profundo compromisso com a sustentabilidade. A identidade precisava ser vers",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/009.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/010.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/011.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/012.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/013.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/014.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/015.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/016.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/017.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/018.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/019.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/020.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/021.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/022.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/023.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/024.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/025.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/026.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/027.jpg"
+    ],
+    "external_url": "http://jaqh2.com.br"
+  },
+  "media": [
+    {
+      "id": "56f5a5c9-9bc8-5c3c-bc95-864c408cfdf8",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "daed303f-bc8f-5ed4-9d81-d5e49775ca3b",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "878626dd-f621-5dfd-bb04-d500d0e97f3b",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "733691d1-31b5-5f49-a261-fe45bbe80289",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f0e3381d-b1ae-51cc-869d-3cb3921bf956",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c59c40ec-4b9f-5f5e-bb8b-f5a436e019ee",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2098ab5d-2af3-56b1-a9fb-7555df57bf94",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "14e9f55f-b944-59d0-9f31-3c5506b08040",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "51012bb4-65b5-5dad-bc1c-ffc90c7fbf8a",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ca19373a-aea8-55f3-b5c0-b81c45441e7e",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/010.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/010.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 9,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "64fc468d-f344-5e1b-b88c-4d1a477c66ea",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/011.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/011.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 10,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1ed288a1-7bcb-5c8a-81a2-1444b206c2ea",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/012.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/012.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 11,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "83ba4f48-3161-524c-8f86-68170cb27f5c",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/013.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/013.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 12,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "507bfc7e-52d3-5728-9d36-de66ee80a079",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/014.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/014.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 13,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "205562a0-08a2-5c06-90a1-c51a6e064eb6",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/015.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/015.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 14,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "624fc229-553d-5ea5-99a3-dea5d3dfad0e",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/016.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/016.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 15,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0f81c416-285f-5c4a-89c8-5cfc8d936ef1",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/017.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/017.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 16,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "75c5fcdd-10a5-53e2-b785-db328f96e28b",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/018.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/018.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 17,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7c6f3664-f439-514b-be5a-3280e8d05eb2",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/019.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/019.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 18,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "68066db9-2dfb-50af-98ca-0be268a150bb",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/020.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/020.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 19,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6875af87-c308-51d1-a215-a8b1ec16d854",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/021.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/021.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 20,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e3a2d758-7c88-55ad-b656-601c2a2aafe7",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/022.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/022.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 21,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b5efd698-2a6d-5325-8b03-5d2751b59c94",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/023.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/023.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 22,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "cc983d64-5a74-512d-9cd9-1f043ae76a43",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/024.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/024.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 23,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d3eb13a3-819e-56ca-a6d2-60d84ba48115",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/025.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/025.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 24,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f1412766-aebb-5727-a2cf-47d1374a9259",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/026.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/026.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 25,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "dca33773-0f30-5bf6-baa4-745bf0654727",
+      "case_id": "60d37268-db32-5bd0-812c-5ef74499f03e",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/jaq-h2/gallery/027.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/jaq-h2/gallery/027.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 26,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 27,
+    "local_image_count": 27
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

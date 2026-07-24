@@ -1,0 +1,1123 @@
+{
+  "slug": "vexo",
+  "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/vexo/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+    "legacy_id": "vexo",
+    "legacy_slug": "vexo",
+    "slug": "vexo",
+    "title": "Vexo",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Branding"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Vexo é uma fintech com a missão de simplificar e tornar mais justo o processo de crédito para empresas e pessoas no Brasil. Fui o UX/UI Designer responsável por traduzir essa visão complexa em uma experiência digital completa, projetando do zero o website institucional e a plataforma de gerenciamento de usuários. O trabalho abrangeu todo o ciclo de design, desde a arquitetura da informação e fluxos de usuário até o design de interface de alta fidelidade e a estratégia de comunicação por e-mail."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi estruturado em quatro etapas principais para garantir que a solução final estivesse perfeitamente alinhada com os objetivos de negócio e as necessidades dos usuários."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Imersão e Arquitetura O projeto começou com uma imersão profunda na visão da Vexo para entender seu ecossistema \"plug &amp; play\" e a promessa de um crédito justo. A partir disso, mapeamos toda a arquitetura da informação para o site institucional e para a plataforma de gerenciamento, definindo a hierarquia de conteúdo e a estrutura de navegação para garantir que os usuários encontrassem as informações de forma lógica e intuitiva."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Estruturação da Experiência: Fluxos e Wireframes Com a arquitetura definida, o foco se voltou para os fluxos de usuário. Desenhamos os caminhos que diferentes perfis de clientes (empresas e pessoas) percorreriam, desde o primeiro contato no site até o gerenciamento de suas contas na plataforma. Criamos wireframes para validar a estrutura das páginas, a disposição dos elementos e os principais pontos de interação, permitindo um alinhamento rápido com os stakeholders antes de avançar para o design visual."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Design de Interface (UI) e Identidade Visual Nesta fase, aplicamos a identidade visual da Vexo para dar vida aos wireframes. O objetivo era criar uma linguagem visual que transmitisse confiança, modernidade e simplicidade. Projetamos todas as páginas institucionais, landing pages e os dashboards da plataforma de gerenciamento, com foco em criar um sistema de componentes coeso, escalável e visualmente atraente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "4. Comunicação e Engajamento: Email Marketing Além da plataforma, fomos responsáveis por estruturar a comunicação contínua com os clientes. Criamos uma série de templates de e-mail marketing customizados para públicos B2C e B2B, pensando não apenas no design, mas também no fluxo e na organização das campanhas de automação para diferentes estágios da jornada do cliente. Realizamos o desenvolvimento (codificação) final dos templates para garantir a fidelidade do design no envio."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado final é uma experiência digital coesa que reflete a promessa da Vexo de simplicidade e justiça no processo de crédito. A solução entregue inclui:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Um website institucional claro e convidativo , que educa o usuário sobre o valor do produto e facilita a conversão."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Uma plataforma de gerenciamento funcional e intuitiva , com dashboards que simplificam a visualização e o controle das operações de crédito."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Um sistema de e-mail marketing estratégico , projetado para nutrir e engajar a base de clientes de forma segmentada e eficaz."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Vexo é uma fintech com a missão de simplificar e tornar mais justo o processo de crédito para empresas e pessoas no Brasil. Fui o UX/UI Designer responsável por traduzir essa visão complexa em uma experiência digital completa, projetando do zero o website institucional e a plataforma de gerenciamento de usuários. O trabalho abrangeu todo o ciclo de design, desde a arquitetura da informação e fluxos de usuário até o design de interface de alta fidelidade e a estratégia de comunicação por e-mail."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi estruturado em quatro etapas principais para garantir que a solução final estivesse perfeitamente alinhada com os objetivos de negócio e as necessidades dos usuários."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Imersão e Arquitetura O projeto começou com uma imersão profunda na visão da Vexo para entender seu ecossistema \"plug &amp; play\" e a promessa de um crédito justo. A partir disso, mapeamos toda a arquitetura da informação para o site institucional e para a plataforma de gerenciamento, definindo a hierarquia de conteúdo e a estrutura de navegação para garantir que os usuários encontrassem as informações de forma lógica e intuitiva."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Estruturação da Experiência: Fluxos e Wireframes Com a arquitetura definida, o foco se voltou para os fluxos de usuário. Desenhamos os caminhos que diferentes perfis de clientes (empresas e pessoas) percorreriam, desde o primeiro contato no site até o gerenciamento de suas contas na plataforma. Criamos wireframes para validar a estrutura das páginas, a disposição dos elementos e os principais pontos de interação, permitindo um alinhamento rápido com os stakeholders antes de avançar para o design visual."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Design de Interface (UI) e Identidade Visual Nesta fase, aplicamos a identidade visual da Vexo para dar vida aos wireframes. O objetivo era criar uma linguagem visual que transmitisse confiança, modernidade e simplicidade. Projetamos todas as páginas institucionais, landing pages e os dashboards da plataforma de gerenciamento, com foco em criar um sistema de componentes coeso, escalável e visualmente atraente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "4. Comunicação e Engajamento: Email Marketing Além da plataforma, fomos responsáveis por estruturar a comunicação contínua com os clientes. Criamos uma série de templates de e-mail marketing customizados para públicos B2C e B2B, pensando não apenas no design, mas também no fluxo e na organização das campanhas de automação para diferentes estágios da jornada do cliente. Realizamos o desenvolvimento (codificação) final dos templates para garantir a fidelidade do design no envio."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado final é uma experiência digital coesa que reflete a promessa da Vexo de simplicidade e justiça no processo de crédito. A solução entregue inclui:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Um website institucional claro e convidativo , que educa o usuário sobre o valor do produto e facilita a conversão."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Uma plataforma de gerenciamento funcional e intuitiva , com dashboards que simplificam a visualização e o controle das operações de crédito."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Um sistema de e-mail marketing estratégico , projetado para nutrir e engajar a base de clientes de forma segmentada e eficaz."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Vexo é uma fintech com a missão de simplificar e tornar mais justo o processo de crédito para empresas e pessoas no Brasil. Fui o UX/UI Designer responsável por traduzir essa visão complexa em uma experiência digital completa, projetando do zero o website institucional e a plataforma de gerenciamento de usuários. O trabalho abrangeu todo o ciclo de design, desde a arquitetura da informação e fluxos de usuário até o design de interface de alta fidelidade e a estratégia de comunicação por e-mail.</p><p>O projeto foi estruturado em quatro etapas principais para garantir que a solução final estivesse perfeitamente alinhada com os objetivos de negócio e as necessidades dos usuários.</p><p><strong>1. Imersão e Arquitetura</strong>O projeto começou com uma imersão profunda na visão da Vexo para entender seu ecossistema \"plug &amp; play\" e a promessa de um crédito justo. A partir disso, mapeamos toda a arquitetura da informação para o site institucional e para a plataforma de gerenciamento, definindo a hierarquia de conteúdo e a estrutura de navegação para garantir que os usuários encontrassem as informações de forma lógica e intuitiva.</p><p><strong>2. Estruturação da Experiência: Fluxos e Wireframes</strong>Com a arquitetura definida, o foco se voltou para os fluxos de usuário. Desenhamos os caminhos que diferentes perfis de clientes (empresas e pessoas) percorreriam, desde o primeiro contato no site até o gerenciamento de suas contas na plataforma. Criamos wireframes para validar a estrutura das páginas, a disposição dos elementos e os principais pontos de interação, permitindo um alinhamento rápido com os stakeholders antes de avançar para o design visual.</p><p><strong>3. Design de Interface (UI) e Identidade Visual</strong>Nesta fase, aplicamos a identidade visual da Vexo para dar vida aos wireframes. O objetivo era criar uma linguagem visual que transmitisse confiança, modernidade e simplicidade. Projetamos todas as páginas institucionais, landing pages e os dashboards da plataforma de gerenciamento, com foco em criar um sistema de componentes coeso, escalável e visualmente atraente.</p><p><strong>4. Comunicação e Engajamento: Email Marketing</strong>Além da plataforma, fomos responsáveis por estruturar a comunicação contínua com os clientes. Criamos uma série de templates de e-mail marketing customizados para públicos B2C e B2B, pensando não apenas no design, mas também no fluxo e na organização das campanhas de automação para diferentes estágios da jornada do cliente. Realizamos o desenvolvimento (codificação) final dos templates para garantir a fidelidade do design no envio.</p><p>O resultado final é uma experiência digital coesa que reflete a promessa da Vexo de simplicidade e justiça no processo de crédito. A solução entregue inclui:</p><ul><li><p><strong>Um website institucional claro e convidativo</strong>, que educa o usuário sobre o valor do produto e facilita a conversão.</p></li><li><p><strong>Uma plataforma de gerenciamento funcional e intuitiva</strong>, com dashboards que simplificam a visualização e o controle das operações de crédito.</p></li><li><p><strong>Um sistema de e-mail marketing estratégico</strong>, projetado para nutrir e engajar a base de clientes de forma segmentada e eficaz.</p></li></ul>Vexo Vexo<p>UI/UX Design</p><p>Branding</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>Vexo é uma fintech com a missão de simplificar e tornar mais justo o processo de crédito para empresas e pessoas no Brasil. Fui o UX/UI Designer responsável por traduzir essa visão complexa em uma experiência digital completa, projetando do zero o website institucional e a plataforma de gerenciamento de usuários. O trabalho abrangeu todo o ciclo de design, desde a arquitetura da informação e fluxos de usuário até o design de interface de alta fidelidade e a estratégia de comunicação por e-mail.</p><p>O projeto foi estruturado em quatro etapas principais para garantir que a solução final estivesse perfeitamente alinhada com os objetivos de negócio e as necessidades dos usuários.</p><p><strong>1. Imersão e Arquitetura</strong>O projeto começou com uma imersão profunda na visão da Vexo para entender seu ecossistema \"plug &amp; play\" e a promessa de um crédito justo. A partir disso, mapeamos toda a arquitetura da informação para o site institucional e para a plataforma de gerenciamento, definindo a hierarquia de conteúdo e a estrutura de navegação para garantir que os usuários encontrassem as informações de forma lógica e intuitiva.</p><p><strong>2. Estruturação da Experiência: Fluxos e Wireframes</strong>Com a arquitetura definida, o foco se voltou para os fluxos de usuário. Desenhamos os caminhos que diferentes perfis de clientes (empresas e pessoas) percorreriam, desde o primeiro contato no site até o gerenciamento de suas contas na plataforma. Criamos wireframes para validar a estrutura das páginas, a disposição dos elementos e os principais pontos de interação, permitindo um alinhamento rápido com os stakeholders antes de avançar para o design visual.</p><p><strong>3. Design de Interface (UI) e Identidade Visual</strong>Nesta fase, aplicamos a identidade visual da Vexo para dar vida aos wireframes. O objetivo era criar uma linguagem visual que transmitisse confiança, modernidade e simplicidade. Projetamos todas as páginas institucionais, landing pages e os dashboards da plataforma de gerenciamento, com foco em criar um sistema de componentes coeso, escalável e visualmente atraente.</p><p><strong>4. Comunicação e Engajamento: Email Marketing</strong>Além da plataforma, fomos responsáveis por estruturar a comunicação contínua com os clientes. Criamos uma série de templates de e-mail marketing customizados para públicos B2C e B2B, pensando não apenas no design, mas também no fluxo e na organização das campanhas de automação para diferentes estágios da jornada do cliente. Realizamos o desenvolvimento (codificação) final dos templates para garantir a fidelidade do design no envio.</p><p>O resultado final é uma experiência digital coesa que reflete a promessa da Vexo de simplicidade e justiça no processo de crédito. A solução entregue inclui:</p><ul><li><p><strong>Um website institucional claro e convidativo</strong>, que educa o usuário sobre o valor do produto e facilita a conversão.</p></li><li><p><strong>Uma plataforma de gerenciamento funcional e intuitiva</strong>, com dashboards que simplificam a visualização e o controle das operações de crédito.</p></li><li><p><strong>Um sistema de e-mail marketing estratégico</strong>, projetado para nutrir e engajar a base de clientes de forma segmentada e eficaz.</p></li></ul>Valor Capital Group<p>Anterior</p><p>Anterior</p>Eric Clapton<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/vexo/cover.jpg",
+    "external_url": "https://vexocred.com",
+    "featured_on_home": true,
+    "home_order": 3,
+    "portfolio_order": 3,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "é uma fintech com a missão de simplificar e tornar mais justo o processo de crédito para empresas e pessoas no Brasil. Fui o UX/UI Designer responsável por traduzir essa visão complexa em uma experiência digital completa, projetando do zero o website institucional e a plataforma de gerenciamento de usuários. O trabalho abrangeu todo o ciclo de design, desde a arquitetura da informação e fluxos de usuário até o design de interface de alta fidelidade e a estratégia de comunicação por e-mail. O projeto foi estruturado em quatro etapas principais para garantir que a solução final estivesse perfeitamente alinhada com os objetivos de negócio e as necessidades dos usuários. 1. Imersão e Arquitetura O projeto começou c",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/009.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/010.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/011.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/012.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/013.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/014.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/015.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/016.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/017.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/018.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/019.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/020.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/021.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/022.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/023.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/024.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/025.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/026.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/027.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/028.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/029.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/030.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/031.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/032.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/033.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/034.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/035.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/036.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/037.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/038.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/039.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/040.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/041.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/042.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/043.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/044.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/045.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/046.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/047.jpg"
+    ],
+    "external_url": "https://vexocred.com"
+  },
+  "media": [
+    {
+      "id": "d63e2444-759d-5f99-9c18-d3101fb38a37",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "bc983706-cbf7-5f9d-95cf-e3b2c5aa26b6",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ae56d951-da27-5cff-b0c9-d33f8729ceb3",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "bbc0665d-3ee2-53a4-bbfe-df743956e2d6",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "42e64feb-e7e2-59c1-be4f-ca6a39ae2006",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "83cce6ab-0966-5d8a-9d5e-5fa1452f2e2a",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ea853c5c-b8a3-54c9-ac2d-21762ef30c85",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "fb511eb0-6efd-56a3-8e27-4d5ab2b225d5",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e722a4d6-5b18-5d3b-859a-7e29833173dc",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2a7e8acf-0804-5088-abdc-b34f4eed908e",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/010.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/010.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 9,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "31b981ef-d94c-5240-baa3-a609ad0bf043",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/011.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/011.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 10,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "255a9daf-c850-5b6d-8c3b-380b07352fbb",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/012.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/012.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 11,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0368be9b-d80a-5979-a22a-0c0b94bdc2ca",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/013.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/013.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 12,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "787c424b-1e15-5b0e-81e2-d0c89983b563",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/014.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/014.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 13,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "73776aba-8541-58e2-a4d7-e64b3e2bf399",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/015.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/015.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 14,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0e5471ea-26a9-523b-a133-05ac6a8cc6f7",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/016.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/016.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 15,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "85f9ead8-10e4-57fc-b4db-285c553aa5e7",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/017.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/017.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 16,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c8d0d207-d619-5968-97e9-c9bffd7f6e4d",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/018.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/018.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 17,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6fbc3073-b98d-57bf-ba05-08c63f97e948",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/019.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/019.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 18,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b3ee9751-8145-512b-ae2a-cebf1f7a31bb",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/020.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/020.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 19,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f7829f86-48e1-5f45-81a1-514d35205e10",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/021.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/021.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 20,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "600a971d-e398-5fb2-b427-c5bfb9fbc8dd",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/022.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/022.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 21,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a67ad143-3ecc-5a47-9ee5-58fa55f6990f",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/023.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/023.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 22,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "488875e4-23e2-58a9-b1ee-6a051f57f5c3",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/024.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/024.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 23,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "32534475-fc6a-53e3-87b5-8dbd87b94bae",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/025.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/025.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 24,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "4e4af735-9c0d-5bf7-8305-f19ed3756df4",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/026.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/026.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 25,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "4c94d5b5-7a6b-581b-831c-77880a4c08e6",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/027.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/027.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 26,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "babccfdb-6fed-57bd-84e1-470eafa5a302",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/028.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/028.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 27,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "962874ef-1cee-57a3-ac80-6638bc9980db",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/029.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/029.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 28,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9e7bc964-b7f3-5edd-b943-6cc0e3b7a4c7",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/030.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/030.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 29,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "915bd608-41b0-5b43-b9a4-4261759af992",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/031.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/031.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 30,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "60f9e702-5af3-5672-aaba-959f63ba9c38",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/032.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/032.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 31,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "82f86e4c-1617-5330-8ad3-144445fdd8ad",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/033.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/033.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 32,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "feb7e969-4d2a-5bef-bbd4-c4699cf56593",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/034.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/034.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 33,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "940a403b-d06b-5e8f-b8d3-714862e0e38e",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/035.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/035.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 34,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e168f4ad-55a4-5c60-94d9-e207fbe0ae82",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/036.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/036.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 35,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9cb6c0d7-25e6-5cbb-8bde-08dabccb34b2",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/037.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/037.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 36,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "44b243b0-50e1-5382-b8df-be722295f4c1",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/038.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/038.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 37,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "53fb820b-1843-5ad6-8eba-4fbea3f39698",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/039.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/039.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 38,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "65bb7917-e6dd-57af-9596-7a5b5620d677",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/040.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/040.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 39,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7bdcc70f-073f-5df8-8aa8-774a0e7f0726",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/041.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/041.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 40,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "465173e0-80bf-50d2-8396-eed8b7aa1702",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/042.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/042.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 41,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2dcb3ccb-b273-5f9f-b9e0-1754849f4282",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/043.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/043.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 42,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5a1d4f93-868d-5048-8a3d-176345d1b8f9",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/044.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/044.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 43,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2ce40cde-4e71-5fde-a509-484f44eccad6",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/045.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/045.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 44,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a610cc9c-9eae-5a0b-a6ea-b77c09b79fd0",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/046.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/046.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 45,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f00c0fe4-cf4e-5676-a3aa-6fa865ef6371",
+      "case_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/047.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vexo/gallery/047.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 46,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 47,
+    "local_image_count": 47
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": true
+  }
+}

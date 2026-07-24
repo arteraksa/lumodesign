@@ -1,0 +1,616 @@
+{
+  "slug": "impresul",
+  "case_id": "f6faf26a-7f5c-579e-b35b-132d0ee425ad",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/impresul/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "f6faf26a-7f5c-579e-b35b-132d0ee425ad",
+    "legacy_id": "impresul",
+    "legacy_slug": "impresul",
+    "slug": "impresul",
+    "title": "Impresul",
+    "status": "published",
+    "categories": [
+      "Branding",
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Atuando em todo o território nacional, a Impresul é uma referência no setor gráfico, com um compromisso histórico com a qualidade que resultou em inúmeras premiações regionais e nacionais. A empresa, reconhecida como a gráfica gaúcha mais premiada, destaca-se pelo constante investimento em tecnologia, contando com máquinas de impressão de última geração e um estúdio de pré-impressão de ponta. Além disso, a Impresul detém o importante selo FSC®, que chancela seu compromisso com o manejo florestal responsável."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar materiais de prospecção que comunicassem com precisão a vasta capacidade tecnológica e a qualidade de impressão \"premium\" da Impresul a potenciais clientes B2B. A solução de design precisava ser tão sofisticada quanto os produtos que a empresa oferece e deveria funcionar tanto como uma apresentação de portfólio quanto como uma prova tangível de qualidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi dividido em dois entregáveis estratégicos que trabalham em conjunto: um catálogo de apresentação abrangente e um kit de marketing tátil para prospecção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Catálogo de Apresentação e Prospecção Foi desenvolvido um catálogo de apresentação completo, que funciona como uma vitrine de todo o parque tecnológico da empresa. O catálogo guia o cliente por todo o processo produtivo, detalhando cada serviço com um design moderno e uma paleta de cores vibrante (ciano, magenta, amarelo e preto)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "As seções incluem:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Pré-impressão e Estúdio de Imagens"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Impressão Offset"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Impressão Digital"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Impressão UV"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Impressão de Grande Formato"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Serigrafia"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Comunicação Visual"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Acabamento e Logística"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para demonstrar a versatilidade e a qualidade final dos produtos, o catálogo utiliza uma vasta gama de mockups de alta qualidade para representar os trabalhos finalizados, como embalagens de luxo, brindes, canecas, garrafas, banners, outdoors e materiais editoriais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Kit de Marketing para Prospecção Para complementar a prospecção digital e de apresentação, foi criado um kit de marketing com brindes de alta qualidade. Este kit, que também foi apresentado em mockups dentro do catálogo, serve como uma prova física da excelência de impressão da Impresul. O kit incluiu o design de camisetas com o logo, crachás, cadernos, sacolas, bonés, bolsas e notepads."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Atuando em todo o território nacional, a Impresul é uma referência no setor gráfico, com um compromisso histórico com a qualidade que resultou em inúmeras premiações regionais e nacionais. A empresa, reconhecida como a gráfica gaúcha mais premiada, destaca-se pelo constante investimento em tecnologia, contando com máquinas de impressão de última geração e um estúdio de pré-impressão de ponta. Além disso, a Impresul detém o importante selo FSC®, que chancela seu compromisso com o manejo florestal responsável."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar materiais de prospecção que comunicassem com precisão a vasta capacidade tecnológica e a qualidade de impressão \"premium\" da Impresul a potenciais clientes B2B. A solução de design precisava ser tão sofisticada quanto os produtos que a empresa oferece e deveria funcionar tanto como uma apresentação de portfólio quanto como uma prova tangível de qualidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi dividido em dois entregáveis estratégicos que trabalham em conjunto: um catálogo de apresentação abrangente e um kit de marketing tátil para prospecção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Catálogo de Apresentação e Prospecção Foi desenvolvido um catálogo de apresentação completo, que funciona como uma vitrine de todo o parque tecnológico da empresa. O catálogo guia o cliente por todo o processo produtivo, detalhando cada serviço com um design moderno e uma paleta de cores vibrante (ciano, magenta, amarelo e preto)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "As seções incluem:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Pré-impressão e Estúdio de Imagens"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Impressão Offset"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Impressão Digital"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Impressão UV"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Impressão de Grande Formato"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Serigrafia"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Comunicação Visual"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Acabamento e Logística"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para demonstrar a versatilidade e a qualidade final dos produtos, o catálogo utiliza uma vasta gama de mockups de alta qualidade para representar os trabalhos finalizados, como embalagens de luxo, brindes, canecas, garrafas, banners, outdoors e materiais editoriais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Kit de Marketing para Prospecção Para complementar a prospecção digital e de apresentação, foi criado um kit de marketing com brindes de alta qualidade. Este kit, que também foi apresentado em mockups dentro do catálogo, serve como uma prova física da excelência de impressão da Impresul. O kit incluiu o design de camisetas com o logo, crachás, cadernos, sacolas, bonés, bolsas e notepads."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Atuando em todo o território nacional, a Impresul é uma referência no setor gráfico, com um compromisso histórico com a qualidade que resultou em inúmeras premiações regionais e nacionais. A empresa, reconhecida como a gráfica gaúcha mais premiada, destaca-se pelo constante investimento em tecnologia, contando com máquinas de impressão de última geração e um estúdio de pré-impressão de ponta. Além disso, a Impresul detém o importante selo FSC®, que chancela seu compromisso com o manejo florestal responsável.</p><p><strong>O Desafio</strong></p><p>O desafio era criar materiais de prospecção que comunicassem com precisão a vasta capacidade tecnológica e a qualidade de impressão \"premium\" da Impresul a potenciais clientes B2B. A solução de design precisava ser tão sofisticada quanto os produtos que a empresa oferece e deveria funcionar tanto como uma apresentação de portfólio quanto como uma prova tangível de qualidade.</p><p><strong>A Solução de Design</strong></p><p>O projeto foi dividido em dois entregáveis estratégicos que trabalham em conjunto: um catálogo de apresentação abrangente e um kit de marketing tátil para prospecção.</p><p><strong>1. Catálogo de Apresentação e Prospecção</strong><br>Foi desenvolvido um catálogo de apresentação completo, que funciona como uma vitrine de todo o parque tecnológico da empresa. O catálogo guia o cliente por todo o processo produtivo, detalhando cada serviço com um design moderno e uma paleta de cores vibrante (ciano, magenta, amarelo e preto).</p><p>As seções incluem:</p><ul><li><p>Pré-impressão e Estúdio de Imagens</p></li><li><p>Impressão Offset</p></li><li><p>Impressão Digital</p></li><li><p>Impressão UV</p></li><li><p>Impressão de Grande Formato</p></li><li><p>Serigrafia</p></li><li><p>Comunicação Visual</p></li><li><p>Acabamento e Logística</p></li></ul><p>Para demonstrar a versatilidade e a qualidade final dos produtos, o catálogo utiliza uma vasta gama de<em>mockups</em>de alta qualidade para representar os trabalhos finalizados, como embalagens de luxo, brindes, canecas, garrafas, banners, outdoors e materiais editoriais.</p><p><strong>2. Kit de Marketing para Prospecção</strong><br>Para complementar a prospecção digital e de apresentação, foi criado um kit de marketing com brindes de alta qualidade. Este kit, que também foi apresentado em<em>mockups</em>dentro do catálogo, serve como uma prova física da excelência de impressão da Impresul. O kit incluiu o design de camisetas com o logo, crachás, cadernos, sacolas, bonés, bolsas e notepads.</p>Impresul Impresul<p>Branding</p><p>Editorial</p><p>Atuando em todo o território nacional, a Impresul é uma referência no setor gráfico, com um compromisso histórico com a qualidade que resultou em inúmeras premiações regionais e nacionais. A empresa, reconhecida como a gráfica gaúcha mais premiada, destaca-se pelo constante investimento em tecnologia, contando com máquinas de impressão de última geração e um estúdio de pré-impressão de ponta. Além disso, a Impresul detém o importante selo FSC®, que chancela seu compromisso com o manejo florestal responsável.</p><p><strong>O Desafio</strong></p><p>O desafio era criar materiais de prospecção que comunicassem com precisão a vasta capacidade tecnológica e a qualidade de impressão \"premium\" da Impresul a potenciais clientes B2B. A solução de design precisava ser tão sofisticada quanto os produtos que a empresa oferece e deveria funcionar tanto como uma apresentação de portfólio quanto como uma prova tangível de qualidade.</p><p><strong>A Solução de Design</strong></p><p>O projeto foi dividido em dois entregáveis estratégicos que trabalham em conjunto: um catálogo de apresentação abrangente e um kit de marketing tátil para prospecção.</p><p><strong>1. Catálogo de Apresentação e Prospecção</strong><br>Foi desenvolvido um catálogo de apresentação completo, que funciona como uma vitrine de todo o parque tecnológico da empresa. O catálogo guia o cliente por todo o processo produtivo, detalhando cada serviço com um design moderno e uma paleta de cores vibrante (ciano, magenta, amarelo e preto).</p><p>As seções incluem:</p><ul><li><p>Pré-impressão e Estúdio de Imagens</p></li><li><p>Impressão Offset</p></li><li><p>Impressão Digital</p></li><li><p>Impressão UV</p></li><li><p>Impressão de Grande Formato</p></li><li><p>Serigrafia</p></li><li><p>Comunicação Visual</p></li><li><p>Acabamento e Logística</p></li></ul><p>Para demonstrar a versatilidade e a qualidade final dos produtos, o catálogo utiliza uma vasta gama de<em>mockups</em>de alta qualidade para representar os trabalhos finalizados, como embalagens de luxo, brindes, canecas, garrafas, banners, outdoors e materiais editoriais.</p><p><strong>2. Kit de Marketing para Prospecção</strong><br>Para complementar a prospecção digital e de apresentação, foi criado um kit de marketing com brindes de alta qualidade. Este kit, que também foi apresentado em<em>mockups</em>dentro do catálogo, serve como uma prova física da excelência de impressão da Impresul. O kit incluiu o design de camisetas com o logo, crachás, cadernos, sacolas, bonés, bolsas e notepads.</p>Vallor<p>Anterior</p><p>Anterior</p>JAQ H2<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/impresul/cover.jpg",
+    "external_url": "",
+    "featured_on_home": true,
+    "home_order": 8,
+    "portfolio_order": 8,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Atuando em todo o território nacional, a é uma referência no setor gráfico, com um compromisso histórico com a qualidade que resultou em inúmeras premiações regionais e nacionais. A empresa, reconhecida como a gráfica gaúcha mais premiada, destaca-se pelo constante investimento em tecnologia, contando com máquinas de impressão de última geração e um estúdio de pré-impressão de ponta. Além disso, a detém o importante selo FSC®, que chancela seu compromisso com o manejo florestal responsável. O Desafio O desafio era criar materiais de prospecção que comunicassem com precisão a vasta capacidade tecnológica e a qualidade de impressão \"premium\" da a potenciais clientes B2B. A solução de design precisava ser tão sofi",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/006.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "1fefd9bd-1279-534e-a032-9c554e894df5",
+      "case_id": "f6faf26a-7f5c-579e-b35b-132d0ee425ad",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/impresul/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7a0459bd-5dda-53d7-8357-447ca3f42564",
+      "case_id": "f6faf26a-7f5c-579e-b35b-132d0ee425ad",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/impresul/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "4795478e-d5c8-56ce-b2a9-bfb335535222",
+      "case_id": "f6faf26a-7f5c-579e-b35b-132d0ee425ad",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/impresul/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0aa6e0ba-a71e-51c8-84fd-29cc1a1b92e0",
+      "case_id": "f6faf26a-7f5c-579e-b35b-132d0ee425ad",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/impresul/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c5e6ff62-1147-5a26-897a-50c4f41a7c8f",
+      "case_id": "f6faf26a-7f5c-579e-b35b-132d0ee425ad",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/impresul/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "bafa78ba-8e1f-503d-9855-252a7a915c84",
+      "case_id": "f6faf26a-7f5c-579e-b35b-132d0ee425ad",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/impresul/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/impresul/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 6,
+    "local_image_count": 6
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

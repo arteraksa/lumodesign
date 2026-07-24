@@ -1,0 +1,1402 @@
+{
+  "slug": "portal-do-aluno-ufrgs",
+  "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/portal-do-aluno-ufrgs/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "f5760210-1f97-5701-b9c9-cae229487d39",
+    "legacy_id": "portal-do-aluno-ufrgs",
+    "legacy_slug": "portal-do-aluno-ufrgs",
+    "slug": "portal-do-aluno-ufrgs",
+    "title": "Portal do Aluno UFRGS",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este projeto foi um Trabalho de Conclusão de Curso (TCC) em Design Visual na UFRGS (2023), focado no desenvolvimento de uma interface digital de smartphone para o Portal do Aluno da universidade, com base nos princípios de Experiência do Usuário (UX). O projeto não apenas alcançou uma nota final de 9,96/10 , mas também foi o vencedor do Prêmio Destaque TCC da Apdesign (Associação dos Profissionais em Design do Rio Grande do Sul), reconhecendo-o como o melhor TCC entre as universidades parceiras."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Portal do Aluno da UFRGS é a porta de entrada essencial para a vida acadêmica dos discentes, concentrando informações cruciais como notas, horários e matrículas. No entanto, o acesso a essa plataforma apresentava sérios problemas de usabilidade, especialmente em dispositivos móveis:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Falta de Otimização Mobile: O portal não possuía uma versão mobile , tornando a experiência em smartphones \"extremamente burocrática\". Dados da pesquisa com 144 alunos mostraram que, embora muitos acessem via celular (54,2% quando longe do PC, 31,9% como principal forma) , a maioria enfrenta grandes dificuldades."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Problemas de Interface e Usabilidade: As principais queixas dos alunos incluíam \"interface muito pequena\" (84,9%), dificuldade em encontrar funcionalidades (63,1%) e uma interface \"não intuitiva\" (53,9%). A necessidade de dar zoom constante , a demora no carregamento e o fluxo de navegação confuso foram pontos críticos levantados."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Aplicativo Existente Limitado: A UFRGS possuía um aplicativo, mas ele se limitava a notícias e cardápio do RU, sem atualizações desde 2019."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O problema central do projeto foi: \"De que forma o design de experiência do usuário pode contribuir no desenvolvimento de uma interface de aplicativo mobile para o portal do aluno da UFRGS a fim de facilitar o seu acesso e gerar confiança e satisfação com sua interação?\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Um Aplicativo Mobile Completo e Intuitivo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto seguiu uma metodologia rigorosa de Design Centrado no Usuário, composta por Pesquisa, Requisitos, Criação da Interface, Teste e Validação, e Aperfeiçoamento."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Pesquisa Aprofundada: A fase de pesquisa foi extensa, incluindo: Fundamentação Teórica: Estudo sobre Design Centrado no Humano, UX, UI, Usabilidade (Heurísticas de Nielsen), Arquitetura da Informação e Design Mobile (Responsivo, Mobile-First)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Análise do Portal Atual: Avaliação da acessibilidade e usabilidade do portal existente, identificando pontos fortes e fracos."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Consulta aos Usuários: Um questionário online com 144 respostas e entrevistas qualitativas com alunos para mapear dores, necessidades e funcionalidades mais usadas (Comprovante de Matrícula, Tíquetes RU, Histórico, Horários e Encomenda de Matrícula foram os top 5). 95% dos respondentes afirmaram que usariam um aplicativo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Consulta a Especialistas: Entrevistas com o diretor e o coordenador de software do CPD da UFRGS para entender as limitações e possibilidades técnicas."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Análise de Similares: Estudo de aplicativos de outras universidades (UFSM Digital, Apps da USP) para identificar boas práticas e oportunidades."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Definição e Prototipagem: Com base na pesquisa, foram definidos os requisitos de sistema e as funcionalidades essenciais do aplicativo. Foi criada a identidade visual (com azul #3878F2 como cor principal) , a arquitetura da informação (organizada em 5 abas: Agenda, Matrícula, Assistência, Serviços, Aluno) e desenvolvidos wireframes e um protótipo interativo de alta fidelidade. O design focou em otimizar as tarefas mais frequentes, como a encomenda de matrícula , compra de tíquetes RU e consulta de horários."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Teste e Validação: O protótipo foi submetido a testes de usabilidade com 10 participantes via Maze, utilizando 10 tarefas de complexidade variada. Os resultados foram majoritariamente positivos, com alta taxa de sucesso e feedbacks qualitativos elogiando a intuitividade, organização e apelo visual da interface."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Refinamento: Com base nos feedbacks dos testes, foram realizados ajustes finos na interface, como correções ortográficas, melhorias no menu dropdown e adição de links/informações solicitadas (HyperCAL, Campus Litoral Norte)."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Resultado"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado final é um protótipo de aplicativo mobile completo e funcional para o Portal do Aluno da UFRGS, projetado com base em uma pesquisa profunda das necessidades dos usuários e validado por eles. A solução oferece uma interface intuitiva, organizada e visualmente agradável, que resolve os principais problemas de usabilidade do portal atual e integra funcionalidades essenciais de forma acessível. O reconhecimento pelo Prêmio Destaque TCC da Apdesign atesta a qualidade e o rigor metodológico do projeto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este projeto foi um Trabalho de Conclusão de Curso (TCC) em Design Visual na UFRGS (2023), focado no desenvolvimento de uma interface digital de smartphone para o Portal do Aluno da universidade, com base nos princípios de Experiência do Usuário (UX). O projeto não apenas alcançou uma nota final de 9,96/10 , mas também foi o vencedor do Prêmio Destaque TCC da Apdesign (Associação dos Profissionais em Design do Rio Grande do Sul), reconhecendo-o como o melhor TCC entre as universidades parceiras."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Portal do Aluno da UFRGS é a porta de entrada essencial para a vida acadêmica dos discentes, concentrando informações cruciais como notas, horários e matrículas. No entanto, o acesso a essa plataforma apresentava sérios problemas de usabilidade, especialmente em dispositivos móveis:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Falta de Otimização Mobile: O portal não possuía uma versão mobile , tornando a experiência em smartphones \"extremamente burocrática\". Dados da pesquisa com 144 alunos mostraram que, embora muitos acessem via celular (54,2% quando longe do PC, 31,9% como principal forma) , a maioria enfrenta grandes dificuldades."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Problemas de Interface e Usabilidade: As principais queixas dos alunos incluíam \"interface muito pequena\" (84,9%), dificuldade em encontrar funcionalidades (63,1%) e uma interface \"não intuitiva\" (53,9%). A necessidade de dar zoom constante , a demora no carregamento e o fluxo de navegação confuso foram pontos críticos levantados."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Aplicativo Existente Limitado: A UFRGS possuía um aplicativo, mas ele se limitava a notícias e cardápio do RU, sem atualizações desde 2019."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O problema central do projeto foi: \"De que forma o design de experiência do usuário pode contribuir no desenvolvimento de uma interface de aplicativo mobile para o portal do aluno da UFRGS a fim de facilitar o seu acesso e gerar confiança e satisfação com sua interação?\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Um Aplicativo Mobile Completo e Intuitivo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto seguiu uma metodologia rigorosa de Design Centrado no Usuário, composta por Pesquisa, Requisitos, Criação da Interface, Teste e Validação, e Aperfeiçoamento."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Pesquisa Aprofundada: A fase de pesquisa foi extensa, incluindo: Fundamentação Teórica: Estudo sobre Design Centrado no Humano, UX, UI, Usabilidade (Heurísticas de Nielsen), Arquitetura da Informação e Design Mobile (Responsivo, Mobile-First)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Análise do Portal Atual: Avaliação da acessibilidade e usabilidade do portal existente, identificando pontos fortes e fracos."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Consulta aos Usuários: Um questionário online com 144 respostas e entrevistas qualitativas com alunos para mapear dores, necessidades e funcionalidades mais usadas (Comprovante de Matrícula, Tíquetes RU, Histórico, Horários e Encomenda de Matrícula foram os top 5). 95% dos respondentes afirmaram que usariam um aplicativo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Consulta a Especialistas: Entrevistas com o diretor e o coordenador de software do CPD da UFRGS para entender as limitações e possibilidades técnicas."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Análise de Similares: Estudo de aplicativos de outras universidades (UFSM Digital, Apps da USP) para identificar boas práticas e oportunidades."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Definição e Prototipagem: Com base na pesquisa, foram definidos os requisitos de sistema e as funcionalidades essenciais do aplicativo. Foi criada a identidade visual (com azul #3878F2 como cor principal) , a arquitetura da informação (organizada em 5 abas: Agenda, Matrícula, Assistência, Serviços, Aluno) e desenvolvidos wireframes e um protótipo interativo de alta fidelidade. O design focou em otimizar as tarefas mais frequentes, como a encomenda de matrícula , compra de tíquetes RU e consulta de horários."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Teste e Validação: O protótipo foi submetido a testes de usabilidade com 10 participantes via Maze, utilizando 10 tarefas de complexidade variada. Os resultados foram majoritariamente positivos, com alta taxa de sucesso e feedbacks qualitativos elogiando a intuitividade, organização e apelo visual da interface."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Refinamento: Com base nos feedbacks dos testes, foram realizados ajustes finos na interface, como correções ortográficas, melhorias no menu dropdown e adição de links/informações solicitadas (HyperCAL, Campus Litoral Norte)."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Resultado"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado final é um protótipo de aplicativo mobile completo e funcional para o Portal do Aluno da UFRGS, projetado com base em uma pesquisa profunda das necessidades dos usuários e validado por eles. A solução oferece uma interface intuitiva, organizada e visualmente agradável, que resolve os principais problemas de usabilidade do portal atual e integra funcionalidades essenciais de forma acessível. O reconhecimento pelo Prêmio Destaque TCC da Apdesign atesta a qualidade e o rigor metodológico do projeto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Este projeto foi um Trabalho de Conclusão de Curso (TCC) em Design Visual na UFRGS (2023), focado no desenvolvimento de uma interface digital de smartphone para o Portal do Aluno da universidade, com base nos princípios de Experiência do Usuário (UX). O projeto não apenas alcançou uma nota final de<strong>9,96/10</strong>, mas também foi o<strong>vencedor do Prêmio Destaque TCC</strong>da Apdesign (Associação dos Profissionais em Design do Rio Grande do Sul), reconhecendo-o como o melhor TCC entre as universidades parceiras.</p><p><strong>O Desafio</strong></p><p>O Portal do Aluno da UFRGS é a porta de entrada essencial para a vida acadêmica dos discentes, concentrando informações cruciais como notas, horários e matrículas. No entanto, o acesso a essa plataforma apresentava sérios problemas de usabilidade, especialmente em dispositivos móveis:</p><ul><li><p><strong>Falta de Otimização Mobile:</strong>O portal não possuía uma versão mobile , tornando a experiência em smartphones \"extremamente burocrática\". Dados da pesquisa com 144 alunos mostraram que, embora muitos acessem via celular (54,2% quando longe do PC, 31,9% como principal forma) , a maioria enfrenta grandes dificuldades.</p></li><li><p><strong>Problemas de Interface e Usabilidade:</strong>As principais queixas dos alunos incluíam \"interface muito pequena\" (84,9%), dificuldade em encontrar funcionalidades (63,1%) e uma interface \"não intuitiva\" (53,9%). A necessidade de dar zoom constante , a demora no carregamento e o fluxo de navegação confuso foram pontos críticos levantados.</p></li><li><p><strong>Aplicativo Existente Limitado:</strong>A UFRGS possuía um aplicativo, mas ele se limitava a notícias e cardápio do RU, sem atualizações desde 2019.</p></li></ul><p>O problema central do projeto foi: \"De que forma o design de experiência do usuário pode contribuir no desenvolvimento de uma interface de aplicativo mobile para o portal do aluno da UFRGS a fim de facilitar o seu acesso e gerar confiança e satisfação com sua interação?\".</p><p><strong>A Solução de Design: Um Aplicativo Mobile Completo e Intuitivo</strong></p><p>O projeto seguiu uma metodologia rigorosa de Design Centrado no Usuário, composta por Pesquisa, Requisitos, Criação da Interface, Teste e Validação, e Aperfeiçoamento.</p><ol><li><p><strong>Pesquisa Aprofundada:</strong>A fase de pesquisa foi extensa, incluindo:</p><ul><li><p><strong>Fundamentação Teórica:</strong>Estudo sobre Design Centrado no Humano, UX, UI, Usabilidade (Heurísticas de Nielsen), Arquitetura da Informação e Design Mobile (Responsivo, Mobile-First).</p></li><li><p><strong>Análise do Portal Atual:</strong>Avaliação da acessibilidade e usabilidade do portal existente, identificando pontos fortes e fracos.</p></li><li><p><strong>Consulta aos Usuários:</strong>Um questionário online com 144 respostas e entrevistas qualitativas com alunos para mapear dores, necessidades e funcionalidades mais usadas (Comprovante de Matrícula, Tíquetes RU, Histórico, Horários e Encomenda de Matrícula foram os top 5). 95% dos respondentes afirmaram que usariam um aplicativo.</p></li><li><p><strong>Consulta a Especialistas:</strong>Entrevistas com o diretor e o coordenador de software do CPD da UFRGS para entender as limitações e possibilidades técnicas.</p></li><li><p><strong>Análise de Similares:</strong>Estudo de aplicativos de outras universidades (UFSM Digital, Apps da USP) para identificar boas práticas e oportunidades.</p></li></ul></li><li><p><strong>Definição e Prototipagem:</strong>Com base na pesquisa, foram definidos os requisitos de sistema e as funcionalidades essenciais do aplicativo. Foi criada a identidade visual (com azul #3878F2 como cor principal) , a arquitetura da informação (organizada em 5 abas: Agenda, Matrícula, Assistência, Serviços, Aluno) e desenvolvidos wireframes e um protótipo interativo de alta fidelidade. O design focou em otimizar as tarefas mais frequentes, como a encomenda de matrícula , compra de tíquetes RU e consulta de horários.</p></li><li><p><strong>Teste e Validação:</strong>O protótipo foi submetido a testes de usabilidade com 10 participantes via Maze, utilizando 10 tarefas de complexidade variada. Os resultados foram majoritariamente positivos, com alta taxa de sucesso e feedbacks qualitativos elogiando a intuitividade, organização e apelo visual da interface.</p></li><li><p><strong>Refinamento:</strong>Com base nos feedbacks dos testes, foram realizados ajustes finos na interface, como correções ortográficas, melhorias no menu dropdown e adição de links/informações solicitadas (HyperCAL, Campus Litoral Norte).</p></li></ol><p><strong>O Resultado</strong></p><p>O resultado final é um protótipo de aplicativo mobile completo e funcional para o Portal do Aluno da UFRGS, projetado com base em uma pesquisa profunda das necessidades dos usuários e validado por eles. A solução oferece uma interface intuitiva, organizada e visualmente agradável, que resolve os principais problemas de usabilidade do portal atual e integra funcionalidades essenciais de forma acessível. O reconhecimento pelo Prêmio Destaque TCC da Apdesign atesta a qualidade e o rigor metodológico do projeto.</p>Portal do Aluno UFRGS Portal do Aluno UFRGS<p>UI/UX Design</p><p>Este projeto foi um Trabalho de Conclusão de Curso (TCC) em Design Visual na UFRGS (2023), focado no desenvolvimento de uma interface digital de smartphone para o Portal do Aluno da universidade, com base nos princípios de Experiência do Usuário (UX). O projeto não apenas alcançou uma nota final de<strong>9,96/10</strong>, mas também foi o<strong>vencedor do Prêmio Destaque TCC</strong>da Apdesign (Associação dos Profissionais em Design do Rio Grande do Sul), reconhecendo-o como o melhor TCC entre as universidades parceiras.</p><p><strong>O Desafio</strong></p><p>O Portal do Aluno da UFRGS é a porta de entrada essencial para a vida acadêmica dos discentes, concentrando informações cruciais como notas, horários e matrículas. No entanto, o acesso a essa plataforma apresentava sérios problemas de usabilidade, especialmente em dispositivos móveis:</p><ul><li><p><strong>Falta de Otimização Mobile:</strong>O portal não possuía uma versão mobile , tornando a experiência em smartphones \"extremamente burocrática\". Dados da pesquisa com 144 alunos mostraram que, embora muitos acessem via celular (54,2% quando longe do PC, 31,9% como principal forma) , a maioria enfrenta grandes dificuldades.</p></li><li><p><strong>Problemas de Interface e Usabilidade:</strong>As principais queixas dos alunos incluíam \"interface muito pequena\" (84,9%), dificuldade em encontrar funcionalidades (63,1%) e uma interface \"não intuitiva\" (53,9%). A necessidade de dar zoom constante , a demora no carregamento e o fluxo de navegação confuso foram pontos críticos levantados.</p></li><li><p><strong>Aplicativo Existente Limitado:</strong>A UFRGS possuía um aplicativo, mas ele se limitava a notícias e cardápio do RU, sem atualizações desde 2019.</p></li></ul><p>O problema central do projeto foi: \"De que forma o design de experiência do usuário pode contribuir no desenvolvimento de uma interface de aplicativo mobile para o portal do aluno da UFRGS a fim de facilitar o seu acesso e gerar confiança e satisfação com sua interação?\".</p><p><strong>A Solução de Design: Um Aplicativo Mobile Completo e Intuitivo</strong></p><p>O projeto seguiu uma metodologia rigorosa de Design Centrado no Usuário, composta por Pesquisa, Requisitos, Criação da Interface, Teste e Validação, e Aperfeiçoamento.</p><ol><li><p><strong>Pesquisa Aprofundada:</strong>A fase de pesquisa foi extensa, incluindo:</p><ul><li><p><strong>Fundamentação Teórica:</strong>Estudo sobre Design Centrado no Humano, UX, UI, Usabilidade (Heurísticas de Nielsen), Arquitetura da Informação e Design Mobile (Responsivo, Mobile-First).</p></li><li><p><strong>Análise do Portal Atual:</strong>Avaliação da acessibilidade e usabilidade do portal existente, identificando pontos fortes e fracos.</p></li><li><p><strong>Consulta aos Usuários:</strong>Um questionário online com 144 respostas e entrevistas qualitativas com alunos para mapear dores, necessidades e funcionalidades mais usadas (Comprovante de Matrícula, Tíquetes RU, Histórico, Horários e Encomenda de Matrícula foram os top 5). 95% dos respondentes afirmaram que usariam um aplicativo.</p></li><li><p><strong>Consulta a Especialistas:</strong>Entrevistas com o diretor e o coordenador de software do CPD da UFRGS para entender as limitações e possibilidades técnicas.</p></li><li><p><strong>Análise de Similares:</strong>Estudo de aplicativos de outras universidades (UFSM Digital, Apps da USP) para identificar boas práticas e oportunidades.</p></li></ul></li><li><p><strong>Definição e Prototipagem:</strong>Com base na pesquisa, foram definidos os requisitos de sistema e as funcionalidades essenciais do aplicativo. Foi criada a identidade visual (com azul #3878F2 como cor principal) , a arquitetura da informação (organizada em 5 abas: Agenda, Matrícula, Assistência, Serviços, Aluno) e desenvolvidos wireframes e um protótipo interativo de alta fidelidade. O design focou em otimizar as tarefas mais frequentes, como a encomenda de matrícula , compra de tíquetes RU e consulta de horários.</p></li><li><p><strong>Teste e Validação:</strong>O protótipo foi submetido a testes de usabilidade com 10 participantes via Maze, utilizando 10 tarefas de complexidade variada. Os resultados foram majoritariamente positivos, com alta taxa de sucesso e feedbacks qualitativos elogiando a intuitividade, organização e apelo visual da interface.</p></li><li><p><strong>Refinamento:</strong>Com base nos feedbacks dos testes, foram realizados ajustes finos na interface, como correções ortográficas, melhorias no menu dropdown e adição de links/informações solicitadas (HyperCAL, Campus Litoral Norte).</p></li></ol><p><strong>O Resultado</strong></p><p>O resultado final é um protótipo de aplicativo mobile completo e funcional para o Portal do Aluno da UFRGS, projetado com base em uma pesquisa profunda das necessidades dos usuários e validado por eles. A solução oferece uma interface intuitiva, organizada e visualmente agradável, que resolve os principais problemas de usabilidade do portal atual e integra funcionalidades essenciais de forma acessível. O reconhecimento pelo Prêmio Destaque TCC da Apdesign atesta a qualidade e o rigor metodológico do projeto.</p>BU1LD<p>Anterior</p><p>Anterior</p>LumiLab<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/portal-do-aluno-ufrgs/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/portal-do-aluno-ufrgs/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 22,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Este projeto foi um Trabalho de Conclusão de Curso (TCC) em Design Visual na UFRGS (2023), focado no desenvolvimento de uma interface digital de smartphone para o Portal do Aluno da universidade, com base nos princípios de Experiência do Usuário (UX). O projeto não apenas alcançou uma nota final de 9,96/10 , mas também foi o vencedor do Prêmio Destaque TCC da Apdesign (Associação dos Profissionais em Design do Rio Grande do Sul), reconhecendo-o como o melhor TCC entre as universidades parceiras. O Desafio O Portal do Aluno da UFRGS é a porta de entrada essencial para a vida acadêmica dos discentes, concentrando informações cruciais como notas, horários e matrículas. No entanto, o acesso a essa plataforma aprese",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/portal-do-aluno-ufrgs/cover.jpg",
+    "images": [
+      "/raksadesign/framerusercontent.com/images/XYkXy9mQ4tjidCTfO5BfewLpDSg.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/jNVy3gjFWkZvNL0rvYqyke2wrzE.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/I6W4zMfN2abHziSFHu8unRLsXR4.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/XkDjFYaeQFw056WKLWV1J0Jcbc.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/K40v9Gf0tBpC73hEcTiCezqu8.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/JTlB8mNngviujGHKEJYesEZzgz8.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/yh2e5YnJuOsuhtWzMdN3P0JJFc8.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/HKwQnWQbdmo60yguTKvC6on4dM.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/br5hk8tP2qkcCQGDt78wwP5VKds.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/irR213gBw3DjPwEIRa1waBN59k.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/cHGnnbNmXUVuiFcEwY5q9LrE8aA.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/eVwjb27zZ8nNoLriQHqzgax35Ic.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/dibXHcyflCi88PnfxfVeHMcY6w.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/LDYpIL7VfP2zA5yyswfl5DNArRQ.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/zrXQEaaYka4GvXQtP3oVxSP6OOI.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/xlzbu9p1F2JdteKhLQDJUTqo6Y.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/2R9nlfrPlAtgHbOnJxxLitUOgyQ.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/91pBWd5ieacI1stF9DmH3vJ461c.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/y0gDKiJUCSHgzfUNb0f45Tu0Zek.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/EcTiOq8J9niZdtTDNXJ2f4ubcAU.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/YC7ULmOHzHr2USZOkj4Sz4tqQ.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/DN71PDIkBxHPkgW0ed83FD0Gbk.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/so8nlrPhfKZOj3jZTcTEQlbPS4.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/9a6FrspToD4XAS5b7OZ8NoOQ.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/8jARVaFK7X09kP08Q5aG8SzsoU.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/CjXCS3kcJxTJ6ASgnisecJes7UU.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/tx3ySRBW1zY1og944Qic0B0HVU.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/zM9zrgyvfEuVLZvVB78iUE8zgBA.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/89cQ7JdvHX72AtNQ2ply29vnfU.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/nHIEYJuBeQGYFZo9Afyl48KSugI.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/gYaNbSgKCl7Iy780nQVJwl2BM.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/IQxmiAwSHqlhIqi0ZMt0DX7E8J8.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/EgpoINv6lswApuXPLZlycvDE.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/3m0OyVB5gBWJWrWqHTQ9Vy0Iitw.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/9dihQlUa5Huh1HFAqqD0tJJ6A.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/vKe3pRWrGdNigdvDA4fbO56rU.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/uItlfXszkqlw2D5dnrOFlcFhxps.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/44DZ6Fies6zAJkLbBXpUXDmp1E.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/NY0MtPvrlm07w0TRzZekYl8eYUE.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/9F4ju18tucasyuzuPjXwPq4b54.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/9BOuiCx9BCJLVUX9hWRk8.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/jZRKMcN0z3Z0kQAHX48tOYhbVJ0.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/Yyu0LyrDS8MJhXpSIdjF0r5FMy0.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/uiHmiZ3ACWVCwoDx8XpqCCpE.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/RGhXmTaYrory3j2eppXggt5yR4.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/GxeaAepZgaUSlX1lZUIrKvW8.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/Tva1tXjQzjMSZk9W4wZPZUbSCjU.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/p7MSgqUWRT9BYqJrbmA734RMun0.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/lnMmOpYvbREOmiUhYY4KU1Y0FOU.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/Vd2LXgiCNCxYvz0orDfukNkrsc.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/6a0tUswztkA2DVNRb2obXqCTU4.jpg?width=1920&height=1080"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "fe6081d7-1a47-5c00-a07a-dfdd39e440a7",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/XYkXy9mQ4tjidCTfO5BfewLpDSg.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "76b18126-e436-59aa-8e00-0402672dfb18",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/jNVy3gjFWkZvNL0rvYqyke2wrzE.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 1,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "45b3ec5c-3711-5efc-aac6-2ae831f5b146",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/I6W4zMfN2abHziSFHu8unRLsXR4.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 2,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2d4c5622-6723-5225-82c2-4b92ad6c281b",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/XkDjFYaeQFw056WKLWV1J0Jcbc.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 3,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "8c667e9d-96aa-5436-91e6-e7439d096c91",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/K40v9Gf0tBpC73hEcTiCezqu8.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 4,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3de85279-723d-57ec-8322-b5464a622873",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/JTlB8mNngviujGHKEJYesEZzgz8.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 5,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "56bb332c-aa86-5102-9a30-8b87b99f7f9b",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/yh2e5YnJuOsuhtWzMdN3P0JJFc8.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 6,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d1a4976e-e74c-56cb-87aa-a3a56f0002ec",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/HKwQnWQbdmo60yguTKvC6on4dM.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 7,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ff7818fd-26f9-5d0c-8629-fabbcaa7a6eb",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/br5hk8tP2qkcCQGDt78wwP5VKds.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 8,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "43effe75-9957-5ce4-ba5d-1f39c0e48764",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/irR213gBw3DjPwEIRa1waBN59k.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 9,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1b84db84-d2ab-55e2-900a-135483ce55ec",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/cHGnnbNmXUVuiFcEwY5q9LrE8aA.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 10,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0fa95760-a723-5fbd-a34e-ebb6910f3bf4",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/eVwjb27zZ8nNoLriQHqzgax35Ic.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 11,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "cbde8f19-6add-54c2-b07f-9275936bfec2",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/dibXHcyflCi88PnfxfVeHMcY6w.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 12,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "dc5166a0-dcf0-52b6-a617-9fe94ced377e",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/LDYpIL7VfP2zA5yyswfl5DNArRQ.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 13,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3a6b1b5f-d992-5b2a-bd1e-d2abfca8f5b9",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/zrXQEaaYka4GvXQtP3oVxSP6OOI.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 14,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "88093d72-f9b0-5131-a60e-e33dd0542255",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/xlzbu9p1F2JdteKhLQDJUTqo6Y.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 15,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "edd5a016-5fe8-5d68-9fcd-7de5778b33ba",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/2R9nlfrPlAtgHbOnJxxLitUOgyQ.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 16,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ae784562-5642-5b0f-bdbe-82ccbbcc2020",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/91pBWd5ieacI1stF9DmH3vJ461c.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 17,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c06d78c6-38b1-593b-9043-0c922574a4d3",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/y0gDKiJUCSHgzfUNb0f45Tu0Zek.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 18,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e4f2b007-0cbe-5dd3-b218-d1cdf5a60df9",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/EcTiOq8J9niZdtTDNXJ2f4ubcAU.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 19,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "09c7adcf-0eba-5f7c-99e6-e17e848116f0",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/YC7ULmOHzHr2USZOkj4Sz4tqQ.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 20,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "31579957-230f-5091-8ee3-d06490a3f1c0",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/DN71PDIkBxHPkgW0ed83FD0Gbk.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 21,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "402e4bd6-494c-517f-9591-3e0a8625fbfc",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/so8nlrPhfKZOj3jZTcTEQlbPS4.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 22,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "14937a99-9a62-5b35-8200-4050e94e87d3",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/9a6FrspToD4XAS5b7OZ8NoOQ.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 23,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c9f5edc1-3b6d-5987-bb66-fa451a5765a8",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/8jARVaFK7X09kP08Q5aG8SzsoU.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 24,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ed98d710-1624-5fef-86e1-495019c48cc9",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/CjXCS3kcJxTJ6ASgnisecJes7UU.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 25,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a2dbba72-31d7-5a2e-a109-26344b93cf38",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/tx3ySRBW1zY1og944Qic0B0HVU.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 26,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "abf0f27c-b63a-57a8-903f-e7801333be55",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/zM9zrgyvfEuVLZvVB78iUE8zgBA.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 27,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9de9603c-a367-52ef-acbd-b33a5dd5cd8c",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/89cQ7JdvHX72AtNQ2ply29vnfU.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 28,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b623171d-298b-5823-887c-c97b476a97f3",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/nHIEYJuBeQGYFZo9Afyl48KSugI.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 29,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1f937feb-b3d1-5c00-b162-8d83a23fa6c8",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/gYaNbSgKCl7Iy780nQVJwl2BM.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 30,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2807d7f9-f951-57ad-9a6b-78d96290d53e",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/IQxmiAwSHqlhIqi0ZMt0DX7E8J8.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 31,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "50463644-47e9-5b1a-8c51-fee5b933d2f6",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/EgpoINv6lswApuXPLZlycvDE.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 32,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "279fd8c1-b4ea-5c64-9577-fb9cc27379fe",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/3m0OyVB5gBWJWrWqHTQ9Vy0Iitw.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 33,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "feaf0185-238e-59c5-b839-246503a5aaed",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/9dihQlUa5Huh1HFAqqD0tJJ6A.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 34,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "70a33e2b-de8d-5ece-80f7-5453a15b3131",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/vKe3pRWrGdNigdvDA4fbO56rU.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 35,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "abf219a3-2929-5539-af60-4a75b34481b5",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/uItlfXszkqlw2D5dnrOFlcFhxps.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 36,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "64993080-c2b0-5cf6-8991-1e035a494f43",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/44DZ6Fies6zAJkLbBXpUXDmp1E.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 37,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "86e31ab1-d3ad-5210-97fd-18d14a8f037c",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/NY0MtPvrlm07w0TRzZekYl8eYUE.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 38,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0e2cd8e3-68d5-5cd2-a3dc-a802d742f75a",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/9F4ju18tucasyuzuPjXwPq4b54.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 39,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "fbba49c7-ff03-5ec4-9545-f5bb1c226f65",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/9BOuiCx9BCJLVUX9hWRk8.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 40,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0bb5893f-c7bd-5a53-9955-5a2888b0b732",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/jZRKMcN0z3Z0kQAHX48tOYhbVJ0.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 41,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "12848ec7-85e8-5dcd-a22f-23059d5d13ba",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/Yyu0LyrDS8MJhXpSIdjF0r5FMy0.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 42,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b74a2eef-198b-5a1a-828f-248f925aa7d5",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/uiHmiZ3ACWVCwoDx8XpqCCpE.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 43,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "39b27c44-ade0-57e8-8fbf-dda6e87d0654",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/RGhXmTaYrory3j2eppXggt5yR4.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 44,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "db535738-0ddb-5619-9a6e-3876e4989392",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/GxeaAepZgaUSlX1lZUIrKvW8.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 45,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b03dc5c2-bb0e-5d05-a7d3-c483c6c908ae",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/Tva1tXjQzjMSZk9W4wZPZUbSCjU.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 46,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a9adcdd5-ff55-5d2f-8a9f-da0835fd6dba",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/p7MSgqUWRT9BYqJrbmA734RMun0.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 47,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6bc2c90c-1f8e-5ef9-a168-262a2db2dd1b",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/lnMmOpYvbREOmiUhYY4KU1Y0FOU.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 48,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "80773ee0-66ce-5fd0-b897-a9d9028320d0",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/Vd2LXgiCNCxYvz0orDfukNkrsc.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 49,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b0a87486-aae9-5c47-b98e-ade041d09540",
+      "case_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/6a0tUswztkA2DVNRb2obXqCTU4.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 50,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 51,
+    "local_image_count": 51
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": true
+  }
+}

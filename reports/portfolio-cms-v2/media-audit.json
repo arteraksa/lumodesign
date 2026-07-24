@@ -1,0 +1,466 @@
+{
+  "previous_total": 564,
+  "audited_total": 561,
+  "removed_total": 3,
+  "removed_as_technical_duplicate_or_html_noise": 3,
+  "removed_as_ui_navigation": 0,
+  "removed_as_responsive_variant": 0,
+  "kept_as_intentional_repetition": 0,
+  "by_case": [
+    {
+      "slug": "a-primeira-segunda-feira",
+      "total": 1,
+      "remote_images": 1,
+      "local_images": 1,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "anima",
+      "total": 20,
+      "remote_images": 20,
+      "local_images": 20,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "atitus-educação",
+      "total": 5,
+      "remote_images": 5,
+      "local_images": 5,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "banrisul-app-redesign",
+      "total": 9,
+      "remote_images": 9,
+      "local_images": 9,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "blenduca",
+      "total": 24,
+      "remote_images": 24,
+      "local_images": 24,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "bu1ld",
+      "total": 6,
+      "remote_images": 6,
+      "local_images": 6,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "calendário-impresul-2023",
+      "total": 6,
+      "remote_images": 6,
+      "local_images": 6,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "calendário-impresul-2024",
+      "total": 5,
+      "remote_images": 5,
+      "local_images": 5,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "candy-dates",
+      "total": 8,
+      "remote_images": 8,
+      "local_images": 8,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "capri-housing",
+      "total": 8,
+      "remote_images": 8,
+      "local_images": 8,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "click-impresso",
+      "total": 2,
+      "remote_images": 2,
+      "local_images": 2,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "dark-star",
+      "total": 38,
+      "remote_images": 38,
+      "local_images": 38,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "definna",
+      "total": 14,
+      "remote_images": 14,
+      "local_images": 14,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "demip",
+      "total": 71,
+      "remote_images": 71,
+      "local_images": 71,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "digital-marketing",
+      "total": 4,
+      "remote_images": 4,
+      "local_images": 4,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "eric-clapton",
+      "total": 6,
+      "remote_images": 6,
+      "local_images": 6,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "impresul",
+      "total": 6,
+      "remote_images": 6,
+      "local_images": 6,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "jaq-h2",
+      "total": 27,
+      "remote_images": 27,
+      "local_images": 27,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "leylaw",
+      "total": 49,
+      "remote_images": 49,
+      "local_images": 49,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "lisa-dossi",
+      "total": 5,
+      "remote_images": 5,
+      "local_images": 5,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "lumilab",
+      "total": 11,
+      "remote_images": 11,
+      "local_images": 11,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "magnus",
+      "total": 6,
+      "remote_images": 6,
+      "local_images": 6,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "morangos-mofados",
+      "total": 50,
+      "remote_images": 50,
+      "local_images": 50,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "nina",
+      "total": 11,
+      "remote_images": 11,
+      "local_images": 11,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "paula-and-domenick",
+      "total": 5,
+      "remote_images": 5,
+      "local_images": 5,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "plataforma-ead",
+      "total": 6,
+      "remote_images": 6,
+      "local_images": 6,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "polvilho",
+      "total": 8,
+      "remote_images": 8,
+      "local_images": 8,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "portal-do-aluno-ufrgs",
+      "total": 51,
+      "remote_images": 51,
+      "local_images": 51,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "restiview",
+      "total": 24,
+      "remote_images": 24,
+      "local_images": 24,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "tri-rs",
+      "total": 3,
+      "remote_images": 3,
+      "local_images": 3,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "vacinas-infográfico",
+      "total": 3,
+      "remote_images": 3,
+      "local_images": 3,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "vallor",
+      "total": 6,
+      "remote_images": 6,
+      "local_images": 6,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "valor-capital-group",
+      "total": 8,
+      "remote_images": 8,
+      "local_images": 8,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "vexo",
+      "total": 47,
+      "remote_images": 47,
+      "local_images": 47,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "voce-marca",
+      "total": 1,
+      "remote_images": 1,
+      "local_images": 1,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    },
+    {
+      "slug": "workshop-de-mentor-ia",
+      "total": 7,
+      "remote_images": 7,
+      "local_images": 7,
+      "html_images": 1,
+      "warning": false,
+      "error": false
+    }
+  ],
+  "suspicious_cases": [
+    {
+      "slug": "dark-star",
+      "total": 38,
+      "remote_images": 38,
+      "local_images": 38,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "demip",
+      "total": 71,
+      "remote_images": 71,
+      "local_images": 71,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "leylaw",
+      "total": 49,
+      "remote_images": 49,
+      "local_images": 49,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "morangos-mofados",
+      "total": 50,
+      "remote_images": 50,
+      "local_images": 50,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "portal-do-aluno-ufrgs",
+      "total": 51,
+      "remote_images": 51,
+      "local_images": 51,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    },
+    {
+      "slug": "vexo",
+      "total": 47,
+      "remote_images": 47,
+      "local_images": 47,
+      "html_images": 1,
+      "warning": true,
+      "error": false
+    }
+  ],
+  "leylaw": {
+    "slug": "leylaw",
+    "total": 49,
+    "remote_images": 49,
+    "local_images": 49,
+    "html_images": 1,
+    "warning": true,
+    "error": false
+  },
+  "atitus_educacao": {
+    "slug": "atitus-educação",
+    "total": 5,
+    "remote_images": 5,
+    "local_images": 5,
+    "html_images": 1,
+    "warning": false,
+    "error": false
+  },
+  "largest_gallery": {
+    "slug": "demip",
+    "total": 71,
+    "remote_images": 71,
+    "local_images": 71,
+    "html_images": 1,
+    "warning": true,
+    "error": false
+  },
+  "smallest_gallery": {
+    "slug": "a-primeira-segunda-feira",
+    "total": 1,
+    "remote_images": 1,
+    "local_images": 1,
+    "html_images": 1,
+    "warning": false,
+    "error": false
+  },
+  "source_note": "Remote images are authoritative when present. HTML media extraction is now restricted to [data-framer-name=\"imagens-scroll\"] and deduped by canonical URL/logical key.",
+  "case_lookup": {
+    "aad05df7-b810-5b7b-bdb2-c17c3d62e2eb": "a-primeira-segunda-feira",
+    "e7b81473-6aab-5767-a5a0-50649f556e77": "anima",
+    "63a0e510-2cdb-5fb6-ad47-261176540ed5": "atitus-educação",
+    "3695850f-5a33-5889-9284-4cb38b7b0b46": "banrisul-app-redesign",
+    "9247d30f-0a43-5a9b-bf56-7ced62a678c7": "blenduca",
+    "9e8c302d-40bf-5411-84a5-0ff086387f7b": "bu1ld",
+    "15d18664-aeac-5e45-bae4-f932b7403847": "calendário-impresul-2023",
+    "38403d28-1fdb-5004-ace0-c142fc5c2f71": "calendário-impresul-2024",
+    "67091233-1416-58e1-82bf-3219f184e628": "candy-dates",
+    "aad01bd8-5b4d-5eaf-a81e-62fe5574feea": "capri-housing",
+    "3664e7d6-c9e4-5d09-8b6c-0da96faa136d": "click-impresso",
+    "4fe59d61-6718-55f6-b4e2-0d56ff40a1a3": "dark-star",
+    "378bfe66-fe26-5b55-90d4-8af8542cc5d7": "definna",
+    "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea": "demip",
+    "87d68e2c-347d-5082-beea-089b40191120": "digital-marketing",
+    "4532c598-0da2-5da1-81d4-3b335914491d": "eric-clapton",
+    "f6faf26a-7f5c-579e-b35b-132d0ee425ad": "impresul",
+    "60d37268-db32-5bd0-812c-5ef74499f03e": "jaq-h2",
+    "b9baccda-42c2-591f-96bd-a5c82d3495bc": "leylaw",
+    "d7375c25-d68e-571b-8cf6-2061e04feb8d": "lisa-dossi",
+    "49947639-b62f-5b40-bd06-d99cb2a75a13": "lumilab",
+    "1aaa3dc3-9ffb-5f84-b0ce-318791404020": "magnus",
+    "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88": "morangos-mofados",
+    "c95a5773-ef08-56bd-988d-0ce168dc7783": "nina",
+    "79a6c7e4-33b1-5630-a3f8-7a04d5614093": "paula-and-domenick",
+    "9195dadb-6661-5908-a0c3-495819d39d63": "plataforma-ead",
+    "f9d0917b-69a7-5504-b5e0-05e8d3d1133d": "polvilho",
+    "f5760210-1f97-5701-b9c9-cae229487d39": "portal-do-aluno-ufrgs",
+    "d08dbe87-55b2-50eb-8b29-70ffb31dd86c": "restiview",
+    "d72169c6-42ad-5182-9876-7d9387178587": "tri-rs",
+    "693bcfcb-8265-5002-81ab-b6895ec9c6dd": "vacinas-infográfico",
+    "8cf92306-8f14-56ce-ac77-810b2980b5ac": "vallor",
+    "0d8fd1a0-f39f-535f-b244-6026cd844868": "valor-capital-group",
+    "60e11505-0b12-53cf-8bde-9ff90bc6e4af": "vexo",
+    "42c254f6-834f-5cad-96fe-f2ec73473247": "voce-marca",
+    "e9b37339-c5d7-5abf-9926-d891893af2b1": "workshop-de-mentor-ia"
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "slug": "vacinas-infográfico",
+  "case_id": "693bcfcb-8265-5002-81ab-b6895ec9c6dd",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/vacinas-infográfico/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "693bcfcb-8265-5002-81ab-b6895ec9c6dd",
+    "legacy_id": "vacinas-infográfico",
+    "legacy_slug": "vacinas-infográfico",
+    "slug": "vacinas-infográfico",
+    "title": "Vacinas | Infográfico",
+    "status": "published",
+    "categories": [
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Criação de um infográfico com o objetivo comunicacional de&nbsp;informar ao leitor que as vacinas são confiáveis, dando destaque para o processo de criação da vacina de Oxford e como, e porquê, ela foi desenvolvida tão rápido. Como informação secundária, informações sobre a proteína&nbsp;spike&nbsp;do coronavírus, como terciária, as fases de testes clínicos, e uma quarta, com gráficos e um mapa sobre a situação atual da vacinação pelo mundo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O veículo de comunicação seria a Revista Superinteressante, da Editora Abril. Em consequência disso, o público alvo seriam pessoas interessadas nas áreas da ciência e do conhecimento geral, geralmente jovens de 20 a 34 anos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para o grid, tivemos como base os valores padrões da revista superinteressante, como o tamanho das páginas e as margens externas e internas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Organizamos primeiramente um moodboard com exemplos da arte gráfica da superinteressante, mostrando a diversidade da revista em termos de ilustrações, cores, fontes e estilo como um todo. Depois, fizemos um moodboard com inspirações para aquilo que decidimos adotar como nosso estilo visual.&nbsp;Assim, para o nosso estilo, optou-se por um infográfico tipo sequência ou diagrama&nbsp;e de narrativa objetiva. A técnica utilizada é majoritariamente a fotografia, criando colagens com diferentes fotos para representar as informações, em consonância de elementos gráficos esquemáticos e simbólicos.&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para a paleta cromática, adotamos o azul e suas variações, que visa transmitir confiança, competência e tranquilidade, além de ser muito usado para falar sobre saúde e ciência. Para cores secundárias, usamos tons de vermelho e amarelo, atribuindo otimismo e chamando mais atenção do leitor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foram escolhidas fontes sem serifa, semelhantes às usadas na revista, para passar tranquilidade e confiança, ao mesmo tempo tratando de um assunto científico. Para o texto, foi escolhida a Source Sans Pro, pois tem excelente legibilidade. Para o título principal, foi escolhido a Montserrat Black, que é amigável e boa para destacar, tendo um aspecto mais quadrado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A seringa ganha bastante destaque estando bem no meio, já que assim o leitor já compreende do que o infográfico se trata. É utilizado diversas imagens em colagens dentro da seringa, de forma a representar todo o processo de desenvolvimento da vacina de Oxford, que é descrito e ordenado logo abaixo, fazendo uma alusão com o que há dentro dela, isto é, o processo desde o começo até a finalização da vacina, que seriam os acontecimentos científicos anteriores, muitos estudos, bastante financiamento e os testes clínicos. O título faz referência exatamente a isso, já atraindo o leitor mais desconfiado sobre o que de fato pode haver em uma vacina que foi feita tão rápido.&nbsp;Na informação secundária superior, sobre a proteína&nbsp;spike, se faz o uso do mesmo estilo de colagens, mas de forma a ser um adendo às informações que estão dentro da seringa. Na informação terciária no rodapé, são descritas as três fases de teste e é mostrada a quantidade de pessoas que participam de forma simbólica. Na informação quaternária, mostramos a situação de vacinação pelo mundo, utilizando tons de azul para identificar cada porcentagem, destacando a situação dos países de acordo com cores mais fortes ou fracas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Criação de um infográfico com o objetivo comunicacional de&nbsp;informar ao leitor que as vacinas são confiáveis, dando destaque para o processo de criação da vacina de Oxford e como, e porquê, ela foi desenvolvida tão rápido. Como informação secundária, informações sobre a proteína&nbsp;spike&nbsp;do coronavírus, como terciária, as fases de testes clínicos, e uma quarta, com gráficos e um mapa sobre a situação atual da vacinação pelo mundo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O veículo de comunicação seria a Revista Superinteressante, da Editora Abril. Em consequência disso, o público alvo seriam pessoas interessadas nas áreas da ciência e do conhecimento geral, geralmente jovens de 20 a 34 anos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para o grid, tivemos como base os valores padrões da revista superinteressante, como o tamanho das páginas e as margens externas e internas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Organizamos primeiramente um moodboard com exemplos da arte gráfica da superinteressante, mostrando a diversidade da revista em termos de ilustrações, cores, fontes e estilo como um todo. Depois, fizemos um moodboard com inspirações para aquilo que decidimos adotar como nosso estilo visual.&nbsp;Assim, para o nosso estilo, optou-se por um infográfico tipo sequência ou diagrama&nbsp;e de narrativa objetiva. A técnica utilizada é majoritariamente a fotografia, criando colagens com diferentes fotos para representar as informações, em consonância de elementos gráficos esquemáticos e simbólicos.&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para a paleta cromática, adotamos o azul e suas variações, que visa transmitir confiança, competência e tranquilidade, além de ser muito usado para falar sobre saúde e ciência. Para cores secundárias, usamos tons de vermelho e amarelo, atribuindo otimismo e chamando mais atenção do leitor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foram escolhidas fontes sem serifa, semelhantes às usadas na revista, para passar tranquilidade e confiança, ao mesmo tempo tratando de um assunto científico. Para o texto, foi escolhida a Source Sans Pro, pois tem excelente legibilidade. Para o título principal, foi escolhido a Montserrat Black, que é amigável e boa para destacar, tendo um aspecto mais quadrado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A seringa ganha bastante destaque estando bem no meio, já que assim o leitor já compreende do que o infográfico se trata. É utilizado diversas imagens em colagens dentro da seringa, de forma a representar todo o processo de desenvolvimento da vacina de Oxford, que é descrito e ordenado logo abaixo, fazendo uma alusão com o que há dentro dela, isto é, o processo desde o começo até a finalização da vacina, que seriam os acontecimentos científicos anteriores, muitos estudos, bastante financiamento e os testes clínicos. O título faz referência exatamente a isso, já atraindo o leitor mais desconfiado sobre o que de fato pode haver em uma vacina que foi feita tão rápido.&nbsp;Na informação secundária superior, sobre a proteína&nbsp;spike, se faz o uso do mesmo estilo de colagens, mas de forma a ser um adendo às informações que estão dentro da seringa. Na informação terciária no rodapé, são descritas as três fases de teste e é mostrada a quantidade de pessoas que participam de forma simbólica. Na informação quaternária, mostramos a situação de vacinação pelo mundo, utilizando tons de azul para identificar cada porcentagem, destacando a situação dos países de acordo com cores mais fortes ou fracas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Criação de um infográfico com o objetivo comunicacional de&nbsp;informar ao leitor que as vacinas são confiáveis, dando destaque para o processo de criação da vacina de Oxford e como, e porquê, ela foi desenvolvida tão rápido. Como informação secundária, informações sobre a proteína&nbsp;spike&nbsp;do coronavírus, como terciária, as fases de testes clínicos, e uma quarta, com gráficos e um mapa sobre a situação atual da vacinação pelo mundo.</p><p>O veículo de comunicação seria a Revista Superinteressante, da Editora Abril. Em consequência disso, o público alvo seriam pessoas interessadas nas áreas da ciência e do conhecimento geral, geralmente jovens de 20 a 34 anos.</p><p>Para o grid, tivemos como base os valores padrões da revista superinteressante, como o tamanho das páginas e as margens externas e internas.</p><p>Organizamos primeiramente um moodboard com exemplos da arte gráfica da superinteressante, mostrando a diversidade da revista em termos de ilustrações, cores, fontes e estilo como um todo. Depois, fizemos um moodboard com inspirações para aquilo que decidimos adotar como nosso estilo visual.&nbsp;Assim, para o nosso estilo, optou-se por um infográfico tipo sequência ou diagrama&nbsp;e de narrativa objetiva. A técnica utilizada é majoritariamente a fotografia, criando colagens com diferentes fotos para representar as informações, em consonância de elementos gráficos esquemáticos e simbólicos.&nbsp;</p><p>Para a paleta cromática, adotamos o azul e suas variações, que visa transmitir confiança, competência e tranquilidade, além de ser muito usado para falar sobre saúde e ciência. Para cores secundárias, usamos tons de vermelho e amarelo, atribuindo otimismo e chamando mais atenção do leitor.</p><p>Foram escolhidas fontes sem serifa, semelhantes às usadas na revista, para passar tranquilidade e confiança, ao mesmo tempo tratando de um assunto científico. Para o texto, foi escolhida a Source Sans Pro, pois tem excelente legibilidade. Para o título principal, foi escolhido a Montserrat Black, que é amigável e boa para destacar, tendo um aspecto mais quadrado.</p><p>A seringa ganha bastante destaque estando bem no meio, já que assim o leitor já compreende do que o infográfico se trata. É utilizado diversas imagens em colagens dentro da seringa, de forma a representar todo o processo de desenvolvimento da vacina de Oxford, que é descrito e ordenado logo abaixo, fazendo uma alusão com o que há dentro dela, isto é, o processo desde o começo até a finalização da vacina, que seriam os acontecimentos científicos anteriores, muitos estudos, bastante financiamento e os testes clínicos. O título faz referência exatamente a isso, já atraindo o leitor mais desconfiado sobre o que de fato pode haver em uma vacina que foi feita tão rápido.&nbsp;Na informação secundária superior, sobre a proteína&nbsp;spike, se faz o uso do mesmo estilo de colagens, mas de forma a ser um adendo às informações que estão dentro da seringa. Na informação terciária no rodapé, são descritas as três fases de teste e é mostrada a quantidade de pessoas que participam de forma simbólica. Na informação quaternária, mostramos a situação de vacinação pelo mundo, utilizando tons de azul para identificar cada porcentagem, destacando a situação dos países de acordo com cores mais fortes ou fracas.</p><p><br></p>Vacinas | Infográfico Vacinas | Infográfico<p>Editorial</p><p>Criação de um infográfico com o objetivo comunicacional de&nbsp;informar ao leitor que as vacinas são confiáveis, dando destaque para o processo de criação da vacina de Oxford e como, e porquê, ela foi desenvolvida tão rápido. Como informação secundária, informações sobre a proteína&nbsp;spike&nbsp;do coronavírus, como terciária, as fases de testes clínicos, e uma quarta, com gráficos e um mapa sobre a situação atual da vacinação pelo mundo.</p><p>O veículo de comunicação seria a Revista Superinteressante, da Editora Abril. Em consequência disso, o público alvo seriam pessoas interessadas nas áreas da ciência e do conhecimento geral, geralmente jovens de 20 a 34 anos.</p><p>Para o grid, tivemos como base os valores padrões da revista superinteressante, como o tamanho das páginas e as margens externas e internas.</p><p>Organizamos primeiramente um moodboard com exemplos da arte gráfica da superinteressante, mostrando a diversidade da revista em termos de ilustrações, cores, fontes e estilo como um todo. Depois, fizemos um moodboard com inspirações para aquilo que decidimos adotar como nosso estilo visual.&nbsp;Assim, para o nosso estilo, optou-se por um infográfico tipo sequência ou diagrama&nbsp;e de narrativa objetiva. A técnica utilizada é majoritariamente a fotografia, criando colagens com diferentes fotos para representar as informações, em consonância de elementos gráficos esquemáticos e simbólicos.&nbsp;</p><p>Para a paleta cromática, adotamos o azul e suas variações, que visa transmitir confiança, competência e tranquilidade, além de ser muito usado para falar sobre saúde e ciência. Para cores secundárias, usamos tons de vermelho e amarelo, atribuindo otimismo e chamando mais atenção do leitor.</p><p>Foram escolhidas fontes sem serifa, semelhantes às usadas na revista, para passar tranquilidade e confiança, ao mesmo tempo tratando de um assunto científico. Para o texto, foi escolhida a Source Sans Pro, pois tem excelente legibilidade. Para o título principal, foi escolhido a Montserrat Black, que é amigável e boa para destacar, tendo um aspecto mais quadrado.</p><p>A seringa ganha bastante destaque estando bem no meio, já que assim o leitor já compreende do que o infográfico se trata. É utilizado diversas imagens em colagens dentro da seringa, de forma a representar todo o processo de desenvolvimento da vacina de Oxford, que é descrito e ordenado logo abaixo, fazendo uma alusão com o que há dentro dela, isto é, o processo desde o começo até a finalização da vacina, que seriam os acontecimentos científicos anteriores, muitos estudos, bastante financiamento e os testes clínicos. O título faz referência exatamente a isso, já atraindo o leitor mais desconfiado sobre o que de fato pode haver em uma vacina que foi feita tão rápido.&nbsp;Na informação secundária superior, sobre a proteína&nbsp;spike, se faz o uso do mesmo estilo de colagens, mas de forma a ser um adendo às informações que estão dentro da seringa. Na informação terciária no rodapé, são descritas as três fases de teste e é mostrada a quantidade de pessoas que participam de forma simbólica. Na informação quaternária, mostramos a situação de vacinação pelo mundo, utilizando tons de azul para identificar cada porcentagem, destacando a situação dos países de acordo com cores mais fortes ou fracas.</p><p><br></p>Morangos Mofados<p>Anterior</p><p>Anterior</p>Banrisul | App Redesign<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vacinas-infografico/cover-1780079926190-3b06e979-1e11-46b7-960a-b8ea73aeaae8.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/vacinas-infografico/cover-1780079926190-3b06e979-1e11-46b7-960a-b8ea73aeaae8.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 29,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-29T18:38:46.649+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-29T18:38:46.649+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Criação de um infográfico com o objetivo comunicacional de informar ao leitor que as vacinas são confiáveis, dando destaque para o processo de criação da vacina de Oxford e como, e porquê, ela foi desenvolvida tão rápido. Como informação secundária, informações sobre a proteína spike do coronavírus, como terciária, as fases de testes clínicos, e uma quarta, com gráficos e um mapa sobre a situação atual da vacinação pelo mundo. O veículo de comunicação seria a Revista Superinteressante, da Editora Abril. Em consequência disso, o público alvo seriam pessoas interessadas nas áreas da ciência e do conhecimento geral, geralmente jovens de 20 a 34 anos. Para o grid, tivemos como base os valores padrões da revista sup",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vacinas-infografico/cover-1780079926190-3b06e979-1e11-46b7-960a-b8ea73aeaae8.jpg",
+    "images": [
+      "/raksadesign/framerusercontent.com/images/5t2c6Nek8LWTmZtSZveOzcKeDk.webp?width=2614&height=1470",
+      "/raksadesign/framerusercontent.com/images/DoCKfjWkiA9JLGZgkIXbu4AkUrU.webp?width=2498&height=1406",
+      "/raksadesign/framerusercontent.com/images/LKsHlhG2OLsBrrzQLS8F4wG5Eg.webp?width=1920&height=1274"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "82955c5a-5cba-585b-bdf5-2c7e1f4026a7",
+      "case_id": "693bcfcb-8265-5002-81ab-b6895ec9c6dd",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/5t2c6Nek8LWTmZtSZveOzcKeDk.webp?width=2614&height=1470",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 2614,
+      "height": 1470,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d6fbcca3-8db9-58b6-9587-361f475bbb09",
+      "case_id": "693bcfcb-8265-5002-81ab-b6895ec9c6dd",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/DoCKfjWkiA9JLGZgkIXbu4AkUrU.webp?width=2498&height=1406",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 2498,
+      "height": 1406,
+      "sort_order": 1,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ec679882-9bc7-5159-96c0-6f24d39b3ff6",
+      "case_id": "693bcfcb-8265-5002-81ab-b6895ec9c6dd",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/LKsHlhG2OLsBrrzQLS8F4wG5Eg.webp?width=1920&height=1274",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1274,
+      "sort_order": 2,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 3,
+    "local_image_count": 3
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

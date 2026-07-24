@@ -1,0 +1,34 @@
+[
+  {
+    "id": "novo-case-1779977160261",
+    "slug": "novo-case-1779977160261",
+    "title": "Novo case",
+    "status": "draft",
+    "reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+    "action": "kept_in_public_cases_not_migrated"
+  },
+  {
+    "id": "novo-case-1780068948570",
+    "slug": "novo-case-1780068948570",
+    "title": "Novo case",
+    "status": "published",
+    "reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+    "action": "kept_in_public_cases_not_migrated"
+  },
+  {
+    "id": "novo-case-1780074762889",
+    "slug": "novo-case-1780074762889",
+    "title": "Novo case",
+    "status": "published",
+    "reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+    "action": "kept_in_public_cases_not_migrated"
+  },
+  {
+    "id": "novo-case-1780960017640",
+    "slug": "novo-case-1780960017640",
+    "title": "Novo case",
+    "status": "published",
+    "reason": "Human-approved exclusion: novo-case-* records are test/draft records that must remain intact in public.cases but must not enter Portfolio CMS v2.",
+    "action": "kept_in_public_cases_not_migrated"
+  }
+]

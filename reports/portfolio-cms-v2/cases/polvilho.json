@@ -1,0 +1,423 @@
+{
+  "slug": "polvilho",
+  "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/polvilho/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+    "legacy_id": "polvilho",
+    "legacy_slug": "polvilho",
+    "slug": "polvilho",
+    "title": "Polvilho do Dado",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Desenvolvimento"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Polvilho do Dado é um produto da Rede BG, uma empresa fundada em 1947 e uma referência na implantação de lanchonetes e restaurantes em importantes rodovias de São Paulo. Conhecida pela alta qualidade de suas refeições e produtos de padaria, a Rede BG estende sua dedicação ao bem-estar dos viajantes a cada novo produto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio do projeto era lançar o novo produto, \"Polvilho do Dado\", no ambiente digital. Era preciso criar uma presença online que fosse moderna e engajadora para atrair a atenção dos consumidores, mas que ao mesmo tempo honrasse e respeitasse a longa tradição de qualidade da marca-mãe, a Rede BG. O design precisava ser, ao mesmo tempo, divertido para o novo produto e confiável como a marca tradicional."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução focou em criar uma experiência digital focada no produto, utilizando layout e animações para gerar desejo e comunicar a identidade da marca de forma lúdica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Layout Focado no Produto&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi desenvolvido o layout para uma landing page de lançamento e uma página de produto dedicada. A arquitetura visual foi projetada para contar a história do \"Polvilho do Dado\", destacar seus diferenciais de qualidade e guiar o usuário de forma intuitiva pela informação.&nbsp;Todo o design foi baseado na identidade visual fornecida pelo cliente, garantindo total consistência com a marca Rede BG."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Animações Lúdicas&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal diferencial da experiência digital foi a criação de animações com os próprios polvilhos. Esses elementos de motion design foram integrados à página para criar uma navegação mais divertida, destacar o produto de forma memorável e gerar um apelo visual que desperta o apetite. As animações serviram como um ponto focal, reforçando a identidade divertida do novo produto dentro do universo da marca tradicional."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma presença digital que apresenta o \"Polvilho do Dado\" de forma moderna e atrativa, conectando a herança de qualidade da Rede BG com o público online."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Desenvolvimento"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Polvilho do Dado é um produto da Rede BG, uma empresa fundada em 1947 e uma referência na implantação de lanchonetes e restaurantes em importantes rodovias de São Paulo. Conhecida pela alta qualidade de suas refeições e produtos de padaria, a Rede BG estende sua dedicação ao bem-estar dos viajantes a cada novo produto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio do projeto era lançar o novo produto, \"Polvilho do Dado\", no ambiente digital. Era preciso criar uma presença online que fosse moderna e engajadora para atrair a atenção dos consumidores, mas que ao mesmo tempo honrasse e respeitasse a longa tradição de qualidade da marca-mãe, a Rede BG. O design precisava ser, ao mesmo tempo, divertido para o novo produto e confiável como a marca tradicional."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução focou em criar uma experiência digital focada no produto, utilizando layout e animações para gerar desejo e comunicar a identidade da marca de forma lúdica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Layout Focado no Produto&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi desenvolvido o layout para uma landing page de lançamento e uma página de produto dedicada. A arquitetura visual foi projetada para contar a história do \"Polvilho do Dado\", destacar seus diferenciais de qualidade e guiar o usuário de forma intuitiva pela informação.&nbsp;Todo o design foi baseado na identidade visual fornecida pelo cliente, garantindo total consistência com a marca Rede BG."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Animações Lúdicas&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal diferencial da experiência digital foi a criação de animações com os próprios polvilhos. Esses elementos de motion design foram integrados à página para criar uma navegação mais divertida, destacar o produto de forma memorável e gerar um apelo visual que desperta o apetite. As animações serviram como um ponto focal, reforçando a identidade divertida do novo produto dentro do universo da marca tradicional."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma presença digital que apresenta o \"Polvilho do Dado\" de forma moderna e atrativa, conectando a herança de qualidade da Rede BG com o público online."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>O Polvilho do Dado é um produto da Rede BG, uma empresa fundada em 1947 e uma referência na implantação de lanchonetes e restaurantes em importantes rodovias de São Paulo. Conhecida pela alta qualidade de suas refeições e produtos de padaria, a Rede BG estende sua dedicação ao bem-estar dos viajantes a cada novo produto.</p><p>O desafio do projeto era lançar o novo produto, \"Polvilho do Dado\", no ambiente digital. Era preciso criar uma presença online que fosse moderna e engajadora para atrair a atenção dos consumidores, mas que ao mesmo tempo honrasse e respeitasse a longa tradição de qualidade da marca-mãe, a Rede BG. O design precisava ser, ao mesmo tempo, divertido para o novo produto e confiável como a marca tradicional.</p><p>A solução focou em criar uma experiência digital focada no produto, utilizando layout e animações para gerar desejo e comunicar a identidade da marca de forma lúdica.</p><p><strong>1. Layout Focado no Produto&nbsp;</strong></p><p>Foi desenvolvido o layout para uma landing page de lançamento e uma página de produto dedicada. A arquitetura visual foi projetada para contar a história do \"Polvilho do Dado\", destacar seus diferenciais de qualidade e guiar o usuário de forma intuitiva pela informação.&nbsp;Todo o design foi baseado na identidade visual fornecida pelo cliente, garantindo total consistência com a marca Rede BG.</p><p><strong>2. Animações Lúdicas&nbsp;</strong></p><p>O principal diferencial da experiência digital foi a criação de animações com os próprios polvilhos. Esses elementos de motion design foram integrados à página para criar uma navegação mais divertida, destacar o produto de forma memorável e gerar um apelo visual que desperta o apetite. As animações serviram como um ponto focal, reforçando a identidade divertida do novo produto dentro do universo da marca tradicional.</p><p>O resultado é uma presença digital que apresenta o \"Polvilho do Dado\" de forma moderna e atrativa, conectando a herança de qualidade da Rede BG com o público online.</p>Polvilho do Dado Polvilho do Dado<p>UI/UX Design</p><p>Desenvolvimento</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>O Polvilho do Dado é um produto da Rede BG, uma empresa fundada em 1947 e uma referência na implantação de lanchonetes e restaurantes em importantes rodovias de São Paulo. Conhecida pela alta qualidade de suas refeições e produtos de padaria, a Rede BG estende sua dedicação ao bem-estar dos viajantes a cada novo produto.</p><p>O desafio do projeto era lançar o novo produto, \"Polvilho do Dado\", no ambiente digital. Era preciso criar uma presença online que fosse moderna e engajadora para atrair a atenção dos consumidores, mas que ao mesmo tempo honrasse e respeitasse a longa tradição de qualidade da marca-mãe, a Rede BG. O design precisava ser, ao mesmo tempo, divertido para o novo produto e confiável como a marca tradicional.</p><p>A solução focou em criar uma experiência digital focada no produto, utilizando layout e animações para gerar desejo e comunicar a identidade da marca de forma lúdica.</p><p><strong>1. Layout Focado no Produto&nbsp;</strong></p><p>Foi desenvolvido o layout para uma landing page de lançamento e uma página de produto dedicada. A arquitetura visual foi projetada para contar a história do \"Polvilho do Dado\", destacar seus diferenciais de qualidade e guiar o usuário de forma intuitiva pela informação.&nbsp;Todo o design foi baseado na identidade visual fornecida pelo cliente, garantindo total consistência com a marca Rede BG.</p><p><strong>2. Animações Lúdicas&nbsp;</strong></p><p>O principal diferencial da experiência digital foi a criação de animações com os próprios polvilhos. Esses elementos de motion design foram integrados à página para criar uma navegação mais divertida, destacar o produto de forma memorável e gerar um apelo visual que desperta o apetite. As animações serviram como um ponto focal, reforçando a identidade divertida do novo produto dentro do universo da marca tradicional.</p><p>O resultado é uma presença digital que apresenta o \"Polvilho do Dado\" de forma moderna e atrativa, conectando a herança de qualidade da Rede BG com o público online.</p>Paula and Domenick<p>Anterior</p><p>Anterior</p>Restiview<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/polvilho/cover.jpg",
+    "external_url": "http://polvilhododado.com.br",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 34,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "O é um produto da Rede BG, uma empresa fundada em 1947 e uma referência na implantação de lanchonetes e restaurantes em importantes rodovias de São Paulo. Conhecida pela alta qualidade de suas refeições e produtos de padaria, a Rede BG estende sua dedicação ao bem-estar dos viajantes a cada novo produto. O desafio do projeto era lançar o novo produto, \" \", no ambiente digital. Era preciso criar uma presença online que fosse moderna e engajadora para atrair a atenção dos consumidores, mas que ao mesmo tempo honrasse e respeitasse a longa tradição de qualidade da marca-mãe, a Rede BG. O design precisava ser, ao mesmo tempo, divertido para o novo produto e confiável como a marca tradicional. A solução focou em cri",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/008.jpg"
+    ],
+    "external_url": "http://polvilhododado.com.br"
+  },
+  "media": [
+    {
+      "id": "de687b42-03d1-59b2-9d48-d58e57c12b10",
+      "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/polvilho/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "512f85ff-a17e-5565-a4c6-c4e1467b2654",
+      "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/polvilho/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b11f4ef8-d49e-5514-9f87-ce34f0f77dc0",
+      "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/polvilho/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d53bb6d5-ebbf-546b-8f45-8233bc4294f0",
+      "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/polvilho/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b2d8aea5-87b5-5c34-afd2-aec7b67bf2a6",
+      "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/polvilho/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7d7eb445-2d53-549b-9112-349bfbcd749e",
+      "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/polvilho/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3393a17c-527d-596f-932e-5f9820cc1f7c",
+      "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/polvilho/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "787bb2ee-d4d3-5ab7-ae50-93e4dbeb6867",
+      "case_id": "f9d0917b-69a7-5504-b5e0-05e8d3d1133d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/polvilho/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/polvilho/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 8,
+    "local_image_count": 8
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

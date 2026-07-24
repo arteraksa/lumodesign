@@ -1,0 +1,968 @@
+{
+  "slug": "restiview",
+  "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/restiview/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+    "legacy_id": "restiview",
+    "legacy_slug": "restiview",
+    "slug": "restiview",
+    "title": "Restiview",
+    "status": "published",
+    "categories": [
+      "Branding",
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Restiview é um aplicativo em desenvolvimento para avaliação de restaurantes, com foco em experiências compartilhadas entre conhecidos, amigos e família. O objetivo do projeto foi criar uma identidade de marca completa que refletisse o espírito convidativo e a paixão pela gastronomia que definem a plataforma."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio Criativo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era desenvolver uma identidade visual que se distanciasse da estética fria e puramente funcional de muitos aplicativos de avaliação.&nbsp;A marca precisava comunicar visualmente seu conceito central: a plataforma como uma \"grande mesa\"&nbsp;onde os usuários compartilham recomendações de forma calorosa e confiável.&nbsp;Era essencial que cada elemento de design transmitisse humanidade, comunidade e um amor genuíno pela comida.&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Um Convite à Mesa"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A identidade visual foi construída em torno de um conceito central de diálogo e conexão, com cada elemento de design escolhido para reforçar os valores da marca de forma estratégica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Logotipo: Sabor e Diálogo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O logotipo é uma composição que une os dois pilares da Restiview."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A forma do&nbsp;balão de diálogo&nbsp;representa a comunidade, as conexões e a troca de experiências que o aplicativo busca promover."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Os&nbsp;talheres&nbsp;inseridos no balão simbolizam o ato de comer e a experiência gastronômica em si.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A união desses elementos representa o conceito de que comer é uma experiência interativa, divertida e compartilhada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Paleta de Cores: Confiança e Aconchego&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "As cores foram selecionadas para evocar sentimentos de confiança e calor humano."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Verde (Cor Principal):&nbsp;Representa a organicidade das conexões que o aplicativo visa criar e a confiabilidade, posicionando o Restiview como um companheiro seguro para registrar experiências.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Bege e Ocre:&nbsp;Transmitem uma sensação de aconchego e humanidade, funcionando como uma alternativa calorosa ao branco frio, o que torna a interface mais acolhedora.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Vermelho (Cor Auxiliar):&nbsp;Simboliza o afeto, as conexões humanas e o amor pela comida, valores fundamentais da marca.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Ecossistema Visual: Uma Voz Amigável"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para garantir uma comunicação consistente, foram desenvolvidos elementos de apoio que expandem o universo da marca."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Formas e Ícones:&nbsp;Os elementos da marca, como o balão de diálogo e a estrela (para avaliações), possuem formas orgânicas que transmitem uma voz amigável.&nbsp;Os círculos são usados para representar pratos de comida ou pessoas, reforçando a ideia de comunidade.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Texturas e Ilustrações:&nbsp;A identidade pode incorporar pincéis e texturas rústicas para dar aos elementos uma sensação manual e humana.&nbsp;O estilo de ilustração principal é o \"line-art\", com linhas que apresentam uma leve aspereza para evocar a sensação de um desenho feito à mão.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma identidade de marca convidativa e humana, que traduz visualmente a missão do Restiview de ser a plataforma de confiança para compartilhar as mais memoráveis experiências gastronômicas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Restiview é um aplicativo em desenvolvimento para avaliação de restaurantes, com foco em experiências compartilhadas entre conhecidos, amigos e família. O objetivo do projeto foi criar uma identidade de marca completa que refletisse o espírito convidativo e a paixão pela gastronomia que definem a plataforma."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio Criativo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era desenvolver uma identidade visual que se distanciasse da estética fria e puramente funcional de muitos aplicativos de avaliação.&nbsp;A marca precisava comunicar visualmente seu conceito central: a plataforma como uma \"grande mesa\"&nbsp;onde os usuários compartilham recomendações de forma calorosa e confiável.&nbsp;Era essencial que cada elemento de design transmitisse humanidade, comunidade e um amor genuíno pela comida.&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Um Convite à Mesa"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A identidade visual foi construída em torno de um conceito central de diálogo e conexão, com cada elemento de design escolhido para reforçar os valores da marca de forma estratégica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Logotipo: Sabor e Diálogo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O logotipo é uma composição que une os dois pilares da Restiview."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A forma do&nbsp;balão de diálogo&nbsp;representa a comunidade, as conexões e a troca de experiências que o aplicativo busca promover."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Os&nbsp;talheres&nbsp;inseridos no balão simbolizam o ato de comer e a experiência gastronômica em si.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A união desses elementos representa o conceito de que comer é uma experiência interativa, divertida e compartilhada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Paleta de Cores: Confiança e Aconchego&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "As cores foram selecionadas para evocar sentimentos de confiança e calor humano."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Verde (Cor Principal):&nbsp;Representa a organicidade das conexões que o aplicativo visa criar e a confiabilidade, posicionando o Restiview como um companheiro seguro para registrar experiências.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Bege e Ocre:&nbsp;Transmitem uma sensação de aconchego e humanidade, funcionando como uma alternativa calorosa ao branco frio, o que torna a interface mais acolhedora.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Vermelho (Cor Auxiliar):&nbsp;Simboliza o afeto, as conexões humanas e o amor pela comida, valores fundamentais da marca.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Ecossistema Visual: Uma Voz Amigável"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para garantir uma comunicação consistente, foram desenvolvidos elementos de apoio que expandem o universo da marca."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Formas e Ícones:&nbsp;Os elementos da marca, como o balão de diálogo e a estrela (para avaliações), possuem formas orgânicas que transmitem uma voz amigável.&nbsp;Os círculos são usados para representar pratos de comida ou pessoas, reforçando a ideia de comunidade.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Texturas e Ilustrações:&nbsp;A identidade pode incorporar pincéis e texturas rústicas para dar aos elementos uma sensação manual e humana.&nbsp;O estilo de ilustração principal é o \"line-art\", com linhas que apresentam uma leve aspereza para evocar a sensação de um desenho feito à mão.&nbsp;"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma identidade de marca convidativa e humana, que traduz visualmente a missão do Restiview de ser a plataforma de confiança para compartilhar as mais memoráveis experiências gastronômicas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Restiview é um aplicativo em desenvolvimento para avaliação de restaurantes, com foco em experiências compartilhadas entre conhecidos, amigos e família. O objetivo do projeto foi criar uma identidade de marca completa que refletisse o espírito convidativo e a paixão pela gastronomia que definem a plataforma.</p><p><strong>O Desafio Criativo</strong></p><p>O principal desafio era desenvolver uma identidade visual que se distanciasse da estética fria e puramente funcional de muitos aplicativos de avaliação.&nbsp;A marca precisava comunicar visualmente seu conceito central: a plataforma como uma \"grande mesa\"&nbsp;onde os usuários compartilham recomendações de forma calorosa e confiável.&nbsp;Era essencial que cada elemento de design transmitisse humanidade, comunidade e um amor genuíno pela comida.&nbsp;</p><p><strong>A Solução de Design: Um Convite à Mesa</strong></p><p>A identidade visual foi construída em torno de um conceito central de diálogo e conexão, com cada elemento de design escolhido para reforçar os valores da marca de forma estratégica.</p><p><strong>O Logotipo: Sabor e Diálogo</strong></p><p>O logotipo é uma composição que une os dois pilares da Restiview.</p><ul><li><p>A forma do&nbsp;balão de diálogo&nbsp;representa a comunidade, as conexões e a troca de experiências que o aplicativo busca promover.</p></li><li><p>Os&nbsp;talheres&nbsp;inseridos no balão simbolizam o ato de comer e a experiência gastronômica em si.&nbsp;</p></li></ul><p>A união desses elementos representa o conceito de que comer é uma experiência interativa, divertida e compartilhada.</p><p><strong>A Paleta de Cores: Confiança e Aconchego&nbsp;</strong></p><p>As cores foram selecionadas para evocar sentimentos de confiança e calor humano.</p><ul><li><p>Verde (Cor Principal):&nbsp;Representa a organicidade das conexões que o aplicativo visa criar e a confiabilidade, posicionando o Restiview como um companheiro seguro para registrar experiências.&nbsp;</p></li><li><p>Bege e Ocre:&nbsp;Transmitem uma sensação de aconchego e humanidade, funcionando como uma alternativa calorosa ao branco frio, o que torna a interface mais acolhedora.&nbsp;</p></li><li><p>Vermelho (Cor Auxiliar):&nbsp;Simboliza o afeto, as conexões humanas e o amor pela comida, valores fundamentais da marca.&nbsp;</p></li></ul><p><strong>O Ecossistema Visual: Uma Voz Amigável</strong></p><p>Para garantir uma comunicação consistente, foram desenvolvidos elementos de apoio que expandem o universo da marca.</p><ul><li><p>Formas e Ícones:&nbsp;Os elementos da marca, como o balão de diálogo e a estrela (para avaliações), possuem formas orgânicas que transmitem uma voz amigável.&nbsp;Os círculos são usados para representar pratos de comida ou pessoas, reforçando a ideia de comunidade.&nbsp;</p></li><li><p>Texturas e Ilustrações:&nbsp;A identidade pode incorporar pincéis e texturas rústicas para dar aos elementos uma sensação manual e humana.&nbsp;O estilo de ilustração principal é o \"line-art\", com linhas que apresentam uma leve aspereza para evocar a sensação de um desenho feito à mão.&nbsp;</p></li></ul><p>O resultado é uma identidade de marca convidativa e humana, que traduz visualmente a missão do Restiview de ser a plataforma de confiança para compartilhar as mais memoráveis experiências gastronômicas.</p>Restiview Restiview<p>Branding</p><p>Editorial</p><p>Restiview é um aplicativo em desenvolvimento para avaliação de restaurantes, com foco em experiências compartilhadas entre conhecidos, amigos e família. O objetivo do projeto foi criar uma identidade de marca completa que refletisse o espírito convidativo e a paixão pela gastronomia que definem a plataforma.</p><p><strong>O Desafio Criativo</strong></p><p>O principal desafio era desenvolver uma identidade visual que se distanciasse da estética fria e puramente funcional de muitos aplicativos de avaliação.&nbsp;A marca precisava comunicar visualmente seu conceito central: a plataforma como uma \"grande mesa\"&nbsp;onde os usuários compartilham recomendações de forma calorosa e confiável.&nbsp;Era essencial que cada elemento de design transmitisse humanidade, comunidade e um amor genuíno pela comida.&nbsp;</p><p><strong>A Solução de Design: Um Convite à Mesa</strong></p><p>A identidade visual foi construída em torno de um conceito central de diálogo e conexão, com cada elemento de design escolhido para reforçar os valores da marca de forma estratégica.</p><p><strong>O Logotipo: Sabor e Diálogo</strong></p><p>O logotipo é uma composição que une os dois pilares da Restiview.</p><ul><li><p>A forma do&nbsp;balão de diálogo&nbsp;representa a comunidade, as conexões e a troca de experiências que o aplicativo busca promover.</p></li><li><p>Os&nbsp;talheres&nbsp;inseridos no balão simbolizam o ato de comer e a experiência gastronômica em si.&nbsp;</p></li></ul><p>A união desses elementos representa o conceito de que comer é uma experiência interativa, divertida e compartilhada.</p><p><strong>A Paleta de Cores: Confiança e Aconchego&nbsp;</strong></p><p>As cores foram selecionadas para evocar sentimentos de confiança e calor humano.</p><ul><li><p>Verde (Cor Principal):&nbsp;Representa a organicidade das conexões que o aplicativo visa criar e a confiabilidade, posicionando o Restiview como um companheiro seguro para registrar experiências.&nbsp;</p></li><li><p>Bege e Ocre:&nbsp;Transmitem uma sensação de aconchego e humanidade, funcionando como uma alternativa calorosa ao branco frio, o que torna a interface mais acolhedora.&nbsp;</p></li><li><p>Vermelho (Cor Auxiliar):&nbsp;Simboliza o afeto, as conexões humanas e o amor pela comida, valores fundamentais da marca.&nbsp;</p></li></ul><p><strong>O Ecossistema Visual: Uma Voz Amigável</strong></p><p>Para garantir uma comunicação consistente, foram desenvolvidos elementos de apoio que expandem o universo da marca.</p><ul><li><p>Formas e Ícones:&nbsp;Os elementos da marca, como o balão de diálogo e a estrela (para avaliações), possuem formas orgânicas que transmitem uma voz amigável.&nbsp;Os círculos são usados para representar pratos de comida ou pessoas, reforçando a ideia de comunidade.&nbsp;</p></li><li><p>Texturas e Ilustrações:&nbsp;A identidade pode incorporar pincéis e texturas rústicas para dar aos elementos uma sensação manual e humana.&nbsp;O estilo de ilustração principal é o \"line-art\", com linhas que apresentam uma leve aspereza para evocar a sensação de um desenho feito à mão.&nbsp;</p></li></ul><p>O resultado é uma identidade de marca convidativa e humana, que traduz visualmente a missão do Restiview de ser a plataforma de confiança para compartilhar as mais memoráveis experiências gastronômicas.</p>Polvilho do Dado<p>Anterior</p><p>Anterior</p>Dark Star<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/restiview/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 23,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "é um aplicativo em desenvolvimento para avaliação de restaurantes, com foco em experiências compartilhadas entre conhecidos, amigos e família. O objetivo do projeto foi criar uma identidade de marca completa que refletisse o espírito convidativo e a paixão pela gastronomia que definem a plataforma. O Desafio Criativo O principal desafio era desenvolver uma identidade visual que se distanciasse da estética fria e puramente funcional de muitos aplicativos de avaliação. A marca precisava comunicar visualmente seu conceito central: a plataforma como uma \"grande mesa\" onde os usuários compartilham recomendações de forma calorosa e confiável. Era essencial que cada elemento de design transmitisse humanidade, comunida",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/009.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/010.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/011.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/012.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/013.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/014.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/015.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/016.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/017.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/018.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/019.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/020.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/021.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/022.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/023.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/024.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "f5fbb72f-0d71-5ef1-9960-6be42a745342",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "fe6075f3-4895-5e1d-a2ca-a65afd7728e0",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7a1d3eaa-2c9d-51dd-ba67-c3624290c834",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b8eaf7e4-59d7-5435-b439-b8689e6a6c78",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "252f6fba-c3dd-5b3b-8860-92233de0f535",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "4690507a-ef68-5723-bf16-d62b822bbc0f",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "801471d8-3567-50b7-b8f1-b56c33894536",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "254d2034-966d-56f3-85a7-b4d9936be14d",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "941d19e2-c3cd-5768-bebd-e7adb10c7fc5",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3ee8048f-602d-5a05-aab7-1f0bf9c525e1",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/010.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/010.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 9,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9a52cb38-f3f2-51ae-9492-87c52c5316c1",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/011.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/011.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 10,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "45f58985-ae51-5221-9f5c-a4d512481674",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/012.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/012.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 11,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a8944c12-922f-5662-8d17-7e1179b81f0c",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/013.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/013.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 12,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3989cbf8-cfce-5252-a284-1c7a31805247",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/014.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/014.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 13,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "43f7b5e3-0e53-5297-a5c4-88f76cd61c08",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/015.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/015.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 14,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "bb990ca6-76e8-521a-a4d0-4fad0000f858",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/016.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/016.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 15,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "faf06ce3-ec2a-5611-b38c-68999292a313",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/017.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/017.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 16,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3c9aef9a-860f-553b-a3ec-53625058efbf",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/018.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/018.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 17,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e5846f73-d43d-5947-93bd-1d45c2099296",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/019.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/019.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 18,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7b983f7f-59ce-5ad6-92e6-107ef1d714f2",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/020.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/020.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 19,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "59f90533-62b6-5deb-88e6-4f01a89d1178",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/021.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/021.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 20,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d6d50040-7d52-5927-abc7-e7b7ead21e8c",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/022.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/022.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 21,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d782de93-b6fa-5b67-86d4-f4799e8ceaf7",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/023.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/023.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 22,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "311bec5d-ce7e-5901-ae55-4a9384154a15",
+      "case_id": "d08dbe87-55b2-50eb-8b29-70ffb31dd86c",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/restiview/gallery/024.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/restiview/gallery/024.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 23,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 24,
+    "local_image_count": 24
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

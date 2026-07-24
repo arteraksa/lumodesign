@@ -1,0 +1,789 @@
+{
+  "slug": "blenduca",
+  "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/blenduca/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+    "legacy_id": "blenduca",
+    "legacy_slug": "blenduca",
+    "slug": "blenduca",
+    "title": "Blenduca",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Desenvolvimento",
+      "Branding",
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Blenduca é uma empresa de inovação educacional que oferece um portfólio completo de serviços, incluindo mentorias, consultorias e soluções de tecnologia. O seu objetivo é capacitar experts de conhecimento (como especialistas, coaches e infoprodutores) a se tornarem também experts de negócios, fornecendo as ferramentas e a estratégia para o sucesso."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era criar um ecossistema de design coeso e escalável que pudesse suportar tanto as necessidades de marketing da própria Blenduca quanto o sucesso dos produtos digitais de seus clientes. A comunicação visual precisava ser consistente em múltiplos pontos de contato — desde o primeiro anúncio nas redes sociais até a plataforma de ensino final — para construir uma marca forte, profissional e confiável."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução: Um Design System Integrado"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para atender a essa demanda complexa, foi desenvolvida uma solução de design 360°, que abrangeu desde a criação de materiais de marketing até o design de produto da plataforma tecnológica da empresa. O trabalho foi dividido em três frentes principais:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Identidade Visual para Produtos e Lançamentos&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para cada novo produto e evento da Blenduca, foi criada uma identidade visual única, porém alinhada à marca-mãe. Isso incluiu o design de apresentações de produto, key visuals e landing pages de alta conversão, seguindo um cronograma estratégico de lançamentos para maximizar o impacto no mercado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Design da Plataforma de EAD (B'Tech)&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O coração da solução tecnológica da Blenduca é sua plataforma de ensino à distância. Foi projetada toda a identidade visual e a interface do usuário (UI) da plataforma, criando uma experiência \"estilo Netflix\" que é moderna e intuitiva. O trabalho incluiu o design de um sistema de capas (thumbnails) para as aulas, garantindo uma navegação visualmente rica e organizada para o aluno final."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Materiais de Marketing e Comunicação&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para garantir a presença e o crescimento da marca, foi desenvolvida uma vasta gama de materiais de comunicação, tanto digitais quanto impressos. Isso incluiu posts para redes sociais (orgânicos e pagos), banners digitais, outdoors, folders e backdrops para eventos, assegurando uma mensagem visual consistente e profissional em todos os canais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Impacto"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A criação de um ecossistema de design coeso e profissional foi fundamental para posicionar a Blenduca como uma autoridade no mercado. Mais importante, as ferramentas e os produtos digitais desenhados (plataformas e funis de vendas) foram essenciais para o sucesso dos clientes da empresa, contribuindo para um ecossistema que já&nbsp;acelerou mais de 200 negócios de conhecimento&nbsp;e gerou&nbsp;mais de R$40 milhões em receita&nbsp;para esses clientes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Desenvolvimento"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Blenduca é uma empresa de inovação educacional que oferece um portfólio completo de serviços, incluindo mentorias, consultorias e soluções de tecnologia. O seu objetivo é capacitar experts de conhecimento (como especialistas, coaches e infoprodutores) a se tornarem também experts de negócios, fornecendo as ferramentas e a estratégia para o sucesso."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era criar um ecossistema de design coeso e escalável que pudesse suportar tanto as necessidades de marketing da própria Blenduca quanto o sucesso dos produtos digitais de seus clientes. A comunicação visual precisava ser consistente em múltiplos pontos de contato — desde o primeiro anúncio nas redes sociais até a plataforma de ensino final — para construir uma marca forte, profissional e confiável."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução: Um Design System Integrado"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para atender a essa demanda complexa, foi desenvolvida uma solução de design 360°, que abrangeu desde a criação de materiais de marketing até o design de produto da plataforma tecnológica da empresa. O trabalho foi dividido em três frentes principais:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Identidade Visual para Produtos e Lançamentos&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para cada novo produto e evento da Blenduca, foi criada uma identidade visual única, porém alinhada à marca-mãe. Isso incluiu o design de apresentações de produto, key visuals e landing pages de alta conversão, seguindo um cronograma estratégico de lançamentos para maximizar o impacto no mercado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Design da Plataforma de EAD (B'Tech)&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O coração da solução tecnológica da Blenduca é sua plataforma de ensino à distância. Foi projetada toda a identidade visual e a interface do usuário (UI) da plataforma, criando uma experiência \"estilo Netflix\" que é moderna e intuitiva. O trabalho incluiu o design de um sistema de capas (thumbnails) para as aulas, garantindo uma navegação visualmente rica e organizada para o aluno final."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Materiais de Marketing e Comunicação&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Para garantir a presença e o crescimento da marca, foi desenvolvida uma vasta gama de materiais de comunicação, tanto digitais quanto impressos. Isso incluiu posts para redes sociais (orgânicos e pagos), banners digitais, outdoors, folders e backdrops para eventos, assegurando uma mensagem visual consistente e profissional em todos os canais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Impacto"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A criação de um ecossistema de design coeso e profissional foi fundamental para posicionar a Blenduca como uma autoridade no mercado. Mais importante, as ferramentas e os produtos digitais desenhados (plataformas e funis de vendas) foram essenciais para o sucesso dos clientes da empresa, contribuindo para um ecossistema que já&nbsp;acelerou mais de 200 negócios de conhecimento&nbsp;e gerou&nbsp;mais de R$40 milhões em receita&nbsp;para esses clientes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>A Blenduca é uma empresa de inovação educacional que oferece um portfólio completo de serviços, incluindo mentorias, consultorias e soluções de tecnologia. O seu objetivo é capacitar experts de conhecimento (como especialistas, coaches e infoprodutores) a se tornarem também experts de negócios, fornecendo as ferramentas e a estratégia para o sucesso.</p><p><strong>O Desafio</strong></p><p>O principal desafio era criar um ecossistema de design coeso e escalável que pudesse suportar tanto as necessidades de marketing da própria Blenduca quanto o sucesso dos produtos digitais de seus clientes. A comunicação visual precisava ser consistente em múltiplos pontos de contato — desde o primeiro anúncio nas redes sociais até a plataforma de ensino final — para construir uma marca forte, profissional e confiável.</p><p><strong>A Solução: Um Design System Integrado</strong></p><p>Para atender a essa demanda complexa, foi desenvolvida uma solução de design 360°, que abrangeu desde a criação de materiais de marketing até o design de produto da plataforma tecnológica da empresa. O trabalho foi dividido em três frentes principais:</p><p><strong>1. Identidade Visual para Produtos e Lançamentos&nbsp;</strong></p><p>Para cada novo produto e evento da Blenduca, foi criada uma identidade visual única, porém alinhada à marca-mãe. Isso incluiu o design de apresentações de produto, key visuals e landing pages de alta conversão, seguindo um cronograma estratégico de lançamentos para maximizar o impacto no mercado.</p><p><strong>2. Design da Plataforma de EAD (B'Tech)&nbsp;</strong></p><p>O coração da solução tecnológica da Blenduca é sua plataforma de ensino à distância. Foi projetada toda a identidade visual e a interface do usuário (UI) da plataforma, criando uma experiência \"estilo Netflix\" que é moderna e intuitiva. O trabalho incluiu o design de um sistema de capas (thumbnails) para as aulas, garantindo uma navegação visualmente rica e organizada para o aluno final.</p><p><strong>3. Materiais de Marketing e Comunicação&nbsp;</strong></p><p>Para garantir a presença e o crescimento da marca, foi desenvolvida uma vasta gama de materiais de comunicação, tanto digitais quanto impressos. Isso incluiu posts para redes sociais (orgânicos e pagos), banners digitais, outdoors, folders e backdrops para eventos, assegurando uma mensagem visual consistente e profissional em todos os canais.</p><p><strong>O Impacto</strong></p><p>A criação de um ecossistema de design coeso e profissional foi fundamental para posicionar a Blenduca como uma autoridade no mercado. Mais importante, as ferramentas e os produtos digitais desenhados (plataformas e funis de vendas) foram essenciais para o sucesso dos clientes da empresa, contribuindo para um ecossistema que já&nbsp;acelerou mais de 200 negócios de conhecimento&nbsp;e gerou&nbsp;mais de R$40 milhões em receita&nbsp;para esses clientes.</p>Blenduca Blenduca<p>UI/UX Design</p><p>Desenvolvimento</p><p>Branding</p><p>Editorial</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>A Blenduca é uma empresa de inovação educacional que oferece um portfólio completo de serviços, incluindo mentorias, consultorias e soluções de tecnologia. O seu objetivo é capacitar experts de conhecimento (como especialistas, coaches e infoprodutores) a se tornarem também experts de negócios, fornecendo as ferramentas e a estratégia para o sucesso.</p><p><strong>O Desafio</strong></p><p>O principal desafio era criar um ecossistema de design coeso e escalável que pudesse suportar tanto as necessidades de marketing da própria Blenduca quanto o sucesso dos produtos digitais de seus clientes. A comunicação visual precisava ser consistente em múltiplos pontos de contato — desde o primeiro anúncio nas redes sociais até a plataforma de ensino final — para construir uma marca forte, profissional e confiável.</p><p><strong>A Solução: Um Design System Integrado</strong></p><p>Para atender a essa demanda complexa, foi desenvolvida uma solução de design 360°, que abrangeu desde a criação de materiais de marketing até o design de produto da plataforma tecnológica da empresa. O trabalho foi dividido em três frentes principais:</p><p><strong>1. Identidade Visual para Produtos e Lançamentos&nbsp;</strong></p><p>Para cada novo produto e evento da Blenduca, foi criada uma identidade visual única, porém alinhada à marca-mãe. Isso incluiu o design de apresentações de produto, key visuals e landing pages de alta conversão, seguindo um cronograma estratégico de lançamentos para maximizar o impacto no mercado.</p><p><strong>2. Design da Plataforma de EAD (B'Tech)&nbsp;</strong></p><p>O coração da solução tecnológica da Blenduca é sua plataforma de ensino à distância. Foi projetada toda a identidade visual e a interface do usuário (UI) da plataforma, criando uma experiência \"estilo Netflix\" que é moderna e intuitiva. O trabalho incluiu o design de um sistema de capas (thumbnails) para as aulas, garantindo uma navegação visualmente rica e organizada para o aluno final.</p><p><strong>3. Materiais de Marketing e Comunicação&nbsp;</strong></p><p>Para garantir a presença e o crescimento da marca, foi desenvolvida uma vasta gama de materiais de comunicação, tanto digitais quanto impressos. Isso incluiu posts para redes sociais (orgânicos e pagos), banners digitais, outdoors, folders e backdrops para eventos, assegurando uma mensagem visual consistente e profissional em todos os canais.</p><p><strong>O Impacto</strong></p><p>A criação de um ecossistema de design coeso e profissional foi fundamental para posicionar a Blenduca como uma autoridade no mercado. Mais importante, as ferramentas e os produtos digitais desenhados (plataformas e funis de vendas) foram essenciais para o sucesso dos clientes da empresa, contribuindo para um ecossistema que já&nbsp;acelerou mais de 200 negócios de conhecimento&nbsp;e gerou&nbsp;mais de R$40 milhões em receita&nbsp;para esses clientes.</p>Você Marca<p>Anterior</p><p>Anterior</p>Capri Housing<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/blenduca/cover.jpg",
+    "external_url": "https://www.blenduca.com.br",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 30,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "A é uma empresa de inovação educacional que oferece um portfólio completo de serviços, incluindo mentorias, consultorias e soluções de tecnologia. O seu objetivo é capacitar experts de conhecimento (como especialistas, coaches e infoprodutores) a se tornarem também experts de negócios, fornecendo as ferramentas e a estratégia para o sucesso. O Desafio O principal desafio era criar um ecossistema de design coeso e escalável que pudesse suportar tanto as necessidades de marketing da própria quanto o sucesso dos produtos digitais de seus clientes. A comunicação visual precisava ser consistente em múltiplos pontos de contato — desde o primeiro anúncio nas redes sociais até a plataforma de ensino final — para constr",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/009.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/010.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/011.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/012.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/013.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/014.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/015.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/016.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/017.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/018.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/019.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/020.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/021.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/022.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/023.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/024.jpg"
+    ],
+    "external_url": "https://www.blenduca.com.br"
+  },
+  "media": [
+    {
+      "id": "f1dfe944-3dbc-5d42-a097-d8a5f08c7ac7",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "10780169-23b6-561f-827e-6c6d6c440c76",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a9f16ba8-61ea-553e-a62a-603f8dcccad3",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "fc78f064-cbd7-56d7-9f44-d61f4178238b",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "def56d19-149c-55b1-b48f-b1c3eb6e1054",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "4ae21b04-5a66-5481-b330-2cc3388080a8",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a2fb4539-f77c-515f-b560-c29deec75463",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "58232c0a-ef40-5ae4-a6a1-2f8cffc75278",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f7faa717-d907-515a-85b6-a76ff3158c8f",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7a5355a9-321a-54fd-a217-841cfb2a9532",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/010.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/010.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 9,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "bd12e512-c622-563e-9727-3658a82e828d",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/011.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/011.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 10,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "935d9fbf-1c98-5081-b7d4-0182ec03728d",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/012.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/012.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 11,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5adc5d37-86ce-5af9-8a34-70039ecab0b3",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/013.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/013.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 12,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2805e8fc-67ef-5992-8bb8-d26c087f5a70",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/014.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/014.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 13,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "4452c36b-2687-565a-beb9-70ee83ba11c7",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/015.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/015.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 14,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "093c58a9-7f3d-5bbd-9a4f-a107a2a5fe89",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/016.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/016.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 15,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3dd2bdd1-1391-57d2-8b7d-02b222e007b2",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/017.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/017.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 16,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f306cbd8-c717-5974-b13e-b5d11f4f0747",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/018.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/018.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 17,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5421583f-85c7-5dbb-b6ec-ee7aca07601f",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/019.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/019.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 18,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "745ec68f-2d45-5c00-a1fc-f974f870e1d8",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/020.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/020.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 19,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "74cb89ec-dbac-5229-9cd6-adf08bb4d7a8",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/021.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/021.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 20,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6d52cd29-57d4-5480-9e74-de644aed5405",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/022.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/022.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 21,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "576e18a2-1b7b-593c-9938-ae6eaebe1801",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/023.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/023.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 22,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "310ef0c1-b9ff-537c-ad86-e6a1918bcc74",
+      "case_id": "9247d30f-0a43-5a9b-bf56-7ced62a678c7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/blenduca/gallery/024.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/blenduca/gallery/024.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 23,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 24,
+    "local_image_count": 24
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

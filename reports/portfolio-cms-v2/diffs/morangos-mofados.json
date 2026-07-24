@@ -1,0 +1,20 @@
+{
+  "slug": "morangos-mofados",
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 50,
+    "local_image_count": 50
+  },
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/morangos-mofados/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "warnings": [],
+  "errors": []
+}

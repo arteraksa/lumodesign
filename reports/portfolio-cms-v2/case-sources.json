@@ -1,0 +1,722 @@
+[
+  {
+    "slug": "a-primeira-segunda-feira",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/a-primeira-segunda-feira/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 1,
+      "local_image_count": 1
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "anima",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/anima/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 20,
+      "local_image_count": 20
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "atitus-educação",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/atitus-educação/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 5,
+      "local_image_count": 5
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "banrisul-app-redesign",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/banrisul-app-redesign/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 9,
+      "local_image_count": 9
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "blenduca",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/blenduca/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 24,
+      "local_image_count": 24
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "bu1ld",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/bu1ld/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 6,
+      "local_image_count": 6
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "calendário-impresul-2023",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/calendário-impresul-2023/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 6,
+      "local_image_count": 6
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "calendário-impresul-2024",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/calendário-impresul-2024/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 5,
+      "local_image_count": 5
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "candy-dates",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/candy-dates/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 8,
+      "local_image_count": 8
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "capri-housing",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/capri-housing/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 8,
+      "local_image_count": 8
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "click-impresso",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/click-impresso/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 2,
+      "local_image_count": 2
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "dark-star",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/dark-star/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 38,
+      "local_image_count": 38
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "definna",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/definna/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 14,
+      "local_image_count": 14
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "demip",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/demip/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 71,
+      "local_image_count": 71
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "digital-marketing",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/digital-marketing/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 4,
+      "local_image_count": 4
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "eric-clapton",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/eric-clapton/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 6,
+      "local_image_count": 6
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "impresul",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/impresul/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 6,
+      "local_image_count": 6
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "jaq-h2",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/jaq-h2/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 27,
+      "local_image_count": 27
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "leylaw",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/leylaw/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 49,
+      "local_image_count": 49
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "lisa-dossi",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/lisa-dossi/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 5,
+      "local_image_count": 5
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "lumilab",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/lumilab/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 11,
+      "local_image_count": 11
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "magnus",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/magnus/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 6,
+      "local_image_count": 6
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "morangos-mofados",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/morangos-mofados/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 50,
+      "local_image_count": 50
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "nina",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/nina/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 11,
+      "local_image_count": 11
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "paula-and-domenick",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/paula-and-domenick/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 5,
+      "local_image_count": 5
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "plataforma-ead",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/plataforma-ead/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 6,
+      "local_image_count": 6
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "polvilho",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/polvilho/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 8,
+      "local_image_count": 8
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "portal-do-aluno-ufrgs",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/portal-do-aluno-ufrgs/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 51,
+      "local_image_count": 51
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "restiview",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/restiview/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 24,
+      "local_image_count": 24
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "tri-rs",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/tri-rs/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 3,
+      "local_image_count": 3
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "vacinas-infográfico",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/vacinas-infográfico/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 3,
+      "local_image_count": 3
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "vallor",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/vallor/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 6,
+      "local_image_count": 6
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "valor-capital-group",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/valor-capital-group/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 8,
+      "local_image_count": 8
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "vexo",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/vexo/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 47,
+      "local_image_count": 47
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "voce-marca",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/voce-marca/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 1,
+      "local_image_count": 1
+    },
+    "warnings": [],
+    "errors": []
+  },
+  {
+    "slug": "workshop-de-mentor-ia",
+    "sources": {
+      "remote": true,
+      "remote_complete": true,
+      "local_json": true,
+      "static_html": true,
+      "static_html_file": "cases/workshop-de-mentor-ia/index.html",
+      "content_source": "static_html",
+      "cover_source": "remote_cover"
+    },
+    "discarded": {
+      "local_title": null,
+      "html_image_count": 1,
+      "remote_image_count": 7,
+      "local_image_count": 7
+    },
+    "warnings": [],
+    "errors": []
+  }
+]

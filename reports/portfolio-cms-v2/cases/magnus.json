@@ -1,0 +1,486 @@
+{
+  "slug": "magnus",
+  "case_id": "1aaa3dc3-9ffb-5f84-b0ce-318791404020",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/magnus/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "1aaa3dc3-9ffb-5f84-b0ce-318791404020",
+    "legacy_id": "magnus",
+    "legacy_slug": "magnus",
+    "slug": "magnus",
+    "title": "Magnus",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto Magnus consistiu na criação de uma landing page de alta conversão para um workshop exclusivo. O principal objetivo estratégico era posicionar a marca como uma oferta de \"qualidade premium\" em sua cidade de atuação, destacando-se da concorrência local através de uma estética sofisticada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era puramente de posicionamento. A landing page precisava ser a principal ferramenta para construir a percepção de valor da marca. Cada elemento visual e textual deveria comunicar sofisticação, autoridade e exclusividade, justificando o posicionamento premium e guiando o usuário à conversão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Estética Premium e Funil de Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução foi alcançada através da união de uma direção de arte deliberada com uma arquitetura de página focada na jornada de persuasão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Direção de Arte: O Premium Visual Para atender à exigência do cliente por uma estética \"premium\", a direção de arte foi o pilar central do projeto. Foi definida uma paleta de cores sofisticada, dominada pelo azul e pelo dourado . A combinação foi escolhida estrategicamente para remeter a conceitos de ouro, luxo e sofisticação, criando uma diferenciação visual imediata e alinhando a percepção da marca ao seu posicionamento de alto valor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Arquitetura da Página: O Fluxo de Conversão A página segue a estrutura clássica de uma landing page de alta conversão, projetada para construir valor e confiança de forma progressiva:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Identificação: A seção inicial gera empatia ao abordar as dores e desafios do público-alvo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Qualificação: A página ajuda o visitante a se qualificar, detalhando para quem o workshop é destinado."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Proposta de Valor: Apresenta a agenda do workshop de 3 horas e introduz os mentores para construir autoridade."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Prova Social: Utiliza uma seção de depoimentos em vídeo, acompanhados por frases de destaque, para oferecer uma prova social autêntica e de alto impacto."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Conversão: A jornada do usuário culmina na seção de precificação e nas chamadas para ação (CTAs), estrategicamente posicionadas após o valor do produto ter sido completamente estabelecido."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto Magnus consistiu na criação de uma landing page de alta conversão para um workshop exclusivo. O principal objetivo estratégico era posicionar a marca como uma oferta de \"qualidade premium\" em sua cidade de atuação, destacando-se da concorrência local através de uma estética sofisticada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era puramente de posicionamento. A landing page precisava ser a principal ferramenta para construir a percepção de valor da marca. Cada elemento visual e textual deveria comunicar sofisticação, autoridade e exclusividade, justificando o posicionamento premium e guiando o usuário à conversão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Estética Premium e Funil de Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução foi alcançada através da união de uma direção de arte deliberada com uma arquitetura de página focada na jornada de persuasão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Direção de Arte: O Premium Visual Para atender à exigência do cliente por uma estética \"premium\", a direção de arte foi o pilar central do projeto. Foi definida uma paleta de cores sofisticada, dominada pelo azul e pelo dourado . A combinação foi escolhida estrategicamente para remeter a conceitos de ouro, luxo e sofisticação, criando uma diferenciação visual imediata e alinhando a percepção da marca ao seu posicionamento de alto valor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Arquitetura da Página: O Fluxo de Conversão A página segue a estrutura clássica de uma landing page de alta conversão, projetada para construir valor e confiança de forma progressiva:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Identificação: A seção inicial gera empatia ao abordar as dores e desafios do público-alvo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Qualificação: A página ajuda o visitante a se qualificar, detalhando para quem o workshop é destinado."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Proposta de Valor: Apresenta a agenda do workshop de 3 horas e introduz os mentores para construir autoridade."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Prova Social: Utiliza uma seção de depoimentos em vídeo, acompanhados por frases de destaque, para oferecer uma prova social autêntica e de alto impacto."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Conversão: A jornada do usuário culmina na seção de precificação e nas chamadas para ação (CTAs), estrategicamente posicionadas após o valor do produto ter sido completamente estabelecido."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>O projeto Magnus consistiu na criação de uma landing page de alta conversão para um workshop exclusivo. O principal objetivo estratégico era posicionar a marca como uma oferta de \"qualidade premium\" em sua cidade de atuação, destacando-se da concorrência local através de uma estética sofisticada.</p><p><strong>O Desafio</strong></p><p>O desafio era puramente de posicionamento. A landing page precisava ser a principal ferramenta para construir a percepção de valor da marca. Cada elemento visual e textual deveria comunicar sofisticação, autoridade e exclusividade, justificando o posicionamento premium e guiando o usuário à conversão.</p><p><strong>A Solução de Design: Estética Premium e Funil de Conversão</strong></p><p>A solução foi alcançada através da união de uma direção de arte deliberada com uma arquitetura de página focada na jornada de persuasão.</p><p><strong>1. Direção de Arte: O Premium Visual</strong>Para atender à exigência do cliente por uma estética \"premium\", a direção de arte foi o pilar central do projeto. Foi definida uma paleta de cores sofisticada, dominada pelo<strong>azul e pelo dourado</strong>. A combinação foi escolhida estrategicamente para remeter a conceitos de ouro, luxo e sofisticação, criando uma diferenciação visual imediata e alinhando a percepção da marca ao seu posicionamento de alto valor.</p><p><strong>2. Arquitetura da Página: O Fluxo de Conversão</strong>A página segue a estrutura clássica de uma landing page de alta conversão, projetada para construir valor e confiança de forma progressiva:</p><ol><li><p><strong>Identificação:</strong>A seção inicial gera empatia ao abordar as dores e desafios do público-alvo.</p></li><li><p><strong>Qualificação:</strong>A página ajuda o visitante a se qualificar, detalhando para quem o workshop é destinado.</p></li><li><p><strong>Proposta de Valor:</strong>Apresenta a agenda do workshop de 3 horas e introduz os mentores para construir autoridade.</p></li><li><p><strong>Prova Social:</strong>Utiliza uma seção de depoimentos em vídeo, acompanhados por frases de destaque, para oferecer uma prova social autêntica e de alto impacto.</p></li><li><p><strong>Conversão:</strong>A jornada do usuário culmina na seção de precificação e nas chamadas para ação (CTAs), estrategicamente posicionadas após o valor do produto ter sido completamente estabelecido.</p></li></ol>Magnus Magnus<p>UI/UX Design</p><p>O projeto Magnus consistiu na criação de uma landing page de alta conversão para um workshop exclusivo. O principal objetivo estratégico era posicionar a marca como uma oferta de \"qualidade premium\" em sua cidade de atuação, destacando-se da concorrência local através de uma estética sofisticada.</p><p><strong>O Desafio</strong></p><p>O desafio era puramente de posicionamento. A landing page precisava ser a principal ferramenta para construir a percepção de valor da marca. Cada elemento visual e textual deveria comunicar sofisticação, autoridade e exclusividade, justificando o posicionamento premium e guiando o usuário à conversão.</p><p><strong>A Solução de Design: Estética Premium e Funil de Conversão</strong></p><p>A solução foi alcançada através da união de uma direção de arte deliberada com uma arquitetura de página focada na jornada de persuasão.</p><p><strong>1. Direção de Arte: O Premium Visual</strong>Para atender à exigência do cliente por uma estética \"premium\", a direção de arte foi o pilar central do projeto. Foi definida uma paleta de cores sofisticada, dominada pelo<strong>azul e pelo dourado</strong>. A combinação foi escolhida estrategicamente para remeter a conceitos de ouro, luxo e sofisticação, criando uma diferenciação visual imediata e alinhando a percepção da marca ao seu posicionamento de alto valor.</p><p><strong>2. Arquitetura da Página: O Fluxo de Conversão</strong>A página segue a estrutura clássica de uma landing page de alta conversão, projetada para construir valor e confiança de forma progressiva:</p><ol><li><p><strong>Identificação:</strong>A seção inicial gera empatia ao abordar as dores e desafios do público-alvo.</p></li><li><p><strong>Qualificação:</strong>A página ajuda o visitante a se qualificar, detalhando para quem o workshop é destinado.</p></li><li><p><strong>Proposta de Valor:</strong>Apresenta a agenda do workshop de 3 horas e introduz os mentores para construir autoridade.</p></li><li><p><strong>Prova Social:</strong>Utiliza uma seção de depoimentos em vídeo, acompanhados por frases de destaque, para oferecer uma prova social autêntica e de alto impacto.</p></li><li><p><strong>Conversão:</strong>A jornada do usuário culmina na seção de precificação e nas chamadas para ação (CTAs), estrategicamente posicionadas após o valor do produto ter sido completamente estabelecido.</p></li></ol>Lisa Dossi<p>Anterior</p><p>Anterior</p>Workshop de Mentor[IA]<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/magnus/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 18,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "O projeto consistiu na criação de uma landing page de alta conversão para um workshop exclusivo. O principal objetivo estratégico era posicionar a marca como uma oferta de \"qualidade premium\" em sua cidade de atuação, destacando-se da concorrência local através de uma estética sofisticada. O Desafio O desafio era puramente de posicionamento. A landing page precisava ser a principal ferramenta para construir a percepção de valor da marca. Cada elemento visual e textual deveria comunicar sofisticação, autoridade e exclusividade, justificando o posicionamento premium e guiando o usuário à conversão. A Solução de Design: Estética Premium e Funil de Conversão A solução foi alcançada através da união de uma direção d",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/006.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "d24c6d3b-9423-5e53-a843-ea7ca4b3be2c",
+      "case_id": "1aaa3dc3-9ffb-5f84-b0ce-318791404020",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/magnus/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c3af6ba8-0449-53c8-bed1-9cd0714d6b37",
+      "case_id": "1aaa3dc3-9ffb-5f84-b0ce-318791404020",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/magnus/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f2eec74d-e585-5764-be60-de5840aa507c",
+      "case_id": "1aaa3dc3-9ffb-5f84-b0ce-318791404020",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/magnus/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a880fb41-93d9-5392-85c6-99a766e1aa5f",
+      "case_id": "1aaa3dc3-9ffb-5f84-b0ce-318791404020",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/magnus/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b95b09ba-c491-5fe4-b295-f99e24672897",
+      "case_id": "1aaa3dc3-9ffb-5f84-b0ce-318791404020",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/magnus/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a61695f2-ade5-5a04-95ed-9ec804a901d0",
+      "case_id": "1aaa3dc3-9ffb-5f84-b0ce-318791404020",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/magnus/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/magnus/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 6,
+    "local_image_count": 6
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

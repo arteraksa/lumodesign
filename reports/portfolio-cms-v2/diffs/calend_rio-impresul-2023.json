@@ -1,0 +1,20 @@
+{
+  "slug": "calendário-impresul-2023",
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 6,
+    "local_image_count": 6
+  },
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/calendário-impresul-2023/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "warnings": [],
+  "errors": []
+}

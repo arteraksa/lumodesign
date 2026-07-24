@@ -1,0 +1,127 @@
+export const siteConfig = {
+  name: "RAKSA",
+  description:
+    "Design inteligente, estratégia digital e tecnologia para marcas que querem crescer.",
+  email: "contato@raksadesign.com",
+  phoneLabel: "(51) 98115.9150",
+  whatsapp: "https://wa.me/5551981159150",
+  social: {
+    instagram: "https://www.instagram.com/raksadesign/",
+    facebook: "https://www.facebook.com/raksadesign",
+    linkedin: "https://www.linkedin.com/company/raksadesign",
+  },
+} as const;
+
+export const services = [
+  {
+    title: "UI/UX Design",
+    description:
+      "Criação de interfaces focadas em experiência e conversão. Design funcional, responsivo e otimizado por IA.",
+    image: "/images/services/ui-ux.jpg",
+  },
+  {
+    title: "Social Media Design",
+    description:
+      "Conteúdo visual estratégico para engajamento, adaptado para cada plataforma.",
+    image: "/images/services/social-media.png",
+  },
+  {
+    title: "Redesign Estratégico",
+    description:
+      "Otimização e revitalização de materiais e interfaces existentes. Elevamos o padrão com visão crítica e tecnologia.",
+    image: "/images/services/redesign.png",
+  },
+  {
+    title: "Materiais gráficos",
+    description:
+      "Design visual impactante para flyers, banners e mais. Soluções criativas com foco em eficiência e propósito.",
+    image: "/images/services/materiais-graficos.png",
+  },
+  {
+    title: "Editoração",
+    description:
+      "Formatação de conteúdos extensos, e-books e manuais para uma leitura clara e profissional.",
+    image: "/images/services/editoracao.png",
+  },
+  {
+    title: "Identidade visual",
+    description:
+      "Construção do coração da sua marca. Criamos sistemas visuais que comunicam valor, essência e conexão duradoura.",
+    image: "/images/services/identidade-visual.png",
+  },
+] as const;
+
+export const processItems = [
+  {
+    title: "Qualidade Premium",
+    description: "Acabamento preciso e visão humana em cada entrega.",
+  },
+  {
+    title: "AI Power",
+    description: "Design acelerado e inovador com o poder da IA.",
+  },
+  {
+    title: "Foco em Resultados",
+    description: "Design que encanta e impulsiona vendas e engajamento.",
+  },
+  {
+    title: "Inovação Constante",
+    description: "Sempre à frente, explorando tendências e tecnologias.",
+  },
+  {
+    title: "Desburocratização",
+    description: "Um processo direto, transparente e sem camadas desnecessárias.",
+  },
+  {
+    title: "Criatividade Otimizada",
+    description: "IA potencializa as ideias. Visão humana garante o impacto.",
+  },
+  {
+    title: "Custo-Benefício",
+    description: "Soluções inteligentes e acessíveis para otimizar seu investimento.",
+  },
+] as const;
+
+export const faqItems = [
+  {
+    question: "A RAKSA é uma agência de design? Qual a diferença?",
+    answer:
+      "Não. A RAKSA é um design service. Nosso processo é otimizado por Inteligência Artificial para ser ágil, transparente e desburocratizado. Focamos em entregas rápidas e soluções estratégicas, eliminando custos elevados e lentidão.",
+  },
+  {
+    question: "Como a Inteligência Artificial é usada no processo de criação?",
+    answer:
+      "A IA é nosso braço estratégico e criativo, mas a decisão final é sempre humana. Usamos tecnologia para explorar mais caminhos, otimizar processos internos e aumentar a eficácia do design. É a união da capacidade analítica da IA com a visão da nossa equipe.",
+  },
+  {
+    question: "Quais serviços de design a RAKSA oferece?",
+    answer:
+      "Oferecemos um portfólio completo para marcas no digital e no físico: social media, landing pages, UI/UX, materiais gráficos, identidade visual, diagramação, editoração e redesign estratégico.",
+  },
+  {
+    question: "Como funciona o processo de contratação na RAKSA?",
+    answer:
+      "É simples: você apresenta sua necessidade, recebe uma proposta transparente e, após a aprovação, iniciamos a criação com agilidade e profissionalismo.",
+  },
+  {
+    question: "A RAKSA atende clientes de qualquer lugar?",
+    answer:
+      "Sim. Somos um design service 100% digital e atendemos clientes do Brasil e do mundo. Nossa origem é Porto Alegre, mas nossa atuação não tem fronteiras.",
+  },
+] as const;
+
+export const clientLogos = [
+  "atitus",
+  "blenduca",
+  "candy",
+  "capri",
+  "clickimpresso",
+  "impresul",
+  "jaq",
+  "leylaw",
+  "polvilho",
+  "trirs",
+  "ufrgs",
+  "vallor",
+  "valor",
+] as const;

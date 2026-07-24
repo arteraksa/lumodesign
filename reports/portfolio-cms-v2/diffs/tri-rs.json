@@ -1,0 +1,20 @@
+{
+  "slug": "tri-rs",
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 3,
+    "local_image_count": 3
+  },
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/tri-rs/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "warnings": [],
+  "errors": []
+}

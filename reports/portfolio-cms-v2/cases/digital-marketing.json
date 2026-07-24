@@ -1,0 +1,500 @@
+{
+  "slug": "digital-marketing",
+  "case_id": "87d68e2c-347d-5082-beea-089b40191120",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/digital-marketing/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "87d68e2c-347d-5082-beea-089b40191120",
+    "legacy_id": "digital-marketing",
+    "legacy_slug": "digital-marketing",
+    "slug": "digital-marketing",
+    "title": "Digital Marketing",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este projeto está sujeito a um rigoroso Contrato de Confidencialidade (NDA). Para proteger o sigilo do cliente, o nome \"Growth Digital Marketing\" é fictício, e alguns textos e nomes foram alterados. O design, a arquitetura de informação e a estratégia de conversão apresentados são fiéis ao trabalho original."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Sobre o Projeto"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto consistiu no design completo de uma landing page de alta conversão para o \"Programa de Aceleração em Marketing Digital\". O objetivo era criar a principal ferramenta de vendas para um curso online ministrado por um especialista do setor, Ricardo Pacheco."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar uma página de vendas que fosse direta, profissional e que construísse autoridade rapidamente. A estética deveria ser minimalista e confiável, utilizando uma paleta de cores predominantemente azul para remeter à tecnologia e ao marketing digital. A página precisava guiar o usuário por uma jornada de conversão clara, desde a apresentação do mentor até a finalização da compra."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Arquitetura Focada em Autoridade e Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A landing page foi estruturada como uma narrativa de vendas, onde cada seção foi meticulosamente planejada para construir valor e guiar o usuário até a decisão de compra."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Hero Section de Impacto: A seção inicial vai direto ao ponto, apresentando o nome do programa, um resumo do seu conteúdo e uma breve chamada sobre a aceleração de carreira. Os CTAs (Call to Action) primário e secundário são visíveis imediatamente."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Construção de Autoridade: Logo abaixo, a página apresenta o mentor, Ricardo Pacheco. Em vez de um longo texto, a autoridade é estabelecida por meio de bullet points que destacam suas credenciais (+8 anos de experiência, +R$5M investidos em anúncios, etc.)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Apresentação do Produto: Uma seção de vídeo permite ao usuário \"O que esperar do Programa\", criando uma conexão mais profunda. Em seguida, a página segmenta claramente o público-alvo com a seção \"Para quem é?\", dividida em \"Iniciantes\", \"Profissionais de Marketing\" e \"Empreendedores\"."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Detalhamento do Conteúdo: A seção \"O que você vai aprender?\" utiliza um sistema de accordion (sanfona) ou abas para detalhar os módulos do curso. Isso permite apresentar uma grande quantidade de informações de forma organizada e minimalista, sem sobrecarregar visualmente o usuário."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Oferta e Conversão: A seção de precificação (\"Escolha o plano ideal\") é um ponto de alto contraste. Os três planos de pagamento são apresentados em cards brancos que se destacam sobre o fundo azul escuro, tornando a decisão de compra clara e focada."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Quebra de Objeções: A página é concluída com uma seção de Perguntas Frequentes (FAQ), projetada para resolver as últimas dúvidas do visitante antes de uma chamada final para a inscrição."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma landing page sóbria e profissional, que usa o design minimalista não apenas como estética, mas como uma ferramenta para guiar o usuário sem distrações através de um funil de vendas claro e eficaz."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este projeto está sujeito a um rigoroso Contrato de Confidencialidade (NDA). Para proteger o sigilo do cliente, o nome \"Growth Digital Marketing\" é fictício, e alguns textos e nomes foram alterados. O design, a arquitetura de informação e a estratégia de conversão apresentados são fiéis ao trabalho original."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Sobre o Projeto"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto consistiu no design completo de uma landing page de alta conversão para o \"Programa de Aceleração em Marketing Digital\". O objetivo era criar a principal ferramenta de vendas para um curso online ministrado por um especialista do setor, Ricardo Pacheco."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar uma página de vendas que fosse direta, profissional e que construísse autoridade rapidamente. A estética deveria ser minimalista e confiável, utilizando uma paleta de cores predominantemente azul para remeter à tecnologia e ao marketing digital. A página precisava guiar o usuário por uma jornada de conversão clara, desde a apresentação do mentor até a finalização da compra."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Arquitetura Focada em Autoridade e Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A landing page foi estruturada como uma narrativa de vendas, onde cada seção foi meticulosamente planejada para construir valor e guiar o usuário até a decisão de compra."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Hero Section de Impacto: A seção inicial vai direto ao ponto, apresentando o nome do programa, um resumo do seu conteúdo e uma breve chamada sobre a aceleração de carreira. Os CTAs (Call to Action) primário e secundário são visíveis imediatamente."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Construção de Autoridade: Logo abaixo, a página apresenta o mentor, Ricardo Pacheco. Em vez de um longo texto, a autoridade é estabelecida por meio de bullet points que destacam suas credenciais (+8 anos de experiência, +R$5M investidos em anúncios, etc.)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Apresentação do Produto: Uma seção de vídeo permite ao usuário \"O que esperar do Programa\", criando uma conexão mais profunda. Em seguida, a página segmenta claramente o público-alvo com a seção \"Para quem é?\", dividida em \"Iniciantes\", \"Profissionais de Marketing\" e \"Empreendedores\"."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Detalhamento do Conteúdo: A seção \"O que você vai aprender?\" utiliza um sistema de accordion (sanfona) ou abas para detalhar os módulos do curso. Isso permite apresentar uma grande quantidade de informações de forma organizada e minimalista, sem sobrecarregar visualmente o usuário."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Oferta e Conversão: A seção de precificação (\"Escolha o plano ideal\") é um ponto de alto contraste. Os três planos de pagamento são apresentados em cards brancos que se destacam sobre o fundo azul escuro, tornando a decisão de compra clara e focada."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Quebra de Objeções: A página é concluída com uma seção de Perguntas Frequentes (FAQ), projetada para resolver as últimas dúvidas do visitante antes de uma chamada final para a inscrição."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma landing page sóbria e profissional, que usa o design minimalista não apenas como estética, mas como uma ferramenta para guiar o usuário sem distrações através de um funil de vendas claro e eficaz."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Este projeto está sujeito a um rigoroso Contrato de Confidencialidade (NDA). Para proteger o sigilo do cliente, o nome \"Growth Digital Marketing\" é fictício, e alguns textos e nomes foram alterados. O design, a arquitetura de informação e a estratégia de conversão apresentados são fiéis ao trabalho original.</p><p><strong>Sobre o Projeto</strong></p><p>O projeto consistiu no design completo de uma landing page de alta conversão para o \"Programa de Aceleração em Marketing Digital\". O objetivo era criar a principal ferramenta de vendas para um curso online ministrado por um especialista do setor, Ricardo Pacheco.</p><p><strong>O Desafio</strong></p><p>O desafio era criar uma página de vendas que fosse direta, profissional e que construísse autoridade rapidamente. A estética deveria ser minimalista e confiável, utilizando uma paleta de cores predominantemente azul para remeter à tecnologia e ao marketing digital. A página precisava guiar o usuário por uma jornada de conversão clara, desde a apresentação do mentor até a finalização da compra.</p><p><strong>A Solução de Design: Uma Arquitetura Focada em Autoridade e Conversão</strong></p><p>A landing page foi estruturada como uma narrativa de vendas, onde cada seção foi meticulosamente planejada para construir valor e guiar o usuário até a decisão de compra.</p><ol><li><p><strong>Hero Section de Impacto:</strong>A seção inicial vai direto ao ponto, apresentando o nome do programa, um resumo do seu conteúdo e uma breve chamada sobre a aceleração de carreira. Os CTAs (Call to Action) primário e secundário são visíveis imediatamente.</p></li><li><p><strong>Construção de Autoridade:</strong>Logo abaixo, a página apresenta o mentor, Ricardo Pacheco. Em vez de um longo texto, a autoridade é estabelecida por meio de<em>bullet points</em>que destacam suas credenciais (+8 anos de experiência, +R$5M investidos em anúncios, etc.).</p></li><li><p><strong>Apresentação do Produto:</strong>Uma seção de vídeo permite ao usuário \"O que esperar do Programa\", criando uma conexão mais profunda. Em seguida, a página segmenta claramente o público-alvo com a seção \"Para quem é?\", dividida em \"Iniciantes\", \"Profissionais de Marketing\" e \"Empreendedores\".</p></li><li><p><strong>Detalhamento do Conteúdo:</strong>A seção \"O que você vai aprender?\" utiliza um sistema de<em>accordion</em>(sanfona) ou abas para detalhar os módulos do curso. Isso permite apresentar uma grande quantidade de informações de forma organizada e minimalista, sem sobrecarregar visualmente o usuário.</p></li><li><p><strong>Oferta e Conversão:</strong>A seção de precificação (\"Escolha o plano ideal\") é um ponto de alto contraste. Os três planos de pagamento são apresentados em<em>cards</em>brancos que se destacam sobre o fundo azul escuro, tornando a decisão de compra clara e focada.</p></li><li><p><strong>Quebra de Objeções:</strong>A página é concluída com uma seção de Perguntas Frequentes (FAQ), projetada para resolver as últimas dúvidas do visitante antes de uma chamada final para a inscrição.</p></li></ol><p>O resultado é uma landing page sóbria e profissional, que usa o design minimalista não apenas como estética, mas como uma ferramenta para guiar o usuário sem distrações através de um funil de vendas claro e eficaz.</p>Digital Marketing Digital Marketing<p>UI/UX Design</p><p>Este projeto está sujeito a um rigoroso Contrato de Confidencialidade (NDA). Para proteger o sigilo do cliente, o nome \"Growth Digital Marketing\" é fictício, e alguns textos e nomes foram alterados. O design, a arquitetura de informação e a estratégia de conversão apresentados são fiéis ao trabalho original.</p><p><strong>Sobre o Projeto</strong></p><p>O projeto consistiu no design completo de uma landing page de alta conversão para o \"Programa de Aceleração em Marketing Digital\". O objetivo era criar a principal ferramenta de vendas para um curso online ministrado por um especialista do setor, Ricardo Pacheco.</p><p><strong>O Desafio</strong></p><p>O desafio era criar uma página de vendas que fosse direta, profissional e que construísse autoridade rapidamente. A estética deveria ser minimalista e confiável, utilizando uma paleta de cores predominantemente azul para remeter à tecnologia e ao marketing digital. A página precisava guiar o usuário por uma jornada de conversão clara, desde a apresentação do mentor até a finalização da compra.</p><p><strong>A Solução de Design: Uma Arquitetura Focada em Autoridade e Conversão</strong></p><p>A landing page foi estruturada como uma narrativa de vendas, onde cada seção foi meticulosamente planejada para construir valor e guiar o usuário até a decisão de compra.</p><ol><li><p><strong>Hero Section de Impacto:</strong>A seção inicial vai direto ao ponto, apresentando o nome do programa, um resumo do seu conteúdo e uma breve chamada sobre a aceleração de carreira. Os CTAs (Call to Action) primário e secundário são visíveis imediatamente.</p></li><li><p><strong>Construção de Autoridade:</strong>Logo abaixo, a página apresenta o mentor, Ricardo Pacheco. Em vez de um longo texto, a autoridade é estabelecida por meio de<em>bullet points</em>que destacam suas credenciais (+8 anos de experiência, +R$5M investidos em anúncios, etc.).</p></li><li><p><strong>Apresentação do Produto:</strong>Uma seção de vídeo permite ao usuário \"O que esperar do Programa\", criando uma conexão mais profunda. Em seguida, a página segmenta claramente o público-alvo com a seção \"Para quem é?\", dividida em \"Iniciantes\", \"Profissionais de Marketing\" e \"Empreendedores\".</p></li><li><p><strong>Detalhamento do Conteúdo:</strong>A seção \"O que você vai aprender?\" utiliza um sistema de<em>accordion</em>(sanfona) ou abas para detalhar os módulos do curso. Isso permite apresentar uma grande quantidade de informações de forma organizada e minimalista, sem sobrecarregar visualmente o usuário.</p></li><li><p><strong>Oferta e Conversão:</strong>A seção de precificação (\"Escolha o plano ideal\") é um ponto de alto contraste. Os três planos de pagamento são apresentados em<em>cards</em>brancos que se destacam sobre o fundo azul escuro, tornando a decisão de compra clara e focada.</p></li><li><p><strong>Quebra de Objeções:</strong>A página é concluída com uma seção de Perguntas Frequentes (FAQ), projetada para resolver as últimas dúvidas do visitante antes de uma chamada final para a inscrição.</p></li></ol><p>O resultado é uma landing page sóbria e profissional, que usa o design minimalista não apenas como estética, mas como uma ferramenta para guiar o usuário sem distrações através de um funil de vendas claro e eficaz.</p>Definna<p>Anterior</p><p>Anterior</p>Plataforma EAD<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/z70daBAC7mmuljPkLCdnblEihg.jpg?width=1920&height=1440",
+    "cover_storage_bucket": null,
+    "cover_storage_path": null,
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 16,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Este projeto está sujeito a um rigoroso Contrato de Confidencialidade (NDA). Para proteger o sigilo do cliente, o nome \"Growth \" é fictício, e alguns textos e nomes foram alterados. O design, a arquitetura de informação e a estratégia de conversão apresentados são fiéis ao trabalho original. Sobre o Projeto O projeto consistiu no design completo de uma landing page de alta conversão para o \"Programa de Aceleração em Marketing Digital\". O objetivo era criar a principal ferramenta de vendas para um curso online ministrado por um especialista do setor, Ricardo Pacheco. O Desafio O desafio era criar uma página de vendas que fosse direta, profissional e que construísse autoridade rapidamente. A estética deveria ser ",
+    "excerpt": "",
+    "cover": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/z70daBAC7mmuljPkLCdnblEihg.jpg?width=1920&height=1440",
+    "images": [
+      "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/z70daBAC7mmuljPkLCdnblEihg.jpg?width=1920&height=1440",
+      "/raksadesign/framerusercontent.com/images/C638Wsxs3H0kr5kqxEKgeQi6GbE.jpg?width=1920&height=746",
+      "/raksadesign/framerusercontent.com/images/xY2bu7clz1R2GbqJ55RxKYk8.jpg?width=1920&height=358",
+      "/raksadesign/framerusercontent.com/images/g0NCHZbWggfAzhAomzJPDnoKQK4.jpg?width=1920&height=7259"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "08a235ea-1a85-599e-be53-39bc39c74bfb",
+      "case_id": "87d68e2c-347d-5082-beea-089b40191120",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/z70daBAC7mmuljPkLCdnblEihg.jpg?width=1920&height=1440",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1440,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a3b827dc-7f4f-5b4e-bc4c-48c6b538d791",
+      "case_id": "87d68e2c-347d-5082-beea-089b40191120",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/C638Wsxs3H0kr5kqxEKgeQi6GbE.jpg?width=1920&height=746",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 746,
+      "sort_order": 1,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "15500c96-a846-5129-bcd3-1d818c29213b",
+      "case_id": "87d68e2c-347d-5082-beea-089b40191120",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/xY2bu7clz1R2GbqJ55RxKYk8.jpg?width=1920&height=358",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 358,
+      "sort_order": 2,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "63cae52b-3947-5232-bcfd-012ecfde3ade",
+      "case_id": "87d68e2c-347d-5082-beea-089b40191120",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/g0NCHZbWggfAzhAomzJPDnoKQK4.jpg?width=1920&height=7259",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 7259,
+      "sort_order": 3,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 4,
+    "local_image_count": 4
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

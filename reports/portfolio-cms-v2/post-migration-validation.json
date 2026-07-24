@@ -1,0 +1,150 @@
+{
+  "timestamp": "2026-07-11T20:17:47.373Z",
+  "project_ref": "yzivkrotylwyglavtnho",
+  "status": "passed",
+  "counts": {
+    "public_cases": 40,
+    "portfolio_cases": 36,
+    "portfolio_case_media": 561,
+    "portfolio_case_slug_history": 0
+  },
+  "guards": {
+    "orphan_media": 0,
+    "novo_case_rows": 0,
+    "excluded_in_portfolio_cases": 0,
+    "excluded_still_in_public_cases": 4
+  },
+  "hashes": {
+    "case_id_hash": "078d23b3ca45d61932de6aa4fd5004c5",
+    "media_id_hash": "2e4314e7a539b13c65c83f3c8319d213",
+    "expected_case_id_hash": "078d23b3ca45d61932de6aa4fd5004c5",
+    "expected_media_id_hash": "2e4314e7a539b13c65c83f3c8319d213",
+    "case_ids_match_dry_run": true,
+    "media_ids_match_dry_run": true
+  },
+  "named_cases": [
+    {
+      "id": "63a0e510-2cdb-5fb6-ad47-261176540ed5",
+      "slug": "atitus-educação",
+      "title": "Atitus Educação",
+      "status": "published",
+      "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/atitus-educacao/cover.jpg",
+      "media_count": 5,
+      "first_media_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/atitus-educacao/gallery/001.png",
+      "content_html_length": 4974,
+      "expected_id": "63a0e510-2cdb-5fb6-ad47-261176540ed5",
+      "expected_media_count": 5,
+      "expected_content_html_length": 4974,
+      "id_matches_dry_run": true,
+      "media_count_matches_dry_run": true,
+      "content_html_length_matches_dry_run": true
+    },
+    {
+      "id": "4fe59d61-6718-55f6-b4e2-0d56ff40a1a3",
+      "slug": "dark-star",
+      "title": "Dark Star",
+      "status": "published",
+      "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/dark-star/cover.jpg",
+      "media_count": 38,
+      "first_media_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/dark-star/gallery/001.jpg",
+      "content_html_length": 6790,
+      "expected_id": "4fe59d61-6718-55f6-b4e2-0d56ff40a1a3",
+      "expected_media_count": 38,
+      "expected_content_html_length": 6790,
+      "id_matches_dry_run": true,
+      "media_count_matches_dry_run": true,
+      "content_html_length_matches_dry_run": true
+    },
+    {
+      "id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "slug": "demip",
+      "title": "DEMIP",
+      "status": "published",
+      "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/demip/cover.jpg",
+      "media_count": 71,
+      "first_media_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/w11qGm5QlyCIZfNGGrYkhzIYNY.webp?width=3508&height=2480",
+      "content_html_length": 3497,
+      "expected_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "expected_media_count": 71,
+      "expected_content_html_length": 3497,
+      "id_matches_dry_run": true,
+      "media_count_matches_dry_run": true,
+      "content_html_length_matches_dry_run": true
+    },
+    {
+      "id": "b9baccda-42c2-591f-96bd-a5c82d3495bc",
+      "slug": "leylaw",
+      "title": "Leylaw",
+      "status": "published",
+      "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/leylaw/cover.jpg",
+      "media_count": 49,
+      "first_media_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/leylaw/gallery/001.jpg",
+      "content_html_length": 7605,
+      "expected_id": "b9baccda-42c2-591f-96bd-a5c82d3495bc",
+      "expected_media_count": 49,
+      "expected_content_html_length": 7605,
+      "id_matches_dry_run": true,
+      "media_count_matches_dry_run": true,
+      "content_html_length_matches_dry_run": true
+    },
+    {
+      "id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "slug": "morangos-mofados",
+      "title": "Morangos Mofados",
+      "status": "published",
+      "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/cover.jpg",
+      "media_count": 50,
+      "first_media_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/001.jpg",
+      "content_html_length": 6166,
+      "expected_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "expected_media_count": 50,
+      "expected_content_html_length": 6166,
+      "id_matches_dry_run": true,
+      "media_count_matches_dry_run": true,
+      "content_html_length_matches_dry_run": true
+    },
+    {
+      "id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "slug": "portal-do-aluno-ufrgs",
+      "title": "Portal do Aluno UFRGS",
+      "status": "published",
+      "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/portal-do-aluno-ufrgs/cover.jpg",
+      "media_count": 51,
+      "first_media_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/XYkXy9mQ4tjidCTfO5BfewLpDSg.jpg?width=1920&height=1080",
+      "content_html_length": 10498,
+      "expected_id": "f5760210-1f97-5701-b9c9-cae229487d39",
+      "expected_media_count": 51,
+      "expected_content_html_length": 10498,
+      "id_matches_dry_run": true,
+      "media_count_matches_dry_run": true,
+      "content_html_length_matches_dry_run": true
+    },
+    {
+      "id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "slug": "vexo",
+      "title": "Vexo",
+      "status": "published",
+      "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/cover.jpg",
+      "media_count": 47,
+      "first_media_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vexo/gallery/001.jpg",
+      "content_html_length": 6756,
+      "expected_id": "60e11505-0b12-53cf-8bde-9ff90bc6e4af",
+      "expected_media_count": 47,
+      "expected_content_html_length": 6756,
+      "id_matches_dry_run": true,
+      "media_count_matches_dry_run": true,
+      "content_html_length_matches_dry_run": true
+    }
+  ],
+  "smoke_tests": [
+    {
+      "name": "npm run portfolio:migrate:validate",
+      "status": "passed"
+    },
+    {
+      "name": "remote post-apply readonly SQL checks",
+      "status": "passed"
+    }
+  ],
+  "credentials_logged": false
+}

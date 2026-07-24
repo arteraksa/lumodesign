@@ -1,0 +1,502 @@
+{
+  "slug": "lumilab",
+  "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/lumilab/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+    "legacy_id": "lumilab",
+    "legacy_slug": "lumilab",
+    "slug": "lumilab",
+    "title": "LumiLab",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O LumiLab é o dashboard de análise e gerenciamento de dados para a Lúmina, uma das maiores plataformas de cursos online da América Latina. O projeto foi concebido para capacitar professores e administradores com ferramentas de visualização de dados, permitindo-lhes gerenciar o desempenho de centenas de cursos e melhorar a gestão pedagógica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era traduzir um volume massivo e complexo de dados acadêmicos e demográficos em uma interface intuitiva. A plataforma precisava atender a diferentes níveis de acesso — desde uma visão pública para novos usuários até dashboards analíticos profundos para professores — sem sobrecarregar o usuário. A solução deveria permitir que um professor, sem ser um especialista em dados, pudesse diagnosticar a saúde do seu curso e o comportamento dos seus alunos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi projetado um ecossistema de dashboards com múltiplos níveis de análise, focado em clareza, comparabilidade e insights acionáveis."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Visão Pública (Aquisição): Uma visão de \"logged-out\" foi criada para que novos usuários possam visualizar conteúdos gerais da plataforma e se familiarizarem com ela. Esta tela apresenta dados agregados de toda a plataforma, como o total de inscrições, novos usuários, certificados emitidos e dados demográficos gerais dos alunos (gênero, escolaridade, faixa etária, etc.)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Visão Geral (Professor): Este é o painel principal do professor para um curso específico, como \"Saúde Mental na Escola\". Ele permite o acompanhamento em tempo real das principais métricas do curso, incluindo inscritos, certificados emitidos, notas e consumo de material. O principal diferencial desta tela é a capacidade de comparar os dados do curso selecionado (em azul) com a média de todos os cursos da Lúmina (em verde)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Análise de Questionários: Uma seção analítica profunda que permite ao professor monitorar os perfis dos alunos com base nas respostas dos questionários avaliativos. O dashboard apresenta gráficos avançados que comparam a dificuldade das questões com a habilidade dos alunos e mostra a tendência de habilidade da primeira para a última tentativa, oferecendo insights pedagógicos precisos."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Monitoramento de Fóruns: Uma ferramenta de análise de comunidade que permite ao professor monitorar a qualidade da interação nos fóruns do curso. Este painel vai além da simples contagem de posts, exibindo métricas como a quantidade média de palavras por post, a porcentagem de posts repetidos e uma análise de sentimento que classifica a proporção de emoções positivas e negativas nas discussões."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O LumiLab é o dashboard de análise e gerenciamento de dados para a Lúmina, uma das maiores plataformas de cursos online da América Latina. O projeto foi concebido para capacitar professores e administradores com ferramentas de visualização de dados, permitindo-lhes gerenciar o desempenho de centenas de cursos e melhorar a gestão pedagógica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era traduzir um volume massivo e complexo de dados acadêmicos e demográficos em uma interface intuitiva. A plataforma precisava atender a diferentes níveis de acesso — desde uma visão pública para novos usuários até dashboards analíticos profundos para professores — sem sobrecarregar o usuário. A solução deveria permitir que um professor, sem ser um especialista em dados, pudesse diagnosticar a saúde do seu curso e o comportamento dos seus alunos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi projetado um ecossistema de dashboards com múltiplos níveis de análise, focado em clareza, comparabilidade e insights acionáveis."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Visão Pública (Aquisição): Uma visão de \"logged-out\" foi criada para que novos usuários possam visualizar conteúdos gerais da plataforma e se familiarizarem com ela. Esta tela apresenta dados agregados de toda a plataforma, como o total de inscrições, novos usuários, certificados emitidos e dados demográficos gerais dos alunos (gênero, escolaridade, faixa etária, etc.)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Visão Geral (Professor): Este é o painel principal do professor para um curso específico, como \"Saúde Mental na Escola\". Ele permite o acompanhamento em tempo real das principais métricas do curso, incluindo inscritos, certificados emitidos, notas e consumo de material. O principal diferencial desta tela é a capacidade de comparar os dados do curso selecionado (em azul) com a média de todos os cursos da Lúmina (em verde)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Análise de Questionários: Uma seção analítica profunda que permite ao professor monitorar os perfis dos alunos com base nas respostas dos questionários avaliativos. O dashboard apresenta gráficos avançados que comparam a dificuldade das questões com a habilidade dos alunos e mostra a tendência de habilidade da primeira para a última tentativa, oferecendo insights pedagógicos precisos."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Monitoramento de Fóruns: Uma ferramenta de análise de comunidade que permite ao professor monitorar a qualidade da interação nos fóruns do curso. Este painel vai além da simples contagem de posts, exibindo métricas como a quantidade média de palavras por post, a porcentagem de posts repetidos e uma análise de sentimento que classifica a proporção de emoções positivas e negativas nas discussões."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>O LumiLab é o dashboard de análise e gerenciamento de dados para a Lúmina, uma das maiores plataformas de cursos online da América Latina. O projeto foi concebido para capacitar professores e administradores com ferramentas de visualização de dados, permitindo-lhes gerenciar o desempenho de centenas de cursos e melhorar a gestão pedagógica.</p><p><strong>O Desafio</strong></p><p>O desafio era traduzir um volume massivo e complexo de dados acadêmicos e demográficos em uma interface intuitiva. A plataforma precisava atender a diferentes níveis de acesso — desde uma visão pública para novos usuários até dashboards analíticos profundos para professores — sem sobrecarregar o usuário. A solução deveria permitir que um professor, sem ser um especialista em dados, pudesse diagnosticar a saúde do seu curso e o comportamento dos seus alunos.</p><p><strong>A Solução de Design</strong></p><p>Foi projetado um ecossistema de dashboards com múltiplos níveis de análise, focado em clareza, comparabilidade e insights acionáveis.</p><ol><li><p><strong>Visão Pública (Aquisição):</strong>Uma visão de \"logged-out\" foi criada para que novos usuários possam visualizar conteúdos gerais da plataforma e se familiarizarem com ela. Esta tela apresenta dados agregados de toda a plataforma, como o total de inscrições, novos usuários, certificados emitidos e dados demográficos gerais dos alunos (gênero, escolaridade, faixa etária, etc.).</p></li><li><p><strong>Visão Geral (Professor):</strong>Este é o painel principal do professor para um curso específico, como \"Saúde Mental na Escola\". Ele permite o acompanhamento em tempo real das principais métricas do curso, incluindo inscritos, certificados emitidos, notas e consumo de material. O principal diferencial desta tela é a capacidade de<strong>comparar</strong>os dados do curso selecionado (em azul) com a média de todos os cursos da Lúmina (em verde).</p></li><li><p><strong>Análise de Questionários:</strong>Uma seção analítica profunda que permite ao professor monitorar os perfis dos alunos com base nas respostas dos questionários avaliativos. O dashboard apresenta gráficos avançados que comparam a dificuldade das questões com a habilidade dos alunos e mostra a tendência de habilidade da primeira para a última tentativa, oferecendo insights pedagógicos precisos.</p></li><li><p><strong>Monitoramento de Fóruns:</strong>Uma ferramenta de análise de comunidade que permite ao professor monitorar a qualidade da interação nos fóruns do curso. Este painel vai além da simples contagem de posts, exibindo métricas como a quantidade média de palavras por post, a porcentagem de posts repetidos e uma análise de sentimento que classifica a proporção de emoções positivas e negativas nas discussões.</p></li></ol>LumiLab LumiLab<p>UI/UX Design</p><p>O LumiLab é o dashboard de análise e gerenciamento de dados para a Lúmina, uma das maiores plataformas de cursos online da América Latina. O projeto foi concebido para capacitar professores e administradores com ferramentas de visualização de dados, permitindo-lhes gerenciar o desempenho de centenas de cursos e melhorar a gestão pedagógica.</p><p><strong>O Desafio</strong></p><p>O desafio era traduzir um volume massivo e complexo de dados acadêmicos e demográficos em uma interface intuitiva. A plataforma precisava atender a diferentes níveis de acesso — desde uma visão pública para novos usuários até dashboards analíticos profundos para professores — sem sobrecarregar o usuário. A solução deveria permitir que um professor, sem ser um especialista em dados, pudesse diagnosticar a saúde do seu curso e o comportamento dos seus alunos.</p><p><strong>A Solução de Design</strong></p><p>Foi projetado um ecossistema de dashboards com múltiplos níveis de análise, focado em clareza, comparabilidade e insights acionáveis.</p><ol><li><p><strong>Visão Pública (Aquisição):</strong>Uma visão de \"logged-out\" foi criada para que novos usuários possam visualizar conteúdos gerais da plataforma e se familiarizarem com ela. Esta tela apresenta dados agregados de toda a plataforma, como o total de inscrições, novos usuários, certificados emitidos e dados demográficos gerais dos alunos (gênero, escolaridade, faixa etária, etc.).</p></li><li><p><strong>Visão Geral (Professor):</strong>Este é o painel principal do professor para um curso específico, como \"Saúde Mental na Escola\". Ele permite o acompanhamento em tempo real das principais métricas do curso, incluindo inscritos, certificados emitidos, notas e consumo de material. O principal diferencial desta tela é a capacidade de<strong>comparar</strong>os dados do curso selecionado (em azul) com a média de todos os cursos da Lúmina (em verde).</p></li><li><p><strong>Análise de Questionários:</strong>Uma seção analítica profunda que permite ao professor monitorar os perfis dos alunos com base nas respostas dos questionários avaliativos. O dashboard apresenta gráficos avançados que comparam a dificuldade das questões com a habilidade dos alunos e mostra a tendência de habilidade da primeira para a última tentativa, oferecendo insights pedagógicos precisos.</p></li><li><p><strong>Monitoramento de Fóruns:</strong>Uma ferramenta de análise de comunidade que permite ao professor monitorar a qualidade da interação nos fóruns do curso. Este painel vai além da simples contagem de posts, exibindo métricas como a quantidade média de palavras por post, a porcentagem de posts repetidos e uma análise de sentimento que classifica a proporção de emoções positivas e negativas nas discussões.</p></li></ol>Portal do Aluno UFRGS<p>Anterior</p><p>Anterior</p>Anima+<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lumilab/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/lumilab/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 28,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T21:07:55.491007+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T21:07:55.491007+00:00"
+  },
+  "remote_snapshot": {
+    "description": "O é o dashboard de análise e gerenciamento de dados para a Lúmina, uma das maiores plataformas de cursos online da América Latina. O projeto foi concebido para capacitar professores e administradores com ferramentas de visualização de dados, permitindo-lhes gerenciar o desempenho de centenas de cursos e melhorar a gestão pedagógica. O Desafio O desafio era traduzir um volume massivo e complexo de dados acadêmicos e demográficos em uma interface intuitiva. A plataforma precisava atender a diferentes níveis de acesso — desde uma visão pública para novos usuários até dashboards analíticos profundos para professores — sem sobrecarregar o usuário. A solução deveria permitir que um professor, sem ser um especialista ",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lumilab/cover.jpg",
+    "images": [
+      "/raksadesign/framerusercontent.com/images/xxC5k3URuXwQBz962dNONnmEh84.jpg?width=1920&height=1610",
+      "/raksadesign/framerusercontent.com/images/jR4iQMIZEkAkkxSxwCdbmJYcQls.jpg?width=1920&height=1498",
+      "/raksadesign/framerusercontent.com/images/c2KM6jcqTbHYRlrwoUTHkaEDQ.jpg?width=1920&height=1639",
+      "/raksadesign/framerusercontent.com/images/L0qvYAFmhC8g96qyv0Ridfb98SA.jpg?width=1920&height=1972",
+      "/raksadesign/framerusercontent.com/images/2TGeZdoJ1KQzHZJNFxBdY1bSswk.jpg?width=1920&height=1972",
+      "/raksadesign/framerusercontent.com/images/JzYkpb07hSbexyj18lgijkVAC8w.jpg?width=1920&height=1972",
+      "/raksadesign/framerusercontent.com/images/cfdJZX3KDNdzqaOcaHbUGfCiKI.jpg?width=1920&height=2022",
+      "/raksadesign/framerusercontent.com/images/OJ3uY7unqfxzYLxVVV4X4o8yc.jpg?width=1920&height=2262",
+      "/raksadesign/framerusercontent.com/images/o6vN46rlZ0gWMUzGmIyOT9QX0.jpg?width=1920&height=1930",
+      "/raksadesign/framerusercontent.com/images/8R55cvJm5UzahqhSD4y1KEkF4.jpg?width=1920&height=2262",
+      "/raksadesign/framerusercontent.com/images/6o0ggqtJ9Dl1Gwt22n7AIdcLI.jpg?width=1920&height=1080"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "ad45a0b7-4593-528c-8a2b-01b36518cd02",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/xxC5k3URuXwQBz962dNONnmEh84.jpg?width=1920&height=1610",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1610,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b594ae71-f3cf-5feb-acfc-b98546b0822b",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/jR4iQMIZEkAkkxSxwCdbmJYcQls.jpg?width=1920&height=1498",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1498,
+      "sort_order": 1,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "752466f5-cbbb-59ec-aee6-770a3b696b64",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/c2KM6jcqTbHYRlrwoUTHkaEDQ.jpg?width=1920&height=1639",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1639,
+      "sort_order": 2,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "80145d7e-c412-5263-aaba-d5f3a5e753d3",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/L0qvYAFmhC8g96qyv0Ridfb98SA.jpg?width=1920&height=1972",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1972,
+      "sort_order": 3,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f1772a55-1507-5809-b9ac-881d92c44fd0",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/2TGeZdoJ1KQzHZJNFxBdY1bSswk.jpg?width=1920&height=1972",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1972,
+      "sort_order": 4,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e5dba714-d64a-5131-a5ac-1936a4d7371e",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/JzYkpb07hSbexyj18lgijkVAC8w.jpg?width=1920&height=1972",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1972,
+      "sort_order": 5,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a7e8de7c-bfee-5450-adee-23672e514882",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/cfdJZX3KDNdzqaOcaHbUGfCiKI.jpg?width=1920&height=2022",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 2022,
+      "sort_order": 6,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f07648b7-3551-50d5-9fbc-1989c5cc68f2",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/OJ3uY7unqfxzYLxVVV4X4o8yc.jpg?width=1920&height=2262",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 2262,
+      "sort_order": 7,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d8daa451-de90-5b94-9a26-2cb12018f1fc",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/o6vN46rlZ0gWMUzGmIyOT9QX0.jpg?width=1920&height=1930",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1930,
+      "sort_order": 8,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7ed48fc3-f91e-51aa-aa41-e3d4b7935028",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/8R55cvJm5UzahqhSD4y1KEkF4.jpg?width=1920&height=2262",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 2262,
+      "sort_order": 9,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b58d2b68-2165-5eb8-9d1d-114eb96a2bba",
+      "case_id": "49947639-b62f-5b40-bd06-d99cb2a75a13",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/6o0ggqtJ9Dl1Gwt22n7AIdcLI.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 10,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 11,
+    "local_image_count": 11
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

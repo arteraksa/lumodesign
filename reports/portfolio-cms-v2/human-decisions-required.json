@@ -1,0 +1,80 @@
+[
+  {
+    "case": "dark-star",
+    "problem": "Large media gallery requires review.",
+    "evidence": "38 media items selected.",
+    "recommendation": "Confirm the count is intentional before apply.",
+    "alternatives": [
+      "keep_all",
+      "trim_gallery",
+      "migrate_as_draft"
+    ],
+    "impact": "Affects page weight and editorial accuracy.",
+    "executed": false
+  },
+  {
+    "case": "demip",
+    "problem": "Large media gallery requires review.",
+    "evidence": "71 media items selected.",
+    "recommendation": "Confirm the count is intentional before apply.",
+    "alternatives": [
+      "keep_all",
+      "trim_gallery",
+      "migrate_as_draft"
+    ],
+    "impact": "Affects page weight and editorial accuracy.",
+    "executed": false
+  },
+  {
+    "case": "leylaw",
+    "problem": "Large media gallery requires review.",
+    "evidence": "49 media items selected.",
+    "recommendation": "Confirm the count is intentional before apply.",
+    "alternatives": [
+      "keep_all",
+      "trim_gallery",
+      "migrate_as_draft"
+    ],
+    "impact": "Affects page weight and editorial accuracy.",
+    "executed": false
+  },
+  {
+    "case": "morangos-mofados",
+    "problem": "Large media gallery requires review.",
+    "evidence": "50 media items selected.",
+    "recommendation": "Confirm the count is intentional before apply.",
+    "alternatives": [
+      "keep_all",
+      "trim_gallery",
+      "migrate_as_draft"
+    ],
+    "impact": "Affects page weight and editorial accuracy.",
+    "executed": false
+  },
+  {
+    "case": "portal-do-aluno-ufrgs",
+    "problem": "Large media gallery requires review.",
+    "evidence": "51 media items selected.",
+    "recommendation": "Confirm the count is intentional before apply.",
+    "alternatives": [
+      "keep_all",
+      "trim_gallery",
+      "migrate_as_draft"
+    ],
+    "impact": "Affects page weight and editorial accuracy.",
+    "executed": false
+  },
+  {
+    "case": "vexo",
+    "problem": "Large media gallery requires review.",
+    "evidence": "47 media items selected.",
+    "recommendation": "Confirm the count is intentional before apply.",
+    "alternatives": [
+      "keep_all",
+      "trim_gallery",
+      "migrate_as_draft"
+    ],
+    "impact": "Affects page weight and editorial accuracy.",
+    "executed": false
+  }
+]

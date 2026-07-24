@@ -1,0 +1,546 @@
+{
+  "slug": "capri-housing",
+  "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/capri-housing/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+    "legacy_id": "capri-housing",
+    "legacy_slug": "capri-housing",
+    "slug": "capri-housing",
+    "title": "Capri Housing",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Capri Temporary Housing oferece acomodações de curta duração a preços acessíveis no Texas, Arizona e Califórnia, com um toque da hospitalidade italiana. É ideal para quem trabalha fora de casa, está entre duas casas ou simplesmente precisa de um lugar para ficar. Fomos encarregados de desenvolver uma&nbsp;interface de dashboard eficiente e fácil de usar&nbsp;para os colaboradores da Capri Housing. O objetivo principal era centralizar e otimizar a&nbsp;gestão de cadastros de clientes e corporações, o acompanhamento de chamados e a manipulação de formulários, essenciais para as operações diárias da empresa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A equipe da Capri Housing enfrentava um fluxo de trabalho operacional fragmentado, dependendo de sistemas descentralizados e planilhas para gerenciar clientes, chamados e contratos. Esse processo manual gerava ineficiência, risco de erros e dificultava o crescimento do negócio. O desafio era duplo: criar uma ferramenta interna poderosa para os colaboradores e, ao mesmo tempo, oferecer uma experiência digital fluida e moderna para os clientes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Adotamos uma metodologia de design centrada no usuário para garantir que a solução atendesse às necessidades reais tanto da equipe interna quanto dos clientes finais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Arquitetura e Wireframing (A Fundação) O desafio inicial foi criar, do zero, a arquitetura de informação e o fluxo de trabalho da dashboard. Começamos com esboços iniciais e avançamos para wireframes detalhados. Esta etapa foi fundamental para estruturar todo o sistema, mapear as jornadas dos colaboradores e garantir que as funcionalidades essenciais, como gestão de cadastros e acompanhamento de chamados, estivessem organizadas de forma lógica e intuitiva."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Design de Experiência Multidispositivo (A Estratégia) Identificamos dois contextos de uso distintos que exigiam soluções mobile diferentes:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Para os Clientes: A prioridade era uma experiência mobile fluida e de fácil acesso. Para isso, foi projetada a interface de um aplicativo dedicado (nativo) , focado nas funcionalidades essenciais para o hóspede."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Para os Colaboradores: A necessidade era de flexibilidade para acessar a plataforma de qualquer lugar. A solução foi criar uma versão web mobile responsiva da dashboard principal, garantindo que a gestão pudesse ser feita de forma otimizada em qualquer dispositivo."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Design de Interface (UI) e Refinamento Iterativo Com os wireframes validados, avançamos para o design de alta fidelidade da interface. Aplicando a identidade visual da Capri, criamos um design limpo e funcional para a dashboard desktop. Durante este processo, realizamos diversos ajustes e melhorias na aparência e na interação, refinando os componentes para garantir a melhor usabilidade possível."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto resultou em um ecossistema digital coeso, entregando três produtos de design interconectados:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Dashboard Desktop: O hub central para as operações da Capri, permitindo que os funcionários gerenciem todo o negócio com eficiência e clareza."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Versão Web Mobile para a Equipe: Garante que os colaboradores tenham acesso flexível e otimizado à plataforma em qualquer lugar."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "O Aplicativo Mobile para Clientes: Oferece aos hóspedes uma experiência de autoatendimento moderna e conveniente."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Juntas, essas soluções otimizaram as operações internas, reduziram a carga de trabalho manual e elevaram o padrão do serviço oferecido pela Capri Housing."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Capri Temporary Housing oferece acomodações de curta duração a preços acessíveis no Texas, Arizona e Califórnia, com um toque da hospitalidade italiana. É ideal para quem trabalha fora de casa, está entre duas casas ou simplesmente precisa de um lugar para ficar. Fomos encarregados de desenvolver uma&nbsp;interface de dashboard eficiente e fácil de usar&nbsp;para os colaboradores da Capri Housing. O objetivo principal era centralizar e otimizar a&nbsp;gestão de cadastros de clientes e corporações, o acompanhamento de chamados e a manipulação de formulários, essenciais para as operações diárias da empresa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A equipe da Capri Housing enfrentava um fluxo de trabalho operacional fragmentado, dependendo de sistemas descentralizados e planilhas para gerenciar clientes, chamados e contratos. Esse processo manual gerava ineficiência, risco de erros e dificultava o crescimento do negócio. O desafio era duplo: criar uma ferramenta interna poderosa para os colaboradores e, ao mesmo tempo, oferecer uma experiência digital fluida e moderna para os clientes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Adotamos uma metodologia de design centrada no usuário para garantir que a solução atendesse às necessidades reais tanto da equipe interna quanto dos clientes finais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Arquitetura e Wireframing (A Fundação) O desafio inicial foi criar, do zero, a arquitetura de informação e o fluxo de trabalho da dashboard. Começamos com esboços iniciais e avançamos para wireframes detalhados. Esta etapa foi fundamental para estruturar todo o sistema, mapear as jornadas dos colaboradores e garantir que as funcionalidades essenciais, como gestão de cadastros e acompanhamento de chamados, estivessem organizadas de forma lógica e intuitiva."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Design de Experiência Multidispositivo (A Estratégia) Identificamos dois contextos de uso distintos que exigiam soluções mobile diferentes:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Para os Clientes: A prioridade era uma experiência mobile fluida e de fácil acesso. Para isso, foi projetada a interface de um aplicativo dedicado (nativo) , focado nas funcionalidades essenciais para o hóspede."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Para os Colaboradores: A necessidade era de flexibilidade para acessar a plataforma de qualquer lugar. A solução foi criar uma versão web mobile responsiva da dashboard principal, garantindo que a gestão pudesse ser feita de forma otimizada em qualquer dispositivo."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Design de Interface (UI) e Refinamento Iterativo Com os wireframes validados, avançamos para o design de alta fidelidade da interface. Aplicando a identidade visual da Capri, criamos um design limpo e funcional para a dashboard desktop. Durante este processo, realizamos diversos ajustes e melhorias na aparência e na interação, refinando os componentes para garantir a melhor usabilidade possível."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto resultou em um ecossistema digital coeso, entregando três produtos de design interconectados:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Dashboard Desktop: O hub central para as operações da Capri, permitindo que os funcionários gerenciem todo o negócio com eficiência e clareza."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Versão Web Mobile para a Equipe: Garante que os colaboradores tenham acesso flexível e otimizado à plataforma em qualquer lugar."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "O Aplicativo Mobile para Clientes: Oferece aos hóspedes uma experiência de autoatendimento moderna e conveniente."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Juntas, essas soluções otimizaram as operações internas, reduziram a carga de trabalho manual e elevaram o padrão do serviço oferecido pela Capri Housing."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>A Capri Temporary Housing oferece acomodações de curta duração a preços acessíveis no Texas, Arizona e Califórnia, com um toque da hospitalidade italiana. É ideal para quem trabalha fora de casa, está entre duas casas ou simplesmente precisa de um lugar para ficar.<br><br>Fomos encarregados de desenvolver uma&nbsp;interface de dashboard eficiente e fácil de usar&nbsp;para os colaboradores da Capri Housing. O objetivo principal era centralizar e otimizar a&nbsp;gestão de cadastros de clientes e corporações, o acompanhamento de chamados e a manipulação de formulários, essenciais para as operações diárias da empresa.</p><p>A equipe da Capri Housing enfrentava um fluxo de trabalho operacional fragmentado, dependendo de sistemas descentralizados e planilhas para gerenciar clientes, chamados e contratos. Esse processo manual gerava ineficiência, risco de erros e dificultava o crescimento do negócio. O desafio era duplo: criar uma ferramenta interna poderosa para os colaboradores e, ao mesmo tempo, oferecer uma experiência digital fluida e moderna para os clientes.</p><p>Adotamos uma metodologia de design centrada no usuário para garantir que a solução atendesse às necessidades reais tanto da equipe interna quanto dos clientes finais.</p><p><strong>1. Arquitetura e Wireframing (A Fundação)</strong>O desafio inicial foi criar, do zero, a arquitetura de informação e o fluxo de trabalho da dashboard. Começamos com esboços iniciais e avançamos para wireframes detalhados. Esta etapa foi fundamental para estruturar todo o sistema, mapear as jornadas dos colaboradores e garantir que as funcionalidades essenciais, como gestão de cadastros e acompanhamento de chamados, estivessem organizadas de forma lógica e intuitiva.</p><p><strong>2. Design de Experiência Multidispositivo (A Estratégia)</strong>Identificamos dois contextos de uso distintos que exigiam soluções mobile diferentes:</p><ul><li><p><strong>Para os Clientes:</strong>A prioridade era uma experiência mobile fluida e de fácil acesso. Para isso, foi projetada a interface de um<strong>aplicativo dedicado (nativo)</strong>, focado nas funcionalidades essenciais para o hóspede.</p></li><li><p><strong>Para os Colaboradores:</strong>A necessidade era de flexibilidade para acessar a plataforma de qualquer lugar. A solução foi criar uma<strong>versão web mobile responsiva</strong>da dashboard principal, garantindo que a gestão pudesse ser feita de forma otimizada em qualquer dispositivo.</p></li></ul><p><strong>3. Design de Interface (UI) e Refinamento Iterativo</strong>Com os wireframes validados, avançamos para o design de alta fidelidade da interface. Aplicando a identidade visual da Capri, criamos um design limpo e funcional para a dashboard desktop. Durante este processo, realizamos diversos ajustes e melhorias na aparência e na interação, refinando os componentes para garantir a melhor usabilidade possível.</p><p>O projeto resultou em um ecossistema digital coeso, entregando três produtos de design interconectados:</p><ol><li><p><strong>A Dashboard Desktop:</strong>O hub central para as operações da Capri, permitindo que os funcionários gerenciem todo o negócio com eficiência e clareza.</p></li><li><p><strong>A Versão Web Mobile para a Equipe:</strong>Garante que os colaboradores tenham acesso flexível e otimizado à plataforma em qualquer lugar.</p></li><li><p><strong>O Aplicativo Mobile para Clientes:</strong>Oferece aos hóspedes uma experiência de autoatendimento moderna e conveniente.</p></li></ol><p>Juntas, essas soluções otimizaram as operações internas, reduziram a carga de trabalho manual e elevaram o padrão do serviço oferecido pela Capri Housing.</p>Capri Housing Capri Housing<p>UI/UX Design</p><p>A Capri Temporary Housing oferece acomodações de curta duração a preços acessíveis no Texas, Arizona e Califórnia, com um toque da hospitalidade italiana. É ideal para quem trabalha fora de casa, está entre duas casas ou simplesmente precisa de um lugar para ficar.<br><br>Fomos encarregados de desenvolver uma&nbsp;interface de dashboard eficiente e fácil de usar&nbsp;para os colaboradores da Capri Housing. O objetivo principal era centralizar e otimizar a&nbsp;gestão de cadastros de clientes e corporações, o acompanhamento de chamados e a manipulação de formulários, essenciais para as operações diárias da empresa.</p><p>A equipe da Capri Housing enfrentava um fluxo de trabalho operacional fragmentado, dependendo de sistemas descentralizados e planilhas para gerenciar clientes, chamados e contratos. Esse processo manual gerava ineficiência, risco de erros e dificultava o crescimento do negócio. O desafio era duplo: criar uma ferramenta interna poderosa para os colaboradores e, ao mesmo tempo, oferecer uma experiência digital fluida e moderna para os clientes.</p><p>Adotamos uma metodologia de design centrada no usuário para garantir que a solução atendesse às necessidades reais tanto da equipe interna quanto dos clientes finais.</p><p><strong>1. Arquitetura e Wireframing (A Fundação)</strong>O desafio inicial foi criar, do zero, a arquitetura de informação e o fluxo de trabalho da dashboard. Começamos com esboços iniciais e avançamos para wireframes detalhados. Esta etapa foi fundamental para estruturar todo o sistema, mapear as jornadas dos colaboradores e garantir que as funcionalidades essenciais, como gestão de cadastros e acompanhamento de chamados, estivessem organizadas de forma lógica e intuitiva.</p><p><strong>2. Design de Experiência Multidispositivo (A Estratégia)</strong>Identificamos dois contextos de uso distintos que exigiam soluções mobile diferentes:</p><ul><li><p><strong>Para os Clientes:</strong>A prioridade era uma experiência mobile fluida e de fácil acesso. Para isso, foi projetada a interface de um<strong>aplicativo dedicado (nativo)</strong>, focado nas funcionalidades essenciais para o hóspede.</p></li><li><p><strong>Para os Colaboradores:</strong>A necessidade era de flexibilidade para acessar a plataforma de qualquer lugar. A solução foi criar uma<strong>versão web mobile responsiva</strong>da dashboard principal, garantindo que a gestão pudesse ser feita de forma otimizada em qualquer dispositivo.</p></li></ul><p><strong>3. Design de Interface (UI) e Refinamento Iterativo</strong>Com os wireframes validados, avançamos para o design de alta fidelidade da interface. Aplicando a identidade visual da Capri, criamos um design limpo e funcional para a dashboard desktop. Durante este processo, realizamos diversos ajustes e melhorias na aparência e na interação, refinando os componentes para garantir a melhor usabilidade possível.</p><p>O projeto resultou em um ecossistema digital coeso, entregando três produtos de design interconectados:</p><ol><li><p><strong>A Dashboard Desktop:</strong>O hub central para as operações da Capri, permitindo que os funcionários gerenciem todo o negócio com eficiência e clareza.</p></li><li><p><strong>A Versão Web Mobile para a Equipe:</strong>Garante que os colaboradores tenham acesso flexível e otimizado à plataforma em qualquer lugar.</p></li><li><p><strong>O Aplicativo Mobile para Clientes:</strong>Oferece aos hóspedes uma experiência de autoatendimento moderna e conveniente.</p></li></ol><p>Juntas, essas soluções otimizaram as operações internas, reduziram a carga de trabalho manual e elevaram o padrão do serviço oferecido pela Capri Housing.</p>Blenduca<p>Anterior</p><p>Anterior</p>BU1LD<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/capri-housing/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/capri-housing/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 26,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T21:07:55.491007+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T21:07:55.491007+00:00"
+  },
+  "remote_snapshot": {
+    "description": "A Capri Temporary Housing oferece acomodações de curta duração a preços acessíveis no Texas, Arizona e Califórnia, com um toque da hospitalidade italiana. É ideal para quem trabalha fora de casa, está entre duas casas ou simplesmente precisa de um lugar para ficar. Fomos encarregados de desenvolver uma interface de dashboard eficiente e fácil de usar para os colaboradores da . O objetivo principal era centralizar e otimizar a gestão de cadastros de clientes e corporações, o acompanhamento de chamados e a manipulação de formulários, essenciais para as operações diárias da empresa. A equipe da enfrentava um fluxo de trabalho operacional fragmentado, dependendo de sistemas descentralizados e planilhas para gerenci",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/capri-housing/cover.jpg",
+    "images": [
+      "/raksadesign/framerusercontent.com/images/jTfpwsj1AdBxHw1KVkPToB3o7M.png?width=1920&height=1266",
+      "/raksadesign/framerusercontent.com/images/LzKaPcdErgk2MCY7gsm8W9MmlRk.png?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/DsV3JGQKHYloELr7KFiFUL1xM.png?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/4rbUoLEJOyFurc5SHvzZMg6UMq4.png?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/H17b9fQjYXaBslTtdBanrDsvo.png?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/UKDWgdLG8AyBECHsj2nHjlQGz1c.png?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/WgurizbhNF0ilTfdMCOmBcQ.png?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/anDZKX7LBRsqO3toemMU5XIqM.png?width=1920&height=1080"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "8c08b18e-45da-5ce0-8855-15bff8268209",
+      "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/jTfpwsj1AdBxHw1KVkPToB3o7M.png?width=1920&height=1266",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1266,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "8c790abc-c665-59de-b264-bedcee81127e",
+      "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/LzKaPcdErgk2MCY7gsm8W9MmlRk.png?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 1,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3a5eb67b-2304-5312-b58f-8fdb7668c596",
+      "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/DsV3JGQKHYloELr7KFiFUL1xM.png?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 2,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2d3a4230-5ad2-5586-859e-5224a946a887",
+      "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/4rbUoLEJOyFurc5SHvzZMg6UMq4.png?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 3,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e5478132-2a30-5abe-9875-dbd876889562",
+      "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/H17b9fQjYXaBslTtdBanrDsvo.png?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 4,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f7c53e9a-7659-5d0a-9e3b-92cf300c2a42",
+      "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/UKDWgdLG8AyBECHsj2nHjlQGz1c.png?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 5,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "263d3c91-558b-5cd8-8a1d-59885d0791ad",
+      "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/WgurizbhNF0ilTfdMCOmBcQ.png?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 6,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ef25dad3-bd27-5901-8ea6-52cce9b162d4",
+      "case_id": "aad01bd8-5b4d-5eaf-a81e-62fe5574feea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/anDZKX7LBRsqO3toemMU5XIqM.png?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 7,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 8,
+    "local_image_count": 8
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

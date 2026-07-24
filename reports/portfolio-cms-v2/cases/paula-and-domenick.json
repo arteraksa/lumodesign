@@ -1,0 +1,385 @@
+{
+  "slug": "paula-and-domenick",
+  "case_id": "79a6c7e4-33b1-5630-a3f8-7a04d5614093",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/paula-and-domenick/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "79a6c7e4-33b1-5630-a3f8-7a04d5614093",
+    "legacy_id": "paula-and-domenick",
+    "legacy_slug": "paula-and-domenick",
+    "slug": "paula-and-domenick",
+    "title": "Paula and Domenick",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Desenvolvimento",
+      "Branding"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Um projeto especial para criar o website do casamento de Paula Shulman e Domenick Gioia. O site serviu como um convite digital e um hub central de informações para os convidados do evento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O ponto de partida foi uma identidade visual e um conjunto de artes previamente desenvolvidas por uma ilustradora, com uma estética delicada e artística. O desafio era traduzir esse universo visual estático para um ambiente digital interativo, sem perder a essência romântica e artesanal do material original. A principal questão era: como dar vida às ilustrações de forma que o site se tornasse uma extensão natural e poética do convite?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A abordagem de design focou em complementar e elevar a arte existente através de um layout limpo e animações temáticas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Layout e Composição&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O primeiro passo foi idealizar o layout das páginas, organizando as informações do evento de forma clara e elegante. O design da interface foi mantido minimalista para servir como uma moldura para as belas ilustrações, garantindo que elas fossem sempre o ponto focal da experiência."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Animações Temáticas&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O grande destaque do projeto foi o desenvolvimento de animações personalizadas para as imagens do site.&nbsp;Para honrar a estética original, foi criado um&nbsp;efeito de \"pintura em aquarela\", onde as ilustrações e fotos surgiam na tela progressivamente, como se estivessem sendo pintadas em tempo real."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Esse detalhe de motion design foi crucial para criar uma experiência de navegação única e memorável, que não apenas informava, mas também encantava os convidados, capturando perfeitamente a essência artística e pessoal do casamento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Desenvolvimento"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Um projeto especial para criar o website do casamento de Paula Shulman e Domenick Gioia. O site serviu como um convite digital e um hub central de informações para os convidados do evento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O ponto de partida foi uma identidade visual e um conjunto de artes previamente desenvolvidas por uma ilustradora, com uma estética delicada e artística. O desafio era traduzir esse universo visual estático para um ambiente digital interativo, sem perder a essência romântica e artesanal do material original. A principal questão era: como dar vida às ilustrações de forma que o site se tornasse uma extensão natural e poética do convite?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A abordagem de design focou em complementar e elevar a arte existente através de um layout limpo e animações temáticas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Layout e Composição&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O primeiro passo foi idealizar o layout das páginas, organizando as informações do evento de forma clara e elegante. O design da interface foi mantido minimalista para servir como uma moldura para as belas ilustrações, garantindo que elas fossem sempre o ponto focal da experiência."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Animações Temáticas&nbsp;"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O grande destaque do projeto foi o desenvolvimento de animações personalizadas para as imagens do site.&nbsp;Para honrar a estética original, foi criado um&nbsp;efeito de \"pintura em aquarela\", onde as ilustrações e fotos surgiam na tela progressivamente, como se estivessem sendo pintadas em tempo real."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Esse detalhe de motion design foi crucial para criar uma experiência de navegação única e memorável, que não apenas informava, mas também encantava os convidados, capturando perfeitamente a essência artística e pessoal do casamento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Um projeto especial para criar o website do casamento de Paula Shulman e Domenick Gioia. O site serviu como um convite digital e um hub central de informações para os convidados do evento.</p><p>O ponto de partida foi uma identidade visual e um conjunto de artes previamente desenvolvidas por uma ilustradora, com uma estética delicada e artística. O desafio era traduzir esse universo visual estático para um ambiente digital interativo, sem perder a essência romântica e artesanal do material original. A principal questão era: como dar vida às ilustrações de forma que o site se tornasse uma extensão natural e poética do convite?</p><p>A abordagem de design focou em complementar e elevar a arte existente através de um layout limpo e animações temáticas.</p><p><strong>1. Layout e Composição&nbsp;</strong></p><p>O primeiro passo foi idealizar o layout das páginas, organizando as informações do evento de forma clara e elegante. O design da interface foi mantido minimalista para servir como uma moldura para as belas ilustrações, garantindo que elas fossem sempre o ponto focal da experiência.</p><p><strong>2. Animações Temáticas&nbsp;</strong></p><p>O grande destaque do projeto foi o desenvolvimento de animações personalizadas para as imagens do site.&nbsp;Para honrar a estética original, foi criado um&nbsp;efeito de \"pintura em aquarela\", onde as ilustrações e fotos surgiam na tela progressivamente, como se estivessem sendo pintadas em tempo real.</p><p>Esse detalhe de motion design foi crucial para criar uma experiência de navegação única e memorável, que não apenas informava, mas também encantava os convidados, capturando perfeitamente a essência artística e pessoal do casamento.<br><br></p>Paula and Domenick Paula and Domenick<p>UI/UX Design</p><p>Desenvolvimento</p><p>Branding</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>Um projeto especial para criar o website do casamento de Paula Shulman e Domenick Gioia. O site serviu como um convite digital e um hub central de informações para os convidados do evento.</p><p>O ponto de partida foi uma identidade visual e um conjunto de artes previamente desenvolvidas por uma ilustradora, com uma estética delicada e artística. O desafio era traduzir esse universo visual estático para um ambiente digital interativo, sem perder a essência romântica e artesanal do material original. A principal questão era: como dar vida às ilustrações de forma que o site se tornasse uma extensão natural e poética do convite?</p><p>A abordagem de design focou em complementar e elevar a arte existente através de um layout limpo e animações temáticas.</p><p><strong>1. Layout e Composição&nbsp;</strong></p><p>O primeiro passo foi idealizar o layout das páginas, organizando as informações do evento de forma clara e elegante. O design da interface foi mantido minimalista para servir como uma moldura para as belas ilustrações, garantindo que elas fossem sempre o ponto focal da experiência.</p><p><strong>2. Animações Temáticas&nbsp;</strong></p><p>O grande destaque do projeto foi o desenvolvimento de animações personalizadas para as imagens do site.&nbsp;Para honrar a estética original, foi criado um&nbsp;efeito de \"pintura em aquarela\", onde as ilustrações e fotos surgiam na tela progressivamente, como se estivessem sendo pintadas em tempo real.</p><p>Esse detalhe de motion design foi crucial para criar uma experiência de navegação única e memorável, que não apenas informava, mas também encantava os convidados, capturando perfeitamente a essência artística e pessoal do casamento.<br><br></p>DEMIP<p>Anterior</p><p>Anterior</p>Polvilho do Dado<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/paula-and-domenick/cover.jpg",
+    "external_url": "https://paulaanddom.com/pt/home#hero",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 33,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Um projeto especial para criar o website do casamento de Paula Shulman e Domenick Gioia. O site serviu como um convite digital e um hub central de informações para os convidados do evento. O ponto de partida foi uma identidade visual e um conjunto de artes previamente desenvolvidas por uma ilustradora, com uma estética delicada e artística. O desafio era traduzir esse universo visual estático para um ambiente digital interativo, sem perder a essência romântica e artesanal do material original. A principal questão era: como dar vida às ilustrações de forma que o site se tornasse uma extensão natural e poética do convite? A abordagem de design focou em complementar e elevar a arte existente através de um layout l",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/001.png",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/002.png",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/003.png",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/004.png",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/005.png"
+    ],
+    "external_url": "https://paulaanddom.com/pt/home#hero"
+  },
+  "media": [
+    {
+      "id": "7bda3769-dafa-5af6-a72c-e0d963ae7d6f",
+      "case_id": "79a6c7e4-33b1-5630-a3f8-7a04d5614093",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/001.png",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/paula-and-domenick/gallery/001.png",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "41e44fc0-43ed-5013-97d4-019bb3e64586",
+      "case_id": "79a6c7e4-33b1-5630-a3f8-7a04d5614093",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/002.png",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/paula-and-domenick/gallery/002.png",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7763e859-9d7e-5751-ae24-a843036c92e0",
+      "case_id": "79a6c7e4-33b1-5630-a3f8-7a04d5614093",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/003.png",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/paula-and-domenick/gallery/003.png",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "010bdd49-d73d-52f0-a7eb-06a4e8c04a3d",
+      "case_id": "79a6c7e4-33b1-5630-a3f8-7a04d5614093",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/004.png",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/paula-and-domenick/gallery/004.png",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c9193d65-89e6-51f7-8c1c-d86ae515fdfb",
+      "case_id": "79a6c7e4-33b1-5630-a3f8-7a04d5614093",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/paula-and-domenick/gallery/005.png",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/paula-and-domenick/gallery/005.png",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 5,
+    "local_image_count": 5
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

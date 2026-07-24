@@ -1,0 +1,406 @@
+{
+  "slug": "lisa-dossi",
+  "case_id": "d7375c25-d68e-571b-8cf6-2061e04feb8d",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/lisa-dossi/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "d7375c25-d68e-571b-8cf6-2061e04feb8d",
+    "legacy_id": "lisa-dossi",
+    "legacy_slug": "lisa-dossi",
+    "slug": "lisa-dossi",
+    "title": "Lisa Dossi",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Lisa Dossi é uma mentora de finanças com foco em capacitar e guiar mulheres investidoras, ajudando-as a tomar melhores decisões financeiras e a construir seu patrimônio."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O objetivo do projeto era criar uma landing page de alta performance para a principal ferramenta de \"isca digital\" (lead magnet) da cliente: uma autoavaliação gratuita. O desafio era desenhar uma página que, utilizando a identidade visual existente de Lisa Dossi, convencesse a visitante do valor dessa ferramenta e a motivasse a se cadastrar, capturando leads qualificados para o funil de vendas da mentoria."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Jornada de Persuasão Visual"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A página foi estruturada como uma jornada de persuasão clara e metódica, projetada para guiar a usuária passo a passo, desde a dúvida inicial até a conversão."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Geração de Empatia: A seção de abertura foi criada para gerar identificação imediata, abordando as dores e perguntas comuns do público-alvo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Apresentação da Solução: Para evitar um bloco massivo de texto, a seção seguinte detalha o que a autoavaliação proporciona combinando texto explicativo com ilustrações de apoio . Essa abordagem torna o conteúdo mais didático e visualmente leve."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Reforço de Valor: Em seguida, uma seção em formato de lista destaca os motivos \"por que\" a usuária deve realizar a autoavaliação, quebrando objeções e reforçando os benefícios diretos."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Conversão e Autoridade: A página conclui a jornada com uma lista clara de benefícios e uma seção \"Sobre Lisa Dossi\", que serve para construir autoridade e confiança. Múltiplas chamadas para ação (CTAs) são posicionadas estrategicamente ao longo da página, culminando em um CTA final para garantir a máxima oportunidade de captura do lead."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Lisa Dossi é uma mentora de finanças com foco em capacitar e guiar mulheres investidoras, ajudando-as a tomar melhores decisões financeiras e a construir seu patrimônio."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O objetivo do projeto era criar uma landing page de alta performance para a principal ferramenta de \"isca digital\" (lead magnet) da cliente: uma autoavaliação gratuita. O desafio era desenhar uma página que, utilizando a identidade visual existente de Lisa Dossi, convencesse a visitante do valor dessa ferramenta e a motivasse a se cadastrar, capturando leads qualificados para o funil de vendas da mentoria."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Jornada de Persuasão Visual"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A página foi estruturada como uma jornada de persuasão clara e metódica, projetada para guiar a usuária passo a passo, desde a dúvida inicial até a conversão."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Geração de Empatia: A seção de abertura foi criada para gerar identificação imediata, abordando as dores e perguntas comuns do público-alvo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Apresentação da Solução: Para evitar um bloco massivo de texto, a seção seguinte detalha o que a autoavaliação proporciona combinando texto explicativo com ilustrações de apoio . Essa abordagem torna o conteúdo mais didático e visualmente leve."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Reforço de Valor: Em seguida, uma seção em formato de lista destaca os motivos \"por que\" a usuária deve realizar a autoavaliação, quebrando objeções e reforçando os benefícios diretos."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Conversão e Autoridade: A página conclui a jornada com uma lista clara de benefícios e uma seção \"Sobre Lisa Dossi\", que serve para construir autoridade e confiança. Múltiplas chamadas para ação (CTAs) são posicionadas estrategicamente ao longo da página, culminando em um CTA final para garantir a máxima oportunidade de captura do lead."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Lisa Dossi é uma mentora de finanças com foco em capacitar e guiar mulheres investidoras, ajudando-as a tomar melhores decisões financeiras e a construir seu patrimônio.</p><p><strong>O Desafio</strong></p><p>O objetivo do projeto era criar uma landing page de alta performance para a principal ferramenta de \"isca digital\" (lead magnet) da cliente: uma autoavaliação gratuita. O desafio era desenhar uma página que, utilizando a identidade visual existente de Lisa Dossi, convencesse a visitante do valor dessa ferramenta e a motivasse a se cadastrar, capturando leads qualificados para o funil de vendas da mentoria.</p><p><strong>A Solução de Design: Uma Jornada de Persuasão Visual</strong></p><p>A página foi estruturada como uma jornada de persuasão clara e metódica, projetada para guiar a usuária passo a passo, desde a dúvida inicial até a conversão.</p><ol><li><p><strong>Geração de Empatia:</strong>A seção de abertura foi criada para gerar identificação imediata, abordando as dores e perguntas comuns do público-alvo.</p></li><li><p><strong>Apresentação da Solução:</strong>Para evitar um bloco massivo de texto, a seção seguinte detalha o que a autoavaliação proporciona combinando texto explicativo com<strong>ilustrações de apoio</strong>. Essa abordagem torna o conteúdo mais didático e visualmente leve.</p></li><li><p><strong>Reforço de Valor:</strong>Em seguida, uma seção em formato de lista destaca os motivos \"por que\" a usuária deve realizar a autoavaliação, quebrando objeções e reforçando os benefícios diretos.</p></li><li><p><strong>Conversão e Autoridade:</strong>A página conclui a jornada com uma lista clara de benefícios e uma seção \"Sobre Lisa Dossi\", que serve para construir autoridade e confiança. Múltiplas chamadas para ação (CTAs) são posicionadas estrategicamente ao longo da página, culminando em um CTA final para garantir a máxima oportunidade de captura do lead.</p></li></ol>Lisa Dossi Lisa Dossi<p>UI/UX Design</p><p>Lisa Dossi é uma mentora de finanças com foco em capacitar e guiar mulheres investidoras, ajudando-as a tomar melhores decisões financeiras e a construir seu patrimônio.</p><p><strong>O Desafio</strong></p><p>O objetivo do projeto era criar uma landing page de alta performance para a principal ferramenta de \"isca digital\" (lead magnet) da cliente: uma autoavaliação gratuita. O desafio era desenhar uma página que, utilizando a identidade visual existente de Lisa Dossi, convencesse a visitante do valor dessa ferramenta e a motivasse a se cadastrar, capturando leads qualificados para o funil de vendas da mentoria.</p><p><strong>A Solução de Design: Uma Jornada de Persuasão Visual</strong></p><p>A página foi estruturada como uma jornada de persuasão clara e metódica, projetada para guiar a usuária passo a passo, desde a dúvida inicial até a conversão.</p><ol><li><p><strong>Geração de Empatia:</strong>A seção de abertura foi criada para gerar identificação imediata, abordando as dores e perguntas comuns do público-alvo.</p></li><li><p><strong>Apresentação da Solução:</strong>Para evitar um bloco massivo de texto, a seção seguinte detalha o que a autoavaliação proporciona combinando texto explicativo com<strong>ilustrações de apoio</strong>. Essa abordagem torna o conteúdo mais didático e visualmente leve.</p></li><li><p><strong>Reforço de Valor:</strong>Em seguida, uma seção em formato de lista destaca os motivos \"por que\" a usuária deve realizar a autoavaliação, quebrando objeções e reforçando os benefícios diretos.</p></li><li><p><strong>Conversão e Autoridade:</strong>A página conclui a jornada com uma lista clara de benefícios e uma seção \"Sobre Lisa Dossi\", que serve para construir autoridade e confiança. Múltiplas chamadas para ação (CTAs) são posicionadas estrategicamente ao longo da página, culminando em um CTA final para garantir a máxima oportunidade de captura do lead.</p></li></ol>Plataforma EAD<p>Anterior</p><p>Anterior</p>Magnus<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/lisa-dossi/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 17,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "é uma mentora de finanças com foco em capacitar e guiar mulheres investidoras, ajudando-as a tomar melhores decisões financeiras e a construir seu patrimônio. O Desafio O objetivo do projeto era criar uma landing page de alta performance para a principal ferramenta de \"isca digital\" (lead magnet) da cliente: uma autoavaliação gratuita. O desafio era desenhar uma página que, utilizando a identidade visual existente de , convencesse a visitante do valor dessa ferramenta e a motivasse a se cadastrar, capturando leads qualificados para o funil de vendas da mentoria. A Solução de Design: Uma Jornada de Persuasão Visual A página foi estruturada como uma jornada de persuasão clara e metódica, projetada para guiar a us",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/005.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "5ca04daf-dda1-5318-b75a-e21637d090d7",
+      "case_id": "d7375c25-d68e-571b-8cf6-2061e04feb8d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/lisa-dossi/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c8547108-e771-514c-ba91-a99c383d29cc",
+      "case_id": "d7375c25-d68e-571b-8cf6-2061e04feb8d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/lisa-dossi/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ad0a26d9-1a01-5645-9d4f-fe11c140d9ff",
+      "case_id": "d7375c25-d68e-571b-8cf6-2061e04feb8d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/lisa-dossi/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "773c7e59-abcc-5d1f-8f34-b5c338a08858",
+      "case_id": "d7375c25-d68e-571b-8cf6-2061e04feb8d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/lisa-dossi/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "340836ac-7263-5cb3-bef3-4abab8d5e800",
+      "case_id": "d7375c25-d68e-571b-8cf6-2061e04feb8d",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/lisa-dossi/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/lisa-dossi/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 5,
+    "local_image_count": 5
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

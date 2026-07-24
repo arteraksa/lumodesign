@@ -1,0 +1,457 @@
+{
+  "slug": "vallor",
+  "case_id": "8cf92306-8f14-56ce-ac77-810b2980b5ac",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/vallor/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "8cf92306-8f14-56ce-ac77-810b2980b5ac",
+    "legacy_id": "vallor",
+    "legacy_slug": "vallor",
+    "slug": "vallor",
+    "title": "Vallor",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Desenvolvimento"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Vallor é uma empresa de tecnologia que utiliza Inteligência Artificial para analisar e simplificar contratos complexos. A plataforma é projetada para dar poder de decisão a times estratégicos, como os de compras e negociações, transformando documentos densos em insights acionáveis."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio de design era duplo:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Para a Landing Page: Comunicar uma proposta de valor complexa (análise de contratos por IA) de forma clara e convincente para um público B2B, servindo como uma ferramenta de aquisição."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Para a Interface do Sistema: Projetar uma ferramenta de trabalho (dashboard) que fosse intuitiva, funcional e fluida para profissionais que lidam com negociações de alto risco."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A experiência digital como um todo precisava refletir a promessa central da Vallor: transformar complexidade em decisões rápidas e inteligentes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Clareza Estratégica e Fluidez Funcional"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi executado em duas frentes principais, que se complementam para criar uma jornada de usuário coesa, desde a descoberta até o uso contínuo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. A Landing Page de Aquisição A partir de uma estrutura de conteúdo pré-definida, foi desenvolvido o layout completo, o desenvolvimento front-end e as animações da página. O design foi focado em apresentar claramente os benefícios da plataforma, como os agentes de IA que analisam contratos, destacam riscos ocultos e aceleram as decisões estratégicas. Animações sutis foram utilizadas para guiar o usuário e tornar a informação tecnológica mais acessível e moderna."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. A Interface do Sistema (UI) Além da página de aquisição, foi projetada a interface do sistema principal da Vallor. O foco foi criar uma experiência de usuário (UX) fluida e funcional, desenhada especificamente para os profissionais que gerenciam compras e negociações. O design se destaca pelo uso inteligente de visualização de dados e uma organização visual clara, que permite ao usuário identificar riscos e tomar decisões rapidamente, cumprindo a promessa da marca de transformar contratos em decisões inteligentes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Desenvolvimento"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Vallor é uma empresa de tecnologia que utiliza Inteligência Artificial para analisar e simplificar contratos complexos. A plataforma é projetada para dar poder de decisão a times estratégicos, como os de compras e negociações, transformando documentos densos em insights acionáveis."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio de design era duplo:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Para a Landing Page: Comunicar uma proposta de valor complexa (análise de contratos por IA) de forma clara e convincente para um público B2B, servindo como uma ferramenta de aquisição."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Para a Interface do Sistema: Projetar uma ferramenta de trabalho (dashboard) que fosse intuitiva, funcional e fluida para profissionais que lidam com negociações de alto risco."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A experiência digital como um todo precisava refletir a promessa central da Vallor: transformar complexidade em decisões rápidas e inteligentes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Clareza Estratégica e Fluidez Funcional"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi executado em duas frentes principais, que se complementam para criar uma jornada de usuário coesa, desde a descoberta até o uso contínuo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. A Landing Page de Aquisição A partir de uma estrutura de conteúdo pré-definida, foi desenvolvido o layout completo, o desenvolvimento front-end e as animações da página. O design foi focado em apresentar claramente os benefícios da plataforma, como os agentes de IA que analisam contratos, destacam riscos ocultos e aceleram as decisões estratégicas. Animações sutis foram utilizadas para guiar o usuário e tornar a informação tecnológica mais acessível e moderna."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. A Interface do Sistema (UI) Além da página de aquisição, foi projetada a interface do sistema principal da Vallor. O foco foi criar uma experiência de usuário (UX) fluida e funcional, desenhada especificamente para os profissionais que gerenciam compras e negociações. O design se destaca pelo uso inteligente de visualização de dados e uma organização visual clara, que permite ao usuário identificar riscos e tomar decisões rapidamente, cumprindo a promessa da marca de transformar contratos em decisões inteligentes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>A Vallor é uma empresa de tecnologia que utiliza Inteligência Artificial para analisar e simplificar contratos complexos. A plataforma é projetada para dar poder de decisão a times estratégicos, como os de compras e negociações, transformando documentos densos em insights acionáveis.</p><p><strong>O Desafio</strong></p><p>O desafio de design era duplo:</p><ol><li><p><strong>Para a Landing Page:</strong>Comunicar uma proposta de valor complexa (análise de contratos por IA) de forma clara e convincente para um público B2B, servindo como uma ferramenta de aquisição.</p></li><li><p><strong>Para a Interface do Sistema:</strong>Projetar uma ferramenta de trabalho (dashboard) que fosse intuitiva, funcional e fluida para profissionais que lidam com negociações de alto risco.</p></li></ol><p>A experiência digital como um todo precisava refletir a promessa central da Vallor: transformar complexidade em decisões rápidas e inteligentes.</p><p><strong>A Solução de Design: Clareza Estratégica e Fluidez Funcional</strong></p><p>O projeto foi executado em duas frentes principais, que se complementam para criar uma jornada de usuário coesa, desde a descoberta até o uso contínuo.</p><p><strong>1. A Landing Page de Aquisição</strong><br>A partir de uma estrutura de conteúdo pré-definida, foi desenvolvido o layout completo, o desenvolvimento front-end e as animações da página. O design foi focado em apresentar claramente os benefícios da plataforma, como os agentes de IA que analisam contratos, destacam riscos ocultos e aceleram as decisões estratégicas. Animações sutis foram utilizadas para guiar o usuário e tornar a informação tecnológica mais acessível e moderna.</p><p><strong>2. A Interface do Sistema (UI)</strong><br>Além da página de aquisição, foi projetada a interface do sistema principal da Vallor. O foco foi criar uma experiência de usuário (UX) fluida e funcional, desenhada especificamente para os profissionais que gerenciam compras e negociações. O design se destaca pelo uso inteligente de visualização de dados e uma organização visual clara, que permite ao usuário identificar riscos e tomar decisões rapidamente, cumprindo a promessa da marca de transformar contratos em decisões inteligentes.</p>Vallor Vallor<p>UI/UX Design</p><p>Desenvolvimento</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>A Vallor é uma empresa de tecnologia que utiliza Inteligência Artificial para analisar e simplificar contratos complexos. A plataforma é projetada para dar poder de decisão a times estratégicos, como os de compras e negociações, transformando documentos densos em insights acionáveis.</p><p><strong>O Desafio</strong></p><p>O desafio de design era duplo:</p><ol><li><p><strong>Para a Landing Page:</strong>Comunicar uma proposta de valor complexa (análise de contratos por IA) de forma clara e convincente para um público B2B, servindo como uma ferramenta de aquisição.</p></li><li><p><strong>Para a Interface do Sistema:</strong>Projetar uma ferramenta de trabalho (dashboard) que fosse intuitiva, funcional e fluida para profissionais que lidam com negociações de alto risco.</p></li></ol><p>A experiência digital como um todo precisava refletir a promessa central da Vallor: transformar complexidade em decisões rápidas e inteligentes.</p><p><strong>A Solução de Design: Clareza Estratégica e Fluidez Funcional</strong></p><p>O projeto foi executado em duas frentes principais, que se complementam para criar uma jornada de usuário coesa, desde a descoberta até o uso contínuo.</p><p><strong>1. A Landing Page de Aquisição</strong><br>A partir de uma estrutura de conteúdo pré-definida, foi desenvolvido o layout completo, o desenvolvimento front-end e as animações da página. O design foi focado em apresentar claramente os benefícios da plataforma, como os agentes de IA que analisam contratos, destacam riscos ocultos e aceleram as decisões estratégicas. Animações sutis foram utilizadas para guiar o usuário e tornar a informação tecnológica mais acessível e moderna.</p><p><strong>2. A Interface do Sistema (UI)</strong><br>Além da página de aquisição, foi projetada a interface do sistema principal da Vallor. O foco foi criar uma experiência de usuário (UX) fluida e funcional, desenhada especificamente para os profissionais que gerenciam compras e negociações. O design se destaca pelo uso inteligente de visualização de dados e uma organização visual clara, que permite ao usuário identificar riscos e tomar decisões rapidamente, cumprindo a promessa da marca de transformar contratos em decisões inteligentes.</p>Tri RS<p>Anterior</p><p>Anterior</p>Impresul<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/vallor/cover.jpg",
+    "external_url": "https://vallor.ai",
+    "featured_on_home": true,
+    "home_order": 7,
+    "portfolio_order": 7,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "A é uma empresa de tecnologia que utiliza Inteligência Artificial para analisar e simplificar contratos complexos. A plataforma é projetada para dar poder de decisão a times estratégicos, como os de compras e negociações, transformando documentos densos em insights acionáveis. O Desafio O desafio de design era duplo: Para a Landing Page: Comunicar uma proposta de valor complexa (análise de contratos por IA) de forma clara e convincente para um público B2B, servindo como uma ferramenta de aquisição. Para a Interface do Sistema: Projetar uma ferramenta de trabalho (dashboard) que fosse intuitiva, funcional e fluida para profissionais que lidam com negociações de alto risco. A experiência digital como um todo prec",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/006.jpg"
+    ],
+    "external_url": "https://vallor.ai"
+  },
+  "media": [
+    {
+      "id": "44cd2e14-701c-581c-b23a-92d90776a0db",
+      "case_id": "8cf92306-8f14-56ce-ac77-810b2980b5ac",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vallor/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2e4dfd1a-e6dd-5b7b-b587-35249d14d798",
+      "case_id": "8cf92306-8f14-56ce-ac77-810b2980b5ac",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vallor/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "054b94d3-9565-58ee-85d0-8a0f1502a0e8",
+      "case_id": "8cf92306-8f14-56ce-ac77-810b2980b5ac",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vallor/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "06a57d1a-6810-5f8c-883f-a3c1eb6d4b2d",
+      "case_id": "8cf92306-8f14-56ce-ac77-810b2980b5ac",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vallor/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c8a4c0cb-45f4-537a-97ae-9a864ac9caf9",
+      "case_id": "8cf92306-8f14-56ce-ac77-810b2980b5ac",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vallor/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a0f387a8-ee11-54c8-a6ac-ebd1909b0eba",
+      "case_id": "8cf92306-8f14-56ce-ac77-810b2980b5ac",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/vallor/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/vallor/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 6,
+    "local_image_count": 6
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

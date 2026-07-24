@@ -1,0 +1,708 @@
+{
+  "slug": "definna",
+  "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/definna/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+    "legacy_id": "definna",
+    "legacy_slug": "definna",
+    "slug": "definna",
+    "title": "Definna",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Desenvolvimento"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Definna é uma plataforma SaaS (Software as a Service) projetada para empresas construírem, integrarem e monitorarem uma força de trabalho de agentes de IA. Indo além dos chatbots tradicionais, a Definna permite que esses agentes executem tarefas reais dentro das ferramentas e dados da empresa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O escopo do projeto incluiu o design da landing page de lançamento e o desenvolvimento dos e-mails de comunicação da plataforma, além do layout da dashboard da plataforma."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era educar o mercado. A maioria das empresas associa \"IA\" a chatbots que apenas \"respondem perguntas\". A landing page precisava, em segundos, quebrar essa percepção e comunicar uma proposta de valor muito mais poderosa: a Definna cria agentes que \"agem\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A página precisava ser uma ferramenta de vendas estratégica, capaz de convencer um público B2B a experimentar um produto tecnologicamente avançado, ao mesmo tempo em que construía confiança e demonstrava controle absoluto sobre a tecnologia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Narrativa de Educação e Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A landing page foi projetada como uma narrativa estratégica que guia o visitante desde a curiosidade inicial (\"O que é isso?\") até a convicção (\"Eu preciso disso\")."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "O Posicionamento : Além dos Chatbots A hero section estabelece imediatamente o novo conceito: \"Orquestre seu Time de Agentes de IA\". O subtítulo reforça a diferenciação, prometendo ir \"além dos chatbots\" para uma \"automação de verdade\". A seção de Problema/Solução, logo abaixo, aprofunda essa ideia, contrastando \"chatbots genéricos\" com os \"agentes especialistas\" da Definna, que podem ser conectados a ferramentas como Gmail, Sheets e Notion."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Prova de Valor : Controle e Poder Para um público B2B, a confiança e o controle são essenciais. A seção \"Uma Plataforma, Controle Absoluto\" detalha as features principais que tornam a plataforma uma solução \"séria e escalável\". Os destaques incluem: Dashboard Centralizado : Para monitoramento de desempenho e custos em tempo real."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Ecossistema de Ferramentas : A capacidade de conectar agentes a ferramentas que eles já usam (Gmail, Trello, etc.) para \"executar tarefas reais\"."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Flexibilidade Multi-LLM : Acesso aos melhores modelos (OpenAI, Anthropic, Google) para otimizar custos e desempenho."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Monitoria e Auditoria : Transparência total sobre cada interação do agente."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Tangibilização : Casos de Uso Reais para tornar o conceito abstrato de \"agentes\" algo concreto, uma seção de Casos de Uso foi criada. Ela mostra exemplos práticos de como a Definna resolve problemas reais para empresas como uma pizzaria (automatizando pedidos no WhatsApp), um escritório de advocacia (classificando despesas) e uma academia (fazendo onboarding de clientes)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Conversão : Funil Sem Atrito. A jornada do usuário culmina em um funil de conversão claro. A página apresenta planos escaláveis (Gratuito, Pro, Empresa) e termina com um forte CTA focado no plano gratuito, removendo qualquer barreira de entrada ao prometer resultados em \"menos de 10 minutos\" e \"sem cartão de crédito\"."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "E-mails de Comunicação: Complementando a landing page, foi desenvolvido todo o fluxo de e-mails transacionais e de marketing da plataforma (boas-vindas, onboarding, notificações), garantindo uma experiência de marca coesa e profissional desde o primeiro cadastro até o uso contínuo do produto."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Desenvolvimento"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Definna é uma plataforma SaaS (Software as a Service) projetada para empresas construírem, integrarem e monitorarem uma força de trabalho de agentes de IA. Indo além dos chatbots tradicionais, a Definna permite que esses agentes executem tarefas reais dentro das ferramentas e dados da empresa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O escopo do projeto incluiu o design da landing page de lançamento e o desenvolvimento dos e-mails de comunicação da plataforma, além do layout da dashboard da plataforma."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era educar o mercado. A maioria das empresas associa \"IA\" a chatbots que apenas \"respondem perguntas\". A landing page precisava, em segundos, quebrar essa percepção e comunicar uma proposta de valor muito mais poderosa: a Definna cria agentes que \"agem\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A página precisava ser uma ferramenta de vendas estratégica, capaz de convencer um público B2B a experimentar um produto tecnologicamente avançado, ao mesmo tempo em que construía confiança e demonstrava controle absoluto sobre a tecnologia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Narrativa de Educação e Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A landing page foi projetada como uma narrativa estratégica que guia o visitante desde a curiosidade inicial (\"O que é isso?\") até a convicção (\"Eu preciso disso\")."
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "O Posicionamento : Além dos Chatbots A hero section estabelece imediatamente o novo conceito: \"Orquestre seu Time de Agentes de IA\". O subtítulo reforça a diferenciação, prometendo ir \"além dos chatbots\" para uma \"automação de verdade\". A seção de Problema/Solução, logo abaixo, aprofunda essa ideia, contrastando \"chatbots genéricos\" com os \"agentes especialistas\" da Definna, que podem ser conectados a ferramentas como Gmail, Sheets e Notion."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Prova de Valor : Controle e Poder Para um público B2B, a confiança e o controle são essenciais. A seção \"Uma Plataforma, Controle Absoluto\" detalha as features principais que tornam a plataforma uma solução \"séria e escalável\". Os destaques incluem: Dashboard Centralizado : Para monitoramento de desempenho e custos em tempo real."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Ecossistema de Ferramentas : A capacidade de conectar agentes a ferramentas que eles já usam (Gmail, Trello, etc.) para \"executar tarefas reais\"."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Flexibilidade Multi-LLM : Acesso aos melhores modelos (OpenAI, Anthropic, Google) para otimizar custos e desempenho."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Monitoria e Auditoria : Transparência total sobre cada interação do agente."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Tangibilização : Casos de Uso Reais para tornar o conceito abstrato de \"agentes\" algo concreto, uma seção de Casos de Uso foi criada. Ela mostra exemplos práticos de como a Definna resolve problemas reais para empresas como uma pizzaria (automatizando pedidos no WhatsApp), um escritório de advocacia (classificando despesas) e uma academia (fazendo onboarding de clientes)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A Conversão : Funil Sem Atrito. A jornada do usuário culmina em um funil de conversão claro. A página apresenta planos escaláveis (Gratuito, Pro, Empresa) e termina com um forte CTA focado no plano gratuito, removendo qualquer barreira de entrada ao prometer resultados em \"menos de 10 minutos\" e \"sem cartão de crédito\"."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "E-mails de Comunicação: Complementando a landing page, foi desenvolvido todo o fluxo de e-mails transacionais e de marketing da plataforma (boas-vindas, onboarding, notificações), garantindo uma experiência de marca coesa e profissional desde o primeiro cadastro até o uso contínuo do produto."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>A Definna é uma plataforma SaaS (Software as a Service) projetada para empresas construírem, integrarem e monitorarem uma força de trabalho de agentes de IA. Indo além dos chatbots tradicionais, a Definna permite que esses agentes executem tarefas reais dentro das ferramentas e dados da empresa.</p><p>O escopo do projeto incluiu o design da landing page de lançamento e o desenvolvimento dos e-mails de comunicação da plataforma, além do layout da dashboard da plataforma.</p><p><strong>O Desafio</strong></p><p>O principal desafio era educar o mercado. A maioria das empresas associa \"IA\" a chatbots que apenas \"respondem perguntas\". A landing page precisava, em segundos, quebrar essa percepção e comunicar uma proposta de valor muito mais poderosa: a Definna cria agentes que \"agem\".</p><p>A página precisava ser uma ferramenta de vendas estratégica, capaz de convencer um público B2B a experimentar um produto tecnologicamente avançado, ao mesmo tempo em que construía confiança e demonstrava controle absoluto sobre a tecnologia.</p><p><strong>A Solução de Design: Uma Narrativa de Educação e Conversão</strong></p><p>A landing page foi projetada como uma narrativa estratégica que guia o visitante desde a curiosidade inicial (\"O que é isso?\") até a convicção (\"Eu preciso disso\").</p><ol><li><p><strong>O Posicionamento</strong>: Além dos Chatbots A hero section estabelece imediatamente o novo conceito: \"Orquestre seu Time de Agentes de IA\". O subtítulo reforça a diferenciação, prometendo ir \"além dos chatbots\" para uma \"automação de verdade\". A seção de Problema/Solução, logo abaixo, aprofunda essa ideia, contrastando \"chatbots genéricos\" com os \"agentes especialistas\" da Definna, que podem ser conectados a ferramentas como Gmail, Sheets e Notion.</p><p><br></p></li><li><p><strong>A Prova de Valor</strong>: Controle e Poder Para um público B2B, a confiança e o controle são essenciais. A seção \"Uma Plataforma, Controle Absoluto\" detalha as features principais que tornam a plataforma uma solução \"séria e escalável\". Os destaques incluem:</p><ul><li><p><strong>Dashboard Centralizado</strong>: Para monitoramento de desempenho e custos em tempo real.</p></li><li><p><strong>Ecossistema de Ferramentas</strong>: A capacidade de conectar agentes a ferramentas que eles já usam (Gmail, Trello, etc.) para \"executar tarefas reais\".</p></li><li><p><strong>Flexibilidade Multi-LLM</strong>: Acesso aos melhores modelos (OpenAI, Anthropic, Google) para otimizar custos e desempenho.</p></li><li><p><strong>Monitoria e Auditoria</strong>: Transparência total sobre cada interação do agente.</p></li></ul><p><br></p></li><li><p><strong>A Tangibilização</strong>: Casos de Uso Reais para tornar o conceito abstrato de \"agentes\" algo concreto, uma seção de Casos de Uso foi criada. Ela mostra exemplos práticos de como a Definna resolve problemas reais para empresas como uma pizzaria (automatizando pedidos no WhatsApp), um escritório de advocacia (classificando despesas) e uma academia (fazendo onboarding de clientes).</p></li><li><p><strong>A Conversão</strong>: Funil Sem Atrito. A jornada do usuário culmina em um funil de conversão claro. A página apresenta planos escaláveis (Gratuito, Pro, Empresa) e termina com um forte CTA focado no plano gratuito, removendo qualquer barreira de entrada ao prometer resultados em \"menos de 10 minutos\" e \"sem cartão de crédito\".</p></li><li><p><strong>E-mails de Comunicação:</strong>Complementando a landing page, foi desenvolvido todo o fluxo de e-mails transacionais e de marketing da plataforma (boas-vindas, onboarding, notificações), garantindo uma experiência de marca coesa e profissional desde o primeiro cadastro até o uso contínuo do produto.</p></li></ol>Definna Definna<p>UI/UX Design</p><p>Desenvolvimento</p><p>A Definna é uma plataforma SaaS (Software as a Service) projetada para empresas construírem, integrarem e monitorarem uma força de trabalho de agentes de IA. Indo além dos chatbots tradicionais, a Definna permite que esses agentes executem tarefas reais dentro das ferramentas e dados da empresa.</p><p>O escopo do projeto incluiu o design da landing page de lançamento e o desenvolvimento dos e-mails de comunicação da plataforma, além do layout da dashboard da plataforma.</p><p><strong>O Desafio</strong></p><p>O principal desafio era educar o mercado. A maioria das empresas associa \"IA\" a chatbots que apenas \"respondem perguntas\". A landing page precisava, em segundos, quebrar essa percepção e comunicar uma proposta de valor muito mais poderosa: a Definna cria agentes que \"agem\".</p><p>A página precisava ser uma ferramenta de vendas estratégica, capaz de convencer um público B2B a experimentar um produto tecnologicamente avançado, ao mesmo tempo em que construía confiança e demonstrava controle absoluto sobre a tecnologia.</p><p><strong>A Solução de Design: Uma Narrativa de Educação e Conversão</strong></p><p>A landing page foi projetada como uma narrativa estratégica que guia o visitante desde a curiosidade inicial (\"O que é isso?\") até a convicção (\"Eu preciso disso\").</p><ol><li><p><strong>O Posicionamento</strong>: Além dos Chatbots A hero section estabelece imediatamente o novo conceito: \"Orquestre seu Time de Agentes de IA\". O subtítulo reforça a diferenciação, prometendo ir \"além dos chatbots\" para uma \"automação de verdade\". A seção de Problema/Solução, logo abaixo, aprofunda essa ideia, contrastando \"chatbots genéricos\" com os \"agentes especialistas\" da Definna, que podem ser conectados a ferramentas como Gmail, Sheets e Notion.</p><p><br></p></li><li><p><strong>A Prova de Valor</strong>: Controle e Poder Para um público B2B, a confiança e o controle são essenciais. A seção \"Uma Plataforma, Controle Absoluto\" detalha as features principais que tornam a plataforma uma solução \"séria e escalável\". Os destaques incluem:</p><ul><li><p><strong>Dashboard Centralizado</strong>: Para monitoramento de desempenho e custos em tempo real.</p></li><li><p><strong>Ecossistema de Ferramentas</strong>: A capacidade de conectar agentes a ferramentas que eles já usam (Gmail, Trello, etc.) para \"executar tarefas reais\".</p></li><li><p><strong>Flexibilidade Multi-LLM</strong>: Acesso aos melhores modelos (OpenAI, Anthropic, Google) para otimizar custos e desempenho.</p></li><li><p><strong>Monitoria e Auditoria</strong>: Transparência total sobre cada interação do agente.</p></li></ul><p><br></p></li><li><p><strong>A Tangibilização</strong>: Casos de Uso Reais para tornar o conceito abstrato de \"agentes\" algo concreto, uma seção de Casos de Uso foi criada. Ela mostra exemplos práticos de como a Definna resolve problemas reais para empresas como uma pizzaria (automatizando pedidos no WhatsApp), um escritório de advocacia (classificando despesas) e uma academia (fazendo onboarding de clientes).</p></li><li><p><strong>A Conversão</strong>: Funil Sem Atrito. A jornada do usuário culmina em um funil de conversão claro. A página apresenta planos escaláveis (Gratuito, Pro, Empresa) e termina com um forte CTA focado no plano gratuito, removendo qualquer barreira de entrada ao prometer resultados em \"menos de 10 minutos\" e \"sem cartão de crédito\".</p></li><li><p><strong>E-mails de Comunicação:</strong>Complementando a landing page, foi desenvolvido todo o fluxo de e-mails transacionais e de marketing da plataforma (boas-vindas, onboarding, notificações), garantindo uma experiência de marca coesa e profissional desde o primeiro cadastro até o uso contínuo do produto.</p></li></ol>A Primeira Segunda-Feira<p>Anterior</p><p>Anterior</p>Digital Marketing<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/definna/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 15,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "A é uma plataforma SaaS (Software as a Service) projetada para empresas construírem, integrarem e monitorarem uma força de trabalho de agentes de IA. Indo além dos chatbots tradicionais, a permite que esses agentes executem tarefas reais dentro das ferramentas e dados da empresa. O escopo do projeto incluiu o design da landing page de lançamento e o desenvolvimento dos e-mails de comunicação da plataforma, além do layout da dashboard da plataforma. O Desafio O principal desafio era educar o mercado. A maioria das empresas associa \"IA\" a chatbots que apenas \"respondem perguntas\". A landing page precisava, em segundos, quebrar essa percepção e comunicar uma proposta de valor muito mais poderosa: a cria agentes qu",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/009.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/010.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/011.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/012.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/013.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/014.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "b8dfa3ab-6ed5-589a-8a39-f73b73b24885",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "faa6f43f-6978-5571-afff-76f4b19b1203",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2860706c-59d5-5ccc-a9e6-55bbaf792138",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ca3ebf9d-73bd-521e-a0e3-fe9902c1631d",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ef694f46-bf70-5774-b2aa-ad3312c20db6",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7f9961a1-e5e6-51e1-80e9-1310e95110bb",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "85f5de68-25e1-5a4f-a766-4eb83d5a75ba",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e81d869c-7364-57cc-98dc-d71bb922fa43",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1c6d61d3-0c28-5a82-b712-c7e6827c7e71",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "26d63830-0a8f-5843-91b6-03c8f7b52b9f",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/010.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/010.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 9,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "34696507-e83c-5dda-825a-3dcd6c9339cf",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/011.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/011.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 10,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "206c7ffe-0c3d-5269-bc6a-2572f806a7cd",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/012.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/012.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 11,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a78f09b4-b30c-5dea-8da0-28b374ae6a78",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/013.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/013.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 12,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "79678fcd-6c50-5edd-afe8-e38c10e13d1a",
+      "case_id": "378bfe66-fe26-5b55-90d4-8af8542cc5d7",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/definna/gallery/014.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/definna/gallery/014.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 13,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 14,
+    "local_image_count": 14
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "slug": "tri-rs",
+  "case_id": "d72169c6-42ad-5182-9876-7d9387178587",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/tri-rs/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "d72169c6-42ad-5182-9876-7d9387178587",
+    "legacy_id": "tri-rs",
+    "legacy_slug": "tri-rs",
+    "slug": "tri-rs",
+    "title": "Tri RS",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Tri.RS é uma plataforma de venda de ingressos focada em eventos no Rio Grande do Sul, oferecendo uma variedade de categorias como shows, teatro e espetáculos. Seu objetivo principal é conectar o público local a uma agenda cultural diversificada, facilitando a descoberta e a compra de ingressos de forma online. A plataforma se posiciona como um hub central para a cena de eventos gaúcha."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O redesign da homepage Tri-RS foi meticulosamente concebido para otimizar a experiência do usuário (UX) e a interface do usuário (UI), focando em uma arquitetura de informação que facilita a descoberta de eventos para um espectro diversificado de personas. A abordagem de UX se baseou na análise de cinco perfis distintos de usuários, desde o que busca por um evento específico e é direcionado à barra de pesquisa centralizada e de alta visibilidade, passando pelo usuário que interage com banners proeminentes, até aqueles que navegam via filtragem por categoria ou localidade. Essa estratificação garantiu que cada jornada do usuário fosse suportada por pontos de entrada intuitivos e fluxos de navegação coesos, minimizando o atrito e aprimorando a usabilidade geral."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "No que tange à interface do usuário (UI), as decisões de design foram pautadas pela busca por uma estética clean e moderna, com foco na hierarquia visual e na ergonomia digital. Elementos como o menu superior otimizado, que agora ocupa a largura total da viewport, e o uso estratégico de cantos levemente arredondados, contribuem para uma percepção de contemporaneidade sem sacrificar a clareza. A paleta de cores, ancorada no tom roxo primário da marca e na abundante utilização de espaços em branco (negative space), foi fundamental para mitigar a poluição visual e realçar o conteúdo principal. Cada componente, desde os cards de eventos minimalistas, que priorizam a informação essencial, até a integração harmônica dos banners patrocinados e o rodapé reorganizado, foi cuidadosamente elaborado para garantir fluidez na navegação e responsividade em diferentes dispositivos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Em essência, o projeto transcende a mera reformulação estética, constituindo uma reengenharia funcional que eleva a usabilidade e a eficiência. A otimização da barra de pesquisa, a compacidade do menu, o layout simplificado dos cards e a integração visual dos elementos publicitários culminam em uma experiência unificada e intuitiva. O objetivo primordial é capacitar o usuário a descobrir eventos de forma simplificada, em um ambiente digital que valoriza tanto a clareza da informação quanto a satisfação estética, solidificando a Tri-RS como uma plataforma de excelência em entretenimento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Tri.RS é uma plataforma de venda de ingressos focada em eventos no Rio Grande do Sul, oferecendo uma variedade de categorias como shows, teatro e espetáculos. Seu objetivo principal é conectar o público local a uma agenda cultural diversificada, facilitando a descoberta e a compra de ingressos de forma online. A plataforma se posiciona como um hub central para a cena de eventos gaúcha."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O redesign da homepage Tri-RS foi meticulosamente concebido para otimizar a experiência do usuário (UX) e a interface do usuário (UI), focando em uma arquitetura de informação que facilita a descoberta de eventos para um espectro diversificado de personas. A abordagem de UX se baseou na análise de cinco perfis distintos de usuários, desde o que busca por um evento específico e é direcionado à barra de pesquisa centralizada e de alta visibilidade, passando pelo usuário que interage com banners proeminentes, até aqueles que navegam via filtragem por categoria ou localidade. Essa estratificação garantiu que cada jornada do usuário fosse suportada por pontos de entrada intuitivos e fluxos de navegação coesos, minimizando o atrito e aprimorando a usabilidade geral."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "No que tange à interface do usuário (UI), as decisões de design foram pautadas pela busca por uma estética clean e moderna, com foco na hierarquia visual e na ergonomia digital. Elementos como o menu superior otimizado, que agora ocupa a largura total da viewport, e o uso estratégico de cantos levemente arredondados, contribuem para uma percepção de contemporaneidade sem sacrificar a clareza. A paleta de cores, ancorada no tom roxo primário da marca e na abundante utilização de espaços em branco (negative space), foi fundamental para mitigar a poluição visual e realçar o conteúdo principal. Cada componente, desde os cards de eventos minimalistas, que priorizam a informação essencial, até a integração harmônica dos banners patrocinados e o rodapé reorganizado, foi cuidadosamente elaborado para garantir fluidez na navegação e responsividade em diferentes dispositivos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Em essência, o projeto transcende a mera reformulação estética, constituindo uma reengenharia funcional que eleva a usabilidade e a eficiência. A otimização da barra de pesquisa, a compacidade do menu, o layout simplificado dos cards e a integração visual dos elementos publicitários culminam em uma experiência unificada e intuitiva. O objetivo primordial é capacitar o usuário a descobrir eventos de forma simplificada, em um ambiente digital que valoriza tanto a clareza da informação quanto a satisfação estética, solidificando a Tri-RS como uma plataforma de excelência em entretenimento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>A Tri.RS é uma plataforma de venda de ingressos focada em eventos no Rio Grande do Sul, oferecendo uma variedade de categorias como shows, teatro e espetáculos. Seu objetivo principal é conectar o público local a uma agenda cultural diversificada, facilitando a descoberta e a compra de ingressos de forma online. A plataforma se posiciona como um hub central para a cena de eventos gaúcha.</p><p>O redesign da homepage Tri-RS foi meticulosamente concebido para otimizar a experiência do usuário (UX) e a interface do usuário (UI), focando em uma arquitetura de informação que facilita a descoberta de eventos para um espectro diversificado de personas. A abordagem de UX se baseou na análise de cinco perfis distintos de usuários, desde o que busca por um evento específico e é direcionado à barra de pesquisa centralizada e de alta visibilidade, passando pelo usuário que interage com banners proeminentes, até aqueles que navegam via filtragem por categoria ou localidade. Essa estratificação garantiu que cada jornada do usuário fosse suportada por pontos de entrada intuitivos e fluxos de navegação coesos, minimizando o atrito e aprimorando a usabilidade geral.</p><p>No que tange à interface do usuário (UI), as decisões de design foram pautadas pela busca por uma estética clean e moderna, com foco na hierarquia visual e na ergonomia digital. Elementos como o menu superior otimizado, que agora ocupa a largura total da viewport, e o uso estratégico de cantos levemente arredondados, contribuem para uma percepção de contemporaneidade sem sacrificar a clareza. A paleta de cores, ancorada no tom roxo primário da marca e na abundante utilização de espaços em branco (negative space), foi fundamental para mitigar a poluição visual e realçar o conteúdo principal. Cada componente, desde os cards de eventos minimalistas, que priorizam a informação essencial, até a integração harmônica dos banners patrocinados e o rodapé reorganizado, foi cuidadosamente elaborado para garantir fluidez na navegação e responsividade em diferentes dispositivos.</p><p>Em essência, o projeto transcende a mera reformulação estética, constituindo uma reengenharia funcional que eleva a usabilidade e a eficiência. A otimização da barra de pesquisa, a compacidade do menu, o layout simplificado dos cards e a integração visual dos elementos publicitários culminam em uma experiência unificada e intuitiva. O objetivo primordial é capacitar o usuário a descobrir eventos de forma simplificada, em um ambiente digital que valoriza tanto a clareza da informação quanto a satisfação estética, solidificando a Tri-RS como uma plataforma de excelência em entretenimento.</p>Tri RS Tri RS<p>UI/UX Design</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>A Tri.RS é uma plataforma de venda de ingressos focada em eventos no Rio Grande do Sul, oferecendo uma variedade de categorias como shows, teatro e espetáculos. Seu objetivo principal é conectar o público local a uma agenda cultural diversificada, facilitando a descoberta e a compra de ingressos de forma online. A plataforma se posiciona como um hub central para a cena de eventos gaúcha.</p><p>O redesign da homepage Tri-RS foi meticulosamente concebido para otimizar a experiência do usuário (UX) e a interface do usuário (UI), focando em uma arquitetura de informação que facilita a descoberta de eventos para um espectro diversificado de personas. A abordagem de UX se baseou na análise de cinco perfis distintos de usuários, desde o que busca por um evento específico e é direcionado à barra de pesquisa centralizada e de alta visibilidade, passando pelo usuário que interage com banners proeminentes, até aqueles que navegam via filtragem por categoria ou localidade. Essa estratificação garantiu que cada jornada do usuário fosse suportada por pontos de entrada intuitivos e fluxos de navegação coesos, minimizando o atrito e aprimorando a usabilidade geral.</p><p>No que tange à interface do usuário (UI), as decisões de design foram pautadas pela busca por uma estética clean e moderna, com foco na hierarquia visual e na ergonomia digital. Elementos como o menu superior otimizado, que agora ocupa a largura total da viewport, e o uso estratégico de cantos levemente arredondados, contribuem para uma percepção de contemporaneidade sem sacrificar a clareza. A paleta de cores, ancorada no tom roxo primário da marca e na abundante utilização de espaços em branco (negative space), foi fundamental para mitigar a poluição visual e realçar o conteúdo principal. Cada componente, desde os cards de eventos minimalistas, que priorizam a informação essencial, até a integração harmônica dos banners patrocinados e o rodapé reorganizado, foi cuidadosamente elaborado para garantir fluidez na navegação e responsividade em diferentes dispositivos.</p><p>Em essência, o projeto transcende a mera reformulação estética, constituindo uma reengenharia funcional que eleva a usabilidade e a eficiência. A otimização da barra de pesquisa, a compacidade do menu, o layout simplificado dos cards e a integração visual dos elementos publicitários culminam em uma experiência unificada e intuitiva. O objetivo primordial é capacitar o usuário a descobrir eventos de forma simplificada, em um ambiente digital que valoriza tanto a clareza da informação quanto a satisfação estética, solidificando a Tri-RS como uma plataforma de excelência em entretenimento.</p>Candy Dates<p>Anterior</p><p>Anterior</p>Vallor<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/tri-rs/cover.jpg",
+    "external_url": "http://tri.rs",
+    "featured_on_home": true,
+    "home_order": 6,
+    "portfolio_order": 6,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "A Tri.RS é uma plataforma de venda de ingressos focada em eventos no Rio Grande do Sul, oferecendo uma variedade de categorias como shows, teatro e espetáculos. Seu objetivo principal é conectar o público local a uma agenda cultural diversificada, facilitando a descoberta e a compra de ingressos de forma online. A plataforma se posiciona como um hub central para a cena de eventos gaúcha. O redesign da homepage Tri-RS foi meticulosamente concebido para otimizar a experiência do usuário (UX) e a interface do usuário (UI), focando em uma arquitetura de informação que facilita a descoberta de eventos para um espectro diversificado de personas. A abordagem de UX se baseou na análise de cinco perfis distintos de usuá",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/gallery/003.jpg"
+    ],
+    "external_url": "http://tri.rs"
+  },
+  "media": [
+    {
+      "id": "625dbace-6277-5de5-8339-036580ea8ff6",
+      "case_id": "d72169c6-42ad-5182-9876-7d9387178587",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/tri-rs/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e0ed8d19-5c05-566e-8120-136a24f27d75",
+      "case_id": "d72169c6-42ad-5182-9876-7d9387178587",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/tri-rs/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e69bb2c5-fc20-5d93-830a-6be233a169cb",
+      "case_id": "d72169c6-42ad-5182-9876-7d9387178587",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/tri-rs/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/tri-rs/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 3,
+    "local_image_count": 3
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

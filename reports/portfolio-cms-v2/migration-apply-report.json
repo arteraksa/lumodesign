@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-07-11T20:17:47.373Z",
+  "project_ref": "yzivkrotylwyglavtnho",
+  "project_name": "raksadesign",
+  "status": "applied_committed",
+  "apply_sql": "reports/portfolio-cms-v2/apply-36-cases.sql",
+  "rollback_sql": "reports/portfolio-cms-v2/rollback-36-cases.sql",
+  "backup_sha256": "13e1754324ff23716023b8fe8ccab4781ab54f89e0270a86699ebdbab1d79dd1",
+  "dry_run": {
+    "dry_run_complete": true,
+    "cases": 36,
+    "excluded_cases": 4,
+    "media": 561,
+    "blocked": 0,
+    "warnings": 0,
+    "errors": 0
+  },
+  "expected": {
+    "cases": 36,
+    "media": 561,
+    "excluded_cases": 4,
+    "case_id_hash": "078d23b3ca45d61932de6aa4fd5004c5",
+    "media_id_hash": "2e4314e7a539b13c65c83f3c8319d213"
+  },
+  "inserted_cases": 36,
+  "inserted_media": 561,
+  "slug_history_rows": 0,
+  "public_cases_after": 40,
+  "guards": {
+    "orphan_media": 0,
+    "novo_case_rows": 0,
+    "excluded_in_portfolio_cases": 0,
+    "excluded_still_in_public_cases": 4
+  },
+  "hash_checks": {
+    "case_ids_match_dry_run": true,
+    "media_ids_match_dry_run": true
+  },
+  "normalization": {
+    "local_static_media_urls_normalized_to_https": 164,
+    "digital_marketing_cover_url_normalized_to_https": true,
+    "storage_unchanged": true,
+    "public_cases_unchanged": true
+  },
+  "credentials_logged": false,
+  "smoke_tests": [
+    {
+      "name": "npm run portfolio:migrate:validate",
+      "status": "passed"
+    },
+    {
+      "name": "remote post-apply readonly SQL checks",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

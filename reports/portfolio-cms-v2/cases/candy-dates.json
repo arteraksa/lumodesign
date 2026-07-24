@@ -1,0 +1,620 @@
+{
+  "slug": "candy-dates",
+  "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/candy-dates/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "67091233-1416-58e1-82bf-3219f184e628",
+    "legacy_id": "candy-dates",
+    "legacy_slug": "candy-dates",
+    "slug": "candy-dates",
+    "title": "Candy Dates",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Desenvolvimento"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Smood Sweets é uma marca criada por três amigos europeus com a missão de oferecer doces saborosos, naturais e \"sem culpa\". Seu produto de lançamento, os Candy Dates, são tâmaras recheadas com combinações frutadas, com uma pegada nostálgica e ingredientes limpos. O desafio era criar uma loja virtual (e-commerce) na plataforma Shopify que não apenas vendesse o produto, mas que também transmitisse a essência leve, funcional e irresistível da marca."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio: Traduzir Sabor em Pixels"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio de design era transformar a atmosfera \"divertida, leve e acolhedora\" da identidade visual, fornecida pelo cliente, em uma experiência de compra digital coesa. Para um produto novo e de consumo por impulso, a experiência precisava resolver três pontos-chave:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Criar Apetite Visual: A interface deveria ser visualmente atraente o suficiente para fazer os visitantes desejarem provar um produto que nunca viram antes."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Comunicar o Valor: O design precisava destacar de forma clara e rápida os diferenciais do produto (natural, sem culpa, ingredientes simples)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Simplificar a Conversão: O processo de compra, do clique inicial ao checkout, deveria ser extremamente simples, rápido e intuitivo para minimizar qualquer atrito e maximizar as vendas."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi guiado por um processo iterativo para garantir que cada decisão de design estivesse alinhada com os objetivos da marca e as necessidades dos usuários."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Imersão na Marca e Arquitetura O ponto de partida foi uma imersão nas referências visuais e na identidade enviadas pelo cliente. A partir daí, estruturamos a arquitetura da informação do site, definindo as páginas essenciais (Home, Página de Produto, Carrinho, Checkout) e o fluxo de navegação mais simples possível para o usuário."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Prototipagem e Testes Iterativos Criamos protótipos interativos no Figma para simular a experiência de compra completa. Realizamos diversos testes de usabilidade com foco na jornada principal do cliente: encontrar um produto, entender seus ingredientes, adicioná-lo ao carrinho e finalizar a compra. O feedback coletado nesses testes foi crucial para refinar a disposição dos elementos, a clareza dos botões (CTAs) e a fluidez geral do processo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Design Visual (UI) e Refinamento Com a estrutura e o fluxo validados, aplicamos a identidade visual da marca na interface de alta fidelidade. O foco foi usar a paleta de cores, tipografia e imagens de alta qualidade para criar uma atmosfera convidativa e \"saborosa\". Cada detalhe, desde os ícones até a apresentação das informações nutricionais, foi desenhado para ser intuitivo, bonito e alinhado com a promessa de um doce natural e prazeroso."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma loja virtual na plataforma Shopify que é tão agradável quanto os próprios Candy Dates. A solução final entregue foi:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Um e-commerce leve e funcional , com design responsivo e otimizado para compras via mobile."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Páginas de produto claras e atraentes , que destacam os ingredientes naturais e incentivam a compra."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Um fluxo de checkout simplificado , projetado para reduzir o abandono de carrinho e garantir uma experiência de compra positiva."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A plataforma digital traduz com sucesso a essência da Smood Sweets, oferecendo uma experiência de compra que é, ao mesmo tempo, divertida, confiável e irresistível."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Desenvolvimento"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Smood Sweets é uma marca criada por três amigos europeus com a missão de oferecer doces saborosos, naturais e \"sem culpa\". Seu produto de lançamento, os Candy Dates, são tâmaras recheadas com combinações frutadas, com uma pegada nostálgica e ingredientes limpos. O desafio era criar uma loja virtual (e-commerce) na plataforma Shopify que não apenas vendesse o produto, mas que também transmitisse a essência leve, funcional e irresistível da marca."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio: Traduzir Sabor em Pixels"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio de design era transformar a atmosfera \"divertida, leve e acolhedora\" da identidade visual, fornecida pelo cliente, em uma experiência de compra digital coesa. Para um produto novo e de consumo por impulso, a experiência precisava resolver três pontos-chave:"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Criar Apetite Visual: A interface deveria ser visualmente atraente o suficiente para fazer os visitantes desejarem provar um produto que nunca viram antes."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Comunicar o Valor: O design precisava destacar de forma clara e rápida os diferenciais do produto (natural, sem culpa, ingredientes simples)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Simplificar a Conversão: O processo de compra, do clique inicial ao checkout, deveria ser extremamente simples, rápido e intuitivo para minimizar qualquer atrito e maximizar as vendas."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi guiado por um processo iterativo para garantir que cada decisão de design estivesse alinhada com os objetivos da marca e as necessidades dos usuários."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Imersão na Marca e Arquitetura O ponto de partida foi uma imersão nas referências visuais e na identidade enviadas pelo cliente. A partir daí, estruturamos a arquitetura da informação do site, definindo as páginas essenciais (Home, Página de Produto, Carrinho, Checkout) e o fluxo de navegação mais simples possível para o usuário."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Prototipagem e Testes Iterativos Criamos protótipos interativos no Figma para simular a experiência de compra completa. Realizamos diversos testes de usabilidade com foco na jornada principal do cliente: encontrar um produto, entender seus ingredientes, adicioná-lo ao carrinho e finalizar a compra. O feedback coletado nesses testes foi crucial para refinar a disposição dos elementos, a clareza dos botões (CTAs) e a fluidez geral do processo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Design Visual (UI) e Refinamento Com a estrutura e o fluxo validados, aplicamos a identidade visual da marca na interface de alta fidelidade. O foco foi usar a paleta de cores, tipografia e imagens de alta qualidade para criar uma atmosfera convidativa e \"saborosa\". Cada detalhe, desde os ícones até a apresentação das informações nutricionais, foi desenhado para ser intuitivo, bonito e alinhado com a promessa de um doce natural e prazeroso."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é uma loja virtual na plataforma Shopify que é tão agradável quanto os próprios Candy Dates. A solução final entregue foi:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Um e-commerce leve e funcional , com design responsivo e otimizado para compras via mobile."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Páginas de produto claras e atraentes , que destacam os ingredientes naturais e incentivam a compra."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Um fluxo de checkout simplificado , projetado para reduzir o abandono de carrinho e garantir uma experiência de compra positiva."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A plataforma digital traduz com sucesso a essência da Smood Sweets, oferecendo uma experiência de compra que é, ao mesmo tempo, divertida, confiável e irresistível."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>A Smood Sweets é uma marca criada por três amigos europeus com a missão de oferecer doces saborosos, naturais e \"sem culpa\". Seu produto de lançamento, os Candy Dates, são tâmaras recheadas com combinações frutadas, com uma pegada nostálgica e ingredientes limpos. O desafio era criar uma loja virtual (e-commerce) na plataforma Shopify que não apenas vendesse o produto, mas que também transmitisse a essência leve, funcional e irresistível da marca.</p><p><strong>O Desafio: Traduzir Sabor em Pixels</strong></p><p>O principal desafio de design era transformar a atmosfera \"divertida, leve e acolhedora\" da identidade visual, fornecida pelo cliente, em uma experiência de compra digital coesa. Para um produto novo e de consumo por impulso, a experiência precisava resolver três pontos-chave:</p><ol><li><p><strong>Criar Apetite Visual:</strong>A interface deveria ser visualmente atraente o suficiente para fazer os visitantes desejarem provar um produto que nunca viram antes.</p></li><li><p><strong>Comunicar o Valor:</strong>O design precisava destacar de forma clara e rápida os diferenciais do produto (natural, sem culpa, ingredientes simples).</p></li><li><p><strong>Simplificar a Conversão:</strong>O processo de compra, do clique inicial ao checkout, deveria ser extremamente simples, rápido e intuitivo para minimizar qualquer atrito e maximizar as vendas.</p></li></ol><p>O projeto foi guiado por um processo iterativo para garantir que cada decisão de design estivesse alinhada com os objetivos da marca e as necessidades dos usuários.</p><p><strong>1. Imersão na Marca e Arquitetura</strong>O ponto de partida foi uma imersão nas referências visuais e na identidade enviadas pelo cliente. A partir daí, estruturamos a arquitetura da informação do site, definindo as páginas essenciais (Home, Página de Produto, Carrinho, Checkout) e o fluxo de navegação mais simples possível para o usuário.</p><p><strong>2. Prototipagem e Testes Iterativos</strong>Criamos protótipos interativos no Figma para simular a experiência de compra completa. Realizamos diversos<strong>testes de usabilidade</strong>com foco na jornada principal do cliente: encontrar um produto, entender seus ingredientes, adicioná-lo ao carrinho e finalizar a compra. O feedback coletado nesses testes foi crucial para refinar a disposição dos elementos, a clareza dos botões (CTAs) e a fluidez geral do processo.</p><p><strong>3. Design Visual (UI) e Refinamento</strong>Com a estrutura e o fluxo validados, aplicamos a identidade visual da marca na interface de alta fidelidade. O foco foi usar a paleta de cores, tipografia e imagens de alta qualidade para criar uma atmosfera convidativa e \"saborosa\". Cada detalhe, desde os ícones até a apresentação das informações nutricionais, foi desenhado para ser intuitivo, bonito e alinhado com a promessa de um doce natural e prazeroso.</p><p><strong>A Solução</strong></p><p>O resultado é uma loja virtual na plataforma Shopify que é tão agradável quanto os próprios Candy Dates. A solução final entregue foi:</p><ul><li><p><strong>Um e-commerce leve e funcional</strong>, com design responsivo e otimizado para compras via mobile.</p></li><li><p><strong>Páginas de produto claras e atraentes</strong>, que destacam os ingredientes naturais e incentivam a compra.</p></li><li><p><strong>Um fluxo de checkout simplificado</strong>, projetado para reduzir o abandono de carrinho e garantir uma experiência de compra positiva.</p></li></ul><p>A plataforma digital traduz com sucesso a essência da Smood Sweets, oferecendo uma experiência de compra que é, ao mesmo tempo, divertida, confiável e irresistível.</p>Candy Dates Candy Dates<p>UI/UX Design</p><p>Desenvolvimento</p><p>A Smood Sweets é uma marca criada por três amigos europeus com a missão de oferecer doces saborosos, naturais e \"sem culpa\". Seu produto de lançamento, os Candy Dates, são tâmaras recheadas com combinações frutadas, com uma pegada nostálgica e ingredientes limpos. O desafio era criar uma loja virtual (e-commerce) na plataforma Shopify que não apenas vendesse o produto, mas que também transmitisse a essência leve, funcional e irresistível da marca.</p><p><strong>O Desafio: Traduzir Sabor em Pixels</strong></p><p>O principal desafio de design era transformar a atmosfera \"divertida, leve e acolhedora\" da identidade visual, fornecida pelo cliente, em uma experiência de compra digital coesa. Para um produto novo e de consumo por impulso, a experiência precisava resolver três pontos-chave:</p><ol><li><p><strong>Criar Apetite Visual:</strong>A interface deveria ser visualmente atraente o suficiente para fazer os visitantes desejarem provar um produto que nunca viram antes.</p></li><li><p><strong>Comunicar o Valor:</strong>O design precisava destacar de forma clara e rápida os diferenciais do produto (natural, sem culpa, ingredientes simples).</p></li><li><p><strong>Simplificar a Conversão:</strong>O processo de compra, do clique inicial ao checkout, deveria ser extremamente simples, rápido e intuitivo para minimizar qualquer atrito e maximizar as vendas.</p></li></ol><p>O projeto foi guiado por um processo iterativo para garantir que cada decisão de design estivesse alinhada com os objetivos da marca e as necessidades dos usuários.</p><p><strong>1. Imersão na Marca e Arquitetura</strong>O ponto de partida foi uma imersão nas referências visuais e na identidade enviadas pelo cliente. A partir daí, estruturamos a arquitetura da informação do site, definindo as páginas essenciais (Home, Página de Produto, Carrinho, Checkout) e o fluxo de navegação mais simples possível para o usuário.</p><p><strong>2. Prototipagem e Testes Iterativos</strong>Criamos protótipos interativos no Figma para simular a experiência de compra completa. Realizamos diversos<strong>testes de usabilidade</strong>com foco na jornada principal do cliente: encontrar um produto, entender seus ingredientes, adicioná-lo ao carrinho e finalizar a compra. O feedback coletado nesses testes foi crucial para refinar a disposição dos elementos, a clareza dos botões (CTAs) e a fluidez geral do processo.</p><p><strong>3. Design Visual (UI) e Refinamento</strong>Com a estrutura e o fluxo validados, aplicamos a identidade visual da marca na interface de alta fidelidade. O foco foi usar a paleta de cores, tipografia e imagens de alta qualidade para criar uma atmosfera convidativa e \"saborosa\". Cada detalhe, desde os ícones até a apresentação das informações nutricionais, foi desenhado para ser intuitivo, bonito e alinhado com a promessa de um doce natural e prazeroso.</p><p><strong>A Solução</strong></p><p>O resultado é uma loja virtual na plataforma Shopify que é tão agradável quanto os próprios Candy Dates. A solução final entregue foi:</p><ul><li><p><strong>Um e-commerce leve e funcional</strong>, com design responsivo e otimizado para compras via mobile.</p></li><li><p><strong>Páginas de produto claras e atraentes</strong>, que destacam os ingredientes naturais e incentivam a compra.</p></li><li><p><strong>Um fluxo de checkout simplificado</strong>, projetado para reduzir o abandono de carrinho e garantir uma experiência de compra positiva.</p></li></ul><p>A plataforma digital traduz com sucesso a essência da Smood Sweets, oferecendo uma experiência de compra que é, ao mesmo tempo, divertida, confiável e irresistível.</p>Eric Clapton<p>Anterior</p><p>Anterior</p>Tri RS<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/candy-dates/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/candy-dates/cover.jpg",
+    "external_url": "",
+    "featured_on_home": true,
+    "home_order": 5,
+    "portfolio_order": 5,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T21:07:55.491007+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T21:07:55.491007+00:00"
+  },
+  "remote_snapshot": {
+    "description": "A Smood Sweets é uma marca criada por três amigos europeus com a missão de oferecer doces saborosos, naturais e \"sem culpa\". Seu produto de lançamento, os , são tâmaras recheadas com combinações frutadas, com uma pegada nostálgica e ingredientes limpos. O desafio era criar uma loja virtual (e-commerce) na plataforma Shopify que não apenas vendesse o produto, mas que também transmitisse a essência leve, funcional e irresistível da marca. O Desafio: Traduzir Sabor em Pixels O principal desafio de design era transformar a atmosfera \"divertida, leve e acolhedora\" da identidade visual, fornecida pelo cliente, em uma experiência de compra digital coesa. Para um produto novo e de consumo por impulso, a experiência pre",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/candy-dates/cover.jpg",
+    "images": [
+      "/raksadesign/framerusercontent.com/images/KApzmV8HUtB6HOXKGntzsBbIBok.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/yP7WOWbI51zSSbxDEJ0geL87HRg.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/OppzC8jn9txw5eP9rIPpiofLwM.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/V8jN4t0zbKki8mg5TJySTKg9Ig.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/BNXjPDHi75UX2S8T8LWFoIAk4o.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/O706lscvFZSlWKh31F2mYka2DEc.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/6uJWWem6cMO8t49dhZPHn3xPAL8.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/yhmam1QeN3v7nf3iECpZqnSw1w.jpg?width=1920&height=1080"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "f25c7c9d-7b48-557b-b97e-672965372c41",
+      "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/KApzmV8HUtB6HOXKGntzsBbIBok.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "17a4090b-e358-5471-965f-d979e592d907",
+      "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/yP7WOWbI51zSSbxDEJ0geL87HRg.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 1,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3f582de8-73b6-549e-b7f7-9fe19aeaff87",
+      "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/OppzC8jn9txw5eP9rIPpiofLwM.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 2,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "889f8edf-44ac-5376-bb2c-f81aa6cd7cf6",
+      "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/V8jN4t0zbKki8mg5TJySTKg9Ig.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 3,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d2786152-d8c3-5e8a-b323-df9e4f977769",
+      "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/BNXjPDHi75UX2S8T8LWFoIAk4o.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 4,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7752efb1-ee22-536e-a0d7-fe49b6e9d89b",
+      "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/O706lscvFZSlWKh31F2mYka2DEc.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 5,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "04d1adec-6176-5b75-84a1-677c920a397c",
+      "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/6uJWWem6cMO8t49dhZPHn3xPAL8.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 6,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1efbfe7f-4581-5525-9552-00c528d6ba08",
+      "case_id": "67091233-1416-58e1-82bf-3219f184e628",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/yhmam1QeN3v7nf3iECpZqnSw1w.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 7,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 8,
+    "local_image_count": 8
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

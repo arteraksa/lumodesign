@@ -1,0 +1,1386 @@
+{
+  "slug": "demip",
+  "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/demip/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+    "legacy_id": "demip",
+    "legacy_slug": "demip",
+    "slug": "demip",
+    "title": "DEMIP",
+    "status": "published",
+    "categories": [
+      "Branding",
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto consistiu na criação de uma nova identidade visual e um Brandbook completo para o Departamento de Microbiologia, Imunologia e Parasitologia (DEMIP) e, especificamente, para o seu Laboratório de Pesquisas em Amebas de Vida Livre."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O DEMIP é um departamento associado ao Instituto de Ciências Básicas da Saúde (ICBS) da UFRGS, sendo uma unidade acadêmica de grande importância. É responsável pelo curso de Graduação em Biomedicina e por seis Programas de Pós-Graduação, atuando em atividades de Docência, Pesquisa e Extensão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era criar uma identidade visual unificada que pudesse representar com profissionalismo e clareza tanto o departamento (DEMIP) quanto suas subunidades de pesquisa, como o Laboratório de Pesquisa em Amebas de Vida Livre. A identidade precisava ser moderna e flexível, mas também transmitir a seriedade e o rigor científico de uma instituição de ensino e pesquisa de ponta."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi desenvolvida uma proposta de identidade visual completa, detalhada em um Brandbook que documenta todo o processo de criação. Este manual serve como a principal ferramenta para a apresentação da nova identidade e como um guia rigoroso para sua correta aplicação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução de design criou um sistema visual coeso que permite ao DEMIP e aos seus laboratórios — como o Laboratório de Biologia de Vetores, o Laboratório de Parasitologia Veterinária e o Laboratório de Pesquisa em Amebas de Vida Livre — manterem uma comunicação visual consistente e profissional, fortalecendo sua presença institucional dentro e fora da universidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto consistiu na criação de uma nova identidade visual e um Brandbook completo para o Departamento de Microbiologia, Imunologia e Parasitologia (DEMIP) e, especificamente, para o seu Laboratório de Pesquisas em Amebas de Vida Livre."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O DEMIP é um departamento associado ao Instituto de Ciências Básicas da Saúde (ICBS) da UFRGS, sendo uma unidade acadêmica de grande importância. É responsável pelo curso de Graduação em Biomedicina e por seis Programas de Pós-Graduação, atuando em atividades de Docência, Pesquisa e Extensão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era criar uma identidade visual unificada que pudesse representar com profissionalismo e clareza tanto o departamento (DEMIP) quanto suas subunidades de pesquisa, como o Laboratório de Pesquisa em Amebas de Vida Livre. A identidade precisava ser moderna e flexível, mas também transmitir a seriedade e o rigor científico de uma instituição de ensino e pesquisa de ponta."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi desenvolvida uma proposta de identidade visual completa, detalhada em um Brandbook que documenta todo o processo de criação. Este manual serve como a principal ferramenta para a apresentação da nova identidade e como um guia rigoroso para sua correta aplicação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução de design criou um sistema visual coeso que permite ao DEMIP e aos seus laboratórios — como o Laboratório de Biologia de Vetores, o Laboratório de Parasitologia Veterinária e o Laboratório de Pesquisa em Amebas de Vida Livre — manterem uma comunicação visual consistente e profissional, fortalecendo sua presença institucional dentro e fora da universidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>O projeto consistiu na criação de uma nova identidade visual e um<em>Brandbook</em>completo para o Departamento de Microbiologia, Imunologia e Parasitologia (DEMIP) e, especificamente, para o seu Laboratório de Pesquisas em Amebas de Vida Livre.</p><p>O DEMIP é um departamento associado ao Instituto de Ciências Básicas da Saúde (ICBS) da UFRGS, sendo uma unidade acadêmica de grande importância. É responsável pelo curso de Graduação em Biomedicina e por seis Programas de Pós-Graduação, atuando em atividades de Docência, Pesquisa e Extensão.</p><p><strong>O Desafio</strong></p><p>O principal desafio era criar uma identidade visual unificada que pudesse representar com profissionalismo e clareza tanto o departamento (DEMIP) quanto suas subunidades de pesquisa, como o Laboratório de Pesquisa em Amebas de Vida Livre. A identidade precisava ser moderna e flexível, mas também transmitir a seriedade e o rigor científico de uma instituição de ensino e pesquisa de ponta.</p><p><strong>A Solução de Design</strong></p><p>Foi desenvolvida uma proposta de identidade visual completa, detalhada em um<em>Brandbook</em>que documenta todo o processo de criação. Este manual serve como a principal ferramenta para a apresentação da nova identidade e como um guia rigoroso para sua correta aplicação.</p><p>A solução de design criou um sistema visual coeso que permite ao DEMIP e aos seus laboratórios — como o Laboratório de Biologia de Vetores, o Laboratório de Parasitologia Veterinária e o Laboratório de Pesquisa em Amebas de Vida Livre — manterem uma comunicação visual consistente e profissional, fortalecendo sua presença institucional dentro e fora da universidade.</p>DEMIP DEMIP<p>Branding</p><p>Editorial</p><p>O projeto consistiu na criação de uma nova identidade visual e um<em>Brandbook</em>completo para o Departamento de Microbiologia, Imunologia e Parasitologia (DEMIP) e, especificamente, para o seu Laboratório de Pesquisas em Amebas de Vida Livre.</p><p>O DEMIP é um departamento associado ao Instituto de Ciências Básicas da Saúde (ICBS) da UFRGS, sendo uma unidade acadêmica de grande importância. É responsável pelo curso de Graduação em Biomedicina e por seis Programas de Pós-Graduação, atuando em atividades de Docência, Pesquisa e Extensão.</p><p><strong>O Desafio</strong></p><p>O principal desafio era criar uma identidade visual unificada que pudesse representar com profissionalismo e clareza tanto o departamento (DEMIP) quanto suas subunidades de pesquisa, como o Laboratório de Pesquisa em Amebas de Vida Livre. A identidade precisava ser moderna e flexível, mas também transmitir a seriedade e o rigor científico de uma instituição de ensino e pesquisa de ponta.</p><p><strong>A Solução de Design</strong></p><p>Foi desenvolvida uma proposta de identidade visual completa, detalhada em um<em>Brandbook</em>que documenta todo o processo de criação. Este manual serve como a principal ferramenta para a apresentação da nova identidade e como um guia rigoroso para sua correta aplicação.</p><p>A solução de design criou um sistema visual coeso que permite ao DEMIP e aos seus laboratórios — como o Laboratório de Biologia de Vetores, o Laboratório de Parasitologia Veterinária e o Laboratório de Pesquisa em Amebas de Vida Livre — manterem uma comunicação visual consistente e profissional, fortalecendo sua presença institucional dentro e fora da universidade.</p>Banrisul | App Redesign<p>Anterior</p><p>Anterior</p>Paula and Domenick<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/demip/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/demip/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 27,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T21:07:55.491007+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T21:07:55.491007+00:00"
+  },
+  "remote_snapshot": {
+    "description": "O projeto consistiu na criação de uma nova identidade visual e um Brandbook completo para o Departamento de Microbiologia, Imunologia e Parasitologia ( ) e, especificamente, para o seu Laboratório de Pesquisas em Amebas de Vida Livre. O é um departamento associado ao Instituto de Ciências Básicas da Saúde (ICBS) da UFRGS, sendo uma unidade acadêmica de grande importância. É responsável pelo curso de Graduação em Biomedicina e por seis Programas de Pós-Graduação, atuando em atividades de Docência, Pesquisa e Extensão. O Desafio O principal desafio era criar uma identidade visual unificada que pudesse representar com profissionalismo e clareza tanto o departamento ( ) quanto suas subunidades de pesquisa, como o L",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/demip/cover.jpg",
+    "images": [
+      "/raksadesign/framerusercontent.com/images/w11qGm5QlyCIZfNGGrYkhzIYNY.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/5jZQeq7LMXBt5za1aSiyKSsKTc.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/LorFe8awWcCRjjQLyzvTCnhg6g.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/1QA671ZEPbM4AWQnlNzlyQvz8Ys.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/ftabRrympKYSFnvskuwHpDqrfI.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/0oCAWsgQxTuAPoHf13e9He5U0.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/A9Ur9SNkoo5pMAkW13KmxREEe0.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/97qmcrjdT1H17fEIvIJ3ErtVm8Y.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/tqqAdoYhSibmZMKxFwSedlIUME.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/1Y6pc6yxKvEiqzGp0Jt0x6xmTs.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/Pz8tbgpOC6fIjRkh0VE1WZLZmg.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/AEghkDGxchPcanjaDPQAq8lZMA.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/A4ctL6wwsVrYcOjtfJSFiDPjrYk.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/F3fEmAvuWtKSIlFBBUAGXhvGksk.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/NBmrCeb7V1xurTfNumjNbj2m6IY.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/G7y5k8VuTXD01b1RmEdWkGBmtu8.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/cPqhI5Y4cweWP8ngI0vgNoLYnI.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/HDOe63pst6vO12mzIbSHh3Z7ro.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/e0Y0IdiQOBIKtlIDncLEdrp2mU.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/Q20hsOiAlskZ2XLU65zXl2GM38.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/nbv65vAShGZ4uakGeL2m13ntAIU.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/t8cJ0HLlCaXpOEUcNVHiMoUjLQ.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/pzpvsVtazFFvTFAGDlHWKLAxHNg.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/3FuzKSydovh215zPR04rHrlVks.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/VAqcnvKBs7gf1DGFHWIY6iFlV8.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/0ird7CgqJ55X5LLYrsYVZSmzXlE.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/UCbaSBePvwwYAUlU6KNvMLCA6ak.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/l9hyJJxHb23veWH6N4uRbnENI0M.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/iFFgFpdn9a0EGquszDlyhlcsFRY.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/FKKSAX2zbPVnhKr3kIkWoBJ3gw.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/WaP0uXqMhDuXayCn2cBkIjJwNk.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/2OtBTQfyYftnarcDiPfV1h8J4M.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/g7Q8MzuIjWchpvSyi3RhJHo640.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/Ec2AgSVOuxb87YvQEaaoeanMZmI.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/yPIt23vRu1CgqiJmMp20aSSlw.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/wMuaPciM4LLuUffawqIpbFUfuc.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/vtD7EEUSaYbhlSQlplFgWSE.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/pTVqbM9BGnT57crRG6NDBMqB2E.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/saoocSFxROyct5i7xi5T0KZ4XnY.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/KlMPPDXSlOAOnCqLaH2kvPj1yvE.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/DkpTmaR0YdxnUTFBii2qILLGFU.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/coMD8d1nnQ21FDNYUYaNCqFjWXs.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/YmQjseaK2rwdF2s8s1tD7E8f0.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/XHkyFcFOzUkSJ9NLlzxwVWw3hM.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/8Olti0rn0OqNvJnn6IHo6tRZWl0.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/wwt4L015dvL8iU9I4HAPAbJK3k.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/tkW5WXiYICJm9wgNeucbmGkNZSs.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/obKsjT5IfjxjKIHtCORhjscEIEo.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/faRfoX9d0sNALYF2ymo88Xvij0.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/Lh0iIXWpv2IuGuS37fzIBrTUNzI.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/veHhgDwxZqbDYG3pGs2aVtKRW0.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/3W88h9UnChTtYtEAgWLdOa0Dg.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/7WJomxqemW4aIvMfqCFJcMXwM8A.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/jCwl3LIGVPlsjlffGUSJXvEG5Q.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/zaA9hLOMIA03EhgFYJb0BxkOPU.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/f9T5jOD2NxJZiRtJxzKQhHcojI.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/IIB9iDmS0GGLHZ1KXOhfSIQOZHs.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/2mLgcA5PLuwsmq99LsjmNmx9mM.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/LOpmInMOUprEmKejOia1y4TlMUg.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/vHsQl4wA7kp7VNS6hfZEl8Y.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/aAGEJW4aAJtyn1e1Wn6PzQnJWU.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/jpgmBFXaTs6wBd6Ext28cdlx0Ao.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/mFH80XEwm1JOgvQh3ZAc6sNH5h4.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/uEOSe1bPhX9161ohDGUN4fJKK4.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/M82tTyIpVlQFpx1TVPkDREjaaCU.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/f27LkOUvjVJjl9SYq4M7wlOGI0.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/mwXMwwRkD5DWpzb1Fi60nJNrGzA.webp?width=3508&height=2480",
+      "/raksadesign/framerusercontent.com/images/YX0B2wMFHwzGMsbDfComE14XIUY.webp?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/9xkxJdPtUsKNoiaUM3ByiWNAECg.webp?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/k97KSVFEFmqz3AaGuKa9CAUUw4.webp?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/abZOdeYNtgKnY1OyrymqkNVszXU.webp?width=1920&height=1080"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "4dc34986-ad08-5c95-80dd-5b9921411309",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/w11qGm5QlyCIZfNGGrYkhzIYNY.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "fbc84c1f-efa3-574f-a9ae-80349aebd132",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/5jZQeq7LMXBt5za1aSiyKSsKTc.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 1,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "226b1cd1-164a-5578-8846-a5aec50258e1",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/LorFe8awWcCRjjQLyzvTCnhg6g.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 2,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "692624be-f489-582a-8bc2-81cc8cf8e4e6",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/1QA671ZEPbM4AWQnlNzlyQvz8Ys.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 3,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5f293ce3-51bd-5faa-8523-c6be047bfeba",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/ftabRrympKYSFnvskuwHpDqrfI.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 4,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "df23b0a4-b57c-5945-a0e3-da633da69c41",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/0oCAWsgQxTuAPoHf13e9He5U0.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 5,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d79e1f63-1c47-50a6-8f22-6323e0ebdfe2",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/A9Ur9SNkoo5pMAkW13KmxREEe0.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 6,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "405d3fc3-1790-5a33-a3d4-7b067aed7e6b",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/97qmcrjdT1H17fEIvIJ3ErtVm8Y.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 7,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "584684d1-ecc0-5e57-839e-76a624599ed4",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/tqqAdoYhSibmZMKxFwSedlIUME.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 8,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6b734bb6-c17d-5688-8d58-ce3a8f031faf",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/1Y6pc6yxKvEiqzGp0Jt0x6xmTs.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 9,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "76c66fc5-35bc-52a3-9590-73e3d5522812",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/Pz8tbgpOC6fIjRkh0VE1WZLZmg.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 10,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "16fc08df-1a52-53de-b947-4a78758f9123",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/AEghkDGxchPcanjaDPQAq8lZMA.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 11,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b573182f-b129-540c-a901-aaaf0c194bbc",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/A4ctL6wwsVrYcOjtfJSFiDPjrYk.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 12,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "497c9a14-5ace-575e-8165-df528ebd7330",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/F3fEmAvuWtKSIlFBBUAGXhvGksk.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 13,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "8e2047e6-1501-50c6-8fa3-4ab429099f16",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/NBmrCeb7V1xurTfNumjNbj2m6IY.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 14,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "896780ed-1deb-5929-b9d0-9dfca1d1c397",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/G7y5k8VuTXD01b1RmEdWkGBmtu8.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 15,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "658043cf-f0d8-5e0d-a258-55e6bb2a5255",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/cPqhI5Y4cweWP8ngI0vgNoLYnI.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 16,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "583708f7-f982-53d3-a9db-5804f789c0dd",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/HDOe63pst6vO12mzIbSHh3Z7ro.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 17,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ee6f5435-0ce4-5ee5-b6bf-e9fefb18d6a7",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/e0Y0IdiQOBIKtlIDncLEdrp2mU.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 18,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "38eee71a-b3e1-5db5-b979-b2265f8016e5",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/Q20hsOiAlskZ2XLU65zXl2GM38.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 19,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5ecbe77d-5f82-5849-8b3a-12f79dc8b9b6",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/nbv65vAShGZ4uakGeL2m13ntAIU.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 20,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5e10a1a0-abb8-5b45-9845-0d72ed71b45e",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/t8cJ0HLlCaXpOEUcNVHiMoUjLQ.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 21,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9c51771f-3491-5245-a85c-16d0d41bbb13",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/pzpvsVtazFFvTFAGDlHWKLAxHNg.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 22,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3d9b6f85-2941-5f82-a45d-5c2a1567371a",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/3FuzKSydovh215zPR04rHrlVks.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 23,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "45b15c6f-b95e-5365-970f-7cdeb8a6d995",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/VAqcnvKBs7gf1DGFHWIY6iFlV8.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 24,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6c6bc277-38ac-5c04-8eb3-ad2dda3066f4",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/0ird7CgqJ55X5LLYrsYVZSmzXlE.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 25,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "21f5f165-63e1-5c42-ae55-3f4c70016bcb",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/UCbaSBePvwwYAUlU6KNvMLCA6ak.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 26,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "33759401-d2d9-5251-be99-717695e00753",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/l9hyJJxHb23veWH6N4uRbnENI0M.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 27,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "85ceef85-4b8a-5d29-be08-ccdcb2a9ec5e",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/iFFgFpdn9a0EGquszDlyhlcsFRY.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 28,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f58c5d15-d4b2-5deb-844d-910922688e84",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/FKKSAX2zbPVnhKr3kIkWoBJ3gw.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 29,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6e4f381c-3b08-5364-8642-f1b482a1d3d2",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/WaP0uXqMhDuXayCn2cBkIjJwNk.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 30,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "78a93004-8b00-51bb-8ef8-bb845b6997da",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/2OtBTQfyYftnarcDiPfV1h8J4M.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 31,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "dba1cf38-78b4-5826-b5cd-04ff22a7b38b",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/g7Q8MzuIjWchpvSyi3RhJHo640.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 32,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "07fd5f12-4172-586f-ad5d-796416b9313a",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/Ec2AgSVOuxb87YvQEaaoeanMZmI.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 33,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "23cb4df3-56eb-5e4d-97a8-d7e29a0777c9",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/yPIt23vRu1CgqiJmMp20aSSlw.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 34,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2c908104-8b10-568a-94f5-02e01cc2677b",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/wMuaPciM4LLuUffawqIpbFUfuc.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 35,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "bff34514-61da-5193-8826-034b10445b5c",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/vtD7EEUSaYbhlSQlplFgWSE.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 36,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f3cf15e0-d6d1-5e62-bb31-2d0b602ab0f3",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/pTVqbM9BGnT57crRG6NDBMqB2E.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 37,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5cda1d9e-80db-531d-addf-40bb5d11852f",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/saoocSFxROyct5i7xi5T0KZ4XnY.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 38,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a63351b5-e7a9-57a0-bc22-4698676c72b2",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/KlMPPDXSlOAOnCqLaH2kvPj1yvE.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 39,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "efa2f988-2b2a-5a20-b29d-906dee43abc0",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/DkpTmaR0YdxnUTFBii2qILLGFU.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 40,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "84cd798f-1d94-5ec2-adba-53e4fe41bc23",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/coMD8d1nnQ21FDNYUYaNCqFjWXs.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 41,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "83d19b06-37d6-5dfa-8ddb-2f932f102f0f",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/YmQjseaK2rwdF2s8s1tD7E8f0.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 42,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0ad3d188-a832-5c3a-b4c9-146797d230fc",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/XHkyFcFOzUkSJ9NLlzxwVWw3hM.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 43,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7062744c-b4d9-5ea2-9df5-f8a4066a6150",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/8Olti0rn0OqNvJnn6IHo6tRZWl0.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 44,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "eca0e6ef-0e67-5302-8d4b-33d975bc455a",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/wwt4L015dvL8iU9I4HAPAbJK3k.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 45,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ad42bedb-1f93-58ba-a972-4fad10a2837d",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/tkW5WXiYICJm9wgNeucbmGkNZSs.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 46,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f540238e-c844-5d82-b689-3fe3280af9d2",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/obKsjT5IfjxjKIHtCORhjscEIEo.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 47,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "fc808530-f7fb-5b12-aafb-fe796582cf01",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/faRfoX9d0sNALYF2ymo88Xvij0.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 48,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "80169c7b-9060-510b-b50d-9060764026af",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/Lh0iIXWpv2IuGuS37fzIBrTUNzI.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 49,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c5f28933-88e1-5cb1-a0e7-f0b915ed3203",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/veHhgDwxZqbDYG3pGs2aVtKRW0.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 50,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "52126f37-f66b-59f8-84ad-d4828ee4ebdf",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/3W88h9UnChTtYtEAgWLdOa0Dg.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 51,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f4ea6a29-4de0-5061-81a2-640448db3c00",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/7WJomxqemW4aIvMfqCFJcMXwM8A.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 52,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5a7d0ca8-6579-5581-a4d6-b9a1325c6363",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/jCwl3LIGVPlsjlffGUSJXvEG5Q.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 53,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d33d5867-714c-509f-bb60-30653c129d89",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/zaA9hLOMIA03EhgFYJb0BxkOPU.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 54,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "32179fd4-c2a0-5bc9-89ff-f88b126fe898",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/f9T5jOD2NxJZiRtJxzKQhHcojI.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 55,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "105e2b90-0923-576a-a047-b1fc49ec5779",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/IIB9iDmS0GGLHZ1KXOhfSIQOZHs.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 56,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f8336d55-f72e-5fd0-a057-bc298609ac65",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/2mLgcA5PLuwsmq99LsjmNmx9mM.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 57,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f971f3a2-d1cc-55f1-92b3-146aa96da63c",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/LOpmInMOUprEmKejOia1y4TlMUg.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 58,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "baa4ac2d-6f6e-51b6-8846-b54b68abbdd6",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/vHsQl4wA7kp7VNS6hfZEl8Y.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 59,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c655cb93-d6fd-5285-a07b-9c412aeb45d7",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/aAGEJW4aAJtyn1e1Wn6PzQnJWU.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 60,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ff5a173b-08f7-56a3-9c19-1581b132ca0b",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/jpgmBFXaTs6wBd6Ext28cdlx0Ao.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 61,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "179e1b9c-87e5-594e-a240-ab25317164ce",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/mFH80XEwm1JOgvQh3ZAc6sNH5h4.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 62,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "dab31a83-93a4-5344-864c-2ae6bded790d",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/uEOSe1bPhX9161ohDGUN4fJKK4.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 63,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c219e4ea-1969-52b4-a265-d06190a5efa1",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/M82tTyIpVlQFpx1TVPkDREjaaCU.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 64,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ec8220a8-515f-58e0-9c35-60c5280a8dda",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/f27LkOUvjVJjl9SYq4M7wlOGI0.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 65,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ee5c5d06-0785-5d62-80ac-cab17e4b197a",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/mwXMwwRkD5DWpzb1Fi60nJNrGzA.webp?width=3508&height=2480",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 3508,
+      "height": 2480,
+      "sort_order": 66,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0aa338c3-f978-5e60-b817-1c6e87798d70",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/YX0B2wMFHwzGMsbDfComE14XIUY.webp?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 67,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ef175696-acb2-547a-80c6-675e18fe5036",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/9xkxJdPtUsKNoiaUM3ByiWNAECg.webp?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 68,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ccd6013b-701e-5bdd-b4ff-80e00d1d551d",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/k97KSVFEFmqz3AaGuKa9CAUUw4.webp?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 69,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7ccb1379-2832-5eae-934c-65d7165ef03a",
+      "case_id": "57ddf6a2-7d19-5b80-8ad4-06a5d336fcea",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/abZOdeYNtgKnY1OyrymqkNVszXU.webp?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 70,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 71,
+    "local_image_count": 71
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": true
+  }
+}

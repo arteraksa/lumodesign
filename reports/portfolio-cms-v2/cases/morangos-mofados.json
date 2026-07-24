@@ -1,0 +1,1200 @@
+{
+  "slug": "morangos-mofados",
+  "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/morangos-mofados/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+    "legacy_id": "morangos-mofados",
+    "legacy_slug": "morangos-mofados",
+    "slug": "morangos-mofados",
+    "title": "Morangos Mofados",
+    "status": "published",
+    "categories": [
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este é um projeto de design editorial para uma edição especial comemorativa de 40 anos do livro \"Morangos Mofados\" , a aclamada obra-prima do escritor Caio Fernando Abreu, publicada originalmente em 1982. O projeto foi desenvolvido como um trabalho acadêmico para a disciplina de Projeto Visual III na UFRGS."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio Conceitual"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar um redesign que funcionasse como uma edição especial comemorativa , traduzindo a complexidade da obra para um público de jovens adultos e adultos. A obra é dividida em três partes (\"O Mofo\", \"Os Morangos\" e \"Morangos Mofados\") e é conhecida por seus contos caóticos, complexos e melancólicos. O design precisava ser \"atrativo e bastante forte\" , ao mesmo tempo em que refletia o conceito central de \"caos e abstração\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi desenvolvido um projeto editorial completo que contrasta uma diagramação limpa com elementos visuais caóticos, criando uma experiência de leitura única que reflete a dualidade do livro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. A Capa possui uma Metáfora Visual: A capa foi o ponto central do conceito. Ela apresenta uma cabeça humana de onde brota uma plantação de morangos. A metáfora tem uma dupla interpretação:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Esperança : Os morangos simbolizam a esperança, baseados no desejo do protagonista de plantá-los no final da obra como um símbolo de renovação. A imagem representa \"uma pessoa plantando esperança na sua mente\"."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Melancolia : O título \"Morangos Mofados\" subverte essa esperança. Ele sugere que a esperança plantada \"acabou mofando, isto é, morrendo\" , refletindo o tom essencialmente triste da maioria dos contos."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. A Experiência Tátil e Visual: O projeto foi pensado para ser uma edição especial. A capa utiliza uma cor vermelha viva e um acabamento fosco. Este acabamento proporciona um \"toque macio\" , remetendo taticamente à textura de um pêssego e criando uma conexão sensorial com o tema das frutas. A paleta de cores é restrita ao preto e a dois tons de vermelho: um vivo e um mais escuro, \"desbotado\", que faz alusão ao mofo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. O Contraponto: Caos vs. Ordem: A decisão de design mais importante foi o contraponto entre o conteúdo e a forma."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Caos (Conteúdo) : Para refletir os contos \"complexos e caóticos\" , as ilustrações de abertura de cada conto são propositalmente \"rabiscadas e com ruídos\" , parecendo abstratas e caóticas. A segunda e a terceira capas também exploram essa estética com tipografia experimental."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Ordem (Layout) : Em contraste direto, a diagramação do texto é \"limpa, simples, organizada e fácil\". O projeto utiliza uma grade de layout clara , margens generosas e uma tipografia serifada elegante (Electra LT Std) sobre papel Pólen Bold 90g, garantindo o conforto de leitura e criando um espaço organizado para o caos temático do livro."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este é um projeto de design editorial para uma edição especial comemorativa de 40 anos do livro \"Morangos Mofados\" , a aclamada obra-prima do escritor Caio Fernando Abreu, publicada originalmente em 1982. O projeto foi desenvolvido como um trabalho acadêmico para a disciplina de Projeto Visual III na UFRGS."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio Conceitual"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar um redesign que funcionasse como uma edição especial comemorativa , traduzindo a complexidade da obra para um público de jovens adultos e adultos. A obra é dividida em três partes (\"O Mofo\", \"Os Morangos\" e \"Morangos Mofados\") e é conhecida por seus contos caóticos, complexos e melancólicos. O design precisava ser \"atrativo e bastante forte\" , ao mesmo tempo em que refletia o conceito central de \"caos e abstração\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi desenvolvido um projeto editorial completo que contrasta uma diagramação limpa com elementos visuais caóticos, criando uma experiência de leitura única que reflete a dualidade do livro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. A Capa possui uma Metáfora Visual: A capa foi o ponto central do conceito. Ela apresenta uma cabeça humana de onde brota uma plantação de morangos. A metáfora tem uma dupla interpretação:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Esperança : Os morangos simbolizam a esperança, baseados no desejo do protagonista de plantá-los no final da obra como um símbolo de renovação. A imagem representa \"uma pessoa plantando esperança na sua mente\"."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Melancolia : O título \"Morangos Mofados\" subverte essa esperança. Ele sugere que a esperança plantada \"acabou mofando, isto é, morrendo\" , refletindo o tom essencialmente triste da maioria dos contos."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. A Experiência Tátil e Visual: O projeto foi pensado para ser uma edição especial. A capa utiliza uma cor vermelha viva e um acabamento fosco. Este acabamento proporciona um \"toque macio\" , remetendo taticamente à textura de um pêssego e criando uma conexão sensorial com o tema das frutas. A paleta de cores é restrita ao preto e a dois tons de vermelho: um vivo e um mais escuro, \"desbotado\", que faz alusão ao mofo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. O Contraponto: Caos vs. Ordem: A decisão de design mais importante foi o contraponto entre o conteúdo e a forma."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Caos (Conteúdo) : Para refletir os contos \"complexos e caóticos\" , as ilustrações de abertura de cada conto são propositalmente \"rabiscadas e com ruídos\" , parecendo abstratas e caóticas. A segunda e a terceira capas também exploram essa estética com tipografia experimental."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Ordem (Layout) : Em contraste direto, a diagramação do texto é \"limpa, simples, organizada e fácil\". O projeto utiliza uma grade de layout clara , margens generosas e uma tipografia serifada elegante (Electra LT Std) sobre papel Pólen Bold 90g, garantindo o conforto de leitura e criando um espaço organizado para o caos temático do livro."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Este é um projeto de design editorial para uma edição especial comemorativa de 40 anos do livro \"Morangos Mofados\" , a aclamada obra-prima do escritor Caio Fernando Abreu, publicada originalmente em 1982. O projeto foi desenvolvido como um trabalho acadêmico para a disciplina de Projeto Visual III na UFRGS.</p><p><strong>O Desafio Conceitual</strong></p><p>O desafio era criar um redesign que funcionasse como uma edição especial comemorativa , traduzindo a complexidade da obra para um público de jovens adultos e adultos. A obra é dividida em três partes (\"O Mofo\", \"Os Morangos\" e \"Morangos Mofados\") e é conhecida por seus contos caóticos, complexos e melancólicos. O design precisava ser \"atrativo e bastante forte\" , ao mesmo tempo em que refletia o conceito central de \"caos e abstração\".</p><p><strong>A Solução de Design</strong></p><p>Foi desenvolvido um projeto editorial completo que contrasta uma diagramação limpa com elementos visuais caóticos, criando uma experiência de leitura única que reflete a dualidade do livro.</p><p><strong>1. A Capa possui uma Metáfora Visual:</strong>A capa foi o ponto central do conceito. Ela apresenta uma cabeça humana de onde brota uma plantação de morangos. A metáfora tem uma dupla interpretação:</p><ul><li><p><strong>Esperança</strong>: Os morangos simbolizam a esperança, baseados no desejo do protagonista de plantá-los no final da obra como um símbolo de renovação. A imagem representa \"uma pessoa plantando esperança na sua mente\".</p></li></ul><ul><li><p><strong>Melancolia</strong>: O título \"Morangos Mofados\" subverte essa esperança. Ele sugere que a esperança plantada \"acabou mofando, isto é, morrendo\" , refletindo o tom essencialmente triste da maioria dos contos.</p></li></ul><p><strong>2. A Experiência Tátil e Visual:</strong>O projeto foi pensado para ser uma edição especial. A capa utiliza uma cor vermelha viva e um acabamento fosco. Este acabamento proporciona um \"toque macio\" , remetendo taticamente à textura de um pêssego e criando uma conexão sensorial com o tema das frutas. A paleta de cores é restrita ao preto e a dois tons de vermelho: um vivo e um mais escuro, \"desbotado\", que faz alusão ao mofo.</p><p><strong>3. O Contraponto: Caos vs. Ordem:</strong>A decisão de design mais importante foi o contraponto entre o conteúdo e a forma.</p><ul><li><p><strong>Caos (Conteúdo)</strong>: Para refletir os contos \"complexos e caóticos\" , as ilustrações de abertura de cada conto são propositalmente \"rabiscadas e com ruídos\" , parecendo abstratas e caóticas. A segunda e a terceira capas também exploram essa estética com tipografia experimental.</p></li><li><p><strong>Ordem (Layout)</strong>: Em contraste direto, a diagramação do texto é \"limpa, simples, organizada e fácil\". O projeto utiliza uma grade de layout clara , margens generosas e uma tipografia serifada elegante (Electra LT Std) sobre papel Pólen Bold 90g, garantindo o conforto de leitura e criando um espaço organizado para o caos temático do livro.</p></li></ul>Morangos Mofados Morangos Mofados<p>Editorial</p><p>Este é um projeto de design editorial para uma edição especial comemorativa de 40 anos do livro \"Morangos Mofados\" , a aclamada obra-prima do escritor Caio Fernando Abreu, publicada originalmente em 1982. O projeto foi desenvolvido como um trabalho acadêmico para a disciplina de Projeto Visual III na UFRGS.</p><p><strong>O Desafio Conceitual</strong></p><p>O desafio era criar um redesign que funcionasse como uma edição especial comemorativa , traduzindo a complexidade da obra para um público de jovens adultos e adultos. A obra é dividida em três partes (\"O Mofo\", \"Os Morangos\" e \"Morangos Mofados\") e é conhecida por seus contos caóticos, complexos e melancólicos. O design precisava ser \"atrativo e bastante forte\" , ao mesmo tempo em que refletia o conceito central de \"caos e abstração\".</p><p><strong>A Solução de Design</strong></p><p>Foi desenvolvido um projeto editorial completo que contrasta uma diagramação limpa com elementos visuais caóticos, criando uma experiência de leitura única que reflete a dualidade do livro.</p><p><strong>1. A Capa possui uma Metáfora Visual:</strong>A capa foi o ponto central do conceito. Ela apresenta uma cabeça humana de onde brota uma plantação de morangos. A metáfora tem uma dupla interpretação:</p><ul><li><p><strong>Esperança</strong>: Os morangos simbolizam a esperança, baseados no desejo do protagonista de plantá-los no final da obra como um símbolo de renovação. A imagem representa \"uma pessoa plantando esperança na sua mente\".</p></li></ul><ul><li><p><strong>Melancolia</strong>: O título \"Morangos Mofados\" subverte essa esperança. Ele sugere que a esperança plantada \"acabou mofando, isto é, morrendo\" , refletindo o tom essencialmente triste da maioria dos contos.</p></li></ul><p><strong>2. A Experiência Tátil e Visual:</strong>O projeto foi pensado para ser uma edição especial. A capa utiliza uma cor vermelha viva e um acabamento fosco. Este acabamento proporciona um \"toque macio\" , remetendo taticamente à textura de um pêssego e criando uma conexão sensorial com o tema das frutas. A paleta de cores é restrita ao preto e a dois tons de vermelho: um vivo e um mais escuro, \"desbotado\", que faz alusão ao mofo.</p><p><strong>3. O Contraponto: Caos vs. Ordem:</strong>A decisão de design mais importante foi o contraponto entre o conteúdo e a forma.</p><ul><li><p><strong>Caos (Conteúdo)</strong>: Para refletir os contos \"complexos e caóticos\" , as ilustrações de abertura de cada conto são propositalmente \"rabiscadas e com ruídos\" , parecendo abstratas e caóticas. A segunda e a terceira capas também exploram essa estética com tipografia experimental.</p></li><li><p><strong>Ordem (Layout)</strong>: Em contraste direto, a diagramação do texto é \"limpa, simples, organizada e fácil\". O projeto utiliza uma grade de layout clara , margens generosas e uma tipografia serifada elegante (Electra LT Std) sobre papel Pólen Bold 90g, garantindo o conforto de leitura e criando um espaço organizado para o caos temático do livro.</p></li></ul>Anima+<p>Anterior</p><p>Anterior</p>Vacinas | Infográfico<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/morangos-mofados/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 19,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Este é um projeto de design editorial para uma edição especial comemorativa de 40 anos do livro \" \" , a aclamada obra-prima do escritor Caio Fernando Abreu, publicada originalmente em 1982. O projeto foi desenvolvido como um trabalho acadêmico para a disciplina de Projeto Visual III na UFRGS. O Desafio Conceitual O desafio era criar um redesign que funcionasse como uma edição especial comemorativa , traduzindo a complexidade da obra para um público de jovens adultos e adultos. A obra é dividida em três partes (\"O Mofo\", \"Os Morangos\" e \" \") e é conhecida por seus contos caóticos, complexos e melancólicos. O design precisava ser \"atrativo e bastante forte\" , ao mesmo tempo em que refletia o conceito central de \"",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/009.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/010.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/011.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/012.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/013.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/014.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/015.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/016.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/017.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/018.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/019.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/020.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/021.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/022.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/023.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/024.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/025.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/026.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/027.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/028.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/029.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/030.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/031.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/032.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/033.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/034.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/035.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/036.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/037.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/038.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/039.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/040.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/041.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/042.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/043.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/044.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/045.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/046.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/047.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/048.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/049.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/050.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "504964a9-1714-5a9f-abb7-d7dea0b97844",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5d4e7a91-843f-5c08-9037-d7aa9d22535c",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5a35256f-ce94-5ba6-8ca4-e15caa7b0eb7",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "764c11ff-3414-5eee-9578-fac3086b923e",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "71f08913-2865-51ed-9595-9e98cabe72bb",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "aaa87a9e-a970-56cb-9b02-d706a46ca768",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "009eff30-6bde-5419-ab58-bf083a60d06a",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "dc3dd635-7835-5ef3-9b0d-bc1928383e70",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "8be27008-1419-5218-9e00-90c943ec45ad",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7681bbf9-0ec0-5ebd-8a97-f0a654ebb86b",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/010.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/010.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 9,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "91e9aa40-502c-56e6-a449-3e06c9ec65bd",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/011.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/011.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 10,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f1935336-fdad-521a-8d1a-56fa6363072e",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/012.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/012.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 11,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "170b5f5f-2d0a-5cdc-b87c-512b8c8f4938",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/013.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/013.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 12,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3acb0c92-4627-53cc-a828-b660724d0485",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/014.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/014.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 13,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ae0faa60-8cfe-5bdf-8de3-6e23d8fc48ad",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/015.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/015.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 14,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5371184d-7147-5082-a4d7-e9b3781597d4",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/016.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/016.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 15,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b70babde-4026-53ad-995e-a45c2c555a74",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/017.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/017.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 16,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1eb17f42-4f68-5e66-92f7-715e880e6acb",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/018.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/018.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 17,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "be0e2f3f-3298-57e5-a2fd-02e4c417d30d",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/019.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/019.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 18,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c5458f65-a03c-5780-bbdd-9e2c51cfe8b1",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/020.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/020.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 19,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "77c04ec9-f0d8-598f-8b17-db6e6f77ca94",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/021.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/021.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 20,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "487f64b6-df8e-5f06-8679-2cf5ca804198",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/022.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/022.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 21,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1d584ff2-ae71-5bf7-bf8f-284a8c456259",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/023.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/023.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 22,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1cb656c3-24e4-5b8b-bd67-2691fee48b9f",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/024.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/024.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 23,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2e9f453d-db4f-56d4-add6-4b71b1046554",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/025.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/025.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 24,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9cb0eb4e-ee41-58a3-a783-664bc94a4a7b",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/026.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/026.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 25,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "18146339-eb28-5a80-afca-f689ada33453",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/027.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/027.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 26,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7d76ff02-5763-5f20-80e6-a832610ed08f",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/028.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/028.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 27,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "616eb130-b78a-575c-a120-39becda0f26c",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/029.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/029.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 28,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "61269947-fd9e-52e9-9c7e-cd57165bfbef",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/030.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/030.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 29,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0d839956-b3f0-55fc-991e-f352b2fe713f",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/031.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/031.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 30,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a21e2aaf-3b02-521d-bd50-1fa72c568107",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/032.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/032.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 31,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0d331f8f-2c8b-528c-a696-9897ba27397c",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/033.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/033.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 32,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "56e7d7c6-1f2e-5394-a251-fc9a6c40baad",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/034.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/034.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 33,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "bd7c93e3-1d7c-585f-a9f3-e3e9e5cbe7c9",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/035.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/035.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 34,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "00d7f544-239d-5304-901e-8b56e19f0905",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/036.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/036.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 35,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ea56d7a5-b692-5ef3-a3ef-363ad34b0c80",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/037.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/037.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 36,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9f697ad0-ce56-56a4-91a2-2deb672f6954",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/038.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/038.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 37,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a1d59194-f548-56e5-a384-228752eeca23",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/039.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/039.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 38,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d660f83c-0e93-585f-9842-720161d7b1ee",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/040.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/040.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 39,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c56cd68b-3351-5b27-9f8d-6df38d16c4e6",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/041.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/041.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 40,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "814f9adc-d0cb-5e1d-9340-bb9378c78914",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/042.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/042.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 41,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6d348ab5-3c13-5840-9bb5-356dcf8ea779",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/043.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/043.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 42,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "78f19840-83d8-5544-8447-305e4b6e32b1",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/044.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/044.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 43,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "de754529-70da-5e53-8d7c-5d8e061fd6ed",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/045.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/045.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 44,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5fc56a22-33ec-5bf9-916a-3b8c342e6676",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/046.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/046.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 45,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "76fb66aa-a783-5464-affc-aed9af8fceee",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/047.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/047.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 46,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0b043b71-f1f9-55fc-aec3-27e473e91b9f",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/048.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/048.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 47,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "8bd506ca-55ca-520b-a151-22e28ff9feb8",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/049.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/049.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 48,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1f3ee4e3-25fe-58ea-a127-2c921088a0e6",
+      "case_id": "b6f3ef73-40de-550a-a0dd-2a1b88cf4d88",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/morangos-mofados/gallery/050.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/morangos-mofados/gallery/050.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 49,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 50,
+    "local_image_count": 50
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": true
+  }
+}

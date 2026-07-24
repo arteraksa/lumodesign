@@ -1,0 +1,830 @@
+{
+  "slug": "anima",
+  "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/anima/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+    "legacy_id": "anima",
+    "legacy_slug": "anima",
+    "slug": "anima",
+    "title": "Anima+",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Branding"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Anima+ é um aplicativo-plataforma focado no aprendizado de animação. Para pessoas que buscam mais conhecimento na área, o Anima+ é uma plataforma que ensina, de maneira interativa, a história, os conceitos, as produções digitais e analógicas dos diferentes tipos de animação e suas particularidades."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi concebido como uma solução gratuita, contribuindo para a democratização do ensino e atraindo o interesse de mais profissionais para a área."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar uma plataforma de aprendizado que preenchesse uma lacuna no mercado: a falta de soluções acessíveis que abordassem os fundamentos da animação. Uma análise de plataformas similares identificou que muitas soluções são pagas, focadas mais em vender cursos do que em ensinar, e visualmente desorganizadas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução precisava ser gratuita e atender a dois públicos principais:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Público Primário : Estudantes de cursos da área criativa que buscam um conhecimento complementar."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Público Secundário : Entusiastas que desejam saber se querem seguir profissionalmente na área ou simplesmente expandir seu conhecimento."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Aprendizado Interativo e Gamificado"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi estruturado em um processo de design completo, incluindo definição do problema, pesquisa de similares, arquitetura da informação, identidade visual, wireframes e prototipagem."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Pesquisa e Estratégia: A fase de descoberta incluiu uma análise de plataformas de e-learning (como Domestika e Lumina) e aplicativos gamificados (como Duolingo e Perguntados) . A pesquisa identificou oportunidades claras: criar uma plataforma focada no ensino, visualmente organizada e com um ambiente \"jogável\" que não pressionasse o usuário. A estratégia foi validada com pesquisas quantitativas (17 respostas) e entrevistas qualitativas com o público-alvo e profissionais da área."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Arquitetura e Gamificação: O conceito central do Anima+ é a gamificação do aprendizado. O próprio logotipo reflete isso, combinando um rosto feliz (a emoção da \"animação\") com um joystick (a \"gamificação\"). A arquitetura da informação foi projetada para ser intuitiva, dividindo a experiência do usuário em quatro abas principais: Módulos, Progresso, Games e Perfil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. A Experiência de Aprendizado: O design do aplicativo se materializa em um ecossistema de aprendizado completo e interativo:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Módulos de Aprendizado: O usuário avança por um caminho de aprendizado estruturado, com módulos sobre História, Tipos de Animação, Fundamentos, Empresas, etc.. Cada módulo é composto por aulas, vídeos e avaliações."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Games (Gamificação): Para tornar o aprendizado mais dinâmico , uma aba \"Games\" permite ao usuário exercitar seus conhecimentos. São quizzes no estilo trivia, separados por módulo , onde o usuário responde perguntas de múltipla escolha."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Dashboard de Progresso: Uma seção dedicada permite ao usuário monitorar seu progresso, com gráficos de horas assistidas e um ranking de suas melhores pontuações nos games."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Perfil: Uma área para o usuário fazer anotações, adicionar amigos e gerenciar suas configurações."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "4. Identidade Visual: A marca \"Anima+\" utiliza uma tipografia amigável e arredondada (Renogare Soft) e uma paleta de cores vibrantes (azul, rosa, amarelo e verde) , criando uma atmosfera convidativa, divertida e lúdica para o aprendizado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Anima+ é um aplicativo-plataforma focado no aprendizado de animação. Para pessoas que buscam mais conhecimento na área, o Anima+ é uma plataforma que ensina, de maneira interativa, a história, os conceitos, as produções digitais e analógicas dos diferentes tipos de animação e suas particularidades."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi concebido como uma solução gratuita, contribuindo para a democratização do ensino e atraindo o interesse de mais profissionais para a área."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O desafio era criar uma plataforma de aprendizado que preenchesse uma lacuna no mercado: a falta de soluções acessíveis que abordassem os fundamentos da animação. Uma análise de plataformas similares identificou que muitas soluções são pagas, focadas mais em vender cursos do que em ensinar, e visualmente desorganizadas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A solução precisava ser gratuita e atender a dois públicos principais:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Público Primário : Estudantes de cursos da área criativa que buscam um conhecimento complementar."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Público Secundário : Entusiastas que desejam saber se querem seguir profissionalmente na área ou simplesmente expandir seu conhecimento."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Aprendizado Interativo e Gamificado"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto foi estruturado em um processo de design completo, incluindo definição do problema, pesquisa de similares, arquitetura da informação, identidade visual, wireframes e prototipagem."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Pesquisa e Estratégia: A fase de descoberta incluiu uma análise de plataformas de e-learning (como Domestika e Lumina) e aplicativos gamificados (como Duolingo e Perguntados) . A pesquisa identificou oportunidades claras: criar uma plataforma focada no ensino, visualmente organizada e com um ambiente \"jogável\" que não pressionasse o usuário. A estratégia foi validada com pesquisas quantitativas (17 respostas) e entrevistas qualitativas com o público-alvo e profissionais da área."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Arquitetura e Gamificação: O conceito central do Anima+ é a gamificação do aprendizado. O próprio logotipo reflete isso, combinando um rosto feliz (a emoção da \"animação\") com um joystick (a \"gamificação\"). A arquitetura da informação foi projetada para ser intuitiva, dividindo a experiência do usuário em quatro abas principais: Módulos, Progresso, Games e Perfil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. A Experiência de Aprendizado: O design do aplicativo se materializa em um ecossistema de aprendizado completo e interativo:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Módulos de Aprendizado: O usuário avança por um caminho de aprendizado estruturado, com módulos sobre História, Tipos de Animação, Fundamentos, Empresas, etc.. Cada módulo é composto por aulas, vídeos e avaliações."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Games (Gamificação): Para tornar o aprendizado mais dinâmico , uma aba \"Games\" permite ao usuário exercitar seus conhecimentos. São quizzes no estilo trivia, separados por módulo , onde o usuário responde perguntas de múltipla escolha."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Dashboard de Progresso: Uma seção dedicada permite ao usuário monitorar seu progresso, com gráficos de horas assistidas e um ranking de suas melhores pontuações nos games."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Perfil: Uma área para o usuário fazer anotações, adicionar amigos e gerenciar suas configurações."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "4. Identidade Visual: A marca \"Anima+\" utiliza uma tipografia amigável e arredondada (Renogare Soft) e uma paleta de cores vibrantes (azul, rosa, amarelo e verde) , criando uma atmosfera convidativa, divertida e lúdica para o aprendizado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>O Anima+ é um aplicativo-plataforma focado no aprendizado de animação. Para pessoas que buscam mais conhecimento na área, o Anima+ é uma plataforma que ensina, de maneira interativa, a história, os conceitos, as produções digitais e analógicas dos diferentes tipos de animação e suas particularidades.</p><p>O projeto foi concebido como uma solução gratuita, contribuindo para a democratização do ensino e atraindo o interesse de mais profissionais para a área.</p><p><strong>O Desafio</strong></p><p>O desafio era criar uma plataforma de aprendizado que preenchesse uma lacuna no mercado: a falta de soluções acessíveis que abordassem os fundamentos da animação. Uma análise de plataformas similares identificou que muitas soluções são pagas, focadas mais em vender cursos do que em ensinar, e visualmente desorganizadas.</p><p>A solução precisava ser gratuita e atender a dois públicos principais:</p><ul><li><p><strong>Público Primário</strong>: Estudantes de cursos da área criativa que buscam um conhecimento complementar.</p></li><li><p><strong>Público Secundário</strong>: Entusiastas que desejam saber se querem seguir profissionalmente na área ou simplesmente expandir seu conhecimento.</p></li></ul><p><strong>A Solução de Design: Aprendizado Interativo e Gamificado</strong></p><p>O projeto foi estruturado em um processo de design completo, incluindo definição do problema, pesquisa de similares, arquitetura da informação, identidade visual, wireframes e prototipagem.</p><p><strong>1. Pesquisa e Estratégia:</strong>A fase de descoberta incluiu uma análise de plataformas de e-learning (como Domestika e Lumina) e aplicativos gamificados (como Duolingo e Perguntados) . A pesquisa identificou oportunidades claras: criar uma plataforma focada no ensino, visualmente organizada e com um ambiente \"jogável\" que não pressionasse o usuário. A estratégia foi validada com pesquisas quantitativas (17 respostas) e entrevistas qualitativas com o público-alvo e profissionais da área.</p><p><strong>2. Arquitetura e Gamificação:</strong>O conceito central do Anima+ é a gamificação do aprendizado. O próprio logotipo reflete isso, combinando um rosto feliz (a emoção da \"animação\") com um joystick (a \"gamificação\"). A arquitetura da informação foi projetada para ser intuitiva, dividindo a experiência do usuário em quatro abas principais: Módulos, Progresso, Games e Perfil.</p><p><strong>3. A Experiência de Aprendizado:</strong>O design do aplicativo se materializa em um ecossistema de aprendizado completo e interativo:</p><ul><li><p><strong>Módulos de Aprendizado:</strong>O usuário avança por um caminho de aprendizado estruturado, com módulos sobre História, Tipos de Animação, Fundamentos, Empresas, etc.. Cada módulo é composto por aulas, vídeos e avaliações.</p></li><li><p><strong>Games (Gamificação):</strong>Para tornar o aprendizado mais dinâmico , uma aba \"Games\" permite ao usuário exercitar seus conhecimentos. São quizzes no estilo trivia, separados por módulo , onde o usuário responde perguntas de múltipla escolha.</p></li><li><p><strong>Dashboard de Progresso:</strong>Uma seção dedicada permite ao usuário monitorar seu progresso, com gráficos de horas assistidas e um ranking de suas melhores pontuações nos games.</p></li><li><p><strong>Perfil:</strong>Uma área para o usuário fazer anotações, adicionar amigos e gerenciar suas configurações.</p></li></ul><p><strong>4. Identidade Visual:</strong>A marca \"Anima+\" utiliza uma tipografia amigável e arredondada (Renogare Soft) e uma paleta de cores vibrantes (azul, rosa, amarelo e verde) , criando uma atmosfera convidativa, divertida e lúdica para o aprendizado.</p>Anima+ Anima+<p>UI/UX Design</p><p>Branding</p><p>O Anima+ é um aplicativo-plataforma focado no aprendizado de animação. Para pessoas que buscam mais conhecimento na área, o Anima+ é uma plataforma que ensina, de maneira interativa, a história, os conceitos, as produções digitais e analógicas dos diferentes tipos de animação e suas particularidades.</p><p>O projeto foi concebido como uma solução gratuita, contribuindo para a democratização do ensino e atraindo o interesse de mais profissionais para a área.</p><p><strong>O Desafio</strong></p><p>O desafio era criar uma plataforma de aprendizado que preenchesse uma lacuna no mercado: a falta de soluções acessíveis que abordassem os fundamentos da animação. Uma análise de plataformas similares identificou que muitas soluções são pagas, focadas mais em vender cursos do que em ensinar, e visualmente desorganizadas.</p><p>A solução precisava ser gratuita e atender a dois públicos principais:</p><ul><li><p><strong>Público Primário</strong>: Estudantes de cursos da área criativa que buscam um conhecimento complementar.</p></li><li><p><strong>Público Secundário</strong>: Entusiastas que desejam saber se querem seguir profissionalmente na área ou simplesmente expandir seu conhecimento.</p></li></ul><p><strong>A Solução de Design: Aprendizado Interativo e Gamificado</strong></p><p>O projeto foi estruturado em um processo de design completo, incluindo definição do problema, pesquisa de similares, arquitetura da informação, identidade visual, wireframes e prototipagem.</p><p><strong>1. Pesquisa e Estratégia:</strong>A fase de descoberta incluiu uma análise de plataformas de e-learning (como Domestika e Lumina) e aplicativos gamificados (como Duolingo e Perguntados) . A pesquisa identificou oportunidades claras: criar uma plataforma focada no ensino, visualmente organizada e com um ambiente \"jogável\" que não pressionasse o usuário. A estratégia foi validada com pesquisas quantitativas (17 respostas) e entrevistas qualitativas com o público-alvo e profissionais da área.</p><p><strong>2. Arquitetura e Gamificação:</strong>O conceito central do Anima+ é a gamificação do aprendizado. O próprio logotipo reflete isso, combinando um rosto feliz (a emoção da \"animação\") com um joystick (a \"gamificação\"). A arquitetura da informação foi projetada para ser intuitiva, dividindo a experiência do usuário em quatro abas principais: Módulos, Progresso, Games e Perfil.</p><p><strong>3. A Experiência de Aprendizado:</strong>O design do aplicativo se materializa em um ecossistema de aprendizado completo e interativo:</p><ul><li><p><strong>Módulos de Aprendizado:</strong>O usuário avança por um caminho de aprendizado estruturado, com módulos sobre História, Tipos de Animação, Fundamentos, Empresas, etc.. Cada módulo é composto por aulas, vídeos e avaliações.</p></li><li><p><strong>Games (Gamificação):</strong>Para tornar o aprendizado mais dinâmico , uma aba \"Games\" permite ao usuário exercitar seus conhecimentos. São quizzes no estilo trivia, separados por módulo , onde o usuário responde perguntas de múltipla escolha.</p></li><li><p><strong>Dashboard de Progresso:</strong>Uma seção dedicada permite ao usuário monitorar seu progresso, com gráficos de horas assistidas e um ranking de suas melhores pontuações nos games.</p></li><li><p><strong>Perfil:</strong>Uma área para o usuário fazer anotações, adicionar amigos e gerenciar suas configurações.</p></li></ul><p><strong>4. Identidade Visual:</strong>A marca \"Anima+\" utiliza uma tipografia amigável e arredondada (Renogare Soft) e uma paleta de cores vibrantes (azul, rosa, amarelo e verde) , criando uma atmosfera convidativa, divertida e lúdica para o aprendizado.</p>LumiLab<p>Anterior</p><p>Anterior</p>Morangos Mofados<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/anima/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 9,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "O Anima+ é um aplicativo-plataforma focado no aprendizado de animação. Para pessoas que buscam mais conhecimento na área, o é uma plataforma que ensina, de maneira interativa, a história, os conceitos, as produções digitais e analógicas dos diferentes tipos de animação e suas particularidades. O projeto foi concebido como uma solução gratuita, contribuindo para a democratização do ensino e atraindo o interesse de mais profissionais para a área. O Desafio O desafio era criar uma plataforma de aprendizado que preenchesse uma lacuna no mercado: a falta de soluções acessíveis que abordassem os fundamentos da animação. Uma análise de plataformas similares identificou que muitas soluções são pagas, focadas mais em vender cu",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/009.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/010.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/011.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/012.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/013.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/014.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/015.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/016.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/017.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/018.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/019.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/020.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "62a5fd0d-9b4c-5fd6-a447-e9b62712f56a",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "77ed73be-6ad0-56fc-9ab9-02bf3d16a769",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1a15ceee-c0bc-53cd-8b42-9e1ef35a624f",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "89fd4765-ba59-55df-83cf-5924bebec6a2",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "152ee1d1-495d-5036-9bd6-dfacd3159256",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b25d4a52-7502-5350-aa80-c91bae696418",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3b48f265-f86c-5214-a4d2-dfc48246eb93",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "2a0837d8-5ec0-561d-9ea6-b8040f6e01d9",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "dd105aeb-3ca0-502e-84e2-3efe9eca67e4",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "05040f83-2380-51b1-a83a-d2cf94d44af0",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/010.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/010.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 9,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a87c676b-6dec-550f-9726-60cdac040786",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/011.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/011.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 10,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "92d69023-ac5c-5bde-b7fc-b3f46c582d96",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/012.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/012.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 11,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e0356b52-8484-5676-aecd-f4232854ce92",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/013.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/013.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 12,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "4dd9150e-dd8a-5306-9932-9e04d0af053d",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/014.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/014.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 13,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "a59c83fe-7016-5a03-9d27-48c4bffb6e89",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/015.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/015.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 14,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9fa7d6ba-3d86-5d16-85d6-6822149ca84e",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/016.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/016.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 15,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d5904755-2593-5275-a8eb-944b09982343",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/017.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/017.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 16,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "07cf729f-98aa-5c0a-8934-b244ec77ac1c",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/018.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/018.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 17,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9e63f640-2944-5412-8351-c45d670e229c",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/019.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/019.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 18,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "aa3208bb-5dd3-5bf7-90f5-c1c296ba0e50",
+      "case_id": "e7b81473-6aab-5767-a5a0-50649f556e77",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/anima/gallery/020.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/anima/gallery/020.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 19,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 20,
+    "local_image_count": 20
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

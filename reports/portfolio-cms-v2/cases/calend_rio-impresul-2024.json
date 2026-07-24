@@ -1,0 +1,212 @@
+{
+  "slug": "calendário-impresul-2024",
+  "case_id": "38403d28-1fdb-5004-ace0-c142fc5c2f71",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/calendário-impresul-2024/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "38403d28-1fdb-5004-ace0-c142fc5c2f71",
+    "legacy_id": "calendário-impresul-2024",
+    "legacy_slug": "calendário-impresul-2024",
+    "slug": "calendário-impresul-2024",
+    "title": "Calendário Impresul 2024",
+    "status": "published",
+    "categories": [
+      "Editorial"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Com o passar dos anos a tecnologia vem avançando e servindo de apoio ao ser humano para criar, aprimorar e ter novas visões sobre o mundo. Mas tem uma coisa que a inteligência artificial nunca terá: a humanidade ! A Impresul usou a tecnologia para ressaltar o olhar humano e mostrar o quanto precisamos desse toque de sensibilidade que o artista oferece. Adotamos como dinâmica o uso de QR Codes e faixas musicais selecionadas para trazer a você, nosso cliente, uma maior interatividade com esse material. Através dos meses nós convidamos você a embarcar em uma viagem por Paris, a cidade luz, capital da França."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Editorial"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Com o passar dos anos a tecnologia vem avançando e servindo de apoio ao ser humano para criar, aprimorar e ter novas visões sobre o mundo. Mas tem uma coisa que a inteligência artificial nunca terá: a humanidade ! A Impresul usou a tecnologia para ressaltar o olhar humano e mostrar o quanto precisamos desse toque de sensibilidade que o artista oferece. Adotamos como dinâmica o uso de QR Codes e faixas musicais selecionadas para trazer a você, nosso cliente, uma maior interatividade com esse material. Através dos meses nós convidamos você a embarcar em uma viagem por Paris, a cidade luz, capital da França."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Com o passar dos anos a tecnologia vem avançando e servindo de apoio ao ser humano para criar, aprimorar e ter novas visões sobre o mundo. Mas tem uma coisa que a<strong>inteligência artificial</strong>nunca terá: a<strong>humanidade</strong>! A Impresul usou a tecnologia para ressaltar o<strong>olhar humano</strong>e mostrar o quanto precisamos desse<strong>toque de sensibilidade</strong>que o artista oferece.<br><br>Adotamos como dinâmica o uso de<strong>QR Codes</strong>e<strong>faixas musicais</strong>selecionadas para trazer a você, nosso cliente, uma maior interatividade com esse material. Através dos meses nós convidamos você a embarcar em uma viagem por Paris, a cidade luz, capital da França.</p>Calendário Impresul 2024 Calendário Impresul 2024<p>Editorial</p><p>Com o passar dos anos a tecnologia vem avançando e servindo de apoio ao ser humano para criar, aprimorar e ter novas visões sobre o mundo. Mas tem uma coisa que a<strong>inteligência artificial</strong>nunca terá: a<strong>humanidade</strong>! A Impresul usou a tecnologia para ressaltar o<strong>olhar humano</strong>e mostrar o quanto precisamos desse<strong>toque de sensibilidade</strong>que o artista oferece.<br><br>Adotamos como dinâmica o uso de<strong>QR Codes</strong>e<strong>faixas musicais</strong>selecionadas para trazer a você, nosso cliente, uma maior interatividade com esse material. Através dos meses nós convidamos você a embarcar em uma viagem por Paris, a cidade luz, capital da França.</p>Click Impresso<p>Anterior</p><p>Anterior</p>A Primeira Segunda-Feira<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/calendario-impresul-2024/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 13,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Com o passar dos anos a tecnologia vem avançando e servindo de apoio ao ser humano para criar, aprimorar e ter novas visões sobre o mundo. Mas tem uma coisa que a inteligência artificial nunca terá: a humanidade ! A Impresul usou a tecnologia para ressaltar o olhar humano e mostrar o quanto precisamos desse toque de sensibilidade que o artista oferece. Adotamos como dinâmica o uso de QR Codes e faixas musicais selecionadas para trazer a você, nosso cliente, uma maior interatividade com esse material. Através dos meses nós convidamos você a embarcar em uma viagem por Paris, a cidade luz, capital da França. Click Impresso Anterior Anterior A Primeira Segunda-Feira Próximo Próximo",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/005.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "3290e5f9-4585-5289-b578-c9629e18fef8",
+      "case_id": "38403d28-1fdb-5004-ace0-c142fc5c2f71",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/calendario-impresul-2024/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "fae404db-f72a-5608-9ac8-fd2993801d16",
+      "case_id": "38403d28-1fdb-5004-ace0-c142fc5c2f71",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/calendario-impresul-2024/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b132818c-3383-55a0-b15f-ca621fc9a476",
+      "case_id": "38403d28-1fdb-5004-ace0-c142fc5c2f71",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/calendario-impresul-2024/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "6b876fa6-3c5e-5245-b419-66677d5ff31b",
+      "case_id": "38403d28-1fdb-5004-ace0-c142fc5c2f71",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/calendario-impresul-2024/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "20adfe33-2cc6-5de4-a375-baafc7aff4a1",
+      "case_id": "38403d28-1fdb-5004-ace0-c142fc5c2f71",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/calendario-impresul-2024/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/calendario-impresul-2024/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 5,
+    "local_image_count": 5
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

@@ -1,0 +1,828 @@
+{
+  "slug": "nina",
+  "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/nina/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+    "legacy_id": "nina",
+    "legacy_slug": "nina",
+    "slug": "nina",
+    "title": "Nina",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O \"Nina\" é um aplicativo de descoberta de eventos projetado para ajudar os usuários a encontrarem \"o melhor rolê\" em uma cidade vibrante e complexa como São Paulo. A plataforma agrega shows, festas, bares e restaurantes, funcionando como um guia curado e personalizado da vida cultural e social da metrópole."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Em uma cidade com infinitas opções, o principal desafio era combater a \"paralisia da escolha\". O design precisava ir além de um simples agregador de eventos e se tornar uma ferramenta de descoberta inteligente e social. A solução deveria ser capaz de:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Oferecer Recomendações Relevantes :&nbsp;Entender as preferências individuais de cada usuário para sugerir eventos que realmente interessem."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Facilitar a Exploração :&nbsp;Criar ferramentas de busca e visualização poderosas para quem prefere explorar as opções por conta própria."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Fomentar a Comunidade :&nbsp;Construir um ambiente onde os usuários pudessem compartilhar suas descobertas e criar conexões através de experiências em comum."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. A Solução de Design: Um Ecossistema de Descoberta Social e Inteligente"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi projetado um aplicativo completo, com uma arquitetura de informação e um conjunto de funcionalidades focados em resolver os desafios de descoberta, exploração e comunidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Descoberta Personalizada e Inteligente, o coração do aplicativo é o seu motor de recomendação. A experiência do usuário começa com:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Feed \"Recomendações Personalizadas\" :&nbsp;Uma tela principal que oferece sugestões personalizadas de eventos com base no perfil e no histórico de navegação do usuário."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Chat com a Nina (IA) :&nbsp;Uma interface de chatbot onde o usuário pode conversar com a \"Nina\", uma inteligência artificial, para pedir recomendações específicas e receber sugestões curadas em tempo real."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Exploração Robusta e Intuitiva para usuários que gostam de explorar, foram criadas ferramentas de busca avançadas:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Mapa Interativo: &nbsp;Uma visão híbrida de mapa e lista, similar ao Google Maps, com pins de eventos e filtros inteligentes por data, gênero musical, categoria e preço."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Busca Multifacetada: &nbsp;Um sistema de pesquisa que permite encontrar não apenas locais e eventos, mas também listas de usuários e perfis, com sugestões de \"termos em alta\" para inspirar a descoberta."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "4. Funcionalidades Sociais e de Curadoria para transformar a descoberta em uma experiência compartilhada, foram incorporados elementos sociais:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Listas de Lugares: &nbsp;Os usuários podem criar suas próprias listas de lugares favoritos (públicas ou privadas) e compartilhá-las com amigos, funcionando como um sistema de curadoria pessoal."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Perfis de Usuário: &nbsp;Cada usuário possui um perfil (com um layout inspirado no Twitter) onde pode exibir suas listas, seguidores e conexões, construindo sua reputação como um \"curador\" da cidade."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "5. Inovação e Monetização , o aplicativo também foi projetado com visão de futuro e sustentabilidade:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Hub de Monetização: &nbsp;Um recurso que permite aos criadores de conteúdo e curadores venderem acesso a listas de eventos exclusivas."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "GPS de Eventos em Tempo Real: &nbsp;Uma funcionalidade sazonal, testada durante o Carnaval, que permitia aos usuários verem um mapa de eventos em tempo real e a localização de seus amigos, elevando a experiência em momentos de alta demanda."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é um produto digital completo que não apenas informa, mas inspira, conecta e simplifica a complexa tarefa de viver o melhor de São Paulo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O \"Nina\" é um aplicativo de descoberta de eventos projetado para ajudar os usuários a encontrarem \"o melhor rolê\" em uma cidade vibrante e complexa como São Paulo. A plataforma agrega shows, festas, bares e restaurantes, funcionando como um guia curado e personalizado da vida cultural e social da metrópole."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Em uma cidade com infinitas opções, o principal desafio era combater a \"paralisia da escolha\". O design precisava ir além de um simples agregador de eventos e se tornar uma ferramenta de descoberta inteligente e social. A solução deveria ser capaz de:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Oferecer Recomendações Relevantes :&nbsp;Entender as preferências individuais de cada usuário para sugerir eventos que realmente interessem."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Facilitar a Exploração :&nbsp;Criar ferramentas de busca e visualização poderosas para quem prefere explorar as opções por conta própria."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Fomentar a Comunidade :&nbsp;Construir um ambiente onde os usuários pudessem compartilhar suas descobertas e criar conexões através de experiências em comum."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. A Solução de Design: Um Ecossistema de Descoberta Social e Inteligente"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi projetado um aplicativo completo, com uma arquitetura de informação e um conjunto de funcionalidades focados em resolver os desafios de descoberta, exploração e comunidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Descoberta Personalizada e Inteligente, o coração do aplicativo é o seu motor de recomendação. A experiência do usuário começa com:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Feed \"Recomendações Personalizadas\" :&nbsp;Uma tela principal que oferece sugestões personalizadas de eventos com base no perfil e no histórico de navegação do usuário."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Chat com a Nina (IA) :&nbsp;Uma interface de chatbot onde o usuário pode conversar com a \"Nina\", uma inteligência artificial, para pedir recomendações específicas e receber sugestões curadas em tempo real."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Exploração Robusta e Intuitiva para usuários que gostam de explorar, foram criadas ferramentas de busca avançadas:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Mapa Interativo: &nbsp;Uma visão híbrida de mapa e lista, similar ao Google Maps, com pins de eventos e filtros inteligentes por data, gênero musical, categoria e preço."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Busca Multifacetada: &nbsp;Um sistema de pesquisa que permite encontrar não apenas locais e eventos, mas também listas de usuários e perfis, com sugestões de \"termos em alta\" para inspirar a descoberta."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "4. Funcionalidades Sociais e de Curadoria para transformar a descoberta em uma experiência compartilhada, foram incorporados elementos sociais:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Listas de Lugares: &nbsp;Os usuários podem criar suas próprias listas de lugares favoritos (públicas ou privadas) e compartilhá-las com amigos, funcionando como um sistema de curadoria pessoal."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Perfis de Usuário: &nbsp;Cada usuário possui um perfil (com um layout inspirado no Twitter) onde pode exibir suas listas, seguidores e conexões, construindo sua reputação como um \"curador\" da cidade."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "5. Inovação e Monetização , o aplicativo também foi projetado com visão de futuro e sustentabilidade:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Hub de Monetização: &nbsp;Um recurso que permite aos criadores de conteúdo e curadores venderem acesso a listas de eventos exclusivas."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "GPS de Eventos em Tempo Real: &nbsp;Uma funcionalidade sazonal, testada durante o Carnaval, que permitia aos usuários verem um mapa de eventos em tempo real e a localização de seus amigos, elevando a experiência em momentos de alta demanda."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O resultado é um produto digital completo que não apenas informa, mas inspira, conecta e simplifica a complexa tarefa de viver o melhor de São Paulo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>O \"Nina\" é um aplicativo de descoberta de eventos projetado para ajudar os usuários a encontrarem \"o melhor rolê\" em uma cidade vibrante e complexa como São Paulo. A plataforma agrega shows, festas, bares e restaurantes, funcionando como um guia curado e personalizado da vida cultural e social da metrópole.</p><p><strong>O Desafio</strong></p><p>Em uma cidade com infinitas opções, o principal desafio era combater a \"paralisia da escolha\". O design precisava ir além de um simples agregador de eventos e se tornar uma ferramenta de descoberta inteligente e social. A solução deveria ser capaz de:</p><ul><li><p><strong>Oferecer Recomendações Relevantes</strong>:&nbsp;Entender as preferências individuais de cada usuário para sugerir eventos que realmente interessem.</p></li><li><p><strong>Facilitar a Exploração</strong>:&nbsp;Criar ferramentas de busca e visualização poderosas para quem prefere explorar as opções por conta própria.</p></li><li><p><strong>Fomentar a Comunidade</strong>:&nbsp;Construir um ambiente onde os usuários pudessem compartilhar suas descobertas e criar conexões através de experiências em comum.</p></li></ul><p><strong>1. A Solução de Design: Um Ecossistema de Descoberta Social e Inteligente</strong></p><p>Foi projetado um aplicativo completo, com uma arquitetura de informação e um conjunto de funcionalidades focados em resolver os desafios de descoberta, exploração e comunidade.</p><p><strong>2. Descoberta Personalizada e Inteligente,</strong>o coração do aplicativo é o seu motor de recomendação. A experiência do usuário começa com:</p><ul><li><p><strong>Feed \"Recomendações Personalizadas\"</strong>:&nbsp;Uma tela principal que oferece sugestões personalizadas de eventos com base no perfil e no histórico de navegação do usuário.</p></li><li><p><strong>Chat com a Nina (IA)</strong>:&nbsp;Uma interface de chatbot onde o usuário pode conversar com a \"Nina\", uma inteligência artificial, para pedir recomendações específicas e receber sugestões curadas em tempo real.</p></li></ul><p><strong>3. Exploração Robusta e Intuitiva</strong>para usuários que gostam de explorar, foram criadas ferramentas de busca avançadas:</p><ul><li><p><strong>Mapa Interativo:</strong>&nbsp;Uma visão híbrida de mapa e lista, similar ao Google Maps, com pins de eventos e filtros inteligentes por data, gênero musical, categoria e preço.</p></li><li><p><strong>Busca Multifacetada:</strong>&nbsp;Um sistema de pesquisa que permite encontrar não apenas locais e eventos, mas também listas de usuários e perfis, com sugestões de \"termos em alta\" para inspirar a descoberta.</p></li></ul><p><strong>4. Funcionalidades Sociais e de Curadoria</strong>para transformar a descoberta em uma experiência compartilhada, foram incorporados elementos sociais:</p><ul><li><p><strong>Listas de Lugares:</strong>&nbsp;Os usuários podem criar suas próprias listas de lugares favoritos (públicas ou privadas) e compartilhá-las com amigos, funcionando como um sistema de curadoria pessoal.</p></li><li><p><strong>Perfis de Usuário:</strong>&nbsp;Cada usuário possui um perfil (com um layout inspirado no Twitter) onde pode exibir suas listas, seguidores e conexões, construindo sua reputação como um \"curador\" da cidade.</p></li></ul><p><strong>5. Inovação e Monetização</strong>, o aplicativo também foi projetado com visão de futuro e sustentabilidade:</p><ul><li><p><strong>Hub de Monetização:</strong>&nbsp;Um recurso que permite aos criadores de conteúdo e curadores venderem acesso a listas de eventos exclusivas.</p></li><li><p><strong>GPS de Eventos em Tempo Real:</strong>&nbsp;Uma funcionalidade sazonal, testada durante o Carnaval, que permitia aos usuários verem um mapa de eventos em tempo real e a localização de seus amigos, elevando a experiência em momentos de alta demanda.</p></li></ul><p>O resultado é um produto digital completo que não apenas informa, mas inspira, conecta e simplifica a complexa tarefa de viver o melhor de São Paulo.</p>Nina Nina<p>UI/UX Design</p><p>O \"Nina\" é um aplicativo de descoberta de eventos projetado para ajudar os usuários a encontrarem \"o melhor rolê\" em uma cidade vibrante e complexa como São Paulo. A plataforma agrega shows, festas, bares e restaurantes, funcionando como um guia curado e personalizado da vida cultural e social da metrópole.</p><p><strong>O Desafio</strong></p><p>Em uma cidade com infinitas opções, o principal desafio era combater a \"paralisia da escolha\". O design precisava ir além de um simples agregador de eventos e se tornar uma ferramenta de descoberta inteligente e social. A solução deveria ser capaz de:</p><ul><li><p><strong>Oferecer Recomendações Relevantes</strong>:&nbsp;Entender as preferências individuais de cada usuário para sugerir eventos que realmente interessem.</p></li><li><p><strong>Facilitar a Exploração</strong>:&nbsp;Criar ferramentas de busca e visualização poderosas para quem prefere explorar as opções por conta própria.</p></li><li><p><strong>Fomentar a Comunidade</strong>:&nbsp;Construir um ambiente onde os usuários pudessem compartilhar suas descobertas e criar conexões através de experiências em comum.</p></li></ul><p><strong>1. A Solução de Design: Um Ecossistema de Descoberta Social e Inteligente</strong></p><p>Foi projetado um aplicativo completo, com uma arquitetura de informação e um conjunto de funcionalidades focados em resolver os desafios de descoberta, exploração e comunidade.</p><p><strong>2. Descoberta Personalizada e Inteligente,</strong>o coração do aplicativo é o seu motor de recomendação. A experiência do usuário começa com:</p><ul><li><p><strong>Feed \"Recomendações Personalizadas\"</strong>:&nbsp;Uma tela principal que oferece sugestões personalizadas de eventos com base no perfil e no histórico de navegação do usuário.</p></li><li><p><strong>Chat com a Nina (IA)</strong>:&nbsp;Uma interface de chatbot onde o usuário pode conversar com a \"Nina\", uma inteligência artificial, para pedir recomendações específicas e receber sugestões curadas em tempo real.</p></li></ul><p><strong>3. Exploração Robusta e Intuitiva</strong>para usuários que gostam de explorar, foram criadas ferramentas de busca avançadas:</p><ul><li><p><strong>Mapa Interativo:</strong>&nbsp;Uma visão híbrida de mapa e lista, similar ao Google Maps, com pins de eventos e filtros inteligentes por data, gênero musical, categoria e preço.</p></li><li><p><strong>Busca Multifacetada:</strong>&nbsp;Um sistema de pesquisa que permite encontrar não apenas locais e eventos, mas também listas de usuários e perfis, com sugestões de \"termos em alta\" para inspirar a descoberta.</p></li></ul><p><strong>4. Funcionalidades Sociais e de Curadoria</strong>para transformar a descoberta em uma experiência compartilhada, foram incorporados elementos sociais:</p><ul><li><p><strong>Listas de Lugares:</strong>&nbsp;Os usuários podem criar suas próprias listas de lugares favoritos (públicas ou privadas) e compartilhá-las com amigos, funcionando como um sistema de curadoria pessoal.</p></li><li><p><strong>Perfis de Usuário:</strong>&nbsp;Cada usuário possui um perfil (com um layout inspirado no Twitter) onde pode exibir suas listas, seguidores e conexões, construindo sua reputação como um \"curador\" da cidade.</p></li></ul><p><strong>5. Inovação e Monetização</strong>, o aplicativo também foi projetado com visão de futuro e sustentabilidade:</p><ul><li><p><strong>Hub de Monetização:</strong>&nbsp;Um recurso que permite aos criadores de conteúdo e curadores venderem acesso a listas de eventos exclusivas.</p></li><li><p><strong>GPS de Eventos em Tempo Real:</strong>&nbsp;Uma funcionalidade sazonal, testada durante o Carnaval, que permitia aos usuários verem um mapa de eventos em tempo real e a localização de seus amigos, elevando a experiência em momentos de alta demanda.</p></li></ul><p>O resultado é um produto digital completo que não apenas informa, mas inspira, conecta e simplifica a complexa tarefa de viver o melhor de São Paulo.</p>Workshop de Mentor[IA]<p>Anterior</p><p>Anterior</p>Você Marca<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/nina/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 20,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "O \" \" é um aplicativo de descoberta de eventos projetado para ajudar os usuários a encontrarem \"o melhor rolê\" em uma cidade vibrante e complexa como São Paulo. A plataforma agrega shows, festas, bares e restaurantes, funcionando como um guia curado e personalizado da vida cultural e social da metrópole. O Desafio Em uma cidade com infinitas opções, o principal desafio era combater a \"paralisia da escolha\". O design precisava ir além de um simples agregador de eventos e se tornar uma ferramenta de descoberta inteligente e social. A solução deveria ser capaz de: Oferecer Recomendações Relevantes : Entender as preferências individuais de cada usuário para sugerir eventos que realmente interessem. Facilitar a Expl",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/009.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/010.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/011.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "45c307b3-1ee7-5b69-9376-1a39677e4df5",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "30cc7925-3410-5f5b-b05a-766844f6938f",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "23f71906-ce5e-5840-93cd-f0a8bc098c93",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "56d2b763-b162-5f77-9984-5e975c13173f",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "c896487a-7f64-5a1d-bbe9-bc744c28bad2",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ba0dbdcf-f147-57d2-bebb-555fce0669ef",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b7e8fdaf-7fa5-5f5a-8a3a-4f3bb5f461a5",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0c1e41d6-ef58-51cf-981a-f5598fb8c875",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "b5215787-2bda-5db0-aa83-ec8b66d546e8",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "f20d5f6b-a5c7-5024-b8d3-aa095200665f",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/010.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/010.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 9,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "0485dd76-f900-51c7-826a-a0933a53408c",
+      "case_id": "c95a5773-ef08-56bd-988d-0ce168dc7783",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/nina/gallery/011.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/nina/gallery/011.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 10,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 11,
+    "local_image_count": 11
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

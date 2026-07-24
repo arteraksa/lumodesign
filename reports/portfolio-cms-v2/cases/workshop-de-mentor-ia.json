@@ -1,0 +1,416 @@
+{
+  "slug": "workshop-de-mentor-ia",
+  "case_id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/workshop-de-mentor-ia/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+    "legacy_id": "workshop-de-mentor-ia",
+    "legacy_slug": "workshop-de-mentor-ia",
+    "slug": "workshop-de-mentor-ia",
+    "title": "Workshop de Mentor[IA]",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Branding"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este projeto consistiu na criação de uma landing page de alta conversão para o \"Mentor[IA]\", um workshop focado em inteligência artificial. O objetivo da página era servir como a principal ferramenta de vendas do evento, detalhando sua proposta de valor e guiando o usuário até a compra do ingresso."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Em um mercado competitivo de workshops de tecnologia, a landing page precisava ir além de simplesmente informar. O desafio era criar uma experiência digital que gerasse identificação imediata, construísse autoridade e apresentasse uma prova social esmagadora, convencendo o usuário do valor transformador do evento em um único fluxo de navegação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Narrativa Focada em Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A página foi estruturada como uma narrativa de vendas visual, onde cada seção foi projetada para abordar uma etapa específica da jornada de decisão do usuário."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Direção de Arte e Impacto Imediato: Para capturar a atenção e estabelecer o tema de inovação, a página utiliza uma estética \"high tech\", dominada por degradês de azul, uma cor fortemente associada à tecnologia. A hero section é o ponto focal, destacando os dois palestrantes mentores com um fundo dinâmico e animado, criando uma primeira impressão de alto impacto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Empatia e Qualificação (O \"Porquê\"): A primeira seção da página foi estrategicamente posicionada para gerar identificação imediata. Ela articula as \"dores\" e os desafios comuns do público-alvo e, em seguida, apresenta uma lista de tópicos que ajudam o visitante a se auto-qualificar, respondendo à pergunta: \"Este workshop é para mim?\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Proposta de Valor (O \"O Quê\"): Após estabelecer a relevância, a página detalha a entrega de valor. Uma seção dedicada explica o conteúdo dos dois dias de workshop, com o apoio de ilustrações tecnológicas que reforçam o tema e tornam o conteúdo mais didático. Em seguida, os palestrantes são formalmente apresentados para construir autoridade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "4. Prova Social (A Confiança): A seção de maior impacto da página é dedicada à prova social. Um carrossel de rolagem horizontal exibe dezenas de depoimentos sob o título \"Mais de 1.000 mentores e empresas já transformaram suas carreiras com a Blenduca\". Este design cria um senso de movimento e abundância, demonstrando de forma convincente a autoridade e o sucesso de projetos anteriores."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "5. Ação (A Conversão): Finalmente, após construir o valor e a confiança, a página apresenta detalhes adicionais sobre o workshop e direciona o usuário para a seção de preço e compra, fechando o funil de vendas com uma chamada para ação clara."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Branding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Este projeto consistiu na criação de uma landing page de alta conversão para o \"Mentor[IA]\", um workshop focado em inteligência artificial. O objetivo da página era servir como a principal ferramenta de vendas do evento, detalhando sua proposta de valor e guiando o usuário até a compra do ingresso."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Em um mercado competitivo de workshops de tecnologia, a landing page precisava ir além de simplesmente informar. O desafio era criar uma experiência digital que gerasse identificação imediata, construísse autoridade e apresentasse uma prova social esmagadora, convencendo o usuário do valor transformador do evento em um único fluxo de navegação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design: Uma Narrativa Focada em Conversão"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A página foi estruturada como uma narrativa de vendas visual, onde cada seção foi projetada para abordar uma etapa específica da jornada de decisão do usuário."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "1. Direção de Arte e Impacto Imediato: Para capturar a atenção e estabelecer o tema de inovação, a página utiliza uma estética \"high tech\", dominada por degradês de azul, uma cor fortemente associada à tecnologia. A hero section é o ponto focal, destacando os dois palestrantes mentores com um fundo dinâmico e animado, criando uma primeira impressão de alto impacto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "2. Empatia e Qualificação (O \"Porquê\"): A primeira seção da página foi estrategicamente posicionada para gerar identificação imediata. Ela articula as \"dores\" e os desafios comuns do público-alvo e, em seguida, apresenta uma lista de tópicos que ajudam o visitante a se auto-qualificar, respondendo à pergunta: \"Este workshop é para mim?\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "3. Proposta de Valor (O \"O Quê\"): Após estabelecer a relevância, a página detalha a entrega de valor. Uma seção dedicada explica o conteúdo dos dois dias de workshop, com o apoio de ilustrações tecnológicas que reforçam o tema e tornam o conteúdo mais didático. Em seguida, os palestrantes são formalmente apresentados para construir autoridade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "4. Prova Social (A Confiança): A seção de maior impacto da página é dedicada à prova social. Um carrossel de rolagem horizontal exibe dezenas de depoimentos sob o título \"Mais de 1.000 mentores e empresas já transformaram suas carreiras com a Blenduca\". Este design cria um senso de movimento e abundância, demonstrando de forma convincente a autoridade e o sucesso de projetos anteriores."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "5. Ação (A Conversão): Finalmente, após construir o valor e a confiança, a página apresenta detalhes adicionais sobre o workshop e direciona o usuário para a seção de preço e compra, fechando o funil de vendas com uma chamada para ação clara."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>Este projeto consistiu na criação de uma landing page de alta conversão para o \"Mentor[IA]\", um workshop focado em inteligência artificial. O objetivo da página era servir como a principal ferramenta de vendas do evento, detalhando sua proposta de valor e guiando o usuário até a compra do ingresso.</p><p><strong>O Desafio</strong></p><p>Em um mercado competitivo de workshops de tecnologia, a landing page precisava ir além de simplesmente informar. O desafio era criar uma experiência digital que gerasse identificação imediata, construísse autoridade e apresentasse uma prova social esmagadora, convencendo o usuário do valor transformador do evento em um único fluxo de navegação.</p><p><strong>A Solução de Design: Uma Narrativa Focada em Conversão</strong></p><p>A página foi estruturada como uma narrativa de vendas visual, onde cada seção foi projetada para abordar uma etapa específica da jornada de decisão do usuário.</p><p><strong>1. Direção de Arte e Impacto Imediato:</strong>Para capturar a atenção e estabelecer o tema de inovação, a página utiliza uma estética \"high tech\", dominada por degradês de azul, uma cor fortemente associada à tecnologia. A<em>hero section</em>é o ponto focal, destacando os dois palestrantes mentores com um fundo dinâmico e animado, criando uma primeira impressão de alto impacto.</p><p><strong>2. Empatia e Qualificação (O \"Porquê\"):</strong>A primeira seção da página foi estrategicamente posicionada para gerar identificação imediata. Ela articula as \"dores\" e os desafios comuns do público-alvo e, em seguida, apresenta uma lista de tópicos que ajudam o visitante a se auto-qualificar, respondendo à pergunta: \"Este workshop é para mim?\".</p><p><strong>3. Proposta de Valor (O \"O Quê\"):</strong>Após estabelecer a relevância, a página detalha a entrega de valor. Uma seção dedicada explica o conteúdo dos dois dias de workshop, com o apoio de ilustrações tecnológicas que reforçam o tema e tornam o conteúdo mais didático. Em seguida, os palestrantes são formalmente apresentados para construir autoridade.</p><p><strong>4. Prova Social (A Confiança):</strong>A seção de maior impacto da página é dedicada à prova social. Um carrossel de rolagem horizontal exibe dezenas de depoimentos sob o título \"Mais de 1.000 mentores e empresas já transformaram suas carreiras com a Blenduca\". Este design cria um senso de movimento e abundância, demonstrando de forma convincente a autoridade e o sucesso de projetos anteriores.</p><p><strong>5. Ação (A Conversão):</strong>Finalmente, após construir o valor e a confiança, a página apresenta detalhes adicionais sobre o workshop e direciona o usuário para a seção de preço e compra, fechando o funil de vendas com uma chamada para ação clara.</p>Workshop de Mentor[IA] Workshop de Mentor[IA]<p>UI/UX Design</p><p>Branding</p><p>Este projeto consistiu na criação de uma landing page de alta conversão para o \"Mentor[IA]\", um workshop focado em inteligência artificial. O objetivo da página era servir como a principal ferramenta de vendas do evento, detalhando sua proposta de valor e guiando o usuário até a compra do ingresso.</p><p><strong>O Desafio</strong></p><p>Em um mercado competitivo de workshops de tecnologia, a landing page precisava ir além de simplesmente informar. O desafio era criar uma experiência digital que gerasse identificação imediata, construísse autoridade e apresentasse uma prova social esmagadora, convencendo o usuário do valor transformador do evento em um único fluxo de navegação.</p><p><strong>A Solução de Design: Uma Narrativa Focada em Conversão</strong></p><p>A página foi estruturada como uma narrativa de vendas visual, onde cada seção foi projetada para abordar uma etapa específica da jornada de decisão do usuário.</p><p><strong>1. Direção de Arte e Impacto Imediato:</strong>Para capturar a atenção e estabelecer o tema de inovação, a página utiliza uma estética \"high tech\", dominada por degradês de azul, uma cor fortemente associada à tecnologia. A<em>hero section</em>é o ponto focal, destacando os dois palestrantes mentores com um fundo dinâmico e animado, criando uma primeira impressão de alto impacto.</p><p><strong>2. Empatia e Qualificação (O \"Porquê\"):</strong>A primeira seção da página foi estrategicamente posicionada para gerar identificação imediata. Ela articula as \"dores\" e os desafios comuns do público-alvo e, em seguida, apresenta uma lista de tópicos que ajudam o visitante a se auto-qualificar, respondendo à pergunta: \"Este workshop é para mim?\".</p><p><strong>3. Proposta de Valor (O \"O Quê\"):</strong>Após estabelecer a relevância, a página detalha a entrega de valor. Uma seção dedicada explica o conteúdo dos dois dias de workshop, com o apoio de ilustrações tecnológicas que reforçam o tema e tornam o conteúdo mais didático. Em seguida, os palestrantes são formalmente apresentados para construir autoridade.</p><p><strong>4. Prova Social (A Confiança):</strong>A seção de maior impacto da página é dedicada à prova social. Um carrossel de rolagem horizontal exibe dezenas de depoimentos sob o título \"Mais de 1.000 mentores e empresas já transformaram suas carreiras com a Blenduca\". Este design cria um senso de movimento e abundância, demonstrando de forma convincente a autoridade e o sucesso de projetos anteriores.</p><p><strong>5. Ação (A Conversão):</strong>Finalmente, após construir o valor e a confiança, a página apresenta detalhes adicionais sobre o workshop e direciona o usuário para a seção de preço e compra, fechando o funil de vendas com uma chamada para ação clara.</p>Magnus<p>Anterior</p><p>Anterior</p>Nina<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/workshop-de-mentor-ia/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 24,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "Este projeto consistiu na criação de uma landing page de alta conversão para o \"Mentor[IA]\", um workshop focado em inteligência artificial. O objetivo da página era servir como a principal ferramenta de vendas do evento, detalhando sua proposta de valor e guiando o usuário até a compra do ingresso. O Desafio Em um mercado competitivo de workshops de tecnologia, a landing page precisava ir além de simplesmente informar. O desafio era criar uma experiência digital que gerasse identificação imediata, construísse autoridade e apresentasse uma prova social esmagadora, convencendo o usuário do valor transformador do evento em um único fluxo de navegação. A Solução de Design: Uma Narrativa Focada em Conversão A página",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/007.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "d821ceec-6d51-5a6d-b781-4d0aa4fb03ab",
+      "case_id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/workshop-de-mentor-ia/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d7f7bd01-0826-5e92-9427-a54cae78516e",
+      "case_id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/workshop-de-mentor-ia/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "778c1c6c-67c6-5334-ad41-215727654d1d",
+      "case_id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/workshop-de-mentor-ia/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "9efb057b-8548-5d44-99c5-7d8ff1631cc9",
+      "case_id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/workshop-de-mentor-ia/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e59f1051-9da0-57a9-a957-ab0e35cccf08",
+      "case_id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/workshop-de-mentor-ia/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "7636df81-8d58-5c94-bbbf-dba6430d1b34",
+      "case_id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/workshop-de-mentor-ia/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "e24f01b8-9b53-5730-a2d5-22a51821c968",
+      "case_id": "e9b37339-c5d7-5abf-9926-d891893af2b1",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/workshop-de-mentor-ia/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/workshop-de-mentor-ia/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 7,
+    "local_image_count": 7
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

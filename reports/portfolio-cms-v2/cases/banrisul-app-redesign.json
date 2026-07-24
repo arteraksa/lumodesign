@@ -1,0 +1,312 @@
+{
+  "slug": "banrisul-app-redesign",
+  "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/banrisul-app-redesign/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+    "legacy_id": "banrisul-app-redesign",
+    "legacy_slug": "banrisul-app-redesign",
+    "slug": "banrisul-app-redesign",
+    "title": "Banrisul | App Redesign",
+    "status": "published",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O aplicativo do Banrisul foi lançado em 2016 e tem como objetivo de permitir aos clientes um acesso da conta e dos serviços prestados pelo banco de forma rápida e em qualquer lugar. Em 2019 ele recebeu um redesign. Contudo, as reclamações sobre o app nas lojas digitais eram e ainda são muitas. O banco precisou lançar vídeos curtos no YouTube para explicar como usar as funções do app, devido à péssima experiência do usuário. Por isso, para a disciplina de Design de Interfaces da UFRGS no semestre de 2021/1, foi escolhido o app do Banrisul para trabalhar em um redesign do app com foco na experiência de usuário (UX) a fim de solucionar os problemas de seus usuários e tornar o app mais prático e fácil de ser usado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Os usuários apontaram como principais problemas a dificuldade em pagar a fatura de cartão de crédito, o extrato confuso, a dificuldade de encontrar determinadas funções, a falta de sinalização nos botões e a obrigatoriedade de ativar o cartão no caixa eletrônico."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Na primeira vez em que o usuário entra no app, é oferecido para ele a opção de ativar seu acesso através de biometria facial e envio dos documentos. O app foi reorganizado em duas diferentes seções, de transações e serviços, onde o usuário encontra todas as opções relacionadas. Na tela inicial, é exibido as três funções mais usadas pelo usuário, além de ter um resumo do seu limite de cartão de crédito e saldo, que podem ser ocultos. As telas de extrato e do cartão de crédito foram reorganizadas, tornando-se mais intuitivas e detalhadas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O aplicativo do Banrisul foi lançado em 2016 e tem como objetivo de permitir aos clientes um acesso da conta e dos serviços prestados pelo banco de forma rápida e em qualquer lugar. Em 2019 ele recebeu um redesign. Contudo, as reclamações sobre o app nas lojas digitais eram e ainda são muitas. O banco precisou lançar vídeos curtos no YouTube para explicar como usar as funções do app, devido à péssima experiência do usuário. Por isso, para a disciplina de Design de Interfaces da UFRGS no semestre de 2021/1, foi escolhido o app do Banrisul para trabalhar em um redesign do app com foco na experiência de usuário (UX) a fim de solucionar os problemas de seus usuários e tornar o app mais prático e fácil de ser usado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Os usuários apontaram como principais problemas a dificuldade em pagar a fatura de cartão de crédito, o extrato confuso, a dificuldade de encontrar determinadas funções, a falta de sinalização nos botões e a obrigatoriedade de ativar o cartão no caixa eletrônico."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Na primeira vez em que o usuário entra no app, é oferecido para ele a opção de ativar seu acesso através de biometria facial e envio dos documentos. O app foi reorganizado em duas diferentes seções, de transações e serviços, onde o usuário encontra todas as opções relacionadas. Na tela inicial, é exibido as três funções mais usadas pelo usuário, além de ter um resumo do seu limite de cartão de crédito e saldo, que podem ser ocultos. As telas de extrato e do cartão de crédito foram reorganizadas, tornando-se mais intuitivas e detalhadas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>O aplicativo do Banrisul foi lançado em 2016 e tem como objetivo de permitir aos clientes um acesso da conta e dos serviços prestados pelo banco de forma rápida e em qualquer lugar. Em 2019 ele recebeu um redesign. Contudo, as reclamações sobre o app nas lojas digitais eram e ainda são muitas. O banco precisou lançar vídeos curtos no YouTube para explicar como usar as funções do app, devido à péssima experiência do usuário. Por isso, para a disciplina de Design de Interfaces da UFRGS no semestre de 2021/1, foi escolhido o app do Banrisul para trabalhar em um redesign do app com foco na experiência de usuário (UX) a fim de solucionar os problemas de seus usuários e tornar o app mais prático e fácil de ser usado.</p><p>Os usuários apontaram como principais problemas a dificuldade em pagar a fatura de cartão de crédito, o extrato confuso, a dificuldade de encontrar determinadas funções, a falta de sinalização nos botões e a obrigatoriedade de ativar o cartão no caixa eletrônico.</p><p>Na primeira vez em que o usuário entra no app, é oferecido para ele a opção de ativar seu acesso através de biometria facial e envio dos documentos. O app foi reorganizado em duas diferentes seções, de transações e serviços, onde o usuário encontra todas as opções relacionadas. Na tela inicial, é exibido as três funções mais usadas pelo usuário, além de ter um resumo do seu limite de cartão de crédito e saldo, que podem ser ocultos. As telas de extrato e do cartão de crédito foram reorganizadas, tornando-se mais intuitivas e detalhadas.</p>Banrisul | App Redesign Banrisul | App Redesign<p>UI/UX Design</p><p>O aplicativo do Banrisul foi lançado em 2016 e tem como objetivo de permitir aos clientes um acesso da conta e dos serviços prestados pelo banco de forma rápida e em qualquer lugar. Em 2019 ele recebeu um redesign. Contudo, as reclamações sobre o app nas lojas digitais eram e ainda são muitas. O banco precisou lançar vídeos curtos no YouTube para explicar como usar as funções do app, devido à péssima experiência do usuário. Por isso, para a disciplina de Design de Interfaces da UFRGS no semestre de 2021/1, foi escolhido o app do Banrisul para trabalhar em um redesign do app com foco na experiência de usuário (UX) a fim de solucionar os problemas de seus usuários e tornar o app mais prático e fácil de ser usado.</p><p>Os usuários apontaram como principais problemas a dificuldade em pagar a fatura de cartão de crédito, o extrato confuso, a dificuldade de encontrar determinadas funções, a falta de sinalização nos botões e a obrigatoriedade de ativar o cartão no caixa eletrônico.</p><p>Na primeira vez em que o usuário entra no app, é oferecido para ele a opção de ativar seu acesso através de biometria facial e envio dos documentos. O app foi reorganizado em duas diferentes seções, de transações e serviços, onde o usuário encontra todas as opções relacionadas. Na tela inicial, é exibido as três funções mais usadas pelo usuário, além de ter um resumo do seu limite de cartão de crédito e saldo, que podem ser ocultos. As telas de extrato e do cartão de crédito foram reorganizadas, tornando-se mais intuitivas e detalhadas.</p>Vacinas | Infográfico<p>Anterior</p><p>Anterior</p>DEMIP<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/cover.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/banrisul-app-redesign/cover.jpg",
+    "external_url": "",
+    "featured_on_home": false,
+    "home_order": 999,
+    "portfolio_order": 10,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-05-28T20:21:07.399076+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-05-28T20:21:07.399076+00:00"
+  },
+  "remote_snapshot": {
+    "description": "O aplicativo do Banrisul foi lançado em 2016 e tem como objetivo de permitir aos clientes um acesso da conta e dos serviços prestados pelo banco de forma rápida e em qualquer lugar. Em 2019 ele recebeu um redesign. Contudo, as reclamações sobre o app nas lojas digitais eram e ainda são muitas. O banco precisou lançar vídeos curtos no YouTube para explicar como usar as funções do app, devido à péssima experiência do usuário. Por isso, para a disciplina de Design de Interfaces da UFRGS no semestre de 2021/1, foi escolhido o app do Banrisul para trabalhar em um redesign do app com foco na experiência de usuário (UX) a fim de solucionar os problemas de seus usuários e tornar o app mais prático e fácil de ser usado.",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/cover.jpg",
+    "images": [
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/001.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/002.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/003.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/004.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/005.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/006.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/007.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/008.jpg",
+      "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/009.jpg"
+    ],
+    "external_url": ""
+  },
+  "media": [
+    {
+      "id": "a02a64e2-7171-5ef4-8404-7d4a464e2a63",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/001.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/001.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 0,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1f3c2d7f-1cef-54d4-8e63-ead3815b118f",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/002.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/002.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 1,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "143ce9ef-6eb3-5a9c-8886-fc05ed986a3d",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/003.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/003.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 2,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "dafc4e11-eb95-52b2-af71-6844fcb0756b",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/004.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/004.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 3,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "1db6ec69-6944-5494-a2ba-29b38beda07b",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/005.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/005.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 4,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "aa736dd5-0701-5270-9e2a-06ff4d146344",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/006.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/006.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 5,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "d065a1c2-4ebf-5928-a8c3-3dae23419a03",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/007.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/007.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 6,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3a8a103b-f8b7-5970-9536-d78aa6327a42",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/008.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/008.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 7,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "25fa78c7-587b-574d-90c4-ecdbd53935ee",
+      "case_id": "3695850f-5a33-5889-9284-4cb38b7b0b46",
+      "source_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/banrisul-app-redesign/gallery/009.jpg",
+      "storage_bucket": "case-images",
+      "storage_path": "cases/banrisul-app-redesign/gallery/009.jpg",
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": null,
+      "height": null,
+      "sort_order": 8,
+      "classification_reason": "case_images_url",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 9,
+    "local_image_count": 9
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}

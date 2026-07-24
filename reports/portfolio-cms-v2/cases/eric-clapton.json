@@ -1,0 +1,373 @@
+{
+  "slug": "eric-clapton",
+  "case_id": "4532c598-0da2-5da1-81d4-3b335914491d",
+  "sources": {
+    "remote": true,
+    "remote_complete": true,
+    "local_json": true,
+    "static_html": true,
+    "static_html_file": "cases/eric-clapton/index.html",
+    "content_source": "static_html",
+    "cover_source": "remote_cover"
+  },
+  "selected": {
+    "id": "4532c598-0da2-5da1-81d4-3b335914491d",
+    "legacy_id": "eric-clapton",
+    "legacy_slug": "eric-clapton",
+    "slug": "eric-clapton",
+    "title": "Eric Clapton",
+    "status": "published",
+    "categories": [
+      "UI/UX Design",
+      "Desenvolvimento"
+    ],
+    "excerpt": "",
+    "content_json": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto envolveu o design e desenvolvimento da landing page de vendas para a turnê brasileira de Eric Clapton, um dos guitarristas mais icônicos da história da música, conhecido por sucessos como \"Tears in Heaven\" e \"Layla\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era criar uma experiência de compra digital que fosse extremamente eficiente e otimizada para a conversão. Além de apresentar as informações da turnê e celebrar a trajetória lendária do artista, a landing page precisava superar um desafio específico de vendas (não detalhado por motivos de confidencialidade) e garantir que o processo de aquisição de ingressos fosse o mais fluido possível para os fãs."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi desenvolvida uma landing page focada em performance e usabilidade, projetada para maximizar as vendas de ingressos. A arquitetura da página e o design da interface foram cuidadosamente planejados para guiar o usuário de forma clara e direta através do processo de compra, minimizando atritos e otimizando a jornada desde a informação até a finalização da transação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Impacto"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A landing page otimizada foi um sucesso. A experiência de compra aprimorada não apenas superou o desafio específico de vendas que havia sido identificado, mas também contribuiu diretamente para o esgotamento de ingressos para os shows da turnê brasileira de Eric Clapton."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "UI/UX Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Desenvolvimento"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Acessar website"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O projeto envolveu o design e desenvolvimento da landing page de vendas para a turnê brasileira de Eric Clapton, um dos guitarristas mais icônicos da história da música, conhecido por sucessos como \"Tears in Heaven\" e \"Layla\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Desafio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O principal desafio era criar uma experiência de compra digital que fosse extremamente eficiente e otimizada para a conversão. Além de apresentar as informações da turnê e celebrar a trajetória lendária do artista, a landing page precisava superar um desafio específico de vendas (não detalhado por motivos de confidencialidade) e garantir que o processo de aquisição de ingressos fosse o mais fluido possível para os fãs."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A Solução de Design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Foi desenvolvida uma landing page focada em performance e usabilidade, projetada para maximizar as vendas de ingressos. A arquitetura da página e o design da interface foram cuidadosamente planejados para guiar o usuário de forma clara e direta através do processo de compra, minimizando atritos e otimizando a jornada desde a informação até a finalização da transação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "O Impacto"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "A landing page otimizada foi um sucesso. A experiência de compra aprimorada não apenas superou o desafio específico de vendas que havia sido identificado, mas também contribuiu diretamente para o esgotamento de ingressos para os shows da turnê brasileira de Eric Clapton."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anterior"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Próximo"
+            }
+          ]
+        }
+      ]
+    },
+    "content_html": "<p>O projeto envolveu o design e desenvolvimento da landing page de vendas para a turnê brasileira de Eric Clapton, um dos guitarristas mais icônicos da história da música, conhecido por sucessos como \"Tears in Heaven\" e \"Layla\".</p><p><strong>O Desafio</strong></p><p>O principal desafio era criar uma experiência de compra digital que fosse extremamente eficiente e otimizada para a conversão. Além de apresentar as informações da turnê e celebrar a trajetória lendária do artista, a landing page precisava superar um desafio específico de vendas (não detalhado por motivos de confidencialidade) e garantir que o processo de aquisição de ingressos fosse o mais fluido possível para os fãs.</p><p><strong>A Solução de Design</strong></p><p>Foi desenvolvida uma landing page focada em performance e usabilidade, projetada para maximizar as vendas de ingressos. A arquitetura da página e o design da interface foram cuidadosamente planejados para guiar o usuário de forma clara e direta através do processo de compra, minimizando atritos e otimizando a jornada desde a informação até a finalização da transação.</p><p><strong>O Impacto</strong></p><p>A landing page otimizada foi um sucesso. A experiência de compra aprimorada não apenas superou o desafio específico de vendas que havia sido identificado, mas também contribuiu diretamente para o<strong>esgotamento de ingressos</strong>para os shows da turnê brasileira de Eric Clapton.</p>Eric Clapton Eric Clapton<p>UI/UX Design</p><p>Desenvolvimento</p><p>Acessar website</p><p>Acessar website</p><p>Acessar website</p><p>O projeto envolveu o design e desenvolvimento da landing page de vendas para a turnê brasileira de Eric Clapton, um dos guitarristas mais icônicos da história da música, conhecido por sucessos como \"Tears in Heaven\" e \"Layla\".</p><p><strong>O Desafio</strong></p><p>O principal desafio era criar uma experiência de compra digital que fosse extremamente eficiente e otimizada para a conversão. Além de apresentar as informações da turnê e celebrar a trajetória lendária do artista, a landing page precisava superar um desafio específico de vendas (não detalhado por motivos de confidencialidade) e garantir que o processo de aquisição de ingressos fosse o mais fluido possível para os fãs.</p><p><strong>A Solução de Design</strong></p><p>Foi desenvolvida uma landing page focada em performance e usabilidade, projetada para maximizar as vendas de ingressos. A arquitetura da página e o design da interface foram cuidadosamente planejados para guiar o usuário de forma clara e direta através do processo de compra, minimizando atritos e otimizando a jornada desde a informação até a finalização da transação.</p><p><strong>O Impacto</strong></p><p>A landing page otimizada foi um sucesso. A experiência de compra aprimorada não apenas superou o desafio específico de vendas que havia sido identificado, mas também contribuiu diretamente para o<strong>esgotamento de ingressos</strong>para os shows da turnê brasileira de Eric Clapton.</p>Vexo<p>Anterior</p><p>Anterior</p>Candy Dates<p>Próximo</p><p>Próximo</p>",
+    "cover_url": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/eric-clapton/cover-1780077147560-8a208c8b-e6ff-4579-8f36-f6a85b73653f.jpg",
+    "cover_storage_bucket": "case-images",
+    "cover_storage_path": "cases/eric-clapton/cover-1780077147560-8a208c8b-e6ff-4579-8f36-f6a85b73653f.jpg",
+    "external_url": "http://ericclaptonbrasiltour.com.br",
+    "featured_on_home": true,
+    "home_order": 4,
+    "portfolio_order": 4,
+    "seo_title": "",
+    "seo_description": "",
+    "published_at": "2026-06-01T14:19:37.302014+00:00",
+    "created_by": null,
+    "updated_by": null,
+    "version": 1,
+    "created_at": "2026-05-15T23:33:58.021307+00:00",
+    "updated_at": "2026-06-01T14:19:37.302014+00:00"
+  },
+  "remote_snapshot": {
+    "description": "O projeto envolveu o design e desenvolvimento da landing page de vendas para a turnê brasileira de , um dos guitarristas mais icônicos da história da música, conhecido por sucessos como \"Tears in Heaven\" e \"Layla\". O Desafio O principal desafio era criar uma experiência de compra digital que fosse extremamente eficiente e otimizada para a conversão. Além de apresentar as informações da turnê e celebrar a trajetória lendária do artista, a landing page precisava superar um desafio específico de vendas (não detalhado por motivos de confidencialidade) e garantir que o processo de aquisição de ingressos fosse o mais fluido possível para os fãs. A Solução de Design Foi desenvolvida uma landing page focada em performa",
+    "excerpt": "",
+    "cover": "https://yzivkrotylwyglavtnho.supabase.co/storage/v1/object/public/case-images/cases/eric-clapton/cover-1780077147560-8a208c8b-e6ff-4579-8f36-f6a85b73653f.jpg",
+    "images": [
+      "/raksadesign/framerusercontent.com/images/dlLvaR7af5F3iwTemExpwTtJ8w.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/Xe59K5JutCrputH5E2Lz8MBxdMQ.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/tGNE6AgVaOG7mvkzDTLHTv6DR1w.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/quDx1FfRDfNeb8JDXQjNAdf03A.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/gltTA8PWKkfnMmBIYp43ywQ4THw.jpg?width=1920&height=1080",
+      "/raksadesign/framerusercontent.com/images/e4kmXnR10jGPYVHY5PGuJGGKic.jpg?width=1920&height=1080"
+    ],
+    "external_url": "http://ericclaptonbrasiltour.com.br"
+  },
+  "media": [
+    {
+      "id": "fc428717-d80a-5949-9620-2eb0c5411471",
+      "case_id": "4532c598-0da2-5da1-81d4-3b335914491d",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/dlLvaR7af5F3iwTemExpwTtJ8w.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 0,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "eb10c340-cafb-5ee9-b5db-ee289bd67c90",
+      "case_id": "4532c598-0da2-5da1-81d4-3b335914491d",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/Xe59K5JutCrputH5E2Lz8MBxdMQ.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 1,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "37e4c36a-f856-50c9-a093-1de1d1238052",
+      "case_id": "4532c598-0da2-5da1-81d4-3b335914491d",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/tGNE6AgVaOG7mvkzDTLHTv6DR1w.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 2,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "ddd04e3a-0a4b-57f0-8e8f-ac88aa6c3a53",
+      "case_id": "4532c598-0da2-5da1-81d4-3b335914491d",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/quDx1FfRDfNeb8JDXQjNAdf03A.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 3,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "3c6d553f-9e34-5927-96ee-9b895897e68c",
+      "case_id": "4532c598-0da2-5da1-81d4-3b335914491d",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/gltTA8PWKkfnMmBIYp43ywQ4THw.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 4,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    },
+    {
+      "id": "5182212e-f4c7-5094-80c9-b9fcf561fd87",
+      "case_id": "4532c598-0da2-5da1-81d4-3b335914491d",
+      "source_url": "https://arteraksa.github.io/raksadesign/framerusercontent.com/images/e4kmXnR10jGPYVHY5PGuJGGKic.jpg?width=1920&height=1080",
+      "storage_bucket": null,
+      "storage_path": null,
+      "media_type": "image",
+      "alt_text": "",
+      "caption": "",
+      "width": 1920,
+      "height": 1080,
+      "sort_order": 5,
+      "classification_reason": "local_static_asset",
+      "chosen_source": "remote"
+    }
+  ],
+  "discarded": {
+    "local_title": null,
+    "html_image_count": 1,
+    "remote_image_count": 6,
+    "local_image_count": 6
+  },
+  "remote_only_classification": [],
+  "warnings": [],
+  "errors": [],
+  "blocked_for_apply": false,
+  "human_decisions": {
+    "large_gallery_approved": false
+  }
+}
