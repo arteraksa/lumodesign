@@ -1,14 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    // Media uploads use Storage directly. This protects other large form
-    // submissions and leaves ample room for multipart overhead.
-    serverActions: {
-      bodySizeLimit: "100mb",
-    },
-  },
+  output: "export",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
