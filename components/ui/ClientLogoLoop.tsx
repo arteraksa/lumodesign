@@ -2,22 +2,23 @@
 
 import { useMemo } from "react";
 import { LogoLoop } from "./LogoLoop";
+import { assetPath } from "@/lib/asset";
 
 const clientLogoAssets = {
-  atitus: "/images/hero-logos/atitus.svg",
-  blenduca: "/images/hero-logos/blenduca.svg",
-  candy: "/images/hero-logos/candy.png",
-  capri: "/images/hero-logos/capri.png",
-  clickimpresso: "/images/hero-logos/clickimpresso.svg",
-  impresul: "/images/hero-logos/impresul.svg",
-  jaq: "/images/hero-logos/jaq.svg",
-  leylaw: "/images/hero-logos/leylaw.svg",
-  polvilho: "/images/hero-logos/polvilho.png",
-  trirs: "/images/hero-logos/trirs.svg",
-  ufrgs: "/images/hero-logos/ufrgs.svg",
-  vallor: "/images/hero-logos/vallor.png",
-  VALOR: "/images/hero-logos/valor.png",
-  valor: "/images/hero-logos/valor.png",
+  atitus: assetPath("/images/hero-logos/atitus.svg"),
+  blenduca: assetPath("/images/hero-logos/blenduca.svg"),
+  candy: assetPath("/images/hero-logos/candy.png"),
+  capri: assetPath("/images/hero-logos/capri.png"),
+  clickimpresso: assetPath("/images/hero-logos/clickimpresso.svg"),
+  impresul: assetPath("/images/hero-logos/impresul.svg"),
+  jaq: assetPath("/images/hero-logos/jaq.svg"),
+  leylaw: assetPath("/images/hero-logos/leylaw.svg"),
+  polvilho: assetPath("/images/hero-logos/polvilho.png"),
+  trirs: assetPath("/images/hero-logos/trirs.svg"),
+  ufrgs: assetPath("/images/hero-logos/ufrgs.svg"),
+  vallor: assetPath("/images/hero-logos/vallor.png"),
+  VALOR: assetPath("/images/hero-logos/valor.png"),
+  valor: assetPath("/images/hero-logos/valor.png"),
 } as const;
 
 const compactClientLogos = new Set(["valor", "vallor", "jaq", "blenduca", "atitus"]);

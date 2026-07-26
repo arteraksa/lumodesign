@@ -1,3 +1,5 @@
+import { assetPath } from "@/lib/asset";
+
 export const siteConfig = {
   name: "RAKSA",
   description:
@@ -17,37 +19,37 @@ export const services = [
     title: "UI/UX Design",
     description:
       "Criação de interfaces focadas em experiência e conversão. Design funcional, responsivo e otimizado por IA.",
-    image: "/images/services/ui-ux.jpg",
+    image: assetPath("/images/services/ui-ux.jpg"),
   },
   {
     title: "Social Media Design",
     description:
       "Conteúdo visual estratégico para engajamento, adaptado para cada plataforma.",
-    image: "/images/services/social-media.png",
+    image: assetPath("/images/services/social-media.png"),
   },
   {
     title: "Redesign Estratégico",
     description:
       "Otimização e revitalização de materiais e interfaces existentes. Elevamos o padrão com visão crítica e tecnologia.",
-    image: "/images/services/redesign.png",
+    image: assetPath("/images/services/redesign.png"),
   },
   {
     title: "Materiais gráficos",
     description:
       "Design visual impactante para flyers, banners e mais. Soluções criativas com foco em eficiência e propósito.",
-    image: "/images/services/materiais-graficos.png",
+    image: assetPath("/images/services/materiais-graficos.png"),
   },
   {
     title: "Editoração",
     description:
       "Formatação de conteúdos extensos, e-books e manuais para uma leitura clara e profissional.",
-    image: "/images/services/editoracao.png",
+    image: assetPath("/images/services/editoracao.png"),
   },
   {
     title: "Identidade visual",
     description:
       "Construção do coração da sua marca. Criamos sistemas visuais que comunicam valor, essência e conexão duradoura.",
-    image: "/images/services/identidade-visual.png",
+    image: assetPath("/images/services/identidade-visual.png"),
   },
 ] as const;
 
