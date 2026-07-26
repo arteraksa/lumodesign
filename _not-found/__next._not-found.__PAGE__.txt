@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/lumodesign/_next/static/chunks/048_edn5ta2dy.js","/lumodesign/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"state-page","children":[["$","p",null,{"className":"section-label","children":"404"}],["$","h1",null,{"children":"Esta página não foi encontrada."}],["$","a",null,{"href":"/","className":"button button--primary","children":"Voltar ao início"}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"we5skufq778WuGyjIHCuZ"}
+4:null
