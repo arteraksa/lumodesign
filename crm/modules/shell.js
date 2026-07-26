@@ -1,0 +1,168 @@
+import { logo } from "./constants.js?v=9";
+import { escapeHtml } from "./utils.js?v=3";
+
+export function createShellModule({ app, state, getSupabase, permissions = {} }) {
+  function renderLogin(error = "") {
+    const supabase = getSupabase();
+    app.innerHTML = `
+      <section class="login-screen">
+        <form class="login-card ${state.authLoading ? "is-loading" : ""}" data-login-form aria-busy="${state.authLoading ? "true" : "false"}">
+          ${logo}
+          <div class="login-copy">
+            <span class="eyebrow">Admin</span>
+            <h1>Entrar na plataforma</h1>
+            <p>Acesse com e-mail e senha para gerenciar os cases da RAKSA.</p>
+          </div>
+          <div class="form-stack">
+            <label class="field">
+              <span>E-mail</span>
+              <input class="input" name="email" type="email" inputmode="email" autocomplete="email" ${state.authLoading ? "disabled" : ""} required>
+            </label>
+            <label class="field">
+              <span>Senha</span>
+              <input class="input" name="password" type="password" autocomplete="current-password" ${state.authLoading ? "disabled" : ""} required>
+            </label>
+            <div class="notice notice-error ${error || !supabase ? "is-visible" : ""}">
+              ${escapeHtml(error || (!supabase ? "Configure a anon key do Supabase em /admin/supabase-config.js." : ""))}
+            </div>
+            <button class="button button-primary ${state.authLoading ? "is-loading" : ""}" type="submit" ${supabase && !state.authLoading ? "" : "disabled"}>
+              ${state.authLoading ? `<span class="spinner" aria-hidden="true"></span><span>Entrando...</span>` : "Entrar"}
+            </button>
+          </div>
+        </form>
+      </section>`;
+  }
+
+  function currentSection() {
+    return window.location.hash.replace(/^#\/?/, "").split("/")[0] || "home";
+  }
+
+  function currentCrmTab() {
+    const [section, slug] = window.location.hash.replace(/^#\/?/, "").split("/");
+    if (section !== "crm") return "";
+    return slug || "clients";
+  }
+
+  function renderSidebarLink(href, label, active) {
+    return `
+      <a class="sidebar-link ${active ? "is-active" : ""}" href="${escapeHtml(href)}">
+        <span>${escapeHtml(label)}</span>
+      </a>`;
+  }
+
+  function renderSidebarCategory(label) {
+    return `<span class="sidebar-category">${escapeHtml(label)}</span>`;
+  }
+
+  function userProfile() {
+    const user = state.session?.user || {};
+    const internalProfile = permissions.getCurrentUserProfile?.(state) || {};
+    const email = internalProfile.email || user.email || "";
+    const name = internalProfile.display_name || internalProfile.full_name || user.user_metadata?.name || user.user_metadata?.full_name || email.split("@")[0] || "Usuário";
+    const avatar = internalProfile.avatar_url || user.user_metadata?.avatar_url || user.user_metadata?.picture || "";
+    const initials = String(name || email || "U").trim().slice(0, 1).toUpperCase() || "U";
+    const role = internalProfile.role || internalProfile.access_level || "";
+    return { avatar, email, initials, name, role };
+  }
+
+  function renderProfileBlock({ compact = false } = {}) {
+    const profile = userProfile();
+    return `
+      <details class="${compact ? "sidebar-profile" : "platform-profile-card"} profile-menu">
+        <summary class="profile-view" aria-label="Abrir menu do perfil">
+          <span class="profile-avatar" aria-hidden="true">
+            ${profile.avatar ? `<img src="${escapeHtml(profile.avatar)}" alt="">` : `<span>${escapeHtml(profile.initials)}</span>`}
+          </span>
+          <span class="profile-copy">
+            <strong>${escapeHtml(profile.name)}</strong>
+            <small>${escapeHtml(profile.email || "")}</small>
+            <em>${escapeHtml(profile.role || "perfil")}</em>
+          </span>
+        </summary>
+        <div class="profile-menu-panel">
+          <a href="#/profile">Meu perfil</a>
+          <a href="#/profile/preferences">Preferências</a>
+          <a href="#/profile/security">Segurança</a>
+          <button type="button" data-logout>Sair</button>
+        </div>
+      </details>`;
+  }
+
+  function renderPlatformSidebar() {
+    const section = currentSection();
+    const crmTab = currentCrmTab();
+    const contentLinks = [
+      ["#/cases", "Cases", section === "cases"],
+      ["#/site-home", "Página inicial", section === "site-home"],
+    ];
+    const commercialLinks = [
+      ["#/crm/clients", "Clientes", crmTab === "clients"],
+      ["#/crm/budgets", "Orçamentos", crmTab === "budgets"],
+      ["#/crm/orders", "Ordens de serviço", crmTab === "orders"],
+    ];
+    const pricingLinks = [
+      ["#/crm/products", "Produtos", crmTab === "products"],
+      ["#/crm/substrates", "Substratos", crmTab === "substrates"],
+    ];
+    const settingsLinks = [
+      ...(permissions.canAccessSettings?.(state) ? [["#/financeiro", "Financeiro", section === "financeiro"]] : []),
+      ...(permissions.canManageUsers?.(state) ? [["#/users", "Usuários", section === "users"]] : []),
+    ];
+
+    return `
+      <aside class="module-sidebar platform-sidebar" aria-label="Navegação da plataforma">
+        <div class="sidebar-brand">
+          <a href="#/home" aria-label="Voltar para início">${logo}</a>
+          <span>Admin</span>
+        </div>
+        <nav class="sidebar-nav">
+          ${renderSidebarCategory("Conteúdo")}
+          ${contentLinks.map(([href, label, active]) => renderSidebarLink(href, label, active)).join("")}
+          ${renderSidebarCategory("Comercial")}
+          ${commercialLinks.map(([href, label, active]) => renderSidebarLink(href, label, active)).join("")}
+          ${renderSidebarCategory("Precificação")}
+          ${pricingLinks.map(([href, label, active]) => renderSidebarLink(href, label, active)).join("")}
+          ${settingsLinks.length ? `${renderSidebarCategory("Configurações")}${settingsLinks.map(([href, label, active]) => renderSidebarLink(href, label, active)).join("")}` : ""}
+        </nav>
+        ${renderProfileBlock({ compact: true })}
+      </aside>`;
+  }
+
+  function renderShell(content) {
+    const sidebar = renderPlatformSidebar();
+    app.innerHTML = `
+      <section class="admin-shell has-sidebar">
+        <div class="admin-layout">
+          ${sidebar}
+          <div class="module-main">
+            ${content}
+          </div>
+        </div>
+        ${state.modal || ""}
+      </section>`;
+  }
+
+  function renderComingSoon(section) {
+    const labels = {
+      home: "Dashboard",
+      cases: "CMS",
+      "site-home": "Página inicial",
+      crm: "CRM",
+    };
+    renderShell(`
+      <main class="page">
+        <section class="page-header">
+          <div class="page-title">
+            <h1>Módulo em preparação</h1>
+            <p class="section-subtitle">A navegação e o banco já estão reservados para esta área.</p>
+          </div>
+        </section>
+        <section class="panel roadmap-panel">
+          <h2>Proximo passo</h2>
+          <p class="section-subtitle">Aqui entram tabelas, formulários, permissões e relatórios sem misturar os módulos.</p>
+        </section>
+      </main>`);
+  }
+
+  return { currentSection, renderPlatformSidebar, renderComingSoon, renderLogin, renderProfileBlock, renderShell };
+}

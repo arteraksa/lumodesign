@@ -1,0 +1,8 @@
+{
+  "name": "lumodesign-crm",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "npx serve dist -l 4174"
+  }
+}
