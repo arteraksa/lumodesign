@@ -11,7 +11,7 @@ export function createShellModule({ app, state, getSupabase, permissions = {} })
           <div class="login-copy">
             <span class="eyebrow">Admin</span>
             <h1>Entrar na plataforma</h1>
-            <p>Acesse com e-mail e senha para gerenciar os cases da RAKSA.</p>
+            <p>Acesse com e-mail e senha para gerenciar a operação da Lumo Design.</p>
           </div>
           <div class="form-stack">
             <label class="field">

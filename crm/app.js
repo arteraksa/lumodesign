@@ -533,7 +533,7 @@ document.addEventListener("submit", async (event) => {
     }
 
     await getCurrentUserProfile({ touchLastLogin: true });
-    await logActivity("fez login", "auth", "auth_user", authData.session?.user?.id || "", "Entrou na plataforma RAKSA.", null, null);
+    await logActivity("fez login", "auth", "auth_user", authData.session?.user?.id || "", "Entrou na plataforma Lumo Design.", null, null);
     await seedCasesIfEmpty();
     await loadAdminData({ force: true });
   } catch (error) {
