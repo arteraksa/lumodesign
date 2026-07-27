@@ -8,6 +8,8 @@ import { siteConfig } from "@/lib/content/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   return [
     { slug: "impresul" },

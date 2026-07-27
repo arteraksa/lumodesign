@@ -20,6 +20,6 @@ export async function getAdminContext() {
 
 export async function requireAdmin() {
   const context = await getAdminContext();
-  if (!context) redirect("/admin/login");
+  if (!context) redirect("/admin/login" as never);
   return context;
 }
