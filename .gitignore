@@ -32,3 +32,4 @@ admin/portfolio/playwright-report/
 next-env.d.ts
 *.tsbuildinfo
 public/uploads/
+.vercel
