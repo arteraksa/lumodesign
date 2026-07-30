@@ -19,7 +19,7 @@ export function Services() {
       <div className="services-bento-scroll">
         <div className="services-grid">
           {services.map((service, index) => (
-            <MagicBentoCard className={`service-card service-card--${index + 1}`} delay={index * 0.035} key={service.title}>
+            <MagicBentoCard className={`service-card service-card--${index + 1}`} delay={index * 0.035} clickEffect={false} key={service.title}>
               <Image src={service.image} alt="" fill sizes="(max-width: 809px) 100vw, 40vw" />
               <div className="service-card__shade" />
               <div className="service-card__hover-fill" />

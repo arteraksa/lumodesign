@@ -16,39 +16,39 @@ export const siteConfig = {
 
 export const services = [
   {
-    title: "UI/UX Design",
+    title: "Product Design",
     description:
-      "Criação de interfaces focadas em experiência e conversão. Design funcional, responsivo e otimizado por IA.",
+      "Do problema à interface final. Tradução de requisitos complexos de negócio em jornadas de usuário intuitivas. Criação de produtos digitais escaláveis, unindo estética e funcionalidade.",
     image: assetPath("/images/services/ui-ux.jpg"),
   },
   {
-    title: "Social Media Design",
+    title: "UX Research & Discovery",
     description:
-      "Conteúdo visual estratégico para engajamento, adaptado para cada plataforma.",
+      "Decisões baseadas em dados e pessoas. Entendimento profundo das necessidades do usuário através de pesquisas, entrevistas e testes de usabilidade para mitigar riscos antes do código.",
     image: assetPath("/images/services/social-media.png"),
   },
   {
-    title: "Redesign Estratégico",
+    title: "UX Audit & Redesign",
     description:
-      "Otimização e revitalização de materiais e interfaces existentes. Elevamos o padrão com visão crítica e tecnologia.",
+      "Evolução de interfaces existentes. Avaliação heurística e análise crítica de produtos para identificar atritos, reduzir a carga cognitiva e modernizar a experiência do usuário.",
     image: assetPath("/images/services/redesign.png"),
   },
   {
-    title: "Materiais gráficos",
+    title: "Design Systems & Ops",
     description:
-      "Design visual impactante para flyers, banners e mais. Soluções criativas com foco em eficiência e propósito.",
+      "Escalabilidade e consistência visual. Construção e manutenção de bibliotecas de componentes e UI Guidelines, acelerando a prototipação e garantindo um handoff impecável para a engenharia.",
     image: assetPath("/images/services/materiais-graficos.png"),
   },
   {
-    title: "Editoração",
+    title: "Prototipação e Interação",
     description:
-      "Formatação de conteúdos extensos, e-books e manuais para uma leitura clara e profissional.",
+      "Validação visual e fluxos dinâmicos. Criação de protótipos de alta fidelidade e microinterações para tangibilizar ideias, facilitar o alinhamento com stakeholders e testar hipóteses rapidamente.",
     image: assetPath("/images/services/editoracao.png"),
   },
   {
-    title: "Identidade visual",
+    title: "Growth Design & IA",
     description:
-      "Construção do coração da sua marca. Criamos sistemas visuais que comunicam valor, essência e conexão duradoura.",
+      "Design focado em conversão e resultados. Otimização de métricas de negócio (CRO) e integração de ferramentas de inteligência artificial para potencializar a eficiência e a experiência do produto.",
     image: assetPath("/images/services/identidade-visual.png"),
   },
 ] as const;

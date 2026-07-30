@@ -18,14 +18,14 @@ export function Process() {
       </ScrollReveal>
       <MagicBentoGrid className="process-grid" spotlightRadius={150} glowColor="132, 0, 255">
         {processItems.map((item, index) => (
-          <MagicBentoCard className={`process-item process-item--${index + 1}`} enableTilt enableMagnetism clickEffect={false} key={item.title}>
+          <MagicBentoCard className={`process-item process-item--${index + 1}`} clickEffect={false} key={item.title}>
             {index === 0 ? <Gem className="process-item__icon" aria-hidden="true" /> : null}
             {index === 4 ? <Scan className="process-item__icon" aria-hidden="true" /> : null}
             <h3>{item.title}</h3>
             {item.description ? <p>{item.description}</p> : null}
           </MagicBentoCard>
         ))}
-        <MagicBentoCard className="process-item process-item--metric" enableTilt enableMagnetism clickEffect={false}>
+        <MagicBentoCard className="process-item process-item--metric" clickEffect={false}>
           <Rocket className="process-item__icon" aria-hidden="true" />
           <p>+200 negócios acelerados</p>
         </MagicBentoCard>

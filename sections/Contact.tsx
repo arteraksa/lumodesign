@@ -31,21 +31,21 @@ export function Contact() {
         </h2>
       </ScrollReveal>
       <MagicBentoGrid className="contact-grid" spotlightRadius={150} glowColor="132, 0, 255">
-        <MagicBentoCard className="contact-card" enableTilt enableMagnetism clickEffect={false}>
+        <MagicBentoCard className="contact-card" clickEffect={false}>
           <a href={`mailto:${siteConfig.email}`} className="contact-card__link">
             <span className="contact-card__icon"><Mail aria-hidden="true" /></span>
             <span className="contact-card__title">Por E-Mail</span>
             <small>{siteConfig.email}</small>
           </a>
         </MagicBentoCard>
-        <MagicBentoCard className="contact-card" enableTilt enableMagnetism clickEffect={false}>
+        <MagicBentoCard className="contact-card" clickEffect={false}>
           <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer" className="contact-card__link">
             <span className="contact-card__icon"><MessageCircle aria-hidden="true" /></span>
             <span className="contact-card__title">No WhatsApp</span>
             <small>{siteConfig.phoneLabel}</small>
           </a>
         </MagicBentoCard>
-        <MagicBentoCard className="contact-card" enableTilt enableMagnetism clickEffect={false}>
+        <MagicBentoCard className="contact-card" clickEffect={false}>
           <div className="contact-card__content">
             <span className="contact-card__icon"><Globe aria-hidden="true" /></span>
             <span className="contact-card__title">Nas mídias</span>

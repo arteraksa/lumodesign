@@ -82,8 +82,6 @@ export function MagicBentoCard({
   children,
   className = "",
   delay: _delay = 0,
-  enableTilt = true,
-  enableMagnetism = true,
   clickEffect = true,
   enableBorderGlow = true,
   glowColor = "132, 0, 255",
@@ -91,8 +89,6 @@ export function MagicBentoCard({
   children: ReactNode;
   className?: string;
   delay?: number;
-  enableTilt?: boolean;
-  enableMagnetism?: boolean;
   clickEffect?: boolean;
   enableBorderGlow?: boolean;
   glowColor?: string;
@@ -102,30 +98,6 @@ export function MagicBentoCard({
   useEffect(() => {
     const element = cardRef.current;
     if (!element || window.innerWidth <= MOBILE_BREAKPOINT) return;
-
-    // Clear transforms left by a previous interactive configuration or hot reload.
-    if (!enableTilt && !enableMagnetism) {
-      gsap.set(element, { x: 0, y: 0, rotateX: 0, rotateY: 0, transformPerspective: 0 });
-    }
-
-    const handleMouseMove = (event: MouseEvent) => {
-      const rect = element.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      if (enableTilt) {
-        gsap.to(element, { rotateX: ((y - centerY) / centerY) * -10, rotateY: ((x - centerX) / centerX) * 10, duration: 0.1, ease: "power2.out", transformPerspective: 1000 });
-      }
-      if (enableMagnetism) {
-        gsap.to(element, { x: (x - centerX) * 0.05, y: (y - centerY) * 0.05, duration: 0.3, ease: "power2.out" });
-      }
-    };
-
-    const handleMouseLeave = () => {
-      gsap.to(element, { x: 0, y: 0, rotateX: 0, rotateY: 0, duration: 0.3, ease: "power2.out" });
-    };
 
     const handleClick = (event: MouseEvent) => {
       if (!clickEffect) return;
@@ -144,18 +116,11 @@ export function MagicBentoCard({
       gsap.fromTo(ripple, { scale: 0, opacity: 1 }, { scale: 1, opacity: 0, duration: 0.8, ease: "power2.out", onComplete: () => ripple.remove() });
     };
 
-    element.addEventListener("mousemove", handleMouseMove);
-    element.addEventListener("mouseleave", handleMouseLeave);
     element.addEventListener("click", handleClick);
     return () => {
-      element.removeEventListener("mousemove", handleMouseMove);
-      element.removeEventListener("mouseleave", handleMouseLeave);
       element.removeEventListener("click", handleClick);
-      if (!enableTilt && !enableMagnetism) {
-        gsap.set(element, { x: 0, y: 0, rotateX: 0, rotateY: 0, transformPerspective: 0 });
-      }
     };
-  }, [clickEffect, enableMagnetism, enableTilt, glowColor]);
+  }, [clickEffect, glowColor]);
 
   return (
     <div
