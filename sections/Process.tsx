@@ -1,5 +1,6 @@
 import { Gem, Rocket, Scan } from "lucide-react";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { MagicBentoCard, MagicBentoGrid } from "@/components/ui/MagicBentoCard";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { processItems } from "@/lib/content/site";
@@ -15,20 +16,20 @@ export function Process() {
           description="Utilizamos IA para refinar conceitos e automatizar tarefas repetitivas, resultando em projetos de design de alta qualidade entregues com uma agilidade que surpreende."
         />
       </ScrollReveal>
-      <div className="process-grid">
+      <MagicBentoGrid className="process-grid" spotlightRadius={150} glowColor="132, 0, 255">
         {processItems.map((item, index) => (
-          <ScrollReveal className={`process-item process-item--${index + 1}`} delay={index * 0.03} key={item.title}>
+          <MagicBentoCard className={`process-item process-item--${index + 1}`} enableTilt enableMagnetism clickEffect={false} key={item.title}>
             {index === 0 ? <Gem className="process-item__icon" aria-hidden="true" /> : null}
             {index === 4 ? <Scan className="process-item__icon" aria-hidden="true" /> : null}
             <h3>{item.title}</h3>
             {item.description ? <p>{item.description}</p> : null}
-          </ScrollReveal>
+          </MagicBentoCard>
         ))}
-        <ScrollReveal className="process-item process-item--metric" delay={processItems.length * 0.03}>
+        <MagicBentoCard className="process-item process-item--metric" enableTilt enableMagnetism clickEffect={false}>
           <Rocket className="process-item__icon" aria-hidden="true" />
           <p>+200 negócios acelerados</p>
-        </ScrollReveal>
-      </div>
+        </MagicBentoCard>
+      </MagicBentoGrid>
     </Section>
   );
 }

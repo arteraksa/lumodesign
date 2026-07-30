@@ -1,6 +1,7 @@
 import { Globe, Mail, MessageCircle } from "lucide-react";
 import { BlurText } from "@/components/motion/BlurText";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { MagicBentoCard, MagicBentoGrid } from "@/components/ui/MagicBentoCard";
 import { Section } from "@/components/ui/Section";
 import { SocialIcon } from "@/components/ui/SocialIcon";
 import { siteConfig } from "@/lib/content/site";
@@ -29,27 +30,33 @@ export function Contact() {
           />
         </h2>
       </ScrollReveal>
-      <div className="contact-grid">
-        <a href={`mailto:${siteConfig.email}`} className="contact-card">
-          <span className="contact-card__icon"><Mail aria-hidden="true" /></span>
-          <span className="contact-card__title">Por E-Mail</span>
-          <small>{siteConfig.email}</small>
-        </a>
-        <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer" className="contact-card">
-          <span className="contact-card__icon"><MessageCircle aria-hidden="true" /></span>
-          <span className="contact-card__title">No WhatsApp</span>
-          <small>{siteConfig.phoneLabel}</small>
-        </a>
-        <div className="contact-card">
-          <span className="contact-card__icon"><Globe aria-hidden="true" /></span>
-          <span className="contact-card__title">Nas mídias</span>
-          <div className="contact-socials" aria-label="Redes sociais">
-            <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon name="instagram" /></a>
-            <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"><SocialIcon name="facebook" /></a>
-            <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><SocialIcon name="linkedin" /></a>
+      <MagicBentoGrid className="contact-grid" spotlightRadius={150} glowColor="132, 0, 255">
+        <MagicBentoCard className="contact-card" enableTilt enableMagnetism clickEffect={false}>
+          <a href={`mailto:${siteConfig.email}`} className="contact-card__link">
+            <span className="contact-card__icon"><Mail aria-hidden="true" /></span>
+            <span className="contact-card__title">Por E-Mail</span>
+            <small>{siteConfig.email}</small>
+          </a>
+        </MagicBentoCard>
+        <MagicBentoCard className="contact-card" enableTilt enableMagnetism clickEffect={false}>
+          <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer" className="contact-card__link">
+            <span className="contact-card__icon"><MessageCircle aria-hidden="true" /></span>
+            <span className="contact-card__title">No WhatsApp</span>
+            <small>{siteConfig.phoneLabel}</small>
+          </a>
+        </MagicBentoCard>
+        <MagicBentoCard className="contact-card" enableTilt enableMagnetism clickEffect={false}>
+          <div className="contact-card__content">
+            <span className="contact-card__icon"><Globe aria-hidden="true" /></span>
+            <span className="contact-card__title">Nas mídias</span>
+            <div className="contact-socials" aria-label="Redes sociais">
+              <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon name="instagram" /></a>
+              <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"><SocialIcon name="facebook" /></a>
+              <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><SocialIcon name="linkedin" /></a>
+            </div>
           </div>
-        </div>
-      </div>
+        </MagicBentoCard>
+      </MagicBentoGrid>
     </Section>
   );
 }
