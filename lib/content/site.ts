@@ -1,7 +1,7 @@
 import { assetPath } from "@/lib/asset";
 
 export const siteConfig = {
-  name: "RAKSA",
+  name: "LUMO",
   description:
     "Design inteligente, estratégia digital e tecnologia para marcas que querem crescer.",
   email: "contato@raksadesign.com",
@@ -56,7 +56,7 @@ export const services = [
 export const processItems = [
   {
     title: "Qualidade Premium",
-    description: "Acabamento preciso e visão humana em cada entrega.",
+    description: undefined,
   },
   {
     title: "AI Power",
@@ -64,31 +64,31 @@ export const processItems = [
   },
   {
     title: "Foco em Resultados",
-    description: "Design que encanta e impulsiona vendas e engajamento.",
+    description: "Design que não só encanta, mas que impulsiona suas vendas e engajamento",
   },
   {
     title: "Inovação Constante",
-    description: "Sempre à frente, explorando tendências e tecnologias.",
+    description: "Sempre à frente, explorando as últimas tendências e tecnologias de design",
   },
   {
     title: "Desburocratização",
-    description: "Um processo direto, transparente e sem camadas desnecessárias.",
+    description: undefined,
   },
   {
     title: "Criatividade Otimizada",
-    description: "IA potencializa as ideias. Visão humana garante o impacto.",
+    description: "IA potencializa as ideias. Visão humana garante o impacto e o resultado.",
   },
   {
     title: "Custo-Benefício",
-    description: "Soluções inteligentes e acessíveis para otimizar seu investimento.",
+    description: "Otimize seu investimento com soluções de design inteligentes e acessíveis",
   },
 ] as const;
 
 export const faqItems = [
   {
-    question: "A RAKSA é uma agência de design? Qual a diferença?",
+    question: "A LUMO é uma agência de design? Qual a diferença?",
     answer:
-      "Não. A RAKSA é um design service. Nosso processo é otimizado por Inteligência Artificial para ser ágil, transparente e desburocratizado. Focamos em entregas rápidas e soluções estratégicas, eliminando custos elevados e lentidão.",
+      "Não. A LUMO é um design service. Nosso processo é otimizado por Inteligência Artificial para ser ágil, transparente e desburocratizado. Focamos em entregas rápidas e soluções estratégicas, eliminando custos elevados e lentidão.",
   },
   {
     question: "Como a Inteligência Artificial é usada no processo de criação?",
@@ -96,17 +96,17 @@ export const faqItems = [
       "A IA é nosso braço estratégico e criativo, mas a decisão final é sempre humana. Usamos tecnologia para explorar mais caminhos, otimizar processos internos e aumentar a eficácia do design. É a união da capacidade analítica da IA com a visão da nossa equipe.",
   },
   {
-    question: "Quais serviços de design a RAKSA oferece?",
+    question: "Quais serviços de design a LUMO oferece?",
     answer:
       "Oferecemos um portfólio completo para marcas no digital e no físico: social media, landing pages, UI/UX, materiais gráficos, identidade visual, diagramação, editoração e redesign estratégico.",
   },
   {
-    question: "Como funciona o processo de contratação na RAKSA?",
+    question: "Como funciona o processo de contratação na LUMO?",
     answer:
       "É simples: você apresenta sua necessidade, recebe uma proposta transparente e, após a aprovação, iniciamos a criação com agilidade e profissionalismo.",
   },
   {
-    question: "A RAKSA atende clientes de qualquer lugar?",
+    question: "A LUMO atende clientes de qualquer lugar?",
     answer:
       "Sim. Somos um design service 100% digital e atendemos clientes do Brasil e do mundo. Nossa origem é Porto Alegre, mas nossa atuação não tem fronteiras.",
   },

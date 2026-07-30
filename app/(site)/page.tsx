@@ -1,7 +1,6 @@
 import { Hero } from "@/sections/Hero";
 import { Services } from "@/sections/Services";
 import { Cases } from "@/sections/Cases";
-import { About } from "@/sections/About";
 import { Process } from "@/sections/Process";
 import { Faq } from "@/sections/Faq";
 import { Contact } from "@/sections/Contact";
@@ -14,7 +13,6 @@ export default async function HomePage() {
       <Hero />
       <Services />
       <Cases cases={cases} />
-      <About />
       <Process />
       <Faq />
       <Contact />

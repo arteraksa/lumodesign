@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 export function FaqAccordion({
   items,
@@ -14,7 +15,7 @@ export function FaqAccordion({
         const open = openIndex === index;
         const panelId = `faq-panel-${index}`;
         return (
-          <div className="faq-item" key={item.question}>
+          <div className="faq-item" data-open={open} key={item.question}>
             <h3>
               <button
                 type="button"
@@ -23,11 +24,13 @@ export function FaqAccordion({
                 onClick={() => setOpenIndex(open ? null : index)}
               >
                 <span>{item.question}</span>
-                <span className="faq-item__icon" aria-hidden="true">{open ? "−" : "+"}</span>
+                <ChevronDown className="faq-item__icon" aria-hidden="true" />
               </button>
             </h3>
-            <div id={panelId} className="faq-item__panel" hidden={!open}>
-              <p>{item.answer}</p>
+            <div id={panelId} className="faq-item__panel" aria-hidden={!open}>
+              <div className="faq-item__answer">
+                <p>{item.answer}</p>
+              </div>
             </div>
           </div>
         );

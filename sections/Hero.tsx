@@ -27,9 +27,9 @@ export function Hero() {
             className="hero-title__line"
           />
         </h1>
-        <div className="hero__description" aria-label="A Raksa oferece serviços de design com o que tem de mais novo no mercado. Venha inovar com a gente.">
+        <div className="hero__description" aria-label="A LUMO oferece serviços de design com o que tem de mais novo no mercado. Venha inovar com a gente.">
           <BlurText
-            text="A Raksa oferece serviços de design com o que tem de mais novo"
+            text="A LUMO oferece serviços de design com o que tem de mais novo"
             animateBy="words"
             delay={38}
             startDelay={650}

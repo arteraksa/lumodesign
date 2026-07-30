@@ -58,7 +58,7 @@ export function ClientLogoLoop({ names }: { names: readonly string[] }) {
 
   return (
     <LogoLoop
-      ariaLabel="Algumas marcas que confiam na RAKSA"
+      ariaLabel="Algumas marcas que confiam na LUMO"
       fadeOut
       fadeOutColor="#05020d"
       gap={101}

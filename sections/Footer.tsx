@@ -1,5 +1,7 @@
+import { Mail } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Container } from "@/components/ui/Container";
+import { SocialIcon } from "@/components/ui/SocialIcon";
 import { siteConfig } from "@/lib/content/site";
 
 export function Footer() {
@@ -7,9 +9,11 @@ export function Footer() {
     <footer className="site-footer">
       <Container className="site-footer__inner">
         <Logo compact />
-        <p>© {new Date().getFullYear()} Raksa Design. Todos os direitos reservados.</p>
+        <p>© {new Date().getFullYear()} Lumo Design. Todos os direitos reservados.</p>
         <nav aria-label="Mídias sociais">
-          <a href={siteConfig.whatsapp}>WA</a><a href={siteConfig.social.instagram}>IG</a><a href={`mailto:${siteConfig.email}`}>EM</a>
+          <a href={siteConfig.whatsapp} aria-label="WhatsApp"><SocialIcon name="whatsapp" /></a>
+          <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon name="instagram" /></a>
+          <a href={`mailto:${siteConfig.email}`} aria-label="E-mail"><Mail aria-hidden="true" /></a>
         </nav>
       </Container>
     </footer>

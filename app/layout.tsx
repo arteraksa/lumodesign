@@ -16,9 +16,9 @@ const satoshi = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: { default: "RAKSA — Design inteligente", template: "%s | RAKSA" },
+  title: { default: "LUMO — Design inteligente", template: "%s | LUMO" },
   description: siteConfig.description,
-  openGraph: { title: "RAKSA", description: siteConfig.description, type: "website", locale: "pt_BR" },
+  openGraph: { title: "LUMO", description: siteConfig.description, type: "website", locale: "pt_BR" },
   robots: { index: true, follow: true },
 };
 
