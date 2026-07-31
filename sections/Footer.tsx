@@ -11,9 +11,9 @@ export function Footer() {
         <Logo compact />
         <p>© {new Date().getFullYear()} Lumo Design. Todos os direitos reservados.</p>
         <nav aria-label="Mídias sociais">
-          <a href={siteConfig.whatsapp} aria-label="WhatsApp"><SocialIcon name="whatsapp" /></a>
-          <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon name="instagram" /></a>
-          <a href={`mailto:${siteConfig.email}`} aria-label="E-mail"><Mail aria-hidden="true" /></a>
+          <a className="button button--secondary button--icon" href={siteConfig.whatsapp} aria-label="WhatsApp"><SocialIcon name="whatsapp" /></a>
+          <a className="button button--secondary button--icon" href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon name="instagram" /></a>
+          <a className="button button--secondary button--icon" href={`mailto:${siteConfig.email}`} aria-label="E-mail"><Mail aria-hidden="true" /></a>
         </nav>
       </Container>
     </footer>

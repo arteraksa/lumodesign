@@ -8,17 +8,16 @@ import { MobileNav } from "@/components/navigation/MobileNav";
 export function Header() {
   return (
     <header className="site-header">
-      <Container>
+      <Container className="site-header__container">
         <GlassSurface className="site-header__surface">
           <Link href="/" className="site-header__logo"><Logo /></Link>
           <nav className="site-header__nav" aria-label="Navegação principal">
-            <Link href="/">Home</Link>
-            <Link href="/#servicos">Serviços</Link>
-            <Link href="/cases">Cases</Link>
-            <Link href="/#processo">Processo</Link>
-            <Link href="/#faq">FAQ</Link>
+            <Link href="/" className="button button--tertiary">Home</Link>
+            <Link href="/#servicos" className="button button--tertiary">Serviços</Link>
+            <Link href="/cases" className="button button--tertiary">Cases</Link>
+            <Link href="/#faq" className="button button--tertiary">FAQ</Link>
           </nav>
-          <a className="site-header__cta" href={siteConfig.whatsapp} target="_blank" rel="noreferrer">
+          <a className="button button--secondary site-header__cta" href={siteConfig.whatsapp} target="_blank" rel="noreferrer">
             Entre em contato
           </a>
           <MobileNav />

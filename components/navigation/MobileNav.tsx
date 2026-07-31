@@ -33,7 +33,7 @@ export function MobileNav() {
       {open ? (
         <nav id="mobile-menu" className="mobile-nav__panel" aria-label="Navegação mobile">
           {links.map(([label, href]) => (
-            <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
+            <a key={href} href={href} className="button button--tertiary" onClick={() => setOpen(false)}>{label}</a>
           ))}
         </nav>
       ) : null}

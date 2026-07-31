@@ -76,7 +76,7 @@ export default async function CaseDetailPage({ params }: Props) {
             <Link className="case-study__back" href="/cases" aria-label="Voltar para a página de cases"><ArrowLeft aria-hidden="true" size={16} /></Link>
             <h1>{item.title}</h1>
           </div>
-          {item.categories.length ? <div className="case-study__badges" aria-label="Categorias do projeto">{item.categories.map((category) => <span key={category}>{category}</span>)}</div> : null}
+          {item.categories.length ? <div className="case-study__badges" aria-label="Categorias do projeto">{item.categories.map((category) => <span className="badge" key={category}>{category}</span>)}</div> : null}
           <div className="case-study__divider" />
           <div className="case-study__description-scroll">
             <ModularContent value={item.content_json} className="case-study__description" />
