@@ -30,7 +30,9 @@ export function Cases({ cases }: { cases: PortfolioCase[] }) {
               ) : <div className="case-card__fallback" />}
               <span className="case-card__meta">
                 <strong>{item.title}</strong>
-                <small>{item.categories.join(" · ")}</small>
+                <span className="case-card__categories" aria-label={`Categorias: ${item.categories.join(", ")}`}>
+                  {item.categories.map((category) => <span className="badge case-card__badge" key={category}>{category}</span>)}
+                </span>
               </span>
             </a>
           </ScrollReveal>

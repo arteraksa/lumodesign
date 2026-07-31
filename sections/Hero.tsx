@@ -50,6 +50,7 @@ export function Hero() {
         <SpecularButton
           className="hero-cta specular-button--primary"
           href={siteConfig.whatsapp}
+          external
         >
           Fazer um orçamento
         </SpecularButton>

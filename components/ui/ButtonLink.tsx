@@ -1,4 +1,7 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { SpecularButton } from "@/components/ui/SpecularButton";
 
 export function ButtonLink({
   href,
@@ -9,10 +12,14 @@ export function ButtonLink({
 }: {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
   external?: boolean;
   className?: string;
 }) {
+  if (variant === "primary") {
+    return <SpecularButton href={href} external={external} className={`specular-button--primary ${className}`.trim()}>{children}</SpecularButton>;
+  }
+
   return (
     <a
       href={href}

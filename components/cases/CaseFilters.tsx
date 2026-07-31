@@ -12,14 +12,19 @@ export function CaseFilters({ cases, categories }: { cases: PortfolioCase[]; cat
     <>
       <nav className="case-category-filters" aria-label="Filtrar cases por categoria">
         {["Todas", ...categories].map((category) => (
-          <button key={category} type="button" className={activeCategory === category ? "active" : ""} aria-pressed={activeCategory === category} onClick={() => setActiveCategory(category)}>{category}</button>
+          <button key={category} type="button" className={`button button--secondary${activeCategory === category ? " active" : ""}`} aria-pressed={activeCategory === category} onClick={() => setActiveCategory(category)}>{category}</button>
         ))}
       </nav>
       <div className="cases-grid cases-grid--listing" aria-live="polite">
         {visibleCases.map((item) => (
           <a className="case-card" href={`/cases/${item.slug}`} key={item.id}>
             {item.cover_url ? <Image src={item.cover_url} alt={`Capa do case ${item.title}`} fill sizes="(max-width: 809px) 100vw, 33vw" /> : null}
-            <span className="case-card__meta"><strong>{item.title}</strong><small>{item.categories.join(" · ")}</small></span>
+            <span className="case-card__meta">
+              <strong>{item.title}</strong>
+              <span className="case-card__categories" aria-label={`Categorias: ${item.categories.join(", ")}`}>
+                {item.categories.map((category) => <span className="badge case-card__badge" key={category}>{category}</span>)}
+              </span>
+            </span>
           </a>
         ))}
       </div>
