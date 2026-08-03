@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { ModularContent } from "@/components/content/ModularContent";
 import type { PortfolioCase, PortfolioCaseMedia } from "@/lib/supabase/database.types";
 import { getPublishedCaseResolution, getPublishedCases } from "@/lib/queries/cases";
@@ -50,10 +50,7 @@ function CaseDirection({ item, direction }: { item?: PortfolioCase; direction: "
         {item.cover_url ? <Image src={item.cover_url} alt="" fill sizes="(max-width: 809px) 44vw, 11vw" /> : null}
       </div>
       <span className="case-study__direction-title">{item.title}</span>
-      <span className="case-study__direction-action">
-        {isPrevious ? <ArrowLeft aria-hidden="true" size={14} /> : <ArrowRight aria-hidden="true" size={14} />}
-        {label}
-      </span>
+      <span className="case-study__direction-action">{label}</span>
     </Link>
   );
 }
@@ -73,7 +70,7 @@ export default async function CaseDetailPage({ params }: Props) {
       <aside className="case-study__sidebar" aria-label={`Informações sobre ${item.title}`}>
         <section className="case-study__details">
           <div className="case-study__title-row">
-            <Link className="case-study__back" href="/cases" aria-label="Voltar para a página de cases"><ArrowLeft aria-hidden="true" size={16} /></Link>
+            <Link className="case-study__back" href="/cases" aria-label="Voltar para a página de cases"><ChevronLeft aria-hidden="true" size={16} /></Link>
             <h1>{item.title}</h1>
           </div>
           {item.categories.length ? <div className="case-study__badges" aria-label="Categorias do projeto">{item.categories.map((category) => <span className="badge" key={category}>{category}</span>)}</div> : null}

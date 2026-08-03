@@ -25,7 +25,7 @@ export function Cases({ cases }: { cases: PortfolioCase[] }) {
                   src={item.cover_url}
                   alt={`Capa do case ${item.title}`}
                   fill
-                  sizes="(max-width: 809px) 100vw, 33vw"
+                  sizes="(max-width: 809px) 100vw, (max-width: 1279px) 50vw, 33vw"
                 />
               ) : <div className="case-card__fallback" />}
               <span className="case-card__meta">
