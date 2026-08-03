@@ -1,0 +1,68 @@
+name: Verify production deployment
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  statuses: read
+
+jobs:
+  verify:
+    name: Verify Vercel production aliases
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Wait for the Vercel deployments of this exact commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          required_contexts=("Vercel – lumodesign" "Vercel – lumodesign-admin")
+
+          for attempt in {1..60}; do
+            statuses="$(gh api "repos/${REPOSITORY}/commits/${SHA}/status")"
+            all_ready=true
+
+            for context in "${required_contexts[@]}"; do
+              state="$(jq -r --arg context "$context" '[.statuses[] | select(.context == $context) | .state] | if index("success") then "success" elif index("failure") or index("error") then "failure" else "pending" end' <<< "$statuses")"
+              if [[ "$state" == "failure" ]]; then
+                echo "${context} falhou para o commit ${SHA}."
+                jq -r --arg context "$context" '.statuses[] | select(.context == $context) | .target_url' <<< "$statuses"
+                exit 1
+              fi
+              if [[ "$state" != "success" ]]; then
+                all_ready=false
+              fi
+            done
+
+            if [[ "$all_ready" == "true" ]]; then
+              exit 0
+            fi
+
+            sleep 10
+          done
+
+          echo "A Vercel não confirmou os dois projetos para o commit ${SHA} no tempo esperado."
+          exit 1
+
+      - name: Check canonical production URLs
+        run: |
+          curl --fail --show-error --silent --retry 4 --retry-all-errors --retry-delay 5 -H 'Cache-Control: no-cache' https://lumodesign.vercel.app/ > /dev/null
+          curl --fail --show-error --silent --retry 4 --retry-all-errors --retry-delay 5 -H 'Cache-Control: no-cache' https://lumodesign.vercel.app/admin/login > /dev/null
+          curl --fail --show-error --silent --retry 4 --retry-all-errors --retry-delay 5 -H 'Cache-Control: no-cache' https://lumo-crm-five.vercel.app/ > /dev/null
+
+      - name: Publish deployment summary
+        run: |
+          {
+            echo "## Production deployment verified"
+            echo
+            echo "Commit: \`${{ github.sha }}\`"
+            echo
+            echo "- [Site](https://lumodesign.vercel.app/)"
+            echo "- [CMS de cases](https://lumodesign.vercel.app/admin/login)"
+            echo "- [CRM](https://lumo-crm-five.vercel.app/)"
+          } >> "$GITHUB_STEP_SUMMARY"
