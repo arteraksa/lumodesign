@@ -27,7 +27,7 @@ export function Process() {
         ))}
         <MagicBentoCard className="process-item process-item--metric" clickEffect={false}>
           <Rocket className="process-item__icon" aria-hidden="true" />
-          <p>+200 negócios acelerados</p>
+          <h3>+200 negócios acelerados</h3>
         </MagicBentoCard>
       </MagicBentoGrid>
     </Section>

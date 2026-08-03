@@ -50,9 +50,9 @@ export function Contact() {
             <span className="contact-card__icon"><Globe aria-hidden="true" /></span>
             <span className="contact-card__title">Nas mídias</span>
             <div className="contact-socials" aria-label="Redes sociais">
-              <a className="button button--secondary button--icon" href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon name="instagram" /></a>
-              <a className="button button--secondary button--icon" href={siteConfig.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"><SocialIcon name="facebook" /></a>
-              <a className="button button--secondary button--icon" href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><SocialIcon name="linkedin" /></a>
+              <a className="button button--tertiary button--icon" href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon name="instagram" /></a>
+              <a className="button button--tertiary button--icon" href={siteConfig.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"><SocialIcon name="facebook" /></a>
+              <a className="button button--tertiary button--icon" href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><SocialIcon name="linkedin" /></a>
             </div>
           </div>
         </MagicBentoCard>
