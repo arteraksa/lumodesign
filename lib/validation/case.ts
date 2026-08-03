@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { documentHasText } from "@/lib/content/rich-text";
 
 /** Legacy defaults used until the category registry is available. */
 export const caseCategories = ["Branding", "Desenvolvimento", "Editorial", "UI/UX Design"] as const;
@@ -51,7 +52,7 @@ export const caseSchema = z.object({
   if (value.categories.length === 0) {
     context.addIssue({ code: "custom", path: ["categories"], message: "Selecione ao menos uma categoria para publicar." });
   }
-  if (!value.content_html.trim()) {
+  if (!documentHasText(value.content_html)) {
     context.addIssue({ code: "custom", path: ["content_html"], message: "Preencha o conteúdo antes de publicar." });
   }
 });
@@ -84,7 +85,7 @@ export const caseClientSchema = z.object({
   if (!value.categories.split(",").some((item) => item.trim())) {
     context.addIssue({ code: "custom", path: ["categories"], message: "Selecione ao menos uma categoria para publicar." });
   }
-  if (!value.content_html.trim()) {
+  if (!documentHasText(value.content_html)) {
     context.addIssue({ code: "custom", path: ["content_html"], message: "Preencha o conteúdo antes de publicar." });
   }
 });
