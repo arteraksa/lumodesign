@@ -1,7 +1,6 @@
 import { BlurText } from "@/components/motion/BlurText";
 import { SpecularButton } from "@/components/ui/SpecularButton";
 import { ClientLogoLoop } from "@/components/ui/ClientLogoLoop";
-import { HeroEffect } from "@/components/effects/HeroEffect";
 import { clientLogos, siteConfig } from "@/lib/content/site";
 
 export function Hero() {
@@ -58,7 +57,6 @@ export function Hero() {
           <ClientLogoLoop names={clientLogos} />
         </div>
       </div>
-      <HeroEffect />
     </section>
   );
 }
