@@ -11,6 +11,7 @@ import { PORTFOLIO_CATEGORIES_CACHE_TAG } from "@/lib/queries/portfolio-categori
 import type { Database, StorageBucket } from "@/lib/supabase/database.types";
 import { withCompensation } from "@/lib/portfolio/compensation";
 import { portfolioPathsForSlugs } from "@/lib/portfolio/revalidation";
+import { richTextDocumentJson } from "@/lib/content/rich-text";
 const idSchema = z.string().uuid();
 const uploadPathSchema = z.string().regex(
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\/[a-z0-9._-]+$/i,
@@ -27,16 +28,6 @@ const coverManifestSchema = z.discriminatedUnion("source", [
 ]);
 
 type AdminSupabase = SupabaseClient<Database, "public", "public", Database["public"]>;
-
-function textToDocument(text: string) {
-  return {
-    type: "doc",
-    content: text.split(/\n{2,}/).filter(Boolean).map((paragraph) => ({
-      type: "paragraph",
-      content: [{ type: "text", text: paragraph.replace(/<[^>]*>/g, "").trim() }],
-    })),
-  };
-}
 
 function publicError(cause: unknown) {
   const digest = typeof cause === "object" && cause !== null && "digest" in cause ? String((cause as { digest?: unknown }).digest) : "";
@@ -286,7 +277,7 @@ export async function saveCaseAction(formData: FormData): Promise<{ caseId: stri
       categories: input.categories,
       excerpt: input.excerpt,
       content_html: input.content_html,
-      content_json: textToDocument(input.content_html),
+      content_json: richTextDocumentJson(input.content_html),
       cover_url: "",
       external_url: input.external_url,
       featured_on_home: input.featured_on_home,

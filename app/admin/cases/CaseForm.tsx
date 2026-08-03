@@ -7,6 +7,8 @@ import { useEffect, useMemo, useState, useTransition } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { removeUploadedProjectImage, uploadProjectImage } from "@/lib/portfolio/client-media-upload";
 import { normalizeCaseSlug } from "@/lib/portfolio/slug";
+import { RichTextEditor } from "@/components/admin/RichTextEditor";
+import { documentFromStoredContent, serializeRichTextDocument } from "@/lib/content/rich-text";
 import type { PortfolioCase, PortfolioCaseMedia } from "@/lib/supabase/database.types";
 import { caseClientSchema, type CaseClientInput } from "@/lib/validation/case";
 
@@ -101,7 +103,7 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
     shouldFocusError: false,
     defaultValues: {
       title: item?.title ?? "", slug: item?.slug ?? "", client_name: item?.client_name ?? "",
-      categories: item?.categories.join(", ") ?? "", excerpt: item?.excerpt ?? "", content_html: item?.content_html ?? "",
+      categories: item?.categories.join(", ") ?? "", excerpt: item?.excerpt ?? "", content_html: serializeRichTextDocument(documentFromStoredContent(item?.content_html)),
       cover_url: item?.cover_url ?? "", external_url: item?.external_url ?? "", status: item?.status ?? "draft",
       home_order: item?.home_order ?? 999, portfolio_order: item?.portfolio_order ?? 999,
       seo_title: item?.seo_title ?? "", seo_description: item?.seo_description ?? "", published_at: datetimeLocalValue(item?.published_at),
@@ -110,6 +112,7 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
   const title = useWatch({ control, name: "title" });
   const selectedCategoriesValue = useWatch({ control, name: "categories" }) ?? "";
   const excerpt = useWatch({ control, name: "excerpt" }) ?? "";
+  const content = useWatch({ control, name: "content_html" }) ?? "";
   const selectedCategories = useMemo(() => selectedCategoriesValue.split(",").map((value) => value.trim()).filter(Boolean), [selectedCategoriesValue]);
   const isUploading = projectImages.some((image) => image.source === "uploaded" && (image.state === "queued" || image.state === "uploading"))
     || Boolean(coverImage && (coverImage.state === "queued" || coverImage.state === "uploading"));
@@ -347,9 +350,10 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
 
           <section className="admin-panel">
             <div className="admin-panel__heading"><span>02</span><div><h2>Conteúdo</h2><p>Conte a história do projeto em blocos de texto.</p></div></div>
-            <label htmlFor="case-content">Descrição do case</label>
-            <textarea className={errors.content_html ? "form-field-error" : ""} id="case-content" data-testid="case-content" aria-invalid={Boolean(errors.content_html)} aria-describedby="case-content-help" rows={12} {...register("content_html")} />
-            <small id="case-content-help">Parágrafos separados por uma linha em branco são salvos como blocos independentes.</small>
+            <label>Descrição do case</label>
+            <input type="hidden" {...register("content_html")} />
+            <RichTextEditor value={content} invalid={Boolean(errors.content_html)} onChange={(nextValue) => setValue("content_html", nextValue, { shouldDirty: true, shouldValidate: true })} />
+            <small id="case-content-help">Use a barra de formatação para destacar trechos e criar listas. Enter inicia um novo parágrafo.</small>
             <FieldError message={errors.content_html?.message} />
           </section>
 

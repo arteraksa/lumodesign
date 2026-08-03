@@ -4,8 +4,13 @@ import "@testing-library/jest-dom/vitest";
 import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { serializeRichTextDocument } from "@/lib/content/rich-text";
 import { CaseForm } from "@/app/admin/cases/CaseForm";
 import type { PortfolioCase } from "@/lib/supabase/database.types";
+
+vi.mock("@/components/admin/RichTextEditor", () => ({
+  RichTextEditor: ({ onChange, invalid }: { onChange: (value: string) => void; invalid?: boolean }) => <textarea data-testid="case-content" aria-invalid={invalid} onChange={(event) => onChange(serializeRichTextDocument({ type: "doc", content: [{ type: "paragraph", content: [{ type: "text", text: event.target.value }] }] }))} />,
+}));
 
 const itemWithCover = {
   id: "00000000-0000-4000-8000-000000000001",
