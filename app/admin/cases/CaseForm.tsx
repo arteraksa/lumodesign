@@ -1,9 +1,12 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowDown, ArrowUp, CheckCircle2, GripVertical, ImagePlus, Plus, Trash2 } from "lucide-react";
+import { DndContext, KeyboardSensor, PointerSensor, closestCenter, useSensor, useSensors, type DragEndEvent } from "@dnd-kit/core";
+import { SortableContext, arrayMove, sortableKeyboardCoordinates, useSortable, verticalListSortingStrategy } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { CheckCircle2, GripVertical, ImagePlus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { removeUploadedProjectImage, uploadProjectImage } from "@/lib/portfolio/client-media-upload";
 import { normalizeCaseSlug } from "@/lib/portfolio/slug";
@@ -25,8 +28,6 @@ type ProjectImage = {
   mediaId?: string;
   path?: string;
   fileKey?: string;
-  altText: string;
-  caption: string;
   state: UploadState;
   progress: number;
   error?: string;
@@ -63,11 +64,19 @@ function initialProjectImages(media: EditableMedia[], coverPath?: string | null)
       mediaId: entry.id,
       previewUrl: entry.preview_url,
       filename: entry.storage_path?.split("/").at(-1) || entry.alt_text || "Imagem do projeto",
-      altText: entry.alt_text,
-      caption: entry.caption,
       state: "ready",
       progress: 100,
     }));
+}
+
+function SortableProjectImage({ image, index, onRemove }: { image: ProjectImage; index: number; onRemove: (id: string) => void }) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: image.id });
+  return <li ref={setNodeRef} style={{ transform: CSS.Transform.toString(transform), transition }} className={`${image.state === "error" ? "is-error" : ""}${isDragging ? " is-dragging" : ""}`} data-testid="project-image">
+    <div className="admin-image-position"><button className="admin-image-drag-handle" type="button" aria-label={`Arrastar ${image.filename}`} {...attributes} {...listeners}><GripVertical aria-hidden="true" size={18} /></button><strong>{index + 1}</strong></div>
+    <Image src={image.previewUrl} alt="Prévia da imagem do projeto" width={176} height={132} unoptimized />
+    <div className="admin-project-image__content"><div className="admin-project-image__meta"><div><strong>{image.filename}</strong><span>{`Imagem ${index + 1} do corpo do case`}</span></div></div>{image.state === "queued" || image.state === "uploading" ? <div className="admin-upload-progress" role="progressbar" aria-label={`Enviando ${image.filename}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={image.progress}><span style={{ width: `${image.progress}%` }} /><small>{image.state === "queued" ? "Aguardando envio" : `Enviando para a plataforma · ${image.progress}%`}</small></div> : null}{image.state === "error" ? <p className="field-error" role="alert">{image.error}</p> : null}</div>
+    <div className="admin-project-image__actions">{image.state === "success" ? <span className="admin-upload-state admin-upload-state--success"><CheckCircle2 size={15} /> Carregada com sucesso</span> : null}{image.state === "ready" ? <span className="admin-upload-state">Anexada ao projeto</span> : null}<button className="admin-remove-media" type="button" disabled={image.state === "queued" || image.state === "uploading"} onClick={() => { void onRemove(image.id); }}><Trash2 size={16} /> Excluir</button></div>
+  </li>;
 }
 
 export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptions, action, createCategoryAction }: {
@@ -83,6 +92,8 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
   const [slugEdited, setSlugEdited] = useState(Boolean(item?.slug));
   const [categoryOptionsState, setCategoryOptionsState] = useState(categoryOptions);
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
+  const [publishConfirmationOpen, setPublishConfirmationOpen] = useState(false);
+  const [cancelConfirmationOpen, setCancelConfirmationOpen] = useState(false);
   const [categoryName, setCategoryName] = useState("");
   const [categoryError, setCategoryError] = useState("");
   const [projectImages, setProjectImages] = useState<ProjectImage[]>(() => initialProjectImages(media, item?.cover_storage_path));
@@ -98,11 +109,12 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
   const [uploadBatchId] = useState(() => item?.id ?? crypto.randomUUID());
   const [intent, setIntent] = useState<SubmissionIntent>(item?.status === "published" ? "published" : "draft");
   const [operation, setOperation] = useState<{ intent: SubmissionIntent; phase: "loading" | "success" } | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const { register, handleSubmit, setValue, control, formState: { errors } } = useForm<CaseClientInput>({
     resolver: zodResolver(caseClientSchema),
     shouldFocusError: false,
     defaultValues: {
-      title: item?.title ?? "", slug: item?.slug ?? "", client_name: item?.client_name ?? "",
+      title: item?.title ?? "", slug: item?.slug ?? "",
       categories: item?.categories.join(", ") ?? "", excerpt: item?.excerpt ?? "", content_html: serializeRichTextDocument(documentFromStoredContent(item?.content_html)),
       cover_url: item?.cover_url ?? "", external_url: item?.external_url ?? "", status: item?.status ?? "draft",
       home_order: item?.home_order ?? 999, portfolio_order: item?.portfolio_order ?? 999,
@@ -121,6 +133,36 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
   useEffect(() => {
     if (!slugEdited) setValue("slug", normalizeCaseSlug(title ?? ""), { shouldDirty: Boolean(title), shouldValidate: true });
   }, [slugEdited, setValue, title]);
+
+  function persistCase(nextIntent: SubmissionIntent, form: HTMLFormElement) {
+    const data = new FormData(form);
+    data.set("status", nextIntent);
+    data.set("seo_title", (title ?? "").slice(0, 70));
+    data.set("seo_description", excerpt.slice(0, 170));
+    data.set("media_manifest", JSON.stringify(projectImages.map((image) => image.source === "existing"
+      ? { source: "existing", id: image.mediaId }
+      : { source: "uploaded", path: image.path })));
+    data.set("cover_manifest", JSON.stringify(coverImage
+      ? coverImage.source === "existing" ? { source: "existing" } : { source: "uploaded", path: coverImage.path }
+      : { source: "none" }));
+    setServerError("");
+    setIntent(nextIntent);
+    const minimumDelay = new Promise<void>((resolve) => window.setTimeout(resolve, 3000));
+    setOperation({ intent: nextIntent, phase: "loading" });
+    startTransition(async () => {
+      try {
+        const result = await action(data);
+        await minimumDelay;
+        setOperation({ intent: nextIntent, phase: "success" });
+        await new Promise<void>((resolve) => window.setTimeout(resolve, 900));
+        window.location.assign(`/admin/cases/${result.caseId}/edit?notice=${result.notice}`);
+      } catch (cause) {
+        await minimumDelay;
+        setServerError(cause instanceof Error ? cause.message : "Não foi possível concluir a ação. Tente novamente.");
+        setOperation(null);
+      }
+    });
+  }
 
   const submit = handleSubmit((_, event) => {
     const form = event?.target;
@@ -143,33 +185,11 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
       setServerError("Revise o campo destacado: envie uma imagem de capa antes de publicar.");
       return;
     }
-    const data = new FormData(form);
-    data.set("status", nextIntent);
-    data.set("seo_title", (title ?? "").slice(0, 70));
-    data.set("seo_description", excerpt.slice(0, 170));
-    data.set("media_manifest", JSON.stringify(projectImages.map((image) => image.source === "existing"
-      ? { source: "existing", id: image.mediaId, altText: image.altText, caption: image.caption }
-      : { source: "uploaded", path: image.path, altText: image.altText, caption: image.caption })));
-    data.set("cover_manifest", JSON.stringify(coverImage
-      ? coverImage.source === "existing" ? { source: "existing" } : { source: "uploaded", path: coverImage.path }
-      : { source: "none" }));
-    setServerError("");
-    setIntent(nextIntent);
-    const minimumDelay = new Promise<void>((resolve) => window.setTimeout(resolve, 3000));
-    setOperation({ intent: nextIntent, phase: "loading" });
-    startTransition(async () => {
-      try {
-        const result = await action(data);
-        await minimumDelay;
-        setOperation({ intent: nextIntent, phase: "success" });
-        await new Promise<void>((resolve) => window.setTimeout(resolve, 900));
-        window.location.assign(`/admin/cases/${result.caseId}/edit?notice=${result.notice}`);
-      } catch (cause) {
-        await minimumDelay;
-        setServerError(cause instanceof Error ? cause.message : "Não foi possível concluir a ação. Tente novamente.");
-        setOperation(null);
-      }
-    });
+    if (nextIntent === "published") {
+      setPublishConfirmationOpen(true);
+      return;
+    }
+    persistCase(nextIntent, form);
   }, (formErrors) => {
     const messages = Object.values(formErrors).map((error) => error?.message).filter((message): message is string => Boolean(message));
     setServerError(messages.length ? `Revise os campos marcados: ${messages.join(" ")}` : "Revise os campos marcados antes de continuar.");
@@ -186,8 +206,11 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
     setValue("categories", [...selectedCategories, name].join(", "), { shouldDirty: true, shouldValidate: true });
   }
 
-  function removeCategory(name: string) {
-    setValue("categories", selectedCategories.filter((category) => category !== name).join(", "), { shouldDirty: true, shouldValidate: true });
+  function toggleCategory(name: string) {
+    const nextCategories = selectedCategories.includes(name)
+      ? selectedCategories.filter((category) => category !== name)
+      : [...selectedCategories, name];
+    setValue("categories", nextCategories.join(", "), { shouldDirty: true, shouldValidate: true });
   }
 
   async function queueProjectImages(files: FileList | null) {
@@ -208,8 +231,6 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
         previewUrl: URL.createObjectURL(file),
         filename: file.name,
         fileKey: fileKey(file),
-        altText: "",
-        caption: "",
         state: "queued" as const,
         progress: 0,
       },
@@ -291,19 +312,19 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
     setProjectImages((current) => current.filter((entry) => entry.id !== id));
   }
 
-  function moveProjectImage(id: string, direction: -1 | 1) {
-    setProjectImages((current) => {
-      const index = current.findIndex((image) => image.id === id);
-      const nextIndex = index + direction;
-      if (index < 0 || nextIndex < 0 || nextIndex >= current.length) return current;
-      const next = [...current];
-      [next[index], next[nextIndex]] = [next[nextIndex], next[index]];
-      return next;
-    });
-  }
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
+  );
 
-  function updateProjectImage(id: string, updates: Pick<ProjectImage, "altText" | "caption">) {
-    setProjectImages((current) => current.map((image) => image.id === id ? { ...image, ...updates } : image));
+  function handleProjectImageDragEnd(event: DragEndEvent) {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+    setProjectImages((current) => {
+      const oldIndex = current.findIndex((image) => image.id === active.id);
+      const newIndex = current.findIndex((image) => image.id === over.id);
+      return oldIndex < 0 || newIndex < 0 ? current : arrayMove(current, oldIndex, newIndex);
+    });
   }
 
   function addCategory() {
@@ -314,7 +335,6 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
       try {
         const category = await createCategoryAction(formData);
         setCategoryOptionsState((current) => [...new Set([...current, category.name])].sort((a, b) => a.localeCompare(b, "pt-BR")));
-        addExistingCategory(category.name);
         setCategoryName("");
         setCategoryModalOpen(false);
       } catch (cause) {
@@ -324,7 +344,7 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
   }
 
   return (
-    <form className="case-form" data-testid="case-form" onSubmit={submit} noValidate>
+    <form className="case-form" data-testid="case-form" onSubmit={submit} noValidate ref={formRef}>
       {item ? <input type="hidden" name="id" value={item.id} /> : null}
       {item ? <input type="hidden" name="version" value={item.version} /> : null}
       <input type="hidden" {...register("status")} />
@@ -336,15 +356,11 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
           <section className="admin-panel admin-panel--identity">
             <div className="admin-panel__heading"><span>01</span><div><h2>Identificação</h2><p>Defina como este case será encontrado e apresentado.</p></div></div>
             <label className={errors.title ? "has-error" : ""}>Título<input data-testid="case-title" aria-invalid={Boolean(errors.title)} {...register("title")} /><FieldError message={errors.title?.message} /></label>
-            <div className="admin-form-row admin-form-row--two">
-              <label className={errors.slug ? "has-error" : ""}>Slug<input data-testid="case-slug" aria-invalid={Boolean(errors.slug)} {...register("slug", { onChange: () => setSlugEdited(true) })} /><FieldError message={errors.slug?.message} />{!errors.slug ? <small>Gerado automaticamente pelo título. Você pode ajustar se precisar.</small> : null}</label>
-              <label className={errors.client_name ? "has-error" : ""}>Cliente<input aria-invalid={Boolean(errors.client_name)} {...register("client_name")} /><FieldError message={errors.client_name?.message} /></label>
-            </div>
-            <label className={errors.categories ? "has-error" : ""}>Categorias
-              <div className="admin-category-control"><select aria-label="Adicionar categoria" defaultValue="" onChange={(event) => { addExistingCategory(event.target.value); event.currentTarget.value = ""; }}><option value="" disabled>Selecione uma categoria</option>{categoryOptionsState.filter((category) => !selectedCategories.includes(category)).map((category) => <option value={category} key={category}>{category}</option>)}</select><button className="admin-text-action" type="button" onClick={() => setCategoryModalOpen(true)}><Plus size={15} /> Nova</button></div>
-              <div className="admin-category-tags" aria-live="polite">{selectedCategories.length ? selectedCategories.map((category) => <span key={category}>{category}<button type="button" aria-label={`Remover ${category}`} onClick={() => removeCategory(category)}>×</button></span>) : <small>Nenhuma categoria selecionada.</small>}</div>
+            <label className={errors.slug ? "has-error" : ""}>Slug<input data-testid="case-slug" aria-invalid={Boolean(errors.slug)} {...register("slug", { onChange: () => setSlugEdited(true) })} /><FieldError message={errors.slug?.message} />{!errors.slug ? <small>Gerado automaticamente pelo título. Você pode ajustar se precisar.</small> : null}</label>
+            <div className={errors.categories ? "admin-category-field has-error" : "admin-category-field"}><span className="admin-field-label">Categorias</span>
+              <div className="admin-category-control"><div className="admin-category-checkboxes" role="group" aria-label="Categorias disponíveis">{categoryOptionsState.length ? categoryOptionsState.map((category) => <label key={category}><input type="checkbox" checked={selectedCategories.includes(category)} onChange={() => toggleCategory(category)} /><span>{category}</span></label>) : <small>Nenhuma categoria cadastrada.</small>}</div><button className="button button--secondary admin-text-action" type="button" onClick={() => setCategoryModalOpen(true)}><Plus size={15} /> Nova categoria</button></div>
               <FieldError message={errors.categories?.message} />
-            </label>
+            </div>
             <label className={errors.excerpt ? "has-error" : ""}>Descrição curta<textarea rows={3} aria-invalid={Boolean(errors.excerpt)} {...register("excerpt")} /><span className="field-counter">{excerpt.length}/320 caracteres</span><FieldError message={errors.excerpt?.message} /></label>
           </section>
 
@@ -365,27 +381,16 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
               <Image src={coverImage.previewUrl} alt="Prévia da capa do case" width={320} height={180} unoptimized />
               <div className="admin-cover-image__content"><strong>{coverImage.filename}</strong><span>Usada somente como capa do case</span>
                 {coverImage.state === "queued" || coverImage.state === "uploading" ? <div className="admin-upload-progress" role="progressbar" aria-label={`Enviando ${coverImage.filename}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={coverImage.progress}><span style={{ width: `${coverImage.progress}%` }} /><small>{`Enviando para a plataforma · ${coverImage.progress}%`}</small></div> : null}
-                {coverImage.state === "success" ? <span className="admin-upload-state admin-upload-state--success"><CheckCircle2 size={15} /> Carregada com sucesso</span> : null}
-                {coverImage.state === "ready" ? <span className="admin-upload-state">Anexada como capa</span> : null}
               </div>
-              <button className="admin-remove-media" type="button" disabled={coverImage.state === "queued" || coverImage.state === "uploading"} onClick={() => { void removeCoverImage(); }}><Trash2 size={16} /> Excluir</button>
+              <div className="admin-cover-image__actions">{coverImage.state === "success" ? <span className="admin-upload-state admin-upload-state--success"><CheckCircle2 size={15} /> Carregada com sucesso</span> : null}{coverImage.state === "ready" ? <span className="admin-upload-state">Anexada como capa</span> : null}<button className="admin-remove-media" type="button" disabled={coverImage.state === "queued" || coverImage.state === "uploading"} onClick={() => { void removeCoverImage(); }}><Trash2 size={16} /> Excluir</button></div>
             </div> : <p className="admin-empty admin-empty--compact">Nenhuma capa anexada. Você ainda pode salvar este case como rascunho.</p>}
           </section>
 
           <section className="admin-panel">
             <div className="admin-panel__heading"><span>04</span><div><h2>Imagens do projeto</h2><p>Envie as imagens que aparecerão no corpo do case e organize a ordem de exibição.</p></div></div>
             <label className="admin-upload-zone"><ImagePlus size={19} /><strong>Adicionar imagens</strong><input data-testid="gallery-upload" type="file" accept="image/jpeg,image/png,image/webp,image/avif" multiple onChange={(event) => { void queueProjectImages(event.target.files); event.currentTarget.value = ""; }} /><span>JPEG, PNG, WebP ou AVIF de até 25 MB por imagem. Você pode adicionar arquivos quantas vezes precisar.</span></label>
-            <p className="admin-project-images-help">Estas imagens pertencem somente ao conteúdo do projeto. Use os controles à esquerda para definir a ordem de exibição.</p>
-            {projectImages.length ? <ol className="admin-project-images" aria-label="Imagens do projeto">{projectImages.map((image, index) => <li key={image.id} className={image.state === "error" ? "is-error" : ""} data-testid="project-image">
-              <div className="admin-image-position"><GripVertical aria-hidden="true" size={18} /><strong>{index + 1}</strong><div><button type="button" aria-label={`Mover ${image.filename} para cima`} disabled={index === 0} onClick={() => moveProjectImage(image.id, -1)}><ArrowUp size={15} /></button><button type="button" aria-label={`Mover ${image.filename} para baixo`} disabled={index === projectImages.length - 1} onClick={() => moveProjectImage(image.id, 1)}><ArrowDown size={15} /></button></div></div>
-              <Image src={image.previewUrl} alt={image.altText || image.filename} width={176} height={132} unoptimized />
-              <div className="admin-project-image__content"><div className="admin-project-image__meta"><div><strong>{image.filename}</strong><span>{`Imagem ${index + 1} do corpo do case`}</span></div>{image.state === "success" ? <span className="admin-upload-state admin-upload-state--success"><CheckCircle2 size={15} /> Carregada com sucesso</span> : null}{image.state === "ready" ? <span className="admin-upload-state">Anexada ao projeto</span> : null}</div>
-                {image.state === "queued" || image.state === "uploading" ? <div className="admin-upload-progress" role="progressbar" aria-label={`Enviando ${image.filename}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={image.progress}><span style={{ width: `${image.progress}%` }} /><small>{image.state === "queued" ? "Aguardando envio" : `Enviando para a plataforma · ${image.progress}%`}</small></div> : null}
-                {image.state === "error" ? <p className="field-error" role="alert">{image.error}</p> : null}
-                <div className="admin-project-image__fields"><label>Texto alternativo<input value={image.altText} onChange={(event) => updateProjectImage(image.id, { altText: event.target.value, caption: image.caption })} placeholder="Descreva a imagem" /></label><label>Legenda (opcional)<input value={image.caption} onChange={(event) => updateProjectImage(image.id, { altText: image.altText, caption: event.target.value })} /></label></div>
-              </div>
-              <button className="admin-remove-media" type="button" disabled={image.state === "queued" || image.state === "uploading"} onClick={() => { void removeProjectImage(image.id); }}><Trash2 size={16} /> Excluir</button>
-            </li>)}</ol> : <p className="admin-empty admin-empty--compact">Nenhuma imagem no corpo do case. Você pode adicionar imagens agora ou continuar o rascunho depois.</p>}
+            <p className="admin-project-images-help">Arraste pelos seis pontos para definir a ordem de exibição.</p>
+            {projectImages.length ? <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleProjectImageDragEnd}><SortableContext items={projectImages.map((image) => image.id)} strategy={verticalListSortingStrategy}><ol className="admin-project-images" aria-label="Imagens do projeto">{projectImages.map((image, index) => <SortableProjectImage key={image.id} image={image} index={index} onRemove={removeProjectImage} />)}</ol></SortableContext></DndContext> : <p className="admin-empty admin-empty--compact">Nenhuma imagem no corpo do case. Você pode adicionar imagens agora ou continuar o rascunho depois.</p>}
           </section>
         </fieldset>
 
@@ -395,11 +400,13 @@ export function CaseForm({ item, media = [], coverPreviewUrl = "", categoryOptio
           {serverError ? <p className="admin-error" role="alert" data-testid="case-form-error">{serverError}</p> : null}
           <button className="button button--primary" data-testid="publish-case" data-intent="published" type="submit" disabled={pending || isUploading} onClick={() => chooseIntent("published")}>{pending && intent === "published" ? "Publicando…" : item?.status === "published" ? "Atualizar publicação" : "Publicar case"}</button>
           <button className="button button--secondary" data-testid="save-case" data-intent="draft" type="submit" disabled={pending || isUploading} onClick={() => chooseIntent("draft")}>{pending && intent === "draft" ? "Salvando…" : "Salvar rascunho"}</button>
-          <a href="/admin/cases">Cancelar e voltar à lista</a>
+          <button className="button button--tertiary" type="button" onClick={() => setCancelConfirmationOpen(true)}>Cancelar e voltar à lista</button>
         </aside>
       </div>
 
       {categoryModalOpen ? <div className="admin-modal-backdrop" role="presentation"><section className="admin-modal" role="dialog" aria-modal="true" aria-labelledby="new-category-title"><h2 id="new-category-title">Nova categoria</h2><p>Ela ficará disponível no editor e nos filtros públicos de cases.</p><label>Nome da categoria<input autoFocus value={categoryName} onChange={(event) => setCategoryName(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") { event.preventDefault(); addCategory(); } }} /></label>{categoryError ? <p className="admin-error" role="alert">{categoryError}</p> : null}<div><button className="button button--secondary" type="button" onClick={() => setCategoryModalOpen(false)}>Cancelar</button><button className="button button--primary" type="button" disabled={pending || !categoryName.trim()} onClick={addCategory}>{pending ? "Cadastrando…" : "Cadastrar categoria"}</button></div></section></div> : null}
+      {publishConfirmationOpen ? <div className="admin-modal-backdrop" role="presentation"><section className="admin-modal" role="dialog" aria-modal="true" aria-labelledby="publish-case-title"><h2 id="publish-case-title">Atualizar case?</h2><p>As alterações serão publicadas no case.</p><div><button className="button button--secondary" type="button" onClick={() => setPublishConfirmationOpen(false)}>Voltar</button><button className="button button--primary" type="button" onClick={() => { const form = formRef.current; if (!form) return; setPublishConfirmationOpen(false); persistCase("published", form); }}>Confirmar atualização</button></div></section></div> : null}
+      {cancelConfirmationOpen ? <div className="admin-modal-backdrop" role="presentation"><section className="admin-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-case-title"><h2 id="cancel-case-title">Cancelar alterações?</h2><p>O progresso não será salvo. Para guardar as alterações, use “Salvar rascunho”.</p><div><button className="button button--secondary" type="button" onClick={() => setCancelConfirmationOpen(false)}>Continuar editando</button><button className="admin-danger-button" type="button" onClick={() => window.location.assign("/admin/cases")}>Cancelar e sair</button></div></section></div> : null}
       {operation ? <div className="admin-operation-backdrop" role="presentation"><section className="admin-operation-modal" role="dialog" aria-live="assertive" aria-modal="true" aria-labelledby="operation-title">{operation.phase === "loading" ? <><span className="admin-operation-spinner" aria-hidden="true" /><h2 id="operation-title">{operation.intent === "published" ? "Publicando seu case" : "Salvando seu rascunho"}</h2><p>{operation.intent === "published" ? "Estamos preparando a publicação das suas imagens. Isso pode levar alguns segundos." : "Estamos guardando as informações e a ordem das suas imagens. Isso pode levar alguns segundos."}</p></> : <><span className="admin-operation-success" aria-hidden="true">✓</span><h2 id="operation-title">{operation.intent === "published" ? "Case publicado com sucesso" : "Rascunho salvo com sucesso"}</h2><p>Pronto. Vamos atualizar a página para mostrar o resultado.</p></>}</section></div> : null}
     </form>
   );

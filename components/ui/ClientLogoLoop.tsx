@@ -48,7 +48,7 @@ export function ClientLogoLoop({ names }: { names: readonly string[] }) {
             compactClientLogos.has(name) ? undefined : "logoloop__logo--large",
             logoScaleClasses[name],
           ].filter(Boolean).join(" ") || undefined}
-          loading="lazy"
+          loading="eager"
         />
       ) : <span>{name}</span>,
       title: name,

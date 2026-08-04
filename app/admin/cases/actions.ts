@@ -18,8 +18,8 @@ const uploadPathSchema = z.string().regex(
   "Uma imagem enviada não possui um caminho válido. Envie-a novamente.",
 );
 const mediaManifestSchema = z.array(z.discriminatedUnion("source", [
-  z.object({ source: z.literal("existing"), id: idSchema, altText: z.string().max(500).default(""), caption: z.string().max(500).default("") }),
-  z.object({ source: z.literal("uploaded"), path: uploadPathSchema, altText: z.string().max(500).default(""), caption: z.string().max(500).default("") }),
+  z.object({ source: z.literal("existing"), id: idSchema }),
+  z.object({ source: z.literal("uploaded"), path: uploadPathSchema }),
 ])).max(60, "Adicione no máximo 60 imagens por case.");
 const coverManifestSchema = z.discriminatedUnion("source", [
   z.object({ source: z.literal("existing") }),
@@ -196,7 +196,7 @@ async function reconcileProjectImages(
     if (entry.source === "existing") {
       const { error } = await supabase
         .from("portfolio_case_media")
-        .update({ sort_order: sortOrder, alt_text: entry.altText.trim(), caption: entry.caption.trim() })
+        .update({ sort_order: sortOrder })
         .eq("id", entry.id)
         .eq("case_id", caseId);
       if (error) throw error;
@@ -207,8 +207,8 @@ async function reconcileProjectImages(
       storage_bucket: "portfolio-drafts",
       storage_path: entry.path,
       source_url: "",
-      alt_text: entry.altText.trim() || `${title} - imagem ${sortOrder + 1}`,
-      caption: entry.caption.trim(),
+      alt_text: `${title} - imagem ${sortOrder + 1}`,
+      caption: "",
       sort_order: sortOrder,
     });
     if (error) throw error;
@@ -273,7 +273,6 @@ export async function saveCaseAction(formData: FormData): Promise<{ caseId: stri
     const basePayload = {
       title: input.title,
       slug: input.slug.normalize("NFC"),
-      client_name: input.client_name,
       categories: input.categories,
       excerpt: input.excerpt,
       content_html: input.content_html,
@@ -365,24 +364,180 @@ export async function createCategoryAction(formData: FormData) {
   }
 }
 
+export async function saveFeaturedCasesAction(caseIds: string[]): Promise<{ ok: boolean; message: string }> {
+  try {
+    const ids = z.array(idSchema).min(1, "Selecione ao menos um case para os destaques.").max(9, "Selecione no máximo 9 cases para os destaques.").parse(caseIds);
+    if (new Set(ids).size !== ids.length) {
+      return { ok: false, message: "Um mesmo case não pode ocupar mais de uma posição." };
+    }
+
+    const { supabase } = await requireAdmin();
+    const { data: eligibleCases, error: eligibleError } = await supabase
+      .from("portfolio_cases")
+      .select("id")
+      .in("id", ids)
+      .eq("status", "published")
+      .is("deleted_at", null);
+    if (eligibleError) throw eligibleError;
+    if ((eligibleCases ?? []).length !== ids.length) {
+      return { ok: false, message: "Apenas cases publicados e ativos podem aparecer nos destaques." };
+    }
+
+    const { data: currentFeatured, error: currentFeaturedError } = await supabase
+      .from("portfolio_cases")
+      .select("id")
+      .eq("featured_on_home", true)
+      .is("deleted_at", null);
+    if (currentFeaturedError) throw currentFeaturedError;
+
+    const { data: clearedCases, error: clearError } = await supabase
+      .from("portfolio_cases")
+      .update({ featured_on_home: false, home_order: 999 })
+      .eq("featured_on_home", true)
+      .is("deleted_at", null)
+      .select("id");
+    if (clearError) throw clearError;
+    if ((clearedCases ?? []).length !== (currentFeatured ?? []).length) {
+      return { ok: false, message: "Não foi possível confirmar a atualização dos destaques. Atualize a página e tente novamente." };
+    }
+
+    for (const [homeOrder, id] of ids.entries()) {
+      const { data: updatedCase, error } = await supabase
+        .from("portfolio_cases")
+        .update({ featured_on_home: true, home_order: homeOrder })
+        .eq("id", id)
+        .eq("status", "published")
+        .is("deleted_at", null)
+        .select("id")
+        .maybeSingle();
+      if (error) throw error;
+      if (!updatedCase) return { ok: false, message: "Um dos cases não pôde ser salvo como destaque. Atualize a página e tente novamente." };
+    }
+
+    revalidateTag(CASES_CACHE_TAG, "max");
+    revalidatePath("/");
+    revalidatePath("/cases");
+    revalidatePath("/admin/cases");
+    return { ok: true, message: "Destaques da home atualizados." };
+  } catch (cause) {
+    const error = publicError(cause);
+    return { ok: false, message: error.message };
+  }
+}
+
 export async function archiveCaseAction(formData: FormData) {
   const { supabase } = await requireAdmin();
   const id = idSchema.parse(String(formData.get("id") ?? ""));
-  const { data: item, error: readError } = await supabase.from("portfolio_cases").select("slug").eq("id", id).single();
+  const { data: item, error: readError } = await supabase.from("portfolio_cases").select("slug").eq("id", id).is("deleted_at", null).single();
   if (readError) throw publicError(readError);
-  const { error } = await supabase.from("portfolio_cases").update({ status: "archived", published_at: null }).eq("id", id);
+  const { error } = await supabase.from("portfolio_cases").update({ status: "archived", published_at: null, archived_at: new Date().toISOString() }).eq("id", id);
   if (error) throw publicError(error);
   revalidateTag(CASES_CACHE_TAG, "max");
   portfolioPathsForSlugs(item.slug).forEach((path) => revalidatePath(path));
   redirect("/admin/cases");
 }
 
+export async function unarchiveCaseAction(formData: FormData) {
+  const { supabase } = await requireAdmin();
+  const id = idSchema.parse(String(formData.get("id") ?? ""));
+  const { error } = await supabase.from("portfolio_cases").update({ status: "draft", published_at: null, archived_at: null }).eq("id", id).is("deleted_at", null);
+  if (error) throw publicError(error);
+  revalidatePath("/admin/cases"); revalidatePath("/admin/cases/archived"); redirect("/admin/cases");
+}
+
 export async function restoreCaseAction(formData: FormData) {
   const { supabase } = await requireAdmin();
   const id = idSchema.parse(String(formData.get("id") ?? ""));
-  const { error } = await supabase.from("portfolio_cases").update({ status: "draft", published_at: null }).eq("id", id);
+  const { error } = await supabase.from("portfolio_cases").update({ status: "draft", published_at: null }).eq("id", id).is("deleted_at", null);
   if (error) throw publicError(error);
   redirect(`/admin/cases/${id}/edit`);
+}
+
+export async function moveCaseToTrashAction(formData: FormData) {
+  try {
+    const { supabase } = await requireAdmin();
+    const id = idSchema.parse(String(formData.get("id") ?? ""));
+    const { data: item, error: readError } = await supabase
+      .from("portfolio_cases")
+      .select("slug")
+      .eq("id", id)
+      .is("deleted_at", null)
+      .single();
+    if (readError) throw readError;
+    const { error } = await supabase.from("portfolio_cases").update({ status: "draft", published_at: null, archived_at: null, deleted_at: new Date().toISOString() }).eq("id", id);
+    if (error) throw error;
+    revalidateTag(CASES_CACHE_TAG, "max");
+    portfolioPathsForSlugs(item.slug).forEach((path) => revalidatePath(path));
+    revalidatePath("/admin/cases");
+    revalidatePath("/admin/cases/archived");
+    revalidatePath("/admin/cases/trash");
+    redirect("/admin/cases/trash?notice=trashed");
+  } catch (cause) {
+    throw publicError(cause);
+  }
+}
+
+export async function restoreCaseFromTrashAction(formData: FormData) {
+  try {
+    const { supabase } = await requireAdmin();
+    const id = idSchema.parse(String(formData.get("id") ?? ""));
+    const { data: item, error: readError } = await supabase.from("portfolio_cases").select("slug").eq("id", id).not("deleted_at", "is", null).single();
+    if (readError) throw readError;
+    const { error } = await supabase.from("portfolio_cases").update({ status: "draft", published_at: null, archived_at: null, deleted_at: null }).eq("id", id).not("deleted_at", "is", null);
+    if (error) throw error;
+    revalidateTag(CASES_CACHE_TAG, "max");
+    portfolioPathsForSlugs(item.slug).forEach((path) => revalidatePath(path));
+    revalidatePath("/admin/cases");
+    revalidatePath("/admin/cases/archived");
+    revalidatePath("/admin/cases/trash");
+    redirect("/admin/cases/trash?notice=restored");
+  } catch (cause) {
+    throw publicError(cause);
+  }
+}
+
+export async function permanentlyDeleteCaseAction(formData: FormData) {
+  try {
+    const { supabase } = await requireAdmin();
+    const id = idSchema.parse(String(formData.get("id") ?? ""));
+    const { data: item, error: caseError } = await supabase
+      .from("portfolio_cases")
+      .select("slug,cover_storage_bucket,cover_storage_path")
+      .eq("id", id)
+      .not("deleted_at", "is", null)
+      .single();
+    if (caseError) throw caseError;
+    const { data: media, error: mediaError } = await supabase
+      .from("portfolio_case_media")
+      .select("storage_bucket,storage_path")
+      .eq("case_id", id);
+    if (mediaError) throw mediaError;
+
+    const assetsByBucket = new Map<"portfolio-drafts" | "portfolio-media", Set<string>>();
+    const addAsset = (bucket: string | null, path: string | null) => {
+      if ((bucket !== "portfolio-drafts" && bucket !== "portfolio-media") || !path) return;
+      const paths = assetsByBucket.get(bucket) ?? new Set<string>();
+      paths.add(path);
+      assetsByBucket.set(bucket, paths);
+    };
+    addAsset(item.cover_storage_bucket, item.cover_storage_path);
+    (media ?? []).forEach((entry) => addAsset(entry.storage_bucket, entry.storage_path));
+    for (const [bucket, paths] of assetsByBucket) {
+      const { error } = await supabase.storage.from(bucket).remove([...paths]);
+      if (error) throw error;
+    }
+
+    const { error: deleteError } = await supabase.from("portfolio_cases").delete().eq("id", id).not("deleted_at", "is", null);
+    if (deleteError) throw deleteError;
+    revalidateTag(CASES_CACHE_TAG, "max");
+    portfolioPathsForSlugs(item.slug).forEach((path) => revalidatePath(path));
+    revalidatePath("/admin/cases");
+    revalidatePath("/admin/cases/archived");
+    revalidatePath("/admin/cases/trash");
+    redirect("/admin/cases/trash?notice=permanently-deleted");
+  } catch (cause) {
+    throw publicError(cause);
+  }
 }
 
 export async function logoutAction() {

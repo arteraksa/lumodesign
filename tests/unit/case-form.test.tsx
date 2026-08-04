@@ -82,9 +82,11 @@ describe("CaseForm", () => {
     render(<CaseForm item={itemWithCover} coverPreviewUrl="https://example.com/capa.webp" categoryOptions={["Branding"]} action={action} createCategoryAction={vi.fn()} />);
 
     await userEvent.type(screen.getByTestId("case-title"), "Case de teste");
-    await userEvent.selectOptions(screen.getByLabelText("Adicionar categoria"), "Branding");
+    await userEvent.click(screen.getByRole("checkbox", { name: "Branding" }));
     await userEvent.type(screen.getByTestId("case-content"), "Descrição completa do case.");
     await userEvent.click(screen.getByTestId("publish-case"));
+    expect(action).not.toHaveBeenCalled();
+    await userEvent.click(screen.getByRole("button", { name: "Confirmar atualização" }));
 
     await waitFor(() => expect(action).toHaveBeenCalledTimes(1));
     expect(action.mock.calls[0]?.[0].get("status")).toBe("published");
