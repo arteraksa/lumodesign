@@ -7,6 +7,7 @@ import { ModularContent } from "@/components/content/ModularContent";
 import type { PortfolioCase, PortfolioCaseMedia } from "@/lib/supabase/database.types";
 import { getPublishedCaseResolution, getPublishedCases } from "@/lib/queries/cases";
 import { siteConfig } from "@/lib/content/site";
+import { normalizeMediaUrl } from "@/lib/portfolio/media-url";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function mediaUrl(media: PortfolioCaseMedia) {
-  if (media.source_url) return media.source_url;
+  if (media.source_url) return normalizeMediaUrl(media.source_url);
   if (!media.storage_bucket || !media.storage_path) return "";
   return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${media.storage_bucket}/${media.storage_path}`;
 }

@@ -1,10 +1,12 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { Archive, RotateCcw, Trash2 } from "lucide-react";
 import { requireAdmin } from "@/lib/auth/permissions";
 import { requireSupabaseConfig } from "@/lib/supabase/config";
 import type { PortfolioCaseMedia, StorageBucket } from "@/lib/supabase/database.types";
 import { CaseForm } from "../../CaseForm";
+import { ConfirmCaseAction } from "../../ConfirmCaseAction";
 import { SaveFeedback } from "../../SaveFeedback";
-import { archiveCaseAction, createCategoryAction, restoreCaseAction, saveCaseAction } from "../../actions";
+import { archiveCaseAction, createCategoryAction, moveCaseToTrashAction, restoreCaseAction, saveCaseAction } from "../../actions";
 import { getPortfolioCategories } from "@/lib/queries/portfolio-categories";
 
 type Props = { params: Promise<{ id: string }>; searchParams: Promise<{ notice?: string }> };
@@ -28,6 +30,7 @@ export default async function EditCasePage({ params, searchParams }: Props) {
   const { supabase } = await requireAdmin();
   const { data: item, error } = await supabase.from("portfolio_cases").select("*").eq("id", id).single();
   if (error || !item) notFound();
+  if (item.deleted_at) redirect("/admin/cases/trash");
   const { data: caseMedia, error: mediaError } = await supabase
     .from("portfolio_case_media")
     .select("*")
@@ -42,7 +45,7 @@ export default async function EditCasePage({ params, searchParams }: Props) {
   const [categories, query] = await Promise.all([getPortfolioCategories(), searchParams]);
   return (
     <main className="admin-page admin-editor">
-      <header className="admin-editor__header"><div><a href="/admin/cases">← Cases</a><h1>{item.title}</h1><p>Versão {item.version} · {item.status}</p></div><form action={item.status === "archived" ? restoreCaseAction : archiveCaseAction}><input type="hidden" name="id" value={item.id} /><button className="button button--secondary" data-testid={item.status === "archived" ? "restore-case" : "archive-case"} type="submit">{item.status === "archived" ? "Restaurar como rascunho" : "Arquivar"}</button></form></header>
+      <header className="admin-editor__header"><div><h1>{item.title}</h1><p>Versão {item.version} · {item.status === "published" ? "Publicado" : item.status === "archived" ? "Arquivado" : "Rascunho"}</p></div><div className="admin-editor__header-actions"><ConfirmCaseAction id={item.id} action={item.status === "archived" ? restoreCaseAction : archiveCaseAction} label={item.status === "archived" ? <><RotateCcw size={16} /> Restaurar como rascunho</> : <><Archive size={16} /> Arquivar</>} title={item.status === "archived" ? "Restaurar como rascunho?" : "Arquivar case?"} description={item.status === "archived" ? "O case voltará para a lista ativa como rascunho." : "O case sairá da lista ativa e poderá ser restaurado depois."} className="button button--secondary" /><ConfirmCaseAction id={item.id} action={moveCaseToTrashAction} label={<><Trash2 size={16} /> Excluir</>} title="Mover case para a lixeira?" description="Ele ficará disponível para restauração por 30 dias." className="admin-danger-button" /></div></header>
       {query.notice === "saved" || query.notice === "published" ? <SaveFeedback notice={query.notice} /> : null}
       <CaseForm item={item} media={media} coverPreviewUrl={coverPreviewUrl} categoryOptions={categories} action={saveCaseAction} createCategoryAction={createCategoryAction} />
     </main>

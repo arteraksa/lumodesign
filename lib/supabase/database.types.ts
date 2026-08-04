@@ -42,6 +42,7 @@ export interface PortfolioCase {
   seo_description: string;
   published_at: string | null;
   archived_at: string | null;
+  deleted_at?: string | null;
   version: number;
   created_at: string;
   updated_at: string;

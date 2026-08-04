@@ -28,7 +28,6 @@ export const caseSchema = z.object({
     .trim()
     .max(140, "O slug pode ter no máximo 140 caracteres.")
     .refine((value) => !value || /^[\p{L}\p{N}]+(?:-[\p{L}\p{N}]+)*$/u.test(value), "Use letras, números e hífens."),
-  client_name: z.string().trim().max(120, "O nome do cliente pode ter no máximo 120 caracteres.").default(""),
   categories: z.array(z.string().trim().min(1, "Escolha uma categoria válida.").max(80, "O nome da categoria é muito longo.")).max(6, "Escolha no máximo 6 categorias.").default([]),
   excerpt: z.string().trim().max(320, "A descrição curta pode ter no máximo 320 caracteres.").default(""),
   content_html: z.string().max(200_000, "O conteúdo está muito longo. Reduza o texto antes de salvar.").default(""),
@@ -62,7 +61,6 @@ export type CaseInput = z.infer<typeof caseSchema>;
 export const caseClientSchema = z.object({
   title: z.string().trim().max(120, "O título pode ter no máximo 120 caracteres."),
   slug: z.string().trim().max(140, "O slug pode ter no máximo 140 caracteres.").refine((value) => !value || /^[\p{L}\p{N}]+(?:-[\p{L}\p{N}]+)*$/u.test(value), "Use letras, números e hífens."),
-  client_name: z.string().max(120, "O nome do cliente pode ter no máximo 120 caracteres."),
   categories: z.string().max(480, "Escolha no máximo 6 categorias."),
   excerpt: z.string().max(320, "A descrição curta pode ter no máximo 320 caracteres."),
   content_html: z.string().max(200_000, "O conteúdo está muito longo. Reduza o texto antes de salvar."),
@@ -98,7 +96,6 @@ export function caseInputFromFormData(formData: FormData, allowedCategories?: re
     version: formData.get("version") || undefined,
     title: formData.get("title"),
     slug: formData.get("slug"),
-    client_name: formData.get("client_name") ?? "",
     categories: String(formData.get("categories") ?? "")
       .split(",")
       .map((item) => item.trim())
