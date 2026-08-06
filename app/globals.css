@@ -162,9 +162,23 @@ p { text-wrap: pretty; }
 .service-card:hover img { opacity: .1; transform: scale(1.02); filter: saturate(1.08); }
 .service-card__shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(3,2,9,.96), rgba(3,2,9,.05) 70%); transition: opacity .85s var(--ease-out) .12s; }
 .service-card:hover .service-card__shade { opacity: 0; }
-.service-card__hover-fill { position: absolute; inset: 0; z-index: 1; background: rgba(29,19,83,.2); opacity: 0; pointer-events: none; transition: opacity .85s var(--ease-out) .12s; }
-.service-card:hover .service-card__hover-fill { opacity: 1; }
-.service-card__content { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; padding: 20px; text-align: left; transform: translateZ(24px); transition: padding .85s var(--ease-out) .12s; }
+/* Camada exclusiva da animação de barras; não altera o hover-fill existente. */
+.service-card__lines { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; }
+.service-card__lines-layer { position: absolute; inset: 0; display: block; width: 100%; height: 100%; will-change: transform, opacity; }
+/* As nove barras-base permanecem no estado final. */
+.service-card__lines-layer--fixed { opacity: 0; transform: scaleY(.74); transform-box: fill-box; transform-origin: center; }
+/* As camadas móveis existem apenas durante a transição. */
+.service-card__lines-layer--left, .service-card__lines-layer--right { opacity: 0; transform: translate3d(0,0,0); }
+.service-card:hover .service-card__lines-layer--fixed, .service-card:focus-visible .service-card__lines-layer--fixed { animation: service-fixed-lines-appear .72s cubic-bezier(.16,1,.3,1) forwards; }
+.service-card:hover .service-card__lines-layer--left, .service-card:focus-visible .service-card__lines-layer--left { animation: service-left-lines-slide 1.24s cubic-bezier(.16,1,.3,1) .14s forwards; }
+.service-card:hover .service-card__lines-layer--right, .service-card:focus-visible .service-card__lines-layer--right { animation: service-right-lines-slide 1.24s cubic-bezier(.16,1,.3,1) .14s forwards; }
+@keyframes service-fixed-lines-appear { from { opacity: 0; transform: scaleY(.74); } to { opacity: 1; transform: scaleY(1); } }
+@keyframes service-left-lines-slide { 0% { opacity: 0; transform: translate3d(0,0,0); } 12% { opacity: 1; } 80% { opacity: 1; transform: translate3d(-10%,0,0); } 100% { opacity: 0; transform: translate3d(-10%,0,0); } }
+@keyframes service-right-lines-slide { 0% { opacity: 0; transform: translate3d(0,0,0); } 12% { opacity: 1; } 80% { opacity: 1; transform: translate3d(10%,0,0); } 100% { opacity: 0; transform: translate3d(10%,0,0); } }
+.service-card__hover-fill { position: absolute; inset: 0; z-index: 1; display: grid; grid-template-columns: repeat(18, minmax(0, 1fr)); overflow: hidden; pointer-events: none; }
+.service-card__hover-fill-stripe { height: 100%; background: rgba(29,19,83,.2); transform: translateY(-105%); transition: transform 560ms cubic-bezier(.16,1,.3,1); transition-delay: calc(var(--service-fill-stripe-index) * 38ms); }
+.service-card:hover .service-card__hover-fill-stripe { transform: translateY(0); }
+.service-card__content { position: absolute; z-index: 3; inset: 0; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; padding: 20px; text-align: left; transform: translateZ(24px); transition: padding .85s var(--ease-out) .12s; }
 .service-card:hover .service-card__content, .service-card:focus-visible .service-card__content { padding: 50px; }
 .service-card__content h3 { margin: 0; color: #fff; font-size: 26px; font-weight: 400; letter-spacing: 0; line-height: 30px; text-align: start; }
 .service-card__content p { position: absolute; right: 50px; bottom: 50px; left: 50px; width: auto; max-width: none; margin: 0; color: #fff; font-size: 18px; font-weight: 400; letter-spacing: 0; line-height: 23px; text-align: start; text-wrap: wrap; opacity: 0; transform: translateY(.35rem); transition: opacity .7s var(--ease-out) .28s, transform .7s var(--ease-out) .28s; }
@@ -453,4 +467,7 @@ body:has(.case-study-page) .site-header, body:has(.case-study-page) .site-footer
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .hero-cta { opacity: 1; animation: none; }
+  .service-card__hover-fill-stripe { transition-delay: 0ms; }
+  .service-card__lines-layer--fixed, .service-card__lines-layer--left, .service-card__lines-layer--right { animation: none !important; transition: none !important; }
+  .service-card:hover .service-card__lines-layer--fixed, .service-card:focus-visible .service-card__lines-layer--fixed { opacity: 1; transform: none; }
 }
